@@ -61,6 +61,19 @@ python -m http.server 8000
 
 ## 배포
 
+### FreeBSD · Bastille jail
+
+**[처음 설치와 갱신 방법](deploy/freebsd/README.md)**
+
+로컬에서 보고서를 수정해 `push`한 뒤, jail 안에서 `showcase-update` 한 번 실행하면 최신 보고서와 목록을 반영합니다. 별도 폴더에서 검사·빌드한 후 웹 루트를 교체하므로 실패하면 기존 사이트가 유지됩니다. 상태 확인과 이전 버전 복구도 지원합니다.
+
+```sh
+# 처음 설치 후, Bastille 호스트에서 실행
+bastille cmd JAIL_NAME /usr/local/bin/showcase-update
+```
+
+### GitHub Pages
+
 `.github/workflows/pages.yml`이 `main` 푸시 때 검증 → 정적 파일 묶기 → GitHub Pages 배포를 실행합니다. PR에서는 검증만 합니다. 검증에 실패하면 새 배포를 진행하지 않습니다.
 
 처음 설정할 때 저장소 **Settings → Pages → Source: GitHub Actions**를 선택합니다. 이후에는 보고서 추가와 푸시만 하면 됩니다. 배포 상태는 **Actions → Validate and publish reports**에서 확인합니다.
@@ -84,6 +97,7 @@ reports/
     vendor/                # 이 보고서가 사용하는 라이브러리
     records/               # 상세 해석 기록의 정적 스냅샷
 scripts/                   # 검증·배포 파일 묶기
+deploy/freebsd/             # jail용 갱신 도구·Nginx 설정·설치 안내
 .github/workflows/         # 자동 검증·배포
 ```
 

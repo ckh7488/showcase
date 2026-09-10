@@ -2,6 +2,8 @@
 
 This repository is a growing library of independently interactive HTML reports, served by GitHub Pages. Read README.md before adding or changing a report.
 
+The same static content is also deployable in FreeBSD/Bastille. `deploy/freebsd/README.md` documents the update command, Nginx setup, and rollback. Keep reports portable across both hosts. Deployment-tool changes require the integration tests in `tests/test_freebsd_update.py`; distinguish CI/POSIX testing from installation on the user's actual jail.
+
 - Add each report in `reports/<slug>/index.html`, with all of its runtime assets inside that folder. Preserve its existing 3D, charts, animation, and input controls.
 - Register exactly one entry in root `reports.json`. The landing page generates cards from that file. Do not hard-code new cards or rewrite the landing page to add a report.
 - Use a unique lowercase kebab-case slug. Keep published slugs stable; do not overwrite an unrelated report.

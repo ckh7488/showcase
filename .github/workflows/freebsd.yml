@@ -1,0 +1,42 @@
+name: FreeBSD deployment checks
+on:
+  push:
+    branches: [main]
+    paths:
+      - deploy/freebsd/**
+      - tests/**
+      - scripts/**
+      - .github/workflows/freebsd.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  freebsd:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Test in FreeBSD 14.3 with Nginx
+        uses: vmactions/freebsd-vm@8b0f1a8fc0ea0def307835c258940ca358fe6480 # v1, pinned
+        with:
+          release: '14.3'
+          copyback: false
+          prepare: |
+            pkg install -y git python3 nginx
+          run: |
+            set -eu
+            freebsd-version
+            sh -n deploy/freebsd/update.sh
+            python3 -m unittest discover -s tests -v
+            git config --global --add safe.directory "$PWD"
+            sh deploy/freebsd/update.sh --repo "$PWD"
+            nginx -t -c "$PWD/deploy/freebsd/nginx.conf"
+            nginx -c "$PWD/deploy/freebsd/nginx.conf"
+            fetch -o /tmp/showcase-index.html http://127.0.0.1:8080/
+            fetch -o /tmp/showcase-report.html http://127.0.0.1:8080/reports/porta-pcb/
+            fetch -o /tmp/showcase-viewer.js http://127.0.0.1:8080/reports/porta-pcb/viewer.js
+            python3 -c 'from pathlib import Path; assert "SHOWCASE" in Path("/tmp/showcase-index.html").read_text(); assert "PALA720" in Path("/tmp/showcase-report.html").read_text(); assert "__pcbViewer" in Path("/tmp/showcase-viewer.js").read_text()'
+            sh deploy/freebsd/update.sh --status
+            nginx -s quit -c "$PWD/deploy/freebsd/nginx.conf"
