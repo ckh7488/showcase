@@ -1,0 +1,29 @@
+{
+  "updated": "2026-09-08T10:50:07",
+  "case": "full-fem-net-union-100mhz-h075-order0",
+  "input_sha256": "93810213a86cff18f276a8c36ec5139799ed6a9b8386ccb21bde367e0ec76bc3",
+  "mesh_sha256": "ec87e57cce2b2ff33748309cb9252f7294e2648f51955889500fbcf0863d0226",
+  "result_sha256": "c5a666b02b5614743f7568bf55ddce40cbd605bf7e6590c9383cd3f40e10d768",
+  "single_model_checks_pass": true,
+  "frequency_count": 1,
+  "full_1_to_100mhz_band": false,
+  "rows": [
+    {
+      "frequency_mhz": 100.0,
+      "t2_rx_return_loss_db": 20.422378437931577,
+      "m12_rx_return_loss_db": 20.422480553712234,
+      "t2_to_m12_rx_insertion_loss_db": 0.03959890908680222,
+      "m12_to_t2_rx_insertion_loss_db": 0.039598909087122866,
+      "t2_rx_reflected_power_percent": 0.9073234933208512,
+      "m12_rx_reflected_power_percent": 0.9073021596494745,
+      "t2_to_m12_transmitted_power_percent": 99.09234570022275,
+      "t2_other_pair_total_power_percent": 6.331233495977002e-05
+    }
+  ],
+  "ndof": 4903607,
+  "solve_seconds": 175.677194399992,
+  "scope": "Whole T2 cable-side pads to both PCB copper paths, approximate64 contacts and M12 PCB pads.",
+  "numerical_convergence_pass": false,
+  "full_route_goal_complete": false,
+  "caveat": "Computed model values. Mesh, boundary and port comparisons are still required. Reflected power percentage is not hardware fault contribution."
+}

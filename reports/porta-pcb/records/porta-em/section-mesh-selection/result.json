@@ -1,0 +1,980 @@
+{
+  "at": "2026-09-08T01:21:00",
+  "rows": [
+    {
+      "name": "uniform-y0p08-z0p02-phase0",
+      "kind": "uniform",
+      "dy_mm": 0.08,
+      "dz_mm": 0.02,
+      "phase": 0,
+      "grid_nodes": [
+        49,
+        49
+      ],
+      "nodes": 2401,
+      "min_spacing_mm": [
+        0.07999999999999996,
+        0.018333333332999996
+      ],
+      "capacitance_pf_per_m": 70.79351600735423,
+      "vacuum_capacitance_pf_per_m": 25.55700881040328,
+      "quasistatic_differential_estimate_ohm": 78.42012758495288,
+      "capacitance_reference_difference_percent": 12.346419560659472,
+      "impedance_reference_difference_percent": -9.6662721019242,
+      "solve_check": {
+        "iterations": 216,
+        "relative_residual": 9.018743150661717e-11,
+        "charge_energy_relative_error": 1.8256893851406397e-15
+      },
+      "air_solve_check": {
+        "iterations": 238,
+        "relative_residual": 9.593765650660028e-11,
+        "charge_energy_relative_error": 6.321503216115763e-16
+      },
+      "seconds": 0.025403199950233102
+    },
+    {
+      "name": "uniform-y0p08-z0p02-phase0p25",
+      "kind": "uniform",
+      "dy_mm": 0.08,
+      "dz_mm": 0.02,
+      "phase": 0.25,
+      "grid_nodes": [
+        49,
+        49
+      ],
+      "nodes": 2401,
+      "min_spacing_mm": [
+        0.07999999999999996,
+        0.018333333332999996
+      ],
+      "capacitance_pf_per_m": 70.79351602172088,
+      "vacuum_capacitance_pf_per_m": 25.55700883901034,
+      "quasistatic_differential_estimate_ohm": 78.4201275331062,
+      "capacitance_reference_difference_percent": 12.346419583458768,
+      "impedance_reference_difference_percent": -9.666272161647438,
+      "solve_check": {
+        "iterations": 263,
+        "relative_residual": 9.55098869497515e-11,
+        "charge_energy_relative_error": 1.825689384770139e-15
+      },
+      "air_solve_check": {
+        "iterations": 304,
+        "relative_residual": 9.902343095211349e-11,
+        "charge_energy_relative_error": 5.057202567231866e-16
+      },
+      "seconds": 0.031626999960280955
+    },
+    {
+      "name": "uniform-y0p08-z0p02-phase0p5",
+      "kind": "uniform",
+      "dy_mm": 0.08,
+      "dz_mm": 0.02,
+      "phase": 0.5,
+      "grid_nodes": [
+        49,
+        49
+      ],
+      "nodes": 2401,
+      "min_spacing_mm": [
+        0.06461674214400004,
+        0.018333333332999996
+      ],
+      "capacitance_pf_per_m": 67.1035330412772,
+      "vacuum_capacitance_pf_per_m": 23.19696036666283,
+      "quasistatic_differential_estimate_ohm": 84.54561030770277,
+      "capacitance_reference_difference_percent": 6.490567247355661,
+      "impedance_reference_difference_percent": -2.6102049089472446,
+      "solve_check": {
+        "iterations": 252,
+        "relative_residual": 9.948833777464841e-11,
+        "charge_energy_relative_error": 5.778248842661113e-16
+      },
+      "air_solve_check": {
+        "iterations": 287,
+        "relative_residual": 9.540956004140263e-11,
+        "charge_energy_relative_error": 6.964650145345981e-16
+      },
+      "seconds": 0.02996079996228218
+    },
+    {
+      "name": "uniform-y0p08-z0p02-phase0p75",
+      "kind": "uniform",
+      "dy_mm": 0.08,
+      "dz_mm": 0.02,
+      "phase": 0.75,
+      "grid_nodes": [
+        49,
+        49
+      ],
+      "nodes": 2401,
+      "min_spacing_mm": [
+        0.04461674214400002,
+        0.018333333332999996
+      ],
+      "capacitance_pf_per_m": 70.79382482715688,
+      "vacuum_capacitance_pf_per_m": 25.557296954624814,
+      "quasistatic_differential_estimate_ohm": 78.41951446916609,
+      "capacitance_reference_difference_percent": 12.346909645077876,
+      "impedance_reference_difference_percent": -9.666978362374923,
+      "solve_check": {
+        "iterations": 265,
+        "relative_residual": 9.43121681502716e-11,
+        "charge_energy_relative_error": 5.47704426312466e-16
+      },
+      "air_solve_check": {
+        "iterations": 307,
+        "relative_residual": 9.026390684176818e-11,
+        "charge_energy_relative_error": 6.321431944704456e-16
+      },
+      "seconds": 0.03174520004540682
+    },
+    {
+      "name": "uniform-y0p06-z0p02-phase0",
+      "kind": "uniform",
+      "dy_mm": 0.06,
+      "dz_mm": 0.02,
+      "phase": 0,
+      "grid_nodes": [
+        55,
+        49
+      ],
+      "nodes": 2695,
+      "min_spacing_mm": [
+        0.05999999999999994,
+        0.018333333332999996
+      ],
+      "capacitance_pf_per_m": 75.66745480455671,
+      "vacuum_capacitance_pf_per_m": 28.10731779109056,
+      "quasistatic_differential_estimate_ohm": 72.32942824510842,
+      "capacitance_reference_difference_percent": 20.081161439655904,
+      "impedance_reference_difference_percent": -16.68227161401974,
+      "solve_check": {
+        "iterations": 218,
+        "relative_residual": 8.556920905637218e-11,
+        "charge_energy_relative_error": 8.540459768684283e-16
+      },
+      "air_solve_check": {
+        "iterations": 242,
+        "relative_residual": 8.456344890777848e-11,
+        "charge_energy_relative_error": 1.149584706659374e-16
+      },
+      "seconds": 0.026519899955019355
+    },
+    {
+      "name": "uniform-y0p06-z0p02-phase0p25",
+      "kind": "uniform",
+      "dy_mm": 0.06,
+      "dz_mm": 0.02,
+      "phase": 0.25,
+      "grid_nodes": [
+        55,
+        49
+      ],
+      "nodes": 2695,
+      "min_spacing_mm": [
+        0.05999999999999994,
+        0.018333333332999996
+      ],
+      "capacitance_pf_per_m": 70.78468037999508,
+      "vacuum_capacitance_pf_per_m": 25.1322402009868,
+      "quasistatic_differential_estimate_ohm": 79.08498898316813,
+      "capacitance_reference_difference_percent": 12.33239778077968,
+      "impedance_reference_difference_percent": -8.900404836900332,
+      "solve_check": {
+        "iterations": 269,
+        "relative_residual": 9.073049689373287e-11,
+        "charge_energy_relative_error": 3.651834550006329e-16
+      },
+      "air_solve_check": {
+        "iterations": 311,
+        "relative_residual": 9.808066010302512e-11,
+        "charge_energy_relative_error": 7.714014131517956e-16
+      },
+      "seconds": 0.03312579996418208
+    },
+    {
+      "name": "uniform-y0p06-z0p02-phase0p5",
+      "kind": "uniform",
+      "dy_mm": 0.06,
+      "dz_mm": 0.02,
+      "phase": 0.5,
+      "grid_nodes": [
+        55,
+        49
+      ],
+      "nodes": 2695,
+      "min_spacing_mm": [
+        0.05999999999999994,
+        0.018333333332999996
+      ],
+      "capacitance_pf_per_m": 70.78468037176503,
+      "vacuum_capacitance_pf_per_m": 25.132240184627694,
+      "quasistatic_differential_estimate_ohm": 79.08498901350471,
+      "capacitance_reference_difference_percent": 12.332397767718927,
+      "impedance_reference_difference_percent": -8.900404801955009,
+      "solve_check": {
+        "iterations": 255,
+        "relative_residual": 9.78065252276652e-11,
+        "charge_energy_relative_error": 9.129586376077308e-16
+      },
+      "air_solve_check": {
+        "iterations": 300,
+        "relative_residual": 9.774038220319171e-11,
+        "charge_energy_relative_error": 5.142676091026115e-16
+      },
+      "seconds": 0.0316471999976784
+    },
+    {
+      "name": "uniform-y0p06-z0p02-phase0p75",
+      "kind": "uniform",
+      "dy_mm": 0.06,
+      "dz_mm": 0.02,
+      "phase": 0.75,
+      "grid_nodes": [
+        55,
+        49
+      ],
+      "nodes": 2695,
+      "min_spacing_mm": [
+        0.05999999999999994,
+        0.018333333332999996
+      ],
+      "capacitance_pf_per_m": 70.78468038448794,
+      "vacuum_capacitance_pf_per_m": 25.132240209176732,
+      "quasistatic_differential_estimate_ohm": 79.08498896777242,
+      "capacitance_reference_difference_percent": 12.332397787909667,
+      "impedance_reference_difference_percent": -8.900404854634958,
+      "solve_check": {
+        "iterations": 268,
+        "relative_residual": 8.965953992366995e-11,
+        "charge_energy_relative_error": 0.0
+      },
+      "air_solve_check": {
+        "iterations": 311,
+        "relative_residual": 9.692863949754281e-11,
+        "charge_energy_relative_error": 2.571338043001388e-16
+      },
+      "seconds": 0.03302049997728318
+    },
+    {
+      "name": "uniform-y0p04-z0p02-phase0",
+      "kind": "uniform",
+      "dy_mm": 0.04,
+      "dz_mm": 0.02,
+      "phase": 0,
+      "grid_nodes": [
+        69,
+        49
+      ],
+      "nodes": 3381,
+      "min_spacing_mm": [
+        0.039999999999999925,
+        0.018333333332999996
+      ],
+      "capacitance_pf_per_m": 65.69252630314715,
+      "vacuum_capacitance_pf_per_m": 24.20370301495748,
+      "quasistatic_differential_estimate_ohm": 83.65278564057807,
+      "capacitance_reference_difference_percent": 4.251357162234171,
+      "impedance_reference_difference_percent": -3.63866766493246,
+      "solve_check": {
+        "iterations": 235,
+        "relative_residual": 8.77774271833166e-11,
+        "charge_energy_relative_error": 3.934906388437027e-16
+      },
+      "air_solve_check": {
+        "iterations": 255,
+        "relative_residual": 8.875759363781203e-11,
+        "charge_energy_relative_error": 4.00497510540654e-16
+      },
+      "seconds": 0.030113699962385
+    },
+    {
+      "name": "uniform-y0p04-z0p02-phase0p25",
+      "kind": "uniform",
+      "dy_mm": 0.04,
+      "dz_mm": 0.02,
+      "phase": 0.25,
+      "grid_nodes": [
+        69,
+        49
+      ],
+      "nodes": 3381,
+      "min_spacing_mm": [
+        0.033703379013000134,
+        0.018333333332999996
+      ],
+      "capacitance_pf_per_m": 69.57562993836201,
+      "vacuum_capacitance_pf_per_m": 25.250665201271406,
+      "quasistatic_differential_estimate_ohm": 79.58190148051246,
+      "capacitance_reference_difference_percent": 10.41368409276906,
+      "impedance_reference_difference_percent": -8.328001300886845,
+      "solve_check": {
+        "iterations": 301,
+        "relative_residual": 9.501061876713017e-11,
+        "charge_energy_relative_error": 1.857647150674916e-16
+      },
+      "air_solve_check": {
+        "iterations": 340,
+        "relative_residual": 9.165942274631042e-11,
+        "charge_energy_relative_error": 3.838917797249837e-16
+      },
+      "seconds": 0.039297500043176115
+    },
+    {
+      "name": "uniform-y0p04-z0p02-phase0p5",
+      "kind": "uniform",
+      "dy_mm": 0.04,
+      "dz_mm": 0.02,
+      "phase": 0.5,
+      "grid_nodes": [
+        69,
+        49
+      ],
+      "nodes": 3381,
+      "min_spacing_mm": [
+        0.023703379012999903,
+        0.018333333332999996
+      ],
+      "capacitance_pf_per_m": 63.803916226769665,
+      "vacuum_capacitance_pf_per_m": 22.94882517962982,
+      "quasistatic_differential_estimate_ohm": 87.17167684535762,
+      "capacitance_reference_difference_percent": 1.2542100788042188,
+      "impedance_reference_difference_percent": 0.4148141436903785,
+      "solve_check": {
+        "iterations": 286,
+        "relative_residual": 9.643849563671833e-11,
+        "charge_energy_relative_error": 4.0513804905656724e-16
+      },
+      "air_solve_check": {
+        "iterations": 323,
+        "relative_residual": 9.6817113912957e-11,
+        "charge_energy_relative_error": 2.8159822932054646e-16
+      },
+      "seconds": 0.03717560006771237
+    },
+    {
+      "name": "uniform-y0p04-z0p02-phase0p75",
+      "kind": "uniform",
+      "dy_mm": 0.04,
+      "dz_mm": 0.02,
+      "phase": 0.75,
+      "grid_nodes": [
+        69,
+        49
+      ],
+      "nodes": 3381,
+      "min_spacing_mm": [
+        0.013703379013000117,
+        0.018333333332999996
+      ],
+      "capacitance_pf_per_m": 69.5756140544609,
+      "vacuum_capacitance_pf_per_m": 25.250649668630725,
+      "quasistatic_differential_estimate_ohm": 79.58193504160019,
+      "capacitance_reference_difference_percent": 10.4136588856665,
+      "impedance_reference_difference_percent": -8.327962641192443,
+      "solve_check": {
+        "iterations": 302,
+        "relative_residual": 9.554418009174968e-11,
+        "charge_energy_relative_error": 1.114588544862067e-15
+      },
+      "air_solve_check": {
+        "iterations": 342,
+        "relative_residual": 9.611290054963533e-11,
+        "charge_energy_relative_error": 5.118560211620063e-16
+      },
+      "seconds": 0.039475099998526275
+    },
+    {
+      "name": "uniform-y0p03-z0p02-phase0",
+      "kind": "uniform",
+      "dy_mm": 0.03,
+      "dz_mm": 0.02,
+      "phase": 0,
+      "grid_nodes": [
+        81,
+        49
+      ],
+      "nodes": 3969,
+      "min_spacing_mm": [
+        0.029999999999999916,
+        0.018333333332999996
+      ],
+      "capacitance_pf_per_m": 67.52871155698807,
+      "vacuum_capacitance_pf_per_m": 24.317995016235738,
+      "quasistatic_differential_estimate_ohm": 82.3135216685569,
+      "capacitance_reference_difference_percent": 7.165308192688413,
+      "impedance_reference_difference_percent": -5.1813928677344805,
+      "solve_check": {
+        "iterations": 254,
+        "relative_residual": 9.460469217936718e-11,
+        "charge_energy_relative_error": 7.655823292428017e-16
+      },
+      "air_solve_check": {
+        "iterations": 281,
+        "relative_residual": 8.982981167835445e-11,
+        "charge_energy_relative_error": 2.657434764361119e-16
+      },
+      "seconds": 0.03535440005362034
+    },
+    {
+      "name": "uniform-y0p03-z0p02-phase0p25",
+      "kind": "uniform",
+      "dy_mm": 0.03,
+      "dz_mm": 0.02,
+      "phase": 0.25,
+      "grid_nodes": [
+        81,
+        49
+      ],
+      "nodes": 3969,
+      "min_spacing_mm": [
+        0.02999999999999997,
+        0.018333333332999996
+      ],
+      "capacitance_pf_per_m": 64.60314429758466,
+      "vacuum_capacitance_pf_per_m": 23.522681473274194,
+      "quasistatic_differential_estimate_ohm": 85.56754170403093,
+      "capacitance_reference_difference_percent": 2.5225523964694574,
+      "impedance_reference_difference_percent": -1.4330215055358808,
+      "solve_check": {
+        "iterations": 325,
+        "relative_residual": 9.849846103506609e-11,
+        "charge_energy_relative_error": 2.0006297234706385e-16
+      },
+      "air_solve_check": {
+        "iterations": 368,
+        "relative_residual": 9.972094202030336e-11,
+        "charge_energy_relative_error": 0.0
+      },
+      "seconds": 0.04498450004030019
+    },
+    {
+      "name": "uniform-y0p03-z0p02-phase0p5",
+      "kind": "uniform",
+      "dy_mm": 0.03,
+      "dz_mm": 0.02,
+      "phase": 0.5,
+      "grid_nodes": [
+        81,
+        49
+      ],
+      "nodes": 3969,
+      "min_spacing_mm": [
+        0.029999999999999916,
+        0.018333333332999996
+      ],
+      "capacitance_pf_per_m": 69.18653900313346,
+      "vacuum_capacitance_pf_per_m": 25.41194339553804,
+      "quasistatic_differential_estimate_ohm": 79.5517164148412,
+      "capacitance_reference_difference_percent": 9.796212664285475,
+      "impedance_reference_difference_percent": -8.362772087327864,
+      "solve_check": {
+        "iterations": 324,
+        "relative_residual": 9.35956728211112e-11,
+        "charge_energy_relative_error": 9.340470890266456e-16
+      },
+      "air_solve_check": {
+        "iterations": 351,
+        "relative_residual": 9.33358922361599e-11,
+        "charge_energy_relative_error": 8.90062578939487e-16
+      },
+      "seconds": 0.04386850004084408
+    },
+    {
+      "name": "uniform-y0p03-z0p02-phase0p75",
+      "kind": "uniform",
+      "dy_mm": 0.03,
+      "dz_mm": 0.02,
+      "phase": 0.75,
+      "grid_nodes": [
+        81,
+        49
+      ],
+      "nodes": 3969,
+      "min_spacing_mm": [
+        0.02999999999999997,
+        0.018333333332999996
+      ],
+      "capacitance_pf_per_m": 64.6031369902956,
+      "vacuum_capacitance_pf_per_m": 23.522674024082193,
+      "quasistatic_differential_estimate_ohm": 85.56756009214352,
+      "capacitance_reference_difference_percent": 2.522540800100037,
+      "impedance_reference_difference_percent": -1.433000323897815,
+      "solve_check": {
+        "iterations": 327,
+        "relative_residual": 9.888789863710403e-11,
+        "charge_energy_relative_error": 4.001259899525483e-16
+      },
+      "air_solve_check": {
+        "iterations": 369,
+        "relative_residual": 9.411231234298187e-11,
+        "charge_energy_relative_error": 2.7472848235512955e-16
+      },
+      "seconds": 0.045170499943196774
+    },
+    {
+      "name": "uniform-y0p02-z0p02-phase0",
+      "kind": "uniform",
+      "dy_mm": 0.02,
+      "dz_mm": 0.02,
+      "phase": 0,
+      "grid_nodes": [
+        105,
+        49
+      ],
+      "nodes": 5145,
+      "min_spacing_mm": [
+        0.019999999999999907,
+        0.018333333332999996
+      ],
+      "capacitance_pf_per_m": 67.67323765102724,
+      "vacuum_capacitance_pf_per_m": 24.789095615669293,
+      "quasistatic_differential_estimate_ohm": 81.44050883052549,
+      "capacitance_reference_difference_percent": 7.394665203247142,
+      "impedance_reference_difference_percent": -6.18703397787963,
+      "solve_check": {
+        "iterations": 288,
+        "relative_residual": 9.854394498588138e-11,
+        "charge_energy_relative_error": 7.639473162369005e-16
+      },
+      "air_solve_check": {
+        "iterations": 332,
+        "relative_residual": 9.537230069302034e-11,
+        "charge_energy_relative_error": 1.1731193772025079e-15
+      },
+      "seconds": 0.04538019991014153
+    },
+    {
+      "name": "uniform-y0p02-z0p02-phase0p25",
+      "kind": "uniform",
+      "dy_mm": 0.02,
+      "dz_mm": 0.02,
+      "phase": 0.25,
+      "grid_nodes": [
+        105,
+        49
+      ],
+      "nodes": 5145,
+      "min_spacing_mm": [
+        0.019999999999999907,
+        0.018333333332999996
+      ],
+      "capacitance_pf_per_m": 67.67323765198279,
+      "vacuum_capacitance_pf_per_m": 24.789095617585648,
+      "quasistatic_differential_estimate_ohm": 81.44050882680258,
+      "capacitance_reference_difference_percent": 7.394665204763551,
+      "impedance_reference_difference_percent": -6.187033982168122,
+      "solve_check": {
+        "iterations": 368,
+        "relative_residual": 9.811160307102204e-11,
+        "charge_energy_relative_error": 3.819736581130568e-16
+      },
+      "air_solve_check": {
+        "iterations": 410,
+        "relative_residual": 9.390869513392767e-11,
+        "charge_energy_relative_error": 6.517329872843435e-16
+      },
+      "seconds": 0.05839010002091527
+    },
+    {
+      "name": "uniform-y0p02-z0p02-phase0p5",
+      "kind": "uniform",
+      "dy_mm": 0.02,
+      "dz_mm": 0.02,
+      "phase": 0.5,
+      "grid_nodes": [
+        105,
+        49
+      ],
+      "nodes": 5145,
+      "min_spacing_mm": [
+        0.019999999999999907,
+        0.018333333332999996
+      ],
+      "capacitance_pf_per_m": 62.78820350192944,
+      "vacuum_capacitance_pf_per_m": 23.064059944510426,
+      "quasistatic_differential_estimate_ohm": 87.65413117968549,
+      "capacitance_reference_difference_percent": -0.3576845462084255,
+      "impedance_reference_difference_percent": 0.9705630298830092,
+      "solve_check": {
+        "iterations": 402,
+        "relative_residual": 9.262035357717285e-11,
+        "charge_energy_relative_error": 4.116918895678833e-16
+      },
+      "air_solve_check": {
+        "iterations": 427,
+        "relative_residual": 9.480837727162611e-11,
+        "charge_energy_relative_error": 2.801912825026567e-16
+      },
+      "seconds": 0.060811799950897694
+    },
+    {
+      "name": "uniform-y0p02-z0p02-phase0p75",
+      "kind": "uniform",
+      "dy_mm": 0.02,
+      "dz_mm": 0.02,
+      "phase": 0.75,
+      "grid_nodes": [
+        105,
+        49
+      ],
+      "nodes": 5145,
+      "min_spacing_mm": [
+        0.019999999999999907,
+        0.018333333332999996
+      ],
+      "capacitance_pf_per_m": 67.67324667763889,
+      "vacuum_capacitance_pf_per_m": 24.789104553635347,
+      "quasistatic_differential_estimate_ohm": 81.44048871693877,
+      "capacitance_reference_difference_percent": 7.394679528111281,
+      "impedance_reference_difference_percent": -6.187057147126163,
+      "solve_check": {
+        "iterations": 407,
+        "relative_residual": 9.656160170981368e-11,
+        "charge_energy_relative_error": 0.0
+      },
+      "air_solve_check": {
+        "iterations": 438,
+        "relative_residual": 9.730289126778684e-11,
+        "charge_energy_relative_error": 6.517327523457094e-16
+      },
+      "seconds": 0.06181410001590848
+    },
+    {
+      "name": "edge-y0p08-z0p02-phase0",
+      "kind": "edge",
+      "dy_mm": 0.08,
+      "dz_mm": 0.02,
+      "phase": 0,
+      "grid_nodes": [
+        50,
+        49
+      ],
+      "nodes": 2450,
+      "min_spacing_mm": [
+        0.058333333332999976,
+        0.018333333332999996
+      ],
+      "capacitance_pf_per_m": 58.95731005707706,
+      "vacuum_capacitance_pf_per_m": 21.175480024284095,
+      "quasistatic_differential_estimate_ohm": 94.4047474547156,
+      "capacitance_reference_difference_percent": -6.437156036264879,
+      "impedance_reference_difference_percent": 8.746734180233195,
+      "solve_check": {
+        "iterations": 217,
+        "relative_residual": 9.501740268978883e-11,
+        "charge_energy_relative_error": 6.576638448376572e-16
+      },
+      "air_solve_check": {
+        "iterations": 239,
+        "relative_residual": 9.267125857083517e-11,
+        "charge_energy_relative_error": 1.0681325688276355e-15
+      },
+      "seconds": 0.025759799988009036
+    },
+    {
+      "name": "edge-y0p06-z0p02-phase0",
+      "kind": "edge",
+      "dy_mm": 0.06,
+      "dz_mm": 0.02,
+      "phase": 0,
+      "grid_nodes": [
+        59,
+        49
+      ],
+      "nodes": 2891,
+      "min_spacing_mm": [
+        0.04333333333299999,
+        0.018333333332999996
+      ],
+      "capacitance_pf_per_m": 59.52498982202369,
+      "vacuum_capacitance_pf_per_m": 21.56233085278126,
+      "quasistatic_differential_estimate_ohm": 93.1068812083646,
+      "capacitance_reference_difference_percent": -5.536271426406458,
+      "impedance_reference_difference_percent": 7.251695853255713,
+      "solve_check": {
+        "iterations": 220,
+        "relative_residual": 9.59999609113323e-11,
+        "charge_energy_relative_error": 6.513918159306786e-16
+      },
+      "air_solve_check": {
+        "iterations": 247,
+        "relative_residual": 9.208612426235137e-11,
+        "charge_energy_relative_error": 1.4985273576620244e-16
+      },
+      "seconds": 0.02761839993763715
+    },
+    {
+      "name": "edge-y0p04-z0p02-phase0",
+      "kind": "edge",
+      "dy_mm": 0.04,
+      "dz_mm": 0.02,
+      "phase": 0,
+      "grid_nodes": [
+        70,
+        49
+      ],
+      "nodes": 3430,
+      "min_spacing_mm": [
+        0.035833333332999984,
+        0.018333333332999996
+      ],
+      "capacitance_pf_per_m": 60.629664256513365,
+      "vacuum_capacitance_pf_per_m": 22.13340784339613,
+      "quasistatic_differential_estimate_ohm": 91.05683946415868,
+      "capacitance_reference_difference_percent": -3.783198200290405,
+      "impedance_reference_difference_percent": 4.8902113874190745,
+      "solve_check": {
+        "iterations": 236,
+        "relative_residual": 9.301266724416317e-11,
+        "charge_energy_relative_error": 1.4922213508425955e-15
+      },
+      "air_solve_check": {
+        "iterations": 255,
+        "relative_residual": 9.031369618410784e-11,
+        "charge_energy_relative_error": 1.1678903820495364e-15
+      },
+      "seconds": 0.030603299965150654
+    },
+    {
+      "name": "edge-y0p03-z0p02-phase0",
+      "kind": "edge",
+      "dy_mm": 0.03,
+      "dz_mm": 0.02,
+      "phase": 0,
+      "grid_nodes": [
+        82,
+        49
+      ],
+      "nodes": 4018,
+      "min_spacing_mm": [
+        0.026,
+        0.018333333332999996
+      ],
+      "capacitance_pf_per_m": 61.22380209620198,
+      "vacuum_capacitance_pf_per_m": 22.43223167117359,
+      "quasistatic_differential_estimate_ohm": 90.0083723041604,
+      "capacitance_reference_difference_percent": -2.840325706041258,
+      "impedance_reference_difference_percent": 3.68246090220401,
+      "solve_check": {
+        "iterations": 255,
+        "relative_residual": 9.546987705613374e-11,
+        "charge_energy_relative_error": 2.1110575672566473e-16
+      },
+      "air_solve_check": {
+        "iterations": 283,
+        "relative_residual": 8.969416057476898e-11,
+        "charge_energy_relative_error": 1.440415877987506e-16
+      },
+      "seconds": 0.03521330002695322
+    },
+    {
+      "name": "edge-y0p02-z0p02-phase0",
+      "kind": "edge",
+      "dy_mm": 0.02,
+      "dz_mm": 0.02,
+      "phase": 0,
+      "grid_nodes": [
+        107,
+        49
+      ],
+      "nodes": 5243,
+      "min_spacing_mm": [
+        0.017916666665999996,
+        0.018333333332999996
+      ],
+      "capacitance_pf_per_m": 61.97050528261902,
+      "vacuum_capacitance_pf_per_m": 22.781565620077686,
+      "quasistatic_differential_estimate_ohm": 88.77588185130845,
+      "capacitance_reference_difference_percent": -1.6553382354404844,
+      "impedance_reference_difference_percent": 2.2627302713874142,
+      "solve_check": {
+        "iterations": 306,
+        "relative_residual": 9.369069645973711e-11,
+        "charge_energy_relative_error": 8.34248293584017e-16
+      },
+      "air_solve_check": {
+        "iterations": 337,
+        "relative_residual": 9.63616427640909e-11,
+        "charge_energy_relative_error": 1.1346627608201216e-15
+      },
+      "seconds": 0.04752989998087287
+    },
+    {
+      "name": "edge-y0p04-z0p01-phase0",
+      "kind": "edge",
+      "dy_mm": 0.04,
+      "dz_mm": 0.01,
+      "phase": 0,
+      "grid_nodes": [
+        70,
+        77
+      ],
+      "nodes": 5390,
+      "min_spacing_mm": [
+        0.035833333332999984,
+        0.009333333332999988
+      ],
+      "capacitance_pf_per_m": 60.32384624230632,
+      "vacuum_capacitance_pf_per_m": 22.04941677121904,
+      "quasistatic_differential_estimate_ohm": 91.46106027530865,
+      "capacitance_reference_difference_percent": -4.2685189029624375,
+      "impedance_reference_difference_percent": 5.355841499096758,
+      "solve_check": {
+        "iterations": 418,
+        "relative_residual": 9.74861475338217e-11,
+        "charge_energy_relative_error": 4.2851037777749357e-16
+      },
+      "air_solve_check": {
+        "iterations": 462,
+        "relative_residual": 9.201517453910274e-11,
+        "charge_energy_relative_error": 4.396271749014552e-16
+      },
+      "seconds": 0.06345849996432662
+    },
+    {
+      "name": "edge-y0p03-z0p01-phase0",
+      "kind": "edge",
+      "dy_mm": 0.03,
+      "dz_mm": 0.01,
+      "phase": 0,
+      "grid_nodes": [
+        82,
+        77
+      ],
+      "nodes": 6314,
+      "min_spacing_mm": [
+        0.026,
+        0.009333333332999988
+      ],
+      "capacitance_pf_per_m": 60.85334985442596,
+      "vacuum_capacitance_pf_per_m": 22.333704979332353,
+      "quasistatic_differential_estimate_ohm": 90.48084846954977,
+      "capacitance_reference_difference_percent": -3.4282182889923907,
+      "impedance_reference_difference_percent": 4.226715734184161,
+      "solve_check": {
+        "iterations": 419,
+        "relative_residual": 9.610970638622597e-11,
+        "charge_energy_relative_error": 2.1239088894957564e-16
+      },
+      "air_solve_check": {
+        "iterations": 464,
+        "relative_residual": 9.335222940300605e-11,
+        "charge_energy_relative_error": 1.012739260925484e-15
+      },
+      "seconds": 0.06881309999153018
+    },
+    {
+      "name": "edge-y0p02-z0p01-phase0",
+      "kind": "edge",
+      "dy_mm": 0.02,
+      "dz_mm": 0.01,
+      "phase": 0,
+      "grid_nodes": [
+        107,
+        77
+      ],
+      "nodes": 8239,
+      "min_spacing_mm": [
+        0.017916666665999996,
+        0.009333333332999988
+      ],
+      "capacitance_pf_per_m": 61.49110658360334,
+      "vacuum_capacitance_pf_per_m": 22.659767333516466,
+      "quasistatic_differential_estimate_ohm": 89.36046491700561,
+      "capacitance_reference_difference_percent": -2.4161243979875624,
+      "impedance_reference_difference_percent": 2.9361233047423108,
+      "solve_check": {
+        "iterations": 448,
+        "relative_residual": 9.870853058073052e-11,
+        "charge_energy_relative_error": 8.407522836538083e-16
+      },
+      "air_solve_check": {
+        "iterations": 493,
+        "relative_residual": 9.50080727328119e-11,
+        "charge_energy_relative_error": 5.703808375836192e-16
+      },
+      "seconds": 0.08268729993142188
+    },
+    {
+      "name": "edge-y0p01-z0p005-phase0",
+      "kind": "edge",
+      "dy_mm": 0.01,
+      "dz_mm": 0.005,
+      "phase": 0,
+      "grid_nodes": [
+        173,
+        131
+      ],
+      "nodes": 22663,
+      "min_spacing_mm": [
+        0.009607843137,
+        0.004666666665999991
+      ],
+      "capacitance_pf_per_m": 62.04609835261616,
+      "vacuum_capacitance_pf_per_m": 22.988429242614487,
+      "quasistatic_differential_estimate_ohm": 88.32169797659985,
+      "capacitance_reference_difference_percent": -1.5353751196532262,
+      "impedance_reference_difference_percent": 1.7395466982776275,
+      "solve_check": {
+        "iterations": 822,
+        "relative_residual": 9.74244675957364e-11,
+        "charge_energy_relative_error": 6.249239233878155e-16
+      },
+      "air_solve_check": {
+        "iterations": 939,
+        "relative_residual": 9.680792711256448e-11,
+        "charge_energy_relative_error": 4.357253000812299e-15
+      },
+      "seconds": 0.47856060008052737
+    }
+  ],
+  "reference": {
+    "name": "aligned-reference-0p0025",
+    "grid_nodes": [
+      465,
+      234
+    ],
+    "capacitance_pf_per_m": 63.01359338748709,
+    "vacuum_capacitance_pf_per_m": 23.42982932805793,
+    "quasistatic_differential_estimate_ohm": 86.81157017391652,
+    "sampled_electrode_node_extent_mm": [
+      0.16999999999999998,
+      0.16999999999999998
+    ],
+    "solve_check": {
+      "iterations": 1994,
+      "relative_residual": 9.807457160968089e-11,
+      "charge_energy_relative_error": 1.2306579939027165e-15
+    },
+    "air_solve_check": {
+      "iterations": 2076,
+      "relative_residual": 9.983362457139312e-11,
+      "charge_energy_relative_error": 9.929417070142296e-15
+    },
+    "seconds": 9.163548600045033,
+    "kind": "aligned_reference",
+    "step_mm": 0.0025,
+    "extent_mm": 4
+  },
+  "physical_section": {
+    "width_mm": 0.17,
+    "gap_mm": 0.17,
+    "copper_thickness_mm": 0.056,
+    "reference_spacing_mm": 0.11,
+    "epsilon_r": 4.5
+  },
+  "strips_mm": [
+    [
+      -0.255,
+      -0.085
+    ],
+    [
+      0.085,
+      0.255
+    ]
+  ],
+  "source": "https://docs.openems.de/python/openEMS/Tutorials/CRLH_Extraction.html",
+  "scope": "Transverse static grid selection only. Actual Gerber width/gap and manufacturing thickness; ideal plane, lossless assumed Dk4.5. Not full-route S parameters. No criterion or frozen reference changed."
+}

@@ -1,0 +1,901 @@
+{
+  "updated": "2026-09-08T18:44:52",
+  "cases": [
+    {
+      "name": "rx-bend-pilot-40-air",
+      "cells": 354858,
+      "status": "계산 완료",
+      "simulated_ns": 1.983660864,
+      "runtime": {
+        "pid": 20956,
+        "identity_matches": false,
+        "observed_alive": null,
+        "query_error": 87
+      },
+      "completion": {
+        "elapsed_seconds": 363.9050825999584,
+        "time_ns": 2.0
+      },
+      "analysis": {
+        "case": "rx-bend-pilot-40-air",
+        "cells": 354858,
+        "record_ns": 1.99917630312,
+        "windows": [
+          {
+            "samples": 259,
+            "end_ns": 0.799680107247,
+            "rl100_db": 59.666361248105474,
+            "il100_db": 0.0011609556613607348,
+            "max_port_power_ratio": 0.9997338320375837,
+            "max_undriven_incident_ratio": 6.130891661001988e-07
+          },
+          {
+            "samples": 323,
+            "end_ns": 0.9980464032049999,
+            "rl100_db": 59.64951976667664,
+            "il100_db": 0.0010942538962467122,
+            "max_port_power_ratio": 0.9997499966732137,
+            "max_undriven_incident_ratio": 6.139524584532278e-07
+          },
+          {
+            "samples": 388,
+            "end_ns": 1.19951217254,
+            "rl100_db": 59.60589482712432,
+            "il100_db": 0.0009892140137039455,
+            "max_port_power_ratio": 0.9997764727205599,
+            "max_undriven_incident_ratio": 6.156826113909692e-07
+          },
+          {
+            "samples": 484,
+            "end_ns": 1.4970616164700001,
+            "rl100_db": 59.53465897632747,
+            "il100_db": 0.0009068950841102448,
+            "max_port_power_ratio": 0.9997990535417108,
+            "max_undriven_incident_ratio": 6.19138069670186e-07
+          },
+          {
+            "samples": 581,
+            "end_ns": 1.79771053378,
+            "rl100_db": 59.42844003862736,
+            "il100_db": 0.0008216083899386153,
+            "max_port_power_ratio": 0.9998265857152452,
+            "max_undriven_incident_ratio": 6.194880828569e-07
+          },
+          {
+            "samples": 646,
+            "end_ns": 1.99917630312,
+            "rl100_db": 59.32848047315271,
+            "il100_db": 0.0007565569223210709,
+            "max_port_power_ratio": 0.9998515539941716,
+            "max_undriven_incident_ratio": 6.19351645031059e-07
+          }
+        ],
+        "time_comparisons": [
+          {
+            "a": 0,
+            "b": 1,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 1.5478433419170698e-05,
+            "max_il_delta": 7.024527590803993e-05,
+            "max_gamma_delta_all": 1.5478433419170698e-05,
+            "max_transfer_complex_delta": 8.088551248351397e-06,
+            "passed": true
+          },
+          {
+            "a": 0,
+            "b": 2,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 3.595459462995364e-05,
+            "max_il_delta": 0.00018528643823129189,
+            "max_gamma_delta_all": 3.595459462995364e-05,
+            "max_transfer_complex_delta": 2.1329433179019454e-05,
+            "passed": true
+          },
+          {
+            "a": 0,
+            "b": 3,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 5.655947189461276e-05,
+            "max_il_delta": 0.0002834009394670576,
+            "max_gamma_delta_all": 5.655947189461276e-05,
+            "max_transfer_complex_delta": 3.262425615446825e-05,
+            "passed": true
+          },
+          {
+            "a": 0,
+            "b": 4,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 7.815096398937421e-05,
+            "max_il_delta": 0.0004030177609700078,
+            "max_gamma_delta_all": 7.815096398937421e-05,
+            "max_transfer_complex_delta": 4.63947254630424e-05,
+            "passed": true
+          },
+          {
+            "a": 0,
+            "b": 5,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 9.515858408015041e-05,
+            "max_il_delta": 0.0005114869057463702,
+            "max_gamma_delta_all": 9.515858408015041e-05,
+            "max_transfer_complex_delta": 5.8882157842881265e-05,
+            "passed": true
+          },
+          {
+            "a": 1,
+            "b": 2,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 2.0477502652720903e-05,
+            "max_il_delta": 0.00011504116232332421,
+            "max_gamma_delta_all": 2.0477502652720903e-05,
+            "max_transfer_complex_delta": 1.3243151894550108e-05,
+            "passed": true
+          },
+          {
+            "a": 1,
+            "b": 3,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 4.108239450891767e-05,
+            "max_il_delta": 0.00021315566355840725,
+            "max_gamma_delta_all": 4.108239450891767e-05,
+            "max_transfer_complex_delta": 2.45379812489993e-05,
+            "passed": true
+          },
+          {
+            "a": 1,
+            "b": 4,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 6.267391633068077e-05,
+            "max_il_delta": 0.0003327724850621469,
+            "max_gamma_delta_all": 6.267391633068077e-05,
+            "max_transfer_complex_delta": 3.8308466654626657e-05,
+            "passed": true
+          },
+          {
+            "a": 1,
+            "b": 5,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 7.968156808404198e-05,
+            "max_il_delta": 0.0004412416298374529,
+            "max_gamma_delta_all": 7.968156808404198e-05,
+            "max_transfer_complex_delta": 5.079591819058779e-05,
+            "passed": true
+          },
+          {
+            "a": 2,
+            "b": 3,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 2.060490412922383e-05,
+            "max_il_delta": 9.811450123514679e-05,
+            "max_gamma_delta_all": 2.060490412922383e-05,
+            "max_transfer_complex_delta": 1.1294836577930057e-05,
+            "passed": true
+          },
+          {
+            "a": 2,
+            "b": 4,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 4.2196458598655504e-05,
+            "max_il_delta": 0.0002177313227385004,
+            "max_gamma_delta_all": 4.2196458598655504e-05,
+            "max_transfer_complex_delta": 2.506534519628239e-05,
+            "passed": true
+          },
+          {
+            "a": 2,
+            "b": 5,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 5.9204146913177415e-05,
+            "max_il_delta": 0.0003262004675144611,
+            "max_gamma_delta_all": 5.9204146913177415e-05,
+            "max_transfer_complex_delta": 3.755282480266052e-05,
+            "passed": true
+          },
+          {
+            "a": 3,
+            "b": 4,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 2.1591574877662032e-05,
+            "max_il_delta": 0.00011961682150350963,
+            "max_gamma_delta_all": 2.1591574877662032e-05,
+            "max_transfer_complex_delta": 1.3770521306866058e-05,
+            "passed": true
+          },
+          {
+            "a": 3,
+            "b": 5,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 3.859928990210392e-05,
+            "max_il_delta": 0.00022808596627930253,
+            "max_gamma_delta_all": 3.859928990210392e-05,
+            "max_transfer_complex_delta": 2.6258017925725667e-05,
+            "passed": true
+          },
+          {
+            "a": 4,
+            "b": 5,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 1.7007726387219744e-05,
+            "max_il_delta": 0.00010846914477583755,
+            "max_gamma_delta_all": 1.7007726387219744e-05,
+            "max_transfer_complex_delta": 1.2487504129309679e-05,
+            "passed": true
+          }
+        ],
+        "time_pass": true,
+        "native_dft_error": 1.7948143562025294e-15,
+        "native_dft_pass": true,
+        "power_pass": true,
+        "termination_pass": true
+      }
+    },
+    {
+      "name": "rx-bend-pilot-20-air",
+      "cells": 1730883,
+      "status": "계산 완료",
+      "simulated_ns": 1.999294893,
+      "runtime": {
+        "pid": 25512,
+        "identity_matches": false,
+        "observed_alive": null,
+        "query_error": 87
+      },
+      "completion": {
+        "elapsed_seconds": 1901.6268231000286,
+        "time_ns": 2.0
+      },
+      "analysis": {
+        "case": "rx-bend-pilot-20-air",
+        "cells": 1730883,
+        "record_ns": 1.99930476427,
+        "windows": [
+          {
+            "samples": 257,
+            "end_ns": 0.797236035006,
+            "rl100_db": 64.51379057481674,
+            "il100_db": 0.0007777461167302556,
+            "max_port_power_ratio": 0.9998215155942372,
+            "max_undriven_incident_ratio": 5.536533941480437e-07
+          },
+          {
+            "samples": 322,
+            "end_ns": 0.999656935011,
+            "rl100_db": 64.51218009510814,
+            "il100_db": 0.0007845165729933344,
+            "max_port_power_ratio": 0.9998198134921475,
+            "max_undriven_incident_ratio": 5.521599216619605e-07
+          },
+          {
+            "samples": 386,
+            "end_ns": 1.19896366732,
+            "rl100_db": 64.49143234375478,
+            "il100_db": 0.0007687318071715726,
+            "max_port_power_ratio": 0.9998238982514763,
+            "max_undriven_incident_ratio": 5.510818581851499e-07
+          },
+          {
+            "samples": 482,
+            "end_ns": 1.49792376579,
+            "rl100_db": 64.38680516833925,
+            "il100_db": 0.0006780369172504558,
+            "max_port_power_ratio": 0.9998488987576698,
+            "max_undriven_incident_ratio": 5.501425795763003e-07
+          },
+          {
+            "samples": 579,
+            "end_ns": 1.79999803196,
+            "rl100_db": 64.27793716093524,
+            "il100_db": 0.0006291914920461595,
+            "max_port_power_ratio": 0.9998644092315393,
+            "max_undriven_incident_ratio": 5.495117592187073e-07
+          },
+          {
+            "samples": 643,
+            "end_ns": 1.99930476427,
+            "rl100_db": 64.2088372112134,
+            "il100_db": 0.0006100579368257661,
+            "max_port_power_ratio": 0.9998717632271311,
+            "max_undriven_incident_ratio": 5.489006994386608e-07
+          }
+        ],
+        "time_comparisons": [
+          {
+            "a": 0,
+            "b": 1,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 2.893690186059404e-06,
+            "max_il_delta": 7.390110718120386e-06,
+            "max_gamma_delta_all": 2.893690186059404e-06,
+            "max_transfer_complex_delta": 8.596513168193391e-07,
+            "passed": true
+          },
+          {
+            "a": 0,
+            "b": 2,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 9.16637536205414e-06,
+            "max_il_delta": 1.0359951915620598e-05,
+            "max_gamma_delta_all": 9.16637536205414e-06,
+            "max_transfer_complex_delta": 1.1926431381529778e-06,
+            "passed": true
+          },
+          {
+            "a": 0,
+            "b": 3,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 2.8331797665873342e-05,
+            "max_il_delta": 0.00011897285502012275,
+            "max_gamma_delta_all": 2.8331797665873342e-05,
+            "max_transfer_complex_delta": 1.3696353815316034e-05,
+            "passed": true
+          },
+          {
+            "a": 0,
+            "b": 4,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 4.197672486541161e-05,
+            "max_il_delta": 0.00018635545150284659,
+            "max_gamma_delta_all": 4.197672486541161e-05,
+            "max_transfer_complex_delta": 2.1453720938614108e-05,
+            "passed": true
+          },
+          {
+            "a": 0,
+            "b": 5,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 4.8981956372280995e-05,
+            "max_il_delta": 0.00021830309466839466,
+            "max_gamma_delta_all": 4.8981956372280995e-05,
+            "max_transfer_complex_delta": 2.5131732326734397e-05,
+            "passed": true
+          },
+          {
+            "a": 1,
+            "b": 2,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 6.274728228023109e-06,
+            "max_il_delta": 1.7750062633471226e-05,
+            "max_gamma_delta_all": 6.274728228023109e-06,
+            "max_transfer_complex_delta": 2.0462285645337496e-06,
+            "passed": true
+          },
+          {
+            "a": 1,
+            "b": 3,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 2.5439227300386238e-05,
+            "max_il_delta": 0.00012636296573747996,
+            "max_gamma_delta_all": 2.5439227300386238e-05,
+            "max_transfer_complex_delta": 1.4547102787189148e-05,
+            "passed": true
+          },
+          {
+            "a": 1,
+            "b": 4,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 3.9084161475453086e-05,
+            "max_il_delta": 0.00019374556222119006,
+            "max_gamma_delta_all": 3.9084161475453086e-05,
+            "max_transfer_complex_delta": 2.2304468958217777e-05,
+            "passed": true
+          },
+          {
+            "a": 1,
+            "b": 5,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 4.608939804067481e-05,
+            "max_il_delta": 0.000225693205386223,
+            "max_gamma_delta_all": 4.608939804067481e-05,
+            "max_transfer_complex_delta": 2.5982479554850108e-05,
+            "passed": true
+          },
+          {
+            "a": 2,
+            "b": 3,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 1.916543421236496e-05,
+            "max_il_delta": 0.00010861290310399558,
+            "max_gamma_delta_all": 1.916543421236496e-05,
+            "max_transfer_complex_delta": 1.2503710977494606e-05,
+            "passed": true
+          },
+          {
+            "a": 2,
+            "b": 4,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 3.281037589366215e-05,
+            "max_il_delta": 0.00017599549958758078,
+            "max_gamma_delta_all": 3.281037589366215e-05,
+            "max_transfer_complex_delta": 2.0261078940162615e-05,
+            "passed": true
+          },
+          {
+            "a": 2,
+            "b": 5,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 3.981561894795209e-05,
+            "max_il_delta": 0.00020794314275243933,
+            "max_gamma_delta_all": 3.981561894795209e-05,
+            "max_transfer_complex_delta": 2.3939091135880796e-05,
+            "passed": true
+          },
+          {
+            "a": 3,
+            "b": 4,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 1.3644954792357074e-05,
+            "max_il_delta": 6.738259648315321e-05,
+            "max_gamma_delta_all": 1.3644954792357074e-05,
+            "max_transfer_complex_delta": 7.75737550925669e-06,
+            "passed": true
+          },
+          {
+            "a": 3,
+            "b": 5,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 2.0650212746297762e-05,
+            "max_il_delta": 9.933023964854284e-05,
+            "max_gamma_delta_all": 2.0650212746297762e-05,
+            "max_transfer_complex_delta": 1.1435396248716972e-05,
+            "passed": true
+          },
+          {
+            "a": 4,
+            "b": 5,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 7.005264265132335e-06,
+            "max_il_delta": 3.194764316522549e-05,
+            "max_gamma_delta_all": 7.005264265132335e-06,
+            "max_transfer_complex_delta": 3.6780243288440937e-06,
+            "passed": true
+          }
+        ],
+        "time_pass": true,
+        "native_dft_error": 1.6786192689551464e-15,
+        "native_dft_pass": true,
+        "power_pass": true,
+        "termination_pass": true
+      }
+    }
+  ],
+  "results": {
+    "at": "2026-09-08T02:41:35",
+    "cases": [
+      {
+        "case": "rx-bend-pilot-40-air",
+        "cells": 354858,
+        "record_ns": 1.99917630312,
+        "windows": [
+          {
+            "samples": 259,
+            "end_ns": 0.799680107247,
+            "rl100_db": 59.666361248105474,
+            "il100_db": 0.0011609556613607348,
+            "max_port_power_ratio": 0.9997338320375837,
+            "max_undriven_incident_ratio": 6.130891661001988e-07
+          },
+          {
+            "samples": 323,
+            "end_ns": 0.9980464032049999,
+            "rl100_db": 59.64951976667664,
+            "il100_db": 0.0010942538962467122,
+            "max_port_power_ratio": 0.9997499966732137,
+            "max_undriven_incident_ratio": 6.139524584532278e-07
+          },
+          {
+            "samples": 388,
+            "end_ns": 1.19951217254,
+            "rl100_db": 59.60589482712432,
+            "il100_db": 0.0009892140137039455,
+            "max_port_power_ratio": 0.9997764727205599,
+            "max_undriven_incident_ratio": 6.156826113909692e-07
+          },
+          {
+            "samples": 484,
+            "end_ns": 1.4970616164700001,
+            "rl100_db": 59.53465897632747,
+            "il100_db": 0.0009068950841102448,
+            "max_port_power_ratio": 0.9997990535417108,
+            "max_undriven_incident_ratio": 6.19138069670186e-07
+          },
+          {
+            "samples": 581,
+            "end_ns": 1.79771053378,
+            "rl100_db": 59.42844003862736,
+            "il100_db": 0.0008216083899386153,
+            "max_port_power_ratio": 0.9998265857152452,
+            "max_undriven_incident_ratio": 6.194880828569e-07
+          },
+          {
+            "samples": 646,
+            "end_ns": 1.99917630312,
+            "rl100_db": 59.32848047315271,
+            "il100_db": 0.0007565569223210709,
+            "max_port_power_ratio": 0.9998515539941716,
+            "max_undriven_incident_ratio": 6.19351645031059e-07
+          }
+        ],
+        "time_comparisons": [
+          {
+            "a": 0,
+            "b": 1,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 1.5478433419170698e-05,
+            "max_il_delta": 7.024527590803993e-05,
+            "max_gamma_delta_all": 1.5478433419170698e-05,
+            "max_transfer_complex_delta": 8.088551248351397e-06,
+            "passed": true
+          },
+          {
+            "a": 0,
+            "b": 2,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 3.595459462995364e-05,
+            "max_il_delta": 0.00018528643823129189,
+            "max_gamma_delta_all": 3.595459462995364e-05,
+            "max_transfer_complex_delta": 2.1329433179019454e-05,
+            "passed": true
+          },
+          {
+            "a": 0,
+            "b": 3,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 5.655947189461276e-05,
+            "max_il_delta": 0.0002834009394670576,
+            "max_gamma_delta_all": 5.655947189461276e-05,
+            "max_transfer_complex_delta": 3.262425615446825e-05,
+            "passed": true
+          },
+          {
+            "a": 0,
+            "b": 4,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 7.815096398937421e-05,
+            "max_il_delta": 0.0004030177609700078,
+            "max_gamma_delta_all": 7.815096398937421e-05,
+            "max_transfer_complex_delta": 4.63947254630424e-05,
+            "passed": true
+          },
+          {
+            "a": 0,
+            "b": 5,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 9.515858408015041e-05,
+            "max_il_delta": 0.0005114869057463702,
+            "max_gamma_delta_all": 9.515858408015041e-05,
+            "max_transfer_complex_delta": 5.8882157842881265e-05,
+            "passed": true
+          },
+          {
+            "a": 1,
+            "b": 2,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 2.0477502652720903e-05,
+            "max_il_delta": 0.00011504116232332421,
+            "max_gamma_delta_all": 2.0477502652720903e-05,
+            "max_transfer_complex_delta": 1.3243151894550108e-05,
+            "passed": true
+          },
+          {
+            "a": 1,
+            "b": 3,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 4.108239450891767e-05,
+            "max_il_delta": 0.00021315566355840725,
+            "max_gamma_delta_all": 4.108239450891767e-05,
+            "max_transfer_complex_delta": 2.45379812489993e-05,
+            "passed": true
+          },
+          {
+            "a": 1,
+            "b": 4,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 6.267391633068077e-05,
+            "max_il_delta": 0.0003327724850621469,
+            "max_gamma_delta_all": 6.267391633068077e-05,
+            "max_transfer_complex_delta": 3.8308466654626657e-05,
+            "passed": true
+          },
+          {
+            "a": 1,
+            "b": 5,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 7.968156808404198e-05,
+            "max_il_delta": 0.0004412416298374529,
+            "max_gamma_delta_all": 7.968156808404198e-05,
+            "max_transfer_complex_delta": 5.079591819058779e-05,
+            "passed": true
+          },
+          {
+            "a": 2,
+            "b": 3,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 2.060490412922383e-05,
+            "max_il_delta": 9.811450123514679e-05,
+            "max_gamma_delta_all": 2.060490412922383e-05,
+            "max_transfer_complex_delta": 1.1294836577930057e-05,
+            "passed": true
+          },
+          {
+            "a": 2,
+            "b": 4,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 4.2196458598655504e-05,
+            "max_il_delta": 0.0002177313227385004,
+            "max_gamma_delta_all": 4.2196458598655504e-05,
+            "max_transfer_complex_delta": 2.506534519628239e-05,
+            "passed": true
+          },
+          {
+            "a": 2,
+            "b": 5,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 5.9204146913177415e-05,
+            "max_il_delta": 0.0003262004675144611,
+            "max_gamma_delta_all": 5.9204146913177415e-05,
+            "max_transfer_complex_delta": 3.755282480266052e-05,
+            "passed": true
+          },
+          {
+            "a": 3,
+            "b": 4,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 2.1591574877662032e-05,
+            "max_il_delta": 0.00011961682150350963,
+            "max_gamma_delta_all": 2.1591574877662032e-05,
+            "max_transfer_complex_delta": 1.3770521306866058e-05,
+            "passed": true
+          },
+          {
+            "a": 3,
+            "b": 5,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 3.859928990210392e-05,
+            "max_il_delta": 0.00022808596627930253,
+            "max_gamma_delta_all": 3.859928990210392e-05,
+            "max_transfer_complex_delta": 2.6258017925725667e-05,
+            "passed": true
+          },
+          {
+            "a": 4,
+            "b": 5,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 1.7007726387219744e-05,
+            "max_il_delta": 0.00010846914477583755,
+            "max_gamma_delta_all": 1.7007726387219744e-05,
+            "max_transfer_complex_delta": 1.2487504129309679e-05,
+            "passed": true
+          }
+        ],
+        "time_pass": true,
+        "native_dft_error": 1.7948143562025294e-15,
+        "native_dft_pass": true,
+        "power_pass": true,
+        "termination_pass": true
+      },
+      {
+        "case": "rx-bend-pilot-20-air",
+        "cells": 1730883,
+        "record_ns": 1.99930476427,
+        "windows": [
+          {
+            "samples": 257,
+            "end_ns": 0.797236035006,
+            "rl100_db": 64.51379057481674,
+            "il100_db": 0.0007777461167302556,
+            "max_port_power_ratio": 0.9998215155942372,
+            "max_undriven_incident_ratio": 5.536533941480437e-07
+          },
+          {
+            "samples": 322,
+            "end_ns": 0.999656935011,
+            "rl100_db": 64.51218009510814,
+            "il100_db": 0.0007845165729933344,
+            "max_port_power_ratio": 0.9998198134921475,
+            "max_undriven_incident_ratio": 5.521599216619605e-07
+          },
+          {
+            "samples": 386,
+            "end_ns": 1.19896366732,
+            "rl100_db": 64.49143234375478,
+            "il100_db": 0.0007687318071715726,
+            "max_port_power_ratio": 0.9998238982514763,
+            "max_undriven_incident_ratio": 5.510818581851499e-07
+          },
+          {
+            "samples": 482,
+            "end_ns": 1.49792376579,
+            "rl100_db": 64.38680516833925,
+            "il100_db": 0.0006780369172504558,
+            "max_port_power_ratio": 0.9998488987576698,
+            "max_undriven_incident_ratio": 5.501425795763003e-07
+          },
+          {
+            "samples": 579,
+            "end_ns": 1.79999803196,
+            "rl100_db": 64.27793716093524,
+            "il100_db": 0.0006291914920461595,
+            "max_port_power_ratio": 0.9998644092315393,
+            "max_undriven_incident_ratio": 5.495117592187073e-07
+          },
+          {
+            "samples": 643,
+            "end_ns": 1.99930476427,
+            "rl100_db": 64.2088372112134,
+            "il100_db": 0.0006100579368257661,
+            "max_port_power_ratio": 0.9998717632271311,
+            "max_undriven_incident_ratio": 5.489006994386608e-07
+          }
+        ],
+        "time_comparisons": [
+          {
+            "a": 0,
+            "b": 1,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 2.893690186059404e-06,
+            "max_il_delta": 7.390110718120386e-06,
+            "max_gamma_delta_all": 2.893690186059404e-06,
+            "max_transfer_complex_delta": 8.596513168193391e-07,
+            "passed": true
+          },
+          {
+            "a": 0,
+            "b": 2,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 9.16637536205414e-06,
+            "max_il_delta": 1.0359951915620598e-05,
+            "max_gamma_delta_all": 9.16637536205414e-06,
+            "max_transfer_complex_delta": 1.1926431381529778e-06,
+            "passed": true
+          },
+          {
+            "a": 0,
+            "b": 3,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 2.8331797665873342e-05,
+            "max_il_delta": 0.00011897285502012275,
+            "max_gamma_delta_all": 2.8331797665873342e-05,
+            "max_transfer_complex_delta": 1.3696353815316034e-05,
+            "passed": true
+          },
+          {
+            "a": 0,
+            "b": 4,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 4.197672486541161e-05,
+            "max_il_delta": 0.00018635545150284659,
+            "max_gamma_delta_all": 4.197672486541161e-05,
+            "max_transfer_complex_delta": 2.1453720938614108e-05,
+            "passed": true
+          },
+          {
+            "a": 0,
+            "b": 5,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 4.8981956372280995e-05,
+            "max_il_delta": 0.00021830309466839466,
+            "max_gamma_delta_all": 4.8981956372280995e-05,
+            "max_transfer_complex_delta": 2.5131732326734397e-05,
+            "passed": true
+          },
+          {
+            "a": 1,
+            "b": 2,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 6.274728228023109e-06,
+            "max_il_delta": 1.7750062633471226e-05,
+            "max_gamma_delta_all": 6.274728228023109e-06,
+            "max_transfer_complex_delta": 2.0462285645337496e-06,
+            "passed": true
+          },
+          {
+            "a": 1,
+            "b": 3,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 2.5439227300386238e-05,
+            "max_il_delta": 0.00012636296573747996,
+            "max_gamma_delta_all": 2.5439227300386238e-05,
+            "max_transfer_complex_delta": 1.4547102787189148e-05,
+            "passed": true
+          },
+          {
+            "a": 1,
+            "b": 4,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 3.9084161475453086e-05,
+            "max_il_delta": 0.00019374556222119006,
+            "max_gamma_delta_all": 3.9084161475453086e-05,
+            "max_transfer_complex_delta": 2.2304468958217777e-05,
+            "passed": true
+          },
+          {
+            "a": 1,
+            "b": 5,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 4.608939804067481e-05,
+            "max_il_delta": 0.000225693205386223,
+            "max_gamma_delta_all": 4.608939804067481e-05,
+            "max_transfer_complex_delta": 2.5982479554850108e-05,
+            "passed": true
+          },
+          {
+            "a": 2,
+            "b": 3,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 1.916543421236496e-05,
+            "max_il_delta": 0.00010861290310399558,
+            "max_gamma_delta_all": 1.916543421236496e-05,
+            "max_transfer_complex_delta": 1.2503710977494606e-05,
+            "passed": true
+          },
+          {
+            "a": 2,
+            "b": 4,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 3.281037589366215e-05,
+            "max_il_delta": 0.00017599549958758078,
+            "max_gamma_delta_all": 3.281037589366215e-05,
+            "max_transfer_complex_delta": 2.0261078940162615e-05,
+            "passed": true
+          },
+          {
+            "a": 2,
+            "b": 5,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 3.981561894795209e-05,
+            "max_il_delta": 0.00020794314275243933,
+            "max_gamma_delta_all": 3.981561894795209e-05,
+            "max_transfer_complex_delta": 2.3939091135880796e-05,
+            "passed": true
+          },
+          {
+            "a": 3,
+            "b": 4,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 1.3644954792357074e-05,
+            "max_il_delta": 6.738259648315321e-05,
+            "max_gamma_delta_all": 1.3644954792357074e-05,
+            "max_transfer_complex_delta": 7.75737550925669e-06,
+            "passed": true
+          },
+          {
+            "a": 3,
+            "b": 5,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 2.0650212746297762e-05,
+            "max_il_delta": 9.933023964854284e-05,
+            "max_gamma_delta_all": 2.0650212746297762e-05,
+            "max_transfer_complex_delta": 1.1435396248716972e-05,
+            "passed": true
+          },
+          {
+            "a": 4,
+            "b": 5,
+            "max_rl_delta_away_from_null": 0,
+            "max_gamma_delta_near_null": 7.005264265132335e-06,
+            "max_il_delta": 3.194764316522549e-05,
+            "max_gamma_delta_all": 7.005264265132335e-06,
+            "max_transfer_complex_delta": 3.6780243288440937e-06,
+            "passed": true
+          }
+        ],
+        "time_pass": true,
+        "native_dft_error": 1.6786192689551464e-15,
+        "native_dft_pass": true,
+        "power_pass": true,
+        "termination_pass": true
+      }
+    ],
+    "scope": "Two-port numerical pilot of one actual Control RX bend. Does NOT include the full Control/Molex/Motor/M12 path or establish its RL/IL. Same numerical comparison limits, applied only to this pilot.",
+    "full_route_goal_complete": false,
+    "mesh_comparison": {
+      "max_rl_delta_away_from_null": 0,
+      "max_gamma_delta_near_null": 0.0004658040390286974,
+      "max_il_delta": 0.00014649898549611162,
+      "max_gamma_delta_all": 0.0004658040390286974,
+      "max_transfer_complex_delta": 0.0009084341148213357,
+      "passed": true
+    }
+  },
+  "full_route_goal_complete": false
+}

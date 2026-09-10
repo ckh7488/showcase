@@ -1,0 +1,58 @@
+[
+  {
+    "port": 1,
+    "ref": "T2",
+    "pin": "1",
+    "pad": "copper_PEC",
+    "reference": "copper_PEC"
+  },
+  {
+    "port": 2,
+    "ref": "T2",
+    "pin": "3",
+    "pad": "copper_PEC",
+    "reference": "copper_PEC"
+  },
+  {
+    "port": 3,
+    "ref": "T2",
+    "pin": "6",
+    "pad": "copper_PEC",
+    "reference": "copper_PEC"
+  },
+  {
+    "port": 4,
+    "ref": "T2",
+    "pin": "8",
+    "pad": "copper_PEC",
+    "reference": "copper_PEC"
+  },
+  {
+    "port": 5,
+    "ref": "U6",
+    "pin": "45",
+    "pad": "copper_PEC",
+    "reference": "copper_PEC"
+  },
+  {
+    "port": 6,
+    "ref": "U6",
+    "pin": "44",
+    "pad": "copper_PEC",
+    "reference": "copper_PEC"
+  },
+  {
+    "port": 7,
+    "ref": "U6",
+    "pin": "47",
+    "pad": "copper_PEC",
+    "reference": "copper_PEC"
+  },
+  {
+    "port": 8,
+    "ref": "U6",
+    "pin": "46",
+    "pad": "copper_PEC",
+    "reference": "copper_PEC"
+  }
+]

@@ -1,0 +1,1598 @@
+{
+  "updated": "2026-09-08T18:44:52",
+  "phase": "전체 경로의 새 전자장 계산 완료 · 격자·경계 비교 필요",
+  "cad_complete": true,
+  "cad_runtime": null,
+  "full_pair_continuity_pass": true,
+  "finite_ports_clear": true,
+  "mesh_runs": [
+    {
+      "name": "full-fem-mesh-base",
+      "last": {
+        "stage": "restore attributes",
+        "seconds": 348.1434659999795,
+        "pid": 60132,
+        "faces": 83782,
+        "solids": 7,
+        "port_caps": [
+          {
+            "port": 1,
+            "end": "start",
+            "matching_faces": 1,
+            "area_mm2": 0.012099999999999925
+          },
+          {
+            "port": 1,
+            "end": "stop",
+            "matching_faces": 1,
+            "area_mm2": 0.012099999999999925
+          },
+          {
+            "port": 2,
+            "end": "start",
+            "matching_faces": 1,
+            "area_mm2": 0.012099999999999925
+          },
+          {
+            "port": 2,
+            "end": "stop",
+            "matching_faces": 1,
+            "area_mm2": 0.012099999999999925
+          },
+          {
+            "port": 3,
+            "end": "start",
+            "matching_faces": 1,
+            "area_mm2": 0.01209999999999983
+          },
+          {
+            "port": 3,
+            "end": "stop",
+            "matching_faces": 1,
+            "area_mm2": 0.01209999999999983
+          },
+          {
+            "port": 4,
+            "end": "start",
+            "matching_faces": 1,
+            "area_mm2": 0.01209999999999983
+          },
+          {
+            "port": 4,
+            "end": "stop",
+            "matching_faces": 1,
+            "area_mm2": 0.01209999999999983
+          }
+        ]
+      },
+      "stages": [
+        "read CAD",
+        "restore attributes"
+      ],
+      "error": null,
+      "surface_queue_position": null,
+      "boundary_area": {
+        "metal_area_mm2": 96100.07818480053,
+        "pec_boundary_area_mm2": 94811.38324378588,
+        "absolute_difference_mm2": 1288.694941014648
+      }
+    },
+    {
+      "name": "full-fem-mesh-bore-pec",
+      "last": {
+        "stage": "restore attributes",
+        "seconds": 108.79823220008984,
+        "pid": 21832,
+        "faces": 83782,
+        "solids": 7,
+        "port_caps": [
+          {
+            "port": 1,
+            "end": "start",
+            "matching_faces": 1,
+            "area_mm2": 0.012099999999999925
+          },
+          {
+            "port": 1,
+            "end": "stop",
+            "matching_faces": 1,
+            "area_mm2": 0.012099999999999925
+          },
+          {
+            "port": 2,
+            "end": "start",
+            "matching_faces": 1,
+            "area_mm2": 0.012099999999999925
+          },
+          {
+            "port": 2,
+            "end": "stop",
+            "matching_faces": 1,
+            "area_mm2": 0.012099999999999925
+          },
+          {
+            "port": 3,
+            "end": "start",
+            "matching_faces": 1,
+            "area_mm2": 0.01209999999999983
+          },
+          {
+            "port": 3,
+            "end": "stop",
+            "matching_faces": 1,
+            "area_mm2": 0.01209999999999983
+          },
+          {
+            "port": 4,
+            "end": "start",
+            "matching_faces": 1,
+            "area_mm2": 0.01209999999999983
+          },
+          {
+            "port": 4,
+            "end": "stop",
+            "matching_faces": 1,
+            "area_mm2": 0.01209999999999983
+          }
+        ]
+      },
+      "stages": [
+        "read CAD",
+        "restore attributes"
+      ],
+      "error": null,
+      "surface_queue_position": null,
+      "boundary_area": null
+    },
+    {
+      "name": "full-fem-mesh-bore-pec-v2",
+      "last": {
+        "stage": "surface mesh begin",
+        "seconds": 22.910815999959596,
+        "pid": 20284,
+        "settings": {
+          "maxh": 2.5,
+          "grading": 0.3,
+          "meshsizefilename": "C:\\Users\\artzy\\Documents\\ChatGPT\\test_board\\outputs\\porta-em\\runs\\full-fem-mesh-bore-pec-v2\\mesh-sizes.txt",
+          "minedgelen": 0.001,
+          "closeedgefac": 2
+        }
+      },
+      "stages": [
+        "read CAD",
+        "attribute ordering verified",
+        "restore attributes",
+        "plated inner walls labelled PEC",
+        "PEC boundary area passed",
+        "surface mesh begin"
+      ],
+      "error": {
+        "at": "2026-09-08T04:52:06.912809",
+        "runtime": {
+          "pid": 20284,
+          "identity_matches": true,
+          "observed_alive": true,
+          "creation_filetime": "134332836369836894",
+          "exit_code": null,
+          "cpu_seconds": 822.875,
+          "wall_seconds": 689.9291200637817
+        },
+        "reason": "Repeated native ERROR: Problem in Surface mesh generation during the surface-only phase. Aborted this invalid meshing attempt; not a timeout restart. Full CAD and all connection/port/PEC-boundary audits remain saved. No accepted surface/volume mesh or field solution exists.",
+        "native_error": "ERROR: Problem in Surface mesh generation",
+        "full_field_solution_exists": false,
+        "accepted_mesh": false,
+        "agent_requested_exit_code": 124
+      },
+      "surface_queue_position": null,
+      "boundary_area": {
+        "metal_area_mm2": 96100.07818480053,
+        "pec_boundary_area_mm2": 96100.07818484084,
+        "absolute_difference_mm2": 4.030880518257618e-08
+      }
+    },
+    {
+      "name": "full-fem-mesh-error-probe",
+      "last": {
+        "stage": "surface error probe complete",
+        "seconds": 60.99648069997784,
+        "pid": 63652,
+        "first_failed_face": null,
+        "saved_face": false,
+        "points": 0,
+        "surface_triangles": 0,
+        "accepted_mesh": false
+      },
+      "stages": [
+        "read CAD",
+        "attribute ordering verified",
+        "restore attributes",
+        "plated inner walls labelled PEC",
+        "PEC boundary area passed",
+        "surface error probe begin",
+        "surface error probe complete"
+      ],
+      "error": {
+        "first_error": "{\"stage\": \"surface error probe begin\", \"seconds\": 22.67551599990111, \"pid\": 63652, \"native_log\": \"C:\\\\Users\\\\artzy\\\\Documents\\\\ChatGPT\\\\test_board\\\\outputs\\\\porta-em\\\\runs\\\\full-fem-mesh-error-probe\\\\native.log\", \"threads\": 1}",
+        "face_number": null,
+        "log_tail": [
+          "{\"stage\": \"read CAD\", \"seconds\": 3.6999117583036423e-06, \"pid\": 63652}",
+          "{\"stage\": \"attribute ordering verified\", \"seconds\": 13.08750499994494, \"pid\": 63652, \"reused_identical_file_audit\": true, \"brep_sha256\": \"7b26e49f65c4b25c509ed93ed4a8e21a3a234f126db41e01696df52cfcfb99cf\", \"attributes_sha256\": \"bf8a15231e3be9079bd8e8a03560198cdfe6214e629b357a555b07142c27b366\", \"faces\": 83782, \"solids\": 7, \"ngsolve_version\": \"6.2.2606\"}",
+          "{\"stage\": \"restore attributes\", \"seconds\": 13.265229400014505, \"pid\": 63652, \"faces\": 83782, \"solids\": 7, \"port_caps\": [{\"port\": 1, \"end\": \"start\", \"matching_faces\": 1, \"area_mm2\": 0.012099999999999925}, {\"port\": 1, \"end\": \"stop\", \"matching_faces\": 1, \"area_mm2\": 0.012099999999999925}, {\"port\": 2, \"end\": \"start\", \"matching_faces\": 1, \"area_mm2\": 0.012099999999999925}, {\"port\": 2, \"end\": \"stop\", \"matching_faces\": 1, \"area_mm2\": 0.012099999999999925}, {\"port\": 3, \"end\": \"start\", \"matching_faces\": 1, \"area_mm2\": 0.01209999999999983}, {\"port\": 3, \"end\": \"stop\", \"matching_faces\": 1, \"area_mm2\": 0.01209999999999983}, {\"port\": 4, \"end\": \"start\", \"matching_faces\": 1, \"area_mm2\": 0.01209999999999983}, {\"port\": 4, \"end\": \"stop\", \"matching_faces\": 1, \"area_mm2\": 0.01209999999999983}]}",
+          "{\"stage\": \"plated inner walls labelled PEC\", \"seconds\": 15.057951199938543, \"pid\": 63652, \"count\": 788, \"area_mm2\": 1288.694941014642}",
+          "{\"stage\": \"PEC boundary area passed\", \"seconds\": 15.210081500001252, \"pid\": 63652, \"metal_area_mm2\": 96100.07818480053, \"pec_boundary_area_mm2\": 96100.07818484084, \"absolute_difference_mm2\": 4.030880518257618e-08}",
+          "{\"stage\": \"surface error probe begin\", \"seconds\": 22.67551599990111, \"pid\": 63652, \"native_log\": \"C:\\\\Users\\\\artzy\\\\Documents\\\\ChatGPT\\\\test_board\\\\outputs\\\\porta-em\\\\runs\\\\full-fem-mesh-error-probe\\\\native.log\", \"threads\": 1}"
+        ],
+        "seconds_to_error": 0.007650100043974817,
+        "termination_flag_set": true
+      },
+      "surface_queue_position": null,
+      "boundary_area": {
+        "metal_area_mm2": 96100.07818480053,
+        "pec_boundary_area_mm2": 96100.07818484084,
+        "absolute_difference_mm2": 4.030880518257618e-08
+      }
+    },
+    {
+      "name": "full-fem-mesh-error-probe-v2",
+      "last": {
+        "stage": "surface error probe begin",
+        "seconds": 22.98977390001528,
+        "pid": 5600,
+        "native_log": "C:\\Users\\artzy\\Documents\\ChatGPT\\test_board\\outputs\\porta-em\\runs\\full-fem-mesh-error-probe-v2\\native.log",
+        "threads": 1
+      },
+      "stages": [
+        "read CAD",
+        "attribute ordering verified",
+        "restore attributes",
+        "plated inner walls labelled PEC",
+        "PEC boundary area passed",
+        "surface error probe begin"
+      ],
+      "error": {
+        "first_error": "ERROR: Problem in Surface mesh generation",
+        "face_number": 101,
+        "log_tail": [
+          " Face 69 / 82473 (parameter space projection)",
+          " Face 70 / 82473 (parameter space projection)",
+          " Face 71 / 82473 (parameter space projection)",
+          " Face 72 / 82473 (parameter space projection)",
+          " Face 73 / 82473 (parameter space projection)",
+          " Face 74 / 82473 (parameter space projection)",
+          " Face 75 / 82473 (parameter space projection)",
+          " Face 76 / 82473 (parameter space projection)",
+          " Face 77 / 82473 (parameter space projection)",
+          " Face 78 / 82473 (parameter space projection)",
+          " Face 79 / 82473 (parameter space projection)",
+          " Face 80 / 82473 (parameter space projection)",
+          " Face 81 / 82473 (parameter space projection)",
+          " Face 82 / 82473 (parameter space projection)",
+          " Face 83 / 82473 (parameter space projection)",
+          " Face 84 / 82473 (parameter space projection)",
+          " Face 85 / 82473 (parameter space projection)",
+          " Face 86 / 82473 (parameter space projection)",
+          " Face 87 / 82473 (parameter space projection)",
+          " Face 88 / 82473 (parameter space projection)",
+          " Face 89 / 82473 (parameter space projection)",
+          " Face 90 / 82473 (parameter space projection)",
+          " Face 91 / 82473 (parameter space projection)",
+          " Face 92 / 82473 (parameter space projection)",
+          " Face 93 / 82473 (parameter space projection)",
+          " Face 94 / 82473 (parameter space projection)",
+          " Face 95 / 82473 (parameter space projection)",
+          " Face 96 / 82473 (parameter space projection)",
+          " Face 97 / 82473 (parameter space projection)",
+          " Face 98 / 82473 (parameter space projection)",
+          " Face 99 / 82473 (parameter space projection)",
+          " Face 100 / 82473 (parameter space projection)",
+          " Face 101 / 82473 (parameter space projection)",
+          " Face 101 / 82473 (plane space projection)",
+          " ERROR: Problem in Surface mesh generation"
+        ],
+        "seconds_to_error": 78.3553412000183,
+        "termination_flag_set": true
+      },
+      "surface_queue_position": {
+        "recent_face": 2606,
+        "total_faces": 82473,
+        "completed_count": false
+      },
+      "boundary_area": {
+        "metal_area_mm2": 96100.07818480053,
+        "pec_boundary_area_mm2": 96100.07818484084,
+        "absolute_difference_mm2": 4.030880518257618e-08
+      }
+    },
+    {
+      "name": "full-fem-mesh-canonical-base",
+      "last": {
+        "stage": "guarded surface mesh begin",
+        "seconds": 115.74177140009124,
+        "pid": 47248,
+        "settings": {
+          "maxh": 2.5,
+          "grading": 0.3,
+          "meshsizefilename": "C:\\Users\\artzy\\Documents\\ChatGPT\\test_board\\outputs\\porta-em\\runs\\full-fem-mesh-canonical-base\\mesh-sizes.txt",
+          "minedgelen": 0.001,
+          "closeedgefac": 2
+        },
+        "threads": 8,
+        "native_log": "C:\\Users\\artzy\\Documents\\ChatGPT\\test_board\\outputs\\porta-em\\runs\\full-fem-mesh-canonical-base\\native.log"
+      },
+      "stages": [
+        "read CAD",
+        "attribute ordering verified",
+        "restore attributes",
+        "plated inner walls labelled PEC",
+        "PEC boundary area passed",
+        "surface mesh begin",
+        "guarded surface mesh begin"
+      ],
+      "error": {
+        "pid": 47248,
+        "exception_type": "NgException",
+        "message": "OCC-Triangulation could not be built for face 14677",
+        "evidence": "native.log ends with this Python exception; launcher-completion.json returncode 1",
+        "failed_phase": "OCC curvature-sizing triangulation before Netgen surface mesh generation",
+        "face_number_one_based": 14677,
+        "field_solution_produced": false
+      },
+      "surface_queue_position": null,
+      "boundary_area": {
+        "metal_area_mm2": 96097.627416849,
+        "pec_boundary_area_mm2": 96097.62741683144,
+        "absolute_difference_mm2": 1.756416168063879e-08
+      }
+    },
+    {
+      "name": "full-fem-mesh-canonical-motor-union-base",
+      "last": {
+        "stage": "guarded surface mesh begin",
+        "seconds": 118.06022720003966,
+        "pid": 32240,
+        "settings": {
+          "maxh": 2.5,
+          "grading": 0.3,
+          "meshsizefilename": "C:\\Users\\artzy\\Documents\\ChatGPT\\test_board\\outputs\\porta-em\\runs\\full-fem-mesh-canonical-motor-union-base\\mesh-sizes.txt",
+          "minedgelen": 0.001,
+          "closeedgefac": 2
+        },
+        "threads": 8,
+        "native_log": "C:\\Users\\artzy\\Documents\\ChatGPT\\test_board\\outputs\\porta-em\\runs\\full-fem-mesh-canonical-motor-union-base\\native.log"
+      },
+      "stages": [
+        "read CAD",
+        "attribute ordering verified",
+        "restore attributes",
+        "plated inner walls labelled PEC",
+        "PEC boundary area passed",
+        "surface mesh begin",
+        "guarded surface mesh begin"
+      ],
+      "error": {
+        "first_error": "ERROR: Problem in Surface mesh generation",
+        "face_number": null,
+        "threads": 8,
+        "seconds_to_error": 356.1293851999799,
+        "log_tail": [
+          " Face 6006 / 62607 (parameter space projection)",
+          " Face 6007 / 62607 (parameter space projection)",
+          " Face 6008 / 62607 (parameter space projection)",
+          " Face 6009 / 62607 (parameter space projection)",
+          " Face 6010 / 62607 (parameter space projection)",
+          " Face 6011 / 62607 (parameter space projection)",
+          " Face 6012 / 62607 (parameter space projection)",
+          " Face 6013 / 62607 (parameter space projection)",
+          " Face 6014 / 62607 (parameter space projection)",
+          " Face 6015 / 62607 (parameter space projection)",
+          " Face 6016 / 62607 (parameter space projection)",
+          " Face 6017 / 62607 (parameter space projection)",
+          " Face 6018 / 62607 (parameter space projection)",
+          " Face 6019 / 62607 (parameter space projection)",
+          " Face 6020 / 62607 (parameter space projection)",
+          " Face 6021 / 62607 (parameter space projection)",
+          " Face 6022 / 62607 (parameter space projection)",
+          " Face 6023 / 62607 (parameter space projection)",
+          " Face 6024 / 62607 (parameter space projection)",
+          " Face 6025 / 62607 (parameter space projection)",
+          " Face 6026 / 62607 (parameter space projection)",
+          " Face 6027 / 62607 (parameter space projection)",
+          " Face 6028 / 62607 (parameter space projection)",
+          " Face 6029 / 62607 (parameter space projection)",
+          " Face 6030 / 62607 (parameter space projection)",
+          " Face 6031 / 62607 (parameter space projection)",
+          " Face 6032 / 62607 (parameter space projection)",
+          "meshed area = 357.25",
+          "maximal area = 357.164",
+          "GIVING UP",
+          " Face 6032 / 62607 (plane space projection)",
+          "meshed area = 357.166",
+          "maximal area = 357.164",
+          "GIVING UP",
+          " ERROR: Problem in Surface mesh generation"
+        ],
+        "action": "Exit this failed mesh process with code 85 after preserving evidence.",
+        "accepted_mesh": false,
+        "full_field_solution_exists": false
+      },
+      "surface_queue_position": {
+        "recent_face": 6032,
+        "total_faces": 62607,
+        "completed_count": false
+      },
+      "boundary_area": {
+        "metal_area_mm2": 96097.33579795143,
+        "pec_boundary_area_mm2": 96097.33579793386,
+        "absolute_difference_mm2": 1.756416168063879e-08
+      }
+    }
+  ],
+  "gmsh_runs": [
+    {
+      "name": "full-gmsh-canonical-net-union-base",
+      "last": {
+        "stage": "full volume mesh begin",
+        "seconds": 93.23731949995272,
+        "pid": 71964,
+        "algorithm3d": 10,
+        "threads": 8
+      },
+      "runtime": {
+        "pid": 71964,
+        "identity_matches": false,
+        "observed_alive": null,
+        "query_error": 87
+      },
+      "error": {
+        "at": "2026-09-08T09:15:40",
+        "identity": {
+          "pid": 71964,
+          "creation_filetime": "134332991016880508"
+        },
+        "prior_process": {
+          "pid": 71964,
+          "identity_matches": true,
+          "observed_alive": true,
+          "creation_filetime": "134332991016880508",
+          "exit_code": null,
+          "cpu_seconds": 6756.203125,
+          "wall_seconds": 1038.3931589126587
+        },
+        "action": "stop",
+        "reason": "The complete surface is valid and saved. Oversized far-field copper/via sizing led to prolonged isotropic HXT quality optimization; use the same-CAD spatially targeted mesh for the first RF screen. No completed volume or field is claimed.",
+        "preserved_surface_mesh": true,
+        "full_route_goal_complete": false
+      },
+      "surface": {
+        "triangles": 2893536,
+        "points": 1416677,
+        "cad_unique_faces": 62603,
+        "missing_cad_face_ids": [],
+        "zero_area_triangles": 0,
+        "material_adjacency_pass": true,
+        "domains": [
+          {
+            "tag": 1,
+            "source_solid_index": 0,
+            "material": "air",
+            "triangles": 1372516,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 810341.9170451843,
+            "cad_volume_mm3": 810347.552674217,
+            "relative_volume_error": 6.954582653011592e-06,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 2,
+            "source_solid_index": 1,
+            "material": "fr4",
+            "triangles": 745614,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 9865.456119247663,
+            "cad_volume_mm3": 9862.319638705088,
+            "relative_volume_error": 0.0003180266567578479,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 3,
+            "source_solid_index": 2,
+            "material": "fr4",
+            "triangles": 875772,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 7711.703308559663,
+            "cad_volume_mm3": 7709.166044992542,
+            "relative_volume_error": 0.000329122962498533,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 4,
+            "source_solid_index": 3,
+            "material": "port1",
+            "triangles": 92,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 0.004356000000011808,
+            "cad_volume_mm3": 0.004355999999999981,
+            "relative_volume_error": 2.714985605480242e-12,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 5,
+            "source_solid_index": 4,
+            "material": "port2",
+            "triangles": 96,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 0.004356000000046582,
+            "cad_volume_mm3": 0.004355999999999993,
+            "relative_volume_error": 1.0695470246627454e-11,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 6,
+            "source_solid_index": 5,
+            "material": "port3",
+            "triangles": 94,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 0.004355999999602567,
+            "cad_volume_mm3": 0.004355999999999939,
+            "relative_volume_error": 9.122411370070587e-11,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 7,
+            "source_solid_index": 6,
+            "material": "port4",
+            "triangles": 92,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 0.005808000000545571,
+            "cad_volume_mm3": 0.005807999999999934,
+            "relative_volume_error": 9.39458195675856e-11,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          }
+        ],
+        "not_a_mesh_convergence_test": true,
+        "parameter_orientation_corrections": 3345,
+        "complete_material_surface_pass": true
+      },
+      "volume": null,
+      "conversion": null
+    },
+    {
+      "name": "full-gmsh-canonical-net-union-adaptive",
+      "last": {
+        "stage": "surface triangulation returned",
+        "seconds": 59.22377719997894,
+        "pid": 18568,
+        "triangles": 1066531,
+        "missing_face_tags": [],
+        "source_faces": 62603,
+        "all_source_faces_covered": true,
+        "closed_material_shell_audit_pending": true,
+        "accepted_volume_mesh": false,
+        "full_route_goal_complete": false
+      },
+      "runtime": {
+        "pid": 18568,
+        "identity_matches": false,
+        "observed_alive": null,
+        "query_error": 87
+      },
+      "error": {
+        "message": "('Ambiguous surface orientation', 1405, 0.233354763919131)",
+        "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\artzy\\Documents\\ChatGPT\\test_board\\outputs\\porta-em\\mesh_full_gmsh_adaptive.py\", line 166, in <module>\n    audit,arrays,adjacency,node_ids=collect_surface(gmsh,metadata)\n                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\artzy\\Documents\\ChatGPT\\test_board\\outputs\\porta-em\\gmsh_mesh_audit.py\", line 58, in collect_surface\n    assert abs(cosine) > .5, ('Ambiguous surface orientation', face['tag'], cosine)\n           ^^^^^^^^^^^^^^^^\nAssertionError: ('Ambiguous surface orientation', 1405, 0.233354763919131)\n",
+        "accepted": false
+      },
+      "surface": null,
+      "volume": null,
+      "conversion": null
+    },
+    {
+      "name": "full-gmsh-canonical-net-union-adaptive-v2",
+      "last": {
+        "stage": "full volume mesh begin",
+        "seconds": 76.67826310009696,
+        "pid": 19492,
+        "algorithm3d": 10,
+        "threads": 8
+      },
+      "runtime": {
+        "pid": 19492,
+        "identity_matches": false,
+        "observed_alive": null,
+        "query_error": 87
+      },
+      "error": {
+        "message": "HXT 3D mesh failed",
+        "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\artzy\\Documents\\ChatGPT\\test_board\\outputs\\porta-em\\mesh_full_gmsh_adaptive.py\", line 175, in <module>\n    gmsh.model.mesh.generate(3)\n  File \"C:\\Users\\artzy\\Documents\\ChatGPT\\test_board\\outputs\\porta-em\\tools\\gmsh-venv\\Lib\\site-packages\\gmsh.py\", line 2189, in generate\n    raise Exception(logger.getLastError())\nException: HXT 3D mesh failed\n",
+        "accepted": false
+      },
+      "surface": {
+        "triangles": 1066285,
+        "points": 510342,
+        "cad_unique_faces": 62603,
+        "missing_cad_face_ids": [],
+        "zero_area_triangles": 0,
+        "material_adjacency_pass": true,
+        "domains": [
+          {
+            "tag": 1,
+            "source_solid_index": 0,
+            "material": "air",
+            "triangles": 567776,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 810326.5351083229,
+            "cad_volume_mm3": 810347.552674217,
+            "relative_volume_error": 2.593648345677564e-05,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 2,
+            "source_solid_index": 1,
+            "material": "fr4",
+            "triangles": 226750,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 9876.351908438959,
+            "cad_volume_mm3": 9862.319638705088,
+            "relative_volume_error": 0.0014228163604432776,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 3,
+            "source_solid_index": 2,
+            "material": "fr4",
+            "triangles": 335348,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 7721.896456155766,
+            "cad_volume_mm3": 7709.166044992542,
+            "relative_volume_error": 0.0016513344100939195,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 4,
+            "source_solid_index": 3,
+            "material": "port1",
+            "triangles": 92,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 0.0043560000000304085,
+            "cad_volume_mm3": 0.004355999999999981,
+            "relative_volume_error": 6.985089478565961e-12,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 5,
+            "source_solid_index": 4,
+            "material": "port2",
+            "triangles": 96,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 0.004356000000046582,
+            "cad_volume_mm3": 0.004355999999999993,
+            "relative_volume_error": 1.0695470246627454e-11,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 6,
+            "source_solid_index": 5,
+            "material": "port3",
+            "triangles": 92,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 0.004355999999272164,
+            "cad_volume_mm3": 0.004355999999999939,
+            "relative_volume_error": 1.670740613885964e-10,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 7,
+            "source_solid_index": 6,
+            "material": "port4",
+            "triangles": 92,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 0.005808000000402426,
+            "cad_volume_mm3": 0.005807999999999934,
+            "relative_volume_error": 6.929963423202812e-11,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          }
+        ],
+        "not_a_mesh_convergence_test": true,
+        "parameter_orientation_corrections": 3345,
+        "complete_material_surface_pass": true
+      },
+      "volume": null,
+      "conversion": null
+    },
+    {
+      "name": "full-gmsh-canonical-net-union-adaptive-v3",
+      "last": {
+        "stage": "full volume mesh begin",
+        "seconds": 78.74035269999877,
+        "pid": 60840,
+        "algorithm3d": 10,
+        "threads": 8
+      },
+      "runtime": {
+        "pid": 60840,
+        "identity_matches": false,
+        "observed_alive": null,
+        "query_error": 87
+      },
+      "error": {
+        "message": "exception: access violation reading 0x000001D5A110D038",
+        "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\artzy\\Documents\\ChatGPT\\test_board\\outputs\\porta-em\\mesh_full_gmsh_adaptive.py\", line 191, in <module>\n    gmsh.model.mesh.generate(3)\n  File \"C:\\Users\\artzy\\Documents\\ChatGPT\\test_board\\outputs\\porta-em\\tools\\gmsh-venv\\Lib\\site-packages\\gmsh.py\", line 2185, in generate\n    lib.gmshModelMeshGenerate(\nOSError: exception: access violation reading 0x000001D5A110D038\n",
+        "accepted": false
+      },
+      "surface": {
+        "triangles": 1135103,
+        "points": 544663,
+        "cad_unique_faces": 62603,
+        "missing_cad_face_ids": [],
+        "zero_area_triangles": 0,
+        "material_adjacency_pass": true,
+        "domains": [
+          {
+            "tag": 1,
+            "source_solid_index": 0,
+            "material": "air",
+            "triangles": 598172,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 810335.262299203,
+            "cad_volume_mm3": 810347.552674217,
+            "relative_volume_error": 1.5166794758013717e-05,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 2,
+            "source_solid_index": 1,
+            "material": "fr4",
+            "triangles": 245684,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 9871.00804131667,
+            "cad_volume_mm3": 9862.319638705088,
+            "relative_volume_error": 0.000880969480798838,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 3,
+            "source_solid_index": 2,
+            "material": "fr4",
+            "triangles": 355104,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 7714.222674007677,
+            "cad_volume_mm3": 7709.166044992542,
+            "relative_volume_error": 0.0006559242576464049,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 4,
+            "source_solid_index": 3,
+            "material": "port1",
+            "triangles": 92,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 0.0043560000000304085,
+            "cad_volume_mm3": 0.004355999999999981,
+            "relative_volume_error": 6.985089478565961e-12,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 5,
+            "source_solid_index": 4,
+            "material": "port2",
+            "triangles": 96,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 0.004356000000046582,
+            "cad_volume_mm3": 0.004355999999999993,
+            "relative_volume_error": 1.0695470246627454e-11,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 6,
+            "source_solid_index": 5,
+            "material": "port3",
+            "triangles": 94,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 0.004355999999602567,
+            "cad_volume_mm3": 0.004355999999999939,
+            "relative_volume_error": 9.122411370070587e-11,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 7,
+            "source_solid_index": 6,
+            "material": "port4",
+            "triangles": 92,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 0.005808000000471658,
+            "cad_volume_mm3": 0.005807999999999934,
+            "relative_volume_error": 8.121973522453797e-11,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          }
+        ],
+        "not_a_mesh_convergence_test": true,
+        "parameter_orientation_corrections": 3345,
+        "complete_material_surface_pass": true
+      },
+      "volume": null,
+      "conversion": null
+    },
+    {
+      "name": "full-gmsh-canonical-net-union-netgen-volume",
+      "last": {
+        "stage": "full volume mesh begin",
+        "pid": 28464,
+        "seconds": 5.117987200035714,
+        "mesher": "Netgen",
+        "settings": {
+          "maxh": 2.5,
+          "grading": 0.3,
+          "meshsizefilename": "C:\\Users\\artzy\\Documents\\ChatGPT\\test_board\\outputs\\porta-em\\runs\\full-gmsh-canonical-net-union-netgen-volume\\mesh-sizes.txt"
+        }
+      },
+      "runtime": {
+        "pid": 28464,
+        "identity_matches": false,
+        "observed_alive": null,
+        "query_error": 87
+      },
+      "error": {
+        "at": "2026-09-08T10:14:15.276767",
+        "identity": {
+          "pid": 28464,
+          "creation_filetime": "134333012519250895"
+        },
+        "prior_process": {
+          "pid": 28464,
+          "identity_matches": true,
+          "observed_alive": true,
+          "creation_filetime": "134333012519250895",
+          "exit_code": null,
+          "cpu_seconds": 2460.46875,
+          "wall_seconds": 2403.351678133011
+        },
+        "action": "stop",
+        "reason": "Alternative native volume mesher reports repeated more-elements-on-face errors. A complete Delaunay mesh is now available and independently passes all positive-volume, material and global tetrahedral-incidence checks. Preserve original surface; release redundant native work before full Maxwell solve.",
+        "preserved_surface_mesh": true,
+        "full_route_goal_complete": false
+      },
+      "surface": {
+        "triangles": 1135103,
+        "points": 544663,
+        "cad_unique_faces": 62603,
+        "missing_cad_face_ids": [],
+        "zero_area_triangles": 0,
+        "domains": [
+          {
+            "number": 1,
+            "material": "air",
+            "triangles": 598172,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 810335.262299203,
+            "cad_volume_mm3": 810347.552674217,
+            "relative_volume_error": 1.5166794758013717e-05,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "number": 2,
+            "material": "fr4",
+            "triangles": 245684,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 9871.00804131667,
+            "cad_volume_mm3": 9862.319638705088,
+            "relative_volume_error": 0.000880969480798838,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "number": 3,
+            "material": "fr4",
+            "triangles": 355104,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 7714.222674007677,
+            "cad_volume_mm3": 7709.166044992542,
+            "relative_volume_error": 0.0006559242576464049,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "number": 4,
+            "material": "port1",
+            "triangles": 92,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 0.0043560000000304085,
+            "cad_volume_mm3": 0.004355999999999981,
+            "relative_volume_error": 6.985089478565961e-12,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "number": 5,
+            "material": "port2",
+            "triangles": 96,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 0.004356000000046582,
+            "cad_volume_mm3": 0.004355999999999993,
+            "relative_volume_error": 1.0695470246627454e-11,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "number": 6,
+            "material": "port3",
+            "triangles": 94,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 0.004355999999602567,
+            "cad_volume_mm3": 0.004355999999999939,
+            "relative_volume_error": 9.122411370070587e-11,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "number": 7,
+            "material": "port4",
+            "triangles": 92,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 0.005808000000471658,
+            "cad_volume_mm3": 0.005807999999999934,
+            "relative_volume_error": 8.121973522453797e-11,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          }
+        ],
+        "complete_material_surface_pass": true,
+        "not_a_mesh_convergence_test": true
+      },
+      "volume": null,
+      "conversion": null
+    },
+    {
+      "name": "full-gmsh-canonical-net-union-delaunay-volume",
+      "last": {
+        "stage": "full volume mesh begin",
+        "seconds": 49.64468060003128,
+        "pid": 74208,
+        "algorithm3d": 1,
+        "threads": 8
+      },
+      "runtime": {
+        "pid": 74208,
+        "identity_matches": false,
+        "observed_alive": null,
+        "query_error": 87
+      },
+      "error": {
+        "message": "Incomplete, inverted, or mismatched material volumes",
+        "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\artzy\\Documents\\ChatGPT\\test_board\\outputs\\porta-em\\mesh_full_gmsh_adaptive.py\", line 213, in <module>\n    assert volume_audit['complete_material_volume_pass'],'Incomplete, inverted, or mismatched material volumes'\n           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Incomplete, inverted, or mismatched material volumes\n",
+        "accepted": false
+      },
+      "surface": {
+        "triangles": 1135103,
+        "points": 544663,
+        "cad_unique_faces": 62603,
+        "missing_cad_face_ids": [],
+        "zero_area_triangles": 0,
+        "material_adjacency_pass": true,
+        "domains": [
+          {
+            "tag": 1,
+            "source_solid_index": 0,
+            "material": "air",
+            "triangles": 598172,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 810335.262299203,
+            "cad_volume_mm3": 810347.552674217,
+            "relative_volume_error": 1.5166794758013717e-05,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 2,
+            "source_solid_index": 1,
+            "material": "fr4",
+            "triangles": 245684,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 9871.00804131667,
+            "cad_volume_mm3": 9862.319638705088,
+            "relative_volume_error": 0.000880969480798838,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 3,
+            "source_solid_index": 2,
+            "material": "fr4",
+            "triangles": 355104,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 7714.222674007677,
+            "cad_volume_mm3": 7709.166044992542,
+            "relative_volume_error": 0.0006559242576464049,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 4,
+            "source_solid_index": 3,
+            "material": "port1",
+            "triangles": 92,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 0.0043560000000304085,
+            "cad_volume_mm3": 0.004355999999999981,
+            "relative_volume_error": 6.985089478565961e-12,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 5,
+            "source_solid_index": 4,
+            "material": "port2",
+            "triangles": 96,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 0.004356000000046582,
+            "cad_volume_mm3": 0.004355999999999993,
+            "relative_volume_error": 1.0695470246627454e-11,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 6,
+            "source_solid_index": 5,
+            "material": "port3",
+            "triangles": 94,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 0.004355999999602567,
+            "cad_volume_mm3": 0.004355999999999939,
+            "relative_volume_error": 9.122411370070587e-11,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 7,
+            "source_solid_index": 6,
+            "material": "port4",
+            "triangles": 92,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 0.005808000000471658,
+            "cad_volume_mm3": 0.005807999999999934,
+            "relative_volume_error": 8.121973522453797e-11,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          }
+        ],
+        "not_a_mesh_convergence_test": true,
+        "parameter_orientation_corrections": 3345,
+        "complete_material_surface_pass": true
+      },
+      "volume": {
+        "points": 639893,
+        "tetrahedra": 2306102,
+        "domains": [
+          {
+            "tag": 1,
+            "material": "air",
+            "tetrahedra": 1249522,
+            "volume_mm3": 810335.2592475082,
+            "cad_volume_mm3": 810347.552674217,
+            "relative_volume_error": 1.5170560666487586e-05,
+            "minimum_signed_tet_volume_mm3": 5.9079999999854936e-08,
+            "nonpositive_tetrahedra": 0,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 2,
+            "material": "fr4",
+            "tetrahedra": 427065,
+            "volume_mm3": 9871.018434626425,
+            "cad_volume_mm3": 9862.319638705088,
+            "relative_volume_error": 0.0008820233210854146,
+            "minimum_signed_tet_volume_mm3": 5.4130581375484245e-08,
+            "nonpositive_tetrahedra": 0,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 3,
+            "material": "fr4",
+            "tetrahedra": 629113,
+            "volume_mm3": 7714.246898258352,
+            "cad_volume_mm3": 7709.166044992542,
+            "relative_volume_error": 0.0006590665236884432,
+            "minimum_signed_tet_volume_mm3": 0.0,
+            "nonpositive_tetrahedra": 1,
+            "volume_screen_pass": false
+          },
+          {
+            "tag": 4,
+            "material": "port1",
+            "tetrahedra": 97,
+            "volume_mm3": 0.004355999999999992,
+            "cad_volume_mm3": 0.004355999999999981,
+            "relative_volume_error": 2.3894262754501577e-15,
+            "minimum_signed_tet_volume_mm3": 1.3904596560846593e-05,
+            "nonpositive_tetrahedra": 0,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 5,
+            "material": "port2",
+            "tetrahedra": 116,
+            "volume_mm3": 0.004356000000000002,
+            "cad_volume_mm3": 0.004355999999999993,
+            "relative_volume_error": 2.1903074191626387e-15,
+            "minimum_signed_tet_volume_mm3": 1.3904596560846366e-05,
+            "nonpositive_tetrahedra": 0,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 6,
+            "material": "port3",
+            "tetrahedra": 100,
+            "volume_mm3": 0.004355999999999954,
+            "cad_volume_mm3": 0.004355999999999939,
+            "relative_volume_error": 3.3850205568877566e-15,
+            "minimum_signed_tet_volume_mm3": 1.3904596560846479e-05,
+            "nonpositive_tetrahedra": 0,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 7,
+            "material": "port4",
+            "tetrahedra": 89,
+            "volume_mm3": 0.005807999999999949,
+            "cad_volume_mm3": 0.005807999999999934,
+            "relative_volume_error": 2.5387654176658107e-15,
+            "minimum_signed_tet_volume_mm3": 2.372427885292337e-05,
+            "nonpositive_tetrahedra": 0,
+            "volume_screen_pass": true
+          }
+        ],
+        "complete_material_volume_pass": false,
+        "not_a_mesh_convergence_test": true
+      },
+      "conversion": null
+    },
+    {
+      "name": "full-gmsh-canonical-net-union-h075-curv12",
+      "last": {
+        "stage": "full volume mesh begin",
+        "seconds": 90.93346999993082,
+        "pid": 3080,
+        "algorithm3d": 1,
+        "threads": 8
+      },
+      "runtime": {
+        "pid": 3080,
+        "identity_matches": false,
+        "observed_alive": null,
+        "query_error": 87
+      },
+      "error": {
+        "message": "Incomplete, inverted, or mismatched material volumes",
+        "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\artzy\\Documents\\ChatGPT\\test_board\\outputs\\porta-em\\mesh_full_gmsh_adaptive.py\", line 213, in <module>\n    assert volume_audit['complete_material_volume_pass'],'Incomplete, inverted, or mismatched material volumes'\n           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Incomplete, inverted, or mismatched material volumes\n",
+        "accepted": false
+      },
+      "surface": {
+        "triangles": 1660942,
+        "points": 807199,
+        "cad_unique_faces": 62603,
+        "missing_cad_face_ids": [],
+        "zero_area_triangles": 0,
+        "material_adjacency_pass": true,
+        "domains": [
+          {
+            "tag": 1,
+            "source_solid_index": 0,
+            "material": "air",
+            "triangles": 886220,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 810342.0975497501,
+            "cad_volume_mm3": 810347.552674217,
+            "relative_volume_error": 6.731833086816192e-06,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 2,
+            "source_solid_index": 1,
+            "material": "fr4",
+            "triangles": 350620,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 9865.735843403907,
+            "cad_volume_mm3": 9862.319638705088,
+            "relative_volume_error": 0.0003463895740522856,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 3,
+            "source_solid_index": 2,
+            "material": "fr4",
+            "triangles": 497998,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 7711.528775429754,
+            "cad_volume_mm3": 7709.166044992542,
+            "relative_volume_error": 0.0003064832724347433,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 4,
+            "source_solid_index": 3,
+            "material": "port1",
+            "triangles": 108,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 0.004356000000031195,
+            "cad_volume_mm3": 0.004355999999999981,
+            "relative_volume_error": 7.1656902812187355e-12,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 5,
+            "source_solid_index": 4,
+            "material": "port2",
+            "triangles": 110,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 0.004355999999921094,
+            "cad_volume_mm3": 0.004355999999999993,
+            "relative_volume_error": 1.8112647643337297e-11,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 6,
+            "source_solid_index": 5,
+            "material": "port3",
+            "triangles": 112,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 0.004355999999675221,
+            "cad_volume_mm3": 0.004355999999999939,
+            "relative_volume_error": 7.454492270378218e-11,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 7,
+            "source_solid_index": 6,
+            "material": "port4",
+            "triangles": 144,
+            "edges_without_two_triangles": 0,
+            "inconsistent_edge_orientation": 0,
+            "signed_surface_volume_mm3": 0.0058080000009992595,
+            "cad_volume_mm3": 0.005807999999999934,
+            "relative_volume_error": 1.7206019666889162e-10,
+            "closed_oriented_shell": true,
+            "volume_screen_pass": true
+          }
+        ],
+        "not_a_mesh_convergence_test": true,
+        "parameter_orientation_corrections": 3345,
+        "complete_material_surface_pass": true
+      },
+      "volume": {
+        "points": 929313,
+        "tetrahedra": 3179377,
+        "domains": [
+          {
+            "tag": 1,
+            "material": "air",
+            "tetrahedra": 1733322,
+            "volume_mm3": 810342.0975497497,
+            "cad_volume_mm3": 810347.552674217,
+            "relative_volume_error": 6.731833087390835e-06,
+            "minimum_signed_tet_volume_mm3": 5.9079999999854936e-08,
+            "nonpositive_tetrahedra": 0,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 2,
+            "material": "fr4",
+            "tetrahedra": 592170,
+            "volume_mm3": 9865.735843404193,
+            "cad_volume_mm3": 9862.319638705088,
+            "relative_volume_error": 0.0003463895740812424,
+            "minimum_signed_tet_volume_mm3": 0.0,
+            "nonpositive_tetrahedra": 1,
+            "volume_screen_pass": false
+          },
+          {
+            "tag": 3,
+            "material": "fr4",
+            "tetrahedra": 853362,
+            "volume_mm3": 7711.528775429746,
+            "cad_volume_mm3": 7709.166044992542,
+            "relative_volume_error": 0.0003064832724336815,
+            "minimum_signed_tet_volume_mm3": 9.748000001491801e-08,
+            "nonpositive_tetrahedra": 0,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 4,
+            "material": "port1",
+            "tetrahedra": 117,
+            "volume_mm3": 0.004355999999999992,
+            "cad_volume_mm3": 0.004355999999999981,
+            "relative_volume_error": 2.3894262754501577e-15,
+            "minimum_signed_tet_volume_mm3": 1.3612499999999926e-05,
+            "nonpositive_tetrahedra": 0,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 5,
+            "material": "port2",
+            "tetrahedra": 121,
+            "volume_mm3": 0.004356000000000003,
+            "cad_volume_mm3": 0.004355999999999993,
+            "relative_volume_error": 2.3894262754501514e-15,
+            "minimum_signed_tet_volume_mm3": 1.3612499999999816e-05,
+            "nonpositive_tetrahedra": 0,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 6,
+            "material": "port3",
+            "tetrahedra": 124,
+            "volume_mm3": 0.004355999999999952,
+            "cad_volume_mm3": 0.004355999999999939,
+            "relative_volume_error": 2.986782844312726e-15,
+            "minimum_signed_tet_volume_mm3": 1.3612499999999479e-05,
+            "nonpositive_tetrahedra": 0,
+            "volume_screen_pass": true
+          },
+          {
+            "tag": 7,
+            "material": "port4",
+            "tetrahedra": 161,
+            "volume_mm3": 0.005807999999999949,
+            "cad_volume_mm3": 0.005807999999999934,
+            "relative_volume_error": 2.5387654176658107e-15,
+            "minimum_signed_tet_volume_mm3": 5.8215628889666945e-06,
+            "nonpositive_tetrahedra": 0,
+            "volume_screen_pass": true
+          }
+        ],
+        "complete_material_volume_pass": false,
+        "not_a_mesh_convergence_test": true
+      },
+      "conversion": null
+    }
+  ],
+  "full_route_field_solution_exists": true,
+  "new_full_route_summary": {
+    "updated": "2026-09-08T10:50:07",
+    "case": "full-fem-net-union-100mhz-h075-order0",
+    "input_sha256": "93810213a86cff18f276a8c36ec5139799ed6a9b8386ccb21bde367e0ec76bc3",
+    "mesh_sha256": "ec87e57cce2b2ff33748309cb9252f7294e2648f51955889500fbcf0863d0226",
+    "result_sha256": "c5a666b02b5614743f7568bf55ddce40cbd605bf7e6590c9383cd3f40e10d768",
+    "single_model_checks_pass": true,
+    "frequency_count": 1,
+    "full_1_to_100mhz_band": false,
+    "rows": [
+      {
+        "frequency_mhz": 100.0,
+        "t2_rx_return_loss_db": 20.422378437931577,
+        "m12_rx_return_loss_db": 20.422480553712234,
+        "t2_to_m12_rx_insertion_loss_db": 0.03959890908680222,
+        "m12_to_t2_rx_insertion_loss_db": 0.039598909087122866,
+        "t2_rx_reflected_power_percent": 0.9073234933208512,
+        "m12_rx_reflected_power_percent": 0.9073021596494745,
+        "t2_to_m12_transmitted_power_percent": 99.09234570022275,
+        "t2_other_pair_total_power_percent": 6.331233495977002e-05
+      }
+    ],
+    "ndof": 4903607,
+    "solve_seconds": 175.677194399992,
+    "scope": "Whole T2 cable-side pads to both PCB copper paths, approximate64 contacts and M12 PCB pads.",
+    "numerical_convergence_pass": false,
+    "full_route_goal_complete": false,
+    "caveat": "Computed model values. Mesh, boundary and port comparisons are still required. Reflected power percentage is not hardware fault contribution."
+  },
+  "field_progress": {
+    "case": "full-fem-net-union-100mhz-h075-order0",
+    "last": {
+      "stage": "requested frequencies complete",
+      "pid": 34536,
+      "seconds": 327.77221650001593,
+      "single_model_checks_pass": true
+    },
+    "runtime": {
+      "pid": 34536,
+      "identity_matches": false,
+      "observed_alive": null,
+      "query_error": 87
+    },
+    "failure": null,
+    "resources": {
+      "launcher_pid": 68604,
+      "limit_gib": 72.0,
+      "peak_job_commit_gib": 31.703292846679688,
+      "elapsed_seconds": 328.4621896999888
+    }
+  },
+  "complete_volume_ready": true,
+  "complete_volume_connectivity": {
+    "tetrahedra": 2306103,
+    "unique_tetrahedron_faces": 5147593,
+    "source_surface_triangles": 1135003,
+    "tetrahedron_faces_not_used_once_or_twice": 0,
+    "internal_faces_without_opposite_orientation": 0,
+    "external_faces_without_source_boundary": 0,
+    "source_surface_incidence_count_mismatches": 0,
+    "source_surface_material_mismatches": 0,
+    "external_boundary_orientation_mismatches": 0,
+    "unrepresented_material_interfaces": 0,
+    "seconds": 16.858122500008903,
+    "complete_conforming_material_mesh_pass": true
+  },
+  "complete_volume_conversion": {
+    "elements": 2306103,
+    "vertices": 639893,
+    "materials": [
+      "air",
+      "fr4",
+      "fr4",
+      "port1",
+      "port2",
+      "port3",
+      "port4"
+    ],
+    "boundary_names": [
+      "default",
+      "interface",
+      "outer",
+      "pec"
+    ],
+    "material_volumes": {
+      "air": {
+        "integrated_mm3": 810335.2592476555,
+        "cad_mm3": 810347.552674217,
+        "relative_error": 1.517056048475645e-05
+      },
+      "fr4": {
+        "integrated_mm3": 17585.26533288335,
+        "cad_mm3": 17571.485683697632,
+        "relative_error": 0.0007842051283405866
+      },
+      "port1": {
+        "integrated_mm3": 0.0043560000000000855,
+        "cad_mm3": 0.004355999999999981,
+        "relative_error": 2.389426275450158e-14
+      },
+      "port2": {
+        "integrated_mm3": 0.004356000000000094,
+        "cad_mm3": 0.004355999999999993,
+        "relative_error": 2.3296906185638977e-14
+      },
+      "port3": {
+        "integrated_mm3": 0.004356000000000047,
+        "cad_mm3": 0.004355999999999939,
+        "relative_error": 2.4889857035939385e-14
+      },
+      "port4": {
+        "integrated_mm3": 0.005808000000000062,
+        "cad_mm3": 0.005807999999999934,
+        "relative_error": 2.2102193047914116e-14
+      }
+    },
+    "order0_dof": 3483013,
+    "order1_dof": 6966026,
+    "per_surface_material_adjacency_preserved": true,
+    "seconds": 29.57504369993694,
+    "source_arrays_sha256": "135122c97776a23cdcc48e9e81529e6995be44a17c25913ac1ca2a504cbcead9",
+    "source_tags_sha256": "48e091e88aad984478e1986b8660af63413028813953e4c134ab95957800f8e8"
+  },
+  "first_failed_face": {
+    "number": 101,
+    "name": "interface",
+    "center_mm": [
+      4.1932957935814255,
+      -8.300640997030973,
+      1.478
+    ],
+    "minimum_edge_mm": 9.99999997475243e-07,
+    "edge_count": 1321
+  },
+  "repair_phase": {
+    "stage": "heal complete CAD begin",
+    "seconds": 133.56087230006233,
+    "pid": 59732,
+    "faces": 82473,
+    "solids": 7
+  },
+  "repair_runtime": {
+    "pid": 59732,
+    "identity_matches": false,
+    "observed_alive": null,
+    "query_error": 87
+  },
+  "repair_measurement_exists": false,
+  "canonical_preparation": {
+    "polygons": 739,
+    "all_original_copper_components_retained": true,
+    "nonpolygon_inputs_identical": true,
+    "minimum_prepared_edge_mm": 0.00475394572960054,
+    "verified_bound_mm": 0.005
+  },
+  "canonical_copper_ready": true,
+  "canonical_cad_complete": true,
+  "current_model": "full-fem-canonical-net-union",
+  "planar_union_contact_groups": [
+    {
+      "board": "Motor_board",
+      "layer": "F_Cu",
+      "source_polygon_ids": [
+        15,
+        18
+      ],
+      "output_polygons": 1,
+      "symmetric_difference_mm2": 1.613519693222682e-05
+    },
+    {
+      "board": "Control_board",
+      "layer": "B_Cu",
+      "source_polygon_ids": [
+        37,
+        49
+      ],
+      "output_polygons": 1,
+      "symmetric_difference_mm2": 0.0
+    }
+  ],
+  "full_route_goal_complete": false
+}

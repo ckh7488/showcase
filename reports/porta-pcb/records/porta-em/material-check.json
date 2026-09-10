@@ -1,0 +1,5 @@
+{
+  "tested": 2000,
+  "mismatches": [],
+  "scope": "Continuous CSXCAD geometry, not discretized Yee-grid connectivity"
+}

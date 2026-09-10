@@ -1,0 +1,106 @@
+{
+  "document_date": "2026-09-08",
+  "revision": 1,
+  "purpose": "Engineering investigation priority; not whole-product compliance or causal fault percentages",
+  "base": {
+    "updated": "2026-09-08T10:20:42",
+    "case": "full-fem-net-union-100mhz-order0",
+    "input_sha256": "93810213a86cff18f276a8c36ec5139799ed6a9b8386ccb21bde367e0ec76bc3",
+    "mesh_sha256": "4b4a438d05551ab18858734780b433a3e69cf75b2a69ae0e0a22c6b9004df5af",
+    "result_sha256": "c9960d2efb792327cf715c687e06975c7d293664bd1c831a76f2cb11f49c07d5",
+    "single_model_checks_pass": true,
+    "frequency_count": 1,
+    "full_1_to_100mhz_band": false,
+    "rows": [
+      {
+        "frequency_mhz": 100.0,
+        "t2_rx_return_loss_db": 19.73559901066273,
+        "m12_rx_return_loss_db": 19.73566081034261,
+        "t2_to_m12_rx_insertion_loss_db": 0.046424623292398784,
+        "m12_to_t2_rx_insertion_loss_db": 0.046424623292344494,
+        "t2_rx_reflected_power_percent": 1.062771987892966,
+        "m12_rx_reflected_power_percent": 1.0627568648591557,
+        "t2_to_m12_transmitted_power_percent": 98.936726687019,
+        "t2_other_pair_total_power_percent": 6.946092006306995e-05
+      }
+    ],
+    "ndof": 3483013,
+    "solve_seconds": 150.97480740002356,
+    "scope": "Whole T2 cable-side pads to both PCB copper paths, approximate64 contacts and M12 PCB pads.",
+    "numerical_convergence_pass": false,
+    "full_route_goal_complete": false,
+    "caveat": "Computed model values. Mesh, boundary and port comparisons are still required. Reflected power percentage is not hardware fault contribution."
+  },
+  "fine": {
+    "updated": "2026-09-08T10:50:07",
+    "case": "full-fem-net-union-100mhz-h075-order0",
+    "input_sha256": "93810213a86cff18f276a8c36ec5139799ed6a9b8386ccb21bde367e0ec76bc3",
+    "mesh_sha256": "ec87e57cce2b2ff33748309cb9252f7294e2648f51955889500fbcf0863d0226",
+    "result_sha256": "c5a666b02b5614743f7568bf55ddce40cbd605bf7e6590c9383cd3f40e10d768",
+    "single_model_checks_pass": true,
+    "frequency_count": 1,
+    "full_1_to_100mhz_band": false,
+    "rows": [
+      {
+        "frequency_mhz": 100.0,
+        "t2_rx_return_loss_db": 20.422378437931577,
+        "m12_rx_return_loss_db": 20.422480553712234,
+        "t2_to_m12_rx_insertion_loss_db": 0.03959890908680222,
+        "m12_to_t2_rx_insertion_loss_db": 0.039598909087122866,
+        "t2_rx_reflected_power_percent": 0.9073234933208512,
+        "m12_rx_reflected_power_percent": 0.9073021596494745,
+        "t2_to_m12_transmitted_power_percent": 99.09234570022275,
+        "t2_other_pair_total_power_percent": 6.331233495977002e-05
+      }
+    ],
+    "ndof": 4903607,
+    "solve_seconds": 175.677194399992,
+    "scope": "Whole T2 cable-side pads to both PCB copper paths, approximate64 contacts and M12 PCB pads.",
+    "numerical_convergence_pass": false,
+    "full_route_goal_complete": false,
+    "caveat": "Computed model values. Mesh, boundary and port comparisons are still required. Reflected power percentage is not hardware fault contribution."
+  },
+  "comparison": {
+    "frequency_mhz": 100,
+    "base": "full-fem-net-union-100mhz-order0",
+    "fine": "full-fem-net-union-100mhz-h075-order0",
+    "rx_rl_change_db": 0.6867794272688457,
+    "rx_il_change_db": 0.006825714205596564,
+    "rl_limit_db": 0.5,
+    "il_limit_db": 0.05,
+    "single_model_checks_pass": true,
+    "mesh_target_pass": false
+  },
+  "ground_audit": {
+    "input_sha256": "93810213a86cff18f276a8c36ec5139799ed6a9b8386ccb21bde367e0ec76bc3",
+    "counts": {
+      "Motor_board": {
+        "ground_vias": 284,
+        "near_rx": 6,
+        "all_plated_holes": 332
+      },
+      "Control_board": {
+        "ground_vias": 284,
+        "near_rx": 2,
+        "all_plated_holes": 456
+      }
+    },
+    "ground_vias": 568,
+    "near_rx_vias": 8,
+    "maximum_coordinate_error_mm": 2.0097183471152322e-14,
+    "all_ground_drills_present_in_fem_input": true,
+    "near_rx_definition": "Within 3 mm of the actual Gerber RX copper, for display selection only.",
+    "field_model_changed": false
+  },
+  "source_sha256": {
+    "porta-em/runs/full-fem-net-union-100mhz-order0/full-route-summary.json": "7380f8e7943b5e47b30fc2c68d4eb90b532b2451a4b1aefda24c06d26baa5b95",
+    "porta-em/runs/full-fem-net-union-100mhz-h075-order0/full-route-summary.json": "3cfe28506bd03921696fc634037eb8a1deb08407c0399b44e3eada76dcdbb4bb",
+    "porta-em/full-fem-first-mesh-comparison.json": "2b7d09a32fdf19d2af6c3956dfcb260d5b8fa00cda372f5edf361ebe60f37e02",
+    "porta-cable-em/ground-via-inclusion-audit.json": "30b26adc077533b9631665421ea486def1df6ed4e71e4baf194941f406815d07"
+  },
+  "primary_references": [
+    "https://www.iol.unh.edu/sites/default/files/testsuites/ethernet/CL25_PMD/PMD_Test_Suite_v3.5.pdf",
+    "https://www.microchip.com/content/dam/mchp/documents/UNG/ProductDocuments/BoardDesignFiles/RoutingChecklistforLAN9354SQFNRevA.pdf",
+    "https://www.ti.com/lit/an/snla466/snla466.pdf"
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "records": [
+    {
+      "frequency_hz": 100000000.0,
+      "seconds": 174.44968790002167,
+      "reciprocity_complex_error": 4.0084471232677914e-14,
+      "largest_power_gain": 0.9999999532461158,
+      "columns": [
+        {
+          "drive": 1,
+          "relative_linear_residual": 9.844621868212288e-10,
+          "residual_refinement_history": [
+            9.844621868212288e-10
+          ],
+          "fixed_factor_reference_mhz": null,
+          "gmres_iterations": [],
+          "resistor_power_w": [
+            7.278573173363836,
+            3.51834087993069e-06,
+            8.324424803242298,
+            3.265279168676494e-06
+          ],
+          "ideal_voltage_resistor_power_w": [
+            7.278569751829183,
+            3.5175441010576986e-06,
+            8.324422836576447,
+            3.243542921340197e-06
+          ],
+          "resistor_power_mismatch_over_incident": 4.328586823810042e-07,
+          "port_power_ratio": 0.9999992695907153,
+          "field_vector_file": "field-100MHz-drive1.npy"
+        },
+        {
+          "drive": 2,
+          "relative_linear_residual": 4.538090422537129e-10,
+          "residual_refinement_history": [
+            4.538090422537129e-10
+          ],
+          "fixed_factor_reference_mhz": null,
+          "gmres_iterations": [],
+          "resistor_power_w": [
+            3.5175950511469707e-06,
+            11.83680131817017,
+            4.4477850132218936e-06,
+            12.386572293817125
+          ],
+          "ideal_voltage_resistor_power_w": [
+            3.5175441010578502e-06,
+            11.836800536256051,
+            4.396497768913402e-06,
+            12.386543212527846
+          ],
+          "resistor_power_mismatch_over_incident": 2.3931633274038503e-06,
+          "port_power_ratio": 0.9999973250587856,
+          "field_vector_file": "field-100MHz-drive2.npy"
+        },
+        {
+          "drive": 3,
+          "relative_linear_residual": 1.5025583656468018e-09,
+          "residual_refinement_history": [
+            1.5025583656468018e-09
+          ],
+          "fixed_factor_reference_mhz": null,
+          "gmres_iterations": [],
+          "resistor_power_w": [
+            8.324423946755896,
+            4.396773157362531e-06,
+            6.670872317793623,
+            4.9244553441217905e-06
+          ],
+          "ideal_voltage_resistor_power_w": [
+            8.32442283657597,
+            4.396497768919733e-06,
+            6.670866063643493,
+            4.874785096879707e-06
+          ],
+          "resistor_power_mismatch_over_incident": 5.931420553341698e-07,
+          "port_power_ratio": 0.9999987827826593,
+          "field_vector_file": "field-100MHz-drive3.npy"
+        },
+        {
+          "drive": 4,
+          "relative_linear_residual": 3.6488331010390944e-10,
+          "residual_refinement_history": [
+            3.6488331010390944e-10
+          ],
+          "fixed_factor_reference_mhz": null,
+          "gmres_iterations": [],
+          "resistor_power_w": [
+            3.243594164015474e-06,
+            12.386543940773294,
+            4.930413660695514e-06,
+            11.840254261521679
+          ],
+          "ideal_voltage_resistor_power_w": [
+            3.2435429213343126e-06,
+            12.386543212526929,
+            4.87478509687327e-06,
+            11.84022284329236
+          ],
+          "resistor_power_mismatch_over_incident": 2.5761724392449425e-06,
+          "port_power_ratio": 0.9999971280648903,
+          "field_vector_file": "field-100MHz-drive4.npy"
+        }
+      ]
+    }
+  ],
+  "seconds": 175.677194399992,
+  "scope": "Frequency-domain Maxwell solution of a prepared, independently audited mesh.\n\nAll port columns share one matrix factorization per frequency. Actual field\nintegrals, linear residuals, reciprocity and necessary passivity are retained.\nNo time extrapolation or assumed full-PCB equivalent line is used.\n",
+  "single_model_checks_pass": true,
+  "full_goal_complete": false
+}

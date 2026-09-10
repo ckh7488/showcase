@@ -1,0 +1,402 @@
+{
+  "at": "2026-09-08T02:47:46",
+  "cases": [
+    {
+      "scope": "Bounded frequency-domain FEM feasibility test, not a full PCB result.\n\nRetains the small Gerber pilot copper and raised leads. Its ports have finite\n0.04 x 0.04 mm cross-sections, anisotropic Ohmic conductivity, and a Norton\ncurrent source. This differs from the FDTD line port and requires comparison.\n",
+      "args": {
+        "name": "fem-bend-z-corrected",
+        "order": 1,
+        "h": 0.15,
+        "mesh_only": false,
+        "mhz": 100
+      },
+      "tetrahedra": 52743,
+      "vertices": 10532,
+      "runner_sha256": "7f6d4ce7fe0ba26d9f35c74b480db0e2447a18d44ed66eeb34e625791d563d90",
+      "metal_connected_components": 3,
+      "boundaries": [
+        "default",
+        "interface",
+        "outer",
+        "pec"
+      ],
+      "materials": [
+        "air",
+        "fr4",
+        "port1",
+        "port2"
+      ],
+      "mesh_seconds": 5.068365500075743,
+      "ports": [
+        {
+          "gap_mm": 0.1200000000000001,
+          "area_mm2": 0.0016,
+          "R_ohm": 100
+        },
+        {
+          "gap_mm": 0.12,
+          "area_mm2": 0.0016,
+          "R_ohm": 100
+        }
+      ],
+      "frequency_hz": 100000000.0,
+      "ndof": 132994,
+      "seconds": 10.522190200048499,
+      "voltage_complex": [
+        [
+          49.99868195314434,
+          -0.08008565601763516
+        ],
+        [
+          49.995241090354234,
+          -0.6876197140839341
+        ]
+      ],
+      "s11": [
+        -2.6360937113167893e-05,
+        -0.0016017131203527033
+      ],
+      "s21": [
+        0.9999048218070847,
+        -0.013752394281678681
+      ],
+      "rl_db": 55.90712914747321,
+      "il_db": 5.293959428239785e-06,
+      "relative_linear_residual": 8.698266679891902e-10,
+      "port_power_ratio": 1.0000013472013556,
+      "accepted_full_path_result": false,
+      "case": "fem-bend-z-corrected"
+    },
+    {
+      "scope": "Bounded frequency-domain FEM feasibility test, not a full PCB result.\n\nRetains the small Gerber pilot copper and raised leads. Its ports have finite\n0.04 x 0.04 mm cross-sections, anisotropic Ohmic conductivity, and a Norton\ncurrent source. This differs from the FDTD line port and requires comparison.\n",
+      "args": {
+        "name": "fem-bend-1mhz",
+        "order": 1,
+        "h": 0.15,
+        "mesh_only": false,
+        "mhz": 1.0
+      },
+      "tetrahedra": 52743,
+      "vertices": 10532,
+      "runner_sha256": "7f6d4ce7fe0ba26d9f35c74b480db0e2447a18d44ed66eeb34e625791d563d90",
+      "metal_connected_components": 3,
+      "boundaries": [
+        "default",
+        "interface",
+        "outer",
+        "pec"
+      ],
+      "materials": [
+        "air",
+        "fr4",
+        "port1",
+        "port2"
+      ],
+      "mesh_seconds": 5.0044687000336125,
+      "ports": [
+        {
+          "gap_mm": 0.1200000000000001,
+          "area_mm2": 0.0016,
+          "R_ohm": 100
+        },
+        {
+          "gap_mm": 0.12,
+          "area_mm2": 0.0016,
+          "R_ohm": 100
+        }
+      ],
+      "frequency_hz": 1000000.0,
+      "ndof": 132994,
+      "seconds": 10.519334400072694,
+      "voltage_complex": [
+        [
+          49.9999994630905,
+          -0.0008078448456570924
+        ],
+        [
+          49.99999985665107,
+          -0.0068833253566392616
+        ]
+      ],
+      "s11": [
+        -1.0738190114878421e-08,
+        -1.6156896913141846e-05
+      ],
+      "s21": [
+        0.9999999971330215,
+        -0.00013766650713278522
+      ],
+      "rl_db": 95.83283900101793,
+      "il_db": -5.740552285563996e-08,
+      "relative_linear_residual": 4.76034506334728e-08,
+      "port_power_ratio": 1.0000000134791556,
+      "accepted_full_path_result": false,
+      "case": "fem-bend-1mhz"
+    },
+    {
+      "scope": "Bounded frequency-domain FEM feasibility test, not a full PCB result.\n\nRetains the small Gerber pilot copper and raised leads. Its ports have finite\n0.04 x 0.04 mm cross-sections, anisotropic Ohmic conductivity, and a Norton\ncurrent source. This differs from the FDTD line port and requires comparison.\n",
+      "args": {
+        "name": "fem-bend-h075",
+        "order": 1,
+        "h": 0.075,
+        "mesh_only": false,
+        "mhz": 100
+      },
+      "tetrahedra": 58541,
+      "vertices": 11670,
+      "runner_sha256": "7f6d4ce7fe0ba26d9f35c74b480db0e2447a18d44ed66eeb34e625791d563d90",
+      "metal_connected_components": 3,
+      "boundaries": [
+        "default",
+        "interface",
+        "outer",
+        "pec"
+      ],
+      "materials": [
+        "air",
+        "fr4",
+        "port1",
+        "port2"
+      ],
+      "mesh_seconds": 5.87424789997749,
+      "ports": [
+        {
+          "gap_mm": 0.1200000000000001,
+          "area_mm2": 0.0016,
+          "R_ohm": 100
+        },
+        {
+          "gap_mm": 0.12,
+          "area_mm2": 0.0016,
+          "R_ohm": 100
+        }
+      ],
+      "frequency_hz": 100000000.0,
+      "ndof": 147580,
+      "seconds": 12.359710399992764,
+      "voltage_complex": [
+        [
+          49.99897774919657,
+          -0.06025115798997434
+        ],
+        [
+          49.99519759359038,
+          -0.6929050482380315
+        ]
+      ],
+      "s11": [
+        -2.0445016068570965e-05,
+        -0.0012050231597994867
+      ],
+      "s21": [
+        0.9999039518718077,
+        -0.013858100964760629
+      ],
+      "rl_db": 58.37884213449093,
+      "il_db": 1.740165565627444e-07,
+      "relative_linear_residual": 8.277602382738802e-10,
+      "port_power_ratio": 1.0000014124300223,
+      "accepted_full_path_result": false,
+      "case": "fem-bend-h075"
+    },
+    {
+      "scope": "Bounded frequency-domain FEM feasibility test, not a full PCB result.\n\nRetains the small Gerber pilot copper and raised leads. Its ports have finite\n0.04 x 0.04 mm cross-sections, anisotropic Ohmic conductivity, and a Norton\ncurrent source. This differs from the FDTD line port and requires comparison.\n",
+      "args": {
+        "name": "fem-bend-order2",
+        "order": 2,
+        "h": 0.075,
+        "mesh_only": false,
+        "mhz": 100
+      },
+      "tetrahedra": 58541,
+      "vertices": 11670,
+      "runner_sha256": "7f6d4ce7fe0ba26d9f35c74b480db0e2447a18d44ed66eeb34e625791d563d90",
+      "metal_connected_components": 3,
+      "boundaries": [
+        "default",
+        "interface",
+        "outer",
+        "pec"
+      ],
+      "materials": [
+        "air",
+        "fr4",
+        "port1",
+        "port2"
+      ],
+      "mesh_seconds": 6.016700699925423,
+      "ports": [
+        {
+          "gap_mm": 0.1200000000000001,
+          "area_mm2": 0.0016,
+          "R_ohm": 100
+        },
+        {
+          "gap_mm": 0.12,
+          "area_mm2": 0.0016,
+          "R_ohm": 100
+        }
+      ],
+      "frequency_hz": 100000000.0,
+      "ndof": 583362,
+      "seconds": 99.63873699994292,
+      "voltage_complex": [
+        [
+          49.9995479712652,
+          -0.018099793797864562
+        ],
+        [
+          49.994959565188786,
+          -0.7120387627475615
+        ]
+      ],
+      "s11": [
+        -9.040574695973191e-06,
+        -0.00036199587595729123
+      ],
+      "s21": [
+        0.9998991913037757,
+        -0.014240775254951231
+      ],
+      "rl_db": 68.8232196359088,
+      "il_db": -5.17874062212123e-06,
+      "relative_linear_residual": 1.3974887729939473e-09,
+      "port_power_ratio": 1.000001323572553,
+      "accepted_full_path_result": false,
+      "case": "fem-bend-order2"
+    }
+  ],
+  "comparisons": [
+    {
+      "a": "fem-bend-z-corrected",
+      "b": "rx-bend-pilot-40-air",
+      "frequency_hz": 100000000.0,
+      "deep_reflection_null": true,
+      "gamma_complex_delta": 0.00267857744132171,
+      "rl_delta_db": 3.4213513256801322,
+      "il_delta_db": 0.0007512629628983544,
+      "transfer_complex_delta": 0.0024863945624541734,
+      "numerical_tolerance_pass": true
+    },
+    {
+      "a": "fem-bend-z-corrected",
+      "b": "rx-bend-pilot-20-air",
+      "frequency_hz": 100000000.0,
+      "deep_reflection_null": true,
+      "gamma_complex_delta": 0.0022127831031474175,
+      "rl_delta_db": 8.301708063739632,
+      "il_delta_db": 0.0006047639773984922,
+      "transfer_complex_delta": 0.0015781309988773104,
+      "numerical_tolerance_pass": true
+    },
+    {
+      "a": "fem-bend-1mhz",
+      "b": "rx-bend-pilot-40-air",
+      "frequency_hz": 1000000.0,
+      "deep_reflection_null": true,
+      "gamma_complex_delta": 0.00010237545916985807,
+      "rl_delta_db": 15.775740543227936,
+      "il_delta_db": 0.0006448409417759571,
+      "transfer_complex_delta": 7.825209955875364e-05,
+      "numerical_tolerance_pass": true
+    },
+    {
+      "a": "fem-bend-1mhz",
+      "b": "rx-bend-pilot-20-air",
+      "frequency_hz": 1000000.0,
+      "deep_reflection_null": true,
+      "gamma_complex_delta": 8.867409152537177e-05,
+      "rl_delta_db": 14.526919587942931,
+      "il_delta_db": 0.0005570505010278233,
+      "transfer_complex_delta": 6.60109078264123e-05,
+      "numerical_tolerance_pass": true
+    },
+    {
+      "a": "fem-bend-h075",
+      "b": "rx-bend-pilot-40-air",
+      "frequency_hz": 100000000.0,
+      "deep_reflection_null": true,
+      "gamma_complex_delta": 0.002282311779992062,
+      "rl_delta_db": 0.9496383386624134,
+      "il_delta_db": 0.0007563829057697488,
+      "transfer_complex_delta": 0.0023807796196892096,
+      "numerical_tolerance_pass": true
+    },
+    {
+      "a": "fem-bend-h075",
+      "b": "rx-bend-pilot-20-air",
+      "frequency_hz": 100000000.0,
+      "deep_reflection_null": true,
+      "gamma_complex_delta": 0.0018165088298197033,
+      "rl_delta_db": 5.8299950767219135,
+      "il_delta_db": 0.0006098839202699324,
+      "transfer_complex_delta": 0.0014725648476385342,
+      "numerical_tolerance_pass": true
+    },
+    {
+      "a": "fem-bend-order2",
+      "b": "rx-bend-pilot-40-air",
+      "frequency_hz": 100000000.0,
+      "deep_reflection_null": true,
+      "gamma_complex_delta": 0.0014411575604566776,
+      "rl_delta_db": 9.494739162755458,
+      "il_delta_db": 0.0007617356629482458,
+      "transfer_complex_delta": 0.0019984258611656326,
+      "numerical_tolerance_pass": true
+    },
+    {
+      "a": "fem-bend-order2",
+      "b": "rx-bend-pilot-20-air",
+      "frequency_hz": 100000000.0,
+      "deep_reflection_null": true,
+      "gamma_complex_delta": 0.0009757403305145464,
+      "rl_delta_db": 4.614382424695959,
+      "il_delta_db": 0.0006152366774488159,
+      "transfer_complex_delta": 0.0010905031984925842,
+      "numerical_tolerance_pass": true
+    },
+    {
+      "a": "fem-bend-z-corrected",
+      "b": "fem-bend-h075",
+      "frequency_hz": 100000000.0,
+      "deep_reflection_null": true,
+      "gamma_complex_delta": 0.00039673407078989124,
+      "rl_delta_db": 2.4717129870177184,
+      "il_delta_db": 5.119942871320817e-06,
+      "transfer_complex_delta": 0.00010571026267857587,
+      "numerical_tolerance_pass": true
+    },
+    {
+      "a": "fem-bend-z-corrected",
+      "b": "fem-bend-order2",
+      "frequency_hz": 100000000.0,
+      "deep_reflection_null": true,
+      "gamma_complex_delta": 0.001239838231788977,
+      "rl_delta_db": 12.916090488435593,
+      "il_delta_db": 1.0472700050419618e-05,
+      "transfer_complex_delta": 0.00048841342899449,
+      "numerical_tolerance_pass": true
+    },
+    {
+      "a": "fem-bend-h075",
+      "b": "fem-bend-order2",
+      "frequency_hz": 100000000.0,
+      "deep_reflection_null": true,
+      "gamma_complex_delta": 0.0008431044197401474,
+      "rl_delta_db": 10.444377501417872,
+      "il_delta_db": 5.352757178205256e-06,
+      "transfer_complex_delta": 0.00038270390039934056,
+      "numerical_tolerance_pass": true
+    }
+  ],
+  "all_existing_point_comparisons_pass": true,
+  "scope": "Compare a limited set of small-pilot FEM points to completed native FDTD.\n\nOnly existing points are compared; this does not invent a FEM frequency sweep\nor establish the complete two-board path. Different port/PML implementations\nare stated, even when the requested numerical tolerance happens to pass.\n",
+  "full_route_goal_complete": false,
+  "limitations": [
+    "FEM has only 1 and 100 MHz points here; no 1\u2013100 MHz FEM sweep is claimed.",
+    "Timing for FEM is one frequency, while the native FDTD record supports a band of frequencies.",
+    "The FEM volume resistor and continuous PML differ from the native line ports and discrete PML.",
+    "Very small reflections are judged by absolute complex coefficient differences, not precise agreement of large RL dB values.",
+    "No full two-board FEM mesh or solution has been constructed by this comparison."
+  ]
+}

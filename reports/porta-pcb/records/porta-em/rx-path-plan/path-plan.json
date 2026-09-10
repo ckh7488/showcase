@@ -1,0 +1,1755 @@
+{
+  "updated": "2026-09-08T02:22:04",
+  "source_sha256": "fe3b8807cdfee33eed85ae64b4788e15a748ce3ccabeb07a89b662edcaa46227",
+  "routes": [
+    {
+      "board": "Control_board",
+      "net": "Eth_RX+",
+      "endpoints": [
+        [
+          "T2",
+          "11",
+          "B_Cu"
+        ],
+        [
+          "CON2",
+          "28",
+          "B_Cu"
+        ]
+      ],
+      "main": [
+        {
+          "net": "Eth_RX+",
+          "start": [
+            139.82,
+            -122.455
+          ],
+          "stop": [
+            139.82,
+            -122.01
+          ],
+          "width_mm": 0.17,
+          "length_mm": 0.4449999999999932,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 0,
+          "b": 1,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              139.82,
+              -122.01
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              139.82,
+              -122.455
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX+",
+          "start": [
+            140.91,
+            -123.545
+          ],
+          "stop": [
+            139.82,
+            -122.455
+          ],
+          "width_mm": 0.17,
+          "length_mm": 1.5414927829866785,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 9,
+          "b": 0,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              139.82,
+              -122.455
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              140.91,
+              -123.545
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX+",
+          "start": [
+            140.91,
+            -124.62
+          ],
+          "stop": [
+            140.91,
+            -123.545
+          ],
+          "width_mm": 0.17,
+          "length_mm": 1.0750000000000028,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 10,
+          "b": 9,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              140.91,
+              -123.545
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              140.91,
+              -124.62
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX+",
+          "start": [
+            139.05,
+            -126.48
+          ],
+          "stop": [
+            140.91,
+            -124.62
+          ],
+          "width_mm": 0.17,
+          "length_mm": 2.630437226013946,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 8,
+          "b": 10,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              140.91,
+              -124.62
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              139.05,
+              -126.48
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX+",
+          "start": [
+            123.550416,
+            -126.48
+          ],
+          "stop": [
+            139.05,
+            -126.48
+          ],
+          "width_mm": 0.17,
+          "length_mm": 15.499584000000013,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 7,
+          "b": 8,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              139.05,
+              -126.48
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              123.550416,
+              -126.48
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX+",
+          "start": [
+            119.75,
+            -122.679584
+          ],
+          "stop": [
+            123.550416,
+            -126.48
+          ],
+          "width_mm": 0.17,
+          "length_mm": 5.374599849859706,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 6,
+          "b": 7,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              123.550416,
+              -126.48
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              119.75,
+              -122.679584
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX+",
+          "start": [
+            119.75,
+            -115.620416
+          ],
+          "stop": [
+            119.75,
+            -122.679584
+          ],
+          "width_mm": 0.17,
+          "length_mm": 7.059168,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 5,
+          "b": 6,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              119.75,
+              -122.679584
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              119.75,
+              -115.620416
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX+",
+          "start": [
+            121.860416,
+            -113.51
+          ],
+          "stop": [
+            119.75,
+            -115.620416
+          ],
+          "width_mm": 0.17,
+          "length_mm": 2.984578929449179,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 4,
+          "b": 5,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              119.75,
+              -115.620416
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              121.860416,
+              -113.51
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX+",
+          "start": [
+            122.424999,
+            -113.51
+          ],
+          "stop": [
+            121.860416,
+            -113.51
+          ],
+          "width_mm": 0.17,
+          "length_mm": 0.564582999999999,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 11,
+          "b": 4,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              121.860416,
+              -113.51
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              122.424999,
+              -113.51
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX+",
+          "start": [
+            122.754999,
+            -113.84
+          ],
+          "stop": [
+            122.424999,
+            -113.51
+          ],
+          "width_mm": 0.17,
+          "length_mm": 0.46669047558311894,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 3,
+          "b": 11,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              122.424999,
+              -113.51
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              122.754999,
+              -113.84
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX+",
+          "start": [
+            124.33,
+            -113.84
+          ],
+          "stop": [
+            122.754999,
+            -113.84
+          ],
+          "width_mm": 0.17,
+          "length_mm": 1.5750010000000003,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 2,
+          "b": 3,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              122.754999,
+              -113.84
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              124.33,
+              -113.84
+            ]
+          }
+        }
+      ],
+      "branches": [],
+      "connected_components": 1,
+      "main_drawn_trace_length_mm": 39.21613526389264,
+      "main_hole_axis_length_mm": 0,
+      "branch_drawn_trace_length_mm": 0,
+      "plane_projection": [
+        {
+          "layer": "F_Cu",
+          "reference": "In1_Cu",
+          "drawn_length_mm": 0,
+          "centerline_without_projected_copper_mm": 0
+        },
+        {
+          "layer": "B_Cu",
+          "reference": "In2_Cu",
+          "drawn_length_mm": 39.21613526389264,
+          "centerline_without_projected_copper_mm": 0.0
+        }
+      ]
+    },
+    {
+      "board": "Control_board",
+      "net": "Eth_RX-",
+      "endpoints": [
+        [
+          "T2",
+          "9",
+          "B_Cu"
+        ],
+        [
+          "CON2",
+          "27",
+          "B_Cu"
+        ]
+      ],
+      "main": [
+        {
+          "net": "Eth_RX-",
+          "start": [
+            142.36,
+            -122.455
+          ],
+          "stop": [
+            142.36,
+            -122.01
+          ],
+          "width_mm": 0.17,
+          "length_mm": 0.4449999999999932,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 4,
+          "b": 5,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              142.36,
+              -122.01
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              142.36,
+              -122.455
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX-",
+          "start": [
+            141.26,
+            -123.555
+          ],
+          "stop": [
+            142.36,
+            -122.455
+          ],
+          "width_mm": 0.17,
+          "length_mm": 1.5556349186104266,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 7,
+          "b": 4,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              142.36,
+              -122.455
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              141.26,
+              -123.555
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX-",
+          "start": [
+            141.26,
+            -124.750832
+          ],
+          "stop": [
+            141.26,
+            -123.555
+          ],
+          "width_mm": 0.17,
+          "length_mm": 1.1958319999999958,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 6,
+          "b": 7,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              141.26,
+              -123.555
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              141.26,
+              -124.750832
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX-",
+          "start": [
+            139.190832,
+            -126.82
+          ],
+          "stop": [
+            141.26,
+            -124.750832
+          ],
+          "width_mm": 0.17,
+          "length_mm": 2.926245448428399,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 3,
+          "b": 6,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              141.26,
+              -124.750832
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              139.190832,
+              -126.82
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX-",
+          "start": [
+            123.409584,
+            -126.82
+          ],
+          "stop": [
+            139.190832,
+            -126.82
+          ],
+          "width_mm": 0.17,
+          "length_mm": 15.781248000000005,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 2,
+          "b": 3,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              139.190832,
+              -126.82
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              123.409584,
+              -126.82
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX-",
+          "start": [
+            119.41,
+            -122.820416
+          ],
+          "stop": [
+            123.409584,
+            -126.82
+          ],
+          "width_mm": 0.17,
+          "length_mm": 5.656265936650431,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 10,
+          "b": 2,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              123.409584,
+              -126.82
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              119.41,
+              -122.820416
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX-",
+          "start": [
+            119.41,
+            -115.479584
+          ],
+          "stop": [
+            119.41,
+            -122.820416
+          ],
+          "width_mm": 0.17,
+          "length_mm": 7.340831999999992,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 11,
+          "b": 10,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              119.41,
+              -122.820416
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              119.41,
+              -115.479584
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX-",
+          "start": [
+            121.719584,
+            -113.17
+          ],
+          "stop": [
+            119.41,
+            -115.479584
+          ],
+          "width_mm": 0.17,
+          "length_mm": 3.2662450162399037,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 9,
+          "b": 11,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              119.41,
+              -115.479584
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              121.719584,
+              -113.17
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX-",
+          "start": [
+            122.424999,
+            -113.17
+          ],
+          "stop": [
+            121.719584,
+            -113.17
+          ],
+          "width_mm": 0.17,
+          "length_mm": 0.7054150000000021,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 8,
+          "b": 9,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              121.719584,
+              -113.17
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              122.424999,
+              -113.17
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX-",
+          "start": [
+            122.754999,
+            -112.84
+          ],
+          "stop": [
+            122.424999,
+            -113.17
+          ],
+          "width_mm": 0.17,
+          "length_mm": 0.46669047558311894,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 1,
+          "b": 8,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              122.424999,
+              -113.17
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              122.754999,
+              -112.84
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX-",
+          "start": [
+            124.33,
+            -112.84
+          ],
+          "stop": [
+            122.754999,
+            -112.84
+          ],
+          "width_mm": 0.17,
+          "length_mm": 1.5750010000000003,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 0,
+          "b": 1,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              122.754999,
+              -112.84
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              124.33,
+              -112.84
+            ]
+          }
+        }
+      ],
+      "branches": [],
+      "connected_components": 1,
+      "main_drawn_trace_length_mm": 40.91440979551227,
+      "main_hole_axis_length_mm": 0,
+      "branch_drawn_trace_length_mm": 0,
+      "plane_projection": [
+        {
+          "layer": "F_Cu",
+          "reference": "In1_Cu",
+          "drawn_length_mm": 0,
+          "centerline_without_projected_copper_mm": 0
+        },
+        {
+          "layer": "B_Cu",
+          "reference": "In2_Cu",
+          "drawn_length_mm": 40.91440979551227,
+          "centerline_without_projected_copper_mm": 0.0
+        }
+      ]
+    },
+    {
+      "board": "Motor_board",
+      "net": "Eth_RX+",
+      "endpoints": [
+        [
+          "CON2",
+          "37",
+          "F_Cu"
+        ],
+        [
+          "CON1",
+          "6",
+          "B_Cu"
+        ]
+      ],
+      "main": [
+        {
+          "net": "Eth_RX+",
+          "start": [
+            118.6,
+            -101.4
+          ],
+          "stop": [
+            119.35,
+            -101.4
+          ],
+          "width_mm": 0.17,
+          "length_mm": 0.75,
+          "layer": "F_Cu",
+          "kind": "drawn_trace",
+          "a": 3,
+          "b": 4,
+          "start_node": {
+            "layer": "F_Cu",
+            "xy": [
+              119.35,
+              -101.4
+            ]
+          },
+          "stop_node": {
+            "layer": "F_Cu",
+            "xy": [
+              118.6,
+              -101.4
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX+",
+          "start": [
+            118.27,
+            -101.07
+          ],
+          "stop": [
+            118.6,
+            -101.4
+          ],
+          "width_mm": 0.17,
+          "length_mm": 0.466690475583129,
+          "layer": "F_Cu",
+          "kind": "drawn_trace",
+          "a": 2,
+          "b": 3,
+          "start_node": {
+            "layer": "F_Cu",
+            "xy": [
+              118.6,
+              -101.4
+            ]
+          },
+          "stop_node": {
+            "layer": "F_Cu",
+            "xy": [
+              118.27,
+              -101.07
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX+",
+          "start": [
+            117.670416,
+            -101.07
+          ],
+          "stop": [
+            118.27,
+            -101.07
+          ],
+          "width_mm": 0.17,
+          "length_mm": 0.599583999999993,
+          "layer": "F_Cu",
+          "kind": "drawn_trace",
+          "a": 5,
+          "b": 2,
+          "start_node": {
+            "layer": "F_Cu",
+            "xy": [
+              118.27,
+              -101.07
+            ]
+          },
+          "stop_node": {
+            "layer": "F_Cu",
+            "xy": [
+              117.670416,
+              -101.07
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX+",
+          "start": [
+            117.440416,
+            -101.3
+          ],
+          "stop": [
+            117.670416,
+            -101.07
+          ],
+          "width_mm": 0.17,
+          "length_mm": 0.3252691193458175,
+          "layer": "F_Cu",
+          "kind": "drawn_trace",
+          "a": 1,
+          "b": 5,
+          "start_node": {
+            "layer": "F_Cu",
+            "xy": [
+              117.670416,
+              -101.07
+            ]
+          },
+          "stop_node": {
+            "layer": "F_Cu",
+            "xy": [
+              117.440416,
+              -101.3
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX+",
+          "start": [
+            116.0,
+            -101.3
+          ],
+          "stop": [
+            117.440416,
+            -101.3
+          ],
+          "width_mm": 0.17,
+          "length_mm": 1.440415999999999,
+          "layer": "F_Cu",
+          "kind": "drawn_trace",
+          "a": 0,
+          "b": 1,
+          "start_node": {
+            "layer": "F_Cu",
+            "xy": [
+              117.440416,
+              -101.3
+            ]
+          },
+          "stop_node": {
+            "layer": "F_Cu",
+            "xy": [
+              116.0,
+              -101.3
+            ]
+          }
+        },
+        {
+          "kind": "plated_hole_axis",
+          "a": 0,
+          "b": 10,
+          "xy": [
+            116.0,
+            -101.3
+          ],
+          "diameter_mm": 0.3,
+          "length_mm": 1.478,
+          "start_node": {
+            "layer": "F_Cu",
+            "xy": [
+              116.0,
+              -101.3
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              116.0,
+              -101.3
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX+",
+          "start": [
+            116.0,
+            -101.640416
+          ],
+          "stop": [
+            116.0,
+            -101.3
+          ],
+          "width_mm": 0.17,
+          "length_mm": 0.3404160000000047,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 9,
+          "b": 10,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              116.0,
+              -101.3
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              116.0,
+              -101.640416
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX+",
+          "start": [
+            116.529547,
+            -102.169963
+          ],
+          "stop": [
+            116.0,
+            -101.640416
+          ],
+          "width_mm": 0.17,
+          "length_mm": 0.7488925493139765,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 12,
+          "b": 9,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              116.0,
+              -101.640416
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              116.529547,
+              -102.169963
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX+",
+          "start": [
+            116.529547,
+            -113.970453
+          ],
+          "stop": [
+            116.529547,
+            -102.169963
+          ],
+          "width_mm": 0.17,
+          "length_mm": 11.80049000000001,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 11,
+          "b": 12,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              116.529547,
+              -102.169963
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              116.529547,
+              -113.970453
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX+",
+          "start": [
+            116.169454,
+            -114.330546
+          ],
+          "stop": [
+            116.529547,
+            -113.970453
+          ],
+          "width_mm": 0.17,
+          "length_mm": 0.5092484043156036,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 15,
+          "b": 11,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              116.529547,
+              -113.970453
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              116.169454,
+              -114.330546
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX+",
+          "start": [
+            116.169454,
+            -115.169454
+          ],
+          "stop": [
+            116.169454,
+            -114.330546
+          ],
+          "width_mm": 0.17,
+          "length_mm": 0.8389080000000035,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 16,
+          "b": 15,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              116.169454,
+              -114.330546
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              116.169454,
+              -115.169454
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX+",
+          "start": [
+            116.529547,
+            -115.529547
+          ],
+          "stop": [
+            116.169454,
+            -115.169454
+          ],
+          "width_mm": 0.17,
+          "length_mm": 0.5092484043156036,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 14,
+          "b": 16,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              116.169454,
+              -115.169454
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              116.529547,
+              -115.529547
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX+",
+          "start": [
+            116.529547,
+            -116.937726
+          ],
+          "stop": [
+            116.529547,
+            -115.529547
+          ],
+          "width_mm": 0.17,
+          "length_mm": 1.408179000000004,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 13,
+          "b": 14,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              116.529547,
+              -115.529547
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              116.529547,
+              -116.937726
+            ]
+          }
+        }
+      ],
+      "branches": [
+        {
+          "net": "Eth_RX+",
+          "start": [
+            116.529547,
+            -116.937726
+          ],
+          "stop": [
+            116.920757,
+            -116.937726
+          ],
+          "width_mm": 0.5,
+          "length_mm": 0.39121000000000095,
+          "layer": "F_Cu",
+          "kind": "drawn_trace",
+          "a": 6,
+          "b": 7
+        },
+        {
+          "kind": "plated_hole_axis",
+          "a": 6,
+          "b": 13,
+          "xy": [
+            116.53,
+            -116.938
+          ],
+          "diameter_mm": 0.9,
+          "length_mm": 1.478
+        },
+        {
+          "net": "Eth_RX+",
+          "start": [
+            116.920757,
+            -116.937726
+          ],
+          "stop": [
+            117.923012,
+            -115.935471
+          ],
+          "width_mm": 0.5,
+          "length_mm": 1.4174026139562437,
+          "layer": "F_Cu",
+          "kind": "drawn_trace",
+          "a": 7,
+          "b": 8
+        }
+      ],
+      "connected_components": 1,
+      "main_drawn_trace_length_mm": 19.737341952874147,
+      "main_hole_axis_length_mm": 1.478,
+      "branch_drawn_trace_length_mm": 1.8086126139562446,
+      "plane_projection": [
+        {
+          "layer": "F_Cu",
+          "reference": "In1_Cu",
+          "drawn_length_mm": 3.5819595949289385,
+          "centerline_without_projected_copper_mm": 0.2505000000000024
+        },
+        {
+          "layer": "B_Cu",
+          "reference": "In2_Cu",
+          "drawn_length_mm": 16.155382357945207,
+          "centerline_without_projected_copper_mm": 0.547385599052737
+        }
+      ]
+    },
+    {
+      "board": "Motor_board",
+      "net": "Eth_RX-",
+      "endpoints": [
+        [
+          "CON2",
+          "38",
+          "F_Cu"
+        ],
+        [
+          "CON1",
+          "5",
+          "B_Cu"
+        ]
+      ],
+      "main": [
+        {
+          "net": "Eth_RX-",
+          "start": [
+            118.6,
+            -100.4
+          ],
+          "stop": [
+            119.35,
+            -100.4
+          ],
+          "width_mm": 0.17,
+          "length_mm": 0.75,
+          "layer": "F_Cu",
+          "kind": "drawn_trace",
+          "a": 7,
+          "b": 9,
+          "start_node": {
+            "layer": "F_Cu",
+            "xy": [
+              119.35,
+              -100.4
+            ]
+          },
+          "stop_node": {
+            "layer": "F_Cu",
+            "xy": [
+              118.6,
+              -100.4
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX-",
+          "start": [
+            118.27,
+            -100.73
+          ],
+          "stop": [
+            118.6,
+            -100.4
+          ],
+          "width_mm": 0.17,
+          "length_mm": 0.46669047558311894,
+          "layer": "F_Cu",
+          "kind": "drawn_trace",
+          "a": 5,
+          "b": 7,
+          "start_node": {
+            "layer": "F_Cu",
+            "xy": [
+              118.6,
+              -100.4
+            ]
+          },
+          "stop_node": {
+            "layer": "F_Cu",
+            "xy": [
+              118.27,
+              -100.73
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX-",
+          "start": [
+            117.529584,
+            -100.73
+          ],
+          "stop": [
+            118.27,
+            -100.73
+          ],
+          "width_mm": 0.17,
+          "length_mm": 0.7404159999999962,
+          "layer": "F_Cu",
+          "kind": "drawn_trace",
+          "a": 4,
+          "b": 5,
+          "start_node": {
+            "layer": "F_Cu",
+            "xy": [
+              118.27,
+              -100.73
+            ]
+          },
+          "stop_node": {
+            "layer": "F_Cu",
+            "xy": [
+              117.529584,
+              -100.73
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX-",
+          "start": [
+            117.299584,
+            -100.96
+          ],
+          "stop": [
+            117.529584,
+            -100.73
+          ],
+          "width_mm": 0.17,
+          "length_mm": 0.32526911934580743,
+          "layer": "F_Cu",
+          "kind": "drawn_trace",
+          "a": 6,
+          "b": 4,
+          "start_node": {
+            "layer": "F_Cu",
+            "xy": [
+              117.529584,
+              -100.73
+            ]
+          },
+          "stop_node": {
+            "layer": "F_Cu",
+            "xy": [
+              117.299584,
+              -100.96
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX-",
+          "start": [
+            117.16,
+            -100.96
+          ],
+          "stop": [
+            117.299584,
+            -100.96
+          ],
+          "width_mm": 0.17,
+          "length_mm": 0.13958399999999926,
+          "layer": "F_Cu",
+          "kind": "drawn_trace",
+          "a": 1,
+          "b": 6,
+          "start_node": {
+            "layer": "F_Cu",
+            "xy": [
+              117.299584,
+              -100.96
+            ]
+          },
+          "stop_node": {
+            "layer": "F_Cu",
+            "xy": [
+              117.16,
+              -100.96
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX-",
+          "start": [
+            116.8,
+            -100.6
+          ],
+          "stop": [
+            117.16,
+            -100.96
+          ],
+          "width_mm": 0.17,
+          "length_mm": 0.5091168824543134,
+          "layer": "F_Cu",
+          "kind": "drawn_trace",
+          "a": 0,
+          "b": 1,
+          "start_node": {
+            "layer": "F_Cu",
+            "xy": [
+              117.16,
+              -100.96
+            ]
+          },
+          "stop_node": {
+            "layer": "F_Cu",
+            "xy": [
+              116.8,
+              -100.6
+            ]
+          }
+        },
+        {
+          "kind": "plated_hole_axis",
+          "a": 0,
+          "b": 12,
+          "xy": [
+            116.8,
+            -100.6
+          ],
+          "diameter_mm": 0.3,
+          "length_mm": 1.478,
+          "start_node": {
+            "layer": "F_Cu",
+            "xy": [
+              116.8,
+              -100.6
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              116.8,
+              -100.6
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX-",
+          "start": [
+            116.6,
+            -100.8
+          ],
+          "stop": [
+            116.8,
+            -100.6
+          ],
+          "width_mm": 0.17,
+          "length_mm": 0.282842712474623,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 11,
+          "b": 12,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              116.8,
+              -100.6
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              116.6,
+              -100.8
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX-",
+          "start": [
+            116.6,
+            -101.759584
+          ],
+          "stop": [
+            116.6,
+            -100.8
+          ],
+          "width_mm": 0.17,
+          "length_mm": 0.9595840000000067,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 16,
+          "b": 11,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              116.6,
+              -100.8
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              116.6,
+              -101.759584
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX-",
+          "start": [
+            116.869547,
+            -102.029131
+          ],
+          "stop": [
+            116.6,
+            -101.759584
+          ],
+          "width_mm": 0.17,
+          "length_mm": 0.3811970230969847,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 15,
+          "b": 16,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              116.6,
+              -101.759584
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              116.869547,
+              -102.029131
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX-",
+          "start": [
+            116.869547,
+            -114.443052
+          ],
+          "stop": [
+            116.869547,
+            -102.029131
+          ],
+          "width_mm": 0.17,
+          "length_mm": 12.413920999999988,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 14,
+          "b": 15,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              116.869547,
+              -102.029131
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              116.869547,
+              -114.443052
+            ]
+          }
+        },
+        {
+          "net": "Eth_RX-",
+          "start": [
+            117.177333,
+            -114.750838
+          ],
+          "stop": [
+            116.869547,
+            -114.443052
+          ],
+          "width_mm": 0.17,
+          "length_mm": 0.43527513550857566,
+          "layer": "B_Cu",
+          "kind": "drawn_trace",
+          "a": 13,
+          "b": 14,
+          "start_node": {
+            "layer": "B_Cu",
+            "xy": [
+              116.869547,
+              -114.443052
+            ]
+          },
+          "stop_node": {
+            "layer": "B_Cu",
+            "xy": [
+              117.177333,
+              -114.750838
+            ]
+          }
+        }
+      ],
+      "branches": [
+        {
+          "net": "Eth_RX-",
+          "start": [
+            117.2,
+            -114.728171
+          ],
+          "stop": [
+            117.2,
+            -113.45
+          ],
+          "width_mm": 0.5,
+          "length_mm": 1.2781710000000004,
+          "layer": "F_Cu",
+          "kind": "drawn_trace",
+          "a": 2,
+          "b": 3
+        },
+        {
+          "net": "Eth_RX-",
+          "start": [
+            117.177333,
+            -114.750838
+          ],
+          "stop": [
+            117.2,
+            -114.728171
+          ],
+          "width_mm": 0.5,
+          "length_mm": 0.03205597881830874,
+          "layer": "F_Cu",
+          "kind": "drawn_trace",
+          "a": 8,
+          "b": 2
+        },
+        {
+          "net": "Eth_RX-",
+          "start": [
+            117.2,
+            -113.45
+          ],
+          "stop": [
+            117.35,
+            -113.3
+          ],
+          "width_mm": 0.5,
+          "length_mm": 0.21213203435596226,
+          "layer": "F_Cu",
+          "kind": "drawn_trace",
+          "a": 3,
+          "b": 10
+        },
+        {
+          "kind": "plated_hole_axis",
+          "a": 8,
+          "b": 13,
+          "xy": [
+            117.177,
+            -114.751
+          ],
+          "diameter_mm": 0.9,
+          "length_mm": 1.478
+        }
+      ],
+      "connected_components": 1,
+      "main_drawn_trace_length_mm": 17.403896348463412,
+      "main_hole_axis_length_mm": 1.478,
+      "branch_drawn_trace_length_mm": 1.5223590131742715,
+      "plane_projection": [
+        {
+          "layer": "F_Cu",
+          "reference": "In1_Cu",
+          "drawn_length_mm": 2.931076477383235,
+          "centerline_without_projected_copper_mm": 0.2678233887052929
+        },
+        {
+          "layer": "B_Cu",
+          "reference": "In2_Cu",
+          "drawn_length_mm": 14.472819871080178,
+          "centerline_without_projected_copper_mm": 0.6226368325557843
+        }
+      ]
+    }
+  ],
+  "global_grid_estimates": [
+    {
+      "xy_target_mm": 0.04,
+      "z_target_mm": 0.02,
+      "grid_nodes": {
+        "x": 966,
+        "y": 878,
+        "z": 295
+      },
+      "cells": 250203660,
+      "minimum_spacing_mm": {
+        "x": 0.03999999999999974,
+        "y": 0.03999999999999915,
+        "z": 0.01583573472908295
+      },
+      "vacuum_courant_seconds": 4.6090198019223314e-14,
+      "measured_small_pilot_mcps": 102.75,
+      "optimistic_fdtd_hours_for_2ns": 29.351530277564546,
+      "optimistic_fdtd_hours_for_16ns": 234.81224222051637
+    },
+    {
+      "xy_target_mm": 0.02,
+      "z_target_mm": 0.01,
+      "grid_nodes": {
+        "x": 1716,
+        "y": 1520,
+        "z": 502
+      },
+      "cells": 1309376640,
+      "minimum_spacing_mm": {
+        "x": 0.01999999999999987,
+        "y": 0.019999999999999574,
+        "z": 0.009000000000000001
+      },
+      "vacuum_courant_seconds": 2.5326993819746892e-14,
+      "measured_small_pilot_mcps": 102.75,
+      "optimistic_fdtd_hours_for_2ns": 279.52883117949926,
+      "optimistic_fdtd_hours_for_16ns": 2236.230649435994
+    }
+  ],
+  "scope": "Trace actual Gerber strokes and estimate, without running, a resolved full grid.\n\nThis is geometry and compute planning. It produces NO new full-path S parameters.\nDrawn centre-line lengths include pad overlap; they are not measured delays.\n",
+  "limitations": [
+    "Path lengths are drawn pad-centre/line lengths, including pad overlap; not physical delay or failure percentages.",
+    "Internal layer coverage uses all Gerber copper and does not independently establish GND connectivity.",
+    "Runtime estimates exclude operator construction, use small-pilot throughput and optimistic vacuum Courant time steps.",
+    "A segmented solver would need independent validation of port reference/return paths and cascaded block interactions. No equivalence to a monolithic full-wave solution is established."
+  ]
+}

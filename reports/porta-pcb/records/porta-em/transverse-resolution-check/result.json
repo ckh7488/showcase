@@ -1,0 +1,507 @@
+{
+  "at": "2026-09-08T00:47:56",
+  "analytic_parallel_plate_regression": {
+    "capacitance_f_per_m": 9.682586915577158e-12,
+    "analytic_f_per_m": 9.682586915577156e-12,
+    "relative_error": 1.668549064396734e-16,
+    "iterations": 32,
+    "relative_residual": 9.22498011077173e-11,
+    "charge_energy_relative_error": 0.0
+  },
+  "physical_uniform_section": {
+    "width_mm": 0.17,
+    "gap_mm": 0.17,
+    "copper_thickness_mm": 0.056,
+    "reference_spacing_mm": 0.11,
+    "epsilon_r": 4.5
+  },
+  "sections": [
+    {
+      "board": "Control_board",
+      "axis": "x",
+      "position_mm": 130.0,
+      "actual_intervals_mm": [
+        [
+          -126.565,
+          -126.39500000000001
+        ],
+        [
+          -126.90499999999999,
+          -126.735
+        ]
+      ],
+      "center": -126.65,
+      "strips": [
+        [
+          0.08500000000000796,
+          0.25499999999999545
+        ],
+        [
+          -0.25499999999998124,
+          -0.08499999999999375
+        ]
+      ]
+    },
+    {
+      "board": "Motor_board",
+      "axis": "y",
+      "position_mm": -110.0,
+      "actual_intervals_mm": [
+        [
+          116.444547,
+          116.61454699999999
+        ],
+        [
+          116.784547,
+          116.95454699999999
+        ]
+      ],
+      "center": 116.699547,
+      "strips": [
+        [
+          -0.25499999999999545,
+          -0.08500000000000796
+        ],
+        [
+          0.08500000000000796,
+          0.25499999999999545
+        ]
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "name": "Control_board-rx-stable-coarse",
+      "grid_nodes": [
+        69,
+        10
+      ],
+      "capacitance_pf_per_m": 113.38811058325015,
+      "vacuum_capacitance_pf_per_m": 50.69296673673898,
+      "quasistatic_differential_estimate_ohm": 43.996860101432624,
+      "sampled_electrode_node_extent_mm": [
+        0.23999999999999488,
+        0.11999999999999034
+      ],
+      "solve_check": {
+        "iterations": 140,
+        "relative_residual": 9.254167062214896e-11,
+        "charge_energy_relative_error": 0.0
+      },
+      "air_solve_check": {
+        "iterations": 143,
+        "relative_residual": 9.451945289600954e-11,
+        "charge_energy_relative_error": 0.0
+      },
+      "seconds": 0.014292199979536235,
+      "kind": "native_xy_and_z_slice",
+      "source_case": "rx-stable-coarse",
+      "section": {
+        "board": "Control_board",
+        "axis": "x",
+        "position_mm": 130.0,
+        "actual_intervals_mm": [
+          [
+            -126.565,
+            -126.39500000000001
+          ],
+          [
+            -126.90499999999999,
+            -126.735
+          ]
+        ],
+        "center": -126.65,
+        "strips": [
+          [
+            0.08500000000000796,
+            0.25499999999999545
+          ],
+          [
+            -0.25499999999998124,
+            -0.08499999999999375
+          ]
+        ]
+      }
+    },
+    {
+      "name": "Control_board-rx-stable-coarse-z-refined",
+      "grid_nodes": [
+        69,
+        87
+      ],
+      "capacitance_pf_per_m": 85.84865364444497,
+      "vacuum_capacitance_pf_per_m": 30.970092186346484,
+      "quasistatic_differential_estimate_ohm": 64.69061855161685,
+      "sampled_electrode_node_extent_mm": [
+        0.23999999999999488,
+        0.11999999999999034
+      ],
+      "solve_check": {
+        "iterations": 564,
+        "relative_residual": 9.634186358824327e-11,
+        "charge_energy_relative_error": 2.1077297233499867e-15
+      },
+      "air_solve_check": {
+        "iterations": 599,
+        "relative_residual": 9.608682906998511e-11,
+        "charge_energy_relative_error": 0.0
+      },
+      "seconds": 0.09103190002497286,
+      "kind": "same_native_transverse_xy_refined_z",
+      "source_case": "rx-stable-coarse",
+      "section": {
+        "board": "Control_board",
+        "axis": "x",
+        "position_mm": 130.0,
+        "actual_intervals_mm": [
+          [
+            -126.565,
+            -126.39500000000001
+          ],
+          [
+            -126.90499999999999,
+            -126.735
+          ]
+        ],
+        "center": -126.65,
+        "strips": [
+          [
+            0.08500000000000796,
+            0.25499999999999545
+          ],
+          [
+            -0.25499999999998124,
+            -0.08499999999999375
+          ]
+        ]
+      }
+    },
+    {
+      "name": "Control_board-rx-stable-fine",
+      "grid_nodes": [
+        102,
+        10
+      ],
+      "capacitance_pf_per_m": 93.01852288298728,
+      "vacuum_capacitance_pf_per_m": 40.942250622464144,
+      "quasistatic_differential_estimate_ohm": 54.051620824026955,
+      "sampled_electrode_node_extent_mm": [
+        0.1599999999999966,
+        0.1599999999999966
+      ],
+      "solve_check": {
+        "iterations": 202,
+        "relative_residual": 7.976569699566136e-11,
+        "charge_energy_relative_error": 0.0
+      },
+      "air_solve_check": {
+        "iterations": 206,
+        "relative_residual": 8.705241526991334e-11,
+        "charge_energy_relative_error": 0.0
+      },
+      "seconds": 0.021130699897184968,
+      "kind": "native_xy_and_z_slice",
+      "source_case": "rx-stable-fine",
+      "section": {
+        "board": "Control_board",
+        "axis": "x",
+        "position_mm": 130.0,
+        "actual_intervals_mm": [
+          [
+            -126.565,
+            -126.39500000000001
+          ],
+          [
+            -126.90499999999999,
+            -126.735
+          ]
+        ],
+        "center": -126.65,
+        "strips": [
+          [
+            0.08500000000000796,
+            0.25499999999999545
+          ],
+          [
+            -0.25499999999998124,
+            -0.08499999999999375
+          ]
+        ]
+      }
+    },
+    {
+      "name": "Motor_board-rx-stable-coarse",
+      "grid_nodes": [
+        68,
+        11
+      ],
+      "capacitance_pf_per_m": 124.65693425792266,
+      "vacuum_capacitance_pf_per_m": 53.50279247964333,
+      "quasistatic_differential_estimate_ohm": 40.84443108435127,
+      "sampled_electrode_node_extent_mm": [
+        0.23999999999999488,
+        0.23999999999999488
+      ],
+      "solve_check": {
+        "iterations": 105,
+        "relative_residual": 7.988159777429157e-11,
+        "charge_energy_relative_error": 0.0
+      },
+      "air_solve_check": {
+        "iterations": 108,
+        "relative_residual": 8.91810126214713e-11,
+        "charge_energy_relative_error": 0.0
+      },
+      "seconds": 0.010770400054752827,
+      "kind": "native_xy_and_z_slice",
+      "source_case": "rx-stable-coarse",
+      "section": {
+        "board": "Motor_board",
+        "axis": "y",
+        "position_mm": -110.0,
+        "actual_intervals_mm": [
+          [
+            116.444547,
+            116.61454699999999
+          ],
+          [
+            116.784547,
+            116.95454699999999
+          ]
+        ],
+        "center": 116.699547,
+        "strips": [
+          [
+            -0.25499999999999545,
+            -0.08500000000000796
+          ],
+          [
+            0.08500000000000796,
+            0.25499999999999545
+          ]
+        ]
+      }
+    },
+    {
+      "name": "Motor_board-rx-stable-coarse-z-refined",
+      "grid_nodes": [
+        68,
+        111
+      ],
+      "capacitance_pf_per_m": 97.50728628830754,
+      "vacuum_capacitance_pf_per_m": 34.12294679542276,
+      "quasistatic_differential_estimate_ohm": 57.82791016348509,
+      "sampled_electrode_node_extent_mm": [
+        0.23999999999999488,
+        0.23999999999999488
+      ],
+      "solve_check": {
+        "iterations": 470,
+        "relative_residual": 9.85585797662365e-11,
+        "charge_energy_relative_error": 2.253368528375765e-15
+      },
+      "air_solve_check": {
+        "iterations": 510,
+        "relative_residual": 9.547171116392079e-11,
+        "charge_energy_relative_error": 2.461995192445865e-15
+      },
+      "seconds": 0.08719939994625747,
+      "kind": "same_native_transverse_xy_refined_z",
+      "source_case": "rx-stable-coarse",
+      "section": {
+        "board": "Motor_board",
+        "axis": "y",
+        "position_mm": -110.0,
+        "actual_intervals_mm": [
+          [
+            116.444547,
+            116.61454699999999
+          ],
+          [
+            116.784547,
+            116.95454699999999
+          ]
+        ],
+        "center": 116.699547,
+        "strips": [
+          [
+            -0.25499999999999545,
+            -0.08500000000000796
+          ],
+          [
+            0.08500000000000796,
+            0.25499999999999545
+          ]
+        ]
+      }
+    },
+    {
+      "name": "Motor_board-rx-stable-fine",
+      "grid_nodes": [
+        102,
+        11
+      ],
+      "capacitance_pf_per_m": 100.52426192643051,
+      "vacuum_capacitance_pf_per_m": 42.81094923286661,
+      "quasistatic_differential_estimate_ohm": 50.8471273140091,
+      "sampled_electrode_node_extent_mm": [
+        0.1599999999999966,
+        0.2400000000000091
+      ],
+      "solve_check": {
+        "iterations": 207,
+        "relative_residual": 7.615334832898957e-11,
+        "charge_energy_relative_error": 2.5714582377337125e-16
+      },
+      "air_solve_check": {
+        "iterations": 212,
+        "relative_residual": 8.914635965642411e-11,
+        "charge_energy_relative_error": 0.0
+      },
+      "seconds": 0.021758099901489913,
+      "kind": "native_xy_and_z_slice",
+      "source_case": "rx-stable-fine",
+      "section": {
+        "board": "Motor_board",
+        "axis": "y",
+        "position_mm": -110.0,
+        "actual_intervals_mm": [
+          [
+            116.444547,
+            116.61454699999999
+          ],
+          [
+            116.784547,
+            116.95454699999999
+          ]
+        ],
+        "center": 116.699547,
+        "strips": [
+          [
+            -0.25499999999999545,
+            -0.08500000000000796
+          ],
+          [
+            0.08500000000000796,
+            0.25499999999999545
+          ]
+        ]
+      }
+    },
+    {
+      "name": "aligned-reference-0p01",
+      "grid_nodes": [
+        155,
+        77
+      ],
+      "capacitance_pf_per_m": 63.75383791281076,
+      "vacuum_capacitance_pf_per_m": 23.57656357771197,
+      "quasistatic_differential_estimate_ohm": 86.0371226690203,
+      "sampled_electrode_node_extent_mm": [
+        0.16999999999999998,
+        0.16999999999999998
+      ],
+      "solve_check": {
+        "iterations": 546,
+        "relative_residual": 9.843911395914138e-11,
+        "charge_energy_relative_error": 8.109125658484605e-16
+      },
+      "air_solve_check": {
+        "iterations": 600,
+        "relative_residual": 9.54563513234605e-11,
+        "charge_energy_relative_error": 9.593518495578768e-16
+      },
+      "seconds": 0.1326980999438092,
+      "kind": "aligned_reference",
+      "step_mm": 0.01,
+      "extent_mm": 4
+    },
+    {
+      "name": "aligned-reference-0p005",
+      "grid_nodes": [
+        259,
+        131
+      ],
+      "capacitance_pf_per_m": 63.291853597317164,
+      "vacuum_capacitance_pf_per_m": 23.479460963989762,
+      "quasistatic_differential_estimate_ohm": 86.52892903998753,
+      "sampled_electrode_node_extent_mm": [
+        0.16999999999999998,
+        0.16999999999999998
+      ],
+      "solve_check": {
+        "iterations": 1041,
+        "relative_residual": 9.815521648026337e-11,
+        "charge_energy_relative_error": 1.837871179762702e-15
+      },
+      "air_solve_check": {
+        "iterations": 1105,
+        "relative_residual": 9.729304787926731e-11,
+        "charge_energy_relative_error": 2.2018728779103657e-15
+      },
+      "seconds": 1.1523754999507219,
+      "kind": "aligned_reference",
+      "step_mm": 0.005,
+      "extent_mm": 4
+    },
+    {
+      "name": "aligned-reference-0p0025",
+      "grid_nodes": [
+        465,
+        234
+      ],
+      "capacitance_pf_per_m": 63.01359338748709,
+      "vacuum_capacitance_pf_per_m": 23.42982932805793,
+      "quasistatic_differential_estimate_ohm": 86.81157017391652,
+      "sampled_electrode_node_extent_mm": [
+        0.16999999999999998,
+        0.16999999999999998
+      ],
+      "solve_check": {
+        "iterations": 1994,
+        "relative_residual": 9.807457160968089e-11,
+        "charge_energy_relative_error": 1.2306579939027165e-15
+      },
+      "air_solve_check": {
+        "iterations": 2076,
+        "relative_residual": 9.983362457139312e-11,
+        "charge_energy_relative_error": 9.929417070142296e-15
+      },
+      "seconds": 9.163548600045033,
+      "kind": "aligned_reference",
+      "step_mm": 0.0025,
+      "extent_mm": 4
+    },
+    {
+      "name": "aligned-reference-0p005-extent8",
+      "grid_nodes": [
+        291,
+        147
+      ],
+      "capacitance_pf_per_m": 63.29177203272616,
+      "vacuum_capacitance_pf_per_m": 23.479303080040165,
+      "quasistatic_differential_estimate_ohm": 86.52927572197105,
+      "sampled_electrode_node_extent_mm": [
+        0.16999999999999998,
+        0.16999999999999998
+      ],
+      "solve_check": {
+        "iterations": 1169,
+        "relative_residual": 9.985602142822237e-11,
+        "charge_energy_relative_error": 4.696787956616802e-15
+      },
+      "air_solve_check": {
+        "iterations": 1263,
+        "relative_residual": 9.89969857179638e-11,
+        "charge_energy_relative_error": 1.1009438420792299e-15
+      },
+      "seconds": 1.160638300003484,
+      "kind": "boundary_check",
+      "step_mm": 0.005,
+      "extent_mm": 8
+    }
+  ],
+  "scope": "Uniform 2D quasi-static sensitivity diagnostic derived from actual Gerber cross-sections. Ideal continuous reference plane, no same-layer surrounding copper, connector, bends, vias, other board or physical losses. PEC endpoint sampling and finite-volume electric weights are a static approximation, not a native 3D operator dump or replacement S-parameter result.",
+  "native_source": "https://raw.githubusercontent.com/thliebig/openEMS/dd75c17/FDTD/operator.cpp",
+  "native_source_relevance": "CalcPEC_Range samples material at Yee electric-edge positions; Calc_ECPos uses permittivity times dual area over edge length. This motivates the diagnostic; it does not validate the entire 2D approximation."
+}

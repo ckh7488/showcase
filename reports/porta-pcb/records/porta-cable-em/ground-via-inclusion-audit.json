@@ -1,0 +1,21 @@
+{
+  "input_sha256": "93810213a86cff18f276a8c36ec5139799ed6a9b8386ccb21bde367e0ec76bc3",
+  "counts": {
+    "Motor_board": {
+      "ground_vias": 284,
+      "near_rx": 6,
+      "all_plated_holes": 332
+    },
+    "Control_board": {
+      "ground_vias": 284,
+      "near_rx": 2,
+      "all_plated_holes": 456
+    }
+  },
+  "ground_vias": 568,
+  "near_rx_vias": 8,
+  "maximum_coordinate_error_mm": 2.0097183471152322e-14,
+  "all_ground_drills_present_in_fem_input": true,
+  "near_rx_definition": "Within 3 mm of the actual Gerber RX copper, for display selection only.",
+  "field_model_changed": false
+}

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="313.2pt" height="331.2pt" viewBox="0 0 313.2 331.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-08T11:56:22.110956</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 331.2
+L 313.2 331.2
+L 313.2 0
+L 0 0
+L 0 331.2
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 12.528 278.208
+L 310.068 278.208
+L 310.068 3.312
+L 12.528 3.312
+L 12.528 278.208
+z
+" style="fill: none"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 144.768 278.208
+L 144.768 3.312
+" clip-path="url(#p14089e0fd3)" style="fill: none; stroke-dasharray: 4,3; stroke-dashoffset: 0; stroke: #a26830"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 12.528 72.99494
+L 310.068 72.99494
+L 310.068 61.487665
+L 12.528 61.487665
+z
+" clip-path="url(#p14089e0fd3)" style="fill: #e6ebe4"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 12.528 133.727777
+L 310.068 133.727777
+L 310.068 122.220502
+L 12.528 122.220502
+z
+" clip-path="url(#p14089e0fd3)" style="fill: #e6ebe4"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 12.528 194.460614
+L 310.068 194.460614
+L 310.068 182.95334
+L 12.528 182.95334
+z
+" clip-path="url(#p14089e0fd3)" style="fill: #e6ebe4"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 12.528 255.193451
+L 310.068 255.193451
+L 310.068 243.686177
+L 12.528 243.686177
+z
+" clip-path="url(#p14089e0fd3)" style="fill: #e6ebe4"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_2"/>
+     <g id="text_1">
+      <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #52665c" x="12.528" y="293.800187" transform="rotate(-0 12.528 293.800187)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3"/>
+     <g id="text_2">
+      <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #52665c" x="144.768" y="293.800187" transform="rotate(-0 144.768 293.800187)">16</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_4"/>
+     <g id="text_3">
+      <text style="font-size: 10px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #52665c" x="277.008" y="293.800187" transform="rotate(-0 277.008 293.800187)">32</text>
+     </g>
+    </g>
+    <g id="text_4">
+     <text style="font-size: 12px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #42594f" x="161.298" y="309.533625" transform="rotate(-0 161.298 309.533625)">반사손실 (dB) · 100 MHz</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2"/>
+   <g id="patch_7">
+    <path d="M 12.528 72.99494
+L 267.392276 72.99494
+L 267.392276 61.487665
+L 12.528 61.487665
+z
+" clip-path="url(#p14089e0fd3)" style="fill: #7d9ab0"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 12.528 133.727777
+L 253.703928 133.727777
+L 253.703928 122.220502
+L 12.528 122.220502
+z
+" clip-path="url(#p14089e0fd3)" style="fill: #577c96"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 12.528 194.460614
+L 175.642726 194.460614
+L 175.642726 182.95334
+L 12.528 182.95334
+z
+" clip-path="url(#p14089e0fd3)" style="fill: #7db1a0"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 12.528 255.193451
+L 181.318958 255.193451
+L 181.318958 243.686177
+L 12.528 243.686177
+z
+" clip-path="url(#p14089e0fd3)" style="fill: #237e65"/>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 11px; font-family: 'Malgun Gothic'; text-anchor: middle; fill: #935c26" x="144.768" y="24.40867" transform="rotate(-0 144.768 24.40867)">16 dB 목표</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 11px; font-family: 'Malgun Gothic'; text-anchor: start; fill: #18352f" x="12.528" y="53.495152" transform="rotate(-0 12.528 53.495152)">PHY ↔ T2 · TX</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Malgun Gothic'; text-anchor: end; fill: #18352f" x="310.068" y="53.495152" transform="rotate(-0 310.068 53.495152)">30.84 dB</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 11px; font-family: 'Malgun Gothic'; text-anchor: start; fill: #18352f" x="12.528" y="114.22799" transform="rotate(-0 12.528 114.22799)">PHY ↔ T2 · RX</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Malgun Gothic'; text-anchor: end; fill: #18352f" x="310.068" y="114.22799" transform="rotate(-0 310.068 114.22799)">29.18 dB</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 11px; font-family: 'Malgun Gothic'; text-anchor: start; fill: #18352f" x="12.528" y="174.960827" transform="rotate(-0 12.528 174.960827)">T2 ↔ M12 · RX 기본</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Malgun Gothic'; text-anchor: end; fill: #18352f" x="310.068" y="174.960827" transform="rotate(-0 310.068 174.960827)">19.74 dB</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 11px; font-family: 'Malgun Gothic'; text-anchor: start; fill: #18352f" x="12.528" y="235.693664" transform="rotate(-0 12.528 235.693664)">T2 ↔ M12 · RX 세밀</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Malgun Gothic'; text-anchor: end; fill: #18352f" x="310.068" y="235.693664" transform="rotate(-0 310.068 235.693664)">20.42 dB</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p14089e0fd3">
+   <rect x="12.528" y="3.312" width="297.54" height="274.896"/>
+  </clipPath>
+ </defs>
+</svg>

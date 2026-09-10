@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="3D 모델과 시뮬레이션 결과를 직접 살펴보는 인터랙티브 보고서 모음.">
+  <meta name="theme-color" content="#172e33">
+  <title>Showcase · 인터랙티브 보고서</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/catalog.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#reports">보고서 목록으로 건너뛰기</a>
+  <header class="header"><a class="brand" href="./"><span class="brand-mark" aria-hidden="true">S</span>SHOWCASE</a><span class="header-note">INTERACTIVE REPORTS</span></header>
+  <main>
+    <div class="intro"><p class="eyebrow">분석을 직접 살펴보는 공간</p><h1>보고서 모음<span>.</span></h1><p class="lede">3D 모델을 돌려보고, 계산 결과를 확인하세요.</p></div>
+    <section id="reports" aria-labelledby="reports-title">
+      <div class="section-heading"><h2 id="reports-title">전체 보고서 <span id="count"></span></h2><span>제목이나 이미지를 누르면 열립니다 ↗</span></div>
+      <div class="report-grid" id="report-grid" aria-live="polite"><p class="state">보고서를 불러오는 중입니다.</p></div>
+      <noscript><p>보고서: <a href="reports/porta-pcb/">PALA720 · PortA 통신 경로 분석</a>. 3D 화면을 사용하려면 JavaScript를 켜 주세요.</p></noscript>
+    </section>
+  </main>
+  <footer><span>SHOWCASE <span class="footer-divider">/</span> 인터랙티브 보고서</span><a href="https://github.com/ckh7488/showcase#readme">보고서 등록 안내 ↗</a></footer>
+</body>
+</html>

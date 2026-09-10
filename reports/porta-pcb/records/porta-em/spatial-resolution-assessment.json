@@ -1,0 +1,199 @@
+{
+  "at": "2026-09-08T03:55:02",
+  "status": "current_grid_requires_correction",
+  "reason": "The original coarse/fine/via runs share an under-resolved transverse Z grid. A uniform section extracted from actual Gerber has large capacitance sensitivity to spatial refinement, confirmed against installed openEMS electric coefficients.",
+  "original_3d_result_status": "Time/filter consistency passed; spatial accuracy NOT established. Approximately 20 dB is retained as the old-model result, not a reliable as-built PCB value.",
+  "section": {
+    "width_mm": 0.17,
+    "gap_mm": 0.17,
+    "copper_thickness_mm": 0.056,
+    "reference_spacing_mm": 0.11,
+    "epsilon_r": 4.5
+  },
+  "control_section": {
+    "board": "Control_board",
+    "axis": "x",
+    "position_mm": 130.0,
+    "actual_intervals_mm": [
+      [
+        -126.565,
+        -126.39500000000001
+      ],
+      [
+        -126.90499999999999,
+        -126.735
+      ]
+    ],
+    "center": -126.65,
+    "strips": [
+      [
+        0.08500000000000796,
+        0.25499999999999545
+      ],
+      [
+        -0.25499999999998124,
+        -0.08499999999999375
+      ]
+    ]
+  },
+  "control_original_capacitance_pf_per_m": 113.38811058325015,
+  "control_refined_capacitance_pf_per_m": 63.01359338748709,
+  "original_relative_to_refined_percent": 79.94230210931943,
+  "last_refinement_capacitance_difference_percent": 0.44158759225010336,
+  "outer_boundary_capacitance_difference_percent": 0.00012887059924748812,
+  "native_operator_checks": [
+    {
+      "path": "transverse-resolution-check/aligned-reference-0p0025-native-operator-er4p5/static-operator-check.json",
+      "sha256": "8f7ed9fc29ac31b9f693388749385968a44a712034609f7218f165d58f0ed8fb",
+      "at": "2026-09-08T01:10:03",
+      "directory": "aligned-reference-0p0025-native-operator-er4p5",
+      "native_capacitance_pf_per_m": 63.01359380144532,
+      "static_capacitance_pf_per_m": 63.01359338748709,
+      "relative_capacitance_difference": 6.569347954510363e-09,
+      "max_edge_coefficient_relative_differences": [
+        1.457494496204248e-07,
+        1.4574945050860322e-07
+      ],
+      "PEC_endpoint_masks_identical": [
+        true,
+        true
+      ],
+      "solve_check": {
+        "iterations": 1994,
+        "relative_residual": 9.80745996720532e-11,
+        "charge_energy_relative_error": 4.1021932860603196e-16
+      },
+      "passed": true,
+      "scope": "Actual installed openEMS electric coefficients from a uniform section, zero FDTD timesteps. Verifies transverse static weights and PEC constraints for this section; not a full-board S-parameter measurement."
+    },
+    {
+      "path": "transverse-resolution-check/aligned-reference-0p005-native-operator-er4p5/static-operator-check.json",
+      "sha256": "25e3b5b61166905a44ae1631bb2ac915a586362ecc5cb919dcade391571915eb",
+      "at": "2026-09-08T01:08:15",
+      "directory": "aligned-reference-0p005-native-operator-er4p5",
+      "native_capacitance_pf_per_m": 63.29185403271549,
+      "static_capacitance_pf_per_m": 63.291853597317164,
+      "relative_capacitance_difference": 6.879215863619947e-09,
+      "max_edge_coefficient_relative_differences": [
+        1.3334338277992686e-07,
+        1.3334893589345143e-07
+      ],
+      "PEC_endpoint_masks_identical": [
+        true,
+        true
+      ],
+      "solve_check": {
+        "iterations": 1041,
+        "relative_residual": 9.815521907198506e-11,
+        "charge_energy_relative_error": 3.471534426781447e-15
+      },
+      "passed": true,
+      "scope": "Actual installed openEMS electric coefficients from a uniform section, zero FDTD timesteps. Verifies transverse static weights and PEC constraints for this section; not a full-board S-parameter measurement."
+    },
+    {
+      "path": "transverse-resolution-check/Control_board-rx-stable-coarse-native-operator-er1p0/static-operator-check.json",
+      "sha256": "06b77bdf54b33c17e3fce50f9cff902bcd4f8e209565c2758b9da91381448bee",
+      "at": "2026-09-08T01:07:44",
+      "directory": "Control_board-rx-stable-coarse-native-operator-er1p0",
+      "native_capacitance_pf_per_m": 50.69296634652001,
+      "static_capacitance_pf_per_m": 50.692966736740324,
+      "relative_capacitance_difference": 7.697721016164394e-09,
+      "max_edge_coefficient_relative_differences": [
+        6.317809919664796e-08,
+        5.3567441815616235e-08
+      ],
+      "PEC_endpoint_masks_identical": [
+        true,
+        true
+      ],
+      "solve_check": {
+        "iterations": 143,
+        "relative_residual": 9.451949245681081e-11,
+        "charge_energy_relative_error": 1.2748018120297193e-16
+      },
+      "passed": true,
+      "scope": "Actual installed openEMS electric coefficients from a uniform section, zero FDTD timesteps. Verifies transverse static weights and PEC constraints for this section; not a full-board S-parameter measurement."
+    },
+    {
+      "path": "transverse-resolution-check/Control_board-rx-stable-coarse-native-operator-er4p5/static-operator-check.json",
+      "sha256": "e9e7639a3f2f0ab0df5377d9ecc8f467a99ab07a721c4a42bed5459cb74ef390",
+      "at": "2026-09-08T01:05:42",
+      "directory": "Control_board-rx-stable-coarse-native-operator-er4p5",
+      "native_capacitance_pf_per_m": 113.38811085260262,
+      "static_capacitance_pf_per_m": 113.38811058325253,
+      "relative_capacitance_difference": 2.3754702649370074e-09,
+      "max_edge_coefficient_relative_differences": [
+        6.317809919664796e-08,
+        5.3567441815616235e-08
+      ],
+      "PEC_endpoint_masks_identical": [
+        true,
+        true
+      ],
+      "solve_check": {
+        "iterations": 140,
+        "relative_residual": 9.254168743327347e-11,
+        "charge_energy_relative_error": 2.2797270320417185e-16
+      },
+      "passed": true,
+      "scope": "Actual installed openEMS electric coefficients from a uniform section, zero FDTD timesteps. Verifies transverse static weights and PEC constraints for this section; not a full-board S-parameter measurement."
+    },
+    {
+      "path": "transverse-resolution-check/Control_board-rx-stable-coarse-z-refined-native-operator-er1p0/static-operator-check.json",
+      "sha256": "65cef1eac1bd162a3e38a86a7652e7ab8e5f28301da646b39cac53ecfb0d5127",
+      "at": "2026-09-08T01:07:45",
+      "directory": "Control_board-rx-stable-coarse-z-refined-native-operator-er1p0",
+      "native_capacitance_pf_per_m": 30.97009195633634,
+      "static_capacitance_pf_per_m": 30.970092186347067,
+      "relative_capacitance_difference": 7.42686601107323e-09,
+      "max_edge_coefficient_relative_differences": [
+        3.5984131674382525e-08,
+        5.356744248175005e-08
+      ],
+      "PEC_endpoint_masks_identical": [
+        true,
+        true
+      ],
+      "solve_check": {
+        "iterations": 599,
+        "relative_residual": 9.608682824679529e-11,
+        "charge_energy_relative_error": 0.0
+      },
+      "passed": true,
+      "scope": "Actual installed openEMS electric coefficients from a uniform section, zero FDTD timesteps. Verifies transverse static weights and PEC constraints for this section; not a full-board S-parameter measurement."
+    },
+    {
+      "path": "transverse-resolution-check/Control_board-rx-stable-coarse-z-refined-native-operator-er4p5/static-operator-check.json",
+      "sha256": "e46d5340933cde8da40104c32b2094548c2bf15905fb6c311d4b86c751da3704",
+      "at": "2026-09-08T01:07:10",
+      "directory": "Control_board-rx-stable-coarse-z-refined-native-operator-er4p5",
+      "native_capacitance_pf_per_m": 85.84865256881503,
+      "static_capacitance_pf_per_m": 85.84865364444627,
+      "relative_capacitance_difference": 1.2529389858961792e-08,
+      "max_edge_coefficient_relative_differences": [
+        5.224348487153918e-08,
+        5.356744248175005e-08
+      ],
+      "PEC_endpoint_masks_identical": [
+        true,
+        true
+      ],
+      "solve_check": {
+        "iterations": 564,
+        "relative_residual": 9.634185739727237e-11,
+        "charge_energy_relative_error": 1.3549691248447642e-15
+      },
+      "passed": true,
+      "scope": "Actual installed openEMS electric coefficients from a uniform section, zero FDTD timesteps. Verifies transverse static weights and PEC constraints for this section; not a full-board S-parameter measurement."
+    }
+  ],
+  "native_operator_checks_pass": true,
+  "retained_result": "runs/rx-stable-coarse/conditioned-record-15p996353ns-orders-0-24-32-40",
+  "paused_long_cases": [
+    "rx-stable-fine",
+    "rx-stable-boundary24",
+    "rx-stable-vias"
+  ],
+  "scope": "Uniform, ideal-plane 2D electrostatic section with actual Gerber width/gap and original transverse grids. No connector, bends, vias, surrounding coplanar copper, components or cable. Percentages describe this numerical capacitance comparison; they are NOT full-route RL errors or hardware failure contribution percentages.",
+  "next_step": "Find an economical transverse mesh on this section first, then validate it on a bounded actual-route 3D segment including a discontinuity and measurement ports before choosing any new full-route job. Full-route time/mesh/boundary/port/via requirements remain outstanding."
+}

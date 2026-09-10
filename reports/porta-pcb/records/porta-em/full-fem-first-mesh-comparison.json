@@ -1,0 +1,11 @@
+{
+  "frequency_mhz": 100,
+  "base": "full-fem-net-union-100mhz-order0",
+  "fine": "full-fem-net-union-100mhz-h075-order0",
+  "rx_rl_change_db": 0.6867794272688457,
+  "rx_il_change_db": 0.006825714205596564,
+  "rl_limit_db": 0.5,
+  "il_limit_db": 0.05,
+  "single_model_checks_pass": true,
+  "mesh_target_pass": false
+}

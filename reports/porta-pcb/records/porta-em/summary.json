@@ -1,0 +1,38 @@
+[
+  {
+    "case": "phy-tx-coarse",
+    "last_energy_dB": -26.7,
+    "last_steps": 40000,
+    "state": "40,000½ºÅÜ Á¾·á ¡¤ ¼ö·Å ¹Ì¿Ï·á",
+    "has_results": true,
+    "finite": true,
+    "time_ns": 2.7496326446299997,
+    "energy_criterion_met": false,
+    "mesh_convergence_checked": false,
+    "max_outgoing_power_ratio": 1.0025352531536365,
+    "at_100MHz": {
+      "return_loss_dB": 30.836573021069498,
+      "insertion_loss_dB": 0.00013504856996994656,
+      "output_mode_conversion_dB": -50.34602634835227,
+      "FEXT_dB": -71.93180216957613
+    }
+  },
+  {
+    "case": "phy-rx-coarse",
+    "last_energy_dB": -34.03,
+    "last_steps": 40000,
+    "state": "40,000½ºÅÜ Á¾·á ¡¤ ¼ö·Å ¹Ì¿Ï·á",
+    "has_results": true,
+    "finite": true,
+    "time_ns": 2.7496326446299997,
+    "energy_criterion_met": false,
+    "mesh_convergence_checked": false,
+    "max_outgoing_power_ratio": 1.0041106025372308,
+    "at_100MHz": {
+      "return_loss_dB": 29.18039050835196,
+      "insertion_loss_dB": -0.00415823189659449,
+      "output_mode_conversion_dB": -54.23723752149257,
+      "FEXT_dB": -61.58907642008088
+    }
+  }
+]

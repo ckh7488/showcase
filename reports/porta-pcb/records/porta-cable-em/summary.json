@@ -1,0 +1,94 @@
+{
+  "updated": "2026-09-08T18:44:53",
+  "cases": [
+    {
+      "drive": "TX",
+      "state": "초기 계산 종료 — 수렴 미달 / 판정 보류",
+      "energy_db": -14.35,
+      "steps": 60000,
+      "done": true,
+      "unused_shells": 395,
+      "return_loss_db": 26.644431132417424,
+      "insertion_loss_db": 0.03650699078049302,
+      "far_crosstalk_db": -36.3337932140876,
+      "max_port_power_sum": 1.0827046760934147,
+      "max_power_frequency_mhz": 10.0,
+      "power_sum_100mhz": 0.9941429104363586,
+      "window_check": {
+        "case": "cable-tx-screen",
+        "windows": [
+          {
+            "cut_ns": 2.665958069864,
+            "return_loss_db": 23.257673124169173,
+            "insertion_loss_db": 0.3065040287079036,
+            "other_pair_db": -42.126411659974906,
+            "port_power_sum": 0.9366738062037653
+          },
+          {
+            "cut_ns": 2.9992028285970003,
+            "return_loss_db": 26.313438569648618,
+            "insertion_loss_db": -0.11280042273229901,
+            "other_pair_db": -47.15687898291687,
+            "port_power_sum": 1.028778013575344
+          },
+          {
+            "cut_ns": 3.3324475873300003,
+            "return_loss_db": 26.644431132417424,
+            "insertion_loss_db": 0.036506990780492056,
+            "other_pair_db": -36.3337932140876,
+            "port_power_sum": 0.9941429104363586
+          }
+        ],
+        "full_window_rl_difference_from_native_db": 0.0,
+        "rl_window_span_db": 3.3867580082482505,
+        "il_window_span_db": 0.4193044514402026,
+        "limit": "Observed tail-window variation only, not an accuracy bound or mesh convergence"
+      }
+    },
+    {
+      "drive": "RX",
+      "state": "초기 계산 종료 — 수렴 미달 / 판정 보류",
+      "energy_db": -12.84,
+      "steps": 60000,
+      "done": true,
+      "unused_shells": 395,
+      "return_loss_db": 20.51083636910006,
+      "insertion_loss_db": 0.062718514984461,
+      "far_crosstalk_db": -53.098563722438925,
+      "max_port_power_sum": 1.0366328413593882,
+      "max_power_frequency_mhz": 10.0,
+      "power_sum_100mhz": 0.9946730366432351,
+      "window_check": {
+        "case": "cable-rx-screen",
+        "windows": [
+          {
+            "cut_ns": 2.665958069864,
+            "return_loss_db": 9.21192943546069,
+            "insertion_loss_db": -0.09721180622009609,
+            "other_pair_db": -54.219672589514154,
+            "port_power_sum": 1.1425671917661149
+          },
+          {
+            "cut_ns": 2.9992028285970003,
+            "return_loss_db": 21.890336909406564,
+            "insertion_loss_db": 0.29069737036189497,
+            "other_pair_db": -40.200762584517676,
+            "port_power_sum": 0.9419311284930925
+          },
+          {
+            "cut_ns": 3.3324475873300003,
+            "return_loss_db": 20.51083636910006,
+            "insertion_loss_db": 0.062718514984461,
+            "other_pair_db": -53.098563722438925,
+            "port_power_sum": 0.9946730366432351
+          }
+        ],
+        "full_window_rl_difference_from_native_db": 0.0,
+        "rl_window_span_db": 12.678407473945875,
+        "il_window_span_db": 0.3879091765819911,
+        "limit": "Observed tail-window variation only, not an accuracy bound or mesh convergence"
+      }
+    }
+  ],
+  "status": "Approximate-connector screening; not measured connector performance or EMC verdict"
+}

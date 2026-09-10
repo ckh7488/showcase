@@ -1,0 +1,1339 @@
+{
+  "updated": "2026-09-08T18:44:51",
+  "criteria": {
+    "band_mhz": [
+      1,
+      100
+    ],
+    "rl_delta_db": 0.5,
+    "il_delta_db": 0.05,
+    "deep_null_gamma_threshold": 0.02,
+    "deep_null_complex_delta": 0.005,
+    "max_passivity_ratio": 1.01,
+    "max_undriven_incident_ratio": 0.001
+  },
+  "cases": [
+    {
+      "case": "rx-stable-coarse",
+      "cells": 21599100,
+      "args": {
+        "time_ns": 16,
+        "pulse_ns": 0.6,
+        "center_ns": 3,
+        "step": 0.12,
+        "outer_step": 0.5,
+        "margin": 14,
+        "threads": 16,
+        "end": 1e-07,
+        "name": "rx-stable-coarse",
+        "drive": "RX",
+        "prepare": false,
+        "boundary": "PML_8",
+        "via_mode": "shell"
+      },
+      "done": true,
+      "state": "계산 종료 · 검증 중",
+      "last_step": 154531,
+      "energy_db": -19.0,
+      "unused_shells": 339,
+      "simulated_ns": 15.999985209,
+      "runtime": {
+        "pid": 41060,
+        "identity_matches": false,
+        "observed_alive": null,
+        "query_error": 87
+      },
+      "record_ns": 15.996353178400001,
+      "windows": [
+        {
+          "cut_ns": 11.866353178400002,
+          "rl100_db": 19.80694073428051,
+          "il100_db": 0.043101356200000496,
+          "power100": 1.0005803145361014
+        },
+        {
+          "cut_ns": 13.586353178400001,
+          "rl100_db": 19.79868145000514,
+          "il100_db": 0.045661373599527454,
+          "power100": 1.0000167220775014
+        },
+        {
+          "cut_ns": 14.926353178400003,
+          "rl100_db": 19.79320411334532,
+          "il100_db": 0.04773014614367636,
+          "power100": 0.9995586877837902
+        },
+        {
+          "cut_ns": 15.996353178400001,
+          "rl100_db": 19.77025314563749,
+          "il100_db": 0.0489565757109421,
+          "power100": 0.9993349327074804
+        }
+      ],
+      "time_comparisons": [
+        {
+          "max_rl_delta_db_away_from_null": 0.04828890851113954,
+          "max_complex_gamma_delta_near_null": 0.0001958878641870716,
+          "max_il_delta_db": 0.003065220644720805,
+          "max_complex_gamma_delta_all": 0.00031227242158944504,
+          "pass": true,
+          "failing_mhz": [],
+          "cut_a_ns": 11.866353178400002,
+          "cut_b_ns": 13.586353178400001
+        },
+        {
+          "max_rl_delta_db_away_from_null": 0.05081041075094106,
+          "max_complex_gamma_delta_near_null": 0.00014053302491834699,
+          "max_il_delta_db": 0.004678166237820039,
+          "max_complex_gamma_delta_all": 0.00058042697885065,
+          "pass": true,
+          "failing_mhz": [],
+          "cut_a_ns": 11.866353178400002,
+          "cut_b_ns": 14.926353178400003
+        },
+        {
+          "max_rl_delta_db_away_from_null": 0.06876535843614207,
+          "max_complex_gamma_delta_near_null": 0.00020277008081060496,
+          "max_il_delta_db": 0.006739383336741796,
+          "max_complex_gamma_delta_all": 0.000670575598924913,
+          "pass": true,
+          "failing_mhz": [],
+          "cut_a_ns": 11.866353178400002,
+          "cut_b_ns": 15.996353178400001
+        },
+        {
+          "max_rl_delta_db_away_from_null": 0.04752370762884084,
+          "max_complex_gamma_delta_near_null": 0.00011152797426921682,
+          "max_il_delta_db": 0.0020687725441498744,
+          "max_complex_gamma_delta_all": 0.00026857968805095336,
+          "pass": true,
+          "failing_mhz": [],
+          "cut_a_ns": 13.586353178400001,
+          "cut_b_ns": 14.926353178400003
+        },
+        {
+          "max_rl_delta_db_away_from_null": 0.03712992109328184,
+          "max_complex_gamma_delta_near_null": 9.522401642690405e-05,
+          "max_il_delta_db": 0.0037781879073496213,
+          "max_complex_gamma_delta_all": 0.00039854490568699705,
+          "pass": true,
+          "failing_mhz": [],
+          "cut_a_ns": 13.586353178400001,
+          "cut_b_ns": 15.996353178400001
+        },
+        {
+          "max_rl_delta_db_away_from_null": 0.023198908398814666,
+          "max_complex_gamma_delta_near_null": 6.499326441702214e-05,
+          "max_il_delta_db": 0.0023871918166701728,
+          "max_complex_gamma_delta_all": 0.00027482839949084846,
+          "pass": true,
+          "failing_mhz": [],
+          "cut_a_ns": 14.926353178400003,
+          "cut_b_ns": 15.996353178400001
+        }
+      ],
+      "time_pass": true,
+      "termination_check": {
+        "max_undriven_incident_ratio_final": 3.1730862141064204e-05,
+        "max_undriven_incident_ratio_all_windows": 3.207739882548406e-05,
+        "limit": 0.001,
+        "pass": true
+      },
+      "max_power_ratio": 1.0007053799001382,
+      "max_window_power_ratio": 1.00113249432648,
+      "power_pass": true,
+      "conditioning_check": {
+        "orders": [
+          24,
+          32,
+          40
+        ],
+        "primary_order": 32,
+        "pair_count": 66,
+        "max_rl_delta_db": 0.2962750055877592,
+        "max_il_delta_db": 0.008215146727722722,
+        "max_near_null_gamma_delta": 0.0008674550157674934,
+        "comparisons": [
+          {
+            "max_rl_delta_db_away_from_null": 0.11209397650220154,
+            "max_complex_gamma_delta_near_null": 0.0002930374854873566,
+            "max_il_delta_db": 0.003670636303972248,
+            "max_complex_gamma_delta_all": 0.0003965979799922773,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 24,
+            "cut_a_ns": 11.866353178400002,
+            "cut_b_ns": 13.586353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.11330939779767135,
+            "max_complex_gamma_delta_near_null": 0.0002717208414769925,
+            "max_il_delta_db": 0.006324345975565346,
+            "max_complex_gamma_delta_all": 0.0005632937694560362,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 24,
+            "cut_a_ns": 11.866353178400002,
+            "cut_b_ns": 14.926353178400003
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.11062684936609202,
+            "max_complex_gamma_delta_near_null": 0.00030862870696613025,
+            "max_il_delta_db": 0.00396726190720929,
+            "max_complex_gamma_delta_all": 0.00030862870696613025,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 24,
+            "cut_a_ns": 11.866353178400002,
+            "cut_b_ns": 15.996353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.17879138463167266,
+            "max_complex_gamma_delta_near_null": 0.000579323493776843,
+            "max_il_delta_db": 0.007076415083419298,
+            "max_complex_gamma_delta_all": 0.0006106787022149225,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 32,
+            "cut_a_ns": 11.866353178400002,
+            "cut_b_ns": 11.866353178400002
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.13050247612053312,
+            "max_complex_gamma_delta_near_null": 0.0003883232795869676,
+            "max_il_delta_db": 0.004212745760448829,
+            "max_complex_gamma_delta_all": 0.0004333307724024393,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 32,
+            "cut_a_ns": 11.866353178400002,
+            "cut_b_ns": 13.586353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.17802618374937396,
+            "max_complex_gamma_delta_near_null": 0.000490007437492688,
+            "max_il_delta_db": 0.0051471483943798,
+            "max_complex_gamma_delta_all": 0.000490007437492688,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 32,
+            "cut_a_ns": 11.866353178400002,
+            "cut_b_ns": 14.926353178400003
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.16763239721381495,
+            "max_complex_gamma_delta_near_null": 0.000444597059362443,
+            "max_il_delta_db": 0.006211674723843763,
+            "max_complex_gamma_delta_all": 0.000444597059362443,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 32,
+            "cut_a_ns": 11.866353178400002,
+            "cut_b_ns": 15.996353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.01917508810211288,
+            "max_complex_gamma_delta_near_null": 4.007602259923246e-05,
+            "max_il_delta_db": 0.002554583208132958,
+            "max_complex_gamma_delta_all": 0.00023399610013437238,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 40,
+            "cut_a_ns": 11.866353178400002,
+            "cut_b_ns": 11.866353178400002
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.11051761331221144,
+            "max_complex_gamma_delta_near_null": 0.00032570408671331444,
+            "max_il_delta_db": 0.005306071366740144,
+            "max_complex_gamma_delta_all": 0.00036090801275200476,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 40,
+            "cut_a_ns": 11.866353178400002,
+            "cut_b_ns": 13.586353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.07483632571105403,
+            "max_complex_gamma_delta_near_null": 0.00021775410552360026,
+            "max_il_delta_db": 0.004229232934327769,
+            "max_complex_gamma_delta_all": 0.00021775410552360026,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 40,
+            "cut_a_ns": 11.866353178400002,
+            "cut_b_ns": 14.926353178400003
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.038510855770461205,
+            "max_complex_gamma_delta_near_null": 9.795862915265021e-05,
+            "max_il_delta_db": 0.004208618761088238,
+            "max_complex_gamma_delta_all": 0.000387812503741015,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 40,
+            "cut_a_ns": 11.866353178400002,
+            "cut_b_ns": 15.996353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.03668200258063692,
+            "max_complex_gamma_delta_near_null": 8.972955031794296e-05,
+            "max_il_delta_db": 0.0036308355215349183,
+            "max_complex_gamma_delta_all": 0.0004529078666892666,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 24,
+            "cut_a_ns": 13.586353178400001,
+            "cut_b_ns": 14.926353178400003
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.22524189891677793,
+            "max_complex_gamma_delta_near_null": 0.0005985015707803983,
+            "max_il_delta_db": 0.004729822016335046,
+            "max_complex_gamma_delta_all": 0.0006084216638184442,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 24,
+            "cut_a_ns": 13.586353178400001,
+            "cut_b_ns": 15.996353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.29340643418235857,
+            "max_complex_gamma_delta_near_null": 0.0008674550157674934,
+            "max_il_delta_db": 0.008030388453391159,
+            "max_complex_gamma_delta_all": 0.0008674550157674934,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 32,
+            "cut_a_ns": 13.586353178400001,
+            "cut_b_ns": 11.866353178400002
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.24511752567121903,
+            "max_complex_gamma_delta_near_null": 0.0006772312178095162,
+            "max_il_delta_db": 0.0052533804534326475,
+            "max_complex_gamma_delta_all": 0.0007139283988601424,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 32,
+            "cut_a_ns": 13.586353178400001,
+            "cut_b_ns": 13.586353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.29264123330005987,
+            "max_complex_gamma_delta_near_null": 0.0007805932046875366,
+            "max_il_delta_db": 0.006514284900452954,
+            "max_complex_gamma_delta_all": 0.0008240570037561333,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 32,
+            "cut_a_ns": 13.586353178400001,
+            "cut_b_ns": 14.926353178400003
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.28224744676450086,
+            "max_complex_gamma_delta_near_null": 0.0007337743982556099,
+            "max_il_delta_db": 0.007408069428211646,
+            "max_complex_gamma_delta_all": 0.0007337743982556099,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 32,
+            "cut_a_ns": 13.586353178400001,
+            "cut_b_ns": 15.996353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.1281015019869045,
+            "max_complex_gamma_delta_near_null": 0.0003085305589981876,
+            "max_il_delta_db": 0.004120958635762614,
+            "max_complex_gamma_delta_all": 0.0006280790262423187,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 40,
+            "cut_a_ns": 13.586353178400001,
+            "cut_b_ns": 11.866353178400002
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.22513266286289735,
+            "max_complex_gamma_delta_near_null": 0.0006152492053462259,
+            "max_il_delta_db": 0.0064889511579919665,
+            "max_complex_gamma_delta_all": 0.0006621982905654425,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 40,
+            "cut_a_ns": 13.586353178400001,
+            "cut_b_ns": 13.586353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.18945137526173994,
+            "max_complex_gamma_delta_near_null": 0.0005079018184587941,
+            "max_il_delta_db": 0.005555134384744656,
+            "max_complex_gamma_delta_all": 0.0005380574960159778,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 40,
+            "cut_a_ns": 13.586353178400001,
+            "cut_b_ns": 14.926353178400003
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.07358312073174034,
+            "max_complex_gamma_delta_near_null": 0.0002331853651393981,
+            "max_il_delta_db": 0.003044647098414382,
+            "max_complex_gamma_delta_all": 0.00042054060702696944,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 40,
+            "cut_a_ns": 13.586353178400001,
+            "cut_b_ns": 15.996353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.22811047032217857,
+            "max_complex_gamma_delta_near_null": 0.0005645950341207092,
+            "max_il_delta_db": 0.005062244982784445,
+            "max_complex_gamma_delta_all": 0.0006261007859314727,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 24,
+            "cut_a_ns": 14.926353178400003,
+            "cut_b_ns": 15.996353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.2962750055877592,
+            "max_complex_gamma_delta_near_null": 0.0008321932397136789,
+            "max_il_delta_db": 0.008215146727722722,
+            "max_complex_gamma_delta_all": 0.0008321932397136789,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 32,
+            "cut_a_ns": 14.926353178400003,
+            "cut_b_ns": 11.866353178400002
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.24798609707661967,
+            "max_complex_gamma_delta_near_null": 0.0006407997187986927,
+            "max_il_delta_db": 0.005309706942428472,
+            "max_complex_gamma_delta_all": 0.0006407997187986927,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 32,
+            "cut_a_ns": 14.926353178400003,
+            "cut_b_ns": 13.586353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.2955098047054605,
+            "max_complex_gamma_delta_near_null": 0.0007452472997443343,
+            "max_il_delta_db": 0.006775498659300348,
+            "max_complex_gamma_delta_all": 0.0007850414958538234,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 32,
+            "cut_a_ns": 14.926353178400003,
+            "cut_b_ns": 14.926353178400003
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.2851160181699015,
+            "max_complex_gamma_delta_near_null": 0.0006997912798336608,
+            "max_il_delta_db": 0.008044208667125727,
+            "max_complex_gamma_delta_all": 0.0007376607075850908,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 32,
+            "cut_a_ns": 14.926353178400003,
+            "cut_b_ns": 15.996353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.13097007339230515,
+            "max_complex_gamma_delta_near_null": 0.0002956645677999926,
+            "max_il_delta_db": 0.006263433822400438,
+            "max_complex_gamma_delta_all": 0.0006997552564638912,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 40,
+            "cut_a_ns": 14.926353178400003,
+            "cut_b_ns": 11.866353178400002
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.228001234268298,
+            "max_complex_gamma_delta_near_null": 0.0005784953961562408,
+            "max_il_delta_db": 0.006499885576174045,
+            "max_complex_gamma_delta_all": 0.0005784953961562408,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 40,
+            "cut_a_ns": 14.926353178400003,
+            "cut_b_ns": 13.586353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.19231994666714058,
+            "max_complex_gamma_delta_near_null": 0.0004736122608728937,
+            "max_il_delta_db": 0.006078624068000568,
+            "max_complex_gamma_delta_all": 0.0005320806957624598,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 40,
+            "cut_a_ns": 14.926353178400003,
+            "cut_b_ns": 14.926353178400003
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.07479854202721015,
+            "max_complex_gamma_delta_near_null": 0.0001892028071141267,
+            "max_il_delta_db": 0.0024979763794910556,
+            "max_complex_gamma_delta_all": 0.00020053908720378771,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 40,
+            "cut_a_ns": 14.926353178400003,
+            "cut_b_ns": 15.996353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.06816453526558064,
+            "max_complex_gamma_delta_near_null": 0.000283244342854729,
+            "max_il_delta_db": 0.004006605273753441,
+            "max_complex_gamma_delta_all": 0.0005223669848173018,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 32,
+            "cut_a_ns": 15.996353178400001,
+            "cut_b_ns": 11.866353178400002
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.023501281192388035,
+            "max_complex_gamma_delta_near_null": 8.745221901800369e-05,
+            "max_il_delta_db": 0.0011011654884591905,
+            "max_complex_gamma_delta_all": 0.00025187254362680155,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 32,
+            "cut_a_ns": 15.996353178400001,
+            "cut_b_ns": 13.586353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.06739933438328194,
+            "max_complex_gamma_delta_near_null": 0.0001820977757146638,
+            "max_il_delta_db": 0.002319759919109964,
+            "max_complex_gamma_delta_all": 0.00021654755621174416,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 32,
+            "cut_a_ns": 15.996353178400001,
+            "cut_b_ns": 14.926353178400003
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.05700554784772294,
+            "max_complex_gamma_delta_near_null": 0.0001364222204198595,
+            "max_il_delta_db": 0.003575527744024351,
+            "max_complex_gamma_delta_all": 0.00014990803558638567,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 32,
+            "cut_a_ns": 15.996353178400001,
+            "cut_b_ns": 15.996353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.09714039692987342,
+            "max_complex_gamma_delta_near_null": 0.00030819544330389087,
+            "max_il_delta_db": 0.0017993098533594931,
+            "max_complex_gamma_delta_all": 0.00030819544330389087,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 40,
+            "cut_a_ns": 15.996353178400001,
+            "cut_b_ns": 11.866353178400002
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.013461438412495141,
+            "max_complex_gamma_delta_near_null": 3.188110587345311e-05,
+            "max_il_delta_db": 0.0022913441222047635,
+            "max_complex_gamma_delta_all": 0.0001781162895621295,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 40,
+            "cut_a_ns": 15.996353178400001,
+            "cut_b_ns": 13.586353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.03579052365503799,
+            "max_complex_gamma_delta_near_null": 9.107574214861187e-05,
+            "max_il_delta_db": 0.001401844459057933,
+            "max_complex_gamma_delta_all": 9.433317205470274e-05,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 40,
+            "cut_a_ns": 15.996353178400001,
+            "cut_b_ns": 14.926353178400003
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.15120179216249596,
+            "max_complex_gamma_delta_near_null": 0.0003754350538241074,
+            "max_il_delta_db": 0.002564268603293389,
+            "max_complex_gamma_delta_all": 0.00042565479900030003,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 24,
+            "order_b": 40,
+            "cut_a_ns": 15.996353178400001,
+            "cut_b_ns": 15.996353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.04828890851113954,
+            "max_complex_gamma_delta_near_null": 0.0001958878641870716,
+            "max_il_delta_db": 0.003065220644720805,
+            "max_complex_gamma_delta_all": 0.00031227242158944504,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 32,
+            "order_b": 32,
+            "cut_a_ns": 11.866353178400002,
+            "cut_b_ns": 13.586353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.05081041075094106,
+            "max_complex_gamma_delta_near_null": 0.00014053302491834699,
+            "max_il_delta_db": 0.004678166237820039,
+            "max_complex_gamma_delta_all": 0.00058042697885065,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 32,
+            "order_b": 32,
+            "cut_a_ns": 11.866353178400002,
+            "cut_b_ns": 14.926353178400003
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.06876535843614207,
+            "max_complex_gamma_delta_near_null": 0.00020277008081060496,
+            "max_il_delta_db": 0.006739383336741796,
+            "max_complex_gamma_delta_all": 0.000670575598924913,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 32,
+            "order_b": 32,
+            "cut_a_ns": 11.866353178400002,
+            "cut_b_ns": 15.996353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.16530493219545406,
+            "max_complex_gamma_delta_near_null": 0.0005790153429705194,
+            "max_il_delta_db": 0.00500095019212015,
+            "max_complex_gamma_delta_all": 0.0006137379391065979,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 32,
+            "order_b": 40,
+            "cut_a_ns": 11.866353178400002,
+            "cut_b_ns": 11.866353178400002
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.06827377131946122,
+            "max_complex_gamma_delta_near_null": 0.00025751945748087187,
+            "max_il_delta_db": 0.0031490233232273485,
+            "max_complex_gamma_delta_all": 0.0003604788722818817,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 32,
+            "order_b": 40,
+            "cut_a_ns": 11.866353178400002,
+            "cut_b_ns": 13.586353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.10395505892061863,
+            "max_complex_gamma_delta_near_null": 0.00036450735786605225,
+            "max_il_delta_db": 0.004277270022520541,
+            "max_complex_gamma_delta_all": 0.0004551741256607149,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 32,
+            "order_b": 40,
+            "cut_a_ns": 11.866353178400002,
+            "cut_b_ns": 14.926353178400003
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.2193663274280766,
+            "max_complex_gamma_delta_near_null": 0.0006434145507598024,
+            "max_il_delta_db": 0.005876190875611851,
+            "max_complex_gamma_delta_all": 0.0006434145507598024,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 32,
+            "order_b": 40,
+            "cut_a_ns": 11.866353178400002,
+            "cut_b_ns": 15.996353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.04752370762884084,
+            "max_complex_gamma_delta_near_null": 0.00011152797426921682,
+            "max_il_delta_db": 0.0020687725441498744,
+            "max_complex_gamma_delta_all": 0.00026857968805095336,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 32,
+            "order_b": 32,
+            "cut_a_ns": 13.586353178400001,
+            "cut_b_ns": 14.926353178400003
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.03712992109328184,
+            "max_complex_gamma_delta_near_null": 9.522401642690405e-05,
+            "max_il_delta_db": 0.0037781879073496213,
+            "max_complex_gamma_delta_all": 0.00039854490568699705,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 32,
+            "order_b": 32,
+            "cut_a_ns": 13.586353178400001,
+            "cut_b_ns": 15.996353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.11701602368431452,
+            "max_complex_gamma_delta_near_null": 0.00038645009593207824,
+            "max_il_delta_db": 0.0019357295473993452,
+            "max_complex_gamma_delta_all": 0.00038645009593207824,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 32,
+            "order_b": 40,
+            "cut_a_ns": 13.586353178400001,
+            "cut_b_ns": 11.866353178400002
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.01998486280832168,
+            "max_complex_gamma_delta_near_null": 6.274386766711466e-05,
+            "max_il_delta_db": 0.001235570704559319,
+            "max_complex_gamma_delta_all": 7.573119837517425e-05,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 32,
+            "order_b": 40,
+            "cut_a_ns": 13.586353178400001,
+            "cut_b_ns": 13.586353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.05566615040947909,
+            "max_complex_gamma_delta_near_null": 0.0001711919484240797,
+            "max_il_delta_db": 0.001388843200658213,
+            "max_complex_gamma_delta_all": 0.0002296813600077225,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 32,
+            "order_b": 40,
+            "cut_a_ns": 13.586353178400001,
+            "cut_b_ns": 14.926353178400003
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.17107741891693706,
+            "max_complex_gamma_delta_near_null": 0.00045201007432082497,
+            "max_il_delta_db": 0.002970751090317601,
+            "max_complex_gamma_delta_all": 0.00045201007432082497,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 32,
+            "order_b": 40,
+            "cut_a_ns": 13.586353178400001,
+            "cut_b_ns": 15.996353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.023198908398814666,
+            "max_complex_gamma_delta_near_null": 6.499326441702214e-05,
+            "max_il_delta_db": 0.0023871918166701728,
+            "max_complex_gamma_delta_all": 0.00027482839949084846,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 32,
+            "order_b": 32,
+            "cut_a_ns": 14.926353178400003,
+            "cut_b_ns": 15.996353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.16453973131315536,
+            "max_complex_gamma_delta_near_null": 0.000489568973544581,
+            "max_il_delta_db": 0.003084791092872209,
+            "max_complex_gamma_delta_all": 0.000489568973544581,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 32,
+            "order_b": 40,
+            "cut_a_ns": 14.926353178400003,
+            "cut_b_ns": 11.866353178400002
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.06750857043716252,
+            "max_complex_gamma_delta_near_null": 0.0001679488739978712,
+            "max_il_delta_db": 0.0015698031885233166,
+            "max_complex_gamma_delta_all": 0.0002398996548361326,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 32,
+            "order_b": 40,
+            "cut_a_ns": 14.926353178400003,
+            "cut_b_ns": 13.586353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.10318985803831993,
+            "max_complex_gamma_delta_near_null": 0.0002728479671688285,
+            "max_il_delta_db": 0.0009591505157082979,
+            "max_complex_gamma_delta_all": 0.0002911403854791268,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 32,
+            "order_b": 40,
+            "cut_a_ns": 14.926353178400003,
+            "cut_b_ns": 14.926353178400003
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.2186011265457779,
+            "max_complex_gamma_delta_near_null": 0.0005562271758427119,
+            "max_il_delta_db": 0.004277522279809293,
+            "max_complex_gamma_delta_all": 0.0005890826461952102,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 32,
+            "order_b": 40,
+            "cut_a_ns": 14.926353178400003,
+            "cut_b_ns": 15.996353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.15414594477759636,
+            "max_complex_gamma_delta_near_null": 0.000444148416353404,
+            "max_il_delta_db": 0.004149317422336172,
+            "max_complex_gamma_delta_all": 0.000444148416353404,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 32,
+            "order_b": 40,
+            "cut_a_ns": 15.996353178400001,
+            "cut_b_ns": 11.866353178400002
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.057114783901603516,
+            "max_complex_gamma_delta_near_null": 0.000132336652972315,
+            "max_il_delta_db": 0.003842741728370916,
+            "max_complex_gamma_delta_all": 0.0003266845737750359,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 32,
+            "order_b": 40,
+            "cut_a_ns": 15.996353178400001,
+            "cut_b_ns": 13.586353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.09279607150276092,
+            "max_complex_gamma_delta_near_null": 0.00022686156575848365,
+            "max_il_delta_db": 0.0024636879900238537,
+            "max_complex_gamma_delta_all": 0.00022686156575848365,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 32,
+            "order_b": 40,
+            "cut_a_ns": 15.996353178400001,
+            "cut_b_ns": 14.926353178400003
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.2082073400102189,
+            "max_complex_gamma_delta_near_null": 0.0005107556347325237,
+            "max_il_delta_db": 0.005597458812380517,
+            "max_complex_gamma_delta_all": 0.0005411983828709268,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 32,
+            "order_b": 40,
+            "cut_a_ns": 15.996353178400001,
+            "cut_b_ns": 15.996353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.09703116087599284,
+            "max_complex_gamma_delta_near_null": 0.0003241385428458526,
+            "max_il_delta_db": 0.0030563752959670083,
+            "max_complex_gamma_delta_all": 0.0003241385428458526,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 40,
+            "order_b": 40,
+            "cut_a_ns": 11.866353178400002,
+            "cut_b_ns": 13.586353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.06134987327483543,
+            "max_complex_gamma_delta_near_null": 0.00021733197370268637,
+            "max_il_delta_db": 0.0021668756328201777,
+            "max_complex_gamma_delta_all": 0.00021733197370268637,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 40,
+            "order_b": 40,
+            "cut_a_ns": 11.866353178400002,
+            "cut_b_ns": 14.926353178400003
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.054061395232622544,
+            "max_complex_gamma_delta_near_null": 0.00013203060406599562,
+            "max_il_delta_db": 0.0037654574429093826,
+            "max_complex_gamma_delta_all": 0.0005008207993612374,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 40,
+            "order_b": 40,
+            "cut_a_ns": 11.866353178400002,
+            "cut_b_ns": 15.996353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.03568128760115741,
+            "max_complex_gamma_delta_near_null": 0.0001084697255981859,
+            "max_il_delta_db": 0.001520403114063644,
+            "max_complex_gamma_delta_all": 0.0001560067879871412,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 40,
+            "order_b": 40,
+            "cut_a_ns": 13.586353178400001,
+            "cut_b_ns": 14.926353178400003
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.15109255610861538,
+            "max_complex_gamma_delta_near_null": 0.00038970430688535463,
+            "max_il_delta_db": 0.004160929724063174,
+            "max_complex_gamma_delta_all": 0.00038970430688535463,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 40,
+            "order_b": 40,
+            "cut_a_ns": 13.586353178400001,
+            "cut_b_ns": 15.996353178400001
+          },
+          {
+            "max_rl_delta_db_away_from_null": 0.11541126850745798,
+            "max_complex_gamma_delta_near_null": 0.00028446735720369295,
+            "max_il_delta_db": 0.0035806476885095126,
+            "max_complex_gamma_delta_all": 0.0003317791329618234,
+            "pass": true,
+            "failing_mhz": [],
+            "order_a": 40,
+            "order_b": 40,
+            "cut_a_ns": 14.926353178400003,
+            "cut_b_ns": 15.996353178400001
+          }
+        ],
+        "pass": true
+      },
+      "raw_dft_diagnostic": {
+        "rl100_db": 19.73398531807759,
+        "il100_db": 0.12279131502663272,
+        "max_power_ratio": 2.030876946306109
+      },
+      "history_final_dft_max_complex_error": 1.1157603309187458e-15,
+      "input_conditioning": {
+        "incident_1mhz_relative_to_100mhz_db": 0.5206279770552759,
+        "incident_1mhz_relative_to_band_max_db": -9.643274665532871e-16,
+        "last_1p07ns_max_incident_dft_change_relative": 2.0041604530240298e-07,
+        "last_1p07ns_max_outgoing_dft_change_over_incident": 0.0003187949440474208,
+        "purpose": "DFT conditioning and remaining-tail diagnostic, not a separate pass/fail criterion"
+      },
+      "rl100_db": 19.77025314563749,
+      "il100_db": 0.0489565757109421,
+      "min_rl_1_100_db": 19.77025314563749,
+      "max_il_1_100_db": 0.0489565757109421,
+      "internal_design_target_met": false,
+      "native_dft_max_complex_error": 9.128515141181826e-15,
+      "native_dft_pass": true,
+      "conditioned_native_dft_pass": true,
+      "conditioned_native_dft_max_complex_error": 6.661338147750939e-16
+    },
+    {
+      "case": "rx-stable-fine",
+      "cells": 33906261,
+      "args": {
+        "time_ns": 16,
+        "pulse_ns": 0.6,
+        "center_ns": 3,
+        "step": 0.08,
+        "outer_step": 0.5,
+        "margin": 14,
+        "threads": 8,
+        "end": 1e-07,
+        "name": "rx-stable-fine",
+        "drive": "RX",
+        "prepare": false,
+        "boundary": "PML_8",
+        "via_mode": "shell"
+      },
+      "done": false,
+      "state": "일시정지 · 계산 상태 보존",
+      "last_step": 8065,
+      "energy_db": -0.0,
+      "unused_shells": 333,
+      "simulated_ns": 0.6249366875,
+      "runtime": {
+        "pid": 49788,
+        "identity_matches": true,
+        "observed_alive": true,
+        "creation_filetime": "134332427013964626",
+        "exit_code": null,
+        "cpu_seconds": 77794.421875,
+        "wall_seconds": 91590.34538340569,
+        "cpu_advanced_since_previous_snapshot": false
+      },
+      "paused": true,
+      "pause": {
+        "at": "2026-09-07T22:05:09",
+        "case": "rx-stable-fine",
+        "pid": 49788,
+        "creation_filetime": "134332427013964626",
+        "action": "pause",
+        "cpu_seconds": 77794.421875,
+        "reason": "Prioritize the base RX run and the connected remote-via comparison; retain solver state for later continuation."
+      },
+      "record_ns": 0.624975174327
+    },
+    {
+      "case": "rx-stable-boundary24",
+      "cells": 32164824,
+      "args": {
+        "time_ns": 24.0,
+        "pulse_ns": 0.6,
+        "center_ns": 3,
+        "step": 0.12,
+        "outer_step": 0.5,
+        "margin": 22.0,
+        "threads": 8,
+        "end": 1e-07,
+        "name": "rx-stable-boundary24",
+        "drive": "RX",
+        "prepare": false,
+        "boundary": "PML_8",
+        "via_mode": "shell"
+      },
+      "done": false,
+      "state": "일시정지 · 계산 상태 보존",
+      "last_step": 25347,
+      "energy_db": -0.0,
+      "unused_shells": 339,
+      "simulated_ns": 2.6244030329999997,
+      "runtime": {
+        "pid": 53848,
+        "identity_matches": true,
+        "observed_alive": true,
+        "creation_filetime": "134332467915668671",
+        "exit_code": null,
+        "cpu_seconds": 93106.4375,
+        "wall_seconds": 87500.17697668076,
+        "cpu_advanced_since_previous_snapshot": false
+      },
+      "paused": true,
+      "pause": {
+        "at": "2026-09-07T22:05:09",
+        "case": "rx-stable-boundary24",
+        "pid": 53848,
+        "creation_filetime": "134332467915668671",
+        "action": "pause",
+        "cpu_seconds": 93106.4375,
+        "reason": "Prioritize the base RX run and the connected remote-via comparison; retain solver state for later continuation."
+      },
+      "record_ns": 2.62444496923
+    },
+    {
+      "case": "rx-stable-vias",
+      "cells": 29782965,
+      "args": {
+        "time_ns": 16,
+        "pulse_ns": 0.6,
+        "center_ns": 3,
+        "step": 0.12,
+        "outer_step": 0.5,
+        "margin": 14,
+        "threads": 8,
+        "end": 1e-07,
+        "name": "rx-stable-vias",
+        "drive": "RX",
+        "prepare": false,
+        "boundary": "PML_8",
+        "via_mode": "shell"
+      },
+      "done": false,
+      "state": "일시정지 · 계산 상태 보존",
+      "last_step": 27577,
+      "energy_db": -0.21,
+      "unused_shells": 759,
+      "simulated_ns": 2.873606131,
+      "runtime": {
+        "pid": 30148,
+        "identity_matches": true,
+        "observed_alive": true,
+        "creation_filetime": "134332594970356130",
+        "exit_code": null,
+        "cpu_seconds": 80848.921875,
+        "wall_seconds": 74794.717233181,
+        "cpu_advanced_since_previous_snapshot": false
+      },
+      "paused": true,
+      "pause": {
+        "at": "2026-09-08T01:06:33",
+        "case": "rx-stable-vias",
+        "pid": 30148,
+        "creation_filetime": "134332594970356130",
+        "action": "pause",
+        "cpu_seconds": 80848.921875,
+        "reason": "Native electric-operator cross-check confirms substantial transverse grid bias. Pause the same-Z long comparison while validating a spatially resolved model; preserve its in-memory state."
+      },
+      "record_ns": 2.8736657598199997
+    }
+  ],
+  "goal_ready": false,
+  "boundary_check": "paused with solver state preserved; spatial-grid correction takes priority",
+  "fixture_and_connector_limit": "Actual Gerber; connector internals and measurement leads remain approximate; no populated component internals or cable.",
+  "port_processing": {
+    "method": "common_causal_integral_binomial",
+    "orders": [
+      24,
+      32,
+      40
+    ],
+    "primary_order": 32,
+    "prospective_validation": "runs/rx-stable-coarse/conditioned-record-15p996353ns-orders-0-24-32-40/prospective-against-conditioned-record-14p621671ns-orders-0-24-32-40.json",
+    "native_validation_snapshots": {
+      "rx-stable-coarse": "conditioned-record-15p996353ns-orders-0-24-32-40"
+    },
+    "scope": "Common causal processing of actual native samples; no physical model change or predicted future samples. Raw DFT retained. Every case still requires time/filter, native extraction, power, termination, mesh, boundary and via checks.",
+    "adopted_at": "2026-09-08T00:28:36",
+    "prior_config_backup": "rx-stability-config.raw-before-conditioning-20260908T002836.json"
+  },
+  "spatial_resolution_assessment": {
+    "at": "2026-09-08T03:55:02",
+    "status": "current_grid_requires_correction",
+    "reason": "The original coarse/fine/via runs share an under-resolved transverse Z grid. A uniform section extracted from actual Gerber has large capacitance sensitivity to spatial refinement, confirmed against installed openEMS electric coefficients.",
+    "original_3d_result_status": "Time/filter consistency passed; spatial accuracy NOT established. Approximately 20 dB is retained as the old-model result, not a reliable as-built PCB value.",
+    "section": {
+      "width_mm": 0.17,
+      "gap_mm": 0.17,
+      "copper_thickness_mm": 0.056,
+      "reference_spacing_mm": 0.11,
+      "epsilon_r": 4.5
+    },
+    "control_section": {
+      "board": "Control_board",
+      "axis": "x",
+      "position_mm": 130.0,
+      "actual_intervals_mm": [
+        [
+          -126.565,
+          -126.39500000000001
+        ],
+        [
+          -126.90499999999999,
+          -126.735
+        ]
+      ],
+      "center": -126.65,
+      "strips": [
+        [
+          0.08500000000000796,
+          0.25499999999999545
+        ],
+        [
+          -0.25499999999998124,
+          -0.08499999999999375
+        ]
+      ]
+    },
+    "control_original_capacitance_pf_per_m": 113.38811058325015,
+    "control_refined_capacitance_pf_per_m": 63.01359338748709,
+    "original_relative_to_refined_percent": 79.94230210931943,
+    "last_refinement_capacitance_difference_percent": 0.44158759225010336,
+    "outer_boundary_capacitance_difference_percent": 0.00012887059924748812,
+    "native_operator_checks": [
+      {
+        "path": "transverse-resolution-check/aligned-reference-0p0025-native-operator-er4p5/static-operator-check.json",
+        "sha256": "8f7ed9fc29ac31b9f693388749385968a44a712034609f7218f165d58f0ed8fb",
+        "at": "2026-09-08T01:10:03",
+        "directory": "aligned-reference-0p0025-native-operator-er4p5",
+        "native_capacitance_pf_per_m": 63.01359380144532,
+        "static_capacitance_pf_per_m": 63.01359338748709,
+        "relative_capacitance_difference": 6.569347954510363e-09,
+        "max_edge_coefficient_relative_differences": [
+          1.457494496204248e-07,
+          1.4574945050860322e-07
+        ],
+        "PEC_endpoint_masks_identical": [
+          true,
+          true
+        ],
+        "solve_check": {
+          "iterations": 1994,
+          "relative_residual": 9.80745996720532e-11,
+          "charge_energy_relative_error": 4.1021932860603196e-16
+        },
+        "passed": true,
+        "scope": "Actual installed openEMS electric coefficients from a uniform section, zero FDTD timesteps. Verifies transverse static weights and PEC constraints for this section; not a full-board S-parameter measurement."
+      },
+      {
+        "path": "transverse-resolution-check/aligned-reference-0p005-native-operator-er4p5/static-operator-check.json",
+        "sha256": "25e3b5b61166905a44ae1631bb2ac915a586362ecc5cb919dcade391571915eb",
+        "at": "2026-09-08T01:08:15",
+        "directory": "aligned-reference-0p005-native-operator-er4p5",
+        "native_capacitance_pf_per_m": 63.29185403271549,
+        "static_capacitance_pf_per_m": 63.291853597317164,
+        "relative_capacitance_difference": 6.879215863619947e-09,
+        "max_edge_coefficient_relative_differences": [
+          1.3334338277992686e-07,
+          1.3334893589345143e-07
+        ],
+        "PEC_endpoint_masks_identical": [
+          true,
+          true
+        ],
+        "solve_check": {
+          "iterations": 1041,
+          "relative_residual": 9.815521907198506e-11,
+          "charge_energy_relative_error": 3.471534426781447e-15
+        },
+        "passed": true,
+        "scope": "Actual installed openEMS electric coefficients from a uniform section, zero FDTD timesteps. Verifies transverse static weights and PEC constraints for this section; not a full-board S-parameter measurement."
+      },
+      {
+        "path": "transverse-resolution-check/Control_board-rx-stable-coarse-native-operator-er1p0/static-operator-check.json",
+        "sha256": "06b77bdf54b33c17e3fce50f9cff902bcd4f8e209565c2758b9da91381448bee",
+        "at": "2026-09-08T01:07:44",
+        "directory": "Control_board-rx-stable-coarse-native-operator-er1p0",
+        "native_capacitance_pf_per_m": 50.69296634652001,
+        "static_capacitance_pf_per_m": 50.692966736740324,
+        "relative_capacitance_difference": 7.697721016164394e-09,
+        "max_edge_coefficient_relative_differences": [
+          6.317809919664796e-08,
+          5.3567441815616235e-08
+        ],
+        "PEC_endpoint_masks_identical": [
+          true,
+          true
+        ],
+        "solve_check": {
+          "iterations": 143,
+          "relative_residual": 9.451949245681081e-11,
+          "charge_energy_relative_error": 1.2748018120297193e-16
+        },
+        "passed": true,
+        "scope": "Actual installed openEMS electric coefficients from a uniform section, zero FDTD timesteps. Verifies transverse static weights and PEC constraints for this section; not a full-board S-parameter measurement."
+      },
+      {
+        "path": "transverse-resolution-check/Control_board-rx-stable-coarse-native-operator-er4p5/static-operator-check.json",
+        "sha256": "e9e7639a3f2f0ab0df5377d9ecc8f467a99ab07a721c4a42bed5459cb74ef390",
+        "at": "2026-09-08T01:05:42",
+        "directory": "Control_board-rx-stable-coarse-native-operator-er4p5",
+        "native_capacitance_pf_per_m": 113.38811085260262,
+        "static_capacitance_pf_per_m": 113.38811058325253,
+        "relative_capacitance_difference": 2.3754702649370074e-09,
+        "max_edge_coefficient_relative_differences": [
+          6.317809919664796e-08,
+          5.3567441815616235e-08
+        ],
+        "PEC_endpoint_masks_identical": [
+          true,
+          true
+        ],
+        "solve_check": {
+          "iterations": 140,
+          "relative_residual": 9.254168743327347e-11,
+          "charge_energy_relative_error": 2.2797270320417185e-16
+        },
+        "passed": true,
+        "scope": "Actual installed openEMS electric coefficients from a uniform section, zero FDTD timesteps. Verifies transverse static weights and PEC constraints for this section; not a full-board S-parameter measurement."
+      },
+      {
+        "path": "transverse-resolution-check/Control_board-rx-stable-coarse-z-refined-native-operator-er1p0/static-operator-check.json",
+        "sha256": "65cef1eac1bd162a3e38a86a7652e7ab8e5f28301da646b39cac53ecfb0d5127",
+        "at": "2026-09-08T01:07:45",
+        "directory": "Control_board-rx-stable-coarse-z-refined-native-operator-er1p0",
+        "native_capacitance_pf_per_m": 30.97009195633634,
+        "static_capacitance_pf_per_m": 30.970092186347067,
+        "relative_capacitance_difference": 7.42686601107323e-09,
+        "max_edge_coefficient_relative_differences": [
+          3.5984131674382525e-08,
+          5.356744248175005e-08
+        ],
+        "PEC_endpoint_masks_identical": [
+          true,
+          true
+        ],
+        "solve_check": {
+          "iterations": 599,
+          "relative_residual": 9.608682824679529e-11,
+          "charge_energy_relative_error": 0.0
+        },
+        "passed": true,
+        "scope": "Actual installed openEMS electric coefficients from a uniform section, zero FDTD timesteps. Verifies transverse static weights and PEC constraints for this section; not a full-board S-parameter measurement."
+      },
+      {
+        "path": "transverse-resolution-check/Control_board-rx-stable-coarse-z-refined-native-operator-er4p5/static-operator-check.json",
+        "sha256": "e46d5340933cde8da40104c32b2094548c2bf15905fb6c311d4b86c751da3704",
+        "at": "2026-09-08T01:07:10",
+        "directory": "Control_board-rx-stable-coarse-z-refined-native-operator-er4p5",
+        "native_capacitance_pf_per_m": 85.84865256881503,
+        "static_capacitance_pf_per_m": 85.84865364444627,
+        "relative_capacitance_difference": 1.2529389858961792e-08,
+        "max_edge_coefficient_relative_differences": [
+          5.224348487153918e-08,
+          5.356744248175005e-08
+        ],
+        "PEC_endpoint_masks_identical": [
+          true,
+          true
+        ],
+        "solve_check": {
+          "iterations": 564,
+          "relative_residual": 9.634185739727237e-11,
+          "charge_energy_relative_error": 1.3549691248447642e-15
+        },
+        "passed": true,
+        "scope": "Actual installed openEMS electric coefficients from a uniform section, zero FDTD timesteps. Verifies transverse static weights and PEC constraints for this section; not a full-board S-parameter measurement."
+      }
+    ],
+    "native_operator_checks_pass": true,
+    "retained_result": "runs/rx-stable-coarse/conditioned-record-15p996353ns-orders-0-24-32-40",
+    "paused_long_cases": [
+      "rx-stable-fine",
+      "rx-stable-boundary24",
+      "rx-stable-vias"
+    ],
+    "scope": "Uniform, ideal-plane 2D electrostatic section with actual Gerber width/gap and original transverse grids. No connector, bends, vias, surrounding coplanar copper, components or cable. Percentages describe this numerical capacitance comparison; they are NOT full-route RL errors or hardware failure contribution percentages.",
+    "next_step": "Find an economical transverse mesh on this section first, then validate it on a bounded actual-route 3D segment including a discontinuity and measurement ports before choosing any new full-route job. Full-route time/mesh/boundary/port/via requirements remain outstanding."
+  },
+  "current_batch_done": false,
+  "via_assessment": {
+    "status": "pending",
+    "reason": "The verified connected-barrel variant is paused while native-confirmed transverse grid bias is corrected. Combined via-fill/grid comparison is still pending; existing files and process state are preserved.",
+    "variant_case": "rx-stable-vias",
+    "geometry_verification": "runs/rx-stable-vias-prepare/controlled-variant-check.json"
+  }
+}
