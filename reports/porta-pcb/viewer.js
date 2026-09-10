@@ -69,9 +69,11 @@
         if(net){via.userData.pair=net.includes('RX')?'rx':'tx';via.userData.segment='cable';signalObjects.push(via);}
       }
       for (const h of GROUND_VIAS[bn] || []) {
-        const via=barrel(group,xy(bn,[h.x,h.y]),h.diameter/2,0xbba7ff,.82,h.near_rx);
+        const via=barrel(group,xy(bn,[h.x,h.y]),h.diameter/2,0xbba7ff,.82,false);
+        if (!h.id || !h.near_signal?.cable || !h.near_signal?.phy) throw new Error('GND 표시 필터 자료를 갱신해 주세요.');
         via.userData.board=bn;
-        via.userData.nearPhy=bn==='Control_board'&&PHY_GEOMETRY.ground_near_xy.some(p=>Math.hypot(p[0]-h.x,p[1]-h.y)<1e-6);
+        via.userData.groundId=h.id;
+        via.userData.nearBySegment=h.near_signal;
         groundObjects.push(via);
       }
       const innerGroup = new THREE.Group();innerGroup.visible=false;group.add(innerGroup);copperGroups.push(innerGroup);
@@ -130,17 +132,28 @@
       for(const id of ['all','rx','side'])document.getElementById('view-'+id).classList.toggle('active',id===next);
       for(const o of signalObjects){o.visible=o.userData.segment===segment;o.material.opacity=pairFocus==='both'?.9:(o.userData.pair===pairFocus?1:.12);}
     }
-    function setPair(next){
+    function emitSelection(){
+      document.dispatchEvent(new CustomEvent('pcb-selection-change',{detail:{segment,pair:pairFocus}}));
+    }
+    function setPair(next,notify=true){
+      const changed=pairFocus!==next;
       pairFocus=next;
       for(const button of document.querySelectorAll('.pair-buttons [data-pair]'))button.setAttribute('aria-pressed',String(button.dataset.pair===next));
       document.getElementById('view-rx').textContent=next==='both'?'신호선 확대':next.toUpperCase()+' 확대';
-      setView('rx');
+      setGround();setView('rx');
+      if(notify&&changed)emitSelection();
     }
     function setGround() {
       const m=document.getElementById('ground-mode').value;
-      for(const o of groundObjects)o.visible=(segment!=='phy'||o.userData.board==='Control_board')&&(m==='all'||(m==='near'&&(segment==='phy'?o.userData.nearPhy:o.userData.near)));
+      // The 3 mm center-to-copper masks filter the display; they are not return-current paths.
+      for(const o of groundObjects){
+        const near=o.userData.nearBySegment[segment];
+        const selectedNear=pairFocus==='both'?(near.tx||near.rx):near[pairFocus];
+        o.visible=(segment!=='phy'||o.userData.board==='Control_board')&&(m==='all'||(m==='near'&&selectedNear));
+      }
     }
-    function setSegment(next){
+    function setSegment(next,notify=true){
+      const changed=segment!==next;
       segment=next;boards.Motor_board.visible=next==='cable';
       for(const c of contacts)c.visible=next==='cable';
       controlLabel.visible=next==='cable';molexLabel.visible=next==='cable';for(const l of phyLabels)l.visible=next==='phy';
@@ -150,6 +163,7 @@
       document.getElementById('scene-badge').textContent=next==='phy'?'Control PCB · T2 PHY측 패드 ↔ LAN9354 패드':(separated?'분리 보기 · 표시 간격 확대':'결합 간격 15 mm');
       document.getElementById('pcb-route').innerHTML=next==='phy'?'<span>T2 PHY측 패드</span><i>↔</i><span>Control PCB TX / RX 배선</span><i>↔</i><span>LAN9354 패드</span>':'<span>T2 케이블측</span><i>→</i><span>Control PCB</span><i>→</i><span>Molex 64핀</span><i>→</i><span>Motor PCB</span><i>→</i><span>M12 PCB 패드</span>';
       setGround();setView(next==='phy'?'all':'rx');
+      if(notify&&changed)emitSelection();
     }
     document.getElementById('segment-cable').onclick=()=>setSegment('cable');document.getElementById('segment-phy').onclick=()=>setSegment('phy');
     for(const button of document.querySelectorAll('.pair-buttons [data-pair]'))button.onclick=()=>setPair(button.dataset.pair);
@@ -170,9 +184,16 @@
     new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;},{rootMargin:'100px'}).observe(el);
     function frame(){requestAnimationFrame(frame);if(inView){controls.update();renderer.render(scene,camera);}}
     frame();message.hidden=true;message.style.display='none';
-    window.__pcbViewer={ready:true,select:({segment:nextSegment,pair})=>{if(['cable','phy'].includes(nextSegment))setSegment(nextSegment);if(['both','rx','tx'].includes(pair))setPair(pair);},snapshot:()=>({mode,segment,pair:pairFocus,separated,inner:document.getElementById('inner-toggle').checked,
+    window.__pcbViewer={ready:true,select:({segment:nextSegment,pair})=>{
+      let changed=false;
+      if(['cable','phy'].includes(nextSegment)){changed=changed||segment!==nextSegment;setSegment(nextSegment,false);}
+      if(['both','rx','tx'].includes(pair)){changed=changed||pairFocus!==pair;setPair(pair,false);}
+      if(changed)emitSelection();
+    },snapshot:()=>({mode,segment,pair:pairFocus,separated,inner:document.getElementById('inner-toggle').checked,
       groundMode:document.getElementById('ground-mode').value,groundTotal:groundObjects.length,
       groundVisible:groundObjects.filter(g=>g.visible).length,camera:camera.position.toArray(),
+      groundVisibleIds:groundObjects.filter(g=>g.visible).map(g=>g.userData.groundId).sort(),
+      groundFilterRadiusMm:GROUND_DISPLAY_FILTER.radius_mm,groundFilterIsDisplayOnly:true,
       copperGroups:copperGroups.length,signalObjects:signalObjects.length})};
   } catch(error) {message.textContent='3D 표시 오류: '+error.message;console.error(error);}
 })();

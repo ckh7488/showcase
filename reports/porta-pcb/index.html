@@ -6,7 +6,7 @@
   <meta name="description" content="PALA720 PortA 통신 경로: 실제 PCB 3D와 전자기 해석 결과를 함께 살펴보는 인터랙티브 보고서."><title>PALA720 · PortA 통신 경로 분석 | ATLAS</title>
   <link rel="icon" href="../../assets/favicon.svg?v=20260910-atlas1" type="image/svg+xml">
   <link rel="stylesheet" href="../../assets/theme.v1.css">
-  <link rel="stylesheet" href="report.css?v=20260911-precision2">
+  <link rel="stylesheet" href="report.css?v=20260911-review3">
 </head>
 <body>
 <a class="skip" href="#purpose">본문으로 건너뛰기</a>
@@ -44,36 +44,36 @@
       </div>
       <div class="viewer-toolbar">
         <div class="view-buttons"><button id="view-all" class="active" type="button">전체 형상</button><button id="view-rx" type="button">신호선 확대</button><button id="view-side" type="button">옆면</button></div>
-        <div class="view-options"><button id="explode" type="button" aria-pressed="false">보드 분리</button><label><input id="inner-toggle" type="checkbox"> 내층 구리</label><label>GND 비아 <select id="ground-mode"><option value="near">RX 주변</option><option value="all">전체</option><option value="off">숨김</option></select></label></div>
+        <div class="view-options"><button id="explode" type="button" aria-pressed="false">보드 분리</button><label><input id="inner-toggle" type="checkbox"> 내층 구리</label><label>GND 비아 <select id="ground-mode"><option value="near">선택 신호 주변</option><option value="all">전체</option><option value="off">숨김</option></select></label></div>
       </div>
       <div class="viewer-route" id="pcb-route"><span>T2 케이블측</span><i>→</i><span>Control PCB</span><i>→</i><span>Molex 64핀</span><i>→</i><span>Motor PCB</span><i>→</i><span>M12 PCB 패드</span></div>
     </div>
-    <div class="section-intro after-viewer"><h2>실제 연결을 따라,<br>문제 후보를 나눕니다.</h2><p>모터가 계속 도는 동안에도 PortA 링크가 끊깁니다.<br>PCB의 전송손실과 케이블·실드의 잡음 유입을 각각 확인합니다.</p></div>
+    <div class="section-intro after-viewer"><h2>실제 연결을 따라,<br>문제 후보를 나눕니다.</h2><p>모터가 계속 도는 동안에도 PortA 링크가 끊깁니다.<br>이번에는 PCB의 반사·전달 특성을 보고, 다음에는 케이블·실드의 잡음 유입을 비교합니다.</p></div>
     <div class="hypotheses">
       <div class="current"><span class="step-tag">이번 단계</span><h3>PCB · 보드 간 접속</h3><p>신호가 잘 전달되는가?</p></div>
       <div><span class="step-tag">다음 비교</span><h3>분기부 · 20 m 케이블</h3><p>쌍꼬임과 길이가 얼마나 영향을 주는가?</p></div>
       <div><span class="step-tag">다음 비교</span><h3>실드 · 접촉 · 접지</h3><p>외부 잡음이 어디로 들어오는가?</p></div>
     </div>
     <div class="method-flow"><div><span>1</span><p><b>제조 Gerber로 형상 구성</b>트랜스 양쪽 PCB 선로를 분리</p></div><i>→</i><div><span>2</span><p><b>openEMS 초기 시뮬레이션</b>PHY ↔ 트랜스의 TX / RX</p></div><i>→</i><div><span>3</span><p><b>FEM 정밀 계산</b>트랜스 ↔ M12의 TX / RX 개별 확인</p></div></div>
-    <details class="details"><summary>계산 범위와 모델 가정</summary><div class="details-body"><p>보드는 두 장이며 각각 구리 4층입니다. 케이블측 FEM 계산에는 전체 Gerber 구리와 도금홀 788개가 포함됩니다. PHY측은 Control 보드에서 T2 PHY측 패드부터 LAN9354 패드까지 별도로 계산했습니다. 3D의 색은 신호 구분이며 전자기장 강도가 아닙니다.</p><p>Molex는 15 mm 길이의 직선 접점 64개로 근사했습니다. 실제 스프링·하우징, T2 내부, PHY 실리콘, M12 몸체, 실장 소자의 실제 동작, 외부 케이블과 잡음원은 PCB 구간 수치에서 제외됩니다. 구리는 완전도체, FR4는 εr=4.5의 무손실 재료입니다. 분리 보기는 표시 간격만 바꿉니다.</p><p>PHY측 수치는 초기 openEMS 결과이며 시간·공간 수렴 검증이 완료되지 않았습니다. 케이블측은 같은 제조 Gerber의 TX/RX를 함께 정밀화한 주파수영역 FEM 결과입니다. 격자·전계 표현만 보강했으며 PCB를 수정한 결과가 아닙니다. 본문에는 채택한 정밀 격자 값, 접힌 기록에는 이전 단계와 검증 범위를 표시합니다.</p><a href="records/porta-cable-em/index.html#results">케이블측 해석 기록 ↗</a> · <a href="records/porta-em/index.html">PHY측 해석 기록 ↗</a></div></details>
+    <details class="details"><summary>계산 범위와 모델 가정</summary><div class="details-body"><p>보드는 두 장이며 각각 구리 4층입니다. 케이블측 FEM 계산에는 전체 Gerber 구리와 도금홀 788개가 포함됩니다. PHY측은 Control 보드에서 T2 PHY측 패드부터 LAN9354 패드까지 별도로 계산했습니다. 3D의 색은 신호 구분이며 전자기장 강도가 아닙니다. GND 주변 표시는 선택한 신호 구리에서 XY 평면상 3 mm 이내의 비아 중심을 고르는 표시 필터입니다. 리턴 전류나 EMC 내성의 검증 결과가 아닙니다.</p><p>Molex는 15 mm 길이의 직선 접점 64개로 근사했습니다. 실제 스프링·하우징, T2 내부, PHY 실리콘, M12 몸체, 실장 소자의 실제 동작, 외부 케이블과 잡음원은 PCB 구간 수치에서 제외됩니다. 구리는 완전도체, FR4는 εr=4.5의 무손실 재료입니다. 분리 보기는 표시 간격만 바꿉니다.</p><p>PHY측 수치는 초기 openEMS 결과이며 시간·공간 수렴 검증이 완료되지 않았습니다. 케이블측은 같은 제조 Gerber의 TX/RX를 함께 정밀화한 주파수영역 FEM 결과입니다. 격자·전계 표현만 보강했으며 PCB를 수정한 결과가 아닙니다. 본문에는 채택한 정밀 격자 값, 접힌 기록에는 이전 단계와 검증 범위를 표시합니다.</p><a href="records/porta-cable-em/index.html#results">케이블측 해석 기록 ↗</a> · <a href="records/porta-em/index.html">PHY측 해석 기록 ↗</a></div></details>
   </section>
 
   <section id="criteria">
     <div class="section-kicker"><span>03</span> 통과지표</div>
     <div class="criterion-grid">
-      <div class="criterion-main"><div class="eyebrow">PCB 반사손실 · 내부 설계 목표</div><div class="criterion-number">16 <span>dB 이상</span></div><p>2~100 MHz 전 구간 · 100 Ω 차동 기준</p></div>
+      <div class="criterion-main"><div class="eyebrow">PCB 반사손실 · 내부 설계 목표</div><div class="criterion-number">16 <span>dB 이상</span></div><p>목표 대역 2~100 MHz · 100 Ω 차동 기준<br><strong>이번 정밀 평가: 100 MHz 한 지점</strong></p></div>
       <div class="criterion-read"><h2>기준보다 높으면,<br>반사가 충분히 작은 쪽.</h2><p>주파수마다 기준을 바꾸지 않고<br><strong>16 dB 수평선 하나</strong>로 비교합니다.</p><div class="criterion-key"><span>계산 결과 − 16 dB</span><b>기준 대비 여유</b></div></div>
     </div>
-    <p class="source-line">참고 출처 <a href="https://www.iol.unh.edu/sites/default/files/testsuites/ethernet/CL25_PMD/PMD_Test_Suite_v3.5.pdf#page=22" target="_blank" rel="noreferrer">UNH-IOL · 100BASE-TX PMD 시험 25.2.1 ↗</a><a href="https://www.microchip.com/content/dam/mchp/documents/UNG/ProductDocuments/BoardDesignFiles/RoutingChecklistforLAN9354SQFNRevA.pdf#page=2" target="_blank" rel="noreferrer">Microchip · LAN9354 배선 지침 ↗</a></p>
-    <details class="details"><summary>공식 시험 기준과 내부 목표의 차이</summary><div class="details-body"><p>UNH-IOL v3.5의 완성된 수신 포트 시험은 2~30 MHz에서 16 dB, 30~60 MHz에서 낮아지는 기준, 60~80 MHz에서 약 10 dB를 사용하며 85 Ω·115 Ω 조건으로 평가합니다.</p><p>여기서는 고주파 구간에서도 기준선을 낮추지 않고, 100 MHz까지 16 dB를 적용하는 프로젝트 목표를 정했습니다. 평가 대상은 100 Ω 기준의 PCB 수동 구간입니다. 공식 포트 시험의 합격 판정과는 구분합니다. Microchip의 해당 PHY 배선 지침은 100 Ω 차동 배선을 제시합니다.</p><p>이 지표는 반사 특성을 평가합니다. 다음 잡음 비교에서는 같은 입력에 대한 RX 차동 잡음(mV/V)과 개선 전후 잡음 감소량(dB)을 사용합니다.</p></div></details>
+    <p class="source-line">참고 출처 <a href="https://www.iol.unh.edu/sites/default/files/testsuites/ethernet/CL25_PMD/PMD_Test_Suite_v3.5.pdf#page=22" target="_blank" rel="noreferrer">UNH-IOL · 100BASE-TX PMD 시험 25.2.1 ↗</a><a href="https://www.microchip.com/content/dam/mchp/documents/UNG/ProductDocuments/BoardDesignFiles/RoutingChecklistforLAN9354SQFNRevA.pdf#page=2" target="_blank" rel="noreferrer">Microchip · LAN9354 배선 지침 p.2–3 ↗</a></p>
+    <details class="details"><summary>공식 시험 기준과 내부 목표의 차이</summary><div class="details-body"><p>UNH-IOL v3.5의 완성된 수신 포트 시험은 2~30 MHz에서 16 dB, 30~60 MHz에서 낮아지는 기준, 60~80 MHz에서 약 10 dB를 사용하며 85 Ω·115 Ω 소스 기준으로 각각 반사손실을 평가합니다.</p><p>여기서는 고주파 구간에서도 기준선을 낮추지 않고, 100 MHz까지 16 dB를 적용하는 프로젝트 목표를 정했습니다. 평가 대상은 100 Ω 기준의 PCB 수동 구간입니다. 공식 포트 시험의 합격 판정과는 구분합니다. Microchip의 해당 PHY 배선 지침은 100 Ω 차동 배선을 제시합니다.</p><p>이 지표는 반사 특성을 평가합니다. 다음 잡음 비교에서는 같은 입력에 대한 RX 차동 잡음(mV/V)과 개선 전후 잡음 감소량(dB)을 사용합니다.</p></div></details>
   </section>
 
   <section id="results">
     <div class="section-kicker"><span>04</span> 실험결과</div>
-    <div class="section-intro"><h2>현재 완료된 가장 정밀한<br><em>100 MHz 평가값입니다.</em></h2><p>16 dB 내부 목표 대비 최소 <strong>+10.19 dB</strong>입니다.<br><strong>동일한 PCB의 수치 재계산</strong>이며, PCB를 수정한 결과가 아닙니다.</p></div>
+    <div class="section-intro"><h2>케이블측 TX와 RX,<br><em>100 MHz에서 목표를 상회합니다.</em></h2><p>16 dB 내부 목표 대비 최소 <strong>+10.19 dB</strong>입니다.<br><strong>동일한 PCB의 수치 재계산</strong>이며, PCB를 수정한 결과가 아닙니다.</p></div>
     <div class="segments-result">
       <div class="chart-heading"><h3>트랜스 ↔ M12 · TX / RX 완료된 정밀 평가값</h3><span>100 Ω 차동 · 100 MHz</span></div>
-      <p class="chart-help">행을 누르면 수치와 해당 3D 선로가 함께 바뀝니다. 본문에는 채택한 정밀 격자 값만 표시합니다.</p>
+      <p class="chart-help">행 또는 3D의 TX / RX를 누르면 함께 선택됩니다. 본문은 완료된 가장 정밀한 격자 값입니다.<span id="result-selection-context"></span></p>
       <div class="result-layout"><div class="result-chart">
         <div class="result-axis" aria-hidden="true"><span>0</span><span>12</span><span>24</span><span>36 dB</span></div>
         <div class="result-bars" role="group" aria-label="100 MHz 정밀 TX RX 결과 선택"><button class="result-row" type="button" data-case="cable-tx" data-segment="cable" data-pair="tx" data-rl="28.61104812841291" data-il="0.00598891977153928" data-reflected="0.13768771325962367" data-transmitted="99.8621950644322" data-margin="12.61104812841291" data-title="트랜스 ↔ M12 · TX" data-note="동일 Gerber의 정밀 FEM · 100 MHz. 마지막 두 격자의 TX 반사손실 변화는 0.758 dB입니다. 이 경로의 수치 수렴 목표는 미달입니다." aria-pressed="false" aria-label="트랜스 ↔ M12 · TX, 반사손실 28.61 dB, 삽입손실 0.0060 dB"><span class="result-label">트랜스 ↔ M12<small>TX · 정밀 FEM</small></span><span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:79.47513%"></span></span><strong>28.61</strong></button>
@@ -89,7 +89,8 @@
         <p id="result-note" class="result-note">동일 Gerber의 정밀 FEM · 100 MHz. 마지막 두 격자의 RX 반사손실 변화는 0.695 dB입니다. 이 경로의 수치 수렴 목표는 미달입니다.</p><button id="result-to-pcb" type="button">이 선로를 3D에서 보기 ↑</button>
       </div></div>
     </div>
-    <div class="transfer-summary"><strong>정밀 계산의 삽입손실</strong><span>TX 0.0060 dB · RX 0.0105 dB</span><details class="db-explorer"><summary>dB를 직접 바꿔보면?</summary><label for="db-slider">반사손실 <input id="db-slider" type="range" min="6" max="40" step="1" value="20"><output id="db-value" for="db-slider">20 dB</output></label><p>입사 전력의 <b id="db-percent">1.00%</b>가 반사됩니다.</p><p class="calc-note">dB 변환 예시입니다. PCB 결과를 바꾸거나 패킷 손실률·고장 기여율을 계산하는 조작이 아닙니다.</p></details></div>
+    <div class="transfer-summary"><strong>무손실 재료 모델의 삽입손실</strong><span>TX 0.0060 dB · RX 0.0105 dB<small class="material-scope">실제 구리·유전체의 흡수 손실 제외</small></span><details class="db-explorer"><summary>dB를 직접 바꿔보면?</summary><label for="db-slider">반사손실 <input id="db-slider" type="range" min="6" max="40" step="1" value="20"><output id="db-value" for="db-slider">20 dB</output></label><p>입사 전력의 <b id="db-percent">1.00%</b>가 반사됩니다.</p><p class="calc-note">dB 변환 예시입니다. PCB 결과를 바꾸거나 패킷 손실률·고장 기여율을 계산하는 조작이 아닙니다.</p></details></div>
+    <p class="recheck-change"><strong>과거 TX의 큰 반사는 재현되지 않았습니다.</strong> 같은 PCB에서 두 신호쌍의 격자와 전계 표현을 함께 보강한 결과입니다. 과거 4~7 dB를 PCB 불량의 근거로 사용하지 않습니다.</p>
     <div class="decision"><span>현재 판단</span><p><strong>계산한 케이블측 TX/RX의 100 MHz 반사손실은 내부 목표를 충족합니다.</strong><br>이 범위의 명목 반사만으로 PCB 재제작을 우선할 근거는 작습니다. 케이블·실드·접지와 PHY 상태를 이어서 비교합니다.</p><a href="#method" aria-label="PCB 구간 다시 보기">↑</a></div>
     <p class="result-scope">마지막 두 격자의 RL 최대 변화는 0.758 dB로 0.5 dB 목표 미달입니다. 100 MHz 수동 PCB 구간의 판단이며 포트·경계와 전 대역 검증은 별도입니다. 정밀 격자 사용만으로 모든 수렴이나 제품 전체 합격을 보장하지 않습니다.</p>
     <details class="details precision-validation" id="precision-validation"><summary>수치 검증 · 격자 이력과 초기 PHY 기록</summary><div class="details-body">
@@ -110,10 +111,10 @@
 <script src="vendor/three.min.js"></script>
 <script src="vendor/OrbitControls.js"></script>
 <script src="geometry.js"></script>
-<script src="ground-vias.js"></script>
+<script src="ground-vias.js?v=20260911-review3"></script>
 <script src="inner-copper.js"></script>
 <script src="phy-geometry.js"></script>
-<script src="viewer.js?v=20260910-theme1"></script>
-<script src="report.js?v=20260911-precision2"></script>
+<script src="viewer.js?v=20260911-review3"></script>
+<script src="report.js?v=20260911-review3"></script>
 </body>
 </html>

@@ -38,6 +38,14 @@
     if (moveViewer) window.__pcbViewer?.select({segment:row.dataset.segment, pair:row.dataset.pair});
   }
   rows.forEach(row => row.addEventListener('click', () => choose(row)));
+  document.addEventListener('pcb-selection-change', ({detail}) => {
+    const row = rows.find(r => r.dataset.segment === detail.segment && r.dataset.pair === detail.pair);
+    if (row) choose(row, false);
+    const context = document.getElementById('result-selection-context');
+    if (context) context.textContent = row ? '' : detail.segment === 'phy' ?
+      ' 3D는 PHY측 초기 경로를 표시 중이며, 아래 수치는 케이블측 선택값입니다.' :
+      ' 3D는 두 쌍을 함께 표시하며, 아래 수치는 선택한 한 쌍의 값입니다.';
+  });
   // Historical PHY values remain in the folded record, with their own geometry links.
   document.querySelectorAll('.record-view').forEach(button => button.addEventListener('click', () => {
     window.__pcbViewer?.select({segment:button.dataset.segment, pair:button.dataset.pair});
@@ -56,8 +64,8 @@
     document.querySelector('#db-percent').textContent = (100 * Math.pow(10,-db/10)).toFixed(2) + '%';
   }
   slider.addEventListener('input', explainDb);explainDb();
-  // Initialize reading without moving the reader's initial 3D view.
-  choose(selected, false);
+  // Start the readout and geometry on the same RX path.
+  choose(selected);
 
   const shell=document.querySelector('.viewer-shell');
   const fullButton=document.querySelector('#viewer-fullscreen');
