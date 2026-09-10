@@ -1,0 +1,112 @@
+{
+  "records": [
+    {
+      "frequency_hz": 100000000.0,
+      "seconds": 341.04130939999595,
+      "reciprocity_complex_error": 8.148952069757246e-13,
+      "largest_power_gain": 0.9999999730153346,
+      "columns": [
+        {
+          "drive": 1,
+          "relative_linear_residual": 3.220346706301325e-08,
+          "residual_refinement_history": [
+            3.220346706301325e-08
+          ],
+          "fixed_factor_reference_mhz": null,
+          "gmres_iterations": [],
+          "resistor_power_w": [
+            12.292322528773427,
+            6.542846187535538e-06,
+            12.482775370402083,
+            1.9884021650421107e-06
+          ],
+          "ideal_voltage_resistor_power_w": [
+            12.292322134634823,
+            6.5427955981359824e-06,
+            12.482774383054025,
+            1.975105983752633e-06
+          ],
+          "resistor_power_mismatch_over_incident": 1.1158667461156086e-07,
+          "port_power_ratio": 0.9999995092090451,
+          "field_vector_file": "field-100MHz-drive1.npy"
+        },
+        {
+          "drive": 2,
+          "relative_linear_residual": 1.6849771102673467e-09,
+          "residual_refinement_history": [
+            1.6849771102673467e-09
+          ],
+          "fixed_factor_reference_mhz": null,
+          "gmres_iterations": [],
+          "resistor_power_w": [
+            6.542801114120964e-06,
+            12.18294862668182,
+            1.948353951908641e-06,
+            12.46991832466892
+          ],
+          "ideal_voltage_resistor_power_w": [
+            6.5427955981366906e-06,
+            12.182944188478594,
+            1.944478614309459e-06,
+            12.469915403306038
+          ],
+          "resistor_power_mismatch_over_incident": 5.890757569693564e-07,
+          "port_power_ratio": 0.9999991084253075,
+          "field_vector_file": "field-100MHz-drive2.npy"
+        },
+        {
+          "drive": 3,
+          "relative_linear_residual": 3.2729624447928445e-09,
+          "residual_refinement_history": [
+            3.2729624447928445e-09
+          ],
+          "fixed_factor_reference_mhz": null,
+          "gmres_iterations": [],
+          "resistor_power_w": [
+            12.482774771983774,
+            1.9445340583271553e-06,
+            12.29013780120686,
+            6.6234421052819575e-06
+          ],
+          "ideal_voltage_resistor_power_w": [
+            12.482774383047008,
+            1.9444786142616924e-06,
+            12.290136796212298,
+            6.610221709484609e-06
+          ],
+          "resistor_power_mismatch_over_incident": 1.1257657340485115e-07,
+          "port_power_ratio": 0.9999995026659674,
+          "field_vector_file": "field-100MHz-drive3.npy"
+        },
+        {
+          "drive": 4,
+          "relative_linear_residual": 1.5330192434193952e-09,
+          "residual_refinement_history": [
+            1.5330192434193952e-09
+          ],
+          "fixed_factor_reference_mhz": null,
+          "gmres_iterations": [],
+          "resistor_power_w": [
+            1.9751110864931326e-06,
+            12.469919705297379,
+            6.614204366946189e-06,
+            12.177080009091537
+          ],
+          "ideal_voltage_resistor_power_w": [
+            1.975105983732022e-06,
+            12.469915403305102,
+            6.6102217092652896e-06,
+            12.177076997326003
+          ],
+          "resistor_power_mismatch_over_incident": 5.854196457100735e-07,
+          "port_power_ratio": 0.9999991056575973,
+          "field_vector_file": "field-100MHz-drive4.npy"
+        }
+      ]
+    }
+  ],
+  "seconds": 345.67165159992874,
+  "scope": "Frequency-domain Maxwell solution of a prepared, independently audited mesh.\n\nAll port columns share one matrix factorization per frequency. Actual field\nintegrals, linear residuals, reciprocity and necessary passivity are retained.\nNo time extrapolation or assumed full-PCB equivalent line is used.\n",
+  "single_model_checks_pass": true,
+  "full_goal_complete": false
+}

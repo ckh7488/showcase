@@ -3,19 +3,47 @@
   const rows = [...document.querySelectorAll('.result-row')];
   let selected = rows.find(row => row.getAttribute('aria-pressed') === 'true') || rows[0];
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-  function choose(row) {
+  function choose(row, moveViewer = true) {
     selected = row;
     for (const other of rows) other.setAttribute('aria-pressed', String(other === row));
-    const db = Number(row.dataset.rl);
-    const reflected = 100 * Math.pow(10, -db / 10);
+    // Missing results stay missing: Number('') would incorrectly show 0 dB.
+    const rawDb = row.dataset.rl;
+    const db = rawDb !== undefined && rawDb.trim() !== '' ? Number(rawDb) : NaN;
+    const available = Number.isFinite(db);
+    const rawMargin = row.dataset.margin;
+    const margin = rawMargin !== undefined && rawMargin.trim() !== '' ? Number(rawMargin) : db - 16;
+    const marginLabel = document.querySelector('#result-margin');
     document.querySelector('#result-name').textContent = row.dataset.title;
-    document.querySelector('#result-value').textContent = db.toFixed(2);
-    document.querySelector('#result-margin').textContent = '+' + (db - 16).toFixed(2) + ' dB 여유';
-    document.querySelector('#result-reflection').textContent = reflected.toFixed(3) + '%';
+    document.querySelector('#result-value').textContent = available ? db.toFixed(2) : '—';
+    document.querySelector('#result-unit').hidden = !available;
+    marginLabel.textContent = !available ? (row.dataset.status || '정밀값 미확인') :
+      margin < 0 ? Math.abs(margin).toFixed(2) + ' dB 부족' :
+      margin === 0 ? '16 dB 기준과 같음' : '+' + margin.toFixed(2) + ' dB 여유';
+    marginLabel.classList.toggle('is-short', available && margin < 0);
+    marginLabel.classList.toggle('is-pending', !available);
+    const rawReflected = row.dataset.reflected;
+    const reflected = rawReflected !== undefined && rawReflected.trim() !== '' ?
+      Number(rawReflected) : 100 * Math.pow(10, -db / 10);
+    document.querySelector('#result-reflection').textContent = available && Number.isFinite(reflected) ?
+      reflected.toFixed(3) + '%' : '—';
+    for (const [id, key, digits, unit] of [
+      ['result-il', 'il', 4, ' dB'], ['result-transmitted', 'transmitted', 3, '%']
+    ]) {
+      const raw = row.dataset[key];
+      const value = raw !== undefined && raw.trim() !== '' ? Number(raw) : NaN;
+      const target = document.getElementById(id);
+      if (target) target.textContent = Number.isFinite(value) ? value.toFixed(digits) + unit : '—';
+    }
     document.querySelector('#result-note').textContent = row.dataset.note;
-    window.__pcbViewer?.select({segment:row.dataset.segment, pair:row.dataset.pair});
+    if (moveViewer) window.__pcbViewer?.select({segment:row.dataset.segment, pair:row.dataset.pair});
   }
   rows.forEach(row => row.addEventListener('click', () => choose(row)));
+  // Historical PHY values remain in the folded record, with their own geometry links.
+  document.querySelectorAll('.record-view').forEach(button => button.addEventListener('click', () => {
+    window.__pcbViewer?.select({segment:button.dataset.segment, pair:button.dataset.pair});
+    document.querySelector('#method').scrollIntoView({behavior:reducedMotion.matches?'auto':'smooth'});
+    document.querySelector(button.dataset.segment==='phy'?'#segment-phy':'#segment-cable').focus({preventScroll:true});
+  }));
   document.querySelector('#result-to-pcb').addEventListener('click', () => {
     choose(selected);
     document.querySelector('#method').scrollIntoView({behavior:reducedMotion.matches?'auto':'smooth'});
@@ -29,8 +57,7 @@
   }
   slider.addEventListener('input', explainDb);explainDb();
   // Initialize reading without moving the reader's initial 3D view.
-  const db=Number(selected.dataset.rl);
-  document.querySelector('#result-reflection').textContent=(100*Math.pow(10,-db/10)).toFixed(3)+'%';
+  choose(selected, false);
 
   const shell=document.querySelector('.viewer-shell');
   const fullButton=document.querySelector('#viewer-fullscreen');

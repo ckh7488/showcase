@@ -38,9 +38,9 @@
     {
       "id": "porta-pcb",
       "title": "PALA720 · PortA 통신 경로 분석",
-      "summary": "실제 PCB 두 장과 20 m 케이블의 연결 구조. 트랜스 양쪽 선로의 해석 결과로 통신 취약 구간을 살펴봅니다.",
+      "summary": "실제 PCB 두 장과 20 m 케이블의 연결 구조. 트랜스–M12의 TX/RX 정밀 해석을 3D 선로와 함께 살펴봅니다.",
       "category": "하드웨어 · 통신",
-      "date": "2026-09-08",
+      "date": "2026-09-11",
       "path": "reports/porta-pcb/",
       "cover": "reports/porta-pcb/cover.png",
       "coverAlt": "Gerber 기반 Control·Motor PCB와 RX, TX, GND 비아의 3D 화면",

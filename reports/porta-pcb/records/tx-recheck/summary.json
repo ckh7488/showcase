@@ -1,0 +1,460 @@
+{
+  "updated": "2026-09-11",
+  "nature": "Numerical refinement of the unchanged manufactured-Gerber model; no PCB redesign.",
+  "selected_case": "field-h075-localp1-r1-100mhz",
+  "publication_basis": "Finest completed engineering evaluation; numerical comparison target NOT met.",
+  "fully_converged": false,
+  "frequency_mhz": 100,
+  "frequency_scope": "Only the actually calculated 100 MHz point; not a full-band claim.",
+  "cases": [
+    {
+      "case": "field-h100-localp1-r1-100mhz",
+      "method": "NGSolve frequency-domain Maxwell FEM; four 100-ohm differential ports",
+      "scope": "T2 cable-side PCB pads to M12 PCB pads through both Gerber boards and approximate 64 contacts",
+      "result_sha256": "07611c611e1f421d19816b7e0c136632b0be254db6cf7c4a66af82a159378e20",
+      "mesh_sha256": "aa48ea9a1b22c69844f5558770a9b04173b44f57758a849a5e331ae5bfbeb980",
+      "cad_input_sha256": "93810213a86cff18f276a8c36ec5139799ed6a9b8386ccb21bde367e0ec76bc3",
+      "dispatch_sha256": "eb11f033a23b72a34e388993166cf937f6f27931b8696bff5feb3f455a70d751",
+      "solver_sha256": "44b281bf770b961209a07eccf217528dc8263812718a52bdf2b0e54b1483cd04",
+      "order": 0,
+      "linear_solver": "sparsecholesky",
+      "mesh": {
+        "signal_h": 0.1,
+        "maxh": 2.5,
+        "pec_h": 2.5,
+        "curvature": 12,
+        "algorithm": 2,
+        "algorithm3d": 1,
+        "route_file": null
+      },
+      "tetrahedra": 3311922,
+      "vertices": 965839,
+      "local_p_enrichment": {
+        "radius_mm": 1.0,
+        "edge_order": 1,
+        "base_ndof": 5077219,
+        "selected_tetrahedra": 509226,
+        "selected_global_edges": 713838,
+        "selected_indices_sha256": "28b12f38f23ee6e9cd8bf485e91441ce94be150a2cc76d00ed9dd4844e9e12b5",
+        "support_points_sha256": "ce5df785cd864a55b6722f1b1da44d658045652bfabc8ddd4132f330a55ae214",
+        "final_free_dofs": 3130812,
+        "native_correspondence": {
+          "selected_tet_native_vertices_all_match": true,
+          "validated_selected_tets": 509226,
+          "coordinate_sample_nodes": 164,
+          "coordinate_sample_max_abs_mm": 0.0,
+          "selection_seconds": 7.403565699933097
+        }
+      },
+      "ndof": 5791057,
+      "single_model_checks_pass": true,
+      "solver_seconds": 234.3198464999441,
+      "port_map_zero_based": {
+        "T2_TX": 0,
+        "T2_RX": 1,
+        "M12_TX": 2,
+        "M12_RX": 3
+      },
+      "rows": [
+        {
+          "frequency_mhz": 100.0,
+          "pairs": {
+            "TX": {
+              "t2_return_loss_db": 27.85336889509097,
+              "m12_return_loss_db": 27.853378031350296,
+              "t2_to_m12_insertion_loss_db": 0.007131225304665613,
+              "m12_to_t2_insertion_loss_db": 0.007131225304794938,
+              "t2_reflected_power_percent": 0.16393176336872675,
+              "t2_to_m12_transmitted_power_percent": 99.83593220778442,
+              "t2_other_pair_power_percent": 6.765657636992407e-05,
+              "margin_over_internal_16db": 11.85336889509097
+            },
+            "RX": {
+              "t2_return_loss_db": 25.49338933753088,
+              "m12_return_loss_db": 25.493415473811908,
+              "t2_to_m12_insertion_loss_db": 0.012280749160573087,
+              "m12_to_t2_insertion_loss_db": 0.012280749160567293,
+              "t2_reflected_power_percent": 0.2822676231369129,
+              "t2_to_m12_transmitted_power_percent": 99.7176247315886,
+              "t2_other_pair_power_percent": 6.739090145732719e-05,
+              "margin_over_internal_16db": 9.493389337530878
+            }
+          }
+        }
+      ],
+      "note": "This extraction alone does not establish mesh/port/boundary convergence or product EMC compliance."
+    },
+    {
+      "case": "field-h075-localp1-r1-100mhz",
+      "method": "NGSolve frequency-domain Maxwell FEM; four 100-ohm differential ports",
+      "scope": "T2 cable-side PCB pads to M12 PCB pads through both Gerber boards and approximate 64 contacts",
+      "result_sha256": "5929aeefa52fc28acdacd9534c1479cce4f665aa8c688fd515da1cfbe207909a",
+      "mesh_sha256": "c9e9b4afef674e57a02294909a5d669c7b3b3d52d1fc57bac9a7ad0193f7a209",
+      "cad_input_sha256": "93810213a86cff18f276a8c36ec5139799ed6a9b8386ccb21bde367e0ec76bc3",
+      "dispatch_sha256": "6994b0b651c91d897cd5ac28b32e9feba70d195e965ceb36d5ac91ce39cbfcc5",
+      "solver_sha256": "44b281bf770b961209a07eccf217528dc8263812718a52bdf2b0e54b1483cd04",
+      "order": 0,
+      "linear_solver": "sparsecholesky",
+      "mesh": {
+        "signal_h": 0.075,
+        "maxh": 2.5,
+        "pec_h": 2.5,
+        "curvature": 12,
+        "algorithm": 2,
+        "algorithm3d": 1,
+        "route_file": "all-ethernet-mesh-paths-v2.json"
+      },
+      "tetrahedra": 3922162,
+      "vertices": 1095757,
+      "local_p_enrichment": {
+        "radius_mm": 1.0,
+        "edge_order": 1,
+        "base_ndof": 5882926,
+        "selected_tetrahedra": 937585,
+        "selected_global_edges": 1277728,
+        "selected_indices_sha256": "f5aa46bb359ffa5863a859510c966f342c3f90688da65bbe9f7ece69d59c64d0",
+        "support_points_sha256": "ce5df785cd864a55b6722f1b1da44d658045652bfabc8ddd4132f330a55ae214",
+        "final_free_dofs": 4170259,
+        "native_correspondence": {
+          "selected_tet_native_vertices_all_match": true,
+          "validated_selected_tets": 937585,
+          "coordinate_sample_nodes": 164,
+          "coordinate_sample_max_abs_mm": 0.0,
+          "selection_seconds": 13.666954400017858
+        }
+      },
+      "ndof": 7160654,
+      "single_model_checks_pass": true,
+      "solver_seconds": 345.67165159992874,
+      "port_map_zero_based": {
+        "T2_TX": 0,
+        "T2_RX": 1,
+        "M12_TX": 2,
+        "M12_RX": 3
+      },
+      "rows": [
+        {
+          "frequency_mhz": 100.0,
+          "pairs": {
+            "TX": {
+              "t2_return_loss_db": 28.61104812841291,
+              "m12_return_loss_db": 28.611078050561254,
+              "t2_to_m12_insertion_loss_db": 0.00598891977153928,
+              "m12_to_t2_insertion_loss_db": 0.005988919773979745,
+              "t2_reflected_power_percent": 0.13768771325962367,
+              "t2_to_m12_transmitted_power_percent": 99.8621950644322,
+              "t2_other_pair_power_percent": 6.814321265510892e-05,
+              "margin_over_internal_16db": 12.61104812841291
+            },
+            "RX": {
+              "t2_return_loss_db": 26.18849314220519,
+              "m12_return_loss_db": 26.18851230365125,
+              "t2_to_m12_insertion_loss_db": 0.010465058007245521,
+              "m12_to_t2_insertion_loss_db": 0.010465058007572822,
+              "t2_reflected_power_percent": 0.240519717888729,
+              "t2_to_m12_transmitted_power_percent": 99.75932322644829,
+              "t2_other_pair_power_percent": 6.78981936995692e-05,
+              "margin_over_internal_16db": 10.18849314220519
+            }
+          }
+        }
+      ],
+      "note": "This extraction alone does not establish mesh/port/boundary convergence or product EMC compliance."
+    }
+  ],
+  "fixed_local_p_mesh_sequence": [
+    {
+      "case": "field-h100-localp1-r1-100mhz",
+      "method": "NGSolve frequency-domain Maxwell FEM; four 100-ohm differential ports",
+      "scope": "T2 cable-side PCB pads to M12 PCB pads through both Gerber boards and approximate 64 contacts",
+      "result_sha256": "07611c611e1f421d19816b7e0c136632b0be254db6cf7c4a66af82a159378e20",
+      "mesh_sha256": "aa48ea9a1b22c69844f5558770a9b04173b44f57758a849a5e331ae5bfbeb980",
+      "cad_input_sha256": "93810213a86cff18f276a8c36ec5139799ed6a9b8386ccb21bde367e0ec76bc3",
+      "dispatch_sha256": "eb11f033a23b72a34e388993166cf937f6f27931b8696bff5feb3f455a70d751",
+      "solver_sha256": "44b281bf770b961209a07eccf217528dc8263812718a52bdf2b0e54b1483cd04",
+      "order": 0,
+      "linear_solver": "sparsecholesky",
+      "mesh": {
+        "signal_h": 0.1,
+        "maxh": 2.5,
+        "pec_h": 2.5,
+        "curvature": 12,
+        "algorithm": 2,
+        "algorithm3d": 1,
+        "route_file": null
+      },
+      "tetrahedra": 3311922,
+      "vertices": 965839,
+      "local_p_enrichment": {
+        "radius_mm": 1.0,
+        "edge_order": 1,
+        "base_ndof": 5077219,
+        "selected_tetrahedra": 509226,
+        "selected_global_edges": 713838,
+        "selected_indices_sha256": "28b12f38f23ee6e9cd8bf485e91441ce94be150a2cc76d00ed9dd4844e9e12b5",
+        "support_points_sha256": "ce5df785cd864a55b6722f1b1da44d658045652bfabc8ddd4132f330a55ae214",
+        "final_free_dofs": 3130812,
+        "native_correspondence": {
+          "selected_tet_native_vertices_all_match": true,
+          "validated_selected_tets": 509226,
+          "coordinate_sample_nodes": 164,
+          "coordinate_sample_max_abs_mm": 0.0,
+          "selection_seconds": 7.403565699933097
+        }
+      },
+      "ndof": 5791057,
+      "single_model_checks_pass": true,
+      "solver_seconds": 234.3198464999441,
+      "port_map_zero_based": {
+        "T2_TX": 0,
+        "T2_RX": 1,
+        "M12_TX": 2,
+        "M12_RX": 3
+      },
+      "rows": [
+        {
+          "frequency_mhz": 100.0,
+          "pairs": {
+            "TX": {
+              "t2_return_loss_db": 27.85336889509097,
+              "m12_return_loss_db": 27.853378031350296,
+              "t2_to_m12_insertion_loss_db": 0.007131225304665613,
+              "m12_to_t2_insertion_loss_db": 0.007131225304794938,
+              "t2_reflected_power_percent": 0.16393176336872675,
+              "t2_to_m12_transmitted_power_percent": 99.83593220778442,
+              "t2_other_pair_power_percent": 6.765657636992407e-05,
+              "margin_over_internal_16db": 11.85336889509097
+            },
+            "RX": {
+              "t2_return_loss_db": 25.49338933753088,
+              "m12_return_loss_db": 25.493415473811908,
+              "t2_to_m12_insertion_loss_db": 0.012280749160573087,
+              "m12_to_t2_insertion_loss_db": 0.012280749160567293,
+              "t2_reflected_power_percent": 0.2822676231369129,
+              "t2_to_m12_transmitted_power_percent": 99.7176247315886,
+              "t2_other_pair_power_percent": 6.739090145732719e-05,
+              "margin_over_internal_16db": 9.493389337530878
+            }
+          }
+        }
+      ],
+      "note": "This extraction alone does not establish mesh/port/boundary convergence or product EMC compliance."
+    },
+    {
+      "case": "field-h075-localp1-r1-100mhz",
+      "method": "NGSolve frequency-domain Maxwell FEM; four 100-ohm differential ports",
+      "scope": "T2 cable-side PCB pads to M12 PCB pads through both Gerber boards and approximate 64 contacts",
+      "result_sha256": "5929aeefa52fc28acdacd9534c1479cce4f665aa8c688fd515da1cfbe207909a",
+      "mesh_sha256": "c9e9b4afef674e57a02294909a5d669c7b3b3d52d1fc57bac9a7ad0193f7a209",
+      "cad_input_sha256": "93810213a86cff18f276a8c36ec5139799ed6a9b8386ccb21bde367e0ec76bc3",
+      "dispatch_sha256": "6994b0b651c91d897cd5ac28b32e9feba70d195e965ceb36d5ac91ce39cbfcc5",
+      "solver_sha256": "44b281bf770b961209a07eccf217528dc8263812718a52bdf2b0e54b1483cd04",
+      "order": 0,
+      "linear_solver": "sparsecholesky",
+      "mesh": {
+        "signal_h": 0.075,
+        "maxh": 2.5,
+        "pec_h": 2.5,
+        "curvature": 12,
+        "algorithm": 2,
+        "algorithm3d": 1,
+        "route_file": "all-ethernet-mesh-paths-v2.json"
+      },
+      "tetrahedra": 3922162,
+      "vertices": 1095757,
+      "local_p_enrichment": {
+        "radius_mm": 1.0,
+        "edge_order": 1,
+        "base_ndof": 5882926,
+        "selected_tetrahedra": 937585,
+        "selected_global_edges": 1277728,
+        "selected_indices_sha256": "f5aa46bb359ffa5863a859510c966f342c3f90688da65bbe9f7ece69d59c64d0",
+        "support_points_sha256": "ce5df785cd864a55b6722f1b1da44d658045652bfabc8ddd4132f330a55ae214",
+        "final_free_dofs": 4170259,
+        "native_correspondence": {
+          "selected_tet_native_vertices_all_match": true,
+          "validated_selected_tets": 937585,
+          "coordinate_sample_nodes": 164,
+          "coordinate_sample_max_abs_mm": 0.0,
+          "selection_seconds": 13.666954400017858
+        }
+      },
+      "ndof": 7160654,
+      "single_model_checks_pass": true,
+      "solver_seconds": 345.67165159992874,
+      "port_map_zero_based": {
+        "T2_TX": 0,
+        "T2_RX": 1,
+        "M12_TX": 2,
+        "M12_RX": 3
+      },
+      "rows": [
+        {
+          "frequency_mhz": 100.0,
+          "pairs": {
+            "TX": {
+              "t2_return_loss_db": 28.61104812841291,
+              "m12_return_loss_db": 28.611078050561254,
+              "t2_to_m12_insertion_loss_db": 0.00598891977153928,
+              "m12_to_t2_insertion_loss_db": 0.005988919773979745,
+              "t2_reflected_power_percent": 0.13768771325962367,
+              "t2_to_m12_transmitted_power_percent": 99.8621950644322,
+              "t2_other_pair_power_percent": 6.814321265510892e-05,
+              "margin_over_internal_16db": 12.61104812841291
+            },
+            "RX": {
+              "t2_return_loss_db": 26.18849314220519,
+              "m12_return_loss_db": 26.18851230365125,
+              "t2_to_m12_insertion_loss_db": 0.010465058007245521,
+              "m12_to_t2_insertion_loss_db": 0.010465058007572822,
+              "t2_reflected_power_percent": 0.240519717888729,
+              "t2_to_m12_transmitted_power_percent": 99.75932322644829,
+              "t2_other_pair_power_percent": 6.78981936995692e-05,
+              "margin_over_internal_16db": 10.18849314220519
+            }
+          }
+        }
+      ],
+      "note": "This extraction alone does not establish mesh/port/boundary convergence or product EMC compliance."
+    }
+  ],
+  "comparison": {
+    "base": "field-h100-localp1-r1-100mhz",
+    "fine": "field-h075-localp1-r1-100mhz",
+    "targets": {
+      "rl_delta_db": 0.5,
+      "il_delta_db": 0.05,
+      "deep_null_gamma_max": 0.02,
+      "deep_null_complex_delta_max": 0.005
+    },
+    "all_sampled_pairs_pass": false,
+    "rows": [
+      {
+        "frequency_mhz": 100.0,
+        "pair": "TX",
+        "rl_delta_db_at_t2_m12": [
+          0.7576792333219409,
+          0.757700019210958
+        ],
+        "complex_gamma_delta_at_t2_m12": [
+          0.003382220146626962,
+          0.0033834447171284367
+        ],
+        "deep_null_exception_at_t2_m12": [
+          false,
+          false
+        ],
+        "il_delta_db_forward_reverse": [
+          0.0011423055331263327,
+          0.0011423055308151927
+        ],
+        "mesh_target_pass": false
+      },
+      {
+        "frequency_mhz": 100.0,
+        "pair": "RX",
+        "rl_delta_db_at_t2_m12": [
+          0.6951038046743108,
+          0.6950968298393434
+        ],
+        "complex_gamma_delta_at_t2_m12": [
+          0.004086728034534211,
+          0.00408777778475529
+        ],
+        "deep_null_exception_at_t2_m12": [
+          false,
+          false
+        ],
+        "il_delta_db_forward_reverse": [
+          0.0018156911533275654,
+          0.0018156911529944707
+        ],
+        "mesh_target_pass": false
+      }
+    ],
+    "maximum_complex_s_change": 0.00408777778475529,
+    "note": "Numerical targets are project checks, separate from the 16 dB PCB design target."
+  },
+  "selected": [
+    {
+      "frequency_mhz": 100.0,
+      "pairs": {
+        "TX": {
+          "t2_return_loss_db": 28.61104812841291,
+          "m12_return_loss_db": 28.611078050561254,
+          "t2_to_m12_insertion_loss_db": 0.00598891977153928,
+          "m12_to_t2_insertion_loss_db": 0.005988919773979745,
+          "t2_reflected_power_percent": 0.13768771325962367,
+          "t2_to_m12_transmitted_power_percent": 99.8621950644322,
+          "t2_other_pair_power_percent": 6.814321265510892e-05,
+          "margin_over_internal_16db": 12.61104812841291
+        },
+        "RX": {
+          "t2_return_loss_db": 26.18849314220519,
+          "m12_return_loss_db": 26.18851230365125,
+          "t2_to_m12_insertion_loss_db": 0.010465058007245521,
+          "m12_to_t2_insertion_loss_db": 0.010465058007572822,
+          "t2_reflected_power_percent": 0.240519717888729,
+          "t2_to_m12_transmitted_power_percent": 99.75932322644829,
+          "t2_other_pair_power_percent": 6.78981936995692e-05,
+          "margin_over_internal_16db": 10.18849314220519
+        }
+      }
+    }
+  ],
+  "geometry": {
+    "source_input_sha256": "93810213a86cff18f276a8c36ec5139799ed6a9b8386ccb21bde367e0ec76bc3",
+    "unchanged": true,
+    "boards": 2,
+    "source_faces": 62603,
+    "plated_holes": 788,
+    "approximate_connector_contacts": 64,
+    "ports": "Four 100-ohm differential ports; both TX/RX and both ends solved."
+  },
+  "validation": {
+    "same_geometry_and_physics": true,
+    "mesh_with_same_local_p_comparison_pass": false,
+    "original_residual_reciprocity_passivity_port_power_pass": true,
+    "independent_port_geometry_variation_completed": false,
+    "independent_outer_boundary_variation_completed": false,
+    "scope_note": "Numerical refinement evidence for this model, not hardware measurement or product compliance."
+  },
+  "failed_refinements": [
+    {
+      "case": "field-h060-localp1-r1-100mhz",
+      "linear_solver": "sparsecholesky",
+      "stage": "matrix factorization",
+      "error": "MemoryError: bad array new length",
+      "disposition": "solver exception",
+      "result_exists": false,
+      "returncode": 1,
+      "log_sha256": "181c68bcda7f059a740c9e8634136410a7ea187b53e801ada0b5a49f27049e0d"
+    },
+    {
+      "case": "field-h060-localp1-r1-umfpack-100mhz",
+      "linear_solver": "umfpack",
+      "stage": "matrix factorization",
+      "error": "추가 정밀화 시도의 30분 시간 상한에서 행렬 분해를 중단했습니다. S 결과는 생성되지 않았으며, 수치 불합격이나 실물 PCB 결함을 뜻하지 않습니다.",
+      "disposition": "stopped at additional-refinement time budget",
+      "result_exists": false,
+      "returncode": 99,
+      "log_sha256": "94d7ed6574fb878963a091eedd83103890630b1e9ad14c84fe64cbc7db56a839"
+    }
+  ],
+  "remaining_model_limits": [
+    "PEC copper and lossless FR4, epsilon_r 4.5.",
+    "Approximate straight 64-pin contacts; actual connector body and manufacturing spread omitted.",
+    "T2 internals, PHY silicon, populated device behavior, M12 body and external cable/noise omitted.",
+    "No claim of measured link-error probability, EMC immunity or whole-board compliance."
+  ],
+  "historical_correction": {
+    "omission": "The previous main report showed two RX mesh results and omitted the calculated TX matrix entries.",
+    "retained_tx_rl_db": [
+      7.181187503516401,
+      4.761951520998798
+    ],
+    "cause_supported_by_recheck": "TX was not consistently locally resolved in those RX-targeted meshes; its old low RL is not a reliable hardware value."
+  },
+  "mesh_policy_note": "All listed cases retain the physical CAD, V2 local-p support points and 1 mm local-p radius. h100 V1 has coarser edges on four wide TVS branches; h075/h060 use V2 mesh support. h060 uses surface triangulation algorithm 6 after algorithm 2 failed volume boundary recovery. The generated meshes are not nested, and differences do not establish a formal total-error bound.",
+  "linear_solver_note": "The final linear algebra backend is sparsecholesky, compared with sparsecholesky in the previous mesh. The frozen Maxwell assembly and original-equation residual/port checks are unchanged. An h060 sparsecholesky attempt failed before producing S parameters with an allocation-length exception; it is not a completed RF result."
+}
