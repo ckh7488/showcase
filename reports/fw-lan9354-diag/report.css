@@ -16,6 +16,22 @@ h1{max-width:980px;margin:14px 0 22px;font-size:clamp(34px,4.4vw,54px);line-heig
 h2{font-size:clamp(27px,3vw,38px);line-height:1.28;letter-spacing:0}
 h3{font-size:22px;line-height:1.4;letter-spacing:0}
 .intro{max-width:860px;color:var(--sc-muted);font-size:18px}
+.symptom-layout{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);gap:18px;margin-top:32px;align-items:stretch}
+.console-shot,.symptom-copy{background:var(--sc-surface);border:1px solid var(--sc-line);border-radius:var(--sc-radius);overflow:hidden}
+.console-shot{margin:0;display:grid;grid-template-rows:minmax(0,1fr) auto;background:#0d1d20;color:#e7f0ee}
+.console-shot img{display:block;width:100%;height:430px;object-fit:cover;object-position:center 40%;filter:saturate(.9) contrast(1.02)}
+.console-shot figcaption{padding:16px 18px;color:#c9dbd8;font-size:14px;line-height:1.6}
+.symptom-copy{padding:26px;display:flex;flex-direction:column;justify-content:center}
+.symptom-copy h2{margin:8px 0 12px;font-size:clamp(26px,3vw,38px)}
+.symptom-copy p{color:var(--sc-muted);font-size:15px;margin-bottom:18px}
+.ambiguity-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:2px 0 20px}
+.ambiguity-list span{min-height:52px;display:flex;align-items:center;justify-content:center;border:1px solid var(--sc-line);border-radius:8px;background:#fbfcfc;color:#233d42;font-size:13px;font-weight:900;text-align:center;line-height:1.3}
+.diag-story{display:grid;grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr) 24px minmax(0,1fr);align-items:stretch;gap:0}
+.diag-story div{min-height:86px;border:1px solid var(--sc-line);background:#fff;border-radius:9px;padding:14px 12px}
+.diag-story b{display:block;color:#102b31;font-size:15px;line-height:1.25}
+.diag-story span{display:block;margin-top:7px;color:var(--sc-muted);font-size:12px;line-height:1.4}
+.diag-story i{align-self:center;height:3px;background:#bac8cb;position:relative}
+.diag-story i:after{content:"";position:absolute;right:-1px;top:-5px;border-left:9px solid #bac8cb;border-top:6px solid transparent;border-bottom:6px solid transparent}
 .route-atlas{display:grid;grid-template-columns:.86fr 1.5fr;gap:18px;margin-top:34px;align-items:stretch}
 .atlas-copy,.sensor-route-map{background:var(--sc-surface);border:1px solid var(--sc-line);border-radius:var(--sc-radius)}
 .atlas-copy{padding:26px;display:flex;flex-direction:column;justify-content:center}
@@ -192,7 +208,7 @@ footer{border-top:1px solid var(--sc-line);padding:24px 40px 32px;display:flex;j
   .inspector-grid{grid-row:2/4}
 }
 @media(max-width:980px){
-  .route-atlas,.summary-strip,.debug-evolution,.why-grid,.field-cards,.cases,.metric-list{grid-template-columns:1fr}
+  .symptom-layout,.route-atlas,.summary-strip,.debug-evolution,.why-grid,.field-cards,.cases,.metric-list{grid-template-columns:1fr}
   .sensor-route-map{grid-template-columns:1fr;grid-template-rows:auto}
   .sensor-route-map:before{display:none}
   .hub-card{grid-column:auto;grid-row:auto;order:-1}
@@ -218,6 +234,13 @@ footer{border-top:1px solid var(--sc-line);padding:24px 40px 32px;display:flex;j
   h1{font-size:32px;line-height:1.26}
   .intro{font-size:15px;line-height:1.8;word-break:break-all;overflow-wrap:anywhere}
   .route-atlas{margin-top:26px}
+  .symptom-layout{margin-top:26px}
+  .console-shot img{height:260px}
+  .symptom-copy{padding:20px}
+  .ambiguity-list{grid-template-columns:1fr}
+  .diag-story{grid-template-columns:1fr;gap:8px}
+  .diag-story i{width:2px;height:18px;justify-self:center}
+  .diag-story i:after{right:-5px;top:auto;bottom:-1px;border-top:9px solid #bac8cb;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:0}
   .atlas-copy,.sensor-route-map{padding:20px}
   .atlas-track{grid-template-columns:1fr;gap:8px}
   .track-nodes,.stm-track .track-nodes{grid-template-columns:1fr;gap:8px}
