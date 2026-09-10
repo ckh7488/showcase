@@ -1,0 +1,26 @@
+/* Showcase document language v1. Shared by the library and registered reports. */
+:root{
+  color-scheme:light;
+  --sc-page:#f4f6f7;
+  --sc-surface:#ffffff;
+  --sc-ink:#172e33;
+  --sc-muted:#5f737b;
+  --sc-line:#d9e1e4;
+  --sc-accent:#197d71;
+  --sc-accent-soft:#eaf4f1;
+  --sc-stage:#172e33;
+  --sc-stage-ink:#e5f0ec;
+  --sc-rx:#edaa65;
+  --sc-tx:#66d9c0;
+  --sc-ground:#bba7ff;
+  --sc-phy:#577c96;
+  --sc-focus:#cf752d;
+  --sc-radius:12px;
+  --sc-font:"Malgun Gothic",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  --sc-width:1248px;
+}
+body{font-family:var(--sc-font);color:var(--sc-ink);background:var(--sc-page)}
+button,input,select,textarea{font:inherit}
+:where(a,button,input,select,summary):focus-visible{outline:3px solid var(--sc-focus);outline-offset:4px}
+:where(button,a,input,select){-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}

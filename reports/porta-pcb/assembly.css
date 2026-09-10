@@ -1,0 +1,11 @@
+/* Light document controls around the dark geometry stage. */
+body{background:var(--sc-surface);color:var(--sc-ink);font-family:var(--sc-font)}
+#pala-assembly,.viz-row strong{color:var(--sc-ink)}
+.text-muted{color:var(--sc-muted)}.viz-row strong{font-size:20px;letter-spacing:-.035em}
+.btn{border:1px solid var(--sc-line);background:white;color:var(--sc-ink);padding:7px 14px}
+.btn[aria-pressed=true]{background:var(--sc-accent-soft);color:#125e55;border-color:#87b7aa}
+.form-check-input,.form-range{accent-color:var(--sc-accent)}
+#pala-options{color:var(--sc-muted)}
+#pala-stage{background:var(--sc-stage);border:0;border-radius:8px}
+#pala-detail{color:var(--sc-muted)}
+@media(max-width:600px){.viz-row strong{font-size:18px}.btn{font-size:13px}.form-check-label,.form-label{font-size:12px}#pala-detail{font-size:12px}}

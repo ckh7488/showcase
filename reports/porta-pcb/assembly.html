@@ -1,4 +1,32 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PC–20 m 케이블–센서 연결</title></head><body><div id="pala-assembly">
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PC–20 m 케이블–센서 연결</title><link rel="stylesheet" href="../../assets/theme.v1.css"><style>
+#pala-assembly{font-family:var(--font-sans,system-ui);color:var(--foreground);line-height:1.45}
+#pala-stage{position:relative;height:510px;width:100%;overflow:hidden;margin:8px 0}
+#pala-canvas{width:100%;height:100%;display:block;touch-action:none}
+#pala-labels{position:absolute;inset:0;pointer-events:none}
+#pala-labels span{position:absolute;max-width:190px;padding:2px 5px;background:var(--background);color:var(--foreground);font-size:12px;line-height:1.35;white-space:nowrap}
+#pala-loading{position:absolute;inset:45% 10% auto;text-align:center;color:var(--muted-foreground)}
+#pala-detail{min-height:42px;margin-top:6px}
+#pala-basis{margin-top:5px}
+#pala-reference:not([hidden]){display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#pala-reference figure{margin:0}#pala-reference img{width:100%;height:400px;object-fit:cover;display:block}
+#pala-options .form-label{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+#pala-options input[type=range]{width:130px}
+#pala-options[hidden]{display:none}
+#pala-wiring svg{width:100%;height:auto;display:block}
+#pala-wiring .pala-mobile-wire{display:none}
+#pala-wiring .pala-block rect{fill:var(--background);stroke:var(--border)}
+#pala-wiring .pala-area{fill:var(--muted);stroke:var(--border)}
+#pala-wiring .pala-txt{fill:var(--foreground);font-size:14px;text-anchor:middle}
+#pala-wiring .pala-sub{font-size:12px;fill:var(--muted-foreground)}
+#pala-wiring .pala-eth{stroke:var(--viz-series-1);fill:none;stroke-width:2;marker-end:url(#pala-arrow)}
+#pala-wiring .pala-power{stroke:var(--viz-series-2);fill:none;stroke-width:2}
+#pala-wiring .pala-control{stroke:var(--viz-series-3);fill:none;stroke-width:2;stroke-dasharray:5 3}
+@media(max-width:480px){#pala-stage{height:440px}#pala-labels span{font-size:11px;max-width:145px}#pala-wiring svg{display:none}#pala-wiring .pala-mobile-wire{display:block}#pala-reference:not([hidden]){grid-template-columns:1fr}#pala-reference img{height:280px}}
+</style><style>
+:root{--foreground:#e0efe7;--background:#142e31;--muted-foreground:#aac7b8;--border:#456151;--muted:#29423b;--font-sans:"Malgun Gothic",system-ui,sans-serif;--viz-series-1:#72b8f2;--viz-series-2:#e9b46c;--viz-series-3:#bfa6df}
+*{box-sizing:border-box}body{margin:0;padding:22px 25px 15px;background:#142e31;color:#e0efe7;font:15px/1.65 "Malgun Gothic",system-ui,sans-serif}.viz-row{display:flex;justify-content:space-between;align-items:center;gap:15px}.viz-row strong{font-size:21px}.text-small{font-size:13px}.text-muted{color:#aac7b8}.viz-controls{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:17px}.btn{font:inherit;font-size:14px;border:0;border-radius:6px;background:#294a49;color:#d9ece1;padding:8px 15px;cursor:pointer}.btn[aria-pressed=true]{background:#bbd7bd;color:#163f2b}.btn:focus-visible,input:focus-visible{outline:3px solid #ecb56c;outline-offset:3px}[data-view=boards],[data-view=wiring],[data-view=reference]{display:none!important}.form-check{display:flex;gap:7px;align-items:center}.form-label{font-size:13px}.form-check-input{accent-color:#9ac9a2}#pala-options{margin-top:12px;gap:24px;font-size:13px}#pala-basis{display:none}#pala-stage{height:425px!important;margin:8px 0!important}#pala-labels span{font-size:14px!important;padding:4px 7px!important;background:rgba(20,46,49,.92)!important}#pala-detail{min-height:24px!important;font-size:13px;color:#b7d0c0;margin:4px 0 0!important}#pala-reference[hidden],#pala-wiring[hidden]{display:none}
+@media(max-width:600px){body{padding:18px 14px 12px}.viz-row{display:block}.viz-row strong{font-size:18px}.viz-row>span{display:block;font-size:12px;margin-top:4px}.viz-controls{margin-top:13px}.btn{font-size:13px}#pala-stage{height:300px!important}#pala-labels span{font-size:11px!important;max-width:150px!important}#pala-detail{font-size:12px}#pala-options{gap:11px}.form-label,.form-check-label{font-size:11px}.form-range{width:85px!important}}
+</style><link rel="stylesheet" href="assembly.css?v=20260910-theme1"></head><body><div id="pala-assembly">
   <div class="viz-row"><strong>PC에서 센서 내부까지</strong><span class="text-small text-muted">드래그 회전 · 휠 확대 · 우클릭 이동</span></div>
   <div class="viz-controls" aria-label="보기 선택">
     <button class="btn" data-view="whole" aria-pressed="true">전체 연결</button>
@@ -45,31 +73,7 @@
   <div id="pala-detail" class="text-small" aria-live="polite">PC / SMPS → 20 m 케이블 → 하부 M12 → Motor / Control PCB</div>
   <div class="text-small text-muted" id="pala-basis">기구 = 추가 PPT 32·39쪽 + 489 mm 조립도 · 전자부 = 현재 KiCad 2단 PCB · 부품 높이·장착 간격·하네스 세부 경로 = 추정</div>
 </div>
-<style>
-#pala-assembly{font-family:var(--font-sans,system-ui);color:var(--foreground);line-height:1.45}
-#pala-stage{position:relative;height:510px;width:100%;overflow:hidden;margin:8px 0}
-#pala-canvas{width:100%;height:100%;display:block;touch-action:none}
-#pala-labels{position:absolute;inset:0;pointer-events:none}
-#pala-labels span{position:absolute;max-width:190px;padding:2px 5px;background:var(--background);color:var(--foreground);font-size:12px;line-height:1.35;white-space:nowrap}
-#pala-loading{position:absolute;inset:45% 10% auto;text-align:center;color:var(--muted-foreground)}
-#pala-detail{min-height:42px;margin-top:6px}
-#pala-basis{margin-top:5px}
-#pala-reference:not([hidden]){display:grid;grid-template-columns:1fr 1fr;gap:12px}
-#pala-reference figure{margin:0}#pala-reference img{width:100%;height:400px;object-fit:cover;display:block}
-#pala-options .form-label{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
-#pala-options input[type=range]{width:130px}
-#pala-options[hidden]{display:none}
-#pala-wiring svg{width:100%;height:auto;display:block}
-#pala-wiring .pala-mobile-wire{display:none}
-#pala-wiring .pala-block rect{fill:var(--background);stroke:var(--border)}
-#pala-wiring .pala-area{fill:var(--muted);stroke:var(--border)}
-#pala-wiring .pala-txt{fill:var(--foreground);font-size:14px;text-anchor:middle}
-#pala-wiring .pala-sub{font-size:12px;fill:var(--muted-foreground)}
-#pala-wiring .pala-eth{stroke:var(--viz-series-1);fill:none;stroke-width:2;marker-end:url(#pala-arrow)}
-#pala-wiring .pala-power{stroke:var(--viz-series-2);fill:none;stroke-width:2}
-#pala-wiring .pala-control{stroke:var(--viz-series-3);fill:none;stroke-width:2;stroke-dasharray:5 3}
-@media(max-width:480px){#pala-stage{height:440px}#pala-labels span{font-size:11px;max-width:145px}#pala-wiring svg{display:none}#pala-wiring .pala-mobile-wire{display:block}#pala-reference:not([hidden]){grid-template-columns:1fr}#pala-reference img{height:280px}}
-</style>
+
 <script src="vendor/three.min.js"></script>
 <script src="vendor/OrbitControls.js"></script>
 <script>
@@ -198,8 +202,4 @@ window.__palaDiagnostics={cableLengthMm:cc.getLength(),boards:Object.keys(data),
 
 
 
-<style>
-:root{--foreground:#e0efe7;--background:#142e31;--muted-foreground:#aac7b8;--border:#456151;--muted:#29423b;--font-sans:"Malgun Gothic",system-ui,sans-serif;--viz-series-1:#72b8f2;--viz-series-2:#e9b46c;--viz-series-3:#bfa6df}
-*{box-sizing:border-box}body{margin:0;padding:22px 25px 15px;background:#142e31;color:#e0efe7;font:15px/1.65 "Malgun Gothic",system-ui,sans-serif}.viz-row{display:flex;justify-content:space-between;align-items:center;gap:15px}.viz-row strong{font-size:21px}.text-small{font-size:13px}.text-muted{color:#aac7b8}.viz-controls{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:17px}.btn{font:inherit;font-size:14px;border:0;border-radius:6px;background:#294a49;color:#d9ece1;padding:8px 15px;cursor:pointer}.btn[aria-pressed=true]{background:#bbd7bd;color:#163f2b}.btn:focus-visible,input:focus-visible{outline:3px solid #ecb56c;outline-offset:3px}[data-view=boards],[data-view=wiring],[data-view=reference]{display:none!important}.form-check{display:flex;gap:7px;align-items:center}.form-label{font-size:13px}.form-check-input{accent-color:#9ac9a2}#pala-options{margin-top:12px;gap:24px;font-size:13px}#pala-basis{display:none}#pala-stage{height:425px!important;margin:8px 0!important}#pala-labels span{font-size:14px!important;padding:4px 7px!important;background:rgba(20,46,49,.92)!important}#pala-detail{min-height:24px!important;font-size:13px;color:#b7d0c0;margin:4px 0 0!important}#pala-reference[hidden],#pala-wiring[hidden]{display:none}
-@media(max-width:600px){body{padding:18px 14px 12px}.viz-row{display:block}.viz-row strong{font-size:18px}.viz-row>span{display:block;font-size:12px;margin-top:4px}.viz-controls{margin-top:13px}.btn{font-size:13px}#pala-stage{height:300px!important}#pala-labels span{font-size:11px!important;max-width:150px!important}#pala-detail{font-size:12px}#pala-options{gap:11px}.form-label,.form-check-label{font-size:11px}.form-range{width:85px!important}}
-</style></body></html>
+</body></html>

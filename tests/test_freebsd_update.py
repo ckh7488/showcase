@@ -27,9 +27,10 @@ class DeploymentTests(unittest.TestCase):
         shutil.copytree(PROJECT / 'scripts', self.repo / 'scripts', ignore=shutil.ignore_patterns('__pycache__'))
         (self.repo / 'assets').mkdir()
         (self.repo / 'assets/site.css').write_text('body { margin: 0; }', encoding='utf-8')
+        shutil.copy2(PROJECT / 'assets/theme.v1.css', self.repo / 'assets/theme.v1.css')
         report = self.repo / 'reports/demo'
         report.mkdir(parents=True)
-        (report / 'index.html').write_text('<h1>Report</h1>', encoding='utf-8')
+        (report / 'index.html').write_text('<link rel="stylesheet" href="../../assets/theme.v1.css"><h1>Report</h1>', encoding='utf-8')
         (report / 'cover.svg').write_text('<svg xmlns="http://www.w3.org/2000/svg"/>', encoding='utf-8')
         (self.repo / 'index.html').write_text('<a href="reports/demo/">Version 1</a>', encoding='utf-8')
         (self.repo / '.nojekyll').touch()

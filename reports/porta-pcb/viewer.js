@@ -17,7 +17,7 @@
     const boards = {}, signalObjects = [], groundObjects = [], copperGroups = [], contacts = [];
     const colors = {'Eth_TX+':0x66d9c0,'Eth_TX-':0x269c9e,'Eth_RX+':0xffbd75,'Eth_RX-':0xd98143,'TXA+':0x66d9c0,'TXA-':0x269c9e,'RXA+':0xffbd75,'RXA-':0xd98143};
     const zLayers = {F_Cu:.028,In1_Cu:.184,In2_Cu:1.35,B_Cu:1.506};
-    let separated = false, mode = 'rx', inView = true, segment = 'cable';
+    let separated = false, mode = 'rx', inView = true, segment = 'cable', pairFocus = 'both';
 
     function xy(board, p) {
       return [p[0] + (board==='Motor_board'?4.98:0)-130,
@@ -120,15 +120,21 @@
       const box=basicBounds.clone();box.max.z+=separated?18:0;
       if(segment==='phy'){
         const phyBox=new THREE.Box3();
-        for(const o of signalObjects)if(o.userData.segment==='phy'&&(next!=='rx'||o.userData.pair==='rx'))phyBox.expandByObject(o);
+        for(const o of signalObjects)if(o.userData.segment==='phy'&&(next!=='rx'||pairFocus==='both'||o.userData.pair===pairFocus))phyBox.expandByObject(o);
         phyBox.expandByScalar(4);frameBox(phyBox,next==='side'?new THREE.Vector3(18,-32,12):new THREE.Vector3(10,-12,40),1.15);
       }else if(next==='rx') {
         const rxBox=new THREE.Box3();
-        for(const o of signalObjects)if(o.userData.pair==='rx'&&o.userData.segment==='cable')rxBox.expandByObject(o);
+        for(const o of signalObjects)if(o.userData.segment==='cable'&&(pairFocus==='both'||o.userData.pair===pairFocus))rxBox.expandByObject(o);
         rxBox.expandByScalar(2);frameBox(rxBox,new THREE.Vector3(23,-36,58),1.10);
       } else frameBox(box,next==='side'?new THREE.Vector3(85,-45,20):new THREE.Vector3(30,-46,57));
       for(const id of ['all','rx','side'])document.getElementById('view-'+id).classList.toggle('active',id===next);
-      for(const o of signalObjects){o.visible=o.userData.segment===segment;o.material.opacity=(next==='rx'&&o.userData.pair==='tx')?.22:(o.userData.pair==='rx'?1:.8);}
+      for(const o of signalObjects){o.visible=o.userData.segment===segment;o.material.opacity=pairFocus==='both'?.9:(o.userData.pair===pairFocus?1:.12);}
+    }
+    function setPair(next){
+      pairFocus=next;
+      for(const button of document.querySelectorAll('.pair-buttons [data-pair]'))button.setAttribute('aria-pressed',String(button.dataset.pair===next));
+      document.getElementById('view-rx').textContent=next==='both'?'신호선 확대':next.toUpperCase()+' 확대';
+      setView('rx');
     }
     function setGround() {
       const m=document.getElementById('ground-mode').value;
@@ -146,6 +152,7 @@
       setGround();setView(next==='phy'?'all':'rx');
     }
     document.getElementById('segment-cable').onclick=()=>setSegment('cable');document.getElementById('segment-phy').onclick=()=>setSegment('phy');
+    for(const button of document.querySelectorAll('.pair-buttons [data-pair]'))button.onclick=()=>setPair(button.dataset.pair);
     setGround();document.getElementById('ground-mode').onchange=setGround;
     for(const v of ['all','rx','side'])document.getElementById('view-'+v).onclick=()=>setView(v);
     document.getElementById('explode').onclick=()=>{
@@ -163,7 +170,7 @@
     new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;},{rootMargin:'100px'}).observe(el);
     function frame(){requestAnimationFrame(frame);if(inView){controls.update();renderer.render(scene,camera);}}
     frame();message.hidden=true;message.style.display='none';
-    window.__pcbViewer={ready:true,snapshot:()=>({mode,segment,separated,inner:document.getElementById('inner-toggle').checked,
+    window.__pcbViewer={ready:true,select:({segment:nextSegment,pair})=>{if(['cable','phy'].includes(nextSegment))setSegment(nextSegment);if(['both','rx','tx'].includes(pair))setPair(pair);},snapshot:()=>({mode,segment,pair:pairFocus,separated,inner:document.getElementById('inner-toggle').checked,
       groundMode:document.getElementById('ground-mode').value,groundTotal:groundObjects.length,
       groundVisible:groundObjects.filter(g=>g.visible).length,camera:camera.position.toArray(),
       copperGroups:copperGroups.length,signalObjects:signalObjects.length})};

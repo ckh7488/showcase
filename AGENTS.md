@@ -2,6 +2,10 @@
 
 This repository is a growing library of independently interactive HTML reports, served by GitHub Pages. Read README.md before adding or changing a report.
 
+Read DESIGN.md before authoring or restyling a report. The shared visual language is a quiet, light document surface with dark text and teal accents, matching the landing page. Registered reports must load `../../assets/theme.v1.css`; use its tokens instead of inventing a new palette. Shared theme styles are the exception to per-report self-containment. Keep individual scripts, data, 3D models, and third-party library versions in the report folder.
+
+HTML is chosen primarily for interactivity. Make important structures and comparisons explorable: rotate/select/isolate geometry, select a result to reveal its numbers and corresponding structure, compare states, and use meaningful parameter controls where supported by actual data. Do not substitute a static screenshot for a working interaction, add decorative controls, imply a fresh simulation when selecting existing results, or interpolate uncomputed frequencies. Preserve readable defaults, keyboard controls, selection states, mobile usability, and a way to return to the overview.
+
 The same static content is also deployable in FreeBSD/Bastille. `deploy/freebsd/README.md` documents the update command, Nginx setup, and rollback. Keep reports portable across both hosts. Deployment-tool changes require the integration tests in `tests/test_freebsd_update.py`; distinguish CI/POSIX testing from installation on the user's actual jail.
 
 - Add each report in `reports/<slug>/index.html`, with all of its runtime assets inside that folder. Preserve its existing 3D, charts, animation, and input controls.

@@ -72,6 +72,13 @@ def validate():
             errors.append(f'{slug}: cover must be inside its report folder')
         for key in ('path','cover'):
             check_link(ROOT / 'reports.json', report[key])
+        entry = ROOT / prefix / 'index.html'
+        if entry.is_file():
+            page_links = Links(); page_links.feed(entry.read_text(encoding='utf-8'))
+            themes = [(entry.parent / unquote(urlsplit(link).path)).resolve() for link in page_links.links
+                      if not urlsplit(link).scheme and not link.startswith('//')]
+            if ROOT / 'assets/theme.v1.css' not in themes:
+                errors.append(f'{slug}: connect ../../assets/theme.v1.css (see DESIGN.md)')
         if not isinstance(report.get('tags'), list) or not all(isinstance(t, str) and t for t in report['tags']):
             errors.append(f'{slug}: tags must be an array of nonempty strings')
     for folder in (ROOT / 'reports').iterdir():
