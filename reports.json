@@ -35,6 +35,22 @@
       ]
     },
     {
+      "id": "fw-lan9354-diag",
+      "title": "PALA720 · 센서 디버깅",
+      "summary": "LiDAR, 외부 PC 케이블, STM32/RMII가 LAN9354에서 만나는 실제 PCB 경로를 기준으로 FW diag가 고장 위치를 나누는 이유를 설명합니다.",
+      "category": "펌웨어 · 통신 진단",
+      "date": "2026-09-10",
+      "path": "reports/fw-lan9354-diag/",
+      "cover": "reports/fw-lan9354-diag/cover.png",
+      "coverAlt": "LAN9354를 중심으로 외부 PC 케이블, LiDAR 슬립링, STM32 RMII 세 경로를 분리해 보여주는 다이어그램",
+      "tags": [
+        "LDG4.2",
+        "LAN9354",
+        "진단 로그",
+        "경로 분리"
+      ]
+    },
+    {
       "id": "jib1-lidar",
       "title": "JIB1 · 라이다 오탐 분석과 필터 비교",
       "summary": "실측 로그 재생, 몸체·지브 위치 추적, 캘리브레이션 전후, 점 삭제 A/B/C를 네 개의 3D 화면에서 비교합니다.",
