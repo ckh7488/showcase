@@ -9,7 +9,7 @@
       "date": "2026-09-10",
       "path": "reports/em2-encoder-fallback/",
       "cover": "reports/em2-encoder-fallback/cover.png",
-      "coverAlt": "EM2 디버깅 제목과 전기 원인 배제 흐름을 보여주는 화면",
+      "coverAlt": "실제 EM2 encoder disk 위에 A/B quadrature 파형과 I상 index pulse를 겹친 기술 시각화",
       "tags": [
         "Optical alignment",
         "Encoder",
