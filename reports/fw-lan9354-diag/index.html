@@ -7,7 +7,7 @@
   <title>PALA720 센서 디버깅 | ATLAS</title>
   <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../../assets/theme.v1.css">
-  <link rel="stylesheet" href="report.css?v=20260910-11">
+  <link rel="stylesheet" href="report.css?v=20260910-12">
 </head>
 <body>
   <a class="skip" href="#purpose">본문으로 건너뛰기</a>
@@ -20,7 +20,7 @@
     <section id="purpose" class="hero">
       <div class="eyebrow">PALA720 sensor debug</div>
       <h1>FPS/RPM만으론 원인이 안 보인다.</h1>
-      <p class="intro">기존 콘솔은 6001로 들어온 DSP/FPS/RPM 상태를 보여준다. 하지만 그 숫자만으로는 FW가 못 보낸 것인지, LAN9354가 버린 것인지, PC가 놓친 것인지 바로 갈리지 않는다.</p>
+      <p class="intro">기존 콘솔은 LiDAR FPS, DSP 수신률, RPM 같은 통계를 보여준다. 하지만 그 숫자는 전체 흐름이 맞아떨어진 결과라서, 낮아진 순간 어디가 먼저 흔들렸는지는 바로 갈리지 않는다.</p>
 
       <div class="symptom-layout" aria-label="기존 콘솔 로그와 진단 흐름">
         <figure class="console-shot">
@@ -30,15 +30,15 @@
 
         <div class="symptom-copy">
           <span class="eyebrow">Starting point</span>
-          <h2>6001은 현상만 보여준다.</h2>
-          <p>DSP가 997 Hz로 보이거나 갑자기 낮아졌다는 사실은 알 수 있다. 문제는 그 순간 어디에서 처음 무너졌는지다.</p>
+          <h2>수신 통계는 전체 흐름이 맞아야 성립한다.</h2>
+          <p>엔코더/DSP 값은 UDP 6001로 들어오고, 콘솔은 도착한 횟수를 Hz처럼 보여준다. 문제는 숫자가 낮아진 순간 그 패킷이 어디에서 처음 빠졌는지다.</p>
           <div class="ambiguity-list" aria-label="FPS 로그만으로 겹쳐 보이는 원인">
             <span>FW 송신 지연</span>
             <span>LAN9354 drop</span>
             <span>PC 수신 누락</span>
           </div>
           <div class="diag-story" aria-label="6001 관측에서 6002 진단으로 확장되는 흐름">
-            <div><b>UDP 6001</b><span>엔코더/DSP 값과 FPS 관측</span></div>
+            <div><b>UDP 6001</b><span>엔코더/DSP 값 수신 관측</span></div>
             <i></i>
             <div><b>경로 분리</b><span>LiDAR, LAN9354, STM32/RMII, PC</span></div>
             <i></i>
@@ -214,20 +214,20 @@
           <span class="eyebrow">What changed</span>
           <h2 id="change-title">기존엔 현상만, 지금은 경로까지 본다.</h2>
         </div>
-        <p>UDP 번호는 구현 세부입니다. 핵심은 단일 FPS 관측에서 경로별 증거 기록으로 바뀐 점입니다.</p>
+        <p>UDP 번호는 구현 세부입니다. 핵심은 수신 통계 숫자에서 경로별 증거 기록으로 바뀐 점입니다.</p>
       </div>
       <div class="debug-evolution" aria-label="기존 관측과 FW diag 이후 비교">
         <article class="debug-card before">
           <span class="eyebrow">기존 관측</span>
-          <h3>엔코더/DSP 값이 몇 Hz로 왔는지만 보였다.</h3>
+          <h3>LiDAR·엔코더·DSP가 초당 몇 번 왔는지만 보였다.</h3>
           <div class="mini-flow" aria-label="기존 6001 관측 경로">
-            <span>엔코더 / DSP</span>
+            <span>LiDAR FPS</span>
             <i></i>
-            <span>UDP 6001</span>
+            <span>UDP 6001<br>엔코더 / DSP</span>
             <i></i>
-            <span>PC FPS</span>
+            <span>PC 수신 통계</span>
           </div>
-          <p>수신률이 낮아진 사실은 보이지만, FW 송신·스위치 drop·PC 수신 중 어디가 원인인지는 분리되지 않았습니다.</p>
+          <p>LiDAR FPS나 엔코더/RPM, DSP Hz가 낮아진 사실은 보이지만, FW 송신·스위치 drop·PC 수신 중 어디가 원인인지는 분리되지 않았습니다.</p>
         </article>
         <article class="debug-card after">
           <span class="eyebrow">FW diag 이후</span>
@@ -302,6 +302,6 @@
     <span>PALA720 · 센서 디버깅</span>
     <span>2026.09.10 · LDG4.2 6002 진단 방향</span>
   </footer>
-  <script src="report.js?v=20260910-11"></script>
+  <script src="report.js?v=20260910-12"></script>
 </body>
 </html>
