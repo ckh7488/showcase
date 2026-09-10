@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>차동 배선 · 길이와 대칭 | ATLAS</title>
+  <meta name="description" content="Balun 측정 어댑터의 실제 CAD 세 단계를 비교하며 길이 일치와 배선 대칭의 설계 판단을 살펴봅니다.">
+  <link rel="icon" href="../../assets/favicon.svg?v=20260910-atlas1" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/theme.v1.css">
+  <link rel="stylesheet" href="report.css?v=20260910-threecases1">
+  <link rel="stylesheet" href="signal-explainer.css?v=20260910-explainer1">
+  <script src="vendor/three.min.js" defer></script><script src="vendor/OrbitControls.js" defer></script>
+  <script src="data.js" defer></script><script src="report.js?v=20260910-threecases1" defer></script><script src="signal-explainer.js?v=20260910-explainer1" defer></script>
+</head>
+<body>
+<a class="skip" href="#purpose">본문으로 건너뛰기</a>
+<header><a href="../../" class="brand" aria-label="ATLAS 라이브러리로 돌아가기">← ATLAS</a><span>BALUN / ROUTING STUDY</span><span class="draft">검토 초안</span></header>
+<main>
+  <section id="purpose" class="intro">
+    <p class="kicker">설계 기록 · 2026.09.10</p><h1>길이와 대칭,<br>같이 맞추기.</h1>
+    <p class="lede">등길이 → 형상 정리 → 남은 길이 차이 축소.<br>실제 배선에서 무엇을 얻고, 무엇을 양보했는지 비교합니다.</p>
+    <div class="takeaway"><strong>남겨둘 설계 원칙</strong><p>두 선이 비슷한 전기적 환경을 지나게 만들고, 그 구조 안에서 길이 차이도 줄인다.</p></div>
+  </section>
+
+  <section id="geometry">
+    <div class="section-title"><div><p class="kicker">01 / 실제 CAD 비교</p><h2>세 번의 배선, 같은 화면에서.</h2></div><p>Molex 5핀 측정 어댑터 · 66 × 40 mm</p></div>
+    <div class="phase-tabs" aria-label="배선 버전 선택">
+      <button data-phase="0" aria-pressed="false"><small>01</small><strong>길이 맞춤</strong><span>등길이 · 우회로와 층 전환</span></button>
+      <button data-phase="1" aria-pressed="false"><small>02</small><strong>형상 정리</strong><span>같은 층 · 남아 있는 skew</span></button>
+      <button data-phase="2" aria-pressed="true"><small>03</small><strong>길이 차이 축소</strong><span>큰 우회로 없이 다시 조정</span></button>
+    </div>
+    <div class="model-panel">
+      <div class="toolbar"><div class="pair-controls" aria-label="페어 강조"><button data-pair="all" aria-pressed="true">A + B</button><button data-pair="A" aria-pressed="false">A 페어</button><button data-pair="B" aria-pressed="false">B 페어</button></div><div class="view-controls"><button id="top">위에서</button><button id="oblique">입체 보기</button><button id="focus">선로 확대</button><button id="reset">전체 보기</button></div></div>
+      <div id="viewer" aria-label="실제 CAD 선로의 회전·확대 가능한 3D 보기"><p id="viewer-status">3D 선로를 불러오는 중입니다.</p><div class="legend"><span><i class="positive"></i>P 선</span><span><i class="negative"></i>N 선</span><span>드래그 회전 · 휠 확대</span></div><div class="endpoint-label">RJ45 ← 선로 → Molex 5핀</div></div>
+      <div class="model-bottom"><p id="phase-caption"></p><a id="cad-source" href="https://github.com/ckh7488/balun_test">이 버전의 CAD 근거 ↗</a></div>
+    </div>
+    <p class="note">신호선의 좌표·선폭·층·비아는 각 커밋의 KiCad에서 추출했습니다. 반투명 보드 외형은 위치 안내용이며, 패드·커넥터 몸체·실드면은 생략한 선로 보기입니다.</p>
+    <div class="metrics" aria-live="polite"><div><span>A 페어 길이 차이</span><strong id="a-skew"></strong><small id="a-length"></small></div><div><span>B 페어 길이 차이</span><strong id="b-skew"></strong><small id="b-length"></small></div><div><span>신호 비아</span><strong id="via-count"></strong><small id="signal-layer"></small></div></div>
+    <p class="note">여기서 mm는 PCB 선분 중심선의 길이 차이입니다. 커넥터 내부 지연까지 포함한 시간 skew 실측값은 아닙니다.</p>
+    <div class="decision"><strong id="decision-title"></strong><p id="decision-text"></p></div>
+  </section>
+
+  <section id="comparison">
+    <div class="section-title"><div><p class="kicker">02 / 세 안의 설계 수치</p><h2>길이·선폭·비아를 나란히 비교.</h2></div></div>
+    <p class="note">위 3D와 같은 01·02·03안입니다. 열 제목을 누르면 3D의 선택도 바뀝니다. 강조된 열은 선택한 안이며, 작은 그림의 점선은 B.Cu 배선입니다.</p>
+    <p class="table-scroll-hint">표를 좌우로 밀어 세 안을 비교할 수 있습니다.</p>
+    <div class="table-wrap three-case-wrap" tabindex="0" aria-label="세 CAD 버전 비교표, 좌우 스크롤 가능"><table class="three-case-table" id="cad-comparison"><thead><tr><th scope="col">항목</th><th scope="col" data-phase-col="0"><button class="compare-phase" data-select-phase="0" aria-pressed="false"><svg viewBox="15.5 13.75 33.05 11.714817" aria-hidden="true"><path class="route-p" d="M22.0 16.39L26.0 16.945" stroke-width="0.234"/><path class="route-p" d="M26.0 16.945L30.0 17.5" stroke-width="0.234"/><path class="route-p" d="M30.0 17.5L42.0 17.5" stroke-width="0.234"/><path class="route-p" d="M42.0 17.5L44.0 17.5" stroke-width="0.234"/><path class="route-p" d="M44.0 17.5L46.81 17.5" stroke-width="0.234"/><path class="route-p" d="M17.0 16.39L22.0 16.39" stroke-width="0.15"/><path class="route-n" d="M26.0 20.632319L30.0 17.95" stroke-width="0.234"/><path class="route-n" d="M22.0 17.41L26.0 20.632319" stroke-width="0.234"/><path class="route-n" d="M42.0 17.95L44.0 18.75" stroke-width="0.234"/><path class="route-n" d="M44.0 18.75L46.81 18.75" stroke-width="0.234"/><path class="route-n" d="M30.0 17.95L42.0 17.95" stroke-width="0.234"/><path class="route-n" d="M19.03 17.41L22.0 17.41" stroke-width="0.15"/><path class="route-p" d="M44.0 20.0L46.81 20.0" stroke-width="0.234"/><path class="route-p" d="M30.0 20.0L42.0 20.0" stroke-width="0.234" stroke-dasharray="0.5 0.3"/><path class="route-p" d="M26.0 19.215L30.0 20.0" stroke-width="0.234" stroke-dasharray="0.5 0.3"/><path class="route-p" d="M17.0 18.43L22.0 18.43" stroke-width="0.15" stroke-dasharray="0.5 0.3"/><path class="route-p" d="M22.0 18.43L26.0 19.215" stroke-width="0.234" stroke-dasharray="0.5 0.3"/><path class="route-p" d="M42.0 20.0L44.0 20.0" stroke-width="0.234" stroke-dasharray="0.5 0.3"/><path class="route-n" d="M44.0 21.25L46.81 21.25" stroke-width="0.234"/><path class="route-n" d="M19.03 21.49L22.0 21.49" stroke-width="0.15" stroke-dasharray="0.5 0.3"/><path class="route-n" d="M30.0 20.45L42.0 20.45" stroke-width="0.234" stroke-dasharray="0.5 0.3"/><path class="route-n" d="M42.0 20.45L44.0 21.25" stroke-width="0.234" stroke-dasharray="0.5 0.3"/><path class="route-n" d="M22.0 21.49L26.0 23.964817" stroke-width="0.234" stroke-dasharray="0.5 0.3"/><path class="route-n" d="M26.0 23.964817L30.0 20.45" stroke-width="0.234" stroke-dasharray="0.5 0.3"/><circle class="route-via" cx="44.0" cy="20.0" r="0.3"/><circle class="route-via" cx="44.0" cy="21.25" r="0.3"/></svg><span>01 · 길이 맞춤</span><small>8826733</small></button></th><th scope="col" data-phase-col="1"><button class="compare-phase" data-select-phase="1" aria-pressed="false"><svg viewBox="15.5 13.75 33.05 11.714817" aria-hidden="true"><path class="route-p" d="M17.01 16.4L17.45 16.4" stroke-width="0.15"/><path class="route-p" d="M45.749999 16.6L22.8 16.6" stroke-width="0.234"/><path class="route-p" d="M47.05 16.2L46.149999 16.2" stroke-width="0.234"/><path class="route-p" d="M46.149999 16.2L45.749999 16.6" stroke-width="0.234"/><path class="route-p" d="M17.0 16.39L17.01 16.4" stroke-width="0.15"/><path class="route-p" d="M22.8 16.6L22.075 15.875" stroke-width="0.234"/><path class="route-p" d="M17.45 16.4L17.975 15.875" stroke-width="0.15"/><path class="route-p" d="M17.975 15.875L22.075 15.875" stroke-width="0.15"/><path class="route-n" d="M45.749999 17.05L22.35 17.05" stroke-width="0.234"/><path class="route-n" d="M19.03 16.845L19.65 16.225" stroke-width="0.15"/><path class="route-n" d="M22.35 17.05L21.975 16.675" stroke-width="0.234"/><path class="route-n" d="M47.05 17.45L46.149999 17.45" stroke-width="0.234"/><path class="route-n" d="M19.65 16.225L21.525 16.225" stroke-width="0.15"/><path class="route-n" d="M19.03 17.41L19.03 16.845" stroke-width="0.15"/><path class="route-n" d="M21.525 16.225L21.975 16.675" stroke-width="0.15"/><path class="route-n" d="M46.149999 17.45L45.749999 17.05" stroke-width="0.234"/><path class="route-p" d="M44.881802 19.1L43.306802 20.675" stroke-width="0.234"/><path class="route-p" d="M47.05 18.7L46.149999 18.7" stroke-width="0.234"/><path class="route-p" d="M24.643198 20.675L22.943198 18.975" stroke-width="0.234"/><path class="route-p" d="M22.943198 18.975L21.275 18.975" stroke-width="0.234"/><path class="route-p" d="M45.749999 19.1L44.881802 19.1" stroke-width="0.234"/><path class="route-p" d="M19.805 18.43L20.35 18.975" stroke-width="0.15"/><path class="route-p" d="M17.0 18.43L19.805 18.43" stroke-width="0.15"/><path class="route-p" d="M46.149999 18.7L45.749999 19.1" stroke-width="0.234"/><path class="route-p" d="M43.306802 20.675L24.643198 20.675" stroke-width="0.234"/><path class="route-p" d="M20.35 18.975L21.275 18.975" stroke-width="0.15"/><path class="route-n" d="M45.068198 19.55L43.493198 21.125" stroke-width="0.234"/><path class="route-n" d="M19.97 20.55L19.975 20.55" stroke-width="0.15"/><path class="route-n" d="M46.149999 19.95L45.749999 19.55" stroke-width="0.234"/><path class="route-n" d="M23.181802 19.85L21.325 19.85" stroke-width="0.234"/><path class="route-n" d="M47.05 19.95L46.149999 19.95" stroke-width="0.234"/><path class="route-n" d="M20.675 19.85L21.325 19.85" stroke-width="0.15"/><path class="route-n" d="M45.749999 19.55L45.068198 19.55" stroke-width="0.234"/><path class="route-n" d="M19.975 20.55L20.675 19.85" stroke-width="0.15"/><path class="route-n" d="M19.03 21.49L19.97 20.55" stroke-width="0.15"/><path class="route-n" d="M24.456802 21.125L23.181802 19.85" stroke-width="0.234"/><path class="route-n" d="M43.493198 21.125L24.456802 21.125" stroke-width="0.234"/></svg><span>02 · 형상 정리</span><small>acf8225</small></button></th><th scope="col" data-phase-col="2"><button class="compare-phase" data-select-phase="2" aria-pressed="true"><svg viewBox="15.5 13.75 33.05 11.714817" aria-hidden="true"><path class="route-p" d="M46.15 16.2L47.05 16.2" stroke-width="0.234"/><path class="route-p" d="M45.75 16.6L46.15 16.2" stroke-width="0.234"/><path class="route-p" d="M21.35 16.6L45.75 16.6" stroke-width="0.234"/><path class="route-p" d="M20.0 15.25L21.35 16.6" stroke-width="0.234"/><path class="route-p" d="M17.0 16.39L18.14 15.25" stroke-width="0.234"/><path class="route-p" d="M18.14 15.25L20.0 15.25" stroke-width="0.234"/><path class="route-n" d="M45.75 17.05L46.15 17.45" stroke-width="0.234"/><path class="route-n" d="M19.03 15.7L19.813604 15.7" stroke-width="0.234"/><path class="route-n" d="M21.163604 17.05L45.75 17.05" stroke-width="0.234"/><path class="route-n" d="M19.03 17.41L19.03 15.7" stroke-width="0.234"/><path class="route-n" d="M46.15 17.45L47.05 17.45" stroke-width="0.234"/><path class="route-n" d="M19.813604 15.7L21.163604 17.05" stroke-width="0.234"/><path class="route-p" d="M45.75 19.0L46.05 18.7" stroke-width="0.234"/><path class="route-p" d="M17.0 18.43L20.0 18.43" stroke-width="0.234"/><path class="route-p" d="M46.05 18.7L47.05 18.7" stroke-width="0.234"/><path class="route-p" d="M20.0 18.43L20.57 19.0" stroke-width="0.234"/><path class="route-p" d="M20.57 19.0L45.75 19.0" stroke-width="0.234"/><path class="route-n" d="M19.03 20.89L20.47 19.45" stroke-width="0.234"/><path class="route-n" d="M20.47 19.45L45.75 19.45" stroke-width="0.234"/><path class="route-n" d="M46.25 19.95L47.05 19.95" stroke-width="0.234"/><path class="route-n" d="M19.03 21.49L19.03 20.89" stroke-width="0.234"/><path class="route-n" d="M45.75 19.45L46.25 19.95" stroke-width="0.234"/></svg><span>03 · 길이 차이 축소</span><small>215cabd</small></button></th></tr></thead><tbody><tr data-metric="a-skew"><th scope="row">A 길이 차이</th><td data-phase-col="0"><strong>&lt; 0.001 mm</strong></td><td data-phase-col="1"><strong>1.388 mm</strong></td><td data-phase-col="2"><strong>0.792 mm</strong></td></tr><tr data-metric="a-length"><th scope="row">A P / N 길이</th><td data-phase-col="0">29.887 / 29.887 mm</td><td data-phase-col="1">30.738 / 29.349 mm</td><td data-phase-col="2">31.247 / 30.455 mm</td></tr><tr data-metric="b-skew"><th scope="row">B 길이 차이</th><td data-phase-col="0"><strong>&lt; 0.001 mm</strong></td><td data-phase-col="1"><strong>1.752 mm</strong></td><td data-phase-col="2"><strong>0.987 mm</strong></td></tr><tr data-metric="b-length"><th scope="row">B P / N 길이</th><td data-phase-col="0">29.963 / 29.963 mm</td><td data-phase-col="1">31.798 / 30.046 mm</td><td data-phase-col="2">30.410 / 29.424 mm</td></tr><tr data-metric="width"><th scope="row">신호 선폭</th><td data-phase-col="0">0.15 / 0.234 mm</td><td data-phase-col="1">0.15 / 0.234 mm</td><td data-phase-col="2">0.234 mm</td></tr><tr data-metric="vias"><th scope="row">신호 비아</th><td data-phase-col="0">2개</td><td data-phase-col="1">0개</td><td data-phase-col="2">0개</td></tr><tr data-metric="layers"><th scope="row">신호층</th><td data-phase-col="0">B.Cu + F.Cu</td><td data-phase-col="1">F.Cu</td><td data-phase-col="2">F.Cu</td></tr></tbody></table></div>
+    <p class="comparison-reading"><strong>01안은 등길이, 02안은 비아 없는 형상 정리, 03안은 그 구조에서 skew를 다시 줄인 안입니다.</strong> 03안에서는 두 페어 모두 길이 차이를 1 mm 미만으로 줄이고 선폭도 통일했습니다.</p>
+    <details class="revision-details"><summary>02 → 03 수정의 추가 수치</summary><p>긴 결합 구간 A/B는 22.95/18.66 mm에서 24.40/25.18 mm로 늘었습니다. A 선로는 조금 길어졌고, B는 A와 가까워지는 절충이 있었습니다.</p><a class="source-link" href="https://github.com/ckh7488/balun_test/blob/215cabd/docs/molex-routing/README.md">해당 수정의 원본 기록 ↗</a></details>
+  </section>
+
+  <section id="em">
+    <div class="section-title"><div><p class="kicker">03 / 세 안의 RF 비교</p><h2>반사와 모드 변환도, 같은 세 안으로.</h2></div></div>
+    <p class="note">02와 동일한 Molex CAD 버전입니다. 각 버전에 대응하는 openEMS 원본 결과를 아직 확보하지 못해 계산값은 비워 두었습니다.</p>
+    <p class="table-scroll-hint">표를 좌우로 밀어 세 안을 비교할 수 있습니다.</p>
+    <div class="table-wrap three-case-wrap" tabindex="0" aria-label="세 CAD 버전의 RF 결과 비교표, 좌우 스크롤 가능"><table class="three-case-table" id="rf-comparison"><thead><tr><th scope="col">항목</th><th scope="col" data-phase-col="0"><button class="compare-phase" data-select-phase="0" aria-pressed="false"><span>01 · 길이 맞춤</span><small>8826733</small></button></th><th scope="col" data-phase-col="1"><button class="compare-phase" data-select-phase="1" aria-pressed="false"><span>02 · 형상 정리</span><small>acf8225</small></button></th><th scope="col" data-phase-col="2"><button class="compare-phase" data-select-phase="2" aria-pressed="true"><span>03 · 길이 차이 축소</span><small>215cabd</small></button></th></tr></thead><tbody><tr data-metric="sdd11"><th scope="row">차동 반사 Sdd11</th><td data-phase-col="0"><span class="no-rf-value" aria-label="검증된 계산값 없음">—</span></td><td data-phase-col="1"><span class="no-rf-value" aria-label="검증된 계산값 없음">—</span></td><td data-phase-col="2"><span class="no-rf-value" aria-label="검증된 계산값 없음">—</span></td></tr><tr data-metric="scd21"><th scope="row">차동 → 공통 Scd21</th><td data-phase-col="0"><span class="no-rf-value" aria-label="검증된 계산값 없음">—</span></td><td data-phase-col="1"><span class="no-rf-value" aria-label="검증된 계산값 없음">—</span></td><td data-phase-col="2"><span class="no-rf-value" aria-label="검증된 계산값 없음">—</span></td></tr></tbody></table></div>
+    <p class="note">—는 0 dB나 불합격을 뜻하지 않습니다. 이 CAD와 대조한 계산값이 없다는 표시입니다. 별도 M12 해석값은 아래 참고자료에서 확인할 수 있습니다.</p>
+    <details id="signal-explainer" class="signal-explainer">
+      <summary>차동 반사 · 차동 → 공통 변환, 그림으로 이해하기</summary>
+      <div class="explainer-content">
+        <p class="explainer-primer"><strong>차동 신호는 두 선 P와 N의 전압 차이</strong>로 읽습니다. 아래 두 그림은 그 신호가 선로를 지날 때 생기는 서로 다른 현상입니다.</p>
+        <div class="explainer-grid">
+          <article class="explain-card">
+            <p class="explain-symbol">Sdd11 / 차동 반사</p><h3>보낸 신호 일부가 되돌아온다.</h3>
+            <p>임피던스가 달라지는 곳에서 신호 일부가 <strong>차동 형태로 입력 쪽에 돌아오는 것</strong>입니다.</p>
+            <div class="explain-buttons" aria-label="반사 설명 조건"><button data-reflection="matched" aria-pressed="false">잘 맞는 연결</button><button data-reflection="mismatch" aria-pressed="true">임피던스 불연속</button></div>
+            <div class="reflection-visual">
+              <div class="reflection-labels"><span>입력 쪽 · 1</span><span id="junction-label">불연속 지점</span><span>출력 쪽 · 2</span></div>
+              <svg id="reflection-diagram" viewBox="0 0 420 200" role="img" aria-labelledby="reflection-title reflection-desc">
+                <title id="reflection-title">차동 신호의 전달과 반사</title><desc id="reflection-desc">오른쪽으로 보낸 차동 신호 중 일부가 불연속 지점에서 왼쪽 입력으로 되돌아옵니다.</desc>
+                <defs><marker id="incoming-head" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" style="fill:var(--sc-accent)"/></marker><marker id="return-head" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" style="fill:var(--sc-focus)"/></marker></defs>
+                <rect x="192" y="25" width="36" height="150" rx="7" class="junction"/>
+                <path d="M25 65H176" class="incoming-arrow" marker-end="url(#incoming-head)"/>
+                <path d="M240 65H397" class="transmitted-arrow" marker-end="url(#incoming-head)"/>
+                <g id="return-path"><path d="M209 96V145H30" class="reflected-arrow" marker-end="url(#return-head)"/><circle cx="210" cy="65" r="6" class="junction-dot"/></g>
+              </svg>
+              <div class="reflection-key"><span class="forward-key">→ 전달되는 차동 신호</span><span id="return-key">← 돌아오는 차동 신호</span></div>
+            </div>
+            <p id="reflection-caption" class="explain-caption" aria-live="polite">돌아오는 성분이 작을수록 차동 반사가 작습니다.</p>
+          </article>
+          <article class="explain-card">
+            <p class="explain-symbol">Scd21 / 차동 → 공통 변환</p><h3>두 선이 함께 움직이는 성분이 생긴다.</h3>
+            <p>두 선의 변화가 정확히 반대면 평균은 0입니다. 한쪽이 늦으면 상쇄가 어긋나 <strong>공통 성분</strong>이 남을 수 있습니다.</p>
+            <div class="explain-buttons" aria-label="도착 시간 설명 조건"><button data-skew-demo="0" aria-pressed="false">동시에 도착</button><button data-skew-demo="0.15" aria-pressed="true">N선이 늦게 도착</button></div>
+            <div class="wave-visual">
+              <div class="wave-heading"><span>출력 쪽의 P와 N</span><span><i class="p-key"></i>P <i class="n-key"></i>N</span></div>
+              <svg id="pn-diagram" viewBox="0 0 420 105" role="img" aria-labelledby="pn-title"><title id="pn-title">같은 위치에서 관측한 P선과 N선의 시간 파형</title><path d="M10 52.5H410" class="zero-axis"/><path id="p-wave" class="p-wave"/><path id="n-wave" class="n-wave"/></svg>
+              <div class="wave-heading"><span>공통 성분 = (P + N) ÷ 2</span><strong id="cm-state">평균이 0이 아님</strong></div>
+              <svg id="cm-diagram" viewBox="0 0 420 105" role="img" aria-labelledby="cm-title"><title id="cm-title">P와 N의 평균으로 계산한 공통 성분</title><path d="M10 52.5H410" class="zero-axis"/><path id="cm-wave" class="cm-wave"/></svg>
+              <span class="time-label">같은 시간축 →</span>
+            </div>
+            <p id="conversion-caption" class="explain-caption" aria-live="polite">공통 성분은 두 선에 같은 방향으로 포함되는 성분입니다.</p>
+          </article>
+        </div>
+        <div class="explain-db"><strong>이 표의 dB 읽기</strong><p><b>−40 dB</b>가 <b>−20 dB</b>보다 해당 성분이 작습니다. 차동 반사를 양수인 <b>반사손실 RL</b>로 쓰면 부호가 뒤집혀 <b>40 dB가 20 dB보다 좋습니다.</b></p></div>
+        <p class="explain-footnote">설명용 개념도입니다. 화살표 크기는 전력 비율이 아니며, 파형은 지연을 한 주기의 15%로 과장한 정현파 예시입니다. 실제 PCB의 계산값을 바꾸지 않습니다. 공통모드 변환은 두 선의 진폭·주변 환경 불균형으로도 생길 수 있습니다. <a href="https://helpfiles.keysight.com/csg/pxivna/S1_Settings/Balanced_Measurements.htm">표기·차동/공통 정의</a> · <a href="https://www.analog.com/en/resources/technical-articles/unbalanced-twisted-pairs-can-give-you-the-jitters.html">불균형과 모드 변환</a></p>
+      </div>
+    </details>
+    <details id="historical-em" class="historical-em">
+      <summary>참고 · 별도 RJ45–M12 모델의 2안 비교 기록</summary>
+      <div class="historical-content">
+        <h3>반사가 작다고, 변환도 작은 것은 아니다.</h3>
+    <div class="scope"><strong>이 표는 별도의 RJ45–M12 선로 비교입니다.</strong><p>이전 대화 「차동신호 배선 비교」에 남은 요약값입니다. 위 Molex 세 CAD 버전의 해석 결과로 대응시키지 않았으며, 원본 solver 파일은 아직 대조하지 못했습니다.</p></div>
+    <div class="em-controls" aria-label="별도 M12 기록의 계산 지표"><button data-history-em="sdd11" aria-pressed="true">차동 반사</button><button data-history-em="scd21" aria-pressed="false">차동 → 공통 변환</button></div>
+    <div class="em-card"><div><span id="em-name"></span><h3 id="em-judgment"></h3><p id="em-explain"></p><small>100 MHz · 이전 대화의 정밀 격자 요약 · 음수 dB, 더 낮을수록 성분이 작음</small></div><div class="em-values"><div><span>이전 등길이안</span><strong id="em-old"></strong></div><div><span>새 평행 배선안</span><strong id="em-new"></strong></div></div></div>
+    <p>당시 새 평행안에는 <strong>1.221 mm</strong> 길이 차이가 남았습니다. “평행하게 정리하면 작은 길이 차이는 중요하지 않다”는 예상은 이 비교에서 성립하지 않았습니다.</p>
+    <details><summary>무엇까지 확인된 기록인가?</summary><p>당시 두 격자에서 주요 순위는 같았지만 값 자체는 달랐고, 작은 모드 변환은 기록 길이에 민감했다는 설명이 남아 있습니다. 실제 커넥터·케이블·외부 잡음 유입·통신 오류까지 평가한 시험은 아닙니다.</p><p>이 기록은 등길이와 평행 배선 사이의 절충을 보여줍니다. 최종 길이 보정안까지 포함한 동일 조건의 세 안 비교 결과는 아직 확보되지 않았습니다.</p></details>
+      </div>
+    </details>
+  </section>
+
+  <section id="lesson">
+    <div class="section-title"><div><p class="kicker">04 / 이번 문서의 결론</p><h2>길이 맞춤도 전기적 대칭의 일부.</h2></div></div>
+    <p>두 선의 길이·유전체·주변 결합이 불균형하면 차동과 공통모드 사이의 변환이 생길 수 있습니다. 같은 길이는 그중 지연의 균형을 맞추는 수단입니다. <a href="https://www.analog.com/en/resources/technical-articles/unbalanced-twisted-pairs-can-give-you-the-jitters.html">Analog Devices 설명 ↗</a></p>
+    <div class="takeaway"><strong>현재 선택한 설계 방향</strong><p>형상을 정리한 뒤, 큰 우회로나 불필요한 비아를 되살리지 않고 남은 길이 차이를 줄입니다.</p></div>
+    <div class="scope final-scope"><strong>“최종안이 openEMS에서도 최상”은 원본 비교 결과를 확인한 뒤 확정합니다.</strong><p>현재 확인한 것은 Molex의 실제 CAD 개선과, 별도 RJ45–M12 모델에서 반사·모드 변환의 순위가 갈렸다는 이전 기록입니다.</p></div>
+    <details><summary>출처와 자료 범위</summary><ul><li><a href="data.json">이 문서의 값·좌표·커밋과 출처 JSON</a></li><li><a href="https://github.com/ckh7488/balun_test/blob/215cabd/DESIGN_REVIEW_HANDOFF.md">balun 설계 검토 인계</a></li><li><a href="https://helpfiles.keysight.com/csg/pxivna/S1_Settings/Balanced_Measurements.htm">Keysight · mixed-mode S-parameter 표기</a></li><li><a href="https://www.ti.com/lit/pdf/snla387">TI · Ethernet PHY PCB 배치 지침</a> — 길이·비아·임피던스·기준면을 함께 검토하는 참고자료. 이 어댑터의 독립 합격선으로 사용하지 않았습니다.</li><li>Three.js r128 · <a href="vendor/LICENSE-three.txt">MIT License</a></li></ul></details>
+  </section>
+</main><footer><span>ATLAS / Interactive Library</span><span>설계 검토본 · openEMS 원본 대조 대기</span></footer>
+</body></html>

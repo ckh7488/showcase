@@ -1,6 +1,6 @@
 # ATLAS · Interactive Library
 
-**[ATLAS 열기](https://ckh7488.github.io/showcase/)** · [PALA720 보고서 바로 열기](https://ckh7488.github.io/showcase/reports/porta-pcb/)
+**[ATLAS 열기](https://ckh7488.github.io/showcase/)** · [PALA720](https://ckh7488.github.io/showcase/reports/porta-pcb/) · [Balun · 길이와 대칭](https://ckh7488.github.io/showcase/reports/balun-routing/)
 
 설계·실험·분석을 직접 탐색하는 라이브러리입니다. Collections에서 제목이나 썸네일을 누르면 보고서가 바로 열리고, 보고서 안의 Three.js 모델·차트·입력 기능이 그대로 동작합니다. 새 보고서는 폴더와 목록 항목만 추가하면 됩니다.
 

@@ -31,6 +31,21 @@
         "캘리브레이션",
         "필터 비교"
       ]
+    },
+    {
+      "id": "balun-routing",
+      "title": "Balun · 차동 배선의 길이와 대칭",
+      "summary": "길이 맞춤, 형상 정리, 길이 차이 축소. 세 CAD의 실제 선로를 3D로 살펴보고 길이·선폭·비아를 비교합니다.",
+      "category": "하드웨어 · 신호 품질",
+      "date": "2026-09-10",
+      "path": "reports/balun-routing/",
+      "cover": "reports/balun-routing/cover.png",
+      "coverAlt": "Molex 5핀 측정 어댑터의 P·N 차동 선로를 표시한 3D 화면",
+      "tags": [
+        "3D PCB",
+        "배선 비교",
+        "차동 신호"
+      ]
     }
   ]
 }

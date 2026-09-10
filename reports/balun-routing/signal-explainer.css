@@ -1,0 +1,31 @@
+.signal-explainer{border:1px solid var(--sc-line);border-radius:var(--sc-radius);padding:0;background:var(--sc-surface)}
+.signal-explainer>summary{padding:17px 20px;line-height:1.55;color:var(--sc-accent);font-size:14px}
+.signal-explainer[open]>summary{border-bottom:1px solid var(--sc-line)}
+.explainer-content{padding:0 20px 18px}.explainer-primer{font-size:14px;margin:18px 0;color:var(--sc-ink)}
+.explainer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.explain-card{border:1px solid var(--sc-line);border-radius:9px;padding:20px;min-width:0}
+.explain-card .explain-symbol{font-size:12px;font-weight:700;color:var(--sc-accent);margin:0 0 7px}
+.explain-card h3{font-size:20px;margin:0 0 10px}.explain-card p{font-size:14px;margin:10px 0;color:var(--sc-muted)}
+.explain-buttons{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0}.explain-buttons button{font-size:12px;padding:7px 10px}
+.reflection-visual,.wave-visual{padding:17px 13px;background:var(--sc-page);border-radius:8px;min-height:261px}
+.reflection-labels{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--sc-muted)}
+.reflection-labels span:nth-child(2){color:var(--sc-focus);font-weight:700;text-align:center}
+.reflection-visual svg{display:block;width:100%;height:175px;margin:0;overflow:visible}
+.incoming-arrow,.transmitted-arrow,.reflected-arrow{fill:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.incoming-arrow,.transmitted-arrow{stroke:var(--sc-accent);color:var(--sc-accent)}
+.reflected-arrow{stroke:var(--sc-focus);color:var(--sc-focus)}
+.junction{fill:none;stroke:var(--sc-focus);stroke-width:2;stroke-dasharray:5 5;opacity:.7}.junction-dot{fill:var(--sc-focus)}
+.reflection-visual.is-matched .junction{stroke:var(--sc-line)}
+.reflection-visual.is-matched #return-path{visibility:hidden}
+.reflection-visual.is-matched .reflection-labels span:nth-child(2){color:var(--sc-accent)}
+.reflection-key{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--sc-focus)}.reflection-key .forward-key{color:var(--sc-accent)}
+.reflection-key .muted{color:var(--sc-muted)}
+.wave-heading{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:var(--sc-muted)}.wave-heading strong{font-size:11px;color:var(--sc-accent);font-weight:600}
+.wave-heading i{display:inline-block;width:12px;height:3px;vertical-align:middle;margin:0 4px 0 9px}.p-key{background:var(--sc-focus)}.n-key{background:var(--sc-accent)}
+.wave-visual svg{display:block;width:100%;height:87px}.zero-axis{fill:none;stroke:var(--sc-line);stroke-width:1.5;stroke-dasharray:4 4}
+.p-wave,.n-wave,.cm-wave{fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}.p-wave{stroke:var(--sc-focus)}.n-wave{stroke:var(--sc-accent)}.cm-wave{stroke:var(--sc-phy)}
+.time-label{display:block;text-align:right;font-size:11px;color:var(--sc-muted)}.explain-card .explain-caption{font-size:13px;color:var(--sc-ink);margin:12px 0 0}
+.explain-db{display:flex;align-items:baseline;gap:18px;margin-top:18px;padding:14px 17px;background:var(--sc-accent-soft);border-radius:8px;font-size:13px}.explain-db>strong{flex-shrink:0;color:var(--sc-accent)}.explain-db p{margin:0;color:var(--sc-ink)}
+.explainer-content .explain-footnote{font-size:12px;color:var(--sc-muted);margin:13px 0 0}
+@media(max-width:850px){.explainer-grid{grid-template-columns:1fr}.explain-card h3{font-size:19px}.reflection-visual,.wave-visual{min-height:0}.reflection-visual svg{height:160px}.wave-visual svg{height:95px}}
+@media(max-width:500px){.signal-explainer>summary{padding:15px 16px}.explainer-content{padding:0 13px 15px}.explain-card{padding:15px 12px}.reflection-visual,.wave-visual{padding:13px 9px}.reflection-labels{font-size:11px;gap:5px}.reflection-visual svg{height:140px}.wave-heading{font-size:11px;gap:5px}.wave-heading strong{font-size:10px}.wave-heading i{margin-left:3px;width:9px}.explain-buttons button{font-size:11px;padding:7px 8px}.explain-db{display:block;padding:13px}.explain-db p{margin-top:5px}.wave-visual svg{height:82px}}
