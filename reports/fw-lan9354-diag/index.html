@@ -7,7 +7,7 @@
   <title>PALA720 센서 디버깅 | ATLAS</title>
   <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../../assets/theme.v1.css">
-  <link rel="stylesheet" href="report.css?v=20260910-7">
+  <link rel="stylesheet" href="report.css?v=20260910-11">
 </head>
 <body>
   <a class="skip" href="#purpose">본문으로 건너뛰기</a>
@@ -181,14 +181,6 @@
             <p id="route-copy">LiDAR 케이블, 트랜스, PortB PHY가 marginal 상태인지 본다. 링크가 완전히 down이면 조용하지만, 애매하게 살아 있는 링크는 에러 프레임을 만들 수 있다.</p>
           </div>
 
-          <figure class="route-visual" data-route="lidar">
-            <img id="route-visual-img" src="sensor-assembly.jpg" width="1200" height="900" alt="PALA720 회전 센서 어셈블리">
-            <figcaption id="route-visual-badge">센서 어셈블리에서 LiDAR 입력 경로 보기</figcaption>
-            <span id="visual-start" class="visual-label start">LiDAR</span>
-            <span id="visual-mid" class="visual-label mid">슬립링 / 커넥터</span>
-            <span id="visual-end" class="visual-label end">Port2/B</span>
-          </figure>
-
           <div class="inspector-grid">
             <section class="physical-panel" aria-labelledby="physical-title">
               <span class="eyebrow">물리 경로</span>
@@ -200,7 +192,6 @@
                 <li>Control board 커넥터</li>
                 <li>LAN9354 Port2/B</li>
               </ol>
-              <p id="physical-copy">LiDAR 쪽 케이블과 커넥터가 애매하게 살아 있으면 PortB에 오류 프레임이 들어올 수 있다.</p>
             </section>
             <section class="diag-panel" aria-labelledby="diag-title">
               <span class="eyebrow">같이 볼 diag 값</span>
@@ -305,56 +296,12 @@
       </div>
     </section>
 
-    <section class="classifier" aria-labelledby="classifier-title">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">Postmortem reading</span>
-          <h2 id="classifier-title">로그를 볼 때의 판정 흐름</h2>
-        </div>
-      </div>
-      <div class="flow">
-        <div class="flow-step"><b>1</b><span>6001이 낮아졌나</span><p>diaglog의 PC 수신 Hz와 FW tx/sample 카운터 delta를 비교한다.</p></div>
-        <i></i>
-        <div class="flow-step"><b>2</b><span>FW는 정상 송신했나</span><p>FW tx counter가 1000 Hz 근처이고 TX/DMA fail이 없으면 FW 송신 정지는 낮게 본다.</p></div>
-        <i></i>
-        <div class="flow-step"><b>3</b><span>LAN9354가 버렸나</span><p>P2 RX error, P2 BM_DRP, P1 TX 변화, read_valid_mask를 같은 구간에서 본다.</p></div>
-        <i></i>
-        <div class="flow-step"><b>4</b><span>PC만 놓쳤나</span><p>스위치 카운터가 깨끗하고 Wireshark는 보는데 앱 Hz만 낮으면 PC 수신 경로로 본다.</p></div>
-      </div>
-
-      <div class="cases">
-        <article>
-          <h3>PortB 외부선 불량</h3>
-          <p>PHY B state가 100M operational에서 벗어나고 P2 RX error 또는 BM drop이 동반된다. LiDAR 케이블·트랜스·납땜 쪽이 우선이다.</p>
-        </article>
-        <article>
-          <h3>LAN9354 shared resource 영향</h3>
-          <p>FW tx는 정상인데 PC 수신만 빠지고, 같은 구간에 P2 noise와 Port0/Port1 관련 drop 징후가 있다. 외부 PortB 불량이 내부 fabric에 영향을 준 패턴이다.</p>
-        </article>
-        <article>
-          <h3>STM32/RMII/FW 송신 문제</h3>
-          <p>FW tx delta 자체가 낮거나 ETH DMA, TX fail, RMII 쪽 오류가 오른다. 이때는 LiDAR가 아니라 MCU 송신 루프와 ETH 경로를 본다.</p>
-        </article>
-        <article>
-          <h3>PC 수신/표시 문제</h3>
-          <p>FW와 LAN9354가 모두 정상인데 diaglog 앱의 Hz만 낮다. 소켓 버퍼, thread scheduling, FPS 계산, NIC counter를 확인한다.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="scope" aria-labelledby="scope-title">
-      <h2 id="scope-title">이 보고서의 범위</h2>
-      <p>이 페이지는 FW 변경 자체의 코드 리뷰가 아니라, 6002 진단을 왜 넣었는지 설명하는 공개용 시각 자료입니다. 실제 판정은 현장 CSV, Wireshark, 보드 측정값과 함께 봐야 합니다.</p>
-      <div class="links">
-        <a href="../../">보고서 목록으로</a>
-      </div>
-    </section>
   </main>
 
   <footer>
     <span>PALA720 · 센서 디버깅</span>
     <span>2026.09.10 · LDG4.2 6002 진단 방향</span>
   </footer>
-  <script src="report.js?v=20260910-7"></script>
+  <script src="report.js?v=20260910-11"></script>
 </body>
 </html>
