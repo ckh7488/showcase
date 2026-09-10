@@ -40,6 +40,6 @@ jobs:
             fetch -o /tmp/showcase-index.html http://127.0.0.1:8080/
             fetch -o /tmp/showcase-report.html http://127.0.0.1:8080/reports/porta-pcb/
             fetch -o /tmp/showcase-viewer.js http://127.0.0.1:8080/reports/porta-pcb/viewer.js
-            python3 -c 'from pathlib import Path; assert "SHOWCASE" in Path("/tmp/showcase-index.html").read_text(); assert "PALA720" in Path("/tmp/showcase-report.html").read_text(); assert "__pcbViewer" in Path("/tmp/showcase-viewer.js").read_text()'
+            python3 -c 'from pathlib import Path; assert "ATLAS" in Path("/tmp/showcase-index.html").read_text(); assert "PALA720" in Path("/tmp/showcase-report.html").read_text(); assert "__pcbViewer" in Path("/tmp/showcase-viewer.js").read_text()'
             sh deploy/freebsd/update.sh --status
             nginx -s quit -c "$PWD/deploy/freebsd/nginx.conf"
