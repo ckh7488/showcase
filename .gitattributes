@@ -11,3 +11,4 @@
 *.svg text eol=lf
 *.png binary
 *.jpg binary
+*.bin binary

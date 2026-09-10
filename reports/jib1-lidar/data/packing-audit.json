@@ -1,0 +1,2108 @@
+{
+  "frames": 300,
+  "source_bytes": 1849605980,
+  "packed_bytes": 772488360,
+  "arrays_verified": 3180,
+  "files": [
+    {
+      "file": "l1f0.bin",
+      "source_bytes": 3816151,
+      "packed_bytes": 1898576,
+      "arrays_verified": 10,
+      "sha256": "41483d9014cf96626de85d688b2fa9a95dc750ffa7349463ec0539b5bd068644"
+    },
+    {
+      "file": "l1f1.bin",
+      "source_bytes": 3676843,
+      "packed_bytes": 1828354,
+      "arrays_verified": 10,
+      "sha256": "a1e806afc963269d335e9452557cec52c9bf50acfc469b1f1f5056f1115f8747"
+    },
+    {
+      "file": "l1f10.bin",
+      "source_bytes": 3808524,
+      "packed_bytes": 1891713,
+      "arrays_verified": 10,
+      "sha256": "3a2870f31231c26b6e6e4ed31d2324033f6d3a745eebe05d93865e7fa5837ab2"
+    },
+    {
+      "file": "l1f11.bin",
+      "source_bytes": 3801820,
+      "packed_bytes": 1846919,
+      "arrays_verified": 10,
+      "sha256": "67d570214949f314a400e4cd12f277547d816bb79367472f6b4b626a987d4936"
+    },
+    {
+      "file": "l1f12.bin",
+      "source_bytes": 4121464,
+      "packed_bytes": 1986414,
+      "arrays_verified": 10,
+      "sha256": "49a53a57a4647e265d6da8199a01c2f1268359cbbe33c11ef7afd12166cbb430"
+    },
+    {
+      "file": "l1f13.bin",
+      "source_bytes": 3930508,
+      "packed_bytes": 1965481,
+      "arrays_verified": 10,
+      "sha256": "b90b717e7c0423d006782986f8ee30f483be3193c14693ac159331becf04ae51"
+    },
+    {
+      "file": "l1f14.bin",
+      "source_bytes": 3495204,
+      "packed_bytes": 1789005,
+      "arrays_verified": 10,
+      "sha256": "373fdc85861ccb205c4fd05cc80590d750ef25ca1de1e95e44c59b36ac590ee2"
+    },
+    {
+      "file": "l1f15.bin",
+      "source_bytes": 3590368,
+      "packed_bytes": 1963055,
+      "arrays_verified": 10,
+      "sha256": "6c97beba126dfe211903999d972e92d81d301919dbdbad7ee60032056204d37a"
+    },
+    {
+      "file": "l1f16.bin",
+      "source_bytes": 3781320,
+      "packed_bytes": 2027775,
+      "arrays_verified": 10,
+      "sha256": "19918ec0c528bd14e98acc8d06e997d7a72f36ec1d7eed279f228e8b2bd22f73"
+    },
+    {
+      "file": "l1f17.bin",
+      "source_bytes": 4353772,
+      "packed_bytes": 2320616,
+      "arrays_verified": 10,
+      "sha256": "fe2c9a0cdbf0ccfba0e5b3b4ac8e35f31eb43e7b3cfcceb102dbf83f8d1da8be"
+    },
+    {
+      "file": "l1f18.bin",
+      "source_bytes": 3953736,
+      "packed_bytes": 2184071,
+      "arrays_verified": 10,
+      "sha256": "221c85e6c87f81636b5896300c106f80ad214934a88d2b2246f4879d9df2bb83"
+    },
+    {
+      "file": "l1f19.bin",
+      "source_bytes": 3545716,
+      "packed_bytes": 1904176,
+      "arrays_verified": 10,
+      "sha256": "b20e5f65fe4b5600c94c96e3e069f11e9696553aa544df185fb721be705462cb"
+    },
+    {
+      "file": "l1f2.bin",
+      "source_bytes": 3624635,
+      "packed_bytes": 1743064,
+      "arrays_verified": 10,
+      "sha256": "6c7fcb770cd8ac1a75cc81147274ab9549ac3eba17dff0b6ff59d3c7ba4d1afc"
+    },
+    {
+      "file": "l1f20.bin",
+      "source_bytes": 3481388,
+      "packed_bytes": 1925691,
+      "arrays_verified": 10,
+      "sha256": "c7e639e0e12210fc080366294fa8eac786b4cf42038de0aa205e259b18c0780e"
+    },
+    {
+      "file": "l1f21.bin",
+      "source_bytes": 3663172,
+      "packed_bytes": 1935507,
+      "arrays_verified": 10,
+      "sha256": "fc56f4da7b70e7e80feb0a5abf1809fafd57830b596afdc6fca588def6134cdd"
+    },
+    {
+      "file": "l1f22.bin",
+      "source_bytes": 4421512,
+      "packed_bytes": 2362920,
+      "arrays_verified": 10,
+      "sha256": "a463b821be9ebcbac34e1dbcebfb917d999d6a277b462c888986a9ab48d2ee84"
+    },
+    {
+      "file": "l1f23.bin",
+      "source_bytes": 4029036,
+      "packed_bytes": 2205248,
+      "arrays_verified": 10,
+      "sha256": "7d0d18b1ee3299cf0b669c8086a0d5960eafc5bc698e89cd441127ad04de7a18"
+    },
+    {
+      "file": "l1f24.bin",
+      "source_bytes": 3651372,
+      "packed_bytes": 1959767,
+      "arrays_verified": 10,
+      "sha256": "aedf779c614d5f772748875fbebe8c6779bc8c17c9eac8acfbde9013985f4cd8"
+    },
+    {
+      "file": "l1f25.bin",
+      "source_bytes": 3484008,
+      "packed_bytes": 1932193,
+      "arrays_verified": 10,
+      "sha256": "f9a202a1562e6ebd0d83707fa49ce1988a33f1d5251dc70022ca0ff34f1f96c4"
+    },
+    {
+      "file": "l1f26.bin",
+      "source_bytes": 3585200,
+      "packed_bytes": 1890679,
+      "arrays_verified": 10,
+      "sha256": "1b1a81285c67f7e2a3bcce0e3d5762f73c775d99ce89b46572d9b289d3ece33d"
+    },
+    {
+      "file": "l1f27.bin",
+      "source_bytes": 4300476,
+      "packed_bytes": 2313000,
+      "arrays_verified": 10,
+      "sha256": "5e87fbec53bb486583cbfbdc69f3565f8bcb96007509836bf5a8510770a9173c"
+    },
+    {
+      "file": "l1f28.bin",
+      "source_bytes": 3987124,
+      "packed_bytes": 2171406,
+      "arrays_verified": 10,
+      "sha256": "1961adc07f940397306056d992a662b8cbd438fdbf8942850a9e90fa00c0abec"
+    },
+    {
+      "file": "l1f29.bin",
+      "source_bytes": 3835308,
+      "packed_bytes": 2027377,
+      "arrays_verified": 10,
+      "sha256": "78af025eb396ba83851ab432d3dbea2b5b2425eb1a391763ece3b1ddf6ee7fdb"
+    },
+    {
+      "file": "l1f3.bin",
+      "source_bytes": 3886719,
+      "packed_bytes": 1957408,
+      "arrays_verified": 10,
+      "sha256": "985d5bc9a97976304a580888eb6baca321dc2a6d8a27c94feb52ab8c40243659"
+    },
+    {
+      "file": "l1f4.bin",
+      "source_bytes": 3652011,
+      "packed_bytes": 1772421,
+      "arrays_verified": 10,
+      "sha256": "053893c907750eaec6eada95f1305c8dfb053719d874cdd1dc789a68130dabb4"
+    },
+    {
+      "file": "l1f5.bin",
+      "source_bytes": 3812439,
+      "packed_bytes": 1903632,
+      "arrays_verified": 10,
+      "sha256": "f334749ca4aa40e44c3c9198e983a202518cb39fa110c2ffe27294a6f8d371c5"
+    },
+    {
+      "file": "l1f6.bin",
+      "source_bytes": 3757375,
+      "packed_bytes": 1860064,
+      "arrays_verified": 10,
+      "sha256": "f095594679b73bae7f6795dfb3477cb1559a74cabafe8139905a82dedb6b59b8"
+    },
+    {
+      "file": "l1f7.bin",
+      "source_bytes": 3879179,
+      "packed_bytes": 1874840,
+      "arrays_verified": 10,
+      "sha256": "280f9728e3a6bbd9aa7e514be1c07c6c54877e1ad447f8760c64caf64d3a8af2"
+    },
+    {
+      "file": "l1f8.bin",
+      "source_bytes": 3908647,
+      "packed_bytes": 1955224,
+      "arrays_verified": 10,
+      "sha256": "3cee6605add4b62345198454307f4020d5256cd77e01ad9b97d10359c0065962"
+    },
+    {
+      "file": "l1f9.bin",
+      "source_bytes": 3492199,
+      "packed_bytes": 1658759,
+      "arrays_verified": 10,
+      "sha256": "3e33270849b68bae32a1197e04d9fd4f916c353f8c40bc1c71bf3e1156bd22ed"
+    },
+    {
+      "file": "l2f0.bin",
+      "source_bytes": 3230039,
+      "packed_bytes": 1624551,
+      "arrays_verified": 10,
+      "sha256": "d5bcdca19a85e3d96ef56221beb7bc6948e883c7bd4bf50835c0c8dde4339218"
+    },
+    {
+      "file": "l2f1.bin",
+      "source_bytes": 3612979,
+      "packed_bytes": 1732284,
+      "arrays_verified": 10,
+      "sha256": "bc56389ad96ee47336386d1a9f8b00e20d5483c905f69ea7119221df8e6793f4"
+    },
+    {
+      "file": "l2f10.bin",
+      "source_bytes": 3767000,
+      "packed_bytes": 1867289,
+      "arrays_verified": 10,
+      "sha256": "991e7bcc5082e04e47a464f0d6380118b8cecc221c0b93fbbc77c046d77123f6"
+    },
+    {
+      "file": "l2f11.bin",
+      "source_bytes": 3894388,
+      "packed_bytes": 2011257,
+      "arrays_verified": 10,
+      "sha256": "99f9533573b524a8d855afe7ff8738901bdf97a648bbfebf9cc70a76cce1d6de"
+    },
+    {
+      "file": "l2f12.bin",
+      "source_bytes": 3829292,
+      "packed_bytes": 2093233,
+      "arrays_verified": 10,
+      "sha256": "39f7429259a74522391890271436bdd790cf636cac34cc464a7dee8823d5d3f6"
+    },
+    {
+      "file": "l2f13.bin",
+      "source_bytes": 3518192,
+      "packed_bytes": 1892628,
+      "arrays_verified": 10,
+      "sha256": "92f17cac1842eb6a5402d67ad55a929ef18161bf4a83aba324d4f90ddf356c22"
+    },
+    {
+      "file": "l2f14.bin",
+      "source_bytes": 4043412,
+      "packed_bytes": 2167428,
+      "arrays_verified": 10,
+      "sha256": "1f6661863e1191b7dd64f091bbd269e378cd21988d887a4e5b3be357d81cbfed"
+    },
+    {
+      "file": "l2f15.bin",
+      "source_bytes": 3864200,
+      "packed_bytes": 2127546,
+      "arrays_verified": 10,
+      "sha256": "f47752398beb7a5de993fe845dc03983d6a15dd7efa952fb06fe9f8e6e9fd6b1"
+    },
+    {
+      "file": "l2f16.bin",
+      "source_bytes": 4125620,
+      "packed_bytes": 2189353,
+      "arrays_verified": 10,
+      "sha256": "cda51d2b25a480a3c3d5fc9e4dc962603cc7b50376fdb84b84e26eba56d48495"
+    },
+    {
+      "file": "l2f17.bin",
+      "source_bytes": 3828128,
+      "packed_bytes": 2077523,
+      "arrays_verified": 10,
+      "sha256": "1ab127e3f7b255bb5c2306698a6dfeb943c340e86e42775fa0a47a64971f97a9"
+    },
+    {
+      "file": "l2f18.bin",
+      "source_bytes": 3405796,
+      "packed_bytes": 1849849,
+      "arrays_verified": 10,
+      "sha256": "a87f1585104d9dc300380e2602139d388b02941b29a895ddbbc789d0a1c93aa2"
+    },
+    {
+      "file": "l2f19.bin",
+      "source_bytes": 3833056,
+      "packed_bytes": 2052863,
+      "arrays_verified": 10,
+      "sha256": "601ca0f4f05b14c3cf178a3492cd635de903ea083af316c26b396a0f83e3d4f0"
+    },
+    {
+      "file": "l2f2.bin",
+      "source_bytes": 4061199,
+      "packed_bytes": 1999080,
+      "arrays_verified": 10,
+      "sha256": "960169b114a9f0d8c7010d9029ebce1558c69113228eb10d9aefdfe5f2d6a13c"
+    },
+    {
+      "file": "l2f20.bin",
+      "source_bytes": 3880712,
+      "packed_bytes": 2079042,
+      "arrays_verified": 10,
+      "sha256": "b7d76b1317855386da4a0e3802e9b3b6ebe1485564295bfe9f7e919f277bb648"
+    },
+    {
+      "file": "l2f21.bin",
+      "source_bytes": 4346016,
+      "packed_bytes": 2336293,
+      "arrays_verified": 10,
+      "sha256": "7a84d9375a0edc9d20bbbbc0920ca45a07942f3e57ca2ae033b874d294d706e2"
+    },
+    {
+      "file": "l2f22.bin",
+      "source_bytes": 3820936,
+      "packed_bytes": 2102399,
+      "arrays_verified": 10,
+      "sha256": "5c8025853944a36817c6909eb924ad7e0166e70028ca66b9e2b5acadaff988fd"
+    },
+    {
+      "file": "l2f23.bin",
+      "source_bytes": 3419804,
+      "packed_bytes": 1831448,
+      "arrays_verified": 10,
+      "sha256": "b0b8e3bfb33fd9298e7669a752f94b17f96d8c8e9b7f48ea04a0e3bfa4982ced"
+    },
+    {
+      "file": "l2f24.bin",
+      "source_bytes": 3619952,
+      "packed_bytes": 1944891,
+      "arrays_verified": 10,
+      "sha256": "5e0c14e8da81e101733fb5950ba0d53d871e5e666b9b7bc21539aaf61e43b036"
+    },
+    {
+      "file": "l2f25.bin",
+      "source_bytes": 3806672,
+      "packed_bytes": 2065752,
+      "arrays_verified": 10,
+      "sha256": "89e756f06048151b32936e63dcf2f64756e915e323885b5828d77b02bc566008"
+    },
+    {
+      "file": "l2f26.bin",
+      "source_bytes": 4434604,
+      "packed_bytes": 2392815,
+      "arrays_verified": 10,
+      "sha256": "8ac647ae8781065728f4399cbeeeb5a7102cb60e3185cb07aea00ee856dd4f55"
+    },
+    {
+      "file": "l2f27.bin",
+      "source_bytes": 3852620,
+      "packed_bytes": 2091407,
+      "arrays_verified": 10,
+      "sha256": "4b744539550260f0ec6f147dabe640d83e9bf98b32c55470e783d17bcaac037e"
+    },
+    {
+      "file": "l2f28.bin",
+      "source_bytes": 3528552,
+      "packed_bytes": 1913126,
+      "arrays_verified": 10,
+      "sha256": "46c7a8d016c2a21e0c153f8c7eb0c0006cb9323906a06bd8f0c2a25ececa6a4b"
+    },
+    {
+      "file": "l2f29.bin",
+      "source_bytes": 3536440,
+      "packed_bytes": 1919498,
+      "arrays_verified": 10,
+      "sha256": "8a8892744250e381a5a79525b17edc7df10ef262e2826b41ec7b77edb8184bbf"
+    },
+    {
+      "file": "l2f3.bin",
+      "source_bytes": 3880943,
+      "packed_bytes": 1918952,
+      "arrays_verified": 10,
+      "sha256": "820e42381e4032d9a4377cf8f7c8df58b880736c4125888e335bf2652ede6680"
+    },
+    {
+      "file": "l2f4.bin",
+      "source_bytes": 4022923,
+      "packed_bytes": 1929582,
+      "arrays_verified": 10,
+      "sha256": "1fa16a7cda5e25be3c01aa457aa17a8ab714be27e892c899adc5530af7332027"
+    },
+    {
+      "file": "l2f5.bin",
+      "source_bytes": 3651035,
+      "packed_bytes": 1818046,
+      "arrays_verified": 10,
+      "sha256": "4d212b4ccb63e9f665b11a2b03924c5633cd91cfcb1d0a42293759fcb5093148"
+    },
+    {
+      "file": "l2f6.bin",
+      "source_bytes": 3724695,
+      "packed_bytes": 1764408,
+      "arrays_verified": 10,
+      "sha256": "c02c5a0e7692a9af39bcb6e801149882692cc797eb34f37c4fb0aace53502cf5"
+    },
+    {
+      "file": "l2f7.bin",
+      "source_bytes": 3843099,
+      "packed_bytes": 1889502,
+      "arrays_verified": 10,
+      "sha256": "6298f9c43b420f400360808a4f03ef74059c904a01573e95a222c43296b4d762"
+    },
+    {
+      "file": "l2f8.bin",
+      "source_bytes": 3727215,
+      "packed_bytes": 1813444,
+      "arrays_verified": 10,
+      "sha256": "a06d0430aa68a26fc40a5423a74a56e5b25a4ffddee943828cf6868e9095c6dc"
+    },
+    {
+      "file": "l2f9.bin",
+      "source_bytes": 4105391,
+      "packed_bytes": 1968389,
+      "arrays_verified": 10,
+      "sha256": "0cae609b4f0385389103aad7661b7521521535144acac26dbe37e0df11672525"
+    },
+    {
+      "file": "l3f0.bin",
+      "source_bytes": 3809231,
+      "packed_bytes": 1833038,
+      "arrays_verified": 10,
+      "sha256": "dc2542e3868531b9551f962927e46c0aefb4ed71ee943250813421f10e559b0d"
+    },
+    {
+      "file": "l3f1.bin",
+      "source_bytes": 4434851,
+      "packed_bytes": 2159797,
+      "arrays_verified": 10,
+      "sha256": "a63abf5e4ca6a0474b51f503c5432d414e7730cb9e25a9aae6505dd354172438"
+    },
+    {
+      "file": "l3f10.bin",
+      "source_bytes": 3721800,
+      "packed_bytes": 1969923,
+      "arrays_verified": 10,
+      "sha256": "f309054593671fb4530b36e3560918c73b066f2a9faca32c9129b20112e733bf"
+    },
+    {
+      "file": "l3f11.bin",
+      "source_bytes": 4121416,
+      "packed_bytes": 2227311,
+      "arrays_verified": 10,
+      "sha256": "a86745f05f5b6a45d9ccf1df41f7d9c453c42d6819862883ffb22e6660fe5607"
+    },
+    {
+      "file": "l3f12.bin",
+      "source_bytes": 4581812,
+      "packed_bytes": 2482393,
+      "arrays_verified": 10,
+      "sha256": "70118e2e8e5293a07353f95a3b5d2260c1ee65d807d43e7fdeba1e43033cfcc4"
+    },
+    {
+      "file": "l3f13.bin",
+      "source_bytes": 4231036,
+      "packed_bytes": 2268768,
+      "arrays_verified": 10,
+      "sha256": "14b9abd446311a7788b48855a6df43eb25ebf198ae892e8a16b5f9f41c00d52f"
+    },
+    {
+      "file": "l3f14.bin",
+      "source_bytes": 3827868,
+      "packed_bytes": 2129441,
+      "arrays_verified": 10,
+      "sha256": "48ea78c0b30b1c368618d4a1058e437cd6e4791784754c6ef682ef1da7dc30ce"
+    },
+    {
+      "file": "l3f15.bin",
+      "source_bytes": 3686308,
+      "packed_bytes": 1959418,
+      "arrays_verified": 10,
+      "sha256": "63b9b3c8d3db78ff4962fde66f30219971c9276aef29300629865aab07224b28"
+    },
+    {
+      "file": "l3f16.bin",
+      "source_bytes": 3852408,
+      "packed_bytes": 2101346,
+      "arrays_verified": 10,
+      "sha256": "64cab5305cf3ab2f6eba420704c0a3c617041e1232657774bd8c198820addffd"
+    },
+    {
+      "file": "l3f17.bin",
+      "source_bytes": 4383360,
+      "packed_bytes": 2371612,
+      "arrays_verified": 10,
+      "sha256": "e8a5129f28939c4b9f867f3fa2346b25eba0a57532a4ce7756c507e46c3b9731"
+    },
+    {
+      "file": "l3f18.bin",
+      "source_bytes": 4284056,
+      "packed_bytes": 2289245,
+      "arrays_verified": 10,
+      "sha256": "bb54b782c52a0a7a631bea3630be735106b92de68f41657ebe724ae2d3c014cb"
+    },
+    {
+      "file": "l3f19.bin",
+      "source_bytes": 3876784,
+      "packed_bytes": 2160852,
+      "arrays_verified": 10,
+      "sha256": "26b5e52b00f8f47d7f27a37b6338e5913ab22a69aea455f9bbbbcf1e00087d87"
+    },
+    {
+      "file": "l3f2.bin",
+      "source_bytes": 4470743,
+      "packed_bytes": 2209995,
+      "arrays_verified": 10,
+      "sha256": "d800c0b34aa2e1e4c6c74064cc1724b478c6d9bfbd058f8869dae316ddcc49a7"
+    },
+    {
+      "file": "l3f20.bin",
+      "source_bytes": 3761336,
+      "packed_bytes": 2001550,
+      "arrays_verified": 10,
+      "sha256": "ab93db3838712835e76845111ad5f084b3bd45fd565a4a6e604b4c2db65b8435"
+    },
+    {
+      "file": "l3f21.bin",
+      "source_bytes": 3763308,
+      "packed_bytes": 2067920,
+      "arrays_verified": 10,
+      "sha256": "80a68fd11b7f47b0bd4a8984d105524d1e11f2cabc9dc3905688c6b88a68ca80"
+    },
+    {
+      "file": "l3f22.bin",
+      "source_bytes": 4084224,
+      "packed_bytes": 2159958,
+      "arrays_verified": 10,
+      "sha256": "95b48a55ea2513c66608e936d49b0d9934c9cb5116cce523cd18b68f433c1fa2"
+    },
+    {
+      "file": "l3f23.bin",
+      "source_bytes": 4053016,
+      "packed_bytes": 2164183,
+      "arrays_verified": 10,
+      "sha256": "210e7d850eaf3bb06521a7025f9d57878558c7d801d3e996c6d648716125f289"
+    },
+    {
+      "file": "l3f24.bin",
+      "source_bytes": 4005316,
+      "packed_bytes": 2182607,
+      "arrays_verified": 10,
+      "sha256": "d1bb7b72b3cd154fdd29a0d2afaa62e5c8e122686f4095ea49ad4245bfb58b66"
+    },
+    {
+      "file": "l3f25.bin",
+      "source_bytes": 3880684,
+      "packed_bytes": 2050470,
+      "arrays_verified": 10,
+      "sha256": "ef41f9e44812116235cc3bc59265ad24c2bc257f15f7538811beb2ed0af2d738"
+    },
+    {
+      "file": "l3f26.bin",
+      "source_bytes": 3818356,
+      "packed_bytes": 2096284,
+      "arrays_verified": 10,
+      "sha256": "b6fed06b798a2ba88b55797e518621c2cd73901efff24a3070e5ee5a08090d90"
+    },
+    {
+      "file": "l3f27.bin",
+      "source_bytes": 3938548,
+      "packed_bytes": 2108693,
+      "arrays_verified": 10,
+      "sha256": "3cee7fbdbf467c275cdcfd9553922fe2880a151310f01ea316383bcee52c4a55"
+    },
+    {
+      "file": "l3f28.bin",
+      "source_bytes": 3950488,
+      "packed_bytes": 2112145,
+      "arrays_verified": 10,
+      "sha256": "d7862b252be017c2f1c1f708e898ff86910eeefc381932805c652a680f63e292"
+    },
+    {
+      "file": "l3f29.bin",
+      "source_bytes": 4009792,
+      "packed_bytes": 2174788,
+      "arrays_verified": 10,
+      "sha256": "c9e1a697e04dd3423298b3c881ac874eea2eca62cda203538657fa969286ac07"
+    },
+    {
+      "file": "l3f3.bin",
+      "source_bytes": 4138639,
+      "packed_bytes": 2128926,
+      "arrays_verified": 10,
+      "sha256": "5cf754857fd7dd71d9e570ceec592e4114c35ee6ebf4aaf94adaac27a873a026"
+    },
+    {
+      "file": "l3f4.bin",
+      "source_bytes": 3777891,
+      "packed_bytes": 2090543,
+      "arrays_verified": 10,
+      "sha256": "757e9e661a3b50931fa9425737a3c93fa9ee6b856e343f18e7df652f4b905a6f"
+    },
+    {
+      "file": "l3f5.bin",
+      "source_bytes": 3892975,
+      "packed_bytes": 2091631,
+      "arrays_verified": 10,
+      "sha256": "9e8475e18e5e43b84db13696b7096dab49de8d3dd26d34dd3cd861ac4d35db86"
+    },
+    {
+      "file": "l3f6.bin",
+      "source_bytes": 4275479,
+      "packed_bytes": 2318780,
+      "arrays_verified": 10,
+      "sha256": "4f1e4b2bb661cd0a5e6463f88e1092e1829eb705040a31bfec210dc1dcb3ac7d"
+    },
+    {
+      "file": "l3f7.bin",
+      "source_bytes": 4592531,
+      "packed_bytes": 2500991,
+      "arrays_verified": 10,
+      "sha256": "dbd5a5ced1b990a8359533f9bab0f394f3e716df56fa478c96974ed48f6da3fa"
+    },
+    {
+      "file": "l3f8.bin",
+      "source_bytes": 4199055,
+      "packed_bytes": 2217923,
+      "arrays_verified": 10,
+      "sha256": "ff604b01a3b9e354def3cd8577189961d92b08e7afb681f5269c16dfea6f1a2d"
+    },
+    {
+      "file": "l3f9.bin",
+      "source_bytes": 3788375,
+      "packed_bytes": 2090570,
+      "arrays_verified": 10,
+      "sha256": "4f7d8a03f734dcd18bd3150d9c8d877cad6c6b300ac989be77310ac011593518"
+    },
+    {
+      "file": "l4f0.bin",
+      "source_bytes": 3576143,
+      "packed_bytes": 1743032,
+      "arrays_verified": 10,
+      "sha256": "52bc7ab398be4ba592c902f4e38ea6ec9a15590c57210a652faf8fb4569dd618"
+    },
+    {
+      "file": "l4f1.bin",
+      "source_bytes": 3993595,
+      "packed_bytes": 1984836,
+      "arrays_verified": 10,
+      "sha256": "fb67cb33978f337ce721ac86c3dcbed7940fda99e11ab32ef112fad4298c2bd8"
+    },
+    {
+      "file": "l4f10.bin",
+      "source_bytes": 3812152,
+      "packed_bytes": 1862565,
+      "arrays_verified": 10,
+      "sha256": "42684954eba81f1d6a1eb8cac86caecbb131724600aa26341536ce993c1cfee7"
+    },
+    {
+      "file": "l4f11.bin",
+      "source_bytes": 3729144,
+      "packed_bytes": 1838603,
+      "arrays_verified": 10,
+      "sha256": "4aaeb091c1311ee199fbcccb140d9cc4da9b49aeea42f70c841bc01e07230e7a"
+    },
+    {
+      "file": "l4f12.bin",
+      "source_bytes": 4513648,
+      "packed_bytes": 2185357,
+      "arrays_verified": 10,
+      "sha256": "8eea05977112ed3ee2e26df075192c6db4a49133d080aea33e8c324cad27bdc2"
+    },
+    {
+      "file": "l4f13.bin",
+      "source_bytes": 4482460,
+      "packed_bytes": 2228443,
+      "arrays_verified": 10,
+      "sha256": "cf080508f97d64a240eb08cf3f998fafd58f354356761d09a7b5106260094986"
+    },
+    {
+      "file": "l4f14.bin",
+      "source_bytes": 4174748,
+      "packed_bytes": 2074423,
+      "arrays_verified": 10,
+      "sha256": "105a1b6fb7fc9d5bc8a4dffde01f6237020a473a6c5ad01d3b46196a559a542e"
+    },
+    {
+      "file": "l4f15.bin",
+      "source_bytes": 3856568,
+      "packed_bytes": 1885459,
+      "arrays_verified": 10,
+      "sha256": "facb3b94371c4952de5ce83434539659c6516be39019f12c3c14d2675fe10246"
+    },
+    {
+      "file": "l4f16.bin",
+      "source_bytes": 3712396,
+      "packed_bytes": 1812704,
+      "arrays_verified": 10,
+      "sha256": "3dd87efaeda2dde661bc8bd8cdbac75a0ff59ea258a9d450502f9a27faceb9a5"
+    },
+    {
+      "file": "l4f17.bin",
+      "source_bytes": 4379792,
+      "packed_bytes": 2144894,
+      "arrays_verified": 10,
+      "sha256": "e232d94423a58ac8a7d5f1b20129f01419890373495b5661381bbe9ac0072f56"
+    },
+    {
+      "file": "l4f18.bin",
+      "source_bytes": 4437988,
+      "packed_bytes": 2176513,
+      "arrays_verified": 10,
+      "sha256": "8f72d3e09104e1eca464a0e8991f572d696eafd1be53013df58b7176b88d2acf"
+    },
+    {
+      "file": "l4f19.bin",
+      "source_bytes": 4222100,
+      "packed_bytes": 2078410,
+      "arrays_verified": 10,
+      "sha256": "0d10cdf1d165f71534bc732004cf71dfaaadac35eb08182f2e1750d093694b68"
+    },
+    {
+      "file": "l4f2.bin",
+      "source_bytes": 4346367,
+      "packed_bytes": 2086603,
+      "arrays_verified": 10,
+      "sha256": "5125e1b4647911f3de5e5dae80231279f501686d56e5751f07ec0ed5d9262eee"
+    },
+    {
+      "file": "l4f20.bin",
+      "source_bytes": 3851764,
+      "packed_bytes": 1890519,
+      "arrays_verified": 10,
+      "sha256": "9c0b34aaa8d7adc53e1fdd996ab998ba35f1c229d72a1f1948d7db288071170b"
+    },
+    {
+      "file": "l4f21.bin",
+      "source_bytes": 3695900,
+      "packed_bytes": 1950221,
+      "arrays_verified": 10,
+      "sha256": "7d33f16ff9dda9c47a75028354bc065be354e4b8285fec9df3436472af162e31"
+    },
+    {
+      "file": "l4f22.bin",
+      "source_bytes": 4231500,
+      "packed_bytes": 2302624,
+      "arrays_verified": 10,
+      "sha256": "a4e6e5ebab4bd55a600a999d13d61510eeb07d0adb2997c0ca2f46558ad06b71"
+    },
+    {
+      "file": "l4f23.bin",
+      "source_bytes": 4233076,
+      "packed_bytes": 2260010,
+      "arrays_verified": 10,
+      "sha256": "aa585edb42f62381f2a788dc62a2c439ee9343e53ef48d9970b387b95be4d5b8"
+    },
+    {
+      "file": "l4f24.bin",
+      "source_bytes": 4190480,
+      "packed_bytes": 2258809,
+      "arrays_verified": 10,
+      "sha256": "fe1893c0f638a74bea5dcb2e331e99fbe8b7626650ee0f391e43b84fee95deda"
+    },
+    {
+      "file": "l4f25.bin",
+      "source_bytes": 3993020,
+      "packed_bytes": 2192954,
+      "arrays_verified": 10,
+      "sha256": "ec330aeae080728354aba438d4707d9393d270fae3a3d21bf3a2a6991f6f03e7"
+    },
+    {
+      "file": "l4f26.bin",
+      "source_bytes": 3731756,
+      "packed_bytes": 2034302,
+      "arrays_verified": 10,
+      "sha256": "5686033783acaa1c63f1bfe5ffcc6094ab9aa9d7695fd3289cf1b72a6ec885ba"
+    },
+    {
+      "file": "l4f27.bin",
+      "source_bytes": 4246256,
+      "packed_bytes": 2288199,
+      "arrays_verified": 10,
+      "sha256": "800f33546bc1607469399209761dce773734b2f405c62612e4695c352a3252b2"
+    },
+    {
+      "file": "l4f28.bin",
+      "source_bytes": 3993028,
+      "packed_bytes": 2139075,
+      "arrays_verified": 10,
+      "sha256": "d153a2528bc30c9355a17ccbe2366849dc277c84b404d6ae5ef3e7e99800db1f"
+    },
+    {
+      "file": "l4f29.bin",
+      "source_bytes": 3976824,
+      "packed_bytes": 2157265,
+      "arrays_verified": 10,
+      "sha256": "892e9fc61d8a809b801785085df163b4c5dd271ded54a83607b89ee3a8576418"
+    },
+    {
+      "file": "l4f3.bin",
+      "source_bytes": 4253915,
+      "packed_bytes": 2106128,
+      "arrays_verified": 10,
+      "sha256": "15c0508de248ae9a44b909577ff29cc6be62542fa97b4df3d507c8039ad401d6"
+    },
+    {
+      "file": "l4f4.bin",
+      "source_bytes": 4098875,
+      "packed_bytes": 2009172,
+      "arrays_verified": 10,
+      "sha256": "ba7d6ed4d5f7af36700126239f69d14430decc9e697ee410a18d996047eb9035"
+    },
+    {
+      "file": "l4f5.bin",
+      "source_bytes": 3804607,
+      "packed_bytes": 1846322,
+      "arrays_verified": 10,
+      "sha256": "39c35b35a60f75b22dd83ff8b63675a1600b294037e2821f5e05ffa65332bc7f"
+    },
+    {
+      "file": "l4f6.bin",
+      "source_bytes": 3837471,
+      "packed_bytes": 1897515,
+      "arrays_verified": 10,
+      "sha256": "d4f809a47dc1d5aede14c83555d99db0a2133708cb1e0d90e56e53d433e6ad51"
+    },
+    {
+      "file": "l4f7.bin",
+      "source_bytes": 4428187,
+      "packed_bytes": 2154820,
+      "arrays_verified": 10,
+      "sha256": "e33c04ac1924774c434e71e1d249fe4a4e490da29ff17cb0a65813ef78e5fd3e"
+    },
+    {
+      "file": "l4f8.bin",
+      "source_bytes": 4384399,
+      "packed_bytes": 2162228,
+      "arrays_verified": 10,
+      "sha256": "636bb0a575024a1d4b0a15c7d3bcf1b9319de0e5de498466cc11406e1fc054f9"
+    },
+    {
+      "file": "l4f9.bin",
+      "source_bytes": 4045267,
+      "packed_bytes": 1980068,
+      "arrays_verified": 10,
+      "sha256": "92ccdfc61edfff187c88b0969fba149b31518c1fef81aead1a830e186ab06e45"
+    },
+    {
+      "file": "l5f0.bin",
+      "source_bytes": 4119471,
+      "packed_bytes": 2014843,
+      "arrays_verified": 10,
+      "sha256": "b5be586cfef1ddab9299da1d462d716acb26948a1457e73b82ade0b1c4ad374a"
+    },
+    {
+      "file": "l5f1.bin",
+      "source_bytes": 4062771,
+      "packed_bytes": 1999504,
+      "arrays_verified": 10,
+      "sha256": "c58dbb29e0f244f5ec8cd9986726fbf80b4098ad7cbbc4f106394a5066bbdb6a"
+    },
+    {
+      "file": "l5f10.bin",
+      "source_bytes": 4427368,
+      "packed_bytes": 2502696,
+      "arrays_verified": 10,
+      "sha256": "fb0e2aa4c7f624c9ad6361f89ce56875c925d53ffc96ca560e52cd0c3e17e424"
+    },
+    {
+      "file": "l5f11.bin",
+      "source_bytes": 4048216,
+      "packed_bytes": 2221495,
+      "arrays_verified": 10,
+      "sha256": "60cef50137cfe2716a890ad181f990a2930c39e2b3fa330c92c3f0dc602ce4cd"
+    },
+    {
+      "file": "l5f12.bin",
+      "source_bytes": 4361260,
+      "packed_bytes": 2377964,
+      "arrays_verified": 10,
+      "sha256": "1dae1b9f242c82ff69e619a6674af0bd69401f35c5fdb70c29edd54298c8d6ae"
+    },
+    {
+      "file": "l5f13.bin",
+      "source_bytes": 4895668,
+      "packed_bytes": 2653678,
+      "arrays_verified": 10,
+      "sha256": "2571c3e17e33d5326540ab4485794382f58aa46ac8dd121eb7f83b6cb1ea06cd"
+    },
+    {
+      "file": "l5f14.bin",
+      "source_bytes": 5295332,
+      "packed_bytes": 2928430,
+      "arrays_verified": 10,
+      "sha256": "c27915cd2d48863c36d028a2694b4ee859a948a9ab2392754d29a94c8004a6ca"
+    },
+    {
+      "file": "l5f15.bin",
+      "source_bytes": 4576352,
+      "packed_bytes": 2562216,
+      "arrays_verified": 10,
+      "sha256": "ea424db61bd7aee9270b7aec979a0c5fa5ed7c6e3ab82c93842cab0649db1216"
+    },
+    {
+      "file": "l5f16.bin",
+      "source_bytes": 4247688,
+      "packed_bytes": 2325470,
+      "arrays_verified": 10,
+      "sha256": "b6bb28a3a3821ca0abf5288e917df4aa78ab3296e9a22a2ad0db014427170db7"
+    },
+    {
+      "file": "l5f17.bin",
+      "source_bytes": 4272672,
+      "packed_bytes": 2356246,
+      "arrays_verified": 10,
+      "sha256": "1a23167d2e600e585c1dfb6447cd5c1d4f072685bbc5928e8fb4e594739fe47e"
+    },
+    {
+      "file": "l5f18.bin",
+      "source_bytes": 4700644,
+      "packed_bytes": 2544847,
+      "arrays_verified": 10,
+      "sha256": "cd665351c89c1ecf51a44d0f7cfd8fa9095b6b21619525ac354f92a42fbdc578"
+    },
+    {
+      "file": "l5f19.bin",
+      "source_bytes": 5159560,
+      "packed_bytes": 2835826,
+      "arrays_verified": 10,
+      "sha256": "b1ba3ae09886f9949fe4dccd7c65241a6f971a34df74c9ccd219c2ec79436e1b"
+    },
+    {
+      "file": "l5f2.bin",
+      "source_bytes": 4839139,
+      "packed_bytes": 2446858,
+      "arrays_verified": 10,
+      "sha256": "d7ab9c24bf500b8df1fae946ddb722690a59343200207cba3f5a844cbe081d83"
+    },
+    {
+      "file": "l5f20.bin",
+      "source_bytes": 4680424,
+      "packed_bytes": 2611509,
+      "arrays_verified": 10,
+      "sha256": "0d08c37af66df521ff42fd98ef6b35d0ea2fb90220ad184c8e8bb88a2d8c6137"
+    },
+    {
+      "file": "l5f21.bin",
+      "source_bytes": 4505640,
+      "packed_bytes": 2482045,
+      "arrays_verified": 10,
+      "sha256": "e37181cc64be0274b6bafc6f0d4e6787b0b576ba54036de95f2f2c2906443335"
+    },
+    {
+      "file": "l5f22.bin",
+      "source_bytes": 4336360,
+      "packed_bytes": 2419206,
+      "arrays_verified": 10,
+      "sha256": "6a7aba841b4302cd56abc953c91b5745489400c45ab3c505ddc5008d8a7280de"
+    },
+    {
+      "file": "l5f23.bin",
+      "source_bytes": 4627872,
+      "packed_bytes": 2504528,
+      "arrays_verified": 10,
+      "sha256": "99f397ae141d7df6535dddbe21ac072f6e56bbff48fde109d81c2f36e58da64c"
+    },
+    {
+      "file": "l5f24.bin",
+      "source_bytes": 4770240,
+      "packed_bytes": 2633127,
+      "arrays_verified": 10,
+      "sha256": "1b9177c8c592914bad07882174ec21240755eba219baea3f4158bcb91607db98"
+    },
+    {
+      "file": "l5f25.bin",
+      "source_bytes": 4656700,
+      "packed_bytes": 2560293,
+      "arrays_verified": 10,
+      "sha256": "d6477056a9bc2ca5c377b4d9df9fd09e7a62d2422efaa7c251be3ee1aace1cf2"
+    },
+    {
+      "file": "l5f26.bin",
+      "source_bytes": 4828824,
+      "packed_bytes": 2666105,
+      "arrays_verified": 10,
+      "sha256": "d3ffd6970f5f05a98bcbf54c60432913fe5627f81fb457dba40b0c9536a6c9d2"
+    },
+    {
+      "file": "l5f27.bin",
+      "source_bytes": 4497524,
+      "packed_bytes": 2509400,
+      "arrays_verified": 10,
+      "sha256": "a4204b3911f04987e59c3d9af70f0da90d914d40be87927473c7126fa57c1862"
+    },
+    {
+      "file": "l5f28.bin",
+      "source_bytes": 4631216,
+      "packed_bytes": 2508808,
+      "arrays_verified": 10,
+      "sha256": "71e0a3b4d95a764bccaa65d641ea517b5f12c7addfa208fc5d5ccd6cf710d5f3"
+    },
+    {
+      "file": "l5f29.bin",
+      "source_bytes": 4437748,
+      "packed_bytes": 2478276,
+      "arrays_verified": 10,
+      "sha256": "a028245e2358fb39f0258a2760630a28883fc07726158890222b797b2eb43106"
+    },
+    {
+      "file": "l5f3.bin",
+      "source_bytes": 4939223,
+      "packed_bytes": 2660609,
+      "arrays_verified": 10,
+      "sha256": "4e7555a835d2e6950163296c45af2dec7c6a965d4eadd657d8bc3eb00f99564f"
+    },
+    {
+      "file": "l5f4.bin",
+      "source_bytes": 4995447,
+      "packed_bytes": 2761046,
+      "arrays_verified": 10,
+      "sha256": "3cb458e75e6e955442c2e9044127e2aa376fc6d05e847165a078233c23780f49"
+    },
+    {
+      "file": "l5f5.bin",
+      "source_bytes": 4378203,
+      "packed_bytes": 2473996,
+      "arrays_verified": 10,
+      "sha256": "b1eaed8b31cca43956292dbed76b1cccf7eabdcb777d1c27de5adb51f07778f1"
+    },
+    {
+      "file": "l5f6.bin",
+      "source_bytes": 3970847,
+      "packed_bytes": 2148074,
+      "arrays_verified": 10,
+      "sha256": "99b5ce9c4c712dca7255c916479711673eec0fd4ceab7b0a719d1b028ca4c2b1"
+    },
+    {
+      "file": "l5f7.bin",
+      "source_bytes": 4604023,
+      "packed_bytes": 2495307,
+      "arrays_verified": 10,
+      "sha256": "c0a204079737de2c31c56dc5bf8cc9040fe5d5fb019155fcd468596a6e35db85"
+    },
+    {
+      "file": "l5f8.bin",
+      "source_bytes": 4989651,
+      "packed_bytes": 2759489,
+      "arrays_verified": 10,
+      "sha256": "762abd172447b5967c4b86b4e64135d0d649e18de6354132700038189f1252ac"
+    },
+    {
+      "file": "l5f9.bin",
+      "source_bytes": 5222939,
+      "packed_bytes": 2920775,
+      "arrays_verified": 10,
+      "sha256": "a614e4d0e719acd90fad1a8bde25382d9d1ebe792300784125a92ab2e20af7f2"
+    },
+    {
+      "file": "l6f0.bin",
+      "source_bytes": 4283551,
+      "packed_bytes": 2068485,
+      "arrays_verified": 10,
+      "sha256": "36344103ee2797e289033e75daca4b3992eea09494951e9323a3110e3518bede"
+    },
+    {
+      "file": "l6f1.bin",
+      "source_bytes": 5071463,
+      "packed_bytes": 2714702,
+      "arrays_verified": 10,
+      "sha256": "b081c095f64bd35838638e30e3e9b09a8df1c820f336cd0f8914ee6de291fb27"
+    },
+    {
+      "file": "l6f10.bin",
+      "source_bytes": 4109180,
+      "packed_bytes": 2189441,
+      "arrays_verified": 10,
+      "sha256": "108e0d73dad51468c15498a2d3b2302f1e77aa8bbb8ba6946cf851289163c723"
+    },
+    {
+      "file": "l6f11.bin",
+      "source_bytes": 4952720,
+      "packed_bytes": 2703139,
+      "arrays_verified": 10,
+      "sha256": "7679bac1f5791e478b725028f268327e1b8aa6499fde07c570de0b688905b9f5"
+    },
+    {
+      "file": "l6f12.bin",
+      "source_bytes": 5070236,
+      "packed_bytes": 2820608,
+      "arrays_verified": 10,
+      "sha256": "efb886b7adc7e970e68a0af6f9299b79ef249e85c2de353b645638d01782864b"
+    },
+    {
+      "file": "l6f13.bin",
+      "source_bytes": 5121268,
+      "packed_bytes": 2825647,
+      "arrays_verified": 10,
+      "sha256": "665acb6d8328c2f340f8965e5c2ac9e312d8bbd221ee41e61f1a783dc33dcb20"
+    },
+    {
+      "file": "l6f14.bin",
+      "source_bytes": 4204892,
+      "packed_bytes": 2384826,
+      "arrays_verified": 10,
+      "sha256": "170b69a1e93b036f0fd57cd6864624f270579165400b1b914ee920bc258d28e3"
+    },
+    {
+      "file": "l6f15.bin",
+      "source_bytes": 4079824,
+      "packed_bytes": 2178331,
+      "arrays_verified": 10,
+      "sha256": "1e9ef64af2a3b5aa5afb40e90495db853d3fb177de4eb40b896a904f6041281d"
+    },
+    {
+      "file": "l6f16.bin",
+      "source_bytes": 4725888,
+      "packed_bytes": 2575462,
+      "arrays_verified": 10,
+      "sha256": "a791cc84a19b611a62efaf47e133f73336a50a2775fde29fe33728363a2587fd"
+    },
+    {
+      "file": "l6f17.bin",
+      "source_bytes": 4943308,
+      "packed_bytes": 2748942,
+      "arrays_verified": 10,
+      "sha256": "e1e1d046994d0b7e6ba6f6f2cf7d3c9ed00d51846d7706a3ec396da7966a3dba"
+    },
+    {
+      "file": "l6f18.bin",
+      "source_bytes": 5325184,
+      "packed_bytes": 2950257,
+      "arrays_verified": 10,
+      "sha256": "629c0125e41c667c9d8c2555b39940d3aad8831833cec373d92ef09ce1520a79"
+    },
+    {
+      "file": "l6f19.bin",
+      "source_bytes": 4319260,
+      "packed_bytes": 2462029,
+      "arrays_verified": 10,
+      "sha256": "70150c814ec10c09a71def574246a5b3fda475cecd705f74cbbb4c96abf148d0"
+    },
+    {
+      "file": "l6f2.bin",
+      "source_bytes": 4728943,
+      "packed_bytes": 2645125,
+      "arrays_verified": 10,
+      "sha256": "fb9e0f6c403365158065a5eac32d3349e7219c5524342d09ce141426fe122e98"
+    },
+    {
+      "file": "l6f20.bin",
+      "source_bytes": 4161264,
+      "packed_bytes": 2224055,
+      "arrays_verified": 10,
+      "sha256": "5f0607747384c88a49e6f27889205e7024c98482b34bd377fea646b38586dea7"
+    },
+    {
+      "file": "l6f21.bin",
+      "source_bytes": 4531036,
+      "packed_bytes": 2490400,
+      "arrays_verified": 10,
+      "sha256": "f9318a20fc3fc50989664308ae052e5e1cc3336f3e83cf74ca9568ec2548bafb"
+    },
+    {
+      "file": "l6f22.bin",
+      "source_bytes": 4761424,
+      "packed_bytes": 2648775,
+      "arrays_verified": 10,
+      "sha256": "a9634315f57e486fe3d741237256e72b22c1ed9395cb5aff619ae4b9c8643d58"
+    },
+    {
+      "file": "l6f23.bin",
+      "source_bytes": 5297528,
+      "packed_bytes": 2910556,
+      "arrays_verified": 10,
+      "sha256": "d9c82c6dd81fb7b423b9520e16b8ceb31cd5cee5864b612931e4e42ad236a1f8"
+    },
+    {
+      "file": "l6f24.bin",
+      "source_bytes": 4479676,
+      "packed_bytes": 2535281,
+      "arrays_verified": 10,
+      "sha256": "aeb0cd50b1d5ee835f845e8daeba3d265b3d2a1b02513617737f3b6448f2bc57"
+    },
+    {
+      "file": "l6f25.bin",
+      "source_bytes": 4366572,
+      "packed_bytes": 2366799,
+      "arrays_verified": 10,
+      "sha256": "85ad2427f180ec995d3563afcb6a2e88ccaae3f2da3889de9d036977cf284faf"
+    },
+    {
+      "file": "l6f26.bin",
+      "source_bytes": 4533800,
+      "packed_bytes": 2513565,
+      "arrays_verified": 10,
+      "sha256": "e40cb5b2694019627ba361fda56db5148a6d593c4734093a513cbae60141b056"
+    },
+    {
+      "file": "l6f27.bin",
+      "source_bytes": 4518284,
+      "packed_bytes": 2508160,
+      "arrays_verified": 10,
+      "sha256": "f98d7a6570563166b0a5825d182ffe35f595409503b6eb97509f42b9a3f330a6"
+    },
+    {
+      "file": "l6f28.bin",
+      "source_bytes": 5094948,
+      "packed_bytes": 2782404,
+      "arrays_verified": 10,
+      "sha256": "ec9a4091011f4297b9ded7c14b318234de27d16a2c77365f623c14eae0964fae"
+    },
+    {
+      "file": "l6f29.bin",
+      "source_bytes": 4559824,
+      "packed_bytes": 2571822,
+      "arrays_verified": 10,
+      "sha256": "c628d6e58422a267a8fb610f2834b72a78c09cc8ea53f004f2174d1109811777"
+    },
+    {
+      "file": "l6f3.bin",
+      "source_bytes": 4706983,
+      "packed_bytes": 2569603,
+      "arrays_verified": 10,
+      "sha256": "ac7dd74f91d4f21c6cca92d026292654687ea3a4bf09f687e13e0e5ed5918c79"
+    },
+    {
+      "file": "l6f4.bin",
+      "source_bytes": 4236635,
+      "packed_bytes": 2381834,
+      "arrays_verified": 10,
+      "sha256": "4bd9b381bb4ffa82e5ec8397d1b02c582bb6deced4f17d53206adda89b458c5c"
+    },
+    {
+      "file": "l6f5.bin",
+      "source_bytes": 4311167,
+      "packed_bytes": 2338191,
+      "arrays_verified": 10,
+      "sha256": "fee83b5799bafef328a680406754d7f9b716ca4c5645f5fe482b5c26d61d3ff8"
+    },
+    {
+      "file": "l6f6.bin",
+      "source_bytes": 5085391,
+      "packed_bytes": 2772501,
+      "arrays_verified": 10,
+      "sha256": "ff475b8eb39f0e4d998827b5edf6989d841d01a746e5f2125df5ac296440dcfe"
+    },
+    {
+      "file": "l6f7.bin",
+      "source_bytes": 4919343,
+      "packed_bytes": 2732227,
+      "arrays_verified": 10,
+      "sha256": "46e226b478d0daf4512e1fee85d9c943de9c4bd18483f949dbe49c74f1f9b8eb"
+    },
+    {
+      "file": "l6f8.bin",
+      "source_bytes": 4904863,
+      "packed_bytes": 2693686,
+      "arrays_verified": 10,
+      "sha256": "4eea1fda76859dfeb5776bb742bfeee2d67fc7990bff0228afa870732c8c7782"
+    },
+    {
+      "file": "l6f9.bin",
+      "source_bytes": 4164523,
+      "packed_bytes": 2354433,
+      "arrays_verified": 10,
+      "sha256": "ba2054028c35b8ff5255780c513daeffed19a17f742f3bed2eed54fafc465a2a"
+    },
+    {
+      "file": "l7f0.bin",
+      "source_bytes": 4113083,
+      "packed_bytes": 2024506,
+      "arrays_verified": 10,
+      "sha256": "468fa6d37bce35669e9154a0c6dee0261b5bb72e8cb05c749f5c60d9914c6b5d"
+    },
+    {
+      "file": "l7f1.bin",
+      "source_bytes": 4377751,
+      "packed_bytes": 2340665,
+      "arrays_verified": 10,
+      "sha256": "7799772414c6e438f1aabed47502bc3fe1c2d8a26aa5bac7dd037dccb579369a"
+    },
+    {
+      "file": "l7f10.bin",
+      "source_bytes": 4290348,
+      "packed_bytes": 2342471,
+      "arrays_verified": 10,
+      "sha256": "4bb7ecee6063ab3127d50281c8ae10a0068576cfd05b0fbb08665f2539ef1688"
+    },
+    {
+      "file": "l7f11.bin",
+      "source_bytes": 4703912,
+      "packed_bytes": 2613931,
+      "arrays_verified": 10,
+      "sha256": "05752ac3ec676f87c4525d749aa132ad87ed680b44c424aed134f836c61a7c7f"
+    },
+    {
+      "file": "l7f12.bin",
+      "source_bytes": 3965620,
+      "packed_bytes": 2205656,
+      "arrays_verified": 10,
+      "sha256": "06d8c124b49103b351e6ae790fc12d52a1e2af77d5d969fe47dc70caff862e8e"
+    },
+    {
+      "file": "l7f13.bin",
+      "source_bytes": 3618256,
+      "packed_bytes": 1982356,
+      "arrays_verified": 10,
+      "sha256": "44c008f1e1e6813ab3d02204d69c20fd0b7821c6930b935d4c2d77a1aedeede2"
+    },
+    {
+      "file": "l7f14.bin",
+      "source_bytes": 3681336,
+      "packed_bytes": 2009251,
+      "arrays_verified": 10,
+      "sha256": "059a5d1907d227fdda1c8a5a5090cccc3deace66ff41479e5c5bf83770889e36"
+    },
+    {
+      "file": "l7f15.bin",
+      "source_bytes": 4055740,
+      "packed_bytes": 2183367,
+      "arrays_verified": 10,
+      "sha256": "23b8d331eb141d701bb108e5013af6f877bfd0471a118cfd212162a23d8fe09d"
+    },
+    {
+      "file": "l7f16.bin",
+      "source_bytes": 4631816,
+      "packed_bytes": 2541307,
+      "arrays_verified": 10,
+      "sha256": "1966954ce0b9cbe3e494db0889774155c177647e115f536df36154ca88507893"
+    },
+    {
+      "file": "l7f17.bin",
+      "source_bytes": 4067516,
+      "packed_bytes": 2264734,
+      "arrays_verified": 10,
+      "sha256": "a9600e105d5c50e9f0d63fb07762d3668041a7728979923da8b477c32d78ba32"
+    },
+    {
+      "file": "l7f18.bin",
+      "source_bytes": 3806096,
+      "packed_bytes": 2080279,
+      "arrays_verified": 10,
+      "sha256": "27c3a802eb41cfcd1cd53dc2008e570eb09bed824965929208e962fa9a3ea593"
+    },
+    {
+      "file": "l7f19.bin",
+      "source_bytes": 3700188,
+      "packed_bytes": 2056844,
+      "arrays_verified": 10,
+      "sha256": "9ae0a037618dc056d2d6fcadf4299d2c7c8f88bb41a85ca122571767f6ec652a"
+    },
+    {
+      "file": "l7f2.bin",
+      "source_bytes": 3879295,
+      "packed_bytes": 2192140,
+      "arrays_verified": 10,
+      "sha256": "e453c06a69135905bd6da9a62da5ea6970eba6861b9e8a5c130eabd153d8a74d"
+    },
+    {
+      "file": "l7f20.bin",
+      "source_bytes": 4017308,
+      "packed_bytes": 2144802,
+      "arrays_verified": 10,
+      "sha256": "bdb2cbf3f823b92ca5ad6648ebb930eda9124c68d3f1f90c46f8aca55c85b112"
+    },
+    {
+      "file": "l7f21.bin",
+      "source_bytes": 4346144,
+      "packed_bytes": 2413293,
+      "arrays_verified": 10,
+      "sha256": "a08d87e5a6b466e60d7cab68707a0e25035973d79908c6093ba62fd9fcec76fc"
+    },
+    {
+      "file": "l7f22.bin",
+      "source_bytes": 4075192,
+      "packed_bytes": 2258545,
+      "arrays_verified": 10,
+      "sha256": "fa71a4918128130b843f75549ec72965599574313c3b44b051b9894a4c3e5365"
+    },
+    {
+      "file": "l7f23.bin",
+      "source_bytes": 4049468,
+      "packed_bytes": 2211736,
+      "arrays_verified": 10,
+      "sha256": "60dec64de26a9ecb4d9b1b973ed437289d7a9cffb7454e90851da97b5e838c47"
+    },
+    {
+      "file": "l7f24.bin",
+      "source_bytes": 3831244,
+      "packed_bytes": 2101815,
+      "arrays_verified": 10,
+      "sha256": "aca9f7024e775e7ce72a71fc9f557df6971ab0e1380f08596ab5fc634083e52f"
+    },
+    {
+      "file": "l7f25.bin",
+      "source_bytes": 3961740,
+      "packed_bytes": 2133094,
+      "arrays_verified": 10,
+      "sha256": "9396c9767033209260d547bd7c766ea079affbc3bf663de8a38a2276558df28e"
+    },
+    {
+      "file": "l7f26.bin",
+      "source_bytes": 3963796,
+      "packed_bytes": 2200151,
+      "arrays_verified": 10,
+      "sha256": "e40e33b0eac7e1d027041766e68297771c6e45ff3a2cb7fbf23bbb17f2b06f7a"
+    },
+    {
+      "file": "l7f27.bin",
+      "source_bytes": 3964896,
+      "packed_bytes": 2158819,
+      "arrays_verified": 10,
+      "sha256": "9b606ab16696b4aa70de5d8fb3cb443777f6e241df2f87a97e75e803e1eea887"
+    },
+    {
+      "file": "l7f28.bin",
+      "source_bytes": 4288360,
+      "packed_bytes": 2380834,
+      "arrays_verified": 10,
+      "sha256": "6537afb61b63233908254bdc2ef7ed24fb7fd1218fedeef811533df8e3169fe6"
+    },
+    {
+      "file": "l7f29.bin",
+      "source_bytes": 4001980,
+      "packed_bytes": 2235472,
+      "arrays_verified": 10,
+      "sha256": "ec850e6683159824e0229a91e7417153b69e7de6aeb5ed227f06361029d02c17"
+    },
+    {
+      "file": "l7f3.bin",
+      "source_bytes": 3486599,
+      "packed_bytes": 1919990,
+      "arrays_verified": 10,
+      "sha256": "4fa9f1359e23f540d300d23a3bcb8d19b2d7416ad53568b9de345424659d1693"
+    },
+    {
+      "file": "l7f4.bin",
+      "source_bytes": 4085951,
+      "packed_bytes": 2215662,
+      "arrays_verified": 10,
+      "sha256": "020fb4e0e9954848c6035b054763a9b82f87afed468acd1210018821dd124c0a"
+    },
+    {
+      "file": "l7f5.bin",
+      "source_bytes": 4356051,
+      "packed_bytes": 2401555,
+      "arrays_verified": 10,
+      "sha256": "2a73c889ed712540d13f5e275c85d021d150f8a05fe3553e93228440687d0654"
+    },
+    {
+      "file": "l7f6.bin",
+      "source_bytes": 4572727,
+      "packed_bytes": 2553229,
+      "arrays_verified": 10,
+      "sha256": "f51f21a2e599c0cce8f91abb07be1c8c401075cc91284938a5384d4d52482b2a"
+    },
+    {
+      "file": "l7f7.bin",
+      "source_bytes": 3881927,
+      "packed_bytes": 2191771,
+      "arrays_verified": 10,
+      "sha256": "7f0aaea02653bead0532dfc8939f3f38d67e59799aded56741b00475e9b935db"
+    },
+    {
+      "file": "l7f8.bin",
+      "source_bytes": 3499023,
+      "packed_bytes": 1912391,
+      "arrays_verified": 10,
+      "sha256": "239beb086ff76c829cdb55765120376cce9c4068a2751138b00df517f73906e0"
+    },
+    {
+      "file": "l7f9.bin",
+      "source_bytes": 3812035,
+      "packed_bytes": 2064380,
+      "arrays_verified": 10,
+      "sha256": "605f86779ac190eb9bf70561ad88c5548a05ee9ceffcc5b086a0ee9fdfbf7259"
+    },
+    {
+      "file": "core-log2-f0.bin",
+      "source_bytes": 10230794,
+      "packed_bytes": 3264260,
+      "arrays_verified": 12,
+      "sha256": "93835e16e1c5314d7f3da755e1ea88dafcb05ca2101869f15a560ca167e1aed6"
+    },
+    {
+      "file": "core-log2-f1.bin",
+      "source_bytes": 10294363,
+      "packed_bytes": 3254762,
+      "arrays_verified": 12,
+      "sha256": "88fdfe40b3986134f941818350222a37394c58713221ebfee3efeecb04140a51"
+    },
+    {
+      "file": "core-log2-f10.bin",
+      "source_bytes": 10329757,
+      "packed_bytes": 3261826,
+      "arrays_verified": 12,
+      "sha256": "f3062db854a907fb9bc440d933468bf355c939ce42a17ed324f312bd06aabdcb"
+    },
+    {
+      "file": "core-log2-f11.bin",
+      "source_bytes": 10416529,
+      "packed_bytes": 3246661,
+      "arrays_verified": 12,
+      "sha256": "754d14d7fafeee86be5ad993a9f328fcc98a040b2bff02b93a2ea8f0cb74daa0"
+    },
+    {
+      "file": "core-log2-f12.bin",
+      "source_bytes": 10907492,
+      "packed_bytes": 3469012,
+      "arrays_verified": 12,
+      "sha256": "fbadcaae921fc6644351af0c570e5c5e47b6fd0c12bab68298c7fa110404d05d"
+    },
+    {
+      "file": "core-log2-f13.bin",
+      "source_bytes": 10342195,
+      "packed_bytes": 3305598,
+      "arrays_verified": 12,
+      "sha256": "bd006152b3e9004482f563038a852724c26cba61777ced9bbca5ca192ce29530"
+    },
+    {
+      "file": "core-log2-f14.bin",
+      "source_bytes": 11185044,
+      "packed_bytes": 3544970,
+      "arrays_verified": 12,
+      "sha256": "213208226a0579796c5064228e9ecb43e4d9f82dc6a111d36f193d26dae53466"
+    },
+    {
+      "file": "core-log2-f15.bin",
+      "source_bytes": 10421679,
+      "packed_bytes": 3271965,
+      "arrays_verified": 12,
+      "sha256": "32f809c4cc8ed016020470e8c96ed6493d19a442c8a94f0410cb278cde1d77ec"
+    },
+    {
+      "file": "core-log2-f16.bin",
+      "source_bytes": 10752316,
+      "packed_bytes": 3340816,
+      "arrays_verified": 12,
+      "sha256": "07ebbaf907ed52a7558066be8386b0d6acccb599af48c69213c73f49ddb16944"
+    },
+    {
+      "file": "core-log2-f17.bin",
+      "source_bytes": 10775365,
+      "packed_bytes": 3427126,
+      "arrays_verified": 12,
+      "sha256": "2549b8f447953ff2176cada52f5b1f026dd32627409e910d602e44c662de03d7"
+    },
+    {
+      "file": "core-log2-f18.bin",
+      "source_bytes": 10232061,
+      "packed_bytes": 3281388,
+      "arrays_verified": 12,
+      "sha256": "1e8f84e81258dc34a2ffa9e8cc3272ffb143fda54858414152a1acf0f812cd44"
+    },
+    {
+      "file": "core-log2-f19.bin",
+      "source_bytes": 10967545,
+      "packed_bytes": 3493119,
+      "arrays_verified": 12,
+      "sha256": "fc061176265a1eeb4466cc0dfa5a0dc955482b61d09c4b6d48939e2bac1af5a7"
+    },
+    {
+      "file": "core-log2-f2.bin",
+      "source_bytes": 11164230,
+      "packed_bytes": 3510349,
+      "arrays_verified": 12,
+      "sha256": "ace7d88c36b27e620663c85bf8ca80837c3c0b3837a1006dfed39c00d6e3a902"
+    },
+    {
+      "file": "core-log2-f20.bin",
+      "source_bytes": 10430648,
+      "packed_bytes": 3263292,
+      "arrays_verified": 12,
+      "sha256": "f15ab3e5cc80bec8d8df606381956757adf1912318d7b2f1ccca2e9139f8a3d7"
+    },
+    {
+      "file": "core-log2-f21.bin",
+      "source_bytes": 11093484,
+      "packed_bytes": 3443335,
+      "arrays_verified": 12,
+      "sha256": "59afc26866ea3bfccba274c3d3761c0538816be7e0c9dcb0a67fbb62f4d93a16"
+    },
+    {
+      "file": "core-log2-f22.bin",
+      "source_bytes": 10709936,
+      "packed_bytes": 3401775,
+      "arrays_verified": 12,
+      "sha256": "8b2a7d761a4307b420ed66d1b43196e0153854b754ba20dd301a5d166cad776e"
+    },
+    {
+      "file": "core-log2-f23.bin",
+      "source_bytes": 10143084,
+      "packed_bytes": 3245791,
+      "arrays_verified": 12,
+      "sha256": "4a0a4bd3c89af60f10d28c125ddd94a248b9ae7dd174f2f6911958a2482920a1"
+    },
+    {
+      "file": "core-log2-f24.bin",
+      "source_bytes": 10716109,
+      "packed_bytes": 3438008,
+      "arrays_verified": 12,
+      "sha256": "24b28280466b77e955df466092ba9f240e02b5746d0183394e42ce1acaa96ec3"
+    },
+    {
+      "file": "core-log2-f25.bin",
+      "source_bytes": 10394992,
+      "packed_bytes": 3261332,
+      "arrays_verified": 12,
+      "sha256": "f01d92823f679dbc7ebc5aeb892f25ca75ddbbbccdaaf132dc78d556867321c4"
+    },
+    {
+      "file": "core-log2-f26.bin",
+      "source_bytes": 11251757,
+      "packed_bytes": 3490961,
+      "arrays_verified": 12,
+      "sha256": "bd8a90f1f7c0d0ccd0e2ebb7c8ef20ca85588de1ef37f2fcc9b1b6245cbad13c"
+    },
+    {
+      "file": "core-log2-f27.bin",
+      "source_bytes": 10702276,
+      "packed_bytes": 3396377,
+      "arrays_verified": 12,
+      "sha256": "58bd510387922784216e2f02f6db6377d29ebf651e345cbf9edfd6e550a578df"
+    },
+    {
+      "file": "core-log2-f28.bin",
+      "source_bytes": 10208241,
+      "packed_bytes": 3255728,
+      "arrays_verified": 12,
+      "sha256": "9be7b3b0db8f35209de021c75fdc0ed37bbd625660dbc6f66db4e9a0cc8e7161"
+    },
+    {
+      "file": "core-log2-f29.bin",
+      "source_bytes": 10536493,
+      "packed_bytes": 3383871,
+      "arrays_verified": 12,
+      "sha256": "d272b1dbd8f50b7e8fb91fb8982f3fccd84b9eb09c1936fb2c09daa0ca574fe1"
+    },
+    {
+      "file": "core-log2-f3.bin",
+      "source_bytes": 10663322,
+      "packed_bytes": 3370259,
+      "arrays_verified": 12,
+      "sha256": "1ff884eed4a57bcc844d07ed4dfe70611c0ec67f230ac6f14d2773a1c8a85c5c"
+    },
+    {
+      "file": "core-log2-f4.bin",
+      "source_bytes": 11062941,
+      "packed_bytes": 3506470,
+      "arrays_verified": 12,
+      "sha256": "46b2523a67b62de9b0f1c055f7a57799d55b35d77ab78fc7e463a9d1961a6f5e"
+    },
+    {
+      "file": "core-log2-f5.bin",
+      "source_bytes": 10207690,
+      "packed_bytes": 3238311,
+      "arrays_verified": 12,
+      "sha256": "42505a232458770f47ff857fe48799627c450adaa2a72aefcfab1645a9e6141b"
+    },
+    {
+      "file": "core-log2-f6.bin",
+      "source_bytes": 10322401,
+      "packed_bytes": 3240686,
+      "arrays_verified": 12,
+      "sha256": "15ec00bf5bdc4009f61a9362c50815f09e6b4cb24da871dc2417ed1bb205d8fb"
+    },
+    {
+      "file": "core-log2-f7.bin",
+      "source_bytes": 10917343,
+      "packed_bytes": 3458173,
+      "arrays_verified": 12,
+      "sha256": "5e57b9dabdce851566fc8954b534146d2cd24b3bf25312b4108c2d0e4da4cf03"
+    },
+    {
+      "file": "core-log2-f8.bin",
+      "source_bytes": 10584162,
+      "packed_bytes": 3366234,
+      "arrays_verified": 12,
+      "sha256": "36b1cdbe8debd1b808557c4e0ebcd65b5008bf4e57c7585e01f3412ea4277231"
+    },
+    {
+      "file": "core-log2-f9.bin",
+      "source_bytes": 11180882,
+      "packed_bytes": 3533659,
+      "arrays_verified": 12,
+      "sha256": "a2fc21593899b8f4eb622f50f584fbd66997062df496243a55c38eb2918738b8"
+    },
+    {
+      "file": "core-log4-f0.bin",
+      "source_bytes": 10843922,
+      "packed_bytes": 3457236,
+      "arrays_verified": 12,
+      "sha256": "e57298ca66e996a0dba779f75d1910428126f6ecdf312f6c07989f51d18e1572"
+    },
+    {
+      "file": "core-log4-f1.bin",
+      "source_bytes": 11044709,
+      "packed_bytes": 3504501,
+      "arrays_verified": 12,
+      "sha256": "3546a6168132fdd00b63fc0fd2dbae58960ba539cbfd1f6db6a9039826060f99"
+    },
+    {
+      "file": "core-log4-f10.bin",
+      "source_bytes": 10874828,
+      "packed_bytes": 3477973,
+      "arrays_verified": 12,
+      "sha256": "4e4432a8017233789a2cb69e678f0093934ae8671ab9c2af46f827d9ebc4c0aa"
+    },
+    {
+      "file": "core-log4-f11.bin",
+      "source_bytes": 10641237,
+      "packed_bytes": 3397966,
+      "arrays_verified": 12,
+      "sha256": "e11860ab69d02bb6b39a2fea1880b1b255a0119d48304cef77465e365419583c"
+    },
+    {
+      "file": "core-log4-f12.bin",
+      "source_bytes": 11460537,
+      "packed_bytes": 3571069,
+      "arrays_verified": 12,
+      "sha256": "316525e7b8cf743a3bbe33da21ceb74613df6575555a7535f5ad34ad4d95d5bc"
+    },
+    {
+      "file": "core-log4-f13.bin",
+      "source_bytes": 11255900,
+      "packed_bytes": 3512414,
+      "arrays_verified": 12,
+      "sha256": "3fe6068343542f0dcb20703d0c4f7fd2b22ffe10ac679d85a05e6c331776bbf7"
+    },
+    {
+      "file": "core-log4-f14.bin",
+      "source_bytes": 11126617,
+      "packed_bytes": 3522658,
+      "arrays_verified": 12,
+      "sha256": "d27ce66063bb96ffaeb68886bc7c36136b65bf8db317873c6ac544b41a20703c"
+    },
+    {
+      "file": "core-log4-f15.bin",
+      "source_bytes": 10862293,
+      "packed_bytes": 3469561,
+      "arrays_verified": 12,
+      "sha256": "d3f53ad00d46c68739399bccdbc3cb6694c7b32b8f0216c1a64b151a076f2ea7"
+    },
+    {
+      "file": "core-log4-f16.bin",
+      "source_bytes": 10577481,
+      "packed_bytes": 3374604,
+      "arrays_verified": 12,
+      "sha256": "939b275a3a8fcb00479b8b5507064a3a0dbc63594a9b2e98ccd33c43dbb12f3a"
+    },
+    {
+      "file": "core-log4-f17.bin",
+      "source_bytes": 11394056,
+      "packed_bytes": 3573226,
+      "arrays_verified": 12,
+      "sha256": "23654e3a2ae0d7269a956646c006ef236d22ad78f7d7bfe25b80028fd967f522"
+    },
+    {
+      "file": "core-log4-f18.bin",
+      "source_bytes": 11334149,
+      "packed_bytes": 3538769,
+      "arrays_verified": 12,
+      "sha256": "d1ce7520b349d699a2e20aae5918e1316eb3d9b7140ccf7c8e73bddb6694c2ed"
+    },
+    {
+      "file": "core-log4-f19.bin",
+      "source_bytes": 11208065,
+      "packed_bytes": 3542518,
+      "arrays_verified": 12,
+      "sha256": "a21c908957659b69ce9e74557a2b70309fc751efad6b0e50ac5b9e5fdcbab9a7"
+    },
+    {
+      "file": "core-log4-f2.bin",
+      "source_bytes": 11110954,
+      "packed_bytes": 3464230,
+      "arrays_verified": 12,
+      "sha256": "8d7049ee553446a89e168e7cb4b6aa01c7bb3ba558d155e9b0f6ef5943c56045"
+    },
+    {
+      "file": "core-log4-f20.bin",
+      "source_bytes": 10759088,
+      "packed_bytes": 3433135,
+      "arrays_verified": 12,
+      "sha256": "08fee4c6e4d532894f3c80781b07bb5aed2f157a8a1605eb9af67f6f70e37240"
+    },
+    {
+      "file": "core-log4-f21.bin",
+      "source_bytes": 10388492,
+      "packed_bytes": 3304443,
+      "arrays_verified": 12,
+      "sha256": "70b41a0c4b27f30708f30cb134fe5ee823859fb3eb992d4d42572beb4191a133"
+    },
+    {
+      "file": "core-log4-f22.bin",
+      "source_bytes": 11255436,
+      "packed_bytes": 3540804,
+      "arrays_verified": 12,
+      "sha256": "f15fcd6ca7b0ef38f8f8c0893b958410804ad16c6ac106722423e7f20d1a0d2c"
+    },
+    {
+      "file": "core-log4-f23.bin",
+      "source_bytes": 11068472,
+      "packed_bytes": 3473690,
+      "arrays_verified": 12,
+      "sha256": "1b3bb482d23de03f9ecb6ed346cbc8b3d4118142cf8e13f3035f120f021aa308"
+    },
+    {
+      "file": "core-log4-f24.bin",
+      "source_bytes": 11244176,
+      "packed_bytes": 3551832,
+      "arrays_verified": 12,
+      "sha256": "06810dc4fffc68bc4c72831237da2ede3efaa2317b5cd607f2e1acf84fa02fd1"
+    },
+    {
+      "file": "core-log4-f25.bin",
+      "source_bytes": 10572312,
+      "packed_bytes": 3344463,
+      "arrays_verified": 12,
+      "sha256": "812d2430de3e95c212805ff8fd55d51c0e287f7cee1bfa582ddb3bf7ecf023a4"
+    },
+    {
+      "file": "core-log4-f26.bin",
+      "source_bytes": 10356021,
+      "packed_bytes": 3281373,
+      "arrays_verified": 12,
+      "sha256": "25857ee35ded50e891ef48d2fe92dabc172c141bcbed4e6c6d4355f3f961750c"
+    },
+    {
+      "file": "core-log4-f27.bin",
+      "source_bytes": 11334089,
+      "packed_bytes": 3567583,
+      "arrays_verified": 12,
+      "sha256": "b810e3f8580f17d4fe8fc26dd0bc6750db3c5f1a94010205c0cfd2a4b33f414a"
+    },
+    {
+      "file": "core-log4-f28.bin",
+      "source_bytes": 10884852,
+      "packed_bytes": 3429921,
+      "arrays_verified": 12,
+      "sha256": "bfdee9366a460823e1e06ce7c485a4a027878026296e5e2a73dde0d2cd9e8153"
+    },
+    {
+      "file": "core-log4-f29.bin",
+      "source_bytes": 11050235,
+      "packed_bytes": 3507032,
+      "arrays_verified": 12,
+      "sha256": "af1a50987d2278d7b464df3fcf9ae626571d3a0da1a3099cdf2043b85fef00a7"
+    },
+    {
+      "file": "core-log4-f3.bin",
+      "source_bytes": 11058587,
+      "packed_bytes": 3473255,
+      "arrays_verified": 12,
+      "sha256": "bcb199af25bc4c4e7d844096606d4d5f3dd2596829135c2b6fd428995660fbb0"
+    },
+    {
+      "file": "core-log4-f4.bin",
+      "source_bytes": 11046126,
+      "packed_bytes": 3493371,
+      "arrays_verified": 12,
+      "sha256": "4442d881970a8ae7d1be6295b52a673a4f12a96a2c87fda59ad3d5ffb7b32e47"
+    },
+    {
+      "file": "core-log4-f5.bin",
+      "source_bytes": 10986094,
+      "packed_bytes": 3518748,
+      "arrays_verified": 12,
+      "sha256": "5bd9ed490e672b7d98aebdaf62c7e4d7b67c07940bb881fd3d95e1d9ae03a0fd"
+    },
+    {
+      "file": "core-log4-f6.bin",
+      "source_bytes": 10781770,
+      "packed_bytes": 3435162,
+      "arrays_verified": 12,
+      "sha256": "91cca7950eb4562dbc68ec97f49099a1c72b5701a95a8cc73e300ece7b7c0d6e"
+    },
+    {
+      "file": "core-log4-f7.bin",
+      "source_bytes": 11263487,
+      "packed_bytes": 3514595,
+      "arrays_verified": 12,
+      "sha256": "c04f77d0920631e916f9688e5f3682b59f0c584d3ae57b086c883475bd539257"
+    },
+    {
+      "file": "core-log4-f8.bin",
+      "source_bytes": 11226306,
+      "packed_bytes": 3512409,
+      "arrays_verified": 12,
+      "sha256": "ed14c507ad1a2af66c0e77d368b01c136bdb0708af6acf0894ffdc30f297d5c5"
+    },
+    {
+      "file": "core-log4-f9.bin",
+      "source_bytes": 10864850,
+      "packed_bytes": 3438237,
+      "arrays_verified": 12,
+      "sha256": "0118b0ecb63a76a43349325a016b22ddd2da1dfddb8e8fc6ab588c053894967a"
+    },
+    {
+      "file": "original-log4-f0.bin",
+      "source_bytes": 10843570,
+      "packed_bytes": 3448225,
+      "arrays_verified": 12,
+      "sha256": "5ee56a6f500ed4f48d349ac4a1cb877ee6f3a1f0c9f54e69435a613d373e9ecc"
+    },
+    {
+      "file": "original-log4-f1.bin",
+      "source_bytes": 11040578,
+      "packed_bytes": 3495890,
+      "arrays_verified": 12,
+      "sha256": "7d33c8d95d28e18ae62c16b91b337ea146e751fe63ab53cbb857e29ff36bfb68"
+    },
+    {
+      "file": "original-log4-f10.bin",
+      "source_bytes": 10866884,
+      "packed_bytes": 3467652,
+      "arrays_verified": 12,
+      "sha256": "d4a2bdaf4794381b4641e2d923a193bd452cda3764d9391a381172e05f6f3bb6"
+    },
+    {
+      "file": "original-log4-f11.bin",
+      "source_bytes": 10636589,
+      "packed_bytes": 3391184,
+      "arrays_verified": 12,
+      "sha256": "1ee9ada9ee45f2b910e13ad4296bd43c3cf2ef612bf835290073d8c5faeb5ad3"
+    },
+    {
+      "file": "original-log4-f12.bin",
+      "source_bytes": 11462879,
+      "packed_bytes": 3562699,
+      "arrays_verified": 12,
+      "sha256": "3ce28fe13b9b15a86a4128136f1f904c0023cf5e879c1f544b284f253194297a"
+    },
+    {
+      "file": "original-log4-f13.bin",
+      "source_bytes": 11259492,
+      "packed_bytes": 3503624,
+      "arrays_verified": 12,
+      "sha256": "ea5e33e045ca52699005987c420696408ef1e3d3ac358586e681902008165b1b"
+    },
+    {
+      "file": "original-log4-f14.bin",
+      "source_bytes": 11131421,
+      "packed_bytes": 3514398,
+      "arrays_verified": 12,
+      "sha256": "a3a20fbc03bd615475b073a42a95ffb984d1de679a893e4c20e05670f7439c70"
+    },
+    {
+      "file": "original-log4-f15.bin",
+      "source_bytes": 10855913,
+      "packed_bytes": 3460592,
+      "arrays_verified": 12,
+      "sha256": "6cf170886e3570131e2004592921aa1e765b3c30ad9193fb2cae2e986a6c61e1"
+    },
+    {
+      "file": "original-log4-f16.bin",
+      "source_bytes": 10572548,
+      "packed_bytes": 3364830,
+      "arrays_verified": 12,
+      "sha256": "15c55d5ed269eb789e38e245fd9353b13d95f023c1b83c04ac254722903e0fb5"
+    },
+    {
+      "file": "original-log4-f17.bin",
+      "source_bytes": 11395891,
+      "packed_bytes": 3564272,
+      "arrays_verified": 12,
+      "sha256": "6fc286ee41c7e791a3e793efe7b6bc9d067fc11712bbad11db3da62e5855df8c"
+    },
+    {
+      "file": "original-log4-f18.bin",
+      "source_bytes": 11337928,
+      "packed_bytes": 3531663,
+      "arrays_verified": 12,
+      "sha256": "6b6bff735d7dfa97e5a8b6bd4c00b3e108bb134b1bf10b963a5b89bf795945f0"
+    },
+    {
+      "file": "original-log4-f19.bin",
+      "source_bytes": 11213157,
+      "packed_bytes": 3532998,
+      "arrays_verified": 12,
+      "sha256": "9adf6d9ea78c73969b8c99943089038cdf8b4f8b9e31678ec5e63d2976394978"
+    },
+    {
+      "file": "original-log4-f2.bin",
+      "source_bytes": 11111278,
+      "packed_bytes": 3455769,
+      "arrays_verified": 12,
+      "sha256": "97c459c5d3caf58b73324575b64c802e44ccd1045622e862273da76610cf9559"
+    },
+    {
+      "file": "original-log4-f20.bin",
+      "source_bytes": 10755013,
+      "packed_bytes": 3423354,
+      "arrays_verified": 12,
+      "sha256": "91454c019b06c636226e9243198039a72fa85bcff13bfca2b5c7ce0d0fffae53"
+    },
+    {
+      "file": "original-log4-f21.bin",
+      "source_bytes": 10384253,
+      "packed_bytes": 3294487,
+      "arrays_verified": 12,
+      "sha256": "997f1e8c39db0a1786b35b195a35b0af0476a026752228148a4d8a78481ab237"
+    },
+    {
+      "file": "original-log4-f22.bin",
+      "source_bytes": 11249436,
+      "packed_bytes": 3531452,
+      "arrays_verified": 12,
+      "sha256": "55aba018aa1f62c29d7eb11801ae340b7e9531c227865985391dbd5509eb1995"
+    },
+    {
+      "file": "original-log4-f23.bin",
+      "source_bytes": 11074017,
+      "packed_bytes": 3466855,
+      "arrays_verified": 12,
+      "sha256": "989437219fad084c84ba959ca216b5a41695e87e01b663641694221ccca567ff"
+    },
+    {
+      "file": "original-log4-f24.bin",
+      "source_bytes": 11250296,
+      "packed_bytes": 3544896,
+      "arrays_verified": 12,
+      "sha256": "2e8bfc1e36f91973d5a9ba4f4a4aeec93cf030c50ff4a9aea9a11f3a7ebef397"
+    },
+    {
+      "file": "original-log4-f25.bin",
+      "source_bytes": 10565292,
+      "packed_bytes": 3333340,
+      "arrays_verified": 12,
+      "sha256": "ae9db3f5e598dd4f31e9aa6e05709b44870b3da5abd24e0164a297a75fab7cf0"
+    },
+    {
+      "file": "original-log4-f26.bin",
+      "source_bytes": 10353404,
+      "packed_bytes": 3270785,
+      "arrays_verified": 12,
+      "sha256": "590a408de0fcb3a76170dd73081a89f4b5620ca629a2e51d21a14532a35a5c84"
+    },
+    {
+      "file": "original-log4-f27.bin",
+      "source_bytes": 11329244,
+      "packed_bytes": 3556255,
+      "arrays_verified": 12,
+      "sha256": "7dad8c73622b7a2e3f3e616150ba145f0c9e9b8bda0387522c95d46969885bc8"
+    },
+    {
+      "file": "original-log4-f28.bin",
+      "source_bytes": 10888920,
+      "packed_bytes": 3424510,
+      "arrays_verified": 12,
+      "sha256": "ed8537446a98bb55c80e3ce3b259f7f1ec1142ab2db45241460024c49e592f08"
+    },
+    {
+      "file": "original-log4-f29.bin",
+      "source_bytes": 11053801,
+      "packed_bytes": 3498303,
+      "arrays_verified": 12,
+      "sha256": "e7c086674378d4e8b691edc0fe7b9d2a89ce272c3e48009f764752b42ba2c6e2"
+    },
+    {
+      "file": "original-log4-f3.bin",
+      "source_bytes": 11062767,
+      "packed_bytes": 3464280,
+      "arrays_verified": 12,
+      "sha256": "cb7346f9d0f4619a67cb663928225d30c23328b8fd400f462d3647a36f3309a9"
+    },
+    {
+      "file": "original-log4-f4.bin",
+      "source_bytes": 11046658,
+      "packed_bytes": 3485955,
+      "arrays_verified": 12,
+      "sha256": "49e3f411783476c7aef925f6b7ae566cd409b4c86f10afceb2ebeecbfb04c23f"
+    },
+    {
+      "file": "original-log4-f5.bin",
+      "source_bytes": 10978661,
+      "packed_bytes": 3507899,
+      "arrays_verified": 12,
+      "sha256": "3559d2954af9ad1aa922b6142a798230df3d37dbb1e918c89f217275d5ac28dd"
+    },
+    {
+      "file": "original-log4-f6.bin",
+      "source_bytes": 10777054,
+      "packed_bytes": 3427906,
+      "arrays_verified": 12,
+      "sha256": "a700ae0e1ce1d89d7f807d53d0795925612e008558ada499ea38630757dd4c5c"
+    },
+    {
+      "file": "original-log4-f7.bin",
+      "source_bytes": 11266566,
+      "packed_bytes": 3506396,
+      "arrays_verified": 12,
+      "sha256": "de4c37e1cd5cb8f21908ca1e1c254c1f7333bb3178e696972b49faffd1ba7d5f"
+    },
+    {
+      "file": "original-log4-f8.bin",
+      "source_bytes": 11230874,
+      "packed_bytes": 3503124,
+      "arrays_verified": 12,
+      "sha256": "3faeb6a3c42c4375a0e42c405ee60f9b6d40adc7a053f6b111a0625c9ba03bcd"
+    },
+    {
+      "file": "original-log4-f9.bin",
+      "source_bytes": 10870678,
+      "packed_bytes": 3430470,
+      "arrays_verified": 12,
+      "sha256": "16de640d860b61dc028299c94791bd8dbbf4c0c7a0a5aa5d4e4c83b81feee6fb"
+    }
+  ]
+}

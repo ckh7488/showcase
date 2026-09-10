@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head><link rel="stylesheet" href="../../assets/theme.v1.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JIB1 · 9월 8일 오탐 위치 3D</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="viewer.css">
+<link rel="stylesheet" href="publication.css"></head>
+<body class="page-replay"><div class="collection-nav"><a href="../../">← SHOWCASE</a><a href="index.html">분석 안내</a><a href="replay.html" aria-current="page">01 · 로그 재생</a><a href="point-origin.html">02 · 위치 추적</a><a href="calibration.html">03 · 캘리브레이션</a><a href="packet-border.html">04 · 점 삭제</a></div>
+<header><div class="brand"><span class="brand-icon">⌖</span><div><b>JIB1 <span>오탐 위치 3D</span></b><small>2026.09.08 · 현장 로그 7개 / 210개 묶음</small></div></div><nav><a href="point-origin.html" style="align-self:center;margin-right:8px;font-size:12px">몸체·지브 전체 위치 ↗</a><button id="overviewBtn">전체 구간 보기</button><button id="helpBtn">데이터 안내</button></nav></header>
+<main>
+<aside class="left">
+ <div class="section-label">기록 선택 <span>각 30개 묶음</span></div><div id="logs"></div>
+ <div class="section-label spaced">현장 1m 미만 기록 <span>TXT</span></div>
+ <div class="small subtle">시각을 누르면 해당 파일의 근사 구간으로 이동합니다.</div>
+ <label class="check small"><input id="showUncovered" type="checkbox">해당 시각 로그가 없는 기록도 보기</label>
+ <div id="events"></div>
+ <div class="left-footer">원본과 실행파일은 변경하지 않은 분석용 뷰입니다.</div>
+</aside>
+<section class="center">
+ <div class="evidence"><div class="field-evidence"><span class="eyebrow">현장 TXT 거리</span><b id="fieldValue">—</b><small id="fieldNote"></small></div><div><span class="eyebrow">재현에서 경보 대상인 최단거리</span><b id="replayValue">—</b><small id="replayNote"></small></div><div class="limit"><span class="dot amber"></span>현장 BODY 알람의 XYZ는 기록되어 있지 않습니다.<br><span>3D 선과 점은 저장된 재현 결과입니다.</span></div></div>
+ <div class="view-toolbar"><div class="segmented" id="presets"><button data-view="cabin" class="active">운전석 / BODY</button><button data-view="jib">지브</button><button data-view="whole">전체</button></div><button id="incidentBtn" class="accent">재현 0.89m 위치 ↗</button><div class="grow"></div><button id="sideBtn" title="X축 방향에서 보기">측면</button><button id="topBtn" title="Z축 방향에서 보기">평면</button><button id="resetBtn">시점 복원</button></div>
+ <div id="viewport"><canvas id="scene"></canvas><div class="scene-caption"><b id="sceneTitle">운전석 주변</b><span id="sceneSubtitle"></span><span id="pointCounts"></span></div><div class="legend" id="legend"></div><div id="loading">점군을 불러오는 중…</div><div id="markerLabel" hidden></div><div id="pickInfo" hidden></div><div class="mouse-help">드래그 회전 · 우클릭 이동 · 휠 확대 · 점 더블클릭 좌표</div></div>
+ <div class="timeline"><div class="playback"><button id="prev" title="이전 묶음">❮</button><button id="play">▶ 재생</button><button id="next" title="다음 묶음">❯</button><b id="frameText"></b><span id="approxTime"></span><div class="grow"></div><label class="small">재생 속도 <select id="speed"><option value="1100">1 묶음/초</option><option value="350">3 묶음/초</option></select></label></div><div id="ticks"></div><input id="frame" aria-label="묶음 번호" type="range" min="0" max="29" value="7"><div class="timeline-key"><span><i class="dot amber"></i>현장 TXT 1m 미만 (근사 대응)</span><span><i class="dot pink"></i>재현 경보 후보 1m 미만</span><span>묶음은 센서의 단일 패킷 / 단일 스캔이 아닙니다.</span></div></div>
+</section>
+<aside class="right">
+ <div class="section-label">겹쳐 볼 데이터</div>
+ <label class="control-label">점군 단계<select id="stage"><option value="raw">원본 로그 → 좌표 변환</option><option value="xyz" selected>InterfaceRotor 처리 결과</option><option value="cluster">Cluster 처리 결과 (분류색)</option></select></label>
+ <div class="sensor-controls"><label class="check"><input id="sensor0" type="checkbox" checked><i class="dot coral"></i>센서 1</label><label class="check"><input id="sensor1" type="checkbox" checked><i class="dot green"></i>센서 2</label></div>
+ <label class="control-label">5ms 패킷 삭제 패치<select id="mode"><option value="0">OFF · 패킷 삭제 없음</option><option value="1">ON · 패치 적용 재현</option></select></label>
+ <div class="checks"><label class="check"><input id="model" type="checkbox" checked>크레인 모델</label><label class="check"><input id="bbox" type="checkbox" checked>운전석 예외 박스</label><label class="check"><input id="innerBbox" type="checkbox">BODY 내부 예외 박스</label><label class="check"><input id="clip" type="checkbox">점군만 선택 부위로 제한</label></div>
+ <details><summary>표시 세부 설정</summary><label class="control-label">점 크기<input id="pointSize" type="range" min="1" max="6" step="0.5" value="2"></label><label class="control-label">모델 불투명도<input id="opacity" type="range" min="0" max="0.85" step="0.05" value="0.3"></label><label class="control-label">모델 표시<select id="modelStyle"><option value="mesh">OBJ 면 + 윤곽</option><option value="pcd">원본 PCD 점</option><option value="coarse3">0.3m voxel 점 (자기 구조 제거)</option><option value="coarse5">0.5m voxel 점 (거리 기준)</option></select></label></details>
+ <div class="section-label spaced">거리 계산에 남은 후보 <span id="candidateCount"></span></div>
+ <select id="part" aria-label="후보 부위"><option value="all">모든 부위</option><option value="0" selected>BODY</option><option value="1">JIB</option><option value="2">TOWER</option></select>
+ <div id="candidates"></div><div id="details" class="candidate-detail"></div>
+</aside>
+</main>
+<dialog id="modal"><div class="modal-head"><b id="modalTitle"></b><button id="closeModal">닫기 ×</button></div><div id="modalBody"></div></dialog>
+<script src="vendor/three.min.js"></script><script src="vendor/OrbitControls.js"></script><script src="vendor/pako.min.js"></script><script src="packed-data.js"></script><script src="data/manifest.js"></script><script src="data/models.js"></script><script src="viewer.js"></script>
+</body></html>

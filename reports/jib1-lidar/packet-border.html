@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko"><head><link rel="stylesheet" href="../../assets/theme.v1.css"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:,"><title>외곽 삭제 · 크레인 점군 비교</title>
+<link rel="stylesheet" href="packet-border.css"><link rel="stylesheet" href="publication.css"></head><body class="page-border"><div class="collection-nav"><a href="../../">← SHOWCASE</a><a href="index.html">분석 안내</a><a href="replay.html">01 · 로그 재생</a><a href="point-origin.html">02 · 위치 추적</a><a href="calibration.html">03 · 캘리브레이션</a><a href="packet-border.html" aria-current="page">04 · 점 삭제</a></div>
+<header><div><h1>외곽까지 지우면 크레인이 얼마나 남을까?</h1><p>동일한 원본 구간 · 동일한 시점 · 점 크기 동일 · 표시용 점 간소화 없음</p></div><a href="calibration.html">캘리브레이션 비교 ↗</a></header>
+<div class="controls">
+<label>자료 <select id="case"><option value="core-log4">9/8 13:53:30 · 새 캘리브레이션</option><option value="core-log2">9/8 13:47:30 · 새 캘리브레이션</option><option value="original-log4">9/8 13:53:30 · 당시 캘리브레이션</option></select></label>
+<label>묶음 <input id="frame" type="range" min="0" max="29" value="7"><output id="frameNo">7 / 29</output></label>
+<label>누적 <select id="accum"><option value="1">현재 1묶음</option><option value="5">현재까지 최대 5묶음</option></select></label>
+<label>처리 단계 <select id="stage"><option value="xyz">기존 XYZ 필터까지 적용</option><option value="raw">점 삭제 직후 · 공간 필터 전</option></select></label>
+</div>
+<div class="controls views"><div class="viewbuttons"><button data-view="whole" class="selected">크레인 전체</button><button data-view="cabin">운전실</button><button data-view="jib">지브 가까이</button><button data-view="tower">타워</button></div>
+<span class="grow"></span><label><input id="sensor0" type="checkbox" checked><i class="dot s0"></i>센서 1</label><label><input id="sensor1" type="checkbox" checked><i class="dot s1"></i>센서 2</label>
+<label><input id="model" type="checkbox">전체 모델 겹쳐 보기</label><label><input id="background" type="checkbox">주변 배경까지</label>
+<label>점 크기 <input id="pointSize" type="range" min="1" max="4" step=".25" value="1.5"></label></div>
+<main class="panels">
+<section class="panel"><div class="caption"><span class="number">A</span><div><h2>기존 점군</h2><p>이번 점 삭제 없음</p></div></div><div class="metric" id="count0">불러오는 중</div><canvas id="view0" aria-label="기존 점군 3D 비교"></canvas><div class="status" id="status0"></div></section>
+<section class="panel"><div class="caption"><span class="number">B</span><div><h2>내부 10% 삭제</h2><p>외곽은 보존 · 앞서 검증한 방식</p></div></div><div class="metric" id="count1"></div><canvas id="view1" aria-label="외곽 보존과 내부 10퍼센트 삭제 점군"></canvas><div class="status" id="status1"></div></section>
+<section class="panel"><div class="caption"><span class="number accent">C</span><div><h2>외곽 전부 + 내부 10% 삭제</h2><p>B와 같은 내부 선택 · 외곽만 추가 삭제</p></div></div><div class="metric" id="count2"></div><canvas id="view2" aria-label="외곽 전체와 내부 10퍼센트를 삭제한 점군"></canvas><div class="status" id="status2"></div></section>
+</main>
+<div class="foot"><strong id="message">실제 점군을 불러오는 중…</strong><span>드래그 회전 · 우클릭 이동 · 휠 확대 · 세 화면 시점 연동</span></div>
+<div class="notes"><p><b>현재 비교:</b> 사방 외곽 92자리(왼쪽·오른쪽 64 + 위·아래 28)를 삭제합니다. 내부 10% 순위는 외곽을 참고해 계산한 원래 결과 그대로입니다. 512자리 모두 유효한 경우 총 134점 삭제, 378점 잔존입니다.</p>
+<p id="stageNote">기존 최소 거리·공간 필터까지 적용한 실제 XYZ 출력입니다. 모델은 기본적으로 숨겨 점군 자체가 얼마나 남는지 보여 줍니다.</p>
+<p>5ms 버스트 필터는 세 조건 모두 ON입니다. 모델을 켜면 전체 BODY·JIB·TOWER를 동일한 기준 자세로 보여 줍니다. 이 화면은 점군 형상 비교이며 외곽 삭제 후 자세 추정·거리 경보의 검증 결과가 아닙니다.</p></div>
+<script src="vendor/three.min.js"></script><script src="vendor/OrbitControls.js"></script><script src="vendor/pako.min.js"></script><script src="packed-data.js"></script><script src="data/models.js"></script><script src="data/packet-border/manifest.js"></script><script src="packet-border.js"></script>
+</body></html>

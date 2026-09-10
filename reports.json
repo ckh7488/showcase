@@ -10,7 +10,27 @@
       "path": "reports/porta-pcb/",
       "cover": "reports/porta-pcb/cover.png",
       "coverAlt": "Gerber 기반 Control·Motor PCB와 RX, TX, GND 비아의 3D 화면",
-      "tags": ["3D PCB", "openEMS", "FEM"]
+      "tags": [
+        "3D PCB",
+        "openEMS",
+        "FEM"
+      ]
+    },
+    {
+      "id": "jib1-lidar",
+      "title": "JIB1 · 라이다 오탐 분석과 필터 비교",
+      "summary": "실측 로그 재생, 몸체·지브 위치 추적, 캘리브레이션 전후, 점 삭제 A/B/C를 네 개의 3D 화면에서 비교합니다.",
+      "category": "센서 · 실시간 시스템",
+      "date": "2026-09-10",
+      "path": "reports/jib1-lidar/",
+      "cover": "reports/jib1-lidar/cover.png",
+      "coverAlt": "라이다 점군의 기존·내부 10% 삭제·외곽 추가 삭제를 같은 시점에서 비교한 화면",
+      "tags": [
+        "3D 점군",
+        "실측 로그",
+        "캘리브레이션",
+        "필터 비교"
+      ]
     }
   ]
 }
