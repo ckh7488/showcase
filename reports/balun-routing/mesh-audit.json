@@ -1,0 +1,72 @@
+[
+  {
+    "run": "final-A-g010-anchored-t4",
+    "net": "/PAIR_A_P",
+    "width_mm": 0.234,
+    "center_y_mm": 16.6,
+    "transverse_nodes_mm": [
+      16.5,
+      16.6,
+      16.7
+    ],
+    "offsets_mm": [
+      -0.1,
+      0.0,
+      0.1
+    ]
+  },
+  {
+    "run": "final-A-g010-anchored-t4",
+    "net": "/PAIR_A_N",
+    "width_mm": 0.234,
+    "center_y_mm": 17.05,
+    "transverse_nodes_mm": [
+      17.0,
+      17.1
+    ],
+    "offsets_mm": [
+      -0.05,
+      0.05
+    ]
+  },
+  {
+    "run": "final-A-odd-thirds-base-t3",
+    "net": "/PAIR_A_P",
+    "width_mm": 0.234,
+    "center_y_mm": 16.6,
+    "transverse_nodes_mm": [
+      16.503,
+      16.5515,
+      16.6,
+      16.6485,
+      16.697
+    ],
+    "offsets_mm": [
+      -0.097,
+      -0.0485,
+      0.0,
+      0.0485,
+      0.097
+    ]
+  },
+  {
+    "run": "final-A-odd-thirds-base-t3",
+    "net": "/PAIR_A_N",
+    "width_mm": 0.234,
+    "center_y_mm": 17.05,
+    "transverse_nodes_mm": [
+      16.953,
+      17.0015,
+      17.05,
+      17.0985,
+      17.147
+    ],
+    "offsets_mm": [
+      -0.097,
+      -0.0485,
+      0.0,
+      0.0485,
+      0.097
+    ]
+  }
+]

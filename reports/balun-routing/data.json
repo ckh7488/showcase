@@ -1,7 +1,7 @@
 {
-  "status": "PUBLISHED_REVIEW_DRAFT",
+  "status": "THREE_CAD_OPENEMS_ROUTING_COMPARISON",
   "subject": "Molex 5-pin passive measurement adapter, not PALA720 board-to-board 64-pin connector",
-  "geometry_scope": "Native KiCad route segments, layers, widths and signal vias from three Git commits, checked against design.json planar lengths. The board slab is an orientation aid; pads, connector bodies and shield planes are omitted. Not a full EM model.",
+  "geometry_scope": "Actual saved route centerlines, pads, filled reference planes and signal/SHIELD vias from the three immutable CAD revisions. Connector bodies are excluded.",
   "phases": [
     {
       "id": "8826733",
@@ -1675,5 +1675,7 @@
       "length_difference_mm": 1.221
     },
     "final_revision_em": null
-  }
+  },
+  "fresh_simulation": "rf-data.json",
+  "historical_record_note": "Any older two-case M12 summary retained here is not a result of these three Molex CADs. The report uses the fresh simulations in rf-data.json."
 }

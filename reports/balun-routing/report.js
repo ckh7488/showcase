@@ -1,11 +1,11 @@
 (()=>{
   'use strict';
   const data=window.REVIEW_DATA,$=s=>document.querySelector(s),all=s=>Array.from(document.querySelectorAll(s));
-  let phaseIndex=2,pair='all',scene,renderer,camera,controls,signalGroup,topView=true,fullView=false;
+  let phaseIndex=2,pair='all',scene,renderer,camera,controls,signalGroup,topView=true,fullView=false,showGround=false;
   const decision=[
-    ['총길이는 같지만, 형상에는 비용이 있다.','A/B 모두 중심선 길이를 맞췄습니다. 대신 보정 우회로가 있고 B 페어에 신호 비아 두 개가 있습니다. 길이 차이 0만으로 반사·모드 변환의 최종 순위를 정하지 않습니다.'],
+    ['두 페어의 길이를 맞추고, B는 층을 전환했다.','A/B 모두 P와 N의 중심선 길이를 맞췄습니다. N선에는 보정 우회로가 있고, B 페어는 신호 비아 두 개를 거쳐 Molex 단자로 연결됩니다.'],
     ['큰 우회로와 층 전환을 줄였다.','두 페어 모두 F.Cu에 모이고 신호 비아가 없어졌습니다. 이때 A 1.388 mm, B 1.752 mm의 길이 차이가 남았습니다.'],
-    ['정리한 형상 안에서 길이 차이를 다시 줄였다.','신호 비아 0개를 유지하면서 두 페어 모두 길이 차이를 1 mm 미만으로 줄였습니다. 좁은 0.15 mm 구간도 제거했습니다. 이 단계의 RF 우위는 별도 비교 결과가 필요합니다.']
+    ['정리한 형상 안에서 길이 차이를 다시 줄였다.','신호 비아 0개를 유지하면서 두 페어 모두 길이 차이를 1 mm 미만으로 줄였습니다. 좁은 0.15 mm 구간도 제거했습니다. 아래 주파수 응답에서 실제 변화의 크기를 비교합니다.']
   ];
   function setPhase(n){
     phaseIndex=n;const p=data.phases[n];
@@ -26,19 +26,16 @@
   all('[data-phase]').forEach(b=>b.addEventListener('click',()=>setPhase(+b.dataset.phase)));
   all('[data-select-phase]').forEach(b=>b.addEventListener('click',()=>setPhase(+b.dataset.selectPhase)));
   all('[data-pair]').forEach(b=>b.addEventListener('click',()=>{pair=b.dataset.pair;all('[data-pair]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));if(scene)drawSignals();}));
-  function showEM(key){
-    all('[data-history-em]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.historyEm===key)));
-    all('[data-history-row]').forEach(row=>row.classList.toggle('is-active',row.dataset.historyRow===key));
-    const reflection=key==='sdd11';
-    $('#em-name').textContent=reflection?'Sdd11 · 입력 차동 → 반사 차동':'Scd21 · 입력 차동 → 출력 공통';
-    $('#em-judgment').textContent=reflection?'반사는 평행 배선안이 더 작았다.':'모드 변환은 등길이안이 더 작았다.';
-    $('#em-explain').textContent=reflection?'같은 입력에서 되돌아오는 차동 성분은 새 안이 작았다는 기록입니다.':'두 선을 나란히 정리해도 남은 길이 차이의 영향을 무시할 수 없었다는 기록입니다.';
-    window.__routingReview.em=key;
-  }
-  window.__routingReview={ready:false,em:'sdd11',snapshot:()=>({phase:phaseIndex,pair,tracks:data.phases[phaseIndex].tracks.length,vias:data.phases[phaseIndex].vias.length,em:window.__routingReview.em})};
-  all('[data-history-em]').forEach(b=>b.addEventListener('click',()=>showEM(b.dataset.historyEm)));
+  window.__routingReview={ready:false,snapshot:()=>({phase:phaseIndex,pair,tracks:data.phases[phaseIndex].tracks.length,vias:data.phases[phaseIndex].vias.length,ground:showGround,shieldVias:window.PCB_DETAILS?.[data.phases[phaseIndex].id]?.shield_vias.length??0})};
   function point(x,y,layer){return new THREE.Vector3(x-33,layer==='B.Cu'?-.81:.81,20-y);}
   function rod(start,end,radius,material){const delta=end.clone().sub(start),mesh=new THREE.Mesh(new THREE.CylinderGeometry(radius,radius,delta.length(),8),material);mesh.position.copy(start).add(end).multiplyScalar(.5);mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),delta.normalize());return mesh;}
+  function copperPolygon(p,z,material){
+    const contour=p.outer.map(v=>new THREE.Vector2(...v)),holes=(p.holes||[]).map(h=>h.map(v=>new THREE.Vector2(...v)));
+    const faces=THREE.ShapeUtils.triangulateShape(contour,holes),vertices=contour.concat(...holes),positions=[];
+    for(const f of faces)for(const index of f){const v=vertices[index];positions.push(v.x-33,.7931-z,20-v.y);}
+    const geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));
+    signalGroup.add(new THREE.Mesh(geometry,material));
+  }
   function drawSignals(){
     if(signalGroup){scene.remove(signalGroup);signalGroup.traverse(o=>{o.geometry?.dispose();if(o.material)o.material.dispose();});}
     signalGroup=new THREE.Group();scene.add(signalGroup);
@@ -49,6 +46,23 @@
       signalGroup.add(rod(point(...t.start,t.layer),point(...t.end,t.layer),t.width/2,material));
     }
     for(const v of p.vias){const material=new THREE.MeshBasicMaterial({color:v.net.endsWith('_P')?0xedaa65:0x66d9c0,transparent:true,opacity:pair==='all'||v.net.includes('_'+pair+'_')?1:.12});signalGroup.add(rod(point(...v.at,'F.Cu'),point(...v.at,'B.Cu'),v.size/2,material));}
+    const extra=window.PCB_DETAILS?.[p.id];
+    if(extra){
+      for(const pad of extra.pads){
+        const signal=pad.net.startsWith('/PAIR_'),active=pair==='all'||pad.net.includes('_'+pair+'_');
+        const padColor=signal?(pad.net.endsWith('_P')?0xedaa65:0x66d9c0):(pad.net==='/SHIELD'?0xbba7ff:0x8da0a6);
+        if(!signal&&!showGround)continue;
+        for(const layer of pad.layers.filter(l=>l==='F.Cu'||(showGround&&l==='B.Cu')))for(const polygon of pad.polygons){
+          const material=new THREE.MeshBasicMaterial({color:padColor,side:THREE.DoubleSide,transparent:true,opacity:signal?(active ? .8 : .1):.45,depthWrite:false});
+          copperPolygon(polygon,layer==='F.Cu'?-.002:1.5882,material);
+        }
+        if(showGround&&pad.drill[0]>0)signalGroup.add(rod(point(...pad.xy,'F.Cu'),point(...pad.xy,'B.Cu'),pad.drill[0]/2+.025,new THREE.MeshBasicMaterial({color:padColor,transparent:true,opacity:signal?(active ? .65 : .1):.45})));
+      }
+      if(showGround){
+        for(const [layer,polygons] of Object.entries(extra.planes))for(const polygon of polygons)copperPolygon(polygon,layer==='In1.Cu'?.2454:1.3408,new THREE.MeshBasicMaterial({color:0xbba7ff,side:THREE.DoubleSide,transparent:true,opacity:.15,depthWrite:false}));
+        for(const v of extra.shield_vias)signalGroup.add(rod(point(...v.xy,'F.Cu'),point(...v.xy,'B.Cu'),v.diameter/2,new THREE.MeshBasicMaterial({color:0xbba7ff,transparent:true,opacity:.8})));
+      }
+    }
     render();
   }
   function render(){if(renderer)renderer.render(scene,camera);}
@@ -71,7 +85,8 @@
     function resize(){const w=host.clientWidth,h=host.clientHeight;renderer.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix();position();}
     new ResizeObserver(resize).observe(host);resize();position();drawSignals();$('#viewer-status').remove();window.__routingReview.ready=true;
     $('#top').addEventListener('click',()=>{topView=true;position();});$('#oblique').addEventListener('click',()=>{topView=false;position();});$('#reset').addEventListener('click',()=>{fullView=true;position();});$('#focus').addEventListener('click',()=>{fullView=false;position();});
+    $('#ground-toggle').addEventListener('click',e=>{showGround=!showGround;e.currentTarget.setAttribute('aria-pressed',String(showGround));drawSignals();});
   }
-  setPhase(2);showEM('sdd11');
+  setPhase(2);
   try{initialize();}catch(error){$('#viewer-status').textContent='3D 화면을 열지 못했습니다. 아래 실제 길이·수치와 원본 CAD 링크를 확인하세요.';console.error(error);}
 })();
