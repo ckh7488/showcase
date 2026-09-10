@@ -26,6 +26,7 @@ class DeploymentTests(unittest.TestCase):
         self.git('config', 'user.email', 'test@example.invalid')
         shutil.copytree(PROJECT / 'scripts', self.repo / 'scripts', ignore=shutil.ignore_patterns('__pycache__'))
         (self.repo / 'assets').mkdir()
+        (self.repo / 'assets/site.css').write_text('body { margin: 0; }', encoding='utf-8')
         report = self.repo / 'reports/demo'
         report.mkdir(parents=True)
         (report / 'index.html').write_text('<h1>Report</h1>', encoding='utf-8')
