@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EM2 디버깅 | ATLAS</title>
+  <meta name="description" content="EM2의 간헐적인 펄스 이상을 전기 원인 배제, 기계 공차 확인, 소프트웨어 fallback 순서로 정리한 기록입니다.">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/theme.v1.css">
+  <link rel="stylesheet" href="report.css?v=20260910-preview6">
+  <script src="report.js?v=20260910-preview6" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#alignment">핵심 시각화로 건너뛰기</a>
+  <header class="site-header">
+    <a class="brand" href="../../" aria-label="ATLAS 라이브러리로 돌아가기">← ATLAS</a>
+    <span>EM2 / DEBUGGING</span>
+    <nav aria-label="보고서 목차"><a href="#problem">전기 배제</a><a href="#alignment">기구 공차</a><a href="#signal-lab">신호</a><a href="#diagnosis">진단</a><a href="#fallback">Fallback</a><a href="#result">결론</a></nav>
+    <span class="draft">검토 초안</span>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div class="intro-copy">
+        <p class="kicker">현장 기록 · 2026.06.19</p>
+        <h1 id="page-title">EM2 디버깅</h1>
+        <p class="lede">간헐적인 펄스 이상을 전기·기구·소프트웨어 순서로 좁힌 기록.</p>
+      </div>
+    </section>
+
+    <section id="problem" class="case-section" aria-labelledby="problem-title">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">01 / 전기적 원인 배제</p>
+          <h2 id="problem-title">전원과 신호 경로는<br>문제 우선순위에서 제외함.</h2>
+        </div>
+      </div>
+
+      <div class="case-grid">
+        <figure class="field-scope panel">
+          <div class="panel-topline"><span>FIELD SCOPE</span><span>2026.06.19 · 원본 사진</span></div>
+          <div class="photo-frame scope-photo">
+            <img src="assets/abnormal-scope.jpg" alt="현장에서 EM2 출력 pulse가 정상적인 quadrature 형태를 만들지 못한 오실로스코프 화면">
+            <span class="photo-badge">비정상 pulse 확인</span>
+          </div>
+          <figcaption>같은 계측 상태에서 pulse가 비정상과 정상 사이를 오갔음. 정상 복귀 뒤에는 전원을 다시 넣어도 깨끗한 pulse가 유지됐음.</figcaption>
+        </figure>
+
+        <article class="electrical-checks panel">
+          <div class="panel-topline"><span>ELECTRICAL CHECK</span><span>배제한 두 경로</span></div>
+          <div class="elimination-list">
+            <div>
+              <span class="check-index">01</span>
+              <div><strong>전원 흔들림 배제</strong><p>정상 pulse가 돌아온 뒤 power cycle을 해도 정상 상태가 유지됨. 데이터시트 전원 범위를 벗어나 손상됐다는 근거도 없었음.</p><div class="check-specs"><span>4.5–5.5 V</span><span>Ripple &lt; 100 mVpp</span></div></div>
+              <b>배제</b>
+            </div>
+            <div>
+              <span class="check-index">02</span>
+              <div><strong>전송 신호 문제 배제</strong><p>EM2 출력 직후 RS-422 차동으로 변환함. 전송 방식과 소자 자체 사양도 현재 속도·거리 조건에 충분했음.</p><div class="check-specs"><span>RS-422</span><span>A / B / I 차동 전송</span></div></div>
+              <b>배제</b>
+            </div>
+          </div>
+          <div class="electrical-verdict"><span>판단</span><strong>전기적 문제는 없다고 보고,<br>다른 원인을 찾기로 함.</strong></div>
+        </article>
+      </div>
+
+      <div class="electrical-path panel" aria-label="EM2에서 MCU까지의 차동 신호 경로">
+        <div><span>01</span><strong>EM2</strong><small>A / B / I 출력</small></div><i>→</i>
+        <div><span>02</span><strong>AM26LS31</strong><small>출력 직후 차동 변환</small></div><i>→</i>
+        <div><span>03</span><strong>RS-422</strong><small>차동 전송</small></div><i>→</i>
+        <div><span>04</span><strong>AM26LV32</strong><small>차동 수신</small></div><i>→</i>
+        <div><span>05</span><strong>STM32</strong><small>TIM4 입력</small></div>
+      </div>
+    </section>
+
+    <section id="alignment" class="alignment-section" aria-labelledby="alignment-title">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">02 / 기계적 공차 확인</p>
+          <h2 id="alignment-title">데이터시트에서<br>정렬 공차가 보였음.</h2>
+        </div>
+        <p>Gap과 radial 위치 모두 조립 상태에 민감한 범위였음. 여러 부품의 편차가 합쳐지면 정상 동작점을 쉽게 벗어날 수 있음.</p>
+      </div>
+
+      <div class="tolerance-summary">
+        <article class="tolerance-number gap-number">
+          <span>RECOMMENDED DISK GAP</span>
+          <strong>0.26–0.64<em>mm</em></strong>
+          <p>전체 허용폭 약 0.38 mm</p>
+        </article>
+        <article class="tolerance-number radial-number">
+          <span>RADIAL POSITION</span>
+          <strong>±0.127<em>mm</em></strong>
+          <p>손으로 반복 정렬하기 어려운 수준</p>
+        </article>
+        <div class="tolerance-conclusion"><span>핵심</span><strong>나사 체결·와셔 두께·축 편심이<br>허용 공차를 바로 소모함.</strong></div>
+      </div>
+
+      <div class="datasheet-viewer panel">
+        <div class="datasheet-tabs" role="group" aria-label="데이터시트 공차 선택">
+          <button type="button" data-spec-view="gap" aria-pressed="true"><span>DISK GAP</span><strong>0.26–0.64 mm</strong></button>
+          <button type="button" data-spec-view="radial" aria-pressed="false"><span>RADIAL POSITION</span><strong>±0.127 mm</strong></button>
+        </div>
+        <figure class="datasheet-sheet">
+          <div class="datasheet-image-wrap">
+            <img id="datasheet-image" src="assets/datasheet-gap.png" alt="EM2 데이터시트의 disk alignment와 권장 gap 0.51 +0.13/-0.25 밀리미터 그림">
+          </div>
+          <figcaption>
+            <span id="datasheet-source">DATA SHEET · DISK ALIGNMENT</span>
+            <strong id="datasheet-value">0.51 +0.13/−0.25 mm</strong>
+            <p id="datasheet-detail">대략 0.26–0.64 mm 범위임. 빨간 박스의 Gap 표기를 기준으로 확인함.</p>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="installation-evidence panel">
+        <div class="panel-topline"><span>ACTUAL ASSEMBLY</span><span>사진을 눌러 비교</span></div>
+        <div class="installation-layout">
+          <div class="installation-photo-wrap">
+            <img id="installation-photo" src="assets/field-installation.jpg" alt="현장에 장착된 EM2와 encoder disk 전체 모습">
+            <span class="callout-pin pin-em2">EM2</span>
+            <span class="callout-pin pin-disk">Disk</span>
+            <span class="callout-pin pin-cable">Cable 장력</span>
+          </div>
+          <div class="installation-copy">
+            <div class="photo-tabs" role="group" aria-label="현장 장착 사진 선택">
+              <button type="button" data-installation-photo="field" aria-pressed="true">전체 장착 상태</button>
+              <button type="button" data-installation-photo="closeup" aria-pressed="false">렌즈·Disk 근접</button>
+            </div>
+            <h3 id="installation-title">와셔로 높이를 맞춰 동작점을 찾음.</h3>
+            <p id="installation-detail">높이를 조절하면 pulse가 돌아왔지만, 언제 다시 깨끗해지거나 무너질지 예측하기 어려웠음. 와셔는 공차를 보정했을 뿐 반복 가능한 정렬 구조를 만든 것은 아니었음.</p>
+            <div class="cause-tags" aria-label="정렬에 영향을 주는 요소"><span>와셔 두께</span><span>체결 높이</span><span>축 편심</span><span>조립 편차</span><span>케이블 장력</span><span>온도 변화</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stackup-story">
+        <div class="stackup-title"><span>TOLERANCE STACK-UP</span><strong>작은 변화가 겹치면서<br>본질적인 문제가 됨.</strong></div>
+        <div class="stackup-chain" aria-label="광학 정렬에 영향을 주는 공차 요소">
+          <span>EM2</span><i>+</i><span>Disk</span><i>+</i><span>축 편심</span><i>+</i><span>Bracket</span><i>+</i><span>체결 높이</span><i>+</i><span>와셔</span><i>+</i><span>케이블</span><b>→ 광학 정렬 마진 소진</b>
+        </div>
+      </div>
+
+      <div class="mitigation-flow panel" aria-label="기계 조정에서 소프트웨어 보완으로 이어진 흐름">
+        <div><span>01</span><strong>와셔로 높이 조정</strong><small>동작점 탐색</small></div><i>→</i>
+        <div><span>02</span><strong>정상 pulse 복귀</strong><small>일단 동작 확인</small></div><i>→</i>
+        <div class="flow-risk"><span>03</span><strong>재발 시점 예측 불가</strong><small>기계 공차가 계속 남음</small></div><i>→</i>
+        <div class="flow-software"><span>04</span><strong>SW 진단·Fallback</strong><small>운전 연속성 보완</small></div>
+      </div>
+    </section>
+
+    <section id="signal-lab" class="signal-section" aria-labelledby="lab-title">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">03 / Quadrature + Index</p>
+          <h2 id="lab-title">A/B가 움직임을 세고,<br>I가 한 바퀴를 찍음.</h2>
+        </div>
+        <p>아래 파형은 동작 원리를 설명하기 위한 재구성임.</p>
+      </div>
+
+      <div class="scenario-tabs" role="group" aria-label="EM2 신호 상태 선택">
+        <button type="button" data-scenario="normal" aria-pressed="true"><span class="tab-index">01</span><strong>정상</strong><small>A + B</small></button>
+        <button type="button" data-scenario="a-loss" aria-pressed="false"><span class="tab-index">02</span><strong>A상 이상</strong><small>B만 정상</small></button>
+        <button type="button" data-scenario="b-loss" aria-pressed="false"><span class="tab-index">03</span><strong>B상 이상</strong><small>A만 정상</small></button>
+        <button type="button" data-scenario="both-loss" aria-pressed="false"><span class="tab-index">04</span><strong>양쪽 이상</strong><small>위치 중단</small></button>
+      </div>
+
+      <div class="lab-grid">
+        <article class="rotor-panel panel">
+          <div class="panel-topline"><span>ENCODER DISC · 10,000 CPR + INDEX</span><button id="motion-toggle" type="button" aria-pressed="true">Ⅱ 일시정지</button></div>
+          <div class="rotor-stage">
+            <svg class="rotor-svg" viewBox="0 0 440 360" role="img" aria-labelledby="rotor-title rotor-desc">
+              <title id="rotor-title">회전 디스크와 A상, B상 센서</title>
+              <desc id="rotor-desc">36 RPM으로 회전하는 엔코더 디스크 옆에 A상과 B상 센서가 배치되어 있습니다.</desc>
+              <defs>
+                <radialGradient id="disc-fill" cx="42%" cy="38%" r="65%">
+                  <stop offset="0" stop-color="#41616a"/>
+                  <stop offset="0.7" stop-color="#203d44"/>
+                  <stop offset="1" stop-color="#122b31"/>
+                </radialGradient>
+                <filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="5" result="blur"/>
+                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+              <g class="disc-shadow"><ellipse cx="205" cy="303" rx="132" ry="19"/></g>
+              <g id="rotor-group">
+                <circle class="disc" cx="205" cy="175" r="116"/>
+                <g id="disc-slots" aria-hidden="true"></g>
+                <circle class="code-track code-track-outer" cx="205" cy="175" r="110"/>
+                <circle class="disc-ring" cx="205" cy="175" r="84"/>
+                <circle class="code-track code-track-inner" cx="205" cy="175" r="91"/>
+                <circle class="hub" cx="205" cy="175" r="32"/>
+                <g id="disc-index-mark" class="disc-index-mark" aria-label="디스크의 1회전당 한 개 index mark">
+                  <path d="M153 238L166 256"/>
+                  <circle cx="159" cy="247" r="5"/>
+                </g>
+                <path class="direction-mark" d="M205 89a86 86 0 0 1 77 48"/>
+                <path class="direction-arrow" d="M277 122l8 19-20-4"/>
+              </g>
+              <g class="sensor sensor-a" id="sensor-a">
+                <path d="M338 102h63v52h-63z"/>
+                <circle cx="342" cy="128" r="7"/>
+                <text x="368" y="125">A</text><text class="sensor-state" x="368" y="141">정상</text>
+              </g>
+              <g class="sensor sensor-b" id="sensor-b">
+                <path d="M347 166h63v52h-63z"/>
+                <circle cx="351" cy="192" r="7"/>
+                <text x="377" y="189">B</text><text class="sensor-state" x="377" y="205">정상</text>
+              </g>
+              <g class="index-sensor" id="index-sensor">
+                <path d="M56 252h74v42H56z"/>
+                <circle class="index-led" cx="119" cy="262" r="5"/>
+                <text x="93" y="270">I · INDEX</text><text x="93" y="286">1회전 기준점</text>
+              </g>
+              <path class="index-beam" id="index-beam" d="M129 273L166 248"/>
+              <text class="rpm-label" x="32" y="55">36 RPM</text>
+              <text class="rpm-sub" x="32" y="73">1회전 = 1.67초</text>
+            </svg>
+            <div class="angle-readout"><span>현재 설명 각도</span><strong id="angle-value">0°</strong></div>
+            <div class="index-live is-active" id="index-live"><span><i></i>I · INDEX</span><strong id="index-live-state">기준점 통과</strong><small id="index-revolution">1 pulse / rev</small></div>
+          </div>
+          <div class="disc-reference">
+            <img src="assets/em2-disk-installed.jpg" alt="PALA720 하우징 안에 장착된 EM2용 encoder disk 실물">
+            <div><span>ACTUAL DISK · DISK-2-10000-750-IE</span><strong>촘촘한 code track + 한 곳의 index mark</strong><p>바깥 track은 A/B 위치를 만들고, I상은 한 바퀴마다 기준 위치를 한 번 알려줌.</p></div>
+          </div>
+        </article>
+
+        <article class="wave-panel panel">
+          <div class="panel-topline"><span>QUADRATURE SIGNAL</span><span class="live-chip"><i></i> 36 RPM 기준</span></div>
+          <div class="wave-stage">
+            <svg id="waveform" viewBox="0 0 760 315" role="img" aria-labelledby="wave-title wave-desc">
+              <title id="wave-title">A상과 B상 Quadrature 파형</title>
+              <desc id="wave-desc">A상과 B상이 90도 어긋난 디지털 신호이며 선택한 고장 상태에 따라 파형이 달라집니다.</desc>
+              <g class="wave-grid" aria-hidden="true"></g>
+              <text class="channel-label channel-a-label" x="20" y="85">A</text>
+              <text class="channel-label channel-b-label" x="20" y="205">B</text>
+              <path id="wave-a" class="wave wave-a"/>
+              <path id="wave-b" class="wave wave-b"/>
+              <g id="state-labels" aria-hidden="true"></g>
+              <line id="scan-line" class="scan-line" x1="86" y1="40" x2="86" y2="268"/>
+              <circle id="scan-dot-a" class="scan-dot scan-dot-a" cx="86" cy="70" r="5"/>
+              <circle id="scan-dot-b" class="scan-dot scan-dot-b" cx="86" cy="190" r="5"/>
+              <text class="time-axis" x="694" y="296">시간 →</text>
+            </svg>
+          </div>
+          <div class="index-channel is-active" id="index-channel" aria-live="polite">
+            <div class="index-channel-copy"><span>I · INDEX</span><strong id="index-pulse-state">HIGH · 기준점 통과</strong></div>
+            <svg viewBox="0 0 420 100" role="img" aria-label="한 바퀴에 한 번만 HIGH가 되는 I상 index 파형">
+              <path class="index-baseline" d="M8 82H412"/>
+              <path class="index-wave" d="M8 82V18H34V82H412"/>
+              <line id="index-scan-line" x1="8" y1="10" x2="8" y2="88"/>
+              <circle id="index-scan-dot" cx="8" cy="18" r="5"/>
+            </svg>
+            <small>36 RPM에서 약 1.67초마다 1회 발생함. 다음 유효 I상에서 위치 기준을 다시 맞추며, 펄스 폭은 보기 쉽게 확대함.</small>
+          </div>
+          <div class="phase-note">
+            <span class="phase-bracket" aria-hidden="true"></span>
+            <div><strong>90° 위상차</strong><p>A와 B가 조금씩 어긋나 있어 변화 순서로 회전 방향까지 알 수 있음.</p></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="status-strip" aria-live="polite">
+        <div class="phase-health" id="a-health"><span>A상</span><strong>정상 · 약 60 edge</strong><small>10 ms 관측</small></div>
+        <div class="phase-health" id="b-health"><span>B상</span><strong>정상 · 약 60 edge</strong><small>10 ms 관측</small></div>
+        <div class="mode-card"><span>선택된 위치 경로</span><strong id="mode-value">AB · QUADRATURE</strong><small id="mode-detail">두 상의 모든 변화를 사용함</small></div>
+        <div class="result-card"><span>출력 상태</span><strong id="output-value">정상 출력</strong><small id="output-detail">40,000 count/rev</small></div>
+      </div>
+    </section>
+
+    <section id="diagnosis" class="diagnosis-section" aria-labelledby="diagnosis-title">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">04 / 각 상 개별 진단</p>
+          <h2 id="diagnosis-title">고정 속도라서,<br>정상 펄스 수를 미리 알 수 있음.</h2>
+        </div>
+        <p>10,000 line Encoder가 36 RPM으로 돌면 각 상의 rising edge는 10 ms마다 약 60개가 들어옴.</p>
+      </div>
+
+      <div class="equation" aria-label="36 RPM에서 10밀리초당 예상되는 각 상의 펄스 수 계산">
+        <div><strong>36</strong><span>rev / min</span></div><b>×</b>
+        <div><strong>10,000</strong><span>edge / rev</span></div><b>÷</b>
+        <div><strong>60</strong><span>sec / min</span></div><b>×</b>
+        <div><strong>0.01</strong><span>sec</span></div><b>=</b>
+        <div class="equation-result"><strong>60</strong><span>edge / 10 ms</span></div>
+      </div>
+
+      <div class="diagnosis-grid">
+        <article class="edge-meter panel">
+          <div class="panel-topline"><span>PHASE HEALTH</span><span id="meter-scenario">정상 상태</span></div>
+          <div class="meter-body">
+            <div class="meter-scale"><span>0</span><span>정상 중심 60</span><span>120 edge</span></div>
+            <div class="phase-meter" id="meter-a">
+              <div class="meter-label"><strong>A상</strong><span>60 edge</span></div>
+              <div class="meter-track"><i class="acceptable"></i><b></b><em></em></div>
+              <small>상태 판정: 정상</small>
+            </div>
+            <div class="phase-meter" id="meter-b">
+              <div class="meter-label"><strong>B상</strong><span>60 edge</span></div>
+              <div class="meter-track"><i class="acceptable"></i><b></b><em></em></div>
+              <small>상태 판정: 정상</small>
+            </div>
+            <div class="window-key"><span><i></i> 구현상 허용 범위 21–108</span><span><b></b> 현재 관측값</span></div>
+          </div>
+        </article>
+
+        <article class="why-panel panel">
+          <div class="panel-topline"><span>WHY IT WORKS</span><span>운용 조건</span></div>
+          <div class="condition-stack">
+            <div><span>01</span><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22"/><path d="M32 20v13l10 6"/><path d="M16 16l-5 9 10-2"/></svg><p><strong>속도가 고정됨</strong><small>36 RPM의 예상 edge 수와 비교 가능</small></p></div>
+            <div><span>02</span><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 32h39"/><path d="M40 22l11 10-11 10"/></svg><p><strong>방향이 고정됨</strong><small>단일상이 잃는 방향 정보를 운용 조건으로 제한</small></p></div>
+            <div><span>03</span><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22"/><path d="M32 10v13"/><circle cx="32" cy="32" r="5"/></svg><p><strong>Index가 있음</strong><small>한 바퀴마다 기준 위치를 다시 맞춤</small></p></div>
+          </div>
+          <p class="why-summary">따라서 A/B를 한 묶음으로만 보지 않고, 각 상을 독립적으로 정상·이상 판정할 수 있음.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="fallback" class="fallback-section" aria-labelledby="fallback-title">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">05 / Single-phase Fallback</p>
+          <h2 id="fallback-title">살아 있는 신호로<br>위치 출력을 이어 감.</h2>
+        </div>
+        <p>상단에서 선택한 고장 상태가 아래 판정 경로와 출력 소스에도 그대로 반영됨.</p>
+      </div>
+
+      <div class="fallback-flow panel" aria-live="polite">
+        <div class="flow-start"><span>10 ms 관측</span><strong>A <i id="flow-a-dot"></i> / B <i id="flow-b-dot"></i></strong></div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div class="flow-branches">
+          <div data-flow-mode="AB"><b>A + B 정상</b><span>두 상 사용</span></div>
+          <div data-flow-mode="A_ONLY"><b>A만 정상</b><span>A상 사용</span></div>
+          <div data-flow-mode="B_ONLY"><b>B만 정상</b><span>B상 사용</span></div>
+          <div data-flow-mode="INVALID"><b>양쪽 이상</b><span>출력 신뢰 불가</span></div>
+        </div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div class="flow-result"><span>선택 모드</span><strong id="flow-mode">AB</strong><small id="flow-source">40,000 count/rev</small></div>
+      </div>
+
+      <div class="resolution-grid">
+        <article class="resolution-panel panel">
+          <div class="panel-topline"><span>POSITION SCALE</span><span>한 line 확대</span></div>
+          <div class="resolution-visual">
+            <div class="resolution-row quadrature-row"><span>AB</span><div class="edge-track"><i></i><i></i><i></i><i></i></div><strong>4 count</strong></div>
+            <div class="resolution-row single-row"><span>A</span><div class="edge-track"><i></i></div><strong>1 edge × 4</strong></div>
+            <div class="same-scale"><span>0</span><b>같은 0–39,999 위치 범위로 환산</b><span>40,000</span></div>
+          </div>
+          <p class="panel-note">단일상 rising edge 하나를 4 count 단위로 환산함. 정상 AB처럼 모든 edge를 직접 읽는 것은 아니므로 36 RPM 기대값으로 양자화 오차를 보정함.</p>
+        </article>
+
+        <article class="index-panel panel">
+          <div class="panel-topline"><span>INDEX REBASE</span><span>오차 제한</span></div>
+          <div class="index-orbit">
+            <svg viewBox="0 0 360 260" role="img" aria-label="Index 신호가 한 바퀴마다 위치 기준을 다시 맞추는 그림">
+              <circle class="orbit-base" cx="180" cy="130" r="84"/>
+              <path class="orbit-progress" d="M180 46a84 84 0 1 1-1 0"/>
+              <path class="index-tick" d="M180 32v32"/>
+              <circle class="orbit-dot" cx="180" cy="46" r="8"/>
+              <text x="180" y="122">1 REV</text><text class="orbit-count" x="180" y="145">40,000</text>
+              <text class="index-label" x="180" y="20">I · 기준점</text>
+            </svg>
+            <div class="rebase-label"><strong>누적 오차</strong><span>다음 Index에서 다시 정렬</span></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="limit-note"><strong>Fallback의 범위</strong><p>정상 Quadrature와 같은 정밀도를 보장하는 방식이 아님. 36 RPM 고정 속도·고정 방향에서 한쪽 센서 이상 시 운전 연속성을 확보하는 degraded estimate임.</p></div>
+    </section>
+
+    <section id="result" class="result-section" aria-labelledby="result-title">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">06 / 결론과 후속 조치</p>
+          <h2 id="result-title">기계적으로 맞추고,<br>소프트웨어로 보완함.</h2>
+        </div>
+        <p>와셔 조정으로 pulse를 복구했지만 재발 시점을 예측하기 어려워 A/B상 진단과 단상 fallback을 함께 추가함.</p>
+      </div>
+
+      <div class="before-after">
+        <article class="comparison-card before-card">
+          <div class="comparison-label"><span>FIELD ISSUE</span><strong>정렬 경계 → pulse·RPM 불안정</strong></div>
+          <svg viewBox="0 0 560 210" role="img" aria-label="정렬 조건이 흔들릴 때 위치 출력이 불안정해질 수 있음을 보이는 개념 그래프">
+            <g class="chart-grid"><path d="M35 40H535M35 90H535M35 140H535M35 190H535"/><path d="M35 20V190M160 20V190M285 20V190M410 20V190M535 20V190"/></g>
+            <path class="target-line" d="M35 180L535 28"/>
+            <path class="before-line" d="M35 180L145 147L159 68L188 136L220 126L231 40L258 114L314 98L327 174L345 88L392 74L405 26L425 64L535 30"/>
+            <text x="41" y="32">위치</text><text x="490" y="205">시간 →</text>
+          </svg>
+          <p><i></i> 광학 입력이 경계에 걸리면 A/B/I 중 하나 이상의 pulse가 뭉개지고 RPM이 사라질 수 있음.</p>
+        </article>
+        <article class="comparison-card after-card">
+          <div class="comparison-label"><span>DEGRADED MODE</span><strong>상별 판정 → 정상 상으로 제한 운전</strong></div>
+          <svg viewBox="0 0 560 210" role="img" aria-label="단일상 fallback으로 제한적인 위치 출력이 이어지는 개념 그래프">
+            <g class="chart-grid"><path d="M35 40H535M35 90H535M35 140H535M35 190H535"/><path d="M35 20V190M160 20V190M285 20V190M410 20V190M535 20V190"/></g>
+            <rect class="fallback-zone" x="230" y="20" width="175" height="170"/>
+            <path class="target-line" d="M35 180L535 28"/>
+            <path class="after-line" d="M35 180L222 123L230 121L405 68L535 29"/>
+            <text x="41" y="32">위치</text><text x="490" y="205">시간 →</text><text class="zone-label" x="317" y="44">A_ONLY / B_ONLY</text>
+          </svg>
+          <p><i></i> 한 상만 정상일 때 위치 범위를 이어 가고 다음 Index에서 다시 맞춤.</p>
+        </article>
+      </div>
+      <p class="chart-disclaimer">위 그래프는 제어 로직의 차이를 설명하는 개념도이며 저장된 오실로스코프 실측 파형은 아님.</p>
+
+      <div class="outcome-grid">
+        <article><span>전기 원인</span><strong>전원·RS-422 경로 배제</strong><p>Power cycle과 차동 전송 구조를 기준으로 전기 문제는 우선순위에서 제외함.</p></article>
+        <article><span>기계 대응</span><strong>와셔로 높이 조정</strong><p>정상 pulse는 복구했지만 공차 자체가 남아 재발 시점은 예측하기 어려웠음.</p></article>
+        <article><span>SW 보완</span><strong>A/B상 독립 진단·Fallback</strong><p>36 RPM의 예상 pulse를 기준으로 정상 상을 골라 제한적으로 위치를 이어 감.</p></article>
+      </div>
+
+      <div class="final-summary">
+        <div class="summary-mark" aria-hidden="true">✓</div>
+        <div><span>FINAL</span><h3>근본 원인은 기계 공차,<br>운전 보완은 소프트웨어로 함.</h3><p>와셔로 광학 동작점을 맞추고, 언제 다시 pulse가 무너질지 모르는 구간은 A/B상 개별 진단과 단상 fallback으로 보완함. Fallback은 공차 문제를 없애는 수정이 아니라 운전 연속성을 위한 안전망임.</p></div>
+      </div>
+
+      <details class="evidence-details">
+        <summary>근거와 해석 범위 보기</summary>
+        <div>
+          <p><strong>확인된 현상</strong> 현장에서 RPM 값이 나오지 않았고, 오실로스코프에서도 EM2 출력 pulse가 실제로 뭉개져 있었음.</p>
+          <p><strong>전기 원인 배제</strong> pulse가 깨끗하게 복귀했고 power cycle 뒤에도 정상을 유지함. 출력 직후 RS-422 차동으로 전송하며 사양 여유도 충분했음.</p>
+          <p><strong>기계 원인</strong> 데이터시트 gap 0.26–0.64 mm와 radial ±0.127 mm 공차에 조립·와셔·편심 편차가 겹쳐 광학 동작점이 흔들렸음.</p>
+          <p><strong>펌웨어 기준</strong> 10,000 line, 40,000 count/rev(x4), 36 RPM, 10 ms health window, A_ONLY/B_ONLY degraded estimate를 기준으로 함.</p>
+          <p><strong>기계 조정의 한계</strong> 와셔로 높이를 맞춰 pulse를 복구했지만 반복 가능한 기준 구조가 아니므로 재발 시점을 예측하기 어려웠음.</p>
+          <p><strong>시각화 범위</strong> 현장 사진과 오실로스코프 사진은 원본 기록임. 신호·fallback 그래프는 이해를 위한 개념도이며 계측 모델이 아님.</p>
+        </div>
+      </details>
+    </section>
+  </main>
+</body>
+</html>

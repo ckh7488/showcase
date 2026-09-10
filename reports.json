@@ -2,6 +2,24 @@
   "version": 1,
   "reports": [
     {
+      "id": "em2-encoder-fallback",
+      "title": "EM2 디버깅",
+      "summary": "간헐적인 펄스 이상에서 전기적 원인을 배제하고 기계 공차를 확인한 뒤, A/B/I 진단과 36 RPM fallback으로 보완한 흐름을 정리합니다.",
+      "category": "센서 · 실시간 시스템",
+      "date": "2026-09-10",
+      "path": "reports/em2-encoder-fallback/",
+      "cover": "reports/em2-encoder-fallback/cover.png",
+      "coverAlt": "EM2 디버깅 제목과 전기 원인 배제 흐름을 보여주는 화면",
+      "tags": [
+        "Optical alignment",
+        "Encoder",
+        "Index",
+        "Quadrature",
+        "Fallback",
+        "고장 진단"
+      ]
+    },
+    {
       "id": "porta-pcb",
       "title": "PALA720 · PortA 통신 경로 분석",
       "summary": "실제 PCB 두 장과 20 m 케이블의 연결 구조. 트랜스 양쪽 선로의 해석 결과로 통신 취약 구간을 살펴봅니다.",
