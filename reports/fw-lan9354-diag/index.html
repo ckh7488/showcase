@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="PALA720 센서 디버깅에서 LiDAR, LAN9354, STM32/RMII, PC 수신 고장 경로를 FW diag와 PCB 경로 기준으로 나눠 보는 시각 보고서.">
+  <title>PALA720 센서 디버깅 | ATLAS</title>
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/theme.v1.css">
+  <link rel="stylesheet" href="report.css?v=20260910-5">
+</head>
+<body>
+  <a class="skip" href="#purpose">본문으로 건너뛰기</a>
+  <nav class="topbar" aria-label="보고서 이동">
+    <a href="../../" aria-label="ATLAS 라이브러리로 돌아가기">← ATLAS</a>
+    <span>센서 디버깅</span>
+  </nav>
+
+  <main>
+    <section id="purpose" class="hero">
+      <div class="eyebrow">PALA720 sensor debug</div>
+      <h1>센서 디버깅</h1>
+      <p class="intro">FW diag로 LiDAR 불안정과 DSP 수신률 저하를 같은 시간대에 기록하고, 실제 케이블·보드 경로와 LAN9354 포트 기준으로 고장 위치를 좁힙니다.</p>
+      <div class="route-atlas" aria-label="PALA720 센서 통신 경로 요약">
+        <div class="atlas-copy">
+          <span class="eyebrow">One-page map</span>
+          <h2>FW diag로 고장 경로를 나눈다.</h2>
+          <p>외부 PC 케이블, LiDAR 슬립링 경로, STM32 RMII가 모두 LAN9354에 모입니다. FW diag는 이 세 갈래와 스위치 내부 상태를 같은 시각에 남깁니다.</p>
+          <div class="atlas-legend" aria-label="경로 색상">
+            <span><i class="pc-dot"></i>외부 PC 경로</span>
+            <span><i class="lidar-dot"></i>LiDAR 경로</span>
+            <span><i class="stm-dot"></i>STM32/RMII</span>
+          </div>
+        </div>
+        <div class="sensor-route-map" role="img" aria-label="LLC12_18M, M12, Motor board, Control board, LAN9354와 LiDAR 슬립링, STM32 RMII 경로">
+          <div class="hub-card">
+            <b>LAN9354</b>
+            <span>Port1/A · Port2/B · Port0</span>
+          </div>
+          <div class="atlas-track pc-track">
+            <strong>외부 PC 경로</strong>
+            <div class="track-nodes">
+              <span>LLC12_18M</span>
+              <i></i>
+              <span>M12 커넥터</span>
+              <i></i>
+              <span>Motor board</span>
+              <i></i>
+              <span>제어보드</span>
+              <i></i>
+              <span>LAN9354<br>Port1/A</span>
+            </div>
+          </div>
+          <div class="atlas-track lidar-track">
+            <strong>LiDAR 입력 경로</strong>
+            <div class="track-nodes">
+              <span>LiDAR</span>
+              <i></i>
+              <span>to 슬립링</span>
+              <i></i>
+              <span>슬립링 케이블</span>
+              <i></i>
+              <span>제어보드 커넥터</span>
+              <i></i>
+              <span>LAN9354<br>Port2/B</span>
+            </div>
+          </div>
+          <div class="atlas-track stm-track">
+            <strong>MCU 내부 경로</strong>
+            <div class="track-nodes">
+              <span>STM32</span>
+              <i></i>
+              <span>RMII</span>
+              <i></i>
+              <span>LAN9354<br>Port0</span>
+            </div>
+          </div>
+        </div>
+        <figure class="pcb-snapshot">
+          <div class="snapshot-image sensor">
+            <img src="sensor-assembly.jpg" width="1200" height="900" alt="PALA720 회전 센서 어셈블리">
+            <span>센서 어셈블리</span>
+          </div>
+          <div class="snapshot-image board">
+            <img src="pcb-board-path.png" width="1200" height="625" alt="PALA720 Control board와 Motor board의 PCB 통신 경로 3D 화면">
+            <span>PCB 3D 경로</span>
+          </div>
+          <figcaption>실제 센서와 PCB 3D를 같은 화면에 넣고, 위의 세 경로 지도와 같은 기준으로 읽게 했습니다.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="splitter" aria-labelledby="splitter-title">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Fault domain splitter</span>
+          <h2 id="splitter-title">LAN9354 기준 세 물리 경로를 먼저 본다.</h2>
+        </div>
+        <p>Port2/B, Port1/A, Port0/RMII가 실제 보드에서 갈라지는 세 경로입니다. Fabric과 PTP는 그 위에 얹히는 논리 판정입니다.</p>
+      </div>
+
+      <div class="route-tabs" role="tablist" aria-label="진단할 경로">
+        <button type="button" role="tab" aria-selected="true" data-route="lidar">LiDAR 외부선</button>
+        <button type="button" role="tab" aria-selected="false" data-route="fabric">LAN9354 fabric</button>
+        <button type="button" role="tab" aria-selected="false" data-route="stm">STM32 / RMII</button>
+        <button type="button" role="tab" aria-selected="false" data-route="pc">PortA / PC</button>
+        <button type="button" role="tab" aria-selected="false" data-route="ptp">PTP 응답</button>
+      </div>
+
+      <div class="visual-grid">
+        <div class="stage" data-active-route="lidar" aria-label="LiDAR, LAN9354, STM32, PC 통신 경로">
+          <div class="network-map" role="img" aria-label="LiDAR는 PortB로 들어오고, STM32 DSP 데이터는 Port0에서 LAN9354를 거쳐 PortA와 PC로 나가는 구조">
+            <div class="packet-legend">
+              <span class="packet-pill data">UDP 6001 DSP</span>
+              <span class="packet-pill diag">UDP 6002 LDG4.2</span>
+            </div>
+
+            <div class="map-node lidar" data-route="lidar">
+              <b>LiDAR</b>
+              <span>회전측 센서</span>
+            </div>
+            <div class="route-segment lidar" data-route="lidar"><span>PortB PHY</span></div>
+            <div class="map-node portb" data-route="lidar">
+              <b>Port2 / B</b>
+              <span>LiDAR ingress</span>
+              <em>PHY B state</em>
+            </div>
+            <div class="route-segment fabric" data-route="fabric"><span>P2 RX</span></div>
+            <div class="map-node switch-node" data-route="fabric">
+              <b>LAN9354</b>
+              <span>shared switch fabric</span>
+              <span>buffer manager</span>
+              <em>P2 RX → P1 TX counters</em>
+            </div>
+            <div class="route-segment pc pc-a" data-route="pc"><span>P1 TX</span></div>
+            <div class="map-node porta" data-route="pc">
+              <b>Port1 / A</b>
+              <span>외부 PC uplink</span>
+              <em>PHY A state</em>
+            </div>
+            <div class="route-segment pc pc-b" data-route="pc"><span>Ethernet</span></div>
+            <div class="map-node pc" data-route="pc">
+              <b>PC</b>
+              <span>외부 케이블 / diaglog</span>
+              <em>socket RX</em>
+            </div>
+
+            <div class="vertical-segment stm" data-route="stm"><span>RMII / Port0</span></div>
+            <div class="map-node stm" data-route="stm">
+              <b>STM32 MCU</b>
+              <span>RMII / FW TX</span>
+              <em>DMA / send fail</em>
+            </div>
+
+            <div class="ptp-panel" data-route="ptp">
+              <b>PTP Delay_Req / Delay_Resp</b>
+              <span>L2 seen → TS queue → pop_ok / pop_miss → resp_ok</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="route-card" aria-live="polite">
+          <span id="route-kicker" class="eyebrow">선택 경로</span>
+          <h3 id="route-title">LiDAR 외부선 / PortB</h3>
+          <p id="route-copy">LiDAR 케이블, 트랜스, PortB PHY가 marginal 상태인지 본다. 링크가 완전히 down이면 조용하지만, 애매하게 살아 있는 링크는 에러 프레임을 만들 수 있다.</p>
+          <div class="metric-list" id="route-metrics"></div>
+          <div class="decision-box">
+            <b>이 경로가 원인이면</b>
+            <span id="route-decision">PHY B operational bit가 떨어지거나 P2 RX error/BM drop 증가가 같은 시간대에 나타난다.</span>
+          </div>
+        </aside>
+      </div>
+
+      <div class="pcb-view" data-active-route="lidar" aria-labelledby="pcb-view-title">
+        <div class="pcb-view-head">
+          <span class="eyebrow">PCB / harness perspective</span>
+          <h3 id="pcb-view-title">같은 분리를 실제 보드 기준으로 다시 놓는다.</h3>
+          <p>정확한 copper 길이보다, 현장 디버깅 때 어느 케이블·커넥터·보드 구간을 먼저 의심할지 잡기 위한 지도입니다.</p>
+        </div>
+        <div class="pcb-paths" aria-label="LAN9354 포트별 실제 PCB 및 하네스 경로">
+          <article class="pcb-path lidar" data-physical-route="lidar">
+            <span class="port-label">Port2 / B · LiDAR ingress</span>
+            <h4>LiDAR에서 LAN9354로 들어오는 길</h4>
+            <ol>
+              <li>LiDAR</li>
+              <li>LiDAR → 슬립링 케이블</li>
+              <li>슬립링 케이블</li>
+              <li>Control board 커넥터</li>
+              <li>LAN9354 Port2/B</li>
+            </ol>
+            <p>6002에서는 PHY B state, P2 RX error, P2 BM drop 쪽으로 이 경로를 봅니다.</p>
+          </article>
+          <article class="pcb-path pc" data-physical-route="pc">
+            <span class="port-label">Port1 / A · PC uplink</span>
+            <h4>LAN9354에서 외부 케이블로 나가는 길</h4>
+            <ol>
+              <li>LAN9354 Port1/A</li>
+              <li>Control board PCB 경로</li>
+              <li>Molex board-to-board</li>
+              <li>Motor board / M12 쪽</li>
+              <li>외부 케이블 / PC</li>
+            </ol>
+            <p>P1 TX, PHY A state, PC 수신률을 같이 봐서 스위치 이후 경로를 분리합니다.</p>
+          </article>
+          <article class="pcb-path stm" data-physical-route="stm">
+            <span class="port-label">Port0 · STM32 RMII</span>
+            <h4>LAN9354와 STM32 사이의 내부 길</h4>
+            <ol>
+              <li>STM32 ETH MAC</li>
+              <li>RMII 신호선 / 직렬 저항</li>
+              <li>LAN9354 Port0</li>
+              <li>FW UDP 6001 송신</li>
+              <li>6002 FW TX counter</li>
+            </ol>
+            <p>FW tx delta, ETH DMA, TX fail, RMII/Port0 징후를 봐서 MCU 송신 문제를 따로 뺍니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="change" aria-labelledby="change-title">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">What changed</span>
+          <h2 id="change-title">기존엔 현상만, 지금은 경로까지 본다.</h2>
+        </div>
+        <p>UDP 번호는 구현 세부입니다. 핵심은 단일 FPS 관측에서 경로별 증거 기록으로 바뀐 점입니다.</p>
+      </div>
+      <div class="debug-evolution" aria-label="기존 관측과 FW diag 이후 비교">
+        <article class="debug-card before">
+          <span class="eyebrow">기존 관측</span>
+          <h3>엔코더/DSP 값이 몇 Hz로 왔는지만 보였다.</h3>
+          <div class="mini-flow" aria-label="기존 6001 관측 경로">
+            <span>엔코더 / DSP</span>
+            <i></i>
+            <span>UDP 6001</span>
+            <i></i>
+            <span>PC FPS</span>
+          </div>
+          <p>수신률이 낮아진 사실은 보이지만, FW 송신·스위치 drop·PC 수신 중 어디가 원인인지는 분리되지 않았습니다.</p>
+        </article>
+        <article class="debug-card after">
+          <span class="eyebrow">FW diag 이후</span>
+          <h3>LAN9354 기준 경로 증거를 같이 남긴다.</h3>
+          <div class="lane-list" aria-label="6002로 분리하는 고장 경로">
+            <span>LiDAR 외부선 / PortB</span>
+            <span>LAN9354 shared fabric</span>
+            <span>STM32 / RMII / FW TX</span>
+            <span>PortA / PC 수신</span>
+          </div>
+          <p>FW TX, PHY state, switch counter, BM drop, PC 수신률을 묶어서 어느 경로가 먼저 흔들렸는지 남깁니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="why" aria-labelledby="why-title">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Why firmware diag</span>
+          <h2 id="why-title">단일 FPS 로그만으로는 세 가지가 같은 증상처럼 보인다.</h2>
+        </div>
+      </div>
+      <div class="why-grid">
+        <article>
+          <span>01</span>
+          <h3>FW가 못 보낸 경우</h3>
+          <p>STM32 송신 루프가 밀렸거나 ETH DMA/TX가 실패하면 PC에 도착하지 않는 것이 당연하다. 이때는 FW 내부 카운터부터 줄거나 실패가 증가해야 한다.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>스위치 안에서 버린 경우</h3>
+          <p>FW는 6001을 보냈지만 LAN9354 fabric이나 buffer manager가 Port0→Port1 패킷을 drop할 수 있다. 이 경우 PC 수신률만 낮아진다.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>PC 쪽에서 놓친 경우</h3>
+          <p>LAN9354 Port1 TX까지 정상인데 앱의 소켓 버퍼, 스케줄링, FPS 계산이 흔들리면 diaglog만 낮게 보인다. Wireshark와 PC RX 카운터로 분리한다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="ldg" aria-labelledby="ldg-title">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">LDG4.2 / UDP 6002</span>
+          <h2 id="ldg-title">새 방향은 추측 대신 sample validity를 남기는 것이다.</h2>
+        </div>
+        <p>6002는 DSP 데이터를 고치지 않는다. 같은 시각대의 관측값을 묶어 CSV에 남겨, 나중에 원인 후보를 줄이는 역할만 한다.</p>
+      </div>
+
+      <div class="ldg-layout">
+        <div class="packet-map" aria-label="LDG4.2 464바이트 진단 패킷 구성">
+          <div class="seg header" style="--w:14"><b>Header</b><span>magic/version/len/CRC 대상</span></div>
+          <div class="seg phy" style="--w:21"><b>PHY A/B</b><span>carrier · operational 100M · MDIO fail</span></div>
+          <div class="seg counters" style="--w:31"><b>P2 RX → P1 TX counters</b><span>size bin · ok · crc/align/symbol · BM drop</span></div>
+          <div class="seg reserved" style="--w:23"><b>reserved</b><span>호환 슬롯은 0</span></div>
+          <div class="seg diag" style="--w:11"><b>reset / ETH / CRC32C</b><span>sample rc · age · gap</span></div>
+        </div>
+
+        <div class="field-cards">
+          <div><b>정확한 wire 판별</b><span>`LDG4`, version 4.2, packet_len 464, CRC32C를 모두 확인한다.</span></div>
+          <div><b>동일 epoch 관측</b><span>diagTask가 외부 PHY를 다시 읽지 않고 최신 hardware sample을 복사한다.</span></div>
+          <div><b>운용 판정 분리</b><span>carrier up만 보지 않고 state-valid + operational 100M bit를 본다.</span></div>
+          <div><b>불완전 sample 표시</b><span>read_valid_mask, sample_rc, sample_age_ms가 불완전한 진단값을 걸러낸다.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="classifier" aria-labelledby="classifier-title">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Postmortem reading</span>
+          <h2 id="classifier-title">로그를 볼 때의 판정 흐름</h2>
+        </div>
+      </div>
+      <div class="flow">
+        <div class="flow-step"><b>1</b><span>6001이 낮아졌나</span><p>diaglog의 PC 수신 Hz와 FW tx/sample 카운터 delta를 비교한다.</p></div>
+        <i></i>
+        <div class="flow-step"><b>2</b><span>FW는 정상 송신했나</span><p>FW tx counter가 1000 Hz 근처이고 TX/DMA fail이 없으면 FW 송신 정지는 낮게 본다.</p></div>
+        <i></i>
+        <div class="flow-step"><b>3</b><span>LAN9354가 버렸나</span><p>P2 RX error, P2 BM_DRP, P1 TX 변화, read_valid_mask를 같은 구간에서 본다.</p></div>
+        <i></i>
+        <div class="flow-step"><b>4</b><span>PC만 놓쳤나</span><p>스위치 카운터가 깨끗하고 Wireshark는 보는데 앱 Hz만 낮으면 PC 수신 경로로 본다.</p></div>
+      </div>
+
+      <div class="cases">
+        <article>
+          <h3>PortB 외부선 불량</h3>
+          <p>PHY B state가 100M operational에서 벗어나고 P2 RX error 또는 BM drop이 동반된다. LiDAR 케이블·트랜스·납땜 쪽이 우선이다.</p>
+        </article>
+        <article>
+          <h3>LAN9354 shared resource 영향</h3>
+          <p>FW tx는 정상인데 PC 수신만 빠지고, 같은 구간에 P2 noise와 Port0/Port1 관련 drop 징후가 있다. 외부 PortB 불량이 내부 fabric에 영향을 준 패턴이다.</p>
+        </article>
+        <article>
+          <h3>STM32/RMII/FW 송신 문제</h3>
+          <p>FW tx delta 자체가 낮거나 ETH DMA, TX fail, RMII 쪽 오류가 오른다. 이때는 LiDAR가 아니라 MCU 송신 루프와 ETH 경로를 본다.</p>
+        </article>
+        <article>
+          <h3>PC 수신/표시 문제</h3>
+          <p>FW와 LAN9354가 모두 정상인데 diaglog 앱의 Hz만 낮다. 소켓 버퍼, thread scheduling, FPS 계산, NIC counter를 확인한다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="scope" aria-labelledby="scope-title">
+      <h2 id="scope-title">이 보고서의 범위</h2>
+      <p>이 페이지는 FW 변경 자체의 코드 리뷰가 아니라, 6002 진단을 왜 넣었는지 설명하는 공개용 시각 자료입니다. 실제 판정은 현장 CSV, Wireshark, 보드 측정값과 함께 봐야 합니다.</p>
+      <div class="links">
+        <a href="../../">보고서 목록으로</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>PALA720 · 센서 디버깅</span>
+    <span>2026.09.10 · LDG4.2 6002 진단 방향</span>
+  </footer>
+  <script src="report.js?v=20260910-5"></script>
+</body>
+</html>
