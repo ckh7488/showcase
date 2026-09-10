@@ -6,10 +6,10 @@
   <meta name="description" content="Balun 측정 어댑터의 실제 CAD 세 단계를 비교하며 길이 일치와 배선 대칭의 설계 판단을 살펴봅니다.">
   <link rel="icon" href="../../assets/favicon.svg?v=20260910-atlas1" type="image/svg+xml">
   <link rel="stylesheet" href="../../assets/theme.v1.css">
-  <link rel="stylesheet" href="report.css?v=20260910-threecases1">
+  <link rel="stylesheet" href="report.css?v=20260910-rfvisible1">
   <link rel="stylesheet" href="signal-explainer.css?v=20260910-explainer1">
   <script src="vendor/three.min.js" defer></script><script src="vendor/OrbitControls.js" defer></script>
-  <script src="data.js" defer></script><script src="report.js?v=20260910-threecases1" defer></script><script src="signal-explainer.js?v=20260910-explainer1" defer></script>
+  <script src="data.js" defer></script><script src="report.js?v=20260910-rfvisible1" defer></script><script src="signal-explainer.js?v=20260910-explainer1" defer></script>
 </head>
 <body>
 <a class="skip" href="#purpose">본문으로 건너뛰기</a>
@@ -49,11 +49,13 @@
   </section>
 
   <section id="em">
-    <div class="section-title"><div><p class="kicker">03 / 세 안의 RF 비교</p><h2>반사와 모드 변환도, 같은 세 안으로.</h2></div></div>
-    <p class="note">02와 동일한 Molex CAD 버전입니다. 각 버전에 대응하는 openEMS 원본 결과를 아직 확보하지 못해 계산값은 비워 두었습니다.</p>
-    <p class="table-scroll-hint">표를 좌우로 밀어 세 안을 비교할 수 있습니다.</p>
-    <div class="table-wrap three-case-wrap" tabindex="0" aria-label="세 CAD 버전의 RF 결과 비교표, 좌우 스크롤 가능"><table class="three-case-table" id="rf-comparison"><thead><tr><th scope="col">항목</th><th scope="col" data-phase-col="0"><button class="compare-phase" data-select-phase="0" aria-pressed="false"><span>01 · 길이 맞춤</span><small>8826733</small></button></th><th scope="col" data-phase-col="1"><button class="compare-phase" data-select-phase="1" aria-pressed="false"><span>02 · 형상 정리</span><small>acf8225</small></button></th><th scope="col" data-phase-col="2"><button class="compare-phase" data-select-phase="2" aria-pressed="true"><span>03 · 길이 차이 축소</span><small>215cabd</small></button></th></tr></thead><tbody><tr data-metric="sdd11"><th scope="row">차동 반사 Sdd11</th><td data-phase-col="0"><span class="no-rf-value" aria-label="검증된 계산값 없음">—</span></td><td data-phase-col="1"><span class="no-rf-value" aria-label="검증된 계산값 없음">—</span></td><td data-phase-col="2"><span class="no-rf-value" aria-label="검증된 계산값 없음">—</span></td></tr><tr data-metric="scd21"><th scope="row">차동 → 공통 Scd21</th><td data-phase-col="0"><span class="no-rf-value" aria-label="검증된 계산값 없음">—</span></td><td data-phase-col="1"><span class="no-rf-value" aria-label="검증된 계산값 없음">—</span></td><td data-phase-col="2"><span class="no-rf-value" aria-label="검증된 계산값 없음">—</span></td></tr></tbody></table></div>
-    <p class="note">—는 0 dB나 불합격을 뜻하지 않습니다. 이 CAD와 대조한 계산값이 없다는 표시입니다. 별도 M12 해석값은 아래 참고자료에서 확인할 수 있습니다.</p>
+    <div class="section-title"><div><p class="kicker">03 / 이전 RF 해석 기록</p><h2>반사가 작다고, 변환도 작은 것은 아니다.</h2></div></div>
+    <p class="rf-context"><strong>100 MHz · RJ45–M12 선로의 두 안 비교</strong><span>이전 대화의 요약값 · 원본 solver 결과 미대조</span></p>
+    <p class="rf-model-note">아래 값은 01·02절에서 본 Molex 세 CAD와 다른 모델의 기록입니다.</p>
+    <div class="table-wrap"><table id="rf-results" class="rf-results"><thead><tr><th scope="col">지표</th><th scope="col">등길이안</th><th scope="col">평행 배선안</th></tr></thead><tbody><tr data-history-row="sdd11"><th scope="row"><button data-history-em="sdd11" aria-pressed="true"><span>차동 반사</span><b>Sdd11</b></button></th><td data-history-case="equal_length" data-history-metric="sdd11"><strong>-37.1 dB</strong></td><td data-history-case="parallel" data-history-metric="sdd11" class="lower-response"><strong>-57.3 dB</strong></td></tr><tr data-history-row="scd21"><th scope="row"><button data-history-em="scd21" aria-pressed="false"><span>차동 → 공통</span><b>Scd21</b></button></th><td data-history-case="equal_length" data-history-metric="scd21" class="lower-response"><strong>-63.6 dB</strong></td><td data-history-case="parallel" data-history-metric="scd21"><strong>-51.0 dB</strong></td></tr></tbody></table></div>
+    <p class="note">음수 dB가 더 낮을수록 해당 성분이 작습니다. 청록색 값은 각 지표에서 더 작은 성분입니다. 지표 이름을 누르면 아래 설명이 바뀝니다.</p>
+    <div class="rf-reading" aria-live="polite"><span id="em-name">Sdd11 · 입력 차동 → 반사 차동</span><h3 id="em-judgment">반사는 평행 배선안이 더 작았다.</h3><p id="em-explain">같은 입력에서 되돌아오는 차동 성분은 새 안이 작았다는 기록입니다.</p></div>
+    <div class="scope rf-pending"><strong>요청한 세 안의 RF 비교는 아직 미완료입니다.</strong><p>01·02절의 세 Molex CAD에 대응하는 Sdd11·Scd21 결과는 확보하지 못했습니다. 최종 길이 보정안의 RF 우위는 이 두 안 기록으로 확정하지 않습니다.</p></div>
     <details id="signal-explainer" class="signal-explainer">
       <summary>차동 반사 · 차동 → 공통 변환, 그림으로 이해하기</summary>
       <div class="explainer-content">
@@ -95,17 +97,7 @@
         <p class="explain-footnote">설명용 개념도입니다. 화살표 크기는 전력 비율이 아니며, 파형은 지연을 한 주기의 15%로 과장한 정현파 예시입니다. 실제 PCB의 계산값을 바꾸지 않습니다. 공통모드 변환은 두 선의 진폭·주변 환경 불균형으로도 생길 수 있습니다. <a href="https://helpfiles.keysight.com/csg/pxivna/S1_Settings/Balanced_Measurements.htm">표기·차동/공통 정의</a> · <a href="https://www.analog.com/en/resources/technical-articles/unbalanced-twisted-pairs-can-give-you-the-jitters.html">불균형과 모드 변환</a></p>
       </div>
     </details>
-    <details id="historical-em" class="historical-em">
-      <summary>참고 · 별도 RJ45–M12 모델의 2안 비교 기록</summary>
-      <div class="historical-content">
-        <h3>반사가 작다고, 변환도 작은 것은 아니다.</h3>
-    <div class="scope"><strong>이 표는 별도의 RJ45–M12 선로 비교입니다.</strong><p>이전 대화 「차동신호 배선 비교」에 남은 요약값입니다. 위 Molex 세 CAD 버전의 해석 결과로 대응시키지 않았으며, 원본 solver 파일은 아직 대조하지 못했습니다.</p></div>
-    <div class="em-controls" aria-label="별도 M12 기록의 계산 지표"><button data-history-em="sdd11" aria-pressed="true">차동 반사</button><button data-history-em="scd21" aria-pressed="false">차동 → 공통 변환</button></div>
-    <div class="em-card"><div><span id="em-name"></span><h3 id="em-judgment"></h3><p id="em-explain"></p><small>100 MHz · 이전 대화의 정밀 격자 요약 · 음수 dB, 더 낮을수록 성분이 작음</small></div><div class="em-values"><div><span>이전 등길이안</span><strong id="em-old"></strong></div><div><span>새 평행 배선안</span><strong id="em-new"></strong></div></div></div>
-    <p>당시 새 평행안에는 <strong>1.221 mm</strong> 길이 차이가 남았습니다. “평행하게 정리하면 작은 길이 차이는 중요하지 않다”는 예상은 이 비교에서 성립하지 않았습니다.</p>
-    <details><summary>무엇까지 확인된 기록인가?</summary><p>당시 두 격자에서 주요 순위는 같았지만 값 자체는 달랐고, 작은 모드 변환은 기록 길이에 민감했다는 설명이 남아 있습니다. 실제 커넥터·케이블·외부 잡음 유입·통신 오류까지 평가한 시험은 아닙니다.</p><p>이 기록은 등길이와 평행 배선 사이의 절충을 보여줍니다. 최종 길이 보정안까지 포함한 동일 조건의 세 안 비교 결과는 아직 확보되지 않았습니다.</p></details>
-      </div>
-    </details>
+    <details id="rf-provenance"><summary>이전 수치의 출처와 계산 범위</summary><p>이전 대화 「차동신호 배선 비교」에 남은 100 MHz 정밀 격자 요약입니다. 당시 평행 배선안에는 1.221 mm의 길이 차이가 남았습니다. 원본 solver 파일은 아직 대조하지 못했습니다.</p><p>두 격자에서 주요 순위는 같았지만 값은 달랐고, 작은 모드 변환은 기록 길이에 민감했다는 설명이 남아 있습니다. 커넥터·케이블·외부 잡음·통신 오류까지 평가한 시험은 아닙니다.</p><a class="source-link" href="data.json">보존한 값과 출처 JSON ↗</a></details>
   </section>
 
   <section id="lesson">

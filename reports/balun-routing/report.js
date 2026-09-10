@@ -27,10 +27,8 @@
   all('[data-select-phase]').forEach(b=>b.addEventListener('click',()=>setPhase(+b.dataset.selectPhase)));
   all('[data-pair]').forEach(b=>b.addEventListener('click',()=>{pair=b.dataset.pair;all('[data-pair]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));if(scene)drawSignals();}));
   function showEM(key){
-    const e=data.historical_em,old=e.equal_length[key+'_db'],next=e.parallel[key+'_db'];
     all('[data-history-em]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.historyEm===key)));
-    $('#em-old').textContent=old.toFixed(1)+' dB';$('#em-new').textContent=next.toFixed(1)+' dB';
-    $('#em-old').parentElement.classList.toggle('better',old<next);$('#em-new').parentElement.classList.toggle('better',next<old);
+    all('[data-history-row]').forEach(row=>row.classList.toggle('is-active',row.dataset.historyRow===key));
     const reflection=key==='sdd11';
     $('#em-name').textContent=reflection?'Sdd11 · 입력 차동 → 반사 차동':'Scd21 · 입력 차동 → 출력 공통';
     $('#em-judgment').textContent=reflection?'반사는 평행 배선안이 더 작았다.':'모드 변환은 등길이안이 더 작았다.';
