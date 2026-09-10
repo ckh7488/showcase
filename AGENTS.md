@@ -2,7 +2,9 @@
 
 This repository is a growing library of independently interactive HTML reports, served by GitHub Pages. Read README.md before adding or changing a report.
 
-Read DESIGN.md before authoring or restyling a report. The shared visual language is a quiet, light document surface with dark text and teal accents, matching the landing page. Registered reports must load `../../assets/theme.v1.css`; use its tokens instead of inventing a new palette. Shared theme styles are the exception to per-report self-containment. Keep individual scripts, data, 3D models, and third-party library versions in the report folder.
+The public name is **ATLAS**, its subtitle is **Interactive Library**, and the landing list is **Collections**. Use `← ATLAS` for report navigation back to the library and `<report title> | ATLAS` for report page titles. Preserve the existing `showcase` repository/URLs, deployment command names, and published report slugs.
+
+Read DESIGN.md before authoring or restyling a report. The shared visual language is a quiet, light document surface with dark text and teal accents, matching the landing page. Registered reports must load `../../assets/theme.v1.css`; use its tokens instead of inventing a new palette. Shared theme styles and the ATLAS favicon are exceptions to per-report self-containment. Keep individual scripts, data, 3D models, and third-party library versions in the report folder.
 
 HTML is chosen primarily for interactivity. Make important structures and comparisons explorable: rotate/select/isolate geometry, select a result to reveal its numbers and corresponding structure, compare states, and use meaningful parameter controls where supported by actual data. Do not substitute a static screenshot for a working interaction, add decorative controls, imply a fresh simulation when selecting existing results, or interpolate uncomputed frequencies. Preserve readable defaults, keyboard controls, selection states, mobile usability, and a way to return to the overview.
 
