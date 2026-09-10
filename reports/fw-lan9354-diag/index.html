@@ -7,7 +7,7 @@
   <title>PALA720 센서 디버깅 | ATLAS</title>
   <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../../assets/theme.v1.css">
-  <link rel="stylesheet" href="report.css?v=20260910-5">
+  <link rel="stylesheet" href="report.css?v=20260910-6">
 </head>
 <body>
   <a class="skip" href="#purpose">본문으로 건너뛰기</a>
@@ -76,17 +76,6 @@
             </div>
           </div>
         </div>
-        <figure class="pcb-snapshot">
-          <div class="snapshot-image sensor">
-            <img src="sensor-assembly.jpg" width="1200" height="900" alt="PALA720 회전 센서 어셈블리">
-            <span>센서 어셈블리</span>
-          </div>
-          <div class="snapshot-image board">
-            <img src="pcb-board-path.png" width="1200" height="625" alt="PALA720 Control board와 Motor board의 PCB 통신 경로 3D 화면">
-            <span>PCB 3D 경로</span>
-          </div>
-          <figcaption>실제 센서와 PCB 3D를 같은 화면에 넣고, 위의 세 경로 지도와 같은 기준으로 읽게 했습니다.</figcaption>
-        </figure>
       </div>
     </section>
 
@@ -159,62 +148,46 @@
           </div>
         </div>
 
-        <aside class="route-card" aria-live="polite">
-          <span id="route-kicker" class="eyebrow">선택 경로</span>
-          <h3 id="route-title">LiDAR 외부선 / PortB</h3>
-          <p id="route-copy">LiDAR 케이블, 트랜스, PortB PHY가 marginal 상태인지 본다. 링크가 완전히 down이면 조용하지만, 애매하게 살아 있는 링크는 에러 프레임을 만들 수 있다.</p>
-          <div class="metric-list" id="route-metrics"></div>
+        <aside class="route-inspector" aria-live="polite">
+          <div class="inspector-copy">
+            <span id="route-kicker" class="eyebrow">선택 경로</span>
+            <h3 id="route-title">LiDAR 외부선 / PortB</h3>
+            <p id="route-copy">LiDAR 케이블, 트랜스, PortB PHY가 marginal 상태인지 본다. 링크가 완전히 down이면 조용하지만, 애매하게 살아 있는 링크는 에러 프레임을 만들 수 있다.</p>
+          </div>
+
+          <figure class="route-visual" data-route="lidar">
+            <img id="route-visual-img" src="sensor-assembly.jpg" width="1200" height="900" alt="PALA720 회전 센서 어셈블리">
+            <figcaption id="route-visual-badge">센서 어셈블리에서 LiDAR 입력 경로 보기</figcaption>
+            <span id="visual-start" class="visual-label start">LiDAR</span>
+            <span id="visual-mid" class="visual-label mid">슬립링 / 커넥터</span>
+            <span id="visual-end" class="visual-label end">Port2/B</span>
+          </figure>
+
+          <div class="inspector-grid">
+            <section class="physical-panel" aria-labelledby="physical-title">
+              <span class="eyebrow">물리 경로</span>
+              <h4 id="physical-title">LiDAR에서 LAN9354로 들어오는 길</h4>
+              <ol id="route-path">
+                <li>LiDAR</li>
+                <li>LiDAR to 슬립링 케이블</li>
+                <li>슬립링 케이블</li>
+                <li>Control board 커넥터</li>
+                <li>LAN9354 Port2/B</li>
+              </ol>
+              <p id="physical-copy">LiDAR 쪽 케이블과 커넥터가 애매하게 살아 있으면 PortB에 오류 프레임이 들어올 수 있다.</p>
+            </section>
+            <section class="diag-panel" aria-labelledby="diag-title">
+              <span class="eyebrow">같이 볼 diag 값</span>
+              <h4 id="diag-title">증거로 남길 값</h4>
+              <div class="metric-list" id="route-metrics"></div>
+            </section>
+          </div>
+
           <div class="decision-box">
             <b>이 경로가 원인이면</b>
             <span id="route-decision">PHY B operational bit가 떨어지거나 P2 RX error/BM drop 증가가 같은 시간대에 나타난다.</span>
           </div>
         </aside>
-      </div>
-
-      <div class="pcb-view" data-active-route="lidar" aria-labelledby="pcb-view-title">
-        <div class="pcb-view-head">
-          <span class="eyebrow">PCB / harness perspective</span>
-          <h3 id="pcb-view-title">같은 분리를 실제 보드 기준으로 다시 놓는다.</h3>
-          <p>정확한 copper 길이보다, 현장 디버깅 때 어느 케이블·커넥터·보드 구간을 먼저 의심할지 잡기 위한 지도입니다.</p>
-        </div>
-        <div class="pcb-paths" aria-label="LAN9354 포트별 실제 PCB 및 하네스 경로">
-          <article class="pcb-path lidar" data-physical-route="lidar">
-            <span class="port-label">Port2 / B · LiDAR ingress</span>
-            <h4>LiDAR에서 LAN9354로 들어오는 길</h4>
-            <ol>
-              <li>LiDAR</li>
-              <li>LiDAR → 슬립링 케이블</li>
-              <li>슬립링 케이블</li>
-              <li>Control board 커넥터</li>
-              <li>LAN9354 Port2/B</li>
-            </ol>
-            <p>6002에서는 PHY B state, P2 RX error, P2 BM drop 쪽으로 이 경로를 봅니다.</p>
-          </article>
-          <article class="pcb-path pc" data-physical-route="pc">
-            <span class="port-label">Port1 / A · PC uplink</span>
-            <h4>LAN9354에서 외부 케이블로 나가는 길</h4>
-            <ol>
-              <li>LAN9354 Port1/A</li>
-              <li>Control board PCB 경로</li>
-              <li>Molex board-to-board</li>
-              <li>Motor board / M12 쪽</li>
-              <li>외부 케이블 / PC</li>
-            </ol>
-            <p>P1 TX, PHY A state, PC 수신률을 같이 봐서 스위치 이후 경로를 분리합니다.</p>
-          </article>
-          <article class="pcb-path stm" data-physical-route="stm">
-            <span class="port-label">Port0 · STM32 RMII</span>
-            <h4>LAN9354와 STM32 사이의 내부 길</h4>
-            <ol>
-              <li>STM32 ETH MAC</li>
-              <li>RMII 신호선 / 직렬 저항</li>
-              <li>LAN9354 Port0</li>
-              <li>FW UDP 6001 송신</li>
-              <li>6002 FW TX counter</li>
-            </ol>
-            <p>FW tx delta, ETH DMA, TX fail, RMII/Port0 징후를 봐서 MCU 송신 문제를 따로 뺍니다.</p>
-          </article>
-        </div>
       </div>
     </section>
 
@@ -356,6 +329,6 @@
     <span>PALA720 · 센서 디버깅</span>
     <span>2026.09.10 · LDG4.2 6002 진단 방향</span>
   </footer>
-  <script src="report.js?v=20260910-5"></script>
+  <script src="report.js?v=20260910-6"></script>
 </body>
 </html>

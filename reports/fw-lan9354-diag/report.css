@@ -17,7 +17,7 @@ h2{font-size:clamp(27px,3vw,38px);line-height:1.28;letter-spacing:0}
 h3{font-size:22px;line-height:1.4;letter-spacing:0}
 .intro{max-width:860px;color:var(--sc-muted);font-size:18px}
 .route-atlas{display:grid;grid-template-columns:.86fr 1.5fr;gap:18px;margin-top:34px;align-items:stretch}
-.atlas-copy,.sensor-route-map,.pcb-snapshot{background:var(--sc-surface);border:1px solid var(--sc-line);border-radius:var(--sc-radius)}
+.atlas-copy,.sensor-route-map{background:var(--sc-surface);border:1px solid var(--sc-line);border-radius:var(--sc-radius)}
 .atlas-copy{padding:26px;display:flex;flex-direction:column;justify-content:center}
 .atlas-copy h2{margin:8px 0 12px;font-size:clamp(26px,3vw,38px)}
 .atlas-copy p{margin:0;color:var(--sc-muted);font-size:15px}
@@ -44,13 +44,6 @@ h3{font-size:22px;line-height:1.4;letter-spacing:0}
 .lidar-track .track-nodes i{background:var(--sc-rx)}
 .stm-track .track-nodes span{border-color:#ace8dd}
 .stm-track .track-nodes i{background:var(--sc-tx)}
-.pcb-snapshot{grid-column:1/-1;margin:0;overflow:hidden;display:grid;grid-template-columns:minmax(190px,.75fr) minmax(0,1.05fr) minmax(260px,.75fr);align-items:stretch;background:#102f33;color:#e8f2f0}
-.snapshot-image{position:relative;min-height:260px;overflow:hidden;background:#f8fbfb}
-.snapshot-image img{display:block;width:100%;height:100%;object-position:center}
-.snapshot-image.sensor img{object-fit:contain;padding:16px;background:#fff}
-.snapshot-image.board img{object-fit:cover}
-.snapshot-image span{position:absolute;left:14px;bottom:14px;border-radius:7px;background:#06282bcf;color:#fff;font-size:12px;font-weight:900;padding:7px 10px}
-.pcb-snapshot figcaption{align-self:center;padding:24px;font-size:16px;line-height:1.7;color:#c5dbd8}
 .summary-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:34px 0 20px}
 .summary-strip div{background:var(--sc-surface);border:1px solid var(--sc-line);border-radius:var(--sc-radius);padding:18px 20px}
 .summary-strip strong{display:block;color:var(--sc-accent);font-size:22px;line-height:1.18}
@@ -75,15 +68,15 @@ section{margin-top:72px}
 .route-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
 .route-tabs button{border:1px solid var(--sc-line);background:var(--sc-surface);color:var(--sc-ink);border-radius:8px;padding:9px 13px;cursor:pointer}
 .route-tabs button[aria-selected=true]{background:var(--sc-accent);border-color:var(--sc-accent);color:white;font-weight:800}
-.visual-grid{display:grid;grid-template-columns:1fr;gap:22px;align-items:stretch}
-.stage{background:var(--sc-surface);border:1px solid var(--sc-line);border-radius:var(--sc-radius);padding:28px;overflow:hidden}
-.network-map{display:grid;grid-template-columns:minmax(96px,1fr) 42px minmax(112px,1fr) 42px minmax(160px,1.35fr) 42px minmax(112px,1fr) 42px minmax(96px,1fr);grid-template-rows:auto 20px auto 66px auto;gap:0;align-items:center;min-height:430px}
+.visual-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,400px);gap:22px;align-items:start}
+.stage{background:var(--sc-surface);border:1px solid var(--sc-line);border-radius:var(--sc-radius);padding:22px;overflow:hidden}
+.network-map{display:grid;grid-template-columns:minmax(74px,1fr) 26px minmax(88px,1fr) 26px minmax(126px,1.25fr) 26px minmax(88px,1fr) 26px minmax(74px,1fr);grid-template-rows:auto 20px auto 58px auto;gap:0;align-items:center;min-height:430px}
 .packet-legend{grid-column:5/10;grid-row:1;justify-self:end;display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
 .packet-pill{display:inline-flex;align-items:center;min-height:34px;border-radius:17px;padding:7px 13px;color:#e5f0ec;font-size:12px;font-weight:900;white-space:nowrap}
 .packet-pill.data{background:var(--sc-ink)}
 .packet-pill.diag{background:var(--sc-accent)}
-.map-node{position:relative;z-index:2;min-height:112px;background:#fff;border:1px solid var(--sc-line);border-radius:10px;padding:18px 18px 16px;box-shadow:0 10px 26px #102b310d;transition:opacity .2s,transform .2s,border-color .2s,box-shadow .2s}
-.map-node b{display:block;font-size:20px;line-height:1.25}
+.map-node{position:relative;z-index:2;min-height:108px;background:#fff;border:1px solid var(--sc-line);border-radius:10px;padding:16px 14px 14px;box-shadow:0 10px 26px #102b310d;transition:opacity .2s,transform .2s,border-color .2s,box-shadow .2s}
+.map-node b{display:block;font-size:18px;line-height:1.25}
 .map-node span{display:block;color:var(--sc-muted);font-size:13px;margin-top:6px;line-height:1.45}
 .map-node em{display:inline-flex;margin-top:13px;border-radius:5px;background:#f1f6f6;color:#46645f;font-style:normal;font-size:12px;font-weight:800;padding:4px 7px}
 .map-node.lidar{grid-column:1;grid-row:3;border-color:#f1c99f}
@@ -123,40 +116,45 @@ section{margin-top:72px}
 .stage[data-active-route=fabric] .map-node[data-route=fabric],
 .stage[data-active-route=stm] .map-node[data-route=stm],
 .stage[data-active-route=pc] .map-node[data-route=pc]{transform:translateY(-3px);box-shadow:0 16px 34px #102b3117}
-.route-card{background:var(--sc-surface);border:1px solid var(--sc-line);border-radius:var(--sc-radius);padding:26px;display:flex;flex-direction:column}
-.route-card h3{margin:8px 0 10px;font-size:25px}
-.route-card p{color:var(--sc-muted);font-size:15px}
+.route-inspector{background:var(--sc-surface);border:1px solid var(--sc-line);border-radius:var(--sc-radius);padding:20px;display:grid;gap:14px}
+.route-inspector h3{margin:7px 0 8px;font-size:24px}
+.route-inspector p{color:var(--sc-muted);font-size:14px}
+.inspector-copy p{margin-bottom:0}
+.route-visual{position:relative;margin:0;min-height:220px;overflow:hidden;border:1px solid var(--sc-line);border-radius:10px;background:#102f33}
+.route-visual img{display:block;width:100%;height:232px;object-fit:cover;object-position:center;opacity:.82;filter:saturate(.92)}
+.route-visual[data-route=lidar] img{object-fit:contain;background:#fff;padding:12px;opacity:1}
+.route-visual figcaption{position:absolute;left:12px;right:12px;bottom:12px;z-index:3;border-radius:7px;background:#06282bd9;color:#fff;font-size:12px;font-weight:900;line-height:1.35;padding:8px 10px}
+.route-visual:before{content:"";position:absolute;z-index:2;height:6px;border-radius:99px;background:var(--sc-accent);box-shadow:0 0 0 5px #ffffff9c;transform-origin:left center}
+.route-visual[data-route=lidar]:before{left:38%;top:23%;width:40%;transform:rotate(67deg);background:var(--sc-rx)}
+.route-visual[data-route=fabric]:before{left:26%;top:48%;width:52%;background:#748990}
+.route-visual[data-route=stm]:before{left:40%;top:54%;width:32%;background:var(--sc-tx)}
+.route-visual[data-route=pc]:before{left:18%;top:57%;width:62%;background:var(--sc-accent)}
+.route-visual[data-route=ptp]:before{left:20%;top:42%;width:58%;background:#8a72c2}
+.route-visual[data-route=ptp]:after{content:"";position:absolute;left:24%;top:53%;width:50%;height:4px;border-top:3px dashed #8a72c2;z-index:2}
+.visual-label{position:absolute;z-index:3;display:inline-flex;max-width:118px;border:1px solid #d7e4e2;border-radius:999px;background:#fffffff0;color:#153337;font-size:11px;font-weight:900;line-height:1.25;padding:5px 8px;box-shadow:0 8px 20px #102b3114}
+.visual-label.start{left:12px;top:14px}
+.visual-label.mid{left:50%;top:14px;transform:translateX(-50%)}
+.visual-label.end{right:12px;top:14px}
+.route-visual[data-route=lidar] .visual-label.start{left:56%;top:16px}
+.route-visual[data-route=lidar] .visual-label.mid{left:48%;top:47%}
+.route-visual[data-route=lidar] .visual-label.end{right:14px;top:64%}
+.inspector-grid{display:grid;gap:12px}
+.diag-panel{order:-1}
+.physical-panel,.diag-panel{border:1px solid var(--sc-line);border-radius:10px;background:#fbfcfc;padding:14px}
+.physical-panel h4,.diag-panel h4{margin:5px 0 10px;font-size:16px;line-height:1.35}
+.physical-panel ol{display:grid;gap:7px;margin:0 0 10px;padding:0;list-style:none}
+.physical-panel li{position:relative;min-height:34px;border:1px solid #d9e4e5;border-radius:8px;background:#fff;padding:8px 10px 8px 28px;color:#243d43;font-size:13px;font-weight:800;line-height:1.35}
+.physical-panel li:before{content:"";position:absolute;left:11px;top:15px;width:7px;height:7px;border-radius:50%;background:var(--sc-accent)}
+.physical-panel p{margin:0;font-size:13px;line-height:1.55}
 .metric-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0 22px}
 .metric{border:1px solid var(--sc-line);border-radius:8px;padding:12px 14px;background:#fbfcfc}
 .metric b{display:block;font-size:14px}
 .metric span{display:block;color:var(--sc-muted);font-size:13px;margin-top:3px}
-.decision-box{margin-top:auto;background:var(--sc-accent-soft);border-left:4px solid var(--sc-accent);border-radius:0 10px 10px 0;padding:16px 18px}
+.route-inspector .metric-list{grid-template-columns:1fr;margin:0;gap:8px}
+.route-inspector .metric{background:#fff;padding:10px 12px}
+.decision-box{margin-top:auto;background:var(--sc-accent-soft);border-left:4px solid var(--sc-accent);border-radius:0 10px 10px 0;padding:15px 16px}
 .decision-box b,.decision-box span{display:block}
 .decision-box span{margin-top:7px;color:#32585a;font-size:14px}
-.pcb-view{margin-top:28px}
-.pcb-view-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,420px);gap:22px;align-items:end;margin-bottom:16px}
-.pcb-view-head .eyebrow{grid-column:1/-1}
-.pcb-view-head h3{font-size:29px;margin:0}
-.pcb-view-head p{margin:0;color:var(--sc-muted);font-size:15px}
-.pcb-paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.pcb-path{background:var(--sc-surface);border:1px solid var(--sc-line);border-radius:var(--sc-radius);padding:20px;transition:opacity .2s,transform .2s,border-color .2s,box-shadow .2s}
-.pcb-path.lidar{border-top:5px solid var(--sc-rx)}
-.pcb-path.pc{border-top:5px solid var(--sc-accent)}
-.pcb-path.stm{border-top:5px solid var(--sc-tx)}
-.port-label{display:block;color:var(--sc-muted);font-size:12px;font-weight:900;letter-spacing:.04em;text-transform:uppercase}
-.pcb-path h4{margin:8px 0 14px;font-size:20px;line-height:1.35}
-.pcb-path ol{display:grid;gap:7px;margin:0 0 14px;padding:0;list-style:none}
-.pcb-path li{position:relative;min-height:36px;background:#fbfcfc;border:1px solid var(--sc-line);border-radius:8px;padding:8px 10px 8px 28px;color:#233d42;font-size:14px;font-weight:800;line-height:1.35}
-.pcb-path li:before{content:"";position:absolute;left:11px;top:16px;width:7px;height:7px;border-radius:50%;background:var(--sc-accent)}
-.pcb-path p{margin:0;color:var(--sc-muted);font-size:14px}
-.pcb-view[data-active-route=lidar] .pcb-path:not(.lidar),
-.pcb-view[data-active-route=pc] .pcb-path:not(.pc),
-.pcb-view[data-active-route=stm] .pcb-path:not(.stm){opacity:.48}
-.pcb-view[data-active-route=lidar] .pcb-path.lidar,
-.pcb-view[data-active-route=pc] .pcb-path.pc,
-.pcb-view[data-active-route=stm] .pcb-path.stm{transform:translateY(-3px);box-shadow:0 16px 34px #102b3112}
-.pcb-view[data-active-route=fabric] .pcb-path,
-.pcb-view[data-active-route=ptp] .pcb-path{opacity:1}
 .why-grid,.cases,.field-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .why-grid article,.cases article,.field-cards div,.flow-step{background:var(--sc-surface);border:1px solid var(--sc-line);border-radius:var(--sc-radius);padding:22px}
 .why-grid article span{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--sc-accent-soft);color:var(--sc-accent);font-weight:900}
@@ -184,8 +182,17 @@ section{margin-top:72px}
 .links{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
 .links a{display:inline-flex;text-decoration:none;font-weight:800;border:1px solid var(--sc-line);border-radius:8px;padding:9px 13px;background:#fbfcfc}
 footer{border-top:1px solid var(--sc-line);padding:24px 40px 32px;display:flex;justify-content:space-between;gap:16px;color:var(--sc-muted);font-size:12px}
+@media(max-width:1180px){
+  .visual-grid{grid-template-columns:1fr}
+  .stage{padding:28px}
+  .network-map{grid-template-columns:minmax(96px,1fr) 42px minmax(112px,1fr) 42px minmax(160px,1.35fr) 42px minmax(112px,1fr) 42px minmax(96px,1fr);grid-template-rows:auto 20px auto 66px auto}
+  .route-inspector{grid-template-columns:minmax(0,.95fr) minmax(0,1fr);align-items:start}
+  .inspector-copy,.decision-box{grid-column:1}
+  .route-visual,.inspector-grid{grid-column:2}
+  .inspector-grid{grid-row:2/4}
+}
 @media(max-width:980px){
-  .route-atlas,.summary-strip,.debug-evolution,.pcb-view-head,.pcb-paths,.why-grid,.field-cards,.cases,.metric-list{grid-template-columns:1fr}
+  .route-atlas,.summary-strip,.debug-evolution,.why-grid,.field-cards,.cases,.metric-list{grid-template-columns:1fr}
   .sensor-route-map{grid-template-columns:1fr;grid-template-rows:auto}
   .sensor-route-map:before{display:none}
   .hub-card{grid-column:auto;grid-row:auto;order:-1}
@@ -196,6 +203,9 @@ footer{border-top:1px solid var(--sc-line);padding:24px 40px 32px;display:flex;j
   .flow i:after{right:-5px;top:auto;bottom:-1px;border-top:9px solid var(--sc-line);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:0}
   .packet-map{height:auto;display:grid}
   .seg{width:auto;border-right:0;border-bottom:1px solid #d8e2e4}
+  .route-inspector{grid-template-columns:1fr}
+  .inspector-copy,.decision-box,.route-visual,.inspector-grid{grid-column:auto}
+  .inspector-grid{grid-row:auto}
 }
 @media(max-width:680px){
   body{word-break:normal;overflow-x:hidden}
@@ -212,15 +222,11 @@ footer{border-top:1px solid var(--sc-line);padding:24px 40px 32px;display:flex;j
   .atlas-track{grid-template-columns:1fr;gap:8px}
   .track-nodes,.stm-track .track-nodes{grid-template-columns:1fr;gap:8px}
   .track-nodes i{width:2px;height:18px;justify-self:center;margin:0}
-  .pcb-snapshot{grid-template-columns:1fr}
-  .snapshot-image{min-height:190px}
-  .snapshot-image.board{min-height:170px}
-  .pcb-snapshot figcaption{padding:18px;font-size:14px}
   .summary-strip strong{font-size:20px}
-  .summary-strip span,.debug-card p,.route-card p,.section-head p,.why-grid p,.cases p,.field-cards span,.flow-step p,.scope p{word-break:break-all;overflow-wrap:anywhere}
+  .summary-strip span,.debug-card p,.route-inspector p,.section-head p,.why-grid p,.cases p,.field-cards span,.flow-step p,.scope p{word-break:break-all;overflow-wrap:anywhere}
   .section-head{display:block}
   .section-head p{margin-top:12px}
-  .route-card{padding:22px}
+  .route-inspector{padding:18px}
   .mini-flow{grid-template-columns:1fr;gap:8px}
   .mini-flow i{width:2px;height:20px;justify-self:center}
   .lane-list{grid-template-columns:1fr}
