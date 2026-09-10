@@ -1,0 +1,92 @@
+[
+  {
+    "name": "react",
+    "version": "19.2.6",
+    "license": "MIT"
+  },
+  {
+    "name": "react-dom",
+    "version": "19.2.6",
+    "license": "MIT"
+  },
+  {
+    "name": "scheduler",
+    "version": "0.27.0",
+    "license": "MIT"
+  },
+  {
+    "name": "@base-ui/react",
+    "version": "1.7.0",
+    "license": "MIT"
+  },
+  {
+    "name": "@base-ui/utils",
+    "version": "0.3.2",
+    "license": "MIT"
+  },
+  {
+    "name": "use-sync-external-store",
+    "version": "1.7.0",
+    "license": "MIT"
+  },
+  {
+    "name": "clsx",
+    "version": "2.1.1",
+    "license": "MIT"
+  },
+  {
+    "name": "@floating-ui/react-dom",
+    "version": "2.1.9",
+    "license": "MIT"
+  },
+  {
+    "name": "@floating-ui/dom",
+    "version": "1.8.0",
+    "license": "MIT"
+  },
+  {
+    "name": "@floating-ui/core",
+    "version": "1.8.0",
+    "license": "MIT"
+  },
+  {
+    "name": "@floating-ui/utils",
+    "version": "0.2.12",
+    "license": "MIT"
+  },
+  {
+    "name": "react-is",
+    "version": "19.3.0",
+    "license": "MIT"
+  },
+  {
+    "name": "@babel/runtime",
+    "version": "7.29.7",
+    "license": "MIT"
+  },
+  {
+    "name": "class-variance-authority",
+    "version": "0.7.1",
+    "license": "Apache-2.0"
+  },
+  {
+    "name": "tailwind-merge",
+    "version": "3.6.0",
+    "license": "MIT"
+  },
+  {
+    "name": "lucide-react",
+    "version": "1.31.0",
+    "license": "ISC"
+  },
+  {
+    "name": "tailwindcss",
+    "version": "4.2.1",
+    "license": "MIT"
+  },
+  {
+    "name": "tw-animate-css",
+    "version": "1.4.0",
+    "license": "MIT"
+  }
+]

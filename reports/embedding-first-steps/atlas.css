@@ -1,0 +1,25 @@
+/* ATLAS integration. Vector colors remain data encodings. */
+:root{--background:var(--sc-page);--foreground:var(--sc-ink);--primary:var(--sc-accent);--primary-foreground:var(--sc-surface);--secondary:var(--sc-accent-soft);--muted:var(--sc-accent-soft);--muted-foreground:var(--sc-muted);--border:var(--sc-line);--radius:var(--sc-radius)}
+body{font-family:var(--sc-font);background:var(--sc-page);color:var(--sc-ink)}
+.atlas-return{display:flex;align-items:center;gap:18px;min-height:45px;padding:10px 40px;background:var(--sc-surface);border-bottom:1px solid var(--sc-line);font-size:14px}
+.atlas-return a{color:var(--sc-accent);text-decoration:none;font-weight:650;min-height:28px;display:inline-flex;align-items:center}.atlas-return a:hover{text-decoration:underline}.atlas-return span{color:var(--sc-muted)}
+.reading-deck .lesson,.reading-deck .lesson-toolbar{max-width:var(--sc-width)}
+.reading-deck .topbar{background:var(--sc-surface);border-color:var(--sc-line);padding-left:40px;padding-right:40px}
+.reading-deck .brand[data-slot=button],.eyebrow,.lesson-position,.reading-text h3,.similarity-section-heading>span,.sentence-section-title>span,.sentence-flow small,.sentence-closing>strong{color:var(--sc-accent)}
+.brand span,.lesson-position>span,.scroll-hint,.scope-note,.similarity-section-heading p,.sentence-closing>span,.sentence-closing>p{color:var(--sc-muted)}
+.choice-list[data-slot=tabs-list],.part-number,.takeaway,.similarity-observation,.similarity-model-note,.sentence-feedback,.sentence-shared-model,.sentence-search-flow,.sentence-loss{background:var(--sc-accent-soft);color:var(--sc-ink);border-color:var(--sc-line)}
+.choice-list [data-active]{background:var(--sc-surface);color:var(--sc-accent)}
+.part-heading h2[id],.similarity-section-heading h2,.similarity-explanation h3,.sentence-section-title h3,.sentence-training-result h4,.sentence-flow strong,.recap-claims h2{color:var(--sc-ink)}
+.part-navigation,.topic-part+.topic-part,.similarity-table-wrap,.similarity-lab,.similarity-length-lab,.sentence-learning-workspace,.sentence-examples>div,.sentence-query,.sentence-search-output{border-color:var(--sc-line)}
+.similarity-table caption,.similarity-table thead th{background:var(--sc-accent-soft);color:var(--sc-ink)}
+.similarity-table tbody th,.similarity-table,.similarity-intro,.similarity-use-cases b,.similarity-explanation,.sentence-examples p,.sentence-query p,.sentence-search-output li p{color:var(--sc-ink)}
+.takeaway,.similarity-model-note,.sentence-shared-model{border-left-color:var(--sc-accent)}
+.sentence-shared-model>b,.sentence-training-status,.sentence-score-row>strong,.sentence-loss strong,.sentence-query button,.sentence-search-output li>strong{color:var(--sc-accent)}
+.sentence-query button[data-slot=button]{color:var(--primary-foreground)}
+.sentence-search-output li:first-child{background:var(--sc-accent-soft)}
+.canvas,.similarity-visual,.similarity-length-figure,.similarity-length-results,.sentence-vector-view,.share-panel,.share-panels{background:var(--sc-stage)}
+.similarity-view-switch .choice-list{background:var(--sc-stage);border-color:var(--sc-muted)}
+.similarity-view-switch [data-slot=tabs-trigger][data-active]{background:var(--sc-accent-soft);color:var(--sc-ink)}
+.site-footer{color:var(--sc-muted)}
+@media(max-width:750px){.atlas-return{padding:8px 22px}.reading-deck .topbar{padding-left:22px;padding-right:22px}.reading-deck .lesson{padding-left:22px;padding-right:22px}}
+@media print{.atlas-return{display:none}}

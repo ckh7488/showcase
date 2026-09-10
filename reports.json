@@ -2,6 +2,22 @@
   "version": 1,
   "reports": [
     {
+      "id": "embedding-first-steps",
+      "title": "임베딩 첫걸음",
+      "summary": "왜 여러 차원이 필요한지, 거리·코사인·내적은 무엇을 비교하는지 직접 조작하며 이해합니다. 마지막에는 작은 모델을 학습시키고 새 문장으로 검색합니다.",
+      "category": "AI · 개념 학습",
+      "date": "2026-09-11",
+      "path": "reports/embedding-first-steps/",
+      "cover": "reports/embedding-first-steps/cover.png",
+      "coverAlt": "벡터의 방향과 길이를 조절하며 유클리디안 거리, 코사인 유사도, 내적을 함께 비교하는 실제 실습 화면",
+      "tags": [
+        "임베딩",
+        "벡터",
+        "코사인 유사도",
+        "학습 실험"
+      ]
+    },
+    {
       "id": "em2-encoder-fallback",
       "title": "EM2 디버깅",
       "summary": "간헐적인 펄스 이상에서 전기적 원인을 배제하고 기계 공차를 확인한 뒤, A/B/I 진단과 36 RPM fallback으로 보완한 흐름을 정리합니다.",
