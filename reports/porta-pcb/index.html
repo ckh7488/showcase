@@ -6,7 +6,7 @@
   <meta name="description" content="PALA720 PortA 통신 경로: 실제 PCB 3D와 전자기 해석 결과를 함께 살펴보는 인터랙티브 보고서."><title>PALA720 · PortA 통신 경로 분석 | ATLAS</title>
   <link rel="icon" href="../../assets/favicon.svg?v=20260910-atlas1" type="image/svg+xml">
   <link rel="stylesheet" href="../../assets/theme.v1.css">
-  <link rel="stylesheet" href="report.css?v=20260911-four-paths1">
+  <link rel="stylesheet" href="report.css?v=20260911-assessment-final1">
 </head>
 <body>
 <a class="skip" href="#purpose">본문으로 건너뛰기</a>
@@ -116,13 +116,14 @@
       <div class="section-intro"><h3>TX·RX 차이: 반사되는 전력으로 보면</h3><p>RX의 반사손실이 <strong>2.42 dB 낮지만</strong>, 전달 손실이 그만큼 더 크다는 뜻은 아닙니다.</p></div>
       <div class="reflection-comparison"><div class="chart-heading"><h4>입사 전력 중 되돌아오는 양</h4><span>100 MHz · T2에서 입력</span></div><div class="reflection-row"><span>TX</span><div class="reflection-track" role="img" aria-label="TX 입사 전력의 0.138% 반사, 공통 축 0에서 0.3%"><span class="reflection-fill tx" style="width:45.89590%"></span></div><strong>0.138%</strong></div><div class="reflection-row"><span>RX</span><div class="reflection-track" role="img" aria-label="RX 입사 전력의 0.241% 반사, 공통 축 0에서 0.3%"><span class="reflection-fill rx" style="width:80.17324%"></span></div><strong>0.241%</strong></div><div class="reflection-scale" aria-hidden="true"><span>0%</span><span>0.3%</span></div><p>TX 28.61 dB · RX 26.19 dB. 반사 전력 차이는 <strong>0.103%p</strong>입니다.</p></div>
       <div class="route-comparison"><table><caption>제조본의 두 PCB 주경로 비교</caption><thead><tr><th>신호쌍</th><th>평균 평면 길이</th><th>P − N 길이차</th><th>Motor 층 전환</th><th>실제 형상</th></tr></thead><tbody><tr><th scope="row">TX</th><td>46.33 mm</td><td>-0.699 mm</td><td>0회 / 선</td><td><button class="record-view" type="button" data-segment="cable" data-pair="tx" data-focus="signal">TX 선로 보기 ↑</button></td></tr><tr><th scope="row">RX</th><td>58.64 mm</td><td>+0.635 mm</td><td>1회 / 선</td><td><button class="record-view" type="button" data-segment="cable" data-pair="rx" data-focus="signal">RX 선로 보기 ↑</button></td></tr></tbody></table><p>Control의 신호 via는 두 쌍 모두 0개. 길이는 분기를 제외한 PCB 주경로 합계이며, 커넥터 접점과 via 축 길이를 제외했습니다.</p></div>
-      <div class="cause-findings"><p><strong>우선 비교할 곳은 RX의 Motor 층 전환과 M12 팬아웃입니다.</strong> RX만 신호 via를 거쳐 층을 바꾸므로, 패드·배럴과 리턴 경로 전환에서 생기는 국부 임피던스 변화가 추가 반사원의 후보입니다. Control의 배선도 TX 평균 24.64 mm / RX 40.07 mm로 달라, 여러 지점의 반사가 합쳐지는 위상이 달라집니다.</p><p>RX의 두 보드 합산 경로는 12.31 mm(약 27%) 길지만, <strong>P/N 길이차는 오히려 더 작습니다.</strong> 따라서 이번 순위를 RX의 큰 스큐 때문으로 설명하지 않습니다. RX 신호 via 근처의 GND via도 각각 약 <strong>0.781 mm</strong> 거리에 이미 있습니다.</p></div>
+      <div class="cause-findings"><p><strong>TX/RX 모두 계산상 반사가 작은 편입니다.</strong> 약 <strong>2.4 dB의 상대 차이는 모델 조건의 영향을 포함하므로 참고 경향으로 사용</strong>하며, 이 차이만으로 비아 제거나 PCB 재설계를 결정하지 않습니다.</p><p>RX의 경로는 약 27% 길고 층 전환이 추가되지만, 합산 P/N 길이차는 오히려 더 작습니다. 이 형상 차이를 기록하되, RX 불량이나 특정 부위의 원인 기여율로 해석하지 않습니다.</p></div>
       <details class="path-evidence"><summary>수치의 근거와 다음 검증 범위</summary>
         <p>두 격자의 TX−RX 차이는 2.36 → 2.42 dB로, 변화는 0.063 dB입니다. 같은 상대 순위가 관측됐지만 <strong>절대 반사손실의 0.5 dB 수렴 목표는 미달</strong>입니다. 이 차이를 오차 상한으로 보지는 않습니다.</p>
         <p>RX 반사 전력은 TX의 1.75배입니다. 모델의 삽입손실은 TX 0.0060, RX 0.0105 dB로 차이는 0.0045 dB입니다. 반사 전력은 100 × 10<sup>−RL/10</sup>으로 계산했습니다.</p>
         <p>현재 계산은 PEC 도체·무손실 유전체와 네 개의 100 Ω 차동 포트입니다. 실제 저항·TVS의 실장 부하를 제외했으므로 종단 부품의 배치·부하까지 합격한 것은 아닙니다. M12의 유한 포트 간격도 TX 0.36 / RX 0.48 mm로 달라 그 영향이 아직 분리되지 않았습니다.</p>
         <p>평면 길이는 패드 중심 사이 최단 주경로를 두 PCB에 걸쳐 합산한 값입니다. RX의 두 선에는 동일한 via 축 길이가 각각 1.478 mm 더해져 길이차를 바꾸지 않습니다. 부품 분기·커넥터 접점·포트 체적은 이 길이 표에 더하지 않았습니다. 기하학적 길이차를 실제 전파 지연으로 환산하지 않았습니다.</p>
-        <p>다음 비교에서는 RX 층 전환·기준면 연결, M12 팬아웃, 포트 조건을 하나씩 통제합니다. 지금 결과는 이 순서를 정할 근거이며, 각 부분의 원인 기여율을 확정한 결과는 아닙니다.</p>
+        <p>관측된 약 2.4 dB를 소프트웨어 자체의 오차량으로 정한 것은 아닙니다. 모델 안에서 상대 차이는 비슷하게 남지만, 실제 배선과 모델 조건의 영향을 아직 분리하지 못했습니다.</p>
+        <p>정상 평행부의 선폭·간격은 제조사 지시인 0.17/0.17 mm와 일치합니다. RX 층 전환 옆에는 GND via도 각각 약 0.781 mm 거리에 있습니다. 추가 원인 분리가 필요하다면 먼저 제조사 임피던스 기준과 해석의 정상 단면 조건을 대조하고, 같은 시험 포트 조건에서 연결부 형상을 비교합니다.</p>
         <p><a href="records/path-comparison.json">경로 비교 수치·형상 SHA ↗</a> · <a href="records/tx-recheck/summary.json">계산 조건 ↗</a> · <a href="records/tx-recheck/fine-fem-results.npz">원시 S 행렬 ↗</a></p>
       </details>
     </div>
@@ -136,6 +137,6 @@
 <script src="inner-copper.js"></script>
 <script src="phy-geometry.js"></script>
 <script src="viewer.js?v=20260911-review3"></script>
-<script src="report.js?v=20260911-four-paths1"></script>
+<script src="report.js?v=20260911-assessment-final1"></script>
 </body>
 </html>

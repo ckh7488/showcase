@@ -278,9 +278,10 @@
       "Both RX transitions have an existing nearby GND via."
     ],
     "engineering_interpretation": "Different local impedance discontinuities and the phase combination of their reflections can produce the measured difference. A longer perfectly matched uniform line does not itself create reflection.",
+    "assessment": "Both cable-side pairs have small calculated reflection at 100 MHz. Treat the approximately 2.4 dB relative difference as a reference trend that includes model-condition effects; do not use this difference alone to decide via removal or PCB redesign. It is not an established 2 dB software error or uncertainty bound.",
     "priority_followup": [
-      "Controlled comparison of RX layer transitions and reference returns",
-      "M12 pad fanout and identical finite-port/de-embedding sensitivity"
+      "If further attribution is required, first reconcile the uniform cross-section model with the supplier impedance reference",
+      "Then compare paths under identical finite-port/de-embedding conditions before isolating layer transitions or fanout"
     ],
     "not_established": [
       "Per-feature causal percentage",
