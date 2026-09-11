@@ -6,7 +6,7 @@
   <meta name="description" content="PALA720 PortA 통신 경로: 실제 PCB 3D와 전자기 해석 결과를 함께 살펴보는 인터랙티브 보고서."><title>PALA720 · PortA 통신 경로 분석 | ATLAS</title>
   <link rel="icon" href="../../assets/favicon.svg?v=20260910-atlas1" type="image/svg+xml">
   <link rel="stylesheet" href="../../assets/theme.v1.css">
-  <link rel="stylesheet" href="report.css?v=20260911-review3">
+  <link rel="stylesheet" href="report.css?v=20260911-four-paths1">
 </head>
 <body>
 <a class="skip" href="#purpose">본문으로 건너뛰기</a>
@@ -27,7 +27,7 @@
       <div><span>전원·통신 분기</span><small>노출 20~40 cm</small></div><i>↔</i>
       <div><span>LLC 케이블</span><small>약 20 m</small></div><i>↔</i>
       <div class="route-focus"><span>M12 ↔ PCB 두 장 ↔ T2</span><small>케이블측 · TX / RX 개별 확인</small></div><i>↔</i>
-      <div class="route-focus"><span>T2 ↔ PHY</span><small>PHY측 · 초기 기록 보존</small></div>
+      <div class="route-focus"><span>T2 ↔ PHY</span><small>PHY측 · TX / RX 초기값</small></div>
     </div>
   </section>
 
@@ -46,6 +46,11 @@
         <div class="view-buttons"><button id="view-all" class="active" type="button">전체 형상</button><button id="view-rx" type="button">신호선 확대</button><button id="view-side" type="button">옆면</button></div>
         <div class="view-options"><button id="explode" type="button" aria-pressed="false">보드 분리</button><label><input id="inner-toggle" type="checkbox"> 내층 구리</label><label>GND 비아 <select id="ground-mode"><option value="near">선택 신호 주변</option><option value="all">전체</option><option value="off">숨김</option></select></label></div>
       </div>
+      <div class="viewer-readout" id="viewer-readout" aria-live="polite" aria-label="현재 3D 구간의 반사손실">
+        <div><b id="viewer-readout-name">트랜스 ↔ M12</b><span id="viewer-readout-stage">정밀 FEM · 수렴 목표 미달</span><small>100 MHz · T2측 반사손실 · 클수록 좋음</small></div>
+        <div class="viewer-result-buttons"><button type="button" data-viewer-result="tx" aria-pressed="false"><span>TX</span><strong>28.61 dB</strong></button><button type="button" data-viewer-result="rx" aria-pressed="true"><span>RX</span><strong>26.19 dB</strong></button></div>
+        <a href="#results">네 경로 상세 ↓</a>
+      </div>
       <div class="viewer-route" id="pcb-route"><span>T2 케이블측</span><i>→</i><span>Control PCB</span><i>→</i><span>Molex 64핀</span><i>→</i><span>Motor PCB</span><i>→</i><span>M12 PCB 패드</span></div>
     </div>
     <div class="section-intro after-viewer"><h2>실제 연결을 따라,<br>문제 후보를 나눕니다.</h2><p>모터가 계속 도는 동안에도 PortA 링크가 끊깁니다.<br>이번에는 PCB의 반사·전달 특성을 보고, 다음에는 케이블·실드의 잡음 유입을 비교합니다.</p></div>
@@ -55,7 +60,7 @@
       <div><span class="step-tag">다음 비교</span><h3>실드 · 접촉 · 접지</h3><p>외부 잡음이 어디로 들어오는가?</p></div>
     </div>
     <div class="method-flow"><div><span>1</span><p><b>제조 Gerber로 형상 구성</b>트랜스 양쪽 PCB 선로를 분리</p></div><i>→</i><div><span>2</span><p><b>openEMS 초기 시뮬레이션</b>PHY ↔ 트랜스의 TX / RX</p></div><i>→</i><div><span>3</span><p><b>FEM 정밀 계산</b>트랜스 ↔ M12의 TX / RX 개별 확인</p></div></div>
-    <details class="details"><summary>계산 범위와 모델 가정</summary><div class="details-body"><p>보드는 두 장이며 각각 구리 4층입니다. 케이블측 FEM 계산에는 전체 Gerber 구리와 도금홀 788개가 포함됩니다. PHY측은 Control 보드에서 T2 PHY측 패드부터 LAN9354 패드까지 별도로 계산했습니다. 3D의 색은 신호 구분이며 전자기장 강도가 아닙니다. GND 주변 표시는 선택한 신호 구리에서 XY 평면상 3 mm 이내의 비아 중심을 고르는 표시 필터입니다. 리턴 전류나 EMC 내성의 검증 결과가 아닙니다.</p><p>Molex는 15 mm 길이의 직선 접점 64개로 근사했습니다. 실제 스프링·하우징, T2 내부, PHY 실리콘, M12 몸체, 실장 소자의 실제 동작, 외부 케이블과 잡음원은 PCB 구간 수치에서 제외됩니다. 구리는 완전도체, FR4는 εr=4.5의 무손실 재료입니다. 분리 보기는 표시 간격만 바꿉니다.</p><p>PHY측 수치는 초기 openEMS 결과이며 시간·공간 수렴 검증이 완료되지 않았습니다. 케이블측은 같은 제조 Gerber의 TX/RX를 함께 정밀화한 주파수영역 FEM 결과입니다. 격자·전계 표현만 보강했으며 PCB를 수정한 결과가 아닙니다. 본문에는 채택한 정밀 격자 값, 접힌 기록에는 이전 단계와 검증 범위를 표시합니다.</p><a href="records/porta-cable-em/index.html#results">케이블측 해석 기록 ↗</a> · <a href="records/porta-em/index.html">PHY측 해석 기록 ↗</a></div></details>
+    <details class="details"><summary>계산 범위와 모델 가정</summary><div class="details-body"><p>보드는 두 장이며 각각 구리 4층입니다. 케이블측 FEM 계산에는 전체 Gerber 구리와 도금홀 788개가 포함됩니다. PHY측은 Control 보드에서 T2 PHY측 패드부터 LAN9354 패드까지 별도로 계산했습니다. 3D의 색은 신호 구분이며 전자기장 강도가 아닙니다. GND 주변 표시는 선택한 신호 구리에서 XY 평면상 3 mm 이내의 비아 중심을 고르는 표시 필터입니다. 리턴 전류나 EMC 내성의 검증 결과가 아닙니다.</p><p>Molex는 15 mm 길이의 직선 접점 64개로 근사했습니다. 실제 스프링·하우징, T2 내부, PHY 실리콘, M12 몸체, 실장 소자의 실제 동작, 외부 케이블과 잡음원은 PCB 구간 수치에서 제외됩니다. 구리는 완전도체, FR4는 εr=4.5의 무손실 재료입니다. 분리 보기는 표시 간격만 바꿉니다.</p><p>PHY측 수치는 초기 openEMS 결과이며 시간·공간 수렴 검증이 완료되지 않았습니다. 케이블측은 같은 제조 Gerber의 TX/RX를 함께 정밀화한 주파수영역 FEM 결과입니다. 격자·전계 표현만 보강했으며 PCB를 수정한 결과가 아닙니다. 본문에서 두 구간의 TX/RX를 모두 보여주고 계산 방식·검증 수준을 각 값 옆에 표시합니다.</p><a href="records/porta-cable-em/index.html#results">케이블측 해석 기록 ↗</a> · <a href="records/porta-em/index.html">PHY측 해석 기록 ↗</a></div></details>
   </section>
 
   <section id="criteria">
@@ -72,29 +77,30 @@
     <div class="section-kicker"><span>04</span> 실험결과</div>
     <div class="section-intro"><h2>케이블측 TX와 RX,<br><em>100 MHz에서 목표를 상회합니다.</em></h2><p>16 dB 내부 목표 대비 최소 <strong>+10.19 dB</strong>입니다.<br><strong>동일한 PCB의 수치 재계산</strong>이며, PCB를 수정한 결과가 아닙니다.</p></div>
     <div class="segments-result">
-      <div class="chart-heading"><h3>트랜스 ↔ M12 · TX / RX 완료된 정밀 평가값</h3><span>100 Ω 차동 · 100 MHz</span></div>
-      <p class="chart-help">행 또는 3D의 TX / RX를 누르면 함께 선택됩니다. 본문은 완료된 가장 정밀한 격자 값입니다.<span id="result-selection-context"></span></p>
+      <div class="chart-heading"><h3>트랜스 양쪽, TX / RX 네 경로</h3><span>100 Ω 차동 · 100 MHz</span></div>
+      <p class="chart-help">행을 누르거나 3D의 구간·신호쌍을 바꾸면 같은 경로의 수치가 표시됩니다.<span id="result-selection-context"></span></p>
       <div class="result-layout"><div class="result-chart">
         <div class="result-axis" aria-hidden="true"><span>0</span><span>12</span><span>24</span><span>36 dB</span></div>
-        <div class="result-bars" role="group" aria-label="100 MHz 정밀 TX RX 결과 선택"><button class="result-row" type="button" data-case="cable-tx" data-segment="cable" data-pair="tx" data-rl="28.61104812841291" data-il="0.00598891977153928" data-reflected="0.13768771325962367" data-transmitted="99.8621950644322" data-margin="12.61104812841291" data-title="트랜스 ↔ M12 · TX" data-note="동일 Gerber의 정밀 FEM · 100 MHz. 마지막 두 격자의 TX 반사손실 변화는 0.758 dB입니다. 이 경로의 수치 수렴 목표는 미달입니다." aria-pressed="false" aria-label="트랜스 ↔ M12 · TX, 반사손실 28.61 dB, 삽입손실 0.0060 dB"><span class="result-label">트랜스 ↔ M12<small>TX · 정밀 FEM</small></span><span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:79.47513%"></span></span><strong>28.61</strong></button>
-<button class="result-row" type="button" data-case="cable-rx" data-segment="cable" data-pair="rx" data-rl="26.18849314220519" data-il="0.010465058007245521" data-reflected="0.240519717888729" data-transmitted="99.75932322644829" data-margin="10.18849314220519" data-title="트랜스 ↔ M12 · RX" data-note="동일 Gerber의 정밀 FEM · 100 MHz. 마지막 두 격자의 RX 반사손실 변화는 0.695 dB입니다. 이 경로의 수치 수렴 목표는 미달입니다." aria-pressed="true" aria-label="트랜스 ↔ M12 · RX, 반사손실 26.19 dB, 삽입손실 0.0105 dB"><span class="result-label">트랜스 ↔ M12<small>RX · 정밀 FEM</small></span><span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:72.74581%"></span></span><strong>26.19</strong></button></div>
+        <div class="result-bars" role="group" aria-label="100 MHz 두 구간의 TX RX 결과 선택"><p class="result-group-label">케이블측 <span>정밀 FEM · 수렴 목표 미달</span></p><button class="result-row" type="button" data-case="cable-tx" data-segment="cable" data-pair="tx" data-rl="28.61104812841291" data-il="0.00598891977153928" data-reflected="0.13768771325962367" data-transmitted="99.8621950644322" data-margin="12.61104812841291" data-title="트랜스 ↔ M12 · TX" data-note="동일 Gerber의 정밀 FEM · 100 MHz. 마지막 두 격자의 TX 반사손실 변화는 0.758 dB입니다. 이 경로의 수치 수렴 목표는 미달입니다." aria-pressed="false" aria-label="트랜스 ↔ M12 · TX, 반사손실 28.61 dB, 삽입손실 0.0060 dB"><span class="result-label">트랜스 ↔ M12<small>TX · 정밀 FEM</small></span><span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:79.47513%"></span></span><strong>28.61</strong></button>
+<button class="result-row" type="button" data-case="cable-rx" data-segment="cable" data-pair="rx" data-rl="26.18849314220519" data-il="0.010465058007245521" data-reflected="0.240519717888729" data-transmitted="99.75932322644829" data-margin="10.18849314220519" data-title="트랜스 ↔ M12 · RX" data-note="동일 Gerber의 정밀 FEM · 100 MHz. 마지막 두 격자의 RX 반사손실 변화는 0.695 dB입니다. 이 경로의 수치 수렴 목표는 미달입니다." aria-pressed="true" aria-label="트랜스 ↔ M12 · RX, 반사손실 26.19 dB, 삽입손실 0.0105 dB"><span class="result-label">트랜스 ↔ M12<small>RX · 정밀 FEM</small></span><span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:72.74581%"></span></span><strong>26.19</strong></button><p class="result-group-label phy-group">PHY측 <span>초기 openEMS · 수렴 미검증</span></p><button class="result-row" type="button" data-case="phy-tx" data-segment="phy" data-pair="tx" data-rl="30.836573021069498" data-reflected="0.08247886916800715" data-margin="14.836573021069498" data-title="트랜스 ↔ PHY · TX" data-note="초기 openEMS · 100 MHz · 40,000스텝. 시간 종료 기준과 공간 수렴 검증을 완료하지 못한 값입니다. TX/RX는 배선쌍 이름이며, 두 계산 모두 T2에서 PHY 방향으로 구동했습니다. 작은 비물리적 이득이 남아 있어 정밀 삽입손실·전달률은 확정하지 않습니다." aria-pressed="false" aria-label="트랜스 ↔ PHY · TX, 초기 반사손실 30.84 dB, 수렴 미검증"><span class="result-label">트랜스 ↔ PHY<small>TX · 초기 openEMS</small></span><span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:85.65715%"></span></span><strong>30.84</strong></button>
+<button class="result-row" type="button" data-case="phy-rx" data-segment="phy" data-pair="rx" data-rl="29.18039050835196" data-reflected="0.12077052359407499" data-margin="13.180390508351959" data-title="트랜스 ↔ PHY · RX" data-note="초기 openEMS · 100 MHz · 40,000스텝. 시간 종료 기준과 공간 수렴 검증을 완료하지 못한 값입니다. TX/RX는 배선쌍 이름이며, 두 계산 모두 T2에서 PHY 방향으로 구동했습니다. 작은 비물리적 이득이 남아 있어 정밀 삽입손실·전달률은 확정하지 않습니다." aria-pressed="false" aria-label="트랜스 ↔ PHY · RX, 초기 반사손실 29.18 dB, 수렴 미검증"><span class="result-label">트랜스 ↔ PHY<small>RX · 초기 openEMS</small></span><span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:81.05664%"></span></span><strong>29.18</strong></button></div>
         <div class="chart-reference"><span>내부 목표 16 dB</span><small>반사손실은 클수록 좋습니다.</small></div>
-        <div class="segment-sources"><span><i class="cable-key"></i>NGSolve 정밀 FEM</span><span>PHY 초기값은 접힌 기록에서 확인</span></div>
+        <div class="segment-sources"><span><i class="cable-key"></i>NGSolve 정밀 FEM</span><span><i class="phy-key"></i>openEMS 초기 계산</span></div>
       </div><div class="result-detail" aria-live="polite" aria-atomic="true">
-        <span class="eyebrow">선택한 경로 · T2측 반사손실</span><h4 id="result-name">트랜스 ↔ M12 · RX</h4>
+        <span class="eyebrow">선택한 경로 · T2측 반사손실</span><h4 id="result-name">트랜스 ↔ M12 · RX</h4><p id="result-stage" class="result-stage">정밀 FEM · 수렴 목표 미달</p>
         <div class="reading"><strong><span id="result-value" style="font:inherit">26.19</span> <span id="result-unit">dB</span></strong><span id="result-margin">+10.19 dB 여유</span></div>
         <div class="reflection-stat"><span>입사 전력 중 반사</span><b id="result-reflection">0.241%</b></div>
-        <div class="reflection-stat precision-stat"><span>삽입손실 · T2 → M12</span><b id="result-il">0.0105 dB</b></div>
+        <div class="reflection-stat precision-stat"><span id="result-il-label">삽입손실 · T2 → M12</span><b id="result-il">0.0105 dB</b></div>
         <div class="reflection-stat precision-stat"><span>반대쪽 포트로 전달</span><b id="result-transmitted">99.759%</b></div>
-        <p id="result-note" class="result-note">동일 Gerber의 정밀 FEM · 100 MHz. 마지막 두 격자의 RX 반사손실 변화는 0.695 dB입니다. 이 경로의 수치 수렴 목표는 미달입니다.</p><button id="result-to-pcb" type="button">이 선로를 3D에서 보기 ↑</button>
+        <p id="result-note" class="result-note">동일 Gerber의 정밀 FEM · 100 MHz. 마지막 두 격자의 RX 반사손실 변화는 0.695 dB입니다. 이 경로의 수치 수렴 목표는 미달입니다.</p><a id="result-evidence" class="result-evidence" href="records/tx-recheck/summary.json">선택 경로의 원시값·계산 조건 ↗</a><button id="result-to-pcb" type="button">이 선로를 3D에서 보기 ↑</button>
       </div></div>
     </div>
-    <div class="transfer-summary"><strong>무손실 재료 모델의 삽입손실</strong><span>TX 0.0060 dB · RX 0.0105 dB<small class="material-scope">실제 구리·유전체의 흡수 손실 제외</small></span><details class="db-explorer"><summary>dB를 직접 바꿔보면?</summary><label for="db-slider">반사손실 <input id="db-slider" type="range" min="6" max="40" step="1" value="20"><output id="db-value" for="db-slider">20 dB</output></label><p>입사 전력의 <b id="db-percent">1.00%</b>가 반사됩니다.</p><p class="calc-note">dB 변환 예시입니다. PCB 결과를 바꾸거나 패킷 손실률·고장 기여율을 계산하는 조작이 아닙니다.</p></details></div>
+    <div class="transfer-summary"><strong>케이블측 · 무손실 모델의 삽입손실</strong><span>TX 0.0060 dB · RX 0.0105 dB<small class="material-scope">실제 구리·유전체의 흡수 손실 제외</small></span><details class="db-explorer"><summary>dB를 직접 바꿔보면?</summary><label for="db-slider">반사손실 <input id="db-slider" type="range" min="6" max="40" step="1" value="20"><output id="db-value" for="db-slider">20 dB</output></label><p>입사 전력의 <b id="db-percent">1.00%</b>가 반사됩니다.</p><p class="calc-note">dB 변환 예시입니다. PCB 결과를 바꾸거나 패킷 손실률·고장 기여율을 계산하는 조작이 아닙니다.</p></details></div>
     <p class="recheck-change"><strong>과거 TX의 큰 반사는 재현되지 않았습니다.</strong> 같은 PCB에서 두 신호쌍의 격자와 전계 표현을 함께 보강한 결과입니다. 과거 4~7 dB를 PCB 불량의 근거로 사용하지 않습니다.</p>
     <div class="decision"><span>현재 판단</span><p><strong>계산한 케이블측 TX/RX의 100 MHz 반사손실은 내부 목표를 충족합니다.</strong><br>이 범위의 명목 반사만으로 PCB 재제작을 우선할 근거는 작습니다. 케이블·실드·접지와 PHY 상태를 이어서 비교합니다.</p><a href="#method" aria-label="PCB 구간 다시 보기">↑</a></div>
     <p class="result-scope">마지막 두 격자의 RL 최대 변화는 0.758 dB로 0.5 dB 목표 미달입니다. 100 MHz 수동 PCB 구간의 판단이며 포트·경계와 전 대역 검증은 별도입니다. 정밀 격자 사용만으로 모든 수렴이나 제품 전체 합격을 보장하지 않습니다.</p>
     <details class="details precision-validation" id="precision-validation"><summary>수치 검증 · 격자 이력과 초기 PHY 기록</summary><div class="details-body">
-      <h3>같은 PCB의 계산 정밀도 확인</h3><p>실물 PCB를 변경하지 않았습니다. 같은 제조 Gerber에서 격자를 세밀하게 하고 국부 전계의 고차 표현을 보강했습니다. 본문은 완료된 가장 정밀한 격자 값만 사용합니다.</p>
+      <h3>같은 PCB의 계산 정밀도 확인</h3><p>실물 PCB를 변경하지 않았습니다. 케이블측은 같은 제조 Gerber에서 격자를 세밀하게 하고 국부 전계의 고차 표현을 보강한 결과입니다. PHY측 초기 openEMS와 검증 수준을 구분합니다.</p>
       <div class="table-wrap"><table><thead><tr><th>국부 격자</th><th>전체 자유도</th><th>TX 반사손실</th><th>RX 반사손실</th><th>역할</th></tr></thead><tbody><tr><td>0.100 mm<small class="case-id">field-h100-localp1-r1-100mhz</small></td><td>5,791,057</td><td>27.853 dB</td><td>25.493 dB</td><td>최종 비교</td></tr><tr><td>0.075 mm<small class="case-id">field-h075-localp1-r1-100mhz</small></td><td>7,160,654</td><td>28.611 dB</td><td>26.188 dB</td><td>본문 채택</td></tr></tbody></table></div>
       <p>마지막 비교는 0.100 mm → 0.075 mm이며, 동일한 물리 모델·국부 전계 표현·적용 영역으로 비교했습니다. 비교에 포함된 h100 모델은 넓은 TVS 분기 네 곳의 격자가 더 거칩니다. 관측한 차이에는 이 국부 격자 설정 차이도 포함됩니다. 두 격자는 서로 중첩되지 않으며, 관측한 차이를 전체 수치 오차의 상한으로 취급하지 않습니다.</p>
       <div class="table-wrap"><table><thead><tr><th>비교 대상</th><th>RL 변화</th><th>IL 변화</th><th>수치 검증</th></tr></thead><tbody><tr><td>TX · 양끝/양방향 중 최대</td><td>0.758 dB</td><td>0.0011 dB</td><td>목표 미달</td></tr><tr><td>RX · 양끝/양방향 중 최대</td><td>0.695 dB</td><td>0.0018 dB</td><td>목표 미달</td></tr></tbody></table></div>
@@ -102,9 +108,24 @@
       <p>독립적인 포트 배치·외부 경계 변경, 더 높은 전계 차수와 국부 적용 반경의 비교는 완료하지 않았습니다. 이번 결과는 완료된 가장 정밀한 평가값이며, 정한 수치 수렴 목표를 통과한 확정값으로 표시하지 않습니다.</p><h3>완료하지 못한 추가 정밀화</h3><div class="table-wrap"><table><thead><tr><th>계산</th><th>중단 단계</th><th>실패 원인</th><th>처리</th></tr></thead><tbody><tr><td>field-h060-localp1-r1-100mhz<small class="case-id">sparsecholesky</small></td><td>행렬 분해</td><td>배열 할당 길이 오류 (bad array new length)</td><td>솔버 예외 · S 결과 없음</td></tr><tr><td>field-h060-localp1-r1-umfpack-100mhz<small class="case-id">umfpack</small></td><td>행렬 분해</td><td>추가 정밀화의 시간 한도에 도달해 중단</td><td>시간 한도 중단 · S 결과 없음</td></tr></tbody></table></div><p>실패한 계산은 0 dB나 추정값으로 채우지 않았습니다. 본문에는 실제로 끝난 가장 정밀한 계산만 사용합니다.</p>
       <h3>보존한 초기 기록</h3><div class="table-wrap"><table><thead><tr><th>구간</th><th>100 MHz 반사손실</th><th>기록의 범위</th></tr></thead><tbody><tr><td>LAN9354 ↔ T2 · TX</td><td>30.84 dB</td><td>초기 openEMS · 정밀 검증 미완료<br><button class="record-view" type="button" data-segment="phy" data-pair="tx">TX 선로 3D 보기 ↑</button></td></tr><tr><td>LAN9354 ↔ T2 · RX</td><td>29.18 dB</td><td>초기 openEMS · 정밀 검증 미완료<br><button class="record-view" type="button" data-segment="phy" data-pair="rx">RX 선로 3D 보기 ↑</button></td></tr><tr><td>T2 ↔ M12 · 과거 RX</td><td>19.74 / 20.42 dB</td><td>기본 / 정밀 격자 · 같은 RX 경로</td></tr><tr><td>T2 ↔ M12 · 과거 TX</td><td>7.18 / 4.76 dB</td><td>RX 중심 격자의 TX 해상도 부족 · 실제 불량값으로 채택하지 않음</td></tr></tbody></table></div>
       <p>PHY측은 40,000스텝의 초기 openEMS 기록입니다. 시간·공간 수렴이 완료되지 않았으며 도금 배럴 166개의 미사용 경고도 있었습니다. 이전 RX의 두 격자 값과 초기 TX값은 원본 기록으로 남기고 현재 정밀 결과와 섞지 않습니다.</p>
+      <div id="phy-raw-values"><h3>PHY 초기 계산의 원시값 · 100 MHz</h3><div class="table-wrap"><table><thead><tr><th>배선쌍 · 구동 방향</th><th>반사손실</th><th>삽입손실 · 미확정</th><th>전달 전력 · 미확정</th></tr></thead><tbody><tr><td>TX · T2 → PHY</td><td>30.83657 dB</td><td>+0.000135 dB</td><td>99.99689%</td></tr><tr><td>RX · T2 → PHY</td><td>29.18039 dB</td><td>-0.004158 dB</td><td>100.09579%</td></tr></tbody></table></div><p>RX의 음의 삽입손실과 100% 초과 전달은 수동 PCB의 실제 이득이 아니라 남은 수치 오차입니다. 약 0 dB 부근의 전달을 정밀 손실값으로 읽지 않도록, 본문에는 RL 초기값을 표시하고 IL·전달률은 미확정으로 구분합니다. <a href="records/phy-initial-summary.json">입출력·수렴 상태·원본 해시 ↗</a></p></div>
       <p>두 구간은 트랜스 패드에서 나눴습니다. RL을 더하거나 T2 내부·PHY 동작까지 검증한 것으로 합치지 않습니다. 완전도체·무손실 유전체 모델이므로 IL은 실제 구리·유전체 흡수 손실을 합산한 값이 아닙니다.</p>
       <div class="source-links"><a href="records/tx-recheck/summary.json">이번 채택값·검증·해시 ↗</a><a href="report-data.json">초기 기록을 포함한 전체 수치 ↗</a><a href="records/tx-recheck/fine-fem-results.npz" download>정밀 계산 원본 행렬 ↓</a><a href="records/tx-recheck/fine-fem-checks.json">정밀 모델 내부 검사 ↗</a><a href="records/porta-em/index.html">PHY 초기 해석 ↗</a><a href="records/porta-cable-em/index.html#results">과거 케이블측 기록 ↗</a><a href="detailed.html">초기 판단 기록과 정정 ↗</a></div>
     </div></details>
+    <div class="path-analysis" id="path-analysis">
+      <div class="section-intro"><h3>TX·RX 차이: 반사되는 전력으로 보면</h3><p>RX의 반사손실이 <strong>2.42 dB 낮지만</strong>, 전달 손실이 그만큼 더 크다는 뜻은 아닙니다.</p></div>
+      <div class="reflection-comparison"><div class="chart-heading"><h4>입사 전력 중 되돌아오는 양</h4><span>100 MHz · T2에서 입력</span></div><div class="reflection-row"><span>TX</span><div class="reflection-track" role="img" aria-label="TX 입사 전력의 0.138% 반사, 공통 축 0에서 0.3%"><span class="reflection-fill tx" style="width:45.89590%"></span></div><strong>0.138%</strong></div><div class="reflection-row"><span>RX</span><div class="reflection-track" role="img" aria-label="RX 입사 전력의 0.241% 반사, 공통 축 0에서 0.3%"><span class="reflection-fill rx" style="width:80.17324%"></span></div><strong>0.241%</strong></div><div class="reflection-scale" aria-hidden="true"><span>0%</span><span>0.3%</span></div><p>TX 28.61 dB · RX 26.19 dB. 반사 전력 차이는 <strong>0.103%p</strong>입니다.</p></div>
+      <div class="route-comparison"><table><caption>제조본의 두 PCB 주경로 비교</caption><thead><tr><th>신호쌍</th><th>평균 평면 길이</th><th>P − N 길이차</th><th>Motor 층 전환</th><th>실제 형상</th></tr></thead><tbody><tr><th scope="row">TX</th><td>46.33 mm</td><td>-0.699 mm</td><td>0회 / 선</td><td><button class="record-view" type="button" data-segment="cable" data-pair="tx" data-focus="signal">TX 선로 보기 ↑</button></td></tr><tr><th scope="row">RX</th><td>58.64 mm</td><td>+0.635 mm</td><td>1회 / 선</td><td><button class="record-view" type="button" data-segment="cable" data-pair="rx" data-focus="signal">RX 선로 보기 ↑</button></td></tr></tbody></table><p>Control의 신호 via는 두 쌍 모두 0개. 길이는 분기를 제외한 PCB 주경로 합계이며, 커넥터 접점과 via 축 길이를 제외했습니다.</p></div>
+      <div class="cause-findings"><p><strong>우선 비교할 곳은 RX의 Motor 층 전환과 M12 팬아웃입니다.</strong> RX만 신호 via를 거쳐 층을 바꾸므로, 패드·배럴과 리턴 경로 전환에서 생기는 국부 임피던스 변화가 추가 반사원의 후보입니다. Control의 배선도 TX 평균 24.64 mm / RX 40.07 mm로 달라, 여러 지점의 반사가 합쳐지는 위상이 달라집니다.</p><p>RX의 두 보드 합산 경로는 12.31 mm(약 27%) 길지만, <strong>P/N 길이차는 오히려 더 작습니다.</strong> 따라서 이번 순위를 RX의 큰 스큐 때문으로 설명하지 않습니다. RX 신호 via 근처의 GND via도 각각 약 <strong>0.781 mm</strong> 거리에 이미 있습니다.</p></div>
+      <details class="path-evidence"><summary>수치의 근거와 다음 검증 범위</summary>
+        <p>두 격자의 TX−RX 차이는 2.36 → 2.42 dB로, 변화는 0.063 dB입니다. 같은 상대 순위가 관측됐지만 <strong>절대 반사손실의 0.5 dB 수렴 목표는 미달</strong>입니다. 이 차이를 오차 상한으로 보지는 않습니다.</p>
+        <p>RX 반사 전력은 TX의 1.75배입니다. 모델의 삽입손실은 TX 0.0060, RX 0.0105 dB로 차이는 0.0045 dB입니다. 반사 전력은 100 × 10<sup>−RL/10</sup>으로 계산했습니다.</p>
+        <p>현재 계산은 PEC 도체·무손실 유전체와 네 개의 100 Ω 차동 포트입니다. 실제 저항·TVS의 실장 부하를 제외했으므로 종단 부품의 배치·부하까지 합격한 것은 아닙니다. M12의 유한 포트 간격도 TX 0.36 / RX 0.48 mm로 달라 그 영향이 아직 분리되지 않았습니다.</p>
+        <p>평면 길이는 패드 중심 사이 최단 주경로를 두 PCB에 걸쳐 합산한 값입니다. RX의 두 선에는 동일한 via 축 길이가 각각 1.478 mm 더해져 길이차를 바꾸지 않습니다. 부품 분기·커넥터 접점·포트 체적은 이 길이 표에 더하지 않았습니다. 기하학적 길이차를 실제 전파 지연으로 환산하지 않았습니다.</p>
+        <p>다음 비교에서는 RX 층 전환·기준면 연결, M12 팬아웃, 포트 조건을 하나씩 통제합니다. 지금 결과는 이 순서를 정할 근거이며, 각 부분의 원인 기여율을 확정한 결과는 아닙니다.</p>
+        <p><a href="records/path-comparison.json">경로 비교 수치·형상 SHA ↗</a> · <a href="records/tx-recheck/summary.json">계산 조건 ↗</a> · <a href="records/tx-recheck/fine-fem-results.npz">원시 S 행렬 ↗</a></p>
+      </details>
+    </div>
   </section>
 </main>
 <footer><span>PALA720 · PortA 통신 경로 분석</span><span>2026.09.11 · 실제 Gerber / 정밀 결과와 초기 기록 구분</span></footer>
@@ -115,6 +136,6 @@
 <script src="inner-copper.js"></script>
 <script src="phy-geometry.js"></script>
 <script src="viewer.js?v=20260911-review3"></script>
-<script src="report.js?v=20260911-review3"></script>
+<script src="report.js?v=20260911-four-paths1"></script>
 </body>
 </html>

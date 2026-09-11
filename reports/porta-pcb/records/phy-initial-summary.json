@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "record_type": "verified summary of preserved initial PHY-side openEMS results",
+  "verified_date": "2026-09-11",
+  "nature": "Summary derived from preserved raw results; no new simulation.",
+  "title_ko": "PHY ↔ T2 초기 계산 원본 검증",
+  "frequency_mhz": 100,
+  "differential_reference_ohms": 100,
+  "single_ended_reference_ohms": 50,
+  "extracted_frequency_grid_mhz": {
+    "start": 10,
+    "stop": 500,
+    "step": 5,
+    "count": 99
+  },
+  "display_frequency_scope": "Only the selected 100 MHz values are summarized here; no full-band pass claim.",
+  "direction_note": "Both TX and RX name the PCB conductor pairs. Excitation was applied at T2, and transmission was evaluated at U6 (LAN9354); TX does not denote the simulation drive direction.",
+  "model_scope": {
+    "board": "Control board",
+    "segment": "T2 PHY-side PCB pads to U6 LAN9354 PCB pads",
+    "included": [
+      "Gerber copper on four layers",
+      "TXA+/TXA-/RXA+/RXA- tracks, pads and branches",
+      "board outline and plated/non-plated hole geometry",
+      "unrelated copper geometry"
+    ],
+    "excluded": [
+      "transformer internal electrical model",
+      "PHY silicon electrical model",
+      "mounted 49.9-ohm resistor and capacitor electrical loads",
+      "other PCB and board-to-board connector",
+      "external sensor cable and field EMC excitation"
+    ],
+    "loaded_components": false,
+    "copper_model": "perfect electric conductor (PEC)",
+    "dielectric_relative_permittivity": 4.5,
+    "dielectric_loss_model": "lossless assumed",
+    "solder_mask_included": false,
+    "via_plating_thickness_um_assumed": 25,
+    "boundary": "MUR on six faces"
+  },
+  "numerical_validation": {
+    "status": "initial_not_converged",
+    "fully_converged": false,
+    "time_convergence_pass": false,
+    "spatial_convergence_checked": false,
+    "boundary_convergence_checked": false,
+    "configured_max_steps": 40000,
+    "configured_end_energy_ratio": 0.0001,
+    "configured_end_energy_db": -40,
+    "grid_points": {
+      "x": 486,
+      "y": 409,
+      "z": 37
+    },
+    "nominal_local_xy_step_mm": 0.08,
+    "selected_signal_path_connectivity_checked": true,
+    "all_eight_port_contacts_checked": true,
+    "continuous_material_sampling": {
+      "tested": 2000,
+      "mismatches": 0
+    },
+    "interpretation": "Connectivity and material checks do not establish time, mesh, boundary, or EMC convergence."
+  },
+  "interpretation": {
+    "rl_use": "Provisional PCB copper-path return-loss values at 100 MHz; not final validated device performance.",
+    "il_use": "Transmission is approximately 0 dB. These raw insertion-loss values are not precision validated.",
+    "nonphysical_power_note": "Small negative insertion loss or outgoing/transmitted power above 100% is residual numerical error, not passive PCB gain. Raw values are preserved without clipping.",
+    "component_load_note": "R8/R44/R9/R10 pads and copper branches are present, but their mounted 49.9-ohm loads and associated capacitor electrical models were excluded.",
+    "redesign_note": "These are preserved original-Gerber results; they are not simulations of subsequent PCB routing redesigns."
+  },
+  "rows": [
+    {
+      "case": "phy-tx-coarse",
+      "pair": "TX",
+      "frequency_mhz": 100,
+      "return_loss_db": 30.836573021069498,
+      "insertion_loss_db": 0.00013504856996994656,
+      "reflected_power_percent": 0.0824788691680071,
+      "transmitted_power_percent": 99.99689044010739,
+      "returned_voltage_percent": 2.8719134591419553,
+      "margin_over_16_db": 14.836573021069498,
+      "input": {
+        "component": "T2",
+        "pins": [
+          "1",
+          "3"
+        ],
+        "nets": [
+          "TXA+",
+          "TXA-"
+        ],
+        "single_ended_port_numbers": [
+          1,
+          2
+        ]
+      },
+      "output": {
+        "component": "U6",
+        "pins": [
+          "45",
+          "44"
+        ],
+        "nets": [
+          "TXA+",
+          "TXA-"
+        ],
+        "single_ended_port_numbers": [
+          5,
+          6
+        ]
+      },
+      "source_npz": {
+        "archive_relative_path": "porta-em/runs/phy-tx-coarse/results.npz",
+        "path_base": "analysis outputs archive; not a public URL",
+        "sha256": "68703e318a2499a818c14f6b7e6b119761efebc5819c08c921c7dbf45831ef0c",
+        "publicly_bundled": false
+      },
+      "published_summary_href": "porta-em/summary.json",
+      "recorded_steps": 40000,
+      "recorded_time_ns": 2.7496326446299997,
+      "last_energy_db": -26.7,
+      "raw_transmitted_power_exceeds_100_percent": false,
+      "raw_insertion_loss_is_negative": false,
+      "outgoing_power_ratio_at_100mhz": 1.0008148508957515,
+      "max_outgoing_power_ratio_over_extracted_frequencies": 1.0025352531536365,
+      "display_status": "initial calculation; numerical convergence incomplete"
+    },
+    {
+      "case": "phy-rx-coarse",
+      "pair": "RX",
+      "frequency_mhz": 100,
+      "return_loss_db": 29.18039050835196,
+      "insertion_loss_db": -0.004158231896592562,
+      "reflected_power_percent": 0.12077052359407502,
+      "transmitted_power_percent": 100.09579267969096,
+      "returned_voltage_percent": 3.4752053693857436,
+      "margin_over_16_db": 13.180390508351959,
+      "input": {
+        "component": "T2",
+        "pins": [
+          "6",
+          "8"
+        ],
+        "nets": [
+          "RXA+",
+          "RXA-"
+        ],
+        "single_ended_port_numbers": [
+          3,
+          4
+        ]
+      },
+      "output": {
+        "component": "U6",
+        "pins": [
+          "47",
+          "46"
+        ],
+        "nets": [
+          "RXA+",
+          "RXA-"
+        ],
+        "single_ended_port_numbers": [
+          7,
+          8
+        ]
+      },
+      "source_npz": {
+        "archive_relative_path": "porta-em/runs/phy-rx-coarse/results.npz",
+        "path_base": "analysis outputs archive; not a public URL",
+        "sha256": "5b205d321b49025ffac90878177f0a53f7d1fabb320e01cd5cc662736b269892",
+        "publicly_bundled": false
+      },
+      "published_summary_href": "porta-em/summary.json",
+      "recorded_steps": 40000,
+      "recorded_time_ns": 2.7496326446299997,
+      "last_energy_db": -34.03,
+      "raw_transmitted_power_exceeds_100_percent": true,
+      "raw_insertion_loss_is_negative": true,
+      "outgoing_power_ratio_at_100mhz": 1.0021827141329833,
+      "max_outgoing_power_ratio_over_extracted_frequencies": 1.0041106025372308,
+      "display_status": "initial calculation; numerical convergence incomplete"
+    }
+  ],
+  "public_sources": {
+    "initial_summary": "porta-em/summary.json",
+    "historical_report": "porta-em/index.html",
+    "port_contact_check": "porta-em/port-check.json",
+    "continuous_material_check": "porta-em/material-check.json"
+  },
+  "provenance": {
+    "source_summary_sha256": "121c2cf502384eb12bbd2ce72d7c37bd2203cf0ce18a368de10ebb4e250f35dc",
+    "source_summary_encoding": "cp949",
+    "published_summary_sha256": "121c2cf502384eb12bbd2ce72d7c37bd2203cf0ce18a368de10ebb4e250f35dc",
+    "metrics_derived_directly_from_preserved_npz": true,
+    "original_files_modified": false,
+    "new_solver_run": false
+  }
+}

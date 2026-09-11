@@ -1,0 +1,291 @@
+{
+  "schema_version": 1,
+  "scope": "Manufactured baseline PCB path comparison, T2 cable-side pads to M12 PCB pads; 100 MHz, T2 incidence. Not the redesigned boards.",
+  "sources": {
+    "summary": {
+      "href": "records/tx-recheck/summary.json",
+      "sha256": "235cf797bc43dc55d56fdf76b6bd34466ad9178d74472bf565d4e300981461a2"
+    },
+    "geometry": {
+      "href": "geometry.js",
+      "sha256": "799a229de39c18a5706b5ea9f04c43b30c75517b4620c5a2a11f026f405cdfb3"
+    },
+    "ground_geometry": {
+      "href": "ground-vias.js",
+      "sha256": "b12476444ff553dfff9dca0391f9d2cbfa3be37010b87a520b3e5a752fe9d3f1",
+      "note": "Geometry locates existing plated returns; display proximity is not an RF current or coupling result."
+    },
+    "route_centerline_audit_sha256": "df1e5a25273876f74a57bf671d1b95d7f439198a00f9bde46e1991fbccc8b5e8",
+    "finite_port_model_sha256": "08b5393046d05ecd519e1dd5f988d84fd4c03184ef858725d31bc332f0d23597",
+    "simulation_geometry_source_sha256": "93810213a86cff18f276a8c36ec5139799ed6a9b8386ccb21bde367e0ec76bc3"
+  },
+  "port_map_zero_based": {
+    "T2_TX": 0,
+    "T2_RX": 1,
+    "M12_TX": 2,
+    "M12_RX": 3
+  },
+  "cases": [
+    {
+      "case": "field-h100-localp1-r1-100mhz",
+      "source": "records/tx-recheck/base-fem-results.npz",
+      "sha256": "07611c611e1f421d19816b7e0c136632b0be254db6cf7c4a66af82a159378e20",
+      "pairs": {
+        "TX": {
+          "t2_return_loss_db": 27.85336889509097,
+          "reflected_amplitude_percent": 4.048848766856163,
+          "reflected_power_percent": 0.16393176336872675,
+          "t2_to_m12_insertion_loss_db": 0.007131225304665613
+        },
+        "RX": {
+          "t2_return_loss_db": 25.49338933753088,
+          "reflected_amplitude_percent": 5.3128864389982295,
+          "reflected_power_percent": 0.2822676231369129,
+          "t2_to_m12_insertion_loss_db": 0.012280749160573087
+        }
+      },
+      "tx_minus_rx_rl_db": 2.3599795575600915
+    },
+    {
+      "case": "field-h075-localp1-r1-100mhz",
+      "source": "records/tx-recheck/fine-fem-results.npz",
+      "sha256": "5929aeefa52fc28acdacd9534c1479cce4f665aa8c688fd515da1cfbe207909a",
+      "pairs": {
+        "TX": {
+          "t2_return_loss_db": 28.61104812841291,
+          "reflected_amplitude_percent": 3.7106295053484346,
+          "reflected_power_percent": 0.13768771325962367,
+          "t2_to_m12_insertion_loss_db": 0.00598891977153928
+        },
+        "RX": {
+          "t2_return_loss_db": 26.18849314220519,
+          "reflected_amplitude_percent": 4.904280965531329,
+          "reflected_power_percent": 0.240519717888729,
+          "t2_to_m12_insertion_loss_db": 0.010465058007245521
+        }
+      },
+      "tx_minus_rx_rl_db": 2.4225549862077216
+    }
+  ],
+  "selected_case": "field-h075-localp1-r1-100mhz",
+  "comparison": {
+    "fine_tx_minus_rx_rl_db": 2.4225549862077216,
+    "mesh_change_in_tx_rx_gap_db": 0.0625754286476301,
+    "rx_over_tx_reflected_power_ratio": 1.746849535043156,
+    "rx_minus_tx_reflected_power_percentage_points": 0.10283200462910533,
+    "rx_minus_tx_insertion_loss_db": 0.004476138235706241,
+    "absolute_rl_convergence_target_db": 0.5,
+    "absolute_rl_convergence_target_met": false,
+    "fully_converged": false,
+    "note": "Similar TX/RX gaps on two meshes support the observed relative ordering; the gap change is not an error bound or proof of absolute convergence. The h100/h075 comparison also includes the documented TVS-branch mesh policy difference."
+  },
+  "route_length_definition": "Shortest pad-center main-path centerline, excluding resistor/TVS branches; sum the two PCB planar lengths. The approximately straight mating contacts and pad/fixture volume are not added. This is geometric length, not propagation delay. Equal RX via-axis lengths cancel in P-N skew.",
+  "routes": {
+    "TX": {
+      "boards": {
+        "Control_board": {
+          "manufacturing_matched_editable_source_sha256": "e6d72ad136fa3af3633384493f5cba65f6d39abaf3a51f21fa165eb5350ffaa8",
+          "planar_p_mm": 23.793872537730806,
+          "planar_n_mm": 25.48386279810298,
+          "signal_vias_p": 0,
+          "signal_vias_n": 0,
+          "layers_p_mm": {
+            "F.Cu": 0,
+            "In1.Cu": 0,
+            "In2.Cu": 0,
+            "B.Cu": 23.793872537730806
+          },
+          "layers_n_mm": {
+            "F.Cu": 0,
+            "In1.Cu": 0,
+            "In2.Cu": 0,
+            "B.Cu": 25.48386279810298
+          }
+        },
+        "Motor_board": {
+          "manufacturing_matched_editable_source_sha256": "4a7a353e21f25b7fa6c2cc3bb8aef40c010e09103dcc3b981f998d599f02adfa",
+          "planar_p_mm": 22.183084641911936,
+          "planar_n_mm": 21.191596138740547,
+          "signal_vias_p": 0,
+          "signal_vias_n": 0,
+          "layers_p_mm": {
+            "F.Cu": 22.183084641911936,
+            "In1.Cu": 0,
+            "In2.Cu": 0,
+            "B.Cu": 0
+          },
+          "layers_n_mm": {
+            "F.Cu": 21.191596138740547,
+            "In1.Cu": 0,
+            "In2.Cu": 0,
+            "B.Cu": 0
+          }
+        }
+      },
+      "planar_p_mm": 45.97695717964274,
+      "planar_n_mm": 46.675458936843526,
+      "planar_mean_mm": 46.32620805824313,
+      "planar_signed_p_minus_n_mm": -0.6985017572007877,
+      "with_equal_via_axes_mean_mm": 46.32620805824313
+    },
+    "RX": {
+      "boards": {
+        "Control_board": {
+          "manufacturing_matched_editable_source_sha256": "e6d72ad136fa3af3633384493f5cba65f6d39abaf3a51f21fa165eb5350ffaa8",
+          "planar_p_mm": 39.21613526389264,
+          "planar_n_mm": 40.91440979551227,
+          "signal_vias_p": 0,
+          "signal_vias_n": 0,
+          "layers_p_mm": {
+            "F.Cu": 0,
+            "In1.Cu": 0,
+            "In2.Cu": 0,
+            "B.Cu": 39.21613526389264
+          },
+          "layers_n_mm": {
+            "F.Cu": 0,
+            "In1.Cu": 0,
+            "In2.Cu": 0,
+            "B.Cu": 40.91440979551227
+          }
+        },
+        "Motor_board": {
+          "manufacturing_matched_editable_source_sha256": "4a7a353e21f25b7fa6c2cc3bb8aef40c010e09103dcc3b981f998d599f02adfa",
+          "planar_p_mm": 19.737341952874147,
+          "planar_n_mm": 17.403896348463412,
+          "signal_vias_p": 1,
+          "signal_vias_n": 1,
+          "layers_p_mm": {
+            "F.Cu": 3.5819595949289385,
+            "In1.Cu": 0,
+            "In2.Cu": 0,
+            "B.Cu": 16.155382357945207
+          },
+          "layers_n_mm": {
+            "F.Cu": 2.931076477383235,
+            "In1.Cu": 0,
+            "In2.Cu": 0,
+            "B.Cu": 14.472819871080178
+          }
+        }
+      },
+      "planar_p_mm": 58.953477216766785,
+      "planar_n_mm": 58.31830614397568,
+      "planar_mean_mm": 58.63589168037123,
+      "planar_signed_p_minus_n_mm": 0.6351710727911026,
+      "with_equal_via_axes_mean_mm": 60.11389168037123
+    }
+  },
+  "rx_return_vias": [
+    {
+      "signal_net": "Eth_RX+",
+      "signal_xy_mm": [
+        116.0,
+        -101.3
+      ],
+      "ground_xy_mm": [
+        115.5,
+        -100.7
+      ],
+      "center_to_center_mm": 0.7810249675906611,
+      "model_ground_hole_index": 5
+    },
+    {
+      "signal_net": "Eth_RX-",
+      "signal_xy_mm": [
+        116.8,
+        -100.6
+      ],
+      "ground_xy_mm": [
+        116.3,
+        -100.0
+      ],
+      "center_to_center_mm": 0.7810249675906611,
+      "model_ground_hole_index": 7
+    }
+  ],
+  "model": {
+    "ports": "Four finite-volume 100-ohm differential P/N ports; no explicit common-mode ports.",
+    "finite_ports": [
+      {
+        "number": 1,
+        "pins": [
+          "16",
+          "14"
+        ],
+        "gap_mm": 0.3600000000000003,
+        "cross_section_mm": [
+          0.11,
+          0.11
+        ]
+      },
+      {
+        "number": 2,
+        "pins": [
+          "11",
+          "9"
+        ],
+        "gap_mm": 0.3600000000000012,
+        "cross_section_mm": [
+          0.11,
+          0.11
+        ]
+      },
+      {
+        "number": 3,
+        "pins": [
+          "8",
+          "7"
+        ],
+        "gap_mm": 0.35999999999999943,
+        "cross_section_mm": [
+          0.11,
+          0.11
+        ]
+      },
+      {
+        "number": 4,
+        "pins": [
+          "6",
+          "5"
+        ],
+        "gap_mm": 0.4800000000000004,
+        "cross_section_mm": [
+          0.11,
+          0.11
+        ]
+      }
+    ],
+    "conductors": "PEC, no copper ohmic loss",
+    "dielectric_epsilon_map": {
+      "fr4": 4.5
+    },
+    "dielectric_loss": "None; real permittivity",
+    "included": "PCB signal/ground copper, pads, stubs, plated holes, approximate straight 64-pin contacts, synthetic differential port loads.",
+    "omitted": [
+      "Populated resistor and TVS impedance/capacitance",
+      "Transformer internals and PHY silicon",
+      "Actual M12 connector body and 20 m cable",
+      "External noise excitation"
+    ],
+    "port_geometry_sensitivity_separated": false
+  },
+  "findings": {
+    "observed": [
+      "RX has lower return loss at 100 MHz on both completed meshes.",
+      "RX is longer and has one signal layer transition per conductor; TX has none.",
+      "RX absolute planar skew is smaller than TX; a skew-only explanation is unsupported.",
+      "Both RX transitions have an existing nearby GND via."
+    ],
+    "engineering_interpretation": "Different local impedance discontinuities and the phase combination of their reflections can produce the measured difference. A longer perfectly matched uniform line does not itself create reflection.",
+    "priority_followup": [
+      "Controlled comparison of RX layer transitions and reference returns",
+      "M12 pad fanout and identical finite-port/de-embedding sensitivity"
+    ],
+    "not_established": [
+      "Per-feature causal percentage",
+      "Real populated termination/component placement acceptance",
+      "Product link failure rate, EMI or immunity"
+    ]
+  }
+}

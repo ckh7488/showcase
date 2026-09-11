@@ -2,9 +2,29 @@
 (() => {
   const rows = [...document.querySelectorAll('.result-row')];
   let selected = rows.find(row => row.getAttribute('aria-pressed') === 'true') || rows[0];
+  const lastPair = {cable:'rx', phy:'rx'};
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  function stage(row) {
+    return row.dataset.segment === 'phy' ? '초기 openEMS · 수렴 미검증' :
+      row.dataset.note.includes('목표는 미달') ? '정밀 FEM · 수렴 목표 미달' : '정밀 FEM · 격자 비교 목표 충족';
+  }
+  function updateViewerReadout(segment, pair) {
+    const sameSegment = rows.filter(row => row.dataset.segment === segment);
+    document.getElementById('viewer-readout-name').textContent = segment === 'phy' ? '트랜스 ↔ PHY' : '트랜스 ↔ M12';
+    document.getElementById('viewer-readout-stage').textContent = stage(sameSegment[0]);
+    for (const button of document.querySelectorAll('[data-viewer-result]')) {
+      const row = sameSegment.find(item => item.dataset.pair === button.dataset.viewerResult);
+      button.querySelector('strong').textContent = Number(row.dataset.rl).toFixed(2) + ' dB';
+      button.setAttribute('aria-pressed', String(pair === row.dataset.pair));
+      button.setAttribute('aria-label', `${row.dataset.title}, 반사손실 ${Number(row.dataset.rl).toFixed(2)} dB. 상세 결과 선택`);
+    }
+    document.getElementById('result-selection-context').textContent = pair === 'both' ?
+      `3D는 이 구간의 TX/RX를 함께 표시합니다. 상세 수치: ${selected.dataset.title}.` : '';
+  }
   function choose(row, moveViewer = true) {
     selected = row;
+    lastPair[row.dataset.segment] = row.dataset.pair;
+    const initial = row.dataset.segment === 'phy';
     for (const other of rows) other.setAttribute('aria-pressed', String(other === row));
     // Missing results stay missing: Number('') would incorrectly show 0 dB.
     const rawDb = row.dataset.rl;
@@ -14,11 +34,14 @@
     const margin = rawMargin !== undefined && rawMargin.trim() !== '' ? Number(rawMargin) : db - 16;
     const marginLabel = document.querySelector('#result-margin');
     document.querySelector('#result-name').textContent = row.dataset.title;
+    document.querySelector('#result-stage').textContent = stage(row);
+    document.querySelector('#result-stage').classList.toggle('initial', initial);
     document.querySelector('#result-value').textContent = available ? db.toFixed(2) : '—';
     document.querySelector('#result-unit').hidden = !available;
     marginLabel.textContent = !available ? (row.dataset.status || '정밀값 미확인') :
       margin < 0 ? Math.abs(margin).toFixed(2) + ' dB 부족' :
       margin === 0 ? '16 dB 기준과 같음' : '+' + margin.toFixed(2) + ' dB 여유';
+    if (initial && available) marginLabel.textContent = '초기 계산상 ' + marginLabel.textContent;
     marginLabel.classList.toggle('is-short', available && margin < 0);
     marginLabel.classList.toggle('is-pending', !available);
     const rawReflected = row.dataset.reflected;
@@ -32,23 +55,33 @@
       const raw = row.dataset[key];
       const value = raw !== undefined && raw.trim() !== '' ? Number(raw) : NaN;
       const target = document.getElementById(id);
-      if (target) target.textContent = Number.isFinite(value) ? value.toFixed(digits) + unit : '—';
+      if (target) target.textContent = Number.isFinite(value) ? value.toFixed(digits) + unit : initial ? '정밀값 미확정' : '—';
     }
+    document.getElementById('result-il-label').textContent = initial ? '삽입손실 · T2 → PHY' : '삽입손실 · T2 → M12';
+    document.getElementById('result-evidence').href = initial ? '#phy-raw-values' : 'records/tx-recheck/summary.json';
     document.querySelector('#result-note').textContent = row.dataset.note;
     if (moveViewer) window.__pcbViewer?.select({segment:row.dataset.segment, pair:row.dataset.pair});
+    const state = window.__pcbViewer?.snapshot();
+    updateViewerReadout(row.dataset.segment, state?.segment === row.dataset.segment ? state.pair : row.dataset.pair);
   }
   rows.forEach(row => row.addEventListener('click', () => choose(row)));
   document.addEventListener('pcb-selection-change', ({detail}) => {
-    const row = rows.find(r => r.dataset.segment === detail.segment && r.dataset.pair === detail.pair);
+    const pair = detail.pair === 'both' ? lastPair[detail.segment] : detail.pair;
+    const row = rows.find(r => r.dataset.segment === detail.segment && r.dataset.pair === pair);
     if (row) choose(row, false);
-    const context = document.getElementById('result-selection-context');
-    if (context) context.textContent = row ? '' : detail.segment === 'phy' ?
-      ' 3D는 PHY측 초기 경로를 표시 중이며, 아래 수치는 케이블측 선택값입니다.' :
-      ' 3D는 두 쌍을 함께 표시하며, 아래 수치는 선택한 한 쌍의 값입니다.';
+    updateViewerReadout(detail.segment, detail.pair);
   });
-  // Historical PHY values remain in the folded record, with their own geometry links.
+  document.querySelectorAll('[data-viewer-result]').forEach(button => button.addEventListener('click', () => {
+    const segment = window.__pcbViewer?.snapshot().segment || selected.dataset.segment;
+    choose(rows.find(row => row.dataset.segment === segment && row.dataset.pair === button.dataset.viewerResult));
+  }));
+  document.getElementById('result-evidence').addEventListener('click', () => {
+    if (selected.dataset.segment === 'phy') document.getElementById('precision-validation').open = true;
+  });
+  // Geometry links in the analysis and raw record select the same numeric case.
   document.querySelectorAll('.record-view').forEach(button => button.addEventListener('click', () => {
-    window.__pcbViewer?.select({segment:button.dataset.segment, pair:button.dataset.pair});
+    choose(rows.find(row => row.dataset.segment === button.dataset.segment && row.dataset.pair === button.dataset.pair));
+    if (button.dataset.focus === 'signal') document.getElementById('view-rx').click();
     document.querySelector('#method').scrollIntoView({behavior:reducedMotion.matches?'auto':'smooth'});
     document.querySelector(button.dataset.segment==='phy'?'#segment-phy':'#segment-cable').focus({preventScroll:true});
   }));
