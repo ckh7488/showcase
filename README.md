@@ -38,7 +38,7 @@
 
 ### 주제별 모음
 
-Collections는 `reports.json`의 선택 필드 `collections`로 주제별 섹션을 구성합니다. EMC 자료는 **입문 → 심화** 순서로 모으며, 문서 상단과 하단에서 서로 이동할 수 있습니다. 기존 PCB·Balun 분석은 각 문서의 관련 자료로 연결하고 신호 품질 분석과 EMC 내성 판정을 구분합니다.
+Collections는 `reports.json`의 선택 필드 `collections`로 주제별 섹션을 구성합니다. EMC 자료는 **입문 → 기본 구조 → 설계 판단** 순서로 모으며, 문서 상단과 하단에서 서로 이동할 수 있습니다. 기존 PCB·Balun 분석은 각 문서의 관련 자료로 연결하고 신호 품질 분석과 EMC 내성 판정을 구분합니다.
 
 ```json
 "collections": [

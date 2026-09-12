@@ -18,10 +18,26 @@
       ]
     },
     {
+      "id": "emc-basic-structures",
+      "title": "EMC 취약점을 보는 눈 · 다섯 가지 기본 구조",
+      "summary": "네 가지 결합 경로와 유입 후 전달을 13개 저장 계산으로 비교합니다. 3D 형상, 주파수별 전압과 장 단면에서 길이·간격·귀환·종단의 영향을 살펴봅니다.",
+      "category": "EMC · 02 기본 구조",
+      "collection": "emc",
+      "date": "2026-09-13",
+      "path": "reports/emc-basic-structures/",
+      "cover": "reports/emc-basic-structures/cover.png",
+      "coverAlt": "5번 연결 그림의 120 mm 배선과 발생원·끝 저항, 13개 위치의 저장 전압을 보여줍니다.",
+      "tags": [
+        "3D",
+        "openEMS 저장 결과",
+        "결합·전달"
+      ]
+    },
+    {
       "id": "emc-design",
       "title": "큰 EMC 위험을 가려내는 설계 판단법",
       "summary": "발생원·경로·피해 회로를 기준으로 분석 범위를 좁힙니다. PALA720 사례에서 최소 모델, 함체 간소화와 설계 여유의 판단 기준을 정리합니다.",
-      "category": "EMC · 02 심화",
+      "category": "EMC · 03 심화",
       "collection": "emc",
       "date": "2026-09-12",
       "path": "reports/emc-design/",

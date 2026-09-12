@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>EMC 취약점을 보는 눈 — 다섯 가지 기본 구조 | ATLAS</title>
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/theme.v1.css">
+<link rel="stylesheet" href="report.css?v=20260913-1"><meta name="description" content="결합 경로 네 가지와 유입 후 전달을 13개 저장 계산으로 비교합니다. 3D 형상, 주파수별 전압, 전기장·자기장 단면을 직접 살펴봅니다.">
+</head><body><main>
+<header class="atlas-top"><a class="atlas-back" href="../../" aria-label="ATLAS 라이브러리로 돌아가기"><img src="../../assets/favicon.svg" alt="">← ATLAS</a><span class="article-meta">EMC · 기본 구조 · <time datetime="2026-09-13">2026.09.13</time></span></header>
+<nav class="series-nav" aria-label="EMC 학습 순서"><a href="../../#collection-emc">EMC 모음</a><a href="../emc-cable/">01 · 눈으로 배우는 EMC</a><a href="../emc-basic-structures/" aria-current="page">02 · 다섯 가지 기본 구조</a><a href="../emc-design/">03 · EMC 설계 판단</a></nav>
+<section class="hero"><div><p class="eyebrow">형상 → 결합 → 피해 전압</p><h1>EMC 취약점을 보는 눈<br><span>다섯 가지 기본 구조</span></h1></div><div class="intro"><p>“이 구조는 노이즈에 약하겠다.”<br>그 예상을 작은 모델로 확인해 보자.</p><p><span class="badge">openEMS · 저장된 계산 결과</span> <small>3D 형상 + 주파수별 전압 + 근사식 비교</small></p></div></section>
+<div class="flow"><div><b>01 · 구조를 본다</b><small>발생원과 피해 회로, 귀환 경로</small></div><div><b>02 · 하나를 바꾼다</b><small>같은 입력에서 A / B 비교</small></div><div><b>03 · 전압을 확인한다</b><small>형상뿐 아니라 주파수·종단까지</small></div><div><b>04 · 적용 범위를 정한다</b><small>실제 보드에 남길 것과 생략할 것</small></div></div>
+<noscript><p class="noscript">3D, 주파수 비교와 계산값 표시는 JavaScript가 필요합니다. 아래 적용 범위와 출처는 그대로 읽을 수 있습니다.</p></noscript>
+<nav class="tabs" aria-label="다섯 가지 구조"><button class="tab" data-case="0" aria-pressed="true"><span class="num">01</span><strong>나란한 배선</strong><small>전압이 옆으로 새면</small></button><button class="tab" data-case="1" aria-pressed="false"><span class="num">02</span><strong>큰 전류 루프</strong><small>귀환이 멀어지면</small></button><button class="tab" data-case="2" aria-pressed="false"><span class="num">03</span><strong>기준이 흔들림</strong><small>모터 전류 → 센서 오차</small></button><button class="tab" data-case="3" aria-pressed="false"><span class="num">04</span><strong>한쪽 패드</strong><small>차동쌍의 실제 비대칭</small></button><button class="tab" data-case="4" aria-pressed="false"><span class="num">05</span><strong>전달과 공진</strong><small>유입 후 · 길이와 끝 저항</small></button></nav>
+<section id="lesson"><div class="question"><div><h2 id="question"></h2><p id="prompt"></p></div><span class="badge">교육용 형상 · 그래프는 저장된 계산값</span></div>
+<aside class="transfer-guide" id="transfer-guide" hidden aria-label="5번을 읽는 순서">
+<p><b>1~4번에서 결합 경로를 봤다면, 5번은 그다음이다.</b> 이미 들어온 외란이 배선을 지나 끝에 얼마나 나타나는지 비교한다.</p>
+<ol><li><b>① 유입된 외란</b><span>발생원의 조건을 같게 둔다</span></li><li><b>② 진행과 반사</b><span>배선 길이·끝 저항을 바꾼다</span></li><li><b>③ 끝에서 보는 전압</b><span>어느 주파수에서 커지는지 본다</span></li></ol>
+<p class="transfer-reading" id="transfer-reading" aria-live="polite"></p>
+<p class="transfer-note">1 V는 발생원의 개방 전압이다. 배선 입구 전압을 항상 1 V로 고정한 실험은 아니다. 50 Ω 종단도 이 선로와 완전히 정합된 조건은 아니다.</p>
+</aside>
+<div class="lab"><div class="workspace"><div class="visual"><div class="scene-top"><span id="scene-hint">왼쪽 드래그 회전 · 휠 확대 · 오른쪽 드래그 이동</span><div class="view-modes"><button id="view-context" aria-pressed="false">연결 그림</button><button id="view-model" aria-pressed="true">3D 계산형상</button></div><div id="camera-buttons"><button id="zoom-in" aria-label="확대">＋</button><button id="zoom-out" aria-label="축소">−</button><button id="view-top">위에서</button><button id="view-reset">시점 초기화</button></div></div><div class="scene" id="scene" aria-label="선택한 구조의 회전 가능한 3D 모형"><svg id="context-svg" role="img" aria-label="발생원과 피해 회로의 연결 및 측정점을 보여 주는 설명 그림"></svg><div class="labels" id="labels"></div><div class="fallback" id="fallback"><svg viewBox="0 0 500 260" id="fallback-svg" role="img" aria-label="도체와 귀환면의 단순 구조도"></svg><p>이 환경에서는 평면 구조도를 표시합니다. 아래 계산 그래프는 그대로 사용할 수 있습니다.</p></div></div><div class="legend" id="geometry-legend"></div><div class="geometry" id="geometry"></div></div>
+<div class="results"><div><span class="badge">openEMS · 저장된 주파수 응답</span><p class="measure-label" id="measure-label"></p><div class="metric" id="metric" aria-live="polite"></div><p class="normalization" id="normalization"></p><p class="compare" id="comparison"></p><div class="variants" id="variants" aria-label="형상 비교"></div></div><div class="frequency"><div class="freq-head"><label for="freq">주파수</label><output id="freq-value" for="freq"></output></div><input id="freq" type="range" min="0" max="1000" step="1" value="650"><div class="freq-ends"><span id="freq-min"></span><span id="freq-max"></span></div><div class="presets" id="freq-presets"></div></div></div></div>
+<div class="chart-wrap"><div class="chart-head"><h3>형상을 바꾸면, 전체 대역에서 어떻게 달라질까?</h3><label class="check"><input id="show-approx" type="checkbox"> <span id="approx-label">선택한 형상의 근사식도 보기</span></label></div><canvas class="chart" id="chart" role="img" aria-label="주파수별 유도 전압 비교 그래프"></canvas><div class="chart-legend" id="chart-legend"></div><p class="chart-note" id="chart-note"></p></div><div class="insight" id="insight"></div></div>
+<div class="cards"><article class="card"><p class="kicker">이 구조에서 읽을 것</p><h3 id="principle-title"></h3><p id="principle"></p><a class="source-inline" id="principle-source" target="_blank" rel="noopener">원문에서 확인 ↗</a></article><article class="card"><p class="kicker">PALA720 센서에 적용하면</p><h3 id="sensor-title"></h3><p id="sensor"></p></article><article class="card"><p class="kicker">여기까지는 단순화해도 된다</p><h3 id="scope-title"></h3><p id="scope"></p></article></div>
+<details class="drawer" id="field-drawer"><summary>실제로 계산된 장 단면도 보기 — 고정 주파수</summary><div class="field-layout"><div><div class="field-options"><button id="field-e" aria-pressed="true">전기장 E</button><button id="field-h" aria-pressed="false">자기장 H</button></div><canvas class="field" id="field" role="img" aria-label="openEMS에서 계산한 도체 중앙의 전자기장 단면"></canvas></div><div class="field-desc"><h3 id="field-title"></h3><p id="field-note"></p><p>01~03·05는 도체 길이 중앙, 04는 패드 위치를 자른 단면이다. 색은 이 단면의 최대 장 크기를 기준으로 정규화했다. <b>형상마다 다시 정규화하므로 색으로 A/B의 절대 크기를 비교하지 않는다.</b> 크기 비교는 위 전압 그래프를 쓴다.</p></div></div></details>
+<details class="drawer"><summary>입력·측정점·근사식 — 무엇을 계산했나?</summary><div><div class="parameter-grid"><div><h3>openEMS 모델</h3><div id="model-detail"></div></div><div><h3>점선으로 표시하는 근사</h3><div id="approx-detail"></div></div></div><div id="extra-impedance" class="extra"><h3>피해 회로의 임피던스도 바꿔 보면?</h3><p>아래만 별도의 정전용량 근사다. 3D 형상이나 openEMS 결과를 다시 계산하지 않는다. 피해 배선 양 끝의 저항을 함께 바꾼다.</p><label for="rv">양 끝 각각 <b id="rv-value">1,000 Ω</b></label><input id="rv" type="range" min="1" max="4" step=".02" value="3"><div id="rv-result"></div></div></div></details>
+<div class="next-row"><p id="takeaway"></p><button id="next">다음 구조 →</button></div></section>
+
+<section class="chapter" id="sensor-map"><p class="eyebrow">이 다섯 개를 익히고 나면</p><h2>복잡한 센서도, 먼저 작은 구조로 나눈다.</h2><p>“외부 노이즈 전부”를 한 번에 재현하지 않는다. 실제 발생원·노출된 포트에서 출발해, 피해 전압을 만들 수 있는 구조를 고른다. 아래는 PALA720 센서에 대한 <b>적용 가설</b>이다.</p>
+<div class="mapping"><div class="mapping-row head"><div>방금 본 구조</div><div>PALA720 센서에서 찾을 자리</div><div>첫 비교 모델에 남길 것</div></div>
+<div class="mapping-row"><div><b>01 · 나란한 배선</b><small>전압 변화가 가까운 도체로 결합</small></div><div>벅의 스위칭 노드 주변, 센서·리셋 배선</div><div>노이즈 도체, 피해 배선, 귀환면, 양쪽 임피던스. 거리만 늘린 경우와 귀환면을 가깝게 한 경우를 비교.</div></div>
+<div class="mapping-row"><div><b>02 · 큰 전류 루프</b><small>공유하는 자속이 유도 전압을 만듦</small></div><div>모터·드라이버의 급격히 변하는 전류 경로</div><div>전류의 왕복 경로와 피해 루프. 전류를 같게 두고 루프 높이·면적을 줄여 비교.</div></div>
+<div class="mapping-row"><div><b>03 · 공유 귀환</b><small>같은 기준 이름도 같은 전압은 아님</small></div><div>24 V / 0 V, 보드 간 커넥터, PHY 기준 경로</div><div>실제로 공유하는 구간과 측정할 두 기준점. 공유 전류와 임피던스를 분리해서 확인.</div></div>
+<div class="mapping-row"><div><b>04 · 한쪽 패드</b><small>같은 외란도 다르게 전달됨</small></div><div>M12 → 보드 간 연결 → 이더넷 트랜스 앞 배선</div><div>차동 두 선의 패드·비아·주변 도체·종단. 같은 CM 입력에서 수신단의 복소 전압 차이를 비교.</div></div>
+<div class="mapping-row"><div><b>05 · 길어진 배선</b><small>전파 지연과 반사를 무시할 수 없음</small></div><div>20 m 외부 케이블, 커넥터·슬립링 전환부</div><div>외부 구간은 전송선/다도체 모델, 내부 결합은 작은 3D 모델로 분리. 경계의 임피던스·모드·연결을 보존.</div></div></div>
+<div class="scope-box"><h3>생략 기준은 “안 보이니까”가 아니라 “결과를 바꾸지 않으니까”.</h3><p>① 관심 대역과 관찰할 전압을 정한다. ② 유력한 경로만 남긴 모델을 만든다. ③ 빠진 연결·종단·주변 도체를 대표 조건으로 바꿔 본다. <b>결론이 유지되고 다른 유력 경로도 없을 때</b> 그 세부를 첫 모델에서 생략한다.</p><p>이 다섯 구조는 <b>결합 원리를 배우는 묶음</b>이다. 외란을 다섯 종류로 완전히 분류한 규격은 아니다. 함체 개구·케이블 공통모드·외부 평면파는 다음 규모의 모델이며, ESD/EFT/서지의 보호소자 동작과 파괴 판정은 별도 회로·시험이 필요하다.</p></div>
+</section>
+<section class="chapter" id="sources"><p class="eyebrow">출처와 검증</p><h2>원리의 출처와 저장된 계산의 범위.</h2><p>LearnEMC의 결합 원리를 짧게 풀어 설명했다. 제공된 원본에는 이 수업을 위해 구성한 13개 형상의 계산 결과가 들어 있다. 이 페이지는 해당 데이터를 보존해 보여주며, 게시 과정에서 해석을 다시 실행하지 않았다. LearnEMC 강의를 그대로 번역한 자료는 아니다.</p>
+<div class="source-grid"><article class="source"><a href="https://www.ti.com/lit/an/spraar7/spraar7.pdf" target="_blank" rel="noopener">TI · High-Speed Interface Layout Guidelines</a><p>§3.3 대칭 배선, §3.9 같은 비아 수, §3.10 대칭 부품 배치. 04의 실제 배선 사례를 고른 근거다. 수치 처방을 모든 이더넷 보드에 그대로 적용하지 않는다.</p></article><article class="source"><a href="https://www.ti.com/lit/an/snla387/snla387.pdf" target="_blank" rel="noopener">TI · Ethernet PHY PCB Design Layout Checklist</a><p>MDI 배선의 스텁·비아 최소화와 주변 구리 영향을 다룬다. 패드·비아·커넥터 전환부를 보자는 이유다.</p></article>
+<article class="source"><a href="https://learnemc.com/electric-field-coupling" target="_blank" rel="noopener">LearnEMC · Electric-Field Coupling</a><p>귀환면 위 두 회로, 상호 정전용량, 피해 회로 임피던스. 01의 원리와 근사 모델의 출발점.</p></article>
+<article class="source"><a href="https://learnemc.com/magnetic-field-coupling" target="_blank" rel="noopener">LearnEMC · Magnetic Field Coupling</a><p>두 루프의 상호 인덕턴스와 부하 분압. 02의 근사식과 구조 비교 기준.</p></article>
+<article class="source"><a href="https://learnemc.com/common-impedance-coupling" target="_blank" rel="noopener">LearnEMC · Common Impedance Coupling</a><p>공유 경로에 생긴 전압을 먼저 구하고, 피해 회로로 전달되는 비율을 본다. 03의 원리이며, 여기서는 PEC 경로의 RF 임피던스로 확장했다.</p></article>
+<article class="source"><a href="https://learnemc.com/introduction-to-imbalance-difference-modeling" target="_blank" rel="noopener">LearnEMC · Imbalance Difference Modeling</a><p>균형과 모드 변환을 보는 관점. 원문은 주로 방출을 설명한다. 04는 같은 외란을 받는 두 선 중 한쪽에 구리 패드를 추가한 별도 계산 실험이다.</p></article>
+<article class="source"><a href="https://www.ti.com/document-viewer/lit/html/SSZTB23" target="_blank" rel="noopener">TI · RS-485 Basics: When Termination Is Necessary</a><p>선로와 끝단의 임피던스가 다를 때 생기는 반사와 파의 중첩. 05의 전달·종단을 읽는 원리이며, 이 교육용 선로를 RS-485 배선으로 가정하지 않는다.</p></article>
+<article class="source"><a href="https://qucs.sourceforge.net/tech/node75.html" target="_blank" rel="noopener">Qucs · Microstrip components</a><p>공기 중 평판 배선의 특성 임피던스 근사에 Hammerstad–Jensen 식을 사용했다. 03·05의 전송선 근사에 적용.</p></article>
+<article class="source"><a href="https://docs.openems.de/python/openEMS/ports.html" target="_blank" rel="noopener">openEMS · Ports</a><p>집중 포트의 복소 전압·전류로 응답을 정규화한다. <a href="https://docs.openems.de/python/CSXCAD/CSProperties/CSPropProbeBox.html" target="_blank" rel="noopener">전압 프로브</a>로 05의 선로 위 13개 위치도 읽었다.</p></article>
+<article class="source"><a href="https://learnemc.com/introduction-to-emc" target="_blank" rel="noopener">LearnEMC · Introduction to EMC</a><p>발생원·결합 경로·피해 회로라는 큰 틀. 이 페이지의 다섯 구조가 외란의 완전한 분류가 아닌 이유.</p></article>
+<article class="source"><a href="https://github.com/ckh7488/showcase/tree/55732e6facc4dd79ba0c21a91785ea79594fb41a/reports/porta-pcb" target="_blank" rel="noopener">센서 구조 · ATLAS 보고서 스냅샷</a><p>M12, Motor PCB, 보드 간 연결, LAN9354 경로의 근거. PALA720 센서 자체의 CAD를 계산한 결과는 아니다.</p></article></div>
+<details class="drawer"><summary>실행 조건·계산 품질·모델의 한계</summary><div><p><b>원본에 기록된 실행 조건:</b> openEMS C++ 0.0.35 / Python 인터페이스 0.0.33, PEC 도체·공기, z-min PEC 귀환면, 나머지 5면 PML 8층. 가우시안 펄스를 한 번 넣고 주파수 응답을 추출했다. 브라우저에서는 원본에서 복소 응답으로부터 구한 크기와 저장된 장 단면을 표시한다.</p><p><b>같은 입력:</b> 01은 발생원 배선 끝 1 V RMS, 04는 같은 위상의 두 50 Ω 테브난 발생원 평균 1 V RMS, 02는 발생원 배선 끝 전류 100 mA RMS, 03은 포트로 들어가는 총 전류 100 mA RMS, 05는 50 Ω 테브난 발생원 1 V RMS로 환산한다. 서로 다른 실험의 숫자로 현장 노이즈의 우선순위를 정하지 않는다.</p><p><b>실제 계산은 E와 H를 함께 푼다.</b> 01·02는 각각 고임피던스·저임피던스 발생원 조건을 택해 주된 메커니즘을 드러냈다. 전기장이나 자기장 중 하나를 제거한 계산이 아니다.</p><div id="quality-summary"></div><div class="table-scroll"><table><thead><tr><th>형상</th><th>메시 노드 수</th><th>실행 시간</th><th>종료 에너지</th></tr></thead><tbody id="quality-table"></tbody></table></div><p>금속 손실·유전체·IC 비선형·패키지와 실제 보호소자는 포함하지 않았다. 얇은 도체와 포트의 수치 오차가 남는다. 이 결과는 구조 비교용이며 특정 PHY의 고장 문턱이나 제품의 EMC 합격을 뜻하지 않는다.</p></div></details>
+<details class="drawer"><summary>그래픽 라이브러리 라이선스</summary><div><p>Three.js r160 · MIT License</p><pre>The MIT License
+
+Copyright © 2010-2023 three.js authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+</pre></div></details>
+<p class="foot">3D는 형상·경로의 설명이며, 05의 전압 막대는 계산된 13개 프로브 값이다. 실선: openEMS / 점선: 표시된 근사식 / 장 단면: openEMS의 고정 주파수 결과. 원본 계산 자료: 2026-09-12 · 문서 정리: 2026-09-13. 실측 및 제품 EMC 합격 판정과 구분한다.</p>
+</section><footer class="series-footer"><p>다음 · 작은 구조에서 확인한 경로를 설계 판단으로 이어간다.</p><nav class="series-nav" aria-label="EMC 학습 순서"><a href="../../#collection-emc">EMC 모음</a><a href="../emc-cable/">01 · 눈으로 배우는 EMC</a><a href="../emc-basic-structures/" aria-current="page">02 · 다섯 가지 기본 구조</a><a href="../emc-design/">03 · EMC 설계 판단</a></nav></footer></main><script src="vendor/three-r160.min.js"></script>
+<script src="data.js"></script>
+<script src="report.js?v=20260913-1"></script>
+</body></html>
