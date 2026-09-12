@@ -60,12 +60,36 @@ function drawChart(){const [ctx,w,h]=fitCanvas($('chart')),c=current(),r=record(
 function niceStep(v){const p=10**Math.floor(Math.log10(v||1)),a=v/p;return (a<=1?1:a<=2?2:a<=2.5?2.5:a<=5?5:10)*p;}
 function updateImpedance(){if(state.case!==0)return;const r=record(),R=10**+$('rv').value,f=r.freq[state.index]*1e6,cc=r.capacitance,jw=2*Math.PI*f;const val=jw*Math.abs(cc[1][0])/Math.hypot(2/R,jw*cc[1][1])*1000;$('rv-value').textContent=number(R,0)+' Ω';$('rv-result').innerHTML='<b>근사'+' '+number(val,3)+' mV</b> / 발생원 1 V · '+number(f/1e6,1)+' MHz';}
 function fieldColor(t){const stops=[[18,38,54],[27,89,126],[42,155,163],[178,206,118],[255,210,96]];t=Math.max(0,Math.min(1,t));const a=Math.min(3,Math.floor(t*4)),u=t*4-a;return 'rgb('+stops[a].map((v,k)=>Math.round(v*(1-u)+stops[a+1][k]*u)).join(',')+')';}
-function updateField(){const r=record();$('field-title').textContent=(state.case===4?'600':'100')+' MHz · '+(state.field==='E'?'전기장':'자기장')+' 크기 단면';$('field-note').textContent=(state.case===3?'패드 위치 x=16 mm를 자른 단면이다. ':'')+'위 주파수 슬라이더와 독립된 고정 주파수 결과다. 가로 y, 세로 z. 밝은 부분은 이 단면 안에서 장이 상대적으로 강한 위치다.';if(!$('field-drawer').open)return;const data=r.fields[state.field],[ctx,w,h]=fitCanvas($('field')),L=42,R=17,T=14,B=40,pw=w-L-R,ph=h-T-B;ctx.fillStyle='#142630';ctx.fillRect(0,0,w,h);const xfun=y=>L+(y+30)/60*pw,zfun=z=>T+(32-z)/32*ph;const yy=data.y,zz=data.z;for(let j=0;j<zz.length;j++)for(let i=0;i<yy.length;i++){const ya=i?(yy[i-1]+yy[i])/2:-30,yb=i<yy.length-1?(yy[i]+yy[i+1])/2:30,za=j?(zz[j-1]+zz[j])/2:0,zb=j<zz.length-1?(zz[j]+zz[j+1])/2:32;const a=Math.max(-30,ya),b=Math.min(30,yb),c=Math.max(0,za),d=Math.min(32,zb);ctx.fillStyle=fieldColor(data.db[j][i]/60+1);ctx.fillRect(xfun(a),zfun(d),xfun(b)-xfun(a)+.5,zfun(c)-zfun(d)+.5);}ctx.strokeStyle='#d0e6e0';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(L,zfun(0));ctx.lineTo(w-R,zfun(0));ctx.stroke();const cfg=r.cfg,ys=cfg.y||[0];ys.forEach((y,i)=>{ctx.strokeStyle=state.case===3?(i===0?'#8bc1ff':'#ef91c0'):(i===0?'#ffcd79':i===1?'#8bc1ff':'#ef91c0');ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(xfun(state.case===3&&cfg.pad&&i===0?-10:y-(cfg.w||2)/2),zfun(cfg.h));ctx.lineTo(xfun(y+(cfg.w||2)/2),zfun(cfg.h));ctx.stroke();});ctx.font='11px system-ui';ctx.fillStyle='#c6dbe4';ctx.textAlign='center';[-30,0,30].forEach(v=>ctx.fillText(v+'',xfun(v),h-20));ctx.textAlign='left';ctx.fillText('z mm',4,12);ctx.fillText('32',13,T+8);ctx.fillText('0',20,zfun(0));ctx.fillText('y mm',w-40,h-5);const cw=Math.min(135,w*.3),cx=w-R-cw;for(let i=0;i<cw;i++){ctx.fillStyle=fieldColor(i/cw);ctx.fillRect(cx+i,T+8,1,7);}ctx.fillStyle='#e5f0f4';ctx.font='10px system-ui';ctx.fillText('−60 dB',cx,T+29);ctx.textAlign='right';ctx.fillText('0 dB',w-R,T+29);}
+function updateField(){
+  const r=record(),cut=fieldCutInfo(),f=r.meta.field_frequency_Hz/1e6;
+  const caseName=String(state.case+1).padStart(2,'0')+' · '+document.querySelector('[data-case="'+state.case+'"] strong').textContent;
+  $('field-summary').textContent=caseName+' — 주변장 단면 · '+number(f)+' MHz 고정';
+  $('field-selection').textContent='선택 조건: '+current().labels[state.variant]+' / '+current().sub[state.variant]+' · 보조 자료';
+  const purposes=[
+    '볼 것: 두 배선 사이와 각 배선·귀환면 사이에서 장이 분포하는 위치. 간격과 높이를 바꾸며 분포 모양을 비교한다. 피해 전압의 크기는 위 그래프에서 확인한다.',
+    '볼 것: 위 배선과 아래 귀환면 사이, 두 왕복 경로 사이의 장 분포. 특히 자기장 H로 루프 주변의 분포 모양을 살펴본다. 결합 전압의 크기는 위 그래프에서 확인한다.',
+    '볼 것: 공유 연결을 좁게 또는 넓게 만들었을 때 주변 장의 분포 모양. 두 기준점 사이 전압 차이 자체는 위 그래프에서 확인한다.',
+    '볼 것: + 선에 패드를 추가했을 때 두 선 주변 장의 모양이 어떻게 달라지는가. 단면은 패드를 통과한다. 수신단의 차동 전압은 위 그래프에서 확인한다.',
+    '5번의 보조 보기: 배선과 귀환면 사이·주변 어디에 장이 분포하는지 본다. 공진 주파수와 종단 전압의 변화는 위 그래프가 주 자료다. 이 단면 하나로 공진을 판단하지 않는다.'
+  ];
+  $('field-purpose').textContent=purposes[state.case];
+  $('field-title').textContent=number(f)+' MHz · '+(state.field==='E'?'전기장':'자기장')+' 크기 단면';
+  $('field-cut-note').textContent=cut.description+' · 배선 시작에서 '+number(cut.fromStart)+' / '+r.cfg.L+' mm 위치';
+  $('field-note').textContent='이 단면은 '+number(f)+' MHz로 고정되어 있다. 위 주파수 슬라이더를 움직여도 바뀌지 않는다. 사례·A/B/C·E/H 선택에 따라 해당 저장 결과를 표시한다.';
+  $('field').setAttribute('aria-label',caseName+', '+current().labels[state.variant]+', '+number(f)+' MHz '+(state.field==='E'?'전기장':'자기장')+' 크기. '+cut.description+'의 배선과 귀환면 주변 공간.');
+  $('field-show-slice').disabled=!modelAvailable();
+  updateFieldSlice();renderScene();
+  if(!$('field-drawer').open)return;
+  const cutWidth=Math.max(240,$('field-cut').clientWidth);$('field-cut').setAttribute('viewBox','0 0 '+cutWidth+' 190');$('field-cut').innerHTML=fieldCutMarkup(r,cut,cutWidth);
+  const plot=fieldMapMarkup(r,state.field,Math.max(240,$('field').clientWidth));
+  $('field').setAttribute('viewBox','0 0 '+plot.width+' '+plot.height);
+  $('field').innerHTML=plot.markup;
+}
 function box(w,h,d,x,y,z,color,opacity=1){const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),new THREE.MeshStandardMaterial({color,roughness:.55,metalness:.2,transparent:opacity<1,opacity,depthWrite:opacity===1}));m.position.set(x,y,z);group.add(m);return m;}
 function tube(points,color,r=.025){const curve=new THREE.CatmullRomCurve3(points.map(p=>V(...p)));const m=new THREE.Mesh(new THREE.TubeGeometry(curve,32,r,7,false),new THREE.MeshBasicMaterial({color}));group.add(m);return m;}
 function label(text,x,y,z,color){const el=document.createElement('div');el.className='label';el.textContent=text;if(color)el.style.borderColor=color;$('labels').appendChild(el);labels.push({el,pos:V(x,y,z)});}
 function arrow(a,b,color){const av=V(...a),bv=V(...b);group.add(new THREE.ArrowHelper(bv.clone().sub(av).normalize(),av,av.distanceTo(bv),color,.17,.09));}
-function buildOriginalGeometry(){const cfg=record().cfg;$('geometry-legend').innerHTML=state.case===2?'<span><i class="dot" style="--dot:#e9b766"></i>공유'+' 연결</span><span><i class="dot" style="--dot:#7acbb5"></i>기준면 / 접합</span>':'<span><i class="dot" style="--dot:#e9b766"></i>발생원</span><span><i class="dot" style="--dot:#86bfff"></i>피해 배선'+(state.case===3?' + / −':'')+'</span><span><i class="dot" style="--dot:#7acbb5"></i>귀환면</span>';if(state.case===4)$('geometry-legend').innerHTML='<span><i class="dot" style="--dot:#e9b766"></i>배선</span><span><i class="dot" style="--dot:#86bfff"></i>13개 위치의 전압 크기</span><span><i class="reference-key"></i>1 V RMS 높이</span>';drawFallback();if(!renderer)return;if(group){scene.remove(group);group.traverse(o=>{if(o.geometry)o.geometry.dispose();if(o.material){const ms=Array.isArray(o.material)?o.material:[o.material];ms.forEach(m=>m.dispose());}});}group=new THREE.Group();scene.add(group);$('labels').innerHTML='';labels=[];profileStems=[];const L=cfg.L*S,h=cfg.h*S;box(10,.05,5,0,-.06,0,'#527069');const grid=new THREE.GridHelper(10,20,'#66827a','#58766d');grid.scale.z=.5;grid.position.y=-.025;group.add(grid);const ys=cfg.y||[0];ys.forEach((yp,k)=>{const z=yp*S,col=k===0?'#efb95e':k===1?'#77b3f7':'#e287b4';box(L,.045,(cfg.w||2)*S,0,h,z,col);[-1,1].forEach((sign,j)=>{const x=sign*L/2;if(cfg.kind==='shorted'&&sign===-1){box(.09,h,(cfg.w||2)*S,x,h/2,z,'#76c3ad');label('A · 면에 접합',x,.06,z+.45,'#76c3ad');}else{box(.07,h,.07,x,h/2,z,col,.9);box(.16,Math.min(.25,h*.65),Math.max(.16,(cfg.w||2)*S*.65),x,h*.42,z,k===0&&j===0&&cfg.kind!=='shorted'?'#edbb67':'#50698d');}});if(cfg.y){label(k===0?'노이즈 발생원':state.case===3?(k===1?'피해 +':'피해 −'):'피해 배선',L/2+.25,h+.25,z,col);}if(state.case===1){box(L,h,.015,0,h/2,z,col,.11);tube([[-L/2,h,z],[L/2,h,z],[L/2,.05,z],[-L/2,.05,z],[-L/2,h,z]],k===0?'#d9ac61':'#68b6d2',.017);arrow([1.3,.07,z],[-.1,.07,z],'#83d6b7');}});label('PEC 귀환면',-2.7,.03,1.7,'#7acbb5');if(cfg.kind==='coupled'){const near=cfg.y[0]*S;arrow([-.8,h+.1,near],[.7,h+.1,near],'#ffd588');}if(cfg.kind==='shorted'){label('B · 전류 주입 / ΔV',L/2+.15,h+.25,.15,'#f2c77d');arrow([1.5,h+.1,0],[.4,h+.1,0],'#f5c67b');}if(cfg.kind==='line'){label('Vs 1 V · Rs 50 Ω',-L/2,.1,.8,'#e9b766');label('종단 '+number(cfg.R)+' Ω',L/2,h*.42,0,'#e9b766');for(let j=0;j<13;j++){const x=-L/2+j*L/12;const m=box(.055,1,.055,x,h+.5,0,'#7bb6ee',.85);profileStems.push(m);}addVoltageReference(L,h);}updateStems();renderScene();}
+function buildOriginalGeometry(){const cfg=record().cfg;$('geometry-legend').innerHTML=state.case===2?'<span><i class="dot" style="--dot:#e9b766"></i>공유'+' 연결</span><span><i class="dot" style="--dot:#7acbb5"></i>기준면 / 접합</span>':'<span><i class="dot" style="--dot:#e9b766"></i>발생원</span><span><i class="dot" style="--dot:#86bfff"></i>피해 배선'+(state.case===3?' + / −':'')+'</span><span><i class="dot" style="--dot:#7acbb5"></i>귀환면</span>';if(state.case===4)$('geometry-legend').innerHTML='<span><i class="dot" style="--dot:#e9b766"></i>배선</span><span><i class="dot" style="--dot:#86bfff"></i>13개 위치의 전압 크기</span><span><i class="reference-key"></i>1 V RMS 높이</span>';drawFallback();if(!renderer)return;if(group){scene.remove(group);group.traverse(o=>{if(o.geometry)o.geometry.dispose();if(o.material){const ms=Array.isArray(o.material)?o.material:[o.material];ms.forEach(m=>m.dispose());}});}group=new THREE.Group();scene.add(group);$('labels').innerHTML='';labels=[];profileStems=[];const L=cfg.L*S,h=cfg.h*S;box(10,.05,5,0,-.06,0,'#527069');const grid=new THREE.GridHelper(10,20,'#66827a','#58766d');grid.scale.z=.5;grid.position.y=-.025;group.add(grid);const ys=cfg.y||[0];ys.forEach((yp,k)=>{const z=yp*S,col=k===0?'#efb95e':k===1?'#77b3f7':'#e287b4';box(L,.045,(cfg.w||2)*S,0,h,z,col);[-1,1].forEach((sign,j)=>{const x=sign*L/2;if(cfg.kind==='shorted'&&sign===-1){box(.09,h,(cfg.w||2)*S,x,h/2,z,'#76c3ad');label('A · 면에 접합',x,.06,z+.45,'#76c3ad');}else{box(.07,h,.07,x,h/2,z,col,.9);box(.16,Math.min(.25,h*.65),Math.max(.16,(cfg.w||2)*S*.65),x,h*.42,z,k===0&&j===0&&cfg.kind!=='shorted'?'#edbb67':'#50698d');}});if(cfg.y){label(k===0?'노이즈 발생원':state.case===3?(k===1?'피해 +':'피해 −'):'피해 배선',L/2+.25,h+.25,z,col);}if(state.case===1){box(L,h,.015,0,h/2,z,col,.11);tube([[-L/2,h,z],[L/2,h,z],[L/2,.05,z],[-L/2,.05,z],[-L/2,h,z]],k===0?'#d9ac61':'#68b6d2',.017);arrow([1.3,.07,z],[-.1,.07,z],'#83d6b7');}});label('PEC 귀환면',-2.7,.03,1.7,'#7acbb5');if(cfg.kind==='coupled'){const near=cfg.y[0]*S;arrow([-.8,h+.1,near],[.7,h+.1,near],'#ffd588');}if(cfg.kind==='shorted'){label('B · 전류 주입 / ΔV',L/2+.15,h+.25,.15,'#f2c77d');arrow([1.5,h+.1,0],[.4,h+.1,0],'#f5c67b');}if(cfg.kind==='line'){label('Vs 1 V · Rs 50 Ω',-L/2,.1,.8,'#e9b766');label('종단 '+number(cfg.R)+' Ω',L/2,h*.42,0,'#e9b766');for(let j=0;j<13;j++){const x=-L/2+j*L/12;const m=box(.055,1,.055,x,h+.5,0,'#7bb6ee',.85);profileStems.push(m);}addVoltageReference(L,h);}updateStems();updateFieldSlice();renderScene();}
 function updateStems(){if(state.case!==4||!profileStems.length)return;const r=record(),h=r.cfg.h*S;profileStems.forEach((m,k)=>{const v=r.profile[k][state.index];m.scale.y=Math.max(.006,v);m.position.y=h+v/2;});}
 function renderScene(){if(!renderer)return;const w=$('scene').clientWidth,h=$('scene').clientHeight;if(!w||!h)return;renderer.setSize(w,h,false);camera.aspect=w/h;const radius=w<480?16:14;camera.position.set(radius*Math.sin(state.yaw)*Math.cos(state.pitch),radius*Math.sin(state.pitch),radius*Math.cos(state.yaw)*Math.cos(state.pitch));camera.lookAt(0,.4,0);camera.updateProjectionMatrix();renderer.render(scene,camera);const used=[];labels.forEach(l=>{const p=l.pos.clone().project(camera),rw=l.el.offsetWidth||90,rh=l.el.offsetHeight||25;let x=Math.max(rw/2+5,Math.min(w-rw/2-5,(p.x+1)*w/2)),y=Math.max(rh/2+4,Math.min(h-rh/2-4,(1-p.y)*h/2));for(let t=0;t<15;t++){if(!used.some(q=>Math.abs(x-q.x)<(rw+q.w)/2+3&&Math.abs(y-q.y)<(rh+q.h)/2+3))break;y=Math.max(rh/2+4,Math.min(h-rh/2-4,y+(t%2?1:-1)*(rh+5)*Math.ceil((t+1)/2)));}used.push({x,y,w:rw,h:rh});l.el.style.left=x+'px';l.el.style.top=y+'px';});}
 function drawFallback(){const cfg=record().cfg,ys=cfg.y||[0],h=cfg.h;let s='<rect x="20" y="40" width="460" height="160" rx="8" fill="#47675f"/><text x="28" y="228" fill="#cee3dc" font-size="16">귀환면 위 '+h+' mm · 길이 '+cfg.L+' mm</text>';ys.forEach((y,i)=>{const yy=115+y*3,col=i===0?'#edbb67':i===1?'#80b9fb':'#ee92bf';s+='<path d="M70 '+yy+' H430" stroke="'+col+'" stroke-width="'+(cfg.w||2)*2+'"/><text x="70" y="'+(yy-13)+'" fill="#f1f6f5" font-size="13">'+(cfg.kind==='pair_cm'?(i===0?'차동 +':'차동 −'):(i===0?'발생원 / 공유 연결':'피해 '+i))+'</text>';});if(cfg.kind==='pair_cm'&&cfg.pad)s+='<rect x="304" y="85" width="36" height="24" fill="#8bbfff"/>';$('fallback-svg').innerHTML=s;}
@@ -107,7 +131,7 @@ Object.assign(CASES[4],{
 });
 state.zoom=1;state.pan=[0,.4,0];state.view='model';
 let dragPointers=new Map(), gesture=null;
-function chooseView(mode){state.view=mode;const isModel=mode==='model';$('context-svg').style.display=isModel?'none':'block';$('labels').style.display=isModel&&modelAvailable()?'block':'none';if(renderer)renderer.domElement.style.display=isModel&&modelAvailable()?'block':'none';$('fallback').style.display=isModel&&!modelAvailable()?'block':'none';['zoom-in','zoom-out','view-top','view-reset'].forEach(id=>$(id).disabled=!modelAvailable());$('camera-buttons').hidden=!isModel;$('view-context').setAttribute('aria-pressed',!isModel);$('view-model').setAttribute('aria-pressed',isModel);$('view-context').hidden=state.case<2;$('view-model').hidden=state.case<2;$('scene-hint').textContent=isModel?'드래그: 회전 · 휠: 확대/축소 · 방향키·+/− · Home: 복원':'실제 연결을 이해하는 그림 · 3D 버튼으로 계산한 형상 보기';renderScene();drawContext();}
+function chooseView(mode){state.view=mode;const isModel=mode==='model';$('context-svg').style.display=isModel?'none':'block';$('labels').style.display=isModel&&modelAvailable()?'block':'none';if(renderer)renderer.domElement.style.display=isModel&&modelAvailable()?'block':'none';$('fallback').style.display=isModel&&!modelAvailable()?'block':'none';['zoom-in','zoom-out','view-top','view-reset','field-show-slice'].forEach(id=>$(id).disabled=!modelAvailable());$('camera-buttons').hidden=!isModel;$('view-context').setAttribute('aria-pressed',!isModel);$('view-model').setAttribute('aria-pressed',isModel);$('view-context').hidden=state.case<2;$('view-model').hidden=state.case<2;$('scene-hint').textContent=isModel?'드래그: 회전 · 휠: 확대/축소 · 방향키·+/− · Home: 복원':'실제 연결을 이해하는 그림 · 3D 버튼으로 계산한 형상 보기';renderScene();drawContext();}
 function resetCamera(){state.yaw=.62;state.pitch=.64;state.zoom=1;state.pan=[0,.4,0];renderScene();}
 function initScene(){
  try{
@@ -141,7 +165,7 @@ function buildGeometry(){
  if(state.case!==3){buildOriginalGeometry();return;}
  $('geometry-legend').innerHTML='<span><i class="dot" style="--dot:#8bbfff"></i>차동'+' + 선</span><span><i class="dot" style="--dot:#ed94c6"></i>차동 − 선</span><span>동일한 공통모드 외란 입력</span>';drawFallback();if(!renderer)return;
  if(group){scene.remove(group);group.traverse(o=>{o.geometry?.dispose();if(o.material)(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>m.dispose());});}group=new THREE.Group();scene.add(group);$('labels').innerHTML='';labels=[];profileStems=[];const c=record().cfg,h=c.h*S,L=c.L*S;box(10,.05,5,0,-.06,0,'#527069');const grid=new THREE.GridHelper(10,20,'#66827a','#58766d');grid.scale.z=.5;grid.position.y=-.025;group.add(grid);
- c.y.forEach((y,k)=>{const z=y*S,col=k?'#ed94c6':'#8bbfff';box(L,.045,2*S,0,h,z,col);[-1,1].forEach(s=>{box(.07,h,.07,s*L/2,h/2,z,col);box(.16,h*.6,.12,s*L/2,h*.45,z,'#526889');});label(k?'− 선 · 수신단':'+ 선 · 수신단',L/2,h,z,col);arrow([-L/2-.65,h,z],[-L/2-.05,h,z],'#f6c476');});if(c.pad){box(8*S,.045,8*S,16*S,h,-6*S,'#8bbfff');label('+ 선에만 추가된 패드',16*S,h,-6*S,'#8bbfff');}label('같은 위상 외란',-L/2-.3,h+.3,-.6,'#f6c476');label('PEC 기준면',-2,.05,1.7,'#7acbb5');renderScene();
+ c.y.forEach((y,k)=>{const z=y*S,col=k?'#ed94c6':'#8bbfff';box(L,.045,2*S,0,h,z,col);[-1,1].forEach(s=>{box(.07,h,.07,s*L/2,h/2,z,col);box(.16,h*.6,.12,s*L/2,h*.45,z,'#526889');});label(k?'− 선 · 수신단':'+ 선 · 수신단',L/2,h,z,col);arrow([-L/2-.65,h,z],[-L/2-.05,h,z],'#f6c476');});if(c.pad){box(8*S,.045,8*S,16*S,h,-6*S,'#8bbfff');label('+ 선에만 추가된 패드',16*S,h,-6*S,'#8bbfff');}label('같은 위상 외란',-L/2-.3,h+.3,-.6,'#f6c476');label('PEC 기준면',-2,.05,1.7,'#7acbb5');updateFieldSlice();renderScene();
 }
 function updateGeometryText(){const c=record().cfg;let s='<b>길이 '+c.L+' mm</b> · 귀환면 높이 '+c.h+' mm';if(c.y)s+=' · 중심 간격 '+Math.abs(c.y[1]-c.y[0])+' mm';else s+=' · 폭 '+c.w+' mm';if(state.case===4){const lambda=299792.458/record().freq[state.index];s+='<br>공기 중 ℓ/λ = '+number(c.L/lambda,3)+' · 끝 저항 '+number(c.R)+' Ω'+'<br>막대 바닥 = 0 V · 흰 점선 = 1 V RMS · 아래 그래프 = 종단 전압';}else if(state.case===3)s+='<br>두 신호선만 존재 · '+(c.pad?'+ 선에만 8×8 mm 패드':'같은 단면의 두 선');else if(state.case===2)s+='<br>계산 범위: 공유 경로의 Z → ΔV. 전체 모터·ADC 회로는 설명용.';else s+='<br>회색 면: 무한 PEC 귀환면의 일부를 잘라 표시';$('geometry').innerHTML=s;}
 function drawContext(){
@@ -173,7 +197,7 @@ function drawContext(){
 }
 $('view-context').onclick=()=>chooseView('context');$('view-model').onclick=()=>chooseView('model');$('zoom-in').onclick=()=>{state.zoom=Math.max(.35,state.zoom/1.2);renderScene();};$('zoom-out').onclick=()=>{state.zoom=Math.min(3,state.zoom*1.2);renderScene();};
 
-document.querySelectorAll('[data-case]').forEach(b=>b.onclick=()=>loadCase(+b.dataset.case));$('freq').oninput=()=>{const r=record(),f=r.freq[0]*(r.freq.at(-1)/r.freq[0])**(+$('freq').value/1000);state.index=nearest(r.freq,f);updateNumbers();};$('show-approx').onchange=updateNumbers;$('rv').oninput=updateImpedance;$('field-drawer').ontoggle=updateField;['E','H'].forEach(k=>$('field-'+k.toLowerCase()).onclick=()=>{state.field=k;$('field-e').setAttribute('aria-pressed',k==='E');$('field-h').setAttribute('aria-pressed',k==='H');updateField();});$('view-top').onclick=()=>{state.pitch=1.51;state.yaw=0;renderScene();};$('view-reset').onclick=resetCamera;$('next').onclick=()=>{if(state.case===4){$('sensor-map').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});return;}loadCase(state.case+1);$('lesson').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});};
+document.querySelectorAll('[data-case]').forEach(b=>b.onclick=()=>loadCase(+b.dataset.case));$('freq').oninput=()=>{const r=record(),f=r.freq[0]*(r.freq.at(-1)/r.freq[0])**(+$('freq').value/1000);state.index=nearest(r.freq,f);updateNumbers();};$('show-approx').onchange=updateNumbers;$('rv').oninput=updateImpedance;$('field-drawer').ontoggle=updateField;$('field-show-slice').onclick=()=>{chooseView('model');$('scene').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'center'});};['E','H'].forEach(k=>$('field-'+k.toLowerCase()).onclick=()=>{state.field=k;$('field-e').setAttribute('aria-pressed',k==='E');$('field-h').setAttribute('aria-pressed',k==='H');updateField();});$('view-top').onclick=()=>{state.pitch=1.51;state.yaw=0;renderScene();};$('view-reset').onclick=resetCamera;$('next').onclick=()=>{if(state.case===4){$('sensor-map').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});return;}loadCase(state.case+1);$('lesson').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});};
 window.addEventListener('resize',()=>{cancelAnimationFrame(raf);raf=requestAnimationFrame(()=>{drawChart();renderScene();updateField();drawContext();});});initScene();populateQuality();loadCase(0);
 window.emcLesson={state,CASES,DATA,loadCase,selectVariant,setFrequency};
 
@@ -197,4 +221,74 @@ function addVoltageReference(length,base){
   axis.name='voltage-scale';group.add(axis);
   label('1 V RMS',axisX,base+1,0,'#e6f0f5');
   label('0 V',axisX,base,0,'#b8ced9');
+}
+
+function fieldCutInfo(){
+  const length=record().cfg.L,x=state.case===3?16:0;
+  return {x,fromStart:length/2+x,description:state.case===3?'패드 위치 x = 16 mm':'배선 길이의 가운데 x = 0 mm'};
+}
+function fieldConductors(r){
+  const c=r.cfg;
+  return (c.y||[0]).map((y,i)=>({
+    from:state.case===3&&c.pad&&i===0?-10:y-(c.w||2)/2,
+    to:y+(c.w||2)/2,
+    name:state.case===3?(i===0?(c.pad?'+ 선 · 패드':'+ 선'):'− 선'):state.case===2?'공유 연결':state.case===4?'배선':i===0?'노이즈선':'피해선',
+    color:state.case===3?(i===0?'#8bc1ff':'#ef91c0'):i===0?'#ffcd79':'#8bc1ff'
+  }));
+}
+function fieldCutMarkup(r,cut,width=500){
+  const c=r.cfg,scale=(width-68)/120,x1=(width-c.L*scale)/2,x2=x1+c.L*scale,xc=x1+cut.fromStart*scale;
+  let s=`<rect x="12" y="39" width="${width-24}" height="98" rx="8" fill="#eaf4f1" stroke="#c3dcd5"/><text x="24" y="129" fill="#5f737b" font-size="12">아래 귀환면</text>`;
+  for(const wire of fieldConductors(r)){
+    // Top view uses the original trace width; the pad itself occupies x = 12..20 mm.
+    const actualY=state.case===3?(wire.name.startsWith('+')?-2:2):(wire.from+wire.to)/2;
+    const color=wire.color==='#ffcd79'?'#af640c':wire.color==='#ef91c0'?'#b63c7b':'#2870ce';
+    s+=`<path d="M${x1} ${85+actualY*1.1}H${x2}" stroke="${color}" stroke-width="${Math.max(3,(c.w||2)*1.1)}"/>`;
+  }
+  if(c.pad)s+=`<rect x="${width/2+12*scale}" y="74" width="${8*scale}" height="8.8" fill="#2870ce"/>`;
+  s+=`<path d="M${xc} 35V141" stroke="#197d71" stroke-width="3" stroke-dasharray="6 4"/><text x="${xc}" y="23" text-anchor="middle" fill="#197d71" font-size="14" font-weight="700">잘라 보는 면</text>`;
+  s+=`<text x="${x1}" y="57" text-anchor="middle" fill="#172e33" font-size="12">배선 시작</text><text x="${x2}" y="57" text-anchor="middle" fill="#172e33" font-size="12">배선 끝</text>`;
+  s+=`<path d="M${xc-62} 157H${xc-10}m-9 -5l9 5 -9 5" fill="none" stroke="#197d71" stroke-width="2"/><text x="${xc-36}" y="180" text-anchor="middle" fill="#5f737b" font-size="12">바라보는 방향</text>`;
+  return s;
+}
+function fieldMapMarkup(r,kind,width){
+  const plotWidth=Math.min(420,width-54),plotHeight=plotWidth*32/60;
+  const left=(width-plotWidth)/2+10,top=70,bottom=top+plotHeight,height=bottom+76;
+  const px=y=>left+(y+30)/60*plotWidth,pz=z=>top+(32-z)/32*plotHeight;
+  const data=r.fields[kind],yy=data.y,zz=data.z;
+  let s=`<rect width="${width}" height="${height}" rx="10" fill="#142630"/><defs><clipPath id="field-clip"><rect x="${left}" y="${top}" width="${plotWidth}" height="${plotHeight}"/></clipPath></defs><g clip-path="url(#field-clip)">`;
+  for(let j=0;j<zz.length;j++)for(let i=0;i<yy.length;i++){
+    const a=Math.max(-30,i?(yy[i-1]+yy[i])/2:-30),b=Math.min(30,i<yy.length-1?(yy[i]+yy[i+1])/2:30);
+    const c=Math.max(0,j?(zz[j-1]+zz[j])/2:0),d=Math.min(32,j<zz.length-1?(zz[j]+zz[j+1])/2:32);
+    if(a>=b||c>=d)continue;
+    s+=`<rect x="${px(a)}" y="${pz(d)}" width="${px(b)-px(a)+.25}" height="${pz(c)-pz(d)+.25}" fill="${fieldColor(data.db[j][i]/60+1)}"/>`;
+  }
+  s+='</g>';
+  const text=(value,x,y,color='#c6dbe4',anchor='middle',size=12)=>s+=`<text x="${x}" y="${y}" text-anchor="${anchor}" fill="${color}" font-size="${size}" font-family="system-ui,sans-serif">${value}</text>`;
+  text('배선과 귀환면 사이·주변 공간',width/2,18);
+  const wires=fieldConductors(r);
+  wires.forEach((wire,i)=>{
+    const x=px((wire.from+wire.to)/2),z=pz(r.cfg.h),labelX=left+plotWidth*(i+.5)/wires.length;
+    s+=`<path d="M${labelX} 48V56L${x} ${z-5}" fill="none" stroke="${wire.color}" stroke-width="1.2"/><path data-conductor="${i}" d="M${px(wire.from)} ${z}H${px(wire.to)}" stroke="#142630" stroke-width="7"/><path d="M${px(wire.from)} ${z}H${px(wire.to)}" stroke="${wire.color}" stroke-width="4"/>`;
+    text(wire.name,labelX,41,wire.color);
+  });
+  s+=`<path data-return-plane="true" d="M${left} ${bottom}H${left+plotWidth}" stroke="#b0dfcf" stroke-width="4"/>`;
+  text('귀환면 · 아래 금속면',width/2,bottom+21,'#b0dfcf');
+  for(const z of [0,16,32])text(z,left-7,pz(z)+4,'#c6dbe4','end',11);
+  text('높이 z (mm)',left,top-6,'#c6dbe4','start',10);
+  for(const y of [-30,0,30])text(y,px(y),bottom+43,'#c6dbe4','middle',11);
+  text('가로 위치 y (mm)',width/2,bottom+64,'#c6dbe4','middle',11);
+  return {width,height,markup:s};
+}
+function updateFieldSlice(){
+  if(!group||!renderer)return;
+  let marker=group.getObjectByName('field-slice');
+  if(!marker){
+    marker=new THREE.Group();marker.name='field-slice';
+    const geometry=new THREE.PlaneGeometry(60*S,32*S);geometry.rotateY(Math.PI/2);
+    const surface=new THREE.Mesh(geometry,new THREE.MeshBasicMaterial({color:'#66d9c0',transparent:true,opacity:.16,side:THREE.DoubleSide,depthWrite:false}));
+    const border=new THREE.LineSegments(new THREE.EdgesGeometry(geometry),new THREE.LineBasicMaterial({color:'#66d9c0'}));
+    marker.add(surface,border);marker.position.set(fieldCutInfo().x*S,16*S,0);group.add(marker);
+  }
+  marker.visible=$('field-drawer').open;
 }
