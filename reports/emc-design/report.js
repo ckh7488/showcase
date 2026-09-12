@@ -1,6 +1,33 @@
 (()=>{
 'use strict';
 const $=id=>document.getElementById(id);
+const paths={
+ cable:{source:'외부 케이블의 외란','source-note':'커넥터에서의 CM·DM 입력',coupling:'M12 · 실드 · 0 V 경계','coupling-note':'두 선의 불균형과 귀환 경로',victim:'PHY 입력과 전원','victim-note':'차동 잡음 · 공통모드 · 기준 전위',keep:'커넥터·신호선·실드·기준 도체와 양쪽 종단.',omit:'보드 민감도 비교에서는 20 m 상세 형상을 경계 입력과 소스 임피던스로 대체.',measure:'같은 입력에서 RX 차동 잡음과 PHY 전원 변동이 줄어드는가?'},
+ drive:{source:'벅 · 모터 구동부','source-note':'급변하는 전압과 전류',coupling:'근접 배선 · 공유 리턴','coupling-note':'기생 C · 루프 결합 · 공유 임피던스',victim:'민감 입력과 PHY 전원','victim-note':'입력 잡음 · 전원과 기준 전위의 변동',keep:'스위칭 노드·고주파 전류 루프·피해 배선과 리턴.',omit:'회전자·기어 등 기계 세부는 전압 노드와 전류 루프로 단순화.',measure:'같은 스위칭 자극에서 배치·루프·리턴 변경이 피해 전압을 줄이는가?'},
+ rf:{source:'외부 RF','source-note':'입사장 크기 · 방향 · 편파',coupling:'함체 접합부 · 관통부','coupling-note':'표면 전류와 내부 장의 결합',victim:'내부 배선과 회로 단자','victim-note':'같은 관측점의 전압·전류',keep:'큰 외형·접합의 전기적 조건·관통부·PCB와 배선 종단.',omit:'두꺼운 금속 벽의 미세 조직·도장 질감·장식 형상.',measure:'같은 RF 입력에서 접합 조건을 바꿨을 때 피해량이 얼마나 달라지는가?'}
+};
+for(const button of document.querySelectorAll('[data-overview]'))button.addEventListener('click',()=>{
+ const selected=paths[button.dataset.overview];
+ for(const [key,value] of Object.entries(selected))$('path-'+key).textContent=value;
+ for(const item of document.querySelectorAll('[data-overview]'))item.setAttribute('aria-pressed',String(item===button));
+});
+function revealSection(hash,scroll=false){
+ let id;try{id=decodeURIComponent((hash||'').slice(1))}catch{return}
+ const target=$(id);if(!target)return;
+ let parent=target;while(parent){if(parent.tagName==='DETAILS')parent.open=true;parent=parent.parentElement}
+ const sectionDetails=target.querySelector('details.deep-section');if(sectionDetails)sectionDetails.open=true;
+ if(scroll)target.scrollIntoView({block:'start'});
+}
+for(const link of document.querySelectorAll('a[href^="#"]'))link.addEventListener('click',()=>revealSection(link.getAttribute('href')));
+window.addEventListener('hashchange',()=>revealSection(location.hash,true));
+revealSection(location.hash,true);
+let printDetails=null;
+window.addEventListener('beforeprint',()=>{
+ if(printDetails)return;
+ printDetails=Array.from(document.querySelectorAll('.deep-section,.supporting-note')).map(node=>[node,node.open]);
+ for(const [node] of printDetails)node.open=true;
+});
+window.addEventListener('afterprint',()=>{for(const [node,open] of printDetails||[])node.open=open;printDetails=null});
 const inputs=['has-cable','has-metal','has-drive','has-dc','has-magnetic'];
 const presetValues={battery:[false,false,false,false,false],wired:[true,false,false,true,false],pala:[true,true,true,true,true]};
 function row(a,b,c){return '<tr><td>'+a+'</td><td>'+b+'</td><td>'+c+'</td></tr>';}

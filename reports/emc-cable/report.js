@@ -160,17 +160,30 @@ function updateFallback(){
  all('[data-fallback-path]').forEach(node=>node.toggleAttribute('hidden',!node.dataset.fallbackPath.split(' ').includes(state.path)));
  setViewAvailable(false);
 }
+function zoomView(scale){
+ if(!sceneReady)return;
+ distance=Math.max(4,Math.min(20,distance*scale));
+ drawScene();
+}
 function adjustView(action){
  if(!sceneReady)return;
- if(action==='left')yaw-=.18;
- if(action==='right')yaw+=.18;
+ if(action==='left')yaw+=.18;
+ if(action==='right')yaw-=.18;
  if(action==='up')pitch=Math.min(1.25,pitch+.1);
  if(action==='down')pitch=Math.max(.25,pitch-.1);
- if(action==='in')distance=Math.max(4,distance*.88);
- if(action==='out')distance=Math.min(20,distance/ .88);
+ if(action==='in')return zoomView(.88);
+ if(action==='out')return zoomView(1/.88);
  drawScene();
 }
 all('[data-camera]').forEach(button=>button.addEventListener('click',()=>adjustView(button.dataset.camera)));
+$('scene').addEventListener('wheel',e=>{
+ if(!sceneReady||!Number.isFinite(e.deltaY)||e.deltaY===0)return;
+ e.preventDefault();
+ // Normalize pixels, lines and pages so mice and trackpads use the same zoom scale.
+ const unit=e.deltaMode===1?16:e.deltaMode===2?$('scene').getBoundingClientRect().height:1;
+ const delta=Math.max(-200,Math.min(200,e.deltaY*unit));
+ zoomView(Math.exp(delta*.001));
+},{passive:false});
 function cameraPose(){camera.position.set(target.x+distance*Math.sin(yaw)*Math.cos(pitch),target.y+distance*Math.sin(pitch),target.z+distance*Math.cos(yaw)*Math.cos(pitch));camera.lookAt(target)}
 function fitScene(){if(!sceneReady)return;const r=$('scene').getBoundingClientRect();renderer.setSize(r.width,r.height,false);camera.aspect=r.width/r.height;camera.fov=r.width<600?54:39;camera.updateProjectionMatrix();cameraPose();}
 function drawScene(){if(!sceneReady)return;cameraPose();renderer.render(world,camera);const rect=$('scene').getBoundingClientRect(),placed=[];const candidates=labels.map(l=>{const p=l.pos.clone().project(camera);return {l,p,x:(p.x*.5+.5)*rect.width,y:(-p.y*.5+.5)*rect.height}}).sort((a,b)=>a.y-b.y);
@@ -189,9 +202,24 @@ function initScene(){try{
    if(e.key==='Home'){e.preventDefault();rebuildScene(true)}
   });
   let drag=null;
- renderer.domElement.addEventListener('pointerdown',e=>{if(e.button!==0&&e.pointerType==='mouse')return;drag={x:e.clientX,y:e.clientY,yaw,pitch};renderer.domElement.setPointerCapture(e.pointerId);$('scene').classList.add('dragging')});
- renderer.domElement.addEventListener('pointermove',e=>{if(!drag)return;yaw=drag.yaw+(e.clientX-drag.x)*.006;pitch=Math.max(.25,Math.min(1.25,drag.pitch+(e.clientY-drag.y)*.003));drawScene()});
- const end=()=>{drag=null;$('scene').classList.remove('dragging')};renderer.domElement.addEventListener('pointerup',end);renderer.domElement.addEventListener('pointercancel',end);
+ renderer.domElement.addEventListener('pointerdown',e=>{
+  if(!sceneReady||e.isPrimary===false||(e.button!==0&&e.pointerType==='mouse'))return;
+  drag={id:e.pointerId,x:e.clientX,y:e.clientY,yaw,pitch};
+  renderer.domElement.setPointerCapture(e.pointerId);
+  if(e.pointerType==='mouse')renderer.domElement.focus({preventScroll:true});
+  $('scene').classList.add('dragging');
+ });
+ renderer.domElement.addEventListener('pointermove',e=>{
+  if(!sceneReady||!drag||e.pointerId!==drag.id)return;
+  // Orbit the camera opposite horizontal dragging so the visible object follows the hand.
+  yaw=drag.yaw-(e.clientX-drag.x)*.006;
+  pitch=Math.max(.25,Math.min(1.25,drag.pitch+(e.clientY-drag.y)*.003));
+  drawScene();
+ });
+ const end=e=>{if(drag&&e.pointerId===drag.id){drag=null;$('scene').classList.remove('dragging')}};
+ renderer.domElement.addEventListener('pointerup',end);
+ renderer.domElement.addEventListener('pointercancel',end);
+ renderer.domElement.addEventListener('lostpointercapture',end);
  renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();sceneReady=false;renderer.domElement.hidden=true;updateFallback()});
   renderer.domElement.addEventListener('webglcontextrestored',()=>{sceneReady=true;renderer.domElement.hidden=false;rebuildScene(true)});
  new ResizeObserver(()=>{fitScene();drawScene()}).observe($('scene'));

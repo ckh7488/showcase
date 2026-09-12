@@ -8,7 +8,7 @@
 <title>케이블 하나가 붙으면 · 눈으로 배우는 EMC | ATLAS</title>
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../assets/theme.v1.css">
-<link rel="stylesheet" href="report.css">
+<link rel="stylesheet" href="report.css?v=20260912-controls2">
 </head>
 <body>
 <main>
@@ -29,7 +29,7 @@
  <div class="scene-top"><span class="pill">3D 개념도 · 전자기장 계산 결과 아님</span><div class="scene-controls"><button id="inside" aria-pressed="true" hidden>내부 보기</button><button id="reset-view">시점 복원</button><button id="motion" aria-pressed="true">움직임 재생</button></div></div>
  <div class="scene" id="scene" aria-label="센서 구조와 선택한 노이즈 경로를 보여주는 회전 가능한 개념도">
   <div class="scene-labels" id="scene-labels"></div>
-  <div class="scene-hint" id="scene-instructions">드래그·방향키: 회전 · +/−: 확대 · Home: 복원</div>
+  <div class="scene-hint" id="scene-instructions">드래그: 회전 · 휠: 확대/축소<br>방향키·+/−로도 조작 · Home: 복원</div>
   <div class="scene-note" id="scene-note">개념도 · 크기/속도/전류 세기는 실제 비례가 아님</div>
   <div class="fallback" id="fallback"><svg viewBox="0 0 620 340" role="img" aria-labelledby="fallback-title"><title id="fallback-title">배터리 PCB의 결합 경로</title>
 <g data-fallback-base="enclosure" hidden><rect x="310" y="75" width="240" height="180" rx="30" fill="none" stroke="#b7cdd4" stroke-width="3"/><text x="367" y="112" fill="#d8e6ed" font-size="19">금속 함체</text></g>
@@ -158,6 +158,6 @@ THE SOFTWARE.
 <footer class="series-footer"><p>다음 · 결합 경로를 골랐다면, 입력 조건과 판단 기준을 정리한다.</p><nav class="series-nav" aria-label="EMC 학습 순서"><a href="../../#collection-emc">EMC 모음</a><a href="../emc-cable/" aria-current="page">01 · 눈으로 배우는 EMC</a><a href="../emc-design/">02 · EMC 설계 판단</a></nav><div class="related-links"><a href="../porta-pcb/">관련 분석 · PALA720 통신 경로 ↗</a><a href="../balun-routing/">관련 분석 · 차동 배선의 길이와 대칭 ↗</a></div><p class="article-meta">관련 자료는 신호 품질과 모드 변환 분석이다. 완제품 EMC 내성 판정과 구분해서 읽는다.</p></footer>
 </main>
 <script src="vendor/three-r160.min.js"></script>
-<script src="report.js"></script>
+<script src="report.js?v=20260912-controls2"></script>
 </body>
 </html>
