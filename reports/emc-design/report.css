@@ -31,4 +31,3 @@ table{background:var(--sc-surface)}th{background:var(--sc-accent-soft)}tbody tr:
 .print-control{margin:0 0 12px 18px}.model-output{background:var(--sc-accent-soft);padding:18px 20px;border-radius:var(--sc-radius)}
 @media(max-width:680px){.lead{font-size:17px}h2{font-size:23px}.print-control{float:none;margin:0 0 18px}.quick-start{display:grid}.schematic-mobile{background:var(--sc-surface);padding:12px;border-radius:var(--sc-radius)}}
 @media print{.contents,.quick-start{display:none}.model-output{padding:10px}.lead{font-size:12pt}}
-

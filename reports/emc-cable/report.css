@@ -34,4 +34,3 @@ h1{font-size:clamp(30px,4vw,45px)}h2{font-size:clamp(24px,3vw,30px)}
 .fact,.conclusion{background:var(--sc-accent-soft)}.fact,.priority{border-radius:var(--sc-radius)}
 .drawer{background:var(--sc-surface)}a{color:var(--sc-accent)}
 @media(max-width:680px){.hero{padding-top:0}.hero p,.judgment p,.experiment>p{font-size:16px}.view-controls{padding:9px 12px}.scene-instructions{font-size:11px}.stage-heading h2{font-size:23px}}
-
