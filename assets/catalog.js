@@ -62,6 +62,9 @@ async function loadReports() {
     const nav=document.querySelector('#collection-nav');nav.replaceChildren(navigation);nav.hidden=groups.filter(group=>group.reports.length).length<2;
     document.querySelector('#count').textContent=String(data.reports.length).padStart(2,'0');
     if (!data.reports.length) grid.append(el('p','state','아직 등록된 보고서가 없습니다.'));
+    // Reports can link straight back to a section created after the catalog loads.
+    const destination = document.getElementById((location.hash || '').slice(1));
+    if (destination && destination.classList.contains('collection-section')) destination.scrollIntoView({block:'start'});
   } catch(error) {
     document.querySelector('#collection-nav').hidden=true;
     const box=el('div','state');box.append(el('p','','보고서 목록을 불러오지 못했습니다.'));
