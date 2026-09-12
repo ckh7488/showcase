@@ -51,12 +51,33 @@ def validate():
     if manifest.get('version') != 1 or not isinstance(manifest.get('reports'), list):
         raise ValueError('reports.json requires version: 1 and a reports array')
     ids = set()
+    collection_ids = set()
+    collections = manifest.get('collections', [])
+    if not isinstance(collections, list):
+        errors.append('collections must be an array')
+        collections = []
+    for collection in collections:
+        if not isinstance(collection, dict):
+            errors.append('Collection must be an object')
+            continue
+        collection_id = collection.get('id')
+        if (not isinstance(collection_id, str) or
+                not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', collection_id) or
+                collection_id in collection_ids or collection_id == 'other'):
+            errors.append(f'Invalid or duplicate collection id: {collection_id}')
+        else:
+            collection_ids.add(collection_id)
+        for key in ('title', 'summary'):
+            if not isinstance(collection.get(key), str) or not collection[key].strip():
+                errors.append(f'Collection missing {key}')
     fields = ('id','title','summary','category','date','path','cover','coverAlt')
     for report in manifest['reports']:
         if any(not isinstance(report.get(key), str) or not report[key].strip() for key in fields):
             errors.append('Report missing a required nonempty string field')
             continue
         slug = report['id']
+        if 'collection' in report and (not isinstance(report['collection'], str) or report['collection'] not in collection_ids):
+            errors.append(f'{slug}: unknown collection: {report["collection"]}')
         if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', slug) or slug in ids:
             errors.append(f'Invalid or duplicate id: {slug}')
         ids.add(slug)

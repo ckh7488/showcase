@@ -2,6 +2,38 @@
   "version": 1,
   "reports": [
     {
+      "id": "emc-cable",
+      "title": "케이블 하나가 붙으면 · 눈으로 배우는 EMC",
+      "summary": "배터리 PCB에 케이블과 함체를 더하며 결합 경로를 살펴봅니다. 3D 개념도와 두 가지 회로 실험으로 모델에 남길 구조를 고릅니다.",
+      "category": "EMC · 01 입문",
+      "collection": "emc",
+      "date": "2026-09-12",
+      "path": "reports/emc-cable/",
+      "cover": "reports/emc-cable/cover.png",
+      "coverAlt": "입문편에 사용한 두 입력의 용량성 결합 회로도. 같은 외란이 C1과 C2를 거쳐 V1과 V2에 결합합니다.",
+      "tags": [
+        "3D 개념도",
+        "회로 실험",
+        "결합 경로"
+      ]
+    },
+    {
+      "id": "emc-design",
+      "title": "큰 EMC 위험을 가려내는 설계 판단법",
+      "summary": "발생원·경로·피해 회로를 기준으로 분석 범위를 좁힙니다. PALA720 사례에서 최소 모델, 함체 간소화와 설계 여유의 판단 기준을 정리합니다.",
+      "category": "EMC · 02 심화",
+      "collection": "emc",
+      "date": "2026-09-12",
+      "path": "reports/emc-design/",
+      "cover": "reports/emc-design/cover.png",
+      "coverAlt": "심화편의 RC 회로도. 1 V RMS 외란원과 두 입력의 50옴 부하, 서로 다른 결합 정전용량을 표시합니다.",
+      "tags": [
+        "설계 판단",
+        "모델 간소화",
+        "PALA720"
+      ]
+    },
+    {
       "id": "embedding-first-steps",
       "title": "임베딩 첫걸음",
       "summary": "왜 여러 차원이 필요한지, 거리·코사인·내적은 무엇을 비교하는지 직접 조작하며 이해합니다. 마지막에는 작은 모델을 학습시키고 새 문장으로 검색합니다.",
@@ -97,6 +129,13 @@
         "1–150 MHz",
         "배선 비교"
       ]
+    }
+  ],
+  "collections": [
+    {
+      "id": "emc",
+      "title": "EMC",
+      "summary": "전자파 적합성을 이해하고 설계에 적용하는 자료. 입문편에서 구조를 살펴본 뒤, 심화편에서 분석 범위와 판단 기준을 정리합니다."
     }
   ]
 }

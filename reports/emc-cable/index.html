@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="description" content="케이블과 함체가 EMC 결합 경로를 어떻게 바꾸는지 3D 개념도와 두 가지 회로 실험으로 살펴봅니다.">
+<title>케이블 하나가 붙으면 · 눈으로 배우는 EMC | ATLAS</title>
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/theme.v1.css">
+<link rel="stylesheet" href="report.css">
+</head>
+<body>
+<main>
+<header class="atlas-top"><a class="atlas-back" href="../../" aria-label="ATLAS 라이브러리로 돌아가기"><img src="../../assets/favicon.svg" alt="">← ATLAS</a><span class="article-meta">EMC · 입문편 · <time datetime="2026-09-12">2026.09.12</time></span></header>
+<nav class="series-nav" aria-label="EMC 학습 순서"><a href="../../#collection-emc">EMC 모음</a><a href="../emc-cable/" aria-current="page">01 · 눈으로 배우는 EMC</a><a href="../emc-design/">02 · EMC 설계 판단</a></nav>
+<section class="hero">
+ <div><p class="eyebrow">구조를 보면, 먼저 볼 문제가 보인다</p><h1>케이블 하나가 붙으면<br><span class="highlight">먼저 볼 곳이 바뀐다.</span></h1></div>
+ <div><p>같은 센서에 케이블을 붙이고 함체를 씌워보자. 매 단계에서 <b>무엇을 남기고, 무엇을 생략할지</b> 직접 고르는 연습이다.</p><p class="mini">구조 비교 → 모델 범위 선택 → 회로 실험 → PALA720 적용</p></div>
+</section>
+<noscript><p class="noscript">이 파일의 구조 비교와 계산 실험은 JavaScript가 필요합니다. 브라우저에서 열어주세요. 아래의 센서 적용 설명과 출처는 그대로 읽을 수 있습니다.</p></noscript>
+<nav class="steps" aria-label="센서 구조 단계">
+ <button class="step" data-stage="0" aria-pressed="true"><span class="num">01</span><span>배터리 PCB<small>외부 케이블 없음</small></span></button>
+ <button class="step" data-stage="1" aria-pressed="false"><span class="num">02</span><span>20 m 케이블<small>외부와 이어진 도체</small></span></button>
+ <button class="step" data-stage="2" aria-pressed="false"><span class="num">03</span><span>금속 함체<small>벽보다 경계면</small></span></button>
+ <button class="step" data-stage="3" aria-pressed="false"><span class="num">04</span><span>커넥터 확대<small>칩이 보는 노이즈</small></span></button>
+</nav>
+<section class="lesson-shell" id="lesson">
+ <div class="scene-top"><span class="pill">3D 개념도 · 전자기장 계산 결과 아님</span><div class="scene-controls"><button id="inside" aria-pressed="true" hidden>내부 보기</button><button id="reset-view">시점 복원</button><button id="motion" aria-pressed="true">움직임 재생</button></div></div>
+ <div class="scene" id="scene" aria-label="센서 구조와 선택한 노이즈 경로를 보여주는 회전 가능한 개념도">
+  <div class="scene-labels" id="scene-labels"></div>
+  <div class="scene-hint" id="scene-instructions">드래그·방향키: 회전 · +/−: 확대 · Home: 복원</div>
+  <div class="scene-note" id="scene-note">개념도 · 크기/속도/전류 세기는 실제 비례가 아님</div>
+  <div class="fallback" id="fallback"><svg viewBox="0 0 620 340" role="img" aria-labelledby="fallback-title"><title id="fallback-title">배터리 PCB의 결합 경로</title>
+<g data-fallback-base="enclosure" hidden><rect x="310" y="75" width="240" height="180" rx="30" fill="none" stroke="#b7cdd4" stroke-width="3"/><text x="367" y="112" fill="#d8e6ed" font-size="19">금속 함체</text></g>
+<rect x="350" y="135" width="145" height="80" rx="5" fill="#267d6c"/><rect x="407" y="157" width="35" height="32" fill="#101e27"/><text x="365" y="204" fill="white" font-size="19">PCB / PHY</text>
+<g data-fallback-base="battery"><rect x="250" y="157" width="55" height="30" rx="5" fill="#8a9883"/><path d="M305 172H350" stroke="#f2bb5b" stroke-width="3"/><text x="230" y="215" fill="#d8e6ed" font-size="19">배터리</text></g>
+<g data-fallback-base="cable" hidden><rect x="22" y="145" width="78" height="52" rx="8" fill="#3c5360"/><path d="M100 170H350" stroke="#758b96" stroke-width="8"/><text x="135" y="142" fill="#d8e6ed" font-size="19">20 m 케이블 · 축약</text></g>
+<g data-fallback-path="rf wall" hidden><path d="M200 50L340 130M240 35L380 115M290 25L425 110" stroke="#f2bb5b" stroke-width="3"/><text x="104" y="52" fill="#ffd58a" font-size="19">외부 RF</text></g>
+<g data-fallback-path="local" hidden><path d="M362 150H478V192H362Z" fill="none" stroke="#7cdec9" stroke-width="4"/><text x="326" y="286" fill="#a4f0df" font-size="19">PCB의 신호·귀환 루프</text></g>
+<g data-fallback-path="cable return shield" hidden><path d="M70 162H353M70 178H353" stroke="#f2bb5b" stroke-width="3"/><path d="M470 220V285H60V197" fill="none" stroke="#7cdec9" stroke-width="3" stroke-dasharray="8 5"/><text x="110" y="321" fill="#a4f0df" font-size="18">주변 도체·정전용량을 통한 귀환</text></g>
+<g data-fallback-path="signal" hidden><path d="M70 160H398M398 182H70" stroke="#87b9ff" stroke-width="4"/><text x="193" y="252" fill="#c5d9ff" font-size="19">두 도체로 왕복하는 신호</text></g>
+<g data-fallback-path="shield" hidden><path d="M100 165H311V245H526" fill="none" stroke="#7cdec9" stroke-width="5"/><text x="342" y="265" fill="#a4f0df" font-size="18">실드 → 함체</text></g>
+<g data-fallback-path="wall" hidden><path d="M322 123H537L430 157" fill="none" stroke="#f284b3" stroke-width="4" stroke-dasharray="7 5"/><text x="333" y="292" fill="#ffc7e0" font-size="19">접합부 결합 후보</text></g>
+<g data-fallback-path="imbalance shared" hidden><path d="M310 85V238" stroke="#f284b3" stroke-width="3" stroke-dasharray="7 5"/><path d="M237 157H410M237 182H410" stroke="#f2bb5b" stroke-width="3"/><text x="225" y="65" fill="#d8e6ed" font-size="19">커넥터 경계 · 국소 모델</text></g>
+<g data-fallback-path="imbalance" hidden><path d="M365 116L376 157M420 116L415 182" stroke="#f284b3" stroke-width="3"/><text x="230" y="290" fill="#ffc7e0" font-size="19">결합 차이 → 두 선 사이 전압</text></g>
+<g data-fallback-path="shared" hidden><path d="M285 237H470" stroke="#7cdec9" stroke-width="4"/><rect x="358" y="224" width="70" height="26" fill="#c59248"/><text x="237" y="290" fill="#a4f0df" font-size="19">공유 0 V 경로 → 기준 전위 차이</text></g>
+</svg><p class="fallback-message">3D를 사용할 수 없어 단계별 개념도를 표시한다. 경로 선택과 아래 계산 실험은 계속 사용할 수 있다.</p></div>
+ </div>
+<div class="scene-controls view-controls" role="group" aria-label="3D 시점 조작"><button data-camera="left" aria-label="왼쪽으로 회전">← 회전</button><button data-camera="right" aria-label="오른쪽으로 회전">회전 →</button><button data-camera="up" aria-label="위에서 보기">위에서</button><button data-camera="down" aria-label="낮춰 보기">낮춰서</button><button data-camera="in" aria-label="확대">+ 확대</button><button data-camera="out" aria-label="축소">− 축소</button></div>
+ <div class="scene-bottom"><span class="legend"><i class="dot"></i>외란 / CM</span><span class="legend"><i class="dot return"></i>귀환 경로</span><span class="legend"><i class="dot dm"></i>차동 노이즈</span><div class="path-picker" id="path-picker" aria-label="보고 싶은 결합 경로"></div></div>
+ <div class="stage-content" aria-live="polite">
+  <div class="stage-heading"><span class="badge" id="stage-category">조건을 확인하면 생략할 수 있다</span><h2 id="stage-title">외부 케이블이 없으면, 그 유입 경로는 제외한다.</h2></div>
+  <div class="judgments"><div class="judgment"><strong>① 무엇이 보이나</strong><p id="observe"></p></div><div class="judgment"><strong>② 그래서 먼저 볼 것</strong><p id="retain"></p></div><div class="judgment"><strong>③ 이번 모델에서 생략</strong><p id="omit"></p></div></div>
+  <div class="stage-tail"><p id="stage-reason"></p><button class="next" id="next-stage">케이블을 붙여보기 →</button></div>
+ </div>
+</section>
+<details class="drawer"><summary>플라스틱·ESD·모터는 어디로 갔나?</summary><div><ul><li><b>일반 플라스틱</b>은 첫 RF 차폐 검토에서 금속 벽 역할을 기대하지 않는다. 하지만 접촉 방지, ESD 접근 거리, 유전율의 영향까지 PCB와 같다는 뜻은 아니다.</li><li><b>ESD</b>는 사람이 만질 수 있는 부분과 인접 물체 방전을 별도로 검토한다. 금속 함체가 있어도 사라지지 않는다.</li><li><b>EFT·서지·전원 변동</b>은 외부 전원·신호 포트와 설치 환경에 맞춰 남긴다. RF와 같은 입력 파형이 아니므로 이 수업의 연속파 계산으로 합격을 판단하지 않는다.</li><li><b>내부 벅·모터</b>가 있으면 그 발생원은 계속 남는다. 외함은 내부 발생원을 없애주지 않는다. 이번 네 단계의 기본 센서에는 모터를 넣지 않았고, 마지막 센서 적용에서 추가한다.</li></ul><p>기본 시험 방법과 실제 적용 레벨은 별개다. 제품·제품군 규격과 포트 조건으로 시험 범위를 정한다. <a href="https://webstore.iec.ch/en/publication/65586" target="_blank" rel="noopener">IEC 61000-4-6 적용 범위</a> · <a href="https://webstore.iec.ch/en/publication/68954" target="_blank" rel="noopener">IEC 61000-4-2 ESD</a></p></div></details>
+<div class="fact-strip"><div class="fact"><b>케이블을 먼저 검토하는 이유</b><span>외부에 노출된 긴 도체는 유력한 결합 경로다. 실제 영향은 주파수·배치·종단에 따라 비교한다.</span></div><div class="fact"><b>벽과 경계면을 나누어 보기</b><span>벽을 통한 RF 투과와 케이블·접합부를 통한 유입은 별도 경로다.</span></div><div class="fact"><b>화살표가 나타내는 것</b><span>경로를 설명하는 표시다. 전류 크기나 차폐 dB를 뜻하지 않는다.</span></div></div>
+
+<section class="chapter" id="boundary">
+ <div class="intro"><div><p class="eyebrow">02 · 어디서 모델을 끊을 것인가</p><h2>20 m를 매번<br>전부 그릴 필요는 없다.</h2></div><p>궁금한 것이 <b>케이블에 얼마나 들어오나</b>인지, <b>들어온 것을 보드가 얼마나 받나</b>인지 먼저 고른다.</p></div>
+ <div class="boundary"><div class="mode-buttons" aria-label="모델의 질문"><button data-model="0" aria-pressed="true">케이블의 수신</button><button data-model="1" aria-pressed="false">보드의 민감도</button><button data-model="2" aria-pressed="false">함체의 영향</button></div><div class="boundary-grid"><div id="model-diagram"></div><div class="model-copy" id="model-copy" aria-live="polite"></div></div><p class="warning-line" id="model-warning"></p></div>
+ <details class="drawer"><summary>커넥터 경계로 모델을 단순화하려면?</summary><div><p><b>가능하다. 다만 그 면에는 선별 전압·전류, 기준 도체, 소스 임피던스가 함께 있어야 한다.</b> 한 점에 임의 전압 하나만 걸어서는 차동·공통모드와 귀환을 구분할 수 없다.</p><p>보드 민감도를 비교할 때는 동일한 경계 입력을 쓰면 된다. 실제 현장의 입력 크기까지 예측하려면 케이블·원격 장비를 모델링하거나, 시험 조건 또는 측정으로 그 경계값을 정해야 한다.</p><p>LearnEMC의 IDM은 큰 공통모드 구조와 세부 전송선 문제를 나누는 접근을 설명한다. 여기의 세 가지 모델 구분은 그 원리를 이번 센서의 <b>내성 검토에 적용한 구성</b>이다. <a href="https://learnemc.com/introduction-to-imbalance-difference-modeling" target="_blank" rel="noopener">원문: IDM의 모델 단순화</a></p></div></details>
+</section>
+
+<section class="chapter" id="experiment">
+ <div class="intro"><div><p class="eyebrow">03 · 눈으로 예상하고, 수치로 확인하기</p><h2>같이 흔들리던 노이즈가<br>어디서 문제가 될까?</h2></div><p>두 실험은 <b>명시한 등가회로의 계산</b>이다. 첫 번째는 두 선의 차이, 두 번째는 기준 전위의 차이를 보여준다.</p></div>
+ <div class="labs">
+  <div class="lab-tabs"><button data-lab="0" aria-pressed="true">① 두 선의 결합이 다를 때</button><button data-lab="1" aria-pressed="false">② 0 V 경로가 흔들릴 때</button></div>
+  <div class="lab-panel" id="lab-0"><div class="lab-grid"><div class="lab-vis">
+   <svg class="diagram" viewBox="0 0 570 300" role="img" aria-label="1 V RMS 노이즈원에서 두 커패시터를 통해 각각 50옴 부하에 결합되는 회로">
+    <defs><marker id="arrow-pink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#c25089"/></marker></defs>
+    <rect x="12" y="78" width="115" height="144" rx="13" class="node"/><text x="70" y="114" text-anchor="middle">외부 노이즈</text><text x="70" y="146" text-anchor="middle">1 V RMS</text><text x="70" y="181" text-anchor="middle" class="sub">같은 소스</text>
+    <path d="M127 104H200M213 104H391V124M391 162V263M127 199H272M285 199H456V218M456 251V263M70 222V263H518" class="wire"/>
+    <path d="M200 82V126M213 82V126M272 178V220M285 178V220" class="orange"/>
+    <rect x="378" y="124" width="26" height="38" fill="#fff" stroke="#718189" stroke-width="2"/><rect x="443" y="218" width="26" height="33" fill="#fff" stroke="#718189" stroke-width="2"/>
+    <text x="207" y="58" text-anchor="middle">C₁ = 2 pF</text><text id="c2-label" x="278" y="158" text-anchor="middle">C₂ = 2.2 pF</text><text x="428" y="151">50 Ω</text><text x="488" y="243">50 Ω</text>
+    <circle cx="350" cy="104" r="5" fill="#2b76d2"/><circle cx="350" cy="199" r="5" fill="#b7811a"/><text x="345" y="84">V₁</text><text x="345" y="233">V₂</text><path d="M352 116V185" class="pink" marker-end="url(#arrow-pink)"/><text x="268" y="289" text-anchor="middle" class="sub">공통 기준 도체 · 50 Ω는 교육용 부하</text>
+   </svg>
+   <div class="plot-wrap"><div class="plot-title">위: V₁·V₂ / 아래: V₁ − V₂</div><canvas class="plot" id="rc-plot" aria-label="두 신호 전압과 두 전압의 차이 파형"></canvas></div>
+   <p class="lab-caption">대칭이면 두 파형이 포개진다. 결합이 달라지면 분홍색 차동 성분이 남는다.</p>
+  </div><div class="experiment"><span class="pill pink">계산 실험 · 선형 RC 모델</span><h3>외란으로 흔들리는 금속이<br>한쪽 선에 더 가까우면?</h3><p>결합 정전용량 차이 ΔC로 그 효과를 대신 표현한다. 슬라이더를 0으로 보내 두 선을 같게 만들어보자.</p>
+   <div class="slider"><label for="delta">결합 차이 ΔC <output id="delta-out">0.20 pF</output></label><input id="delta" type="range" min="0" max="0.6" step="0.01" value="0.2"></div>
+   <div class="preset-row"><button id="balanced">대칭으로 만들기</button><button id="asymmetric">차이 키우기</button></div>
+   <div class="slider"><label for="frequency">주파수 <output id="freq-out">100 MHz</output></label><input id="frequency" type="range" min="1" max="300" step="1" value="100"></div>
+   <div class="result" aria-live="polite"><span class="name">두 선 사이에 남는 노이즈 · RMS</span><output id="dm-result">6.26 mV</output><p class="meaning" id="rc-meaning"></p></div>
+   <p class="lab-note">값은 PHY 허용치가 아니다. 외부 1 V 입력과 50 Ω 부하는 비교를 위한 가정이며, 실제 이더넷 트랜스·종단 회로를 재현하지 않는다.</p>
+  </div></div>
+  <details class="drawer"><summary>무엇을 계산했나? / LearnEMC 원문과의 관계</summary><div><p class="math">V₁/Vs = jωRC₁ / (1 + jωRC₁)<br>V₂/Vs = jωRC₂ / (1 + jωRC₂)<br>Vdm = V₁ − V₂,　R = 50 Ω,　Vs = 1 V RMS</p><p>크기끼리 빼지 않고 <b>복소 전압을 빼서</b> 위상 차이까지 반영한다. 그래프는 각 전압의 순간값이며 세로축은 고정이다. 기생 결합을 커패시터로 모델링하는 근거는 <a href="https://learnemc.com/electric-field-coupling" target="_blank" rel="noopener">LearnEMC Electric-Field Coupling</a>이다.</p><p>IDM이 설명하는 전기적 균형과 모드 변환을 이해하기 위해 별도로 만든 교육용 예다. 원문의 <span class="math">Vcm = Vdm·Δh</span> 식을 역으로 대입한 내성 계산이 아니다. <a href="https://learnemc.com/introduction-to-imbalance-difference-modeling" target="_blank" rel="noopener">IDM 원문</a></p></div></details>
+  </div>
+  <div class="lab-panel" id="lab-1" hidden><div class="lab-grid"><div class="lab-vis">
+   <svg class="diagram" viewBox="0 0 570 300" role="img" aria-label="강제된 노이즈 전류가 저항과 인덕턴스를 가진 공유 귀환 경로를 지나 두 기준점 사이 전압을 만드는 회로">
+    <rect x="35" y="32" width="500" height="64" rx="12" class="node"/><text x="285" y="59" text-anchor="middle">별도 발생원과 닫힌 귀환 루프</text><text x="285" y="81" text-anchor="middle" class="sub">이 모델에서는 100 mA RMS가 흐른다고 지정</text>
+    <path d="M76 96V206H219M353 206H492V96" class="teal"/><rect x="219" y="179" width="134" height="53" rx="8" fill="#fff2dc" stroke="#c8a162"/><text x="286" y="203" text-anchor="middle">공유 경로</text><text x="286" y="222" text-anchor="middle" class="sub">R + jωL</text>
+    <circle cx="127" cy="206" r="5" fill="#137764"/><circle cx="445" cy="206" r="5" fill="#137764"/><path d="M127 210V262H445V210" class="pink"/><text x="286" y="286" text-anchor="middle">두 기준점의 차이 ΔV = I · Z</text><text x="98" y="145" text-anchor="middle">커넥터 쪽</text><text x="98" y="167" text-anchor="middle" class="sub">기준점 A</text><text x="462" y="145" text-anchor="middle">회로 쪽</text><text x="462" y="167" text-anchor="middle" class="sub">기준점 B</text>
+   </svg>
+   <div class="plot-wrap"><div class="plot-title">주파수에 따른 기준 전위 차이 · RMS</div><canvas class="plot" id="ground-plot" aria-label="주파수에 따라 증가하는 공유 임피던스 전압 그래프"></canvas></div>
+   <p class="lab-caption">“칩을 직접 지나가지 않는다”만으로 제외할 수 없다. 칩이 비교하는 두 기준이 달라질 수 있다.</p>
+  </div><div class="experiment"><span class="pill pink">계산 실험 · 강제 전류와 R–L</span><h3>같은 GND라고<br>항상 같은 전압일까?</h3><p>공유 경로의 인덕턴스를 줄여보자. 구체적인 배선 길이가 아니라, 추출되었다고 가정한 L 값을 바꾼다.</p>
+   <div class="slider"><label for="inductance">공유 경로 L <output id="l-out">20 nH</output></label><input id="inductance" type="range" min="2" max="50" step="1" value="20"></div>
+   <div class="preset-row"><button id="low-l">2 nH로 줄이기</button><button id="high-l">20 nH로 복원</button></div>
+   <div class="slider"><label for="ground-frequency">주파수 <output id="gf-out">30 MHz</output></label><input id="ground-frequency" type="range" min="1" max="100" step="1" value="30"></div>
+   <div class="result" aria-live="polite"><span class="name">공유 경로 양단 전압 · RMS</span><output id="ground-result">377 mV</output><p class="meaning">이 전압이 피해 회로에 얼마나 걸리는지는 실제 종단·전원·기준 연결로 한 번 더 계산한다.</p></div>
+   <p class="lab-note">I = 100 mA RMS, R = 0.05 Ω 가정. 실제 제품에서는 경로를 바꾸면 전류 자체도 바뀔 수 있다.</p>
+  </div></div>
+  <details class="drawer"><summary>왜 이 모델을 남기나? / 계산식</summary><div><p class="math">|ΔV| = I · √[R² + (2πfL)²]</p><p>핵심은 노이즈 전류와 피해 회로가 <b>기준 경로의 일부를 공유하는지</b>다. 모든 칩이 이 전압을 그대로 받는다는 뜻은 아니다. <a href="https://learnemc.com/common-impedance-coupling" target="_blank" rel="noopener">LearnEMC Common Impedance Coupling</a>은 공유 경로 전압을 먼저 구하고, 피해 회로에 걸리는 비율을 다음에 계산하는 접근을 설명한다.</p></div></details>
+  </div>
+ </div>
+</section>
+
+<section class="chapter" id="pala">
+ <div class="intro"><div><p class="eyebrow">04 · PALA720에 적용하기</p><h2>첫 모델은 M12 경계.<br>내부 발생원은 따로.</h2></div><p>현재 알려진 구조에 적용한 우선순위다. <b>실제 고장의 원인이 확인됐다는 뜻은 아니다.</b></p></div>
+ <div class="pala-box"><div class="pala-visual"><h3>외부 이더넷 경로</h3><div class="pala-flow"><div class="pala-node">외부 장비 · 20 m 케이블<small>이더넷 2쌍 + 24 V / 0 V</small></div><div class="pala-node warn">M12 · 함체 진입부<small>실드 / 함체 / PCB 0 V 연결을 남기는 경계</small></div><div class="pala-node">Motor PCB → 보드 간 커넥터<small>전원과 통신이 가까이 지나가는 구간</small></div><div class="pala-node">트랜스 → LAN9354 Port A<small>차동 신호, 공통모드, 전원·리셋을 관찰</small></div></div><p class="pala-note">이 그림은 기존 ATLAS 보고서의 연결을 단순화한 것이다. 실제 CAD 렌더링이 아니다. Port B의 슬립링 경로는 별도로 분리한다.</p></div>
+ <div class="priorities"><article class="priority"><span class="label">첫 외부 RF 모델</span><strong>① M12에서 보드까지의 변환</strong><p>20 m 케이블과 외부 전원이라는 유력한 유입 경로가 있다. 실드·24 V·0 V·신호선의 모드를 구분해 입력하고, MDI 차동 노이즈와 기준 전위 변화를 비교한다.</p></article><article class="priority"><span class="label">독립적으로 남기는 내부 모델</span><strong>② 벅·모터 드라이브의 결합</strong><p>제품 안에 실제 발생원이 있다. 큰 dv/dt 노드·di/dt 루프, 피해 회로와의 거리·공유 경로를 남긴다. 외부 RF 시험으로 이 문제까지 본 셈 치지 않는다.</p></article><article class="priority"><span class="label">단순화하되 제외하지 않는 모델</span><strong>③ 함체 벽과 접합부의 RF</strong><p>첫 RF 모델의 두꺼운 금속 벽은 PEC로 단순화할 수 있다. 원형 접합부·케이블 관통부·내부 기준 연결은 남긴다. 아노다이징 면의 불확실한 접촉은 조건을 바꿔 민감도를 본다.</p></article></div></div>
+ <div class="conclusion"><p><b>지금 먼저 정할 것:</b> “외란이 어디로 들어와 어떤 두 점 사이 전압을 만드는가?” 그 질문에 필요한 도체와 연결만 모델에 남긴다.</p><small>현장의 가장 큰 전류가 아직 무엇인지 모른다고, 가장 중요한 모델조차 못 고르는 것은 아니다. 외부 노출·실제 발생원·피해 회로와의 결합 가능성으로 후보를 고르고, 계산 결과로 순서를 갱신한다.</small></div>
+ <details class="drawer"><summary>어떤 결과가 나오면 무엇을 바꾸나?</summary><div><ul><li><b>같은 CM 입력에서 MDI 차동 성분이 크다:</b> 커넥터·배선·트랜스 주변의 비대칭과 기준 도체를 먼저 비교한다.</li><li><b>전원 또는 기준 전위 변화가 크다:</b> 필터·디커플링·노이즈 귀환 경로를 검토한다. PHY 핀의 기능상 허용 범위와 비교해야 한다.</li><li><b>접합 조건만 바꿔도 결과가 크게 변한다:</b> 실제 접촉을 확인하거나, 전기적 접합 사양을 정하거나, 그 접합에 덜 의존하게 설계한다.</li><li><b>특정 대책이 한 주파수에서만 좋아 보인다:</b> 전체 관심 대역과 관련 조건을 다시 비교한다. 공진을 옮긴 것일 수 있다.</li></ul><p>접합부를 열고 닫은 두 모델이 언제나 실제의 상·하한이 되지는 않는다. <b>감도 비교</b>와 <b>보장된 최악 조건</b>은 구분한다. 또한 회전 중 끊김에는 슬립링 접촉·배선의 SI 문제도 남아 있다.</p></div></details>
+ <div class="action-bridge"><a href="#lesson">↑ 구조 네 단계 다시 보기</a><a href="#experiment">↑ 대칭 / 공유 경로 실험 다시 하기</a></div>
+</section>
+
+<section class="chapter" id="sources"><div class="intro"><div><p class="eyebrow">근거를 따라 읽기</p><h2>근거와 더 읽을 자료</h2></div><p>원문의 핵심을 짧게 풀어 설명하고, 구조·수치 실험은 이 수업에 맞게 새로 구성했다.</p></div>
+<div class="sources">
+ <div class="source"><a href="https://learnemc.com/practical-em-shielding" target="_blank" rel="noopener">01 · LearnEMC — Practical EM Shielding</a><p>우선 읽을 부분: Shielded Enclosures → Cable Penetrations. 벽·틈·케이블 경계를 구분하는 근거.</p></div>
+ <div class="source"><a href="https://learnemc.com/introduction-to-imbalance-difference-modeling" target="_blank" rel="noopener">02 · LearnEMC — Imbalance Difference Modeling</a><p>Point #1~#3, 그리고 모델 단순화 절. 공통모드와 균형 변화가 왜 중요한지. 주된 방출 설명을 내성의 무조건적 순위로 옮기지는 않았다.</p></div>
+ <div class="source"><a href="https://learnemc.com/electric-field-coupling" target="_blank" rel="noopener">03 · LearnEMC — Electric-Field Coupling</a><p>전기장 결합을 기생 정전용량으로 나타내는 근거. 이 파일의 RC 회로와 수치는 별도의 교육용 예.</p></div>
+ <div class="source"><a href="https://learnemc.com/common-impedance-coupling" target="_blank" rel="noopener">04 · LearnEMC — Common Impedance Coupling</a><p>공유 경로 전압을 계산하고, 피해 회로의 분압까지 확인하는 방법.</p></div>
+ <div class="source"><a href="https://learnemc.com/introduction-to-emc" target="_blank" rel="noopener">05 · LearnEMC — Introduction to EMC</a><p>발생원·결합 경로·피해 회로라는 기본 구조. 한 현상에 여러 결합 경로가 공존할 수 있다.</p></div>
+ <div class="source"><a href="https://webstore.iec.ch/en/publication/65586" target="_blank" rel="noopener">06 · IEC 61000-4-6:2023</a><p>공식 적용 범위: RF를 결합시킬 외부 도선·케이블이 없는 장비는 제외. 이 수업은 제품의 인증 레벨을 확정하지 않는다.</p></div>
+ <div class="source"><a href="https://www.ti.com/lit/an/snla466/snla466.pdf" target="_blank" rel="noopener">07 · TI — Industrial Ethernet EMC, SNLA466A</a><p>산업용 이더넷의 ESD·EFT·서지·전도 RF 및 기준 전위 문제. 부품별 처방을 LAN9354에 그대로 적용하지 않는다.</p></div>
+ <div class="source"><a href="https://docs.openems.de/python/openEMS/Tutorials/RCS_Sphere.html" target="_blank" rel="noopener">08 · openEMS — Plane-wave excitation 예제</a><p>금속 구조와 외부 평면파의 구현 근거. <a href="https://docs.openems.de/python/CSXCAD/CSProperties/CSPropProbeBox.html" target="_blank" rel="noopener">전압·전류 프로브</a>로 피해 지점의 응답을 읽는다.</p></div>
+ <div class="source"><a href="https://github.com/ckh7488/showcase/tree/55732e6facc4dd79ba0c21a91785ea79594fb41a/reports/porta-pcb" target="_blank" rel="noopener">09 · PALA720 — ATLAS 보고서 스냅샷</a><p>PALA720 연결과 부품 정보의 근거. 네이티브 PCB·기구 전체 모델을 이 수업에서 새로 추출하거나 계산하지 않았다.</p></div>
+ <div class="source"><a href="https://webstore.iec.ch/en/publication/68954" target="_blank" rel="noopener">10 · IEC 61000-4-2:2025 — ESD</a><p>접촉 접근과 인접 물체 방전을 별도로 보아야 한다. 적용 제품 규격이 인용한 판본은 별도 확인한다.</p></div>
+</div>
+<p class="foot">3D와 이동 표시는 개념 시각화, 두 실험은 표시된 선형 등가회로의 해석값이다. 실제 제품의 openEMS 실행 결과나 EMC 합격 판정은 포함하지 않는다. 계산과 3D는 브라우저에서 작동하며, 필요한 라이브러리는 이 보고서에 포함되어 있다. 작성: 2026-09-12.</p>
+<details class="drawer"><summary>그래픽 라이브러리 라이선스</summary><div><p>Three.js r160 · MIT License</p><pre style="font-size:12px;white-space:pre-wrap;word-break:break-word">The MIT License
+
+Copyright © 2010-2023 three.js authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+</pre></div></details>
+</section>
+<footer class="series-footer"><p>다음 · 결합 경로를 골랐다면, 입력 조건과 판단 기준을 정리한다.</p><nav class="series-nav" aria-label="EMC 학습 순서"><a href="../../#collection-emc">EMC 모음</a><a href="../emc-cable/" aria-current="page">01 · 눈으로 배우는 EMC</a><a href="../emc-design/">02 · EMC 설계 판단</a></nav><div class="related-links"><a href="../porta-pcb/">관련 분석 · PALA720 통신 경로 ↗</a><a href="../balun-routing/">관련 분석 · 차동 배선의 길이와 대칭 ↗</a></div><p class="article-meta">관련 자료는 신호 품질과 모드 변환 분석이다. 완제품 EMC 내성 판정과 구분해서 읽는다.</p></footer>
+</main>
+<script src="vendor/three-r160.min.js"></script>
+<script src="report.js"></script>
+</body>
+</html>

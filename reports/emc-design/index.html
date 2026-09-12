@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="발생원·결합 경로·피해 회로를 기준으로 EMC 분석 범위를 좁히고, 최소 모델과 설계 여유로 개선 방향을 판단합니다.">
+<title>큰 EMC 위험을 가려내는 설계 판단법 | ATLAS</title>
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/theme.v1.css">
+<link rel="stylesheet" href="report.css">
+</head>
+<body>
+<main>
+<header class="atlas-top"><a class="atlas-back" href="../../" aria-label="ATLAS 라이브러리로 돌아가기"><img src="../../assets/favicon.svg" alt="">← ATLAS</a><span class="article-meta">EMC · 심화편 · <time datetime="2026-09-12">2026.09.12</time></span></header>
+<nav class="series-nav" aria-label="EMC 학습 순서"><a href="../../#collection-emc">EMC 모음</a><a href="../emc-cable/">01 · 눈으로 배우는 EMC</a><a href="../emc-design/" aria-current="page">02 · EMC 설계 판단</a></nav>
+<button class="print-control" id="print-report" type="button">인쇄 / PDF로 저장</button>
+<h1>큰 EMC 위험을 가려내는 설계 판단법</h1>
+<p class="lead"><strong>구조를 보고 외란이 들어오는 경로를 예상하고, 작은 모델로 그 예상과 개선 방향을 확인한다.</strong> 어떤 외란이 회로의 허용 여유를 가장 많이 소모하는지를 기준으로 우선순위를 정한다.</p>
+<p>이 자료는 LearnEMC의 결합 원리와 불균형 차이 모델, IEC의 시험 범위 선택 원칙, Ethernet 제조사의 시험 사례를 연결한다. 설명의 중심은 PALA720의 20m M12 케이블·적층 PCB·금속 함체·내부 모터다. 같은 판단을 건전지 센서와 플라스틱 제품에도 적용한다.</p>
+<p class="note">본문의 ‘근거’는 원자료의 요지, ‘적용 판단’은 그 원리를 제품에 대입한 해석, ‘설계 제안’은 실행할 분석 조건을 뜻한다. 수치 예제는 교육용 계산이다. 이 자료에 PALA720의 신규 openEMS 계산 결과나 실제 EMC 합격 판정은 포함되어 있지 않다.</p>
+<div class="quick-start"><strong>먼저 직접 확인하기</strong><a href="#scope">제품 조건으로 분석 범위 고르기 ↓</a><a href="#imbalance">결합 차이에 따른 차동 잡음 계산하기 ↓</a></div>
+<details class="contents"><summary>전체 목차 · 11개 절과 출처</summary><nav aria-label="목차">
+<a href="#answer">1. 먼저 내릴 결정</a><a href="#classification">2. 분류의 기준</a><a href="#scope">3. 포함·생략 판단</a><a href="#eye">4. 구조를 보는 눈</a><a href="#imbalance">5. 대칭과 모드 변환</a><a href="#sensor">6. 센서 적용</a><a href="#enclosure">7. 함체 간소화</a><a href="#models">8. 최소 시뮬레이션</a><a href="#decision">9. 결과 판정</a><a href="#practice">10. 학습 실험</a><a href="#reading">11. 읽을 순서</a><a href="#sources">출처</a>
+</nav></details>
+
+<section id="answer">
+<h2>1. 먼저 내릴 결정</h2>
+<p><strong>큰 취약점을 찾기 위해 처음부터 완제품의 모든 형상을 풀 필요는 없다.</strong> LearnEMC의 자기장 결합 예제는 자속의 결합 비율을 어림잡은 계산과 더 정확한 계산의 차이가 2dB 미만인 사례를 보여준다. 몇 dB 수준의 추정으로도 잠재적인 누화 문제를 가려낼 수 있다는 설명이 따른다. 이는 해당 결합 문제의 예이며 모든 EMC 해석의 허용 오차를 정한 규칙은 아니다.<sup><a href="#s4">[4]</a></sup></p>
+<p>더 직접적인 자료는 <em>Imbalance Difference Modeling</em>이다. LearnEMC는 케이블 내부의 복잡한 구조를 전송선·정전계 모델로 다루고, 외부 공통모드 거동은 단순화한 도체 모델로 연결하는 방법을 설명한다. 설계 검토에서는 특정 시험 배치 하나를 정밀하게 재현하기보다, 불균형 변화와 최악 조건의 여기 크기를 평가하는 접근을 제시한다.<sup><a href="#s6">[6]</a></sup></p>
+<div class="judgment"><p><strong>적용 판단:</strong> PALA720은 openEMS를 유지하되, 세 종류의 전달 경로를 분리해서 계산한다. ① 케이블 접속부에서 회로로 넘어오는 외란, ② 내부 구동부에서 민감 회로로 넘어오는 외란, ③ 외부 RF가 함체를 포함한 구조에 결합하는 경로다. ESD·EFT·서지의 보호소자 동작은 별도 회로 해석으로 연결한다.</p></div>
+<div class="table-wrap"><table>
+<thead><tr><th>첫 분석 대상</th><th>우선하는 근거</th><th>지금 생략할 세부</th></tr></thead><tbody>
+<tr><td>20m 케이블의 접속·실드·0V·차동쌍 경계</td><td>제품 바깥과 회로가 직접 연결되는 큰 구조이며, 공통모드 전류와 모드 변환이 함께 존재할 수 있음</td><td>외부 케이블 전체의 미세 3D 형상. 먼저 단자 외란과 종단 임피던스로 대체</td></tr>
+<tr><td>벅·모터 구동부와 PHY 전원·기준전위</td><td>확실히 존재하는 내부 전압·전류 변화원이며 외함의 외부 차폐 효과를 받지 않음</td><td>회전자·기어·구동 제어 전체. 먼저 스위칭 노드와 전류 루프로 대체</td></tr>
+<tr><td>외부 RF와 함체의 접합부·관통부</td><td>실제 구조에 길게 이어지는 접합부가 있고 RF 접촉 상태가 확정되지 않음</td><td>두꺼운 금속 벽의 미세 조직·도장 질감·작은 장식 형상</td></tr>
+</tbody></table></div>
+<p>이 순서는 <strong>사전 설계 검토의 우선순위</strong>다. 아직 측정하지 않은 현장 외란의 세기 순위나 현장 고장 원인의 확정 순위는 아니다. 케이블과 함체가 효율적인 안테나 구조를 만들 수 있다는 근거, 내부 스위칭원이 실제 존재한다는 사실, 민감한 Ethernet 경계가 있다는 사실을 함께 사용한 판단이다.<sup><a href="#s5">[5]</a><a href="#s11">[11]</a></sup></p>
+</section>
+
+<section id="classification">
+<h2>2. 노이즈는 네 개의 서로 다른 질문으로 분류한다</h2>
+<p>LearnEMC의 기본 틀은 <strong>발생원–결합 경로–피해 회로</strong>다. 세 요소가 연결되어야 간섭이 발생한다. 경로는 전도, 전기장, 자기장, 방사 결합으로 나누며, 하나의 사건에 여러 방식이 이어질 수 있다.<sup><a href="#s1">[1]</a></sup></p>
+<div class="table-wrap"><table><thead><tr><th>분류할 질문</th><th>예</th><th>설계에 쓰는 이유</th></tr></thead><tbody>
+<tr><td>무엇이 발생시키나?</td><td>무전기, 접촉기, 벅 스위칭 노드, 모터 구동 전류, 정전기를 띤 사람</td><td>크기·주파수·상승시간·반복 조건을 정함</td></tr>
+<tr><td>어떤 파형인가?</td><td>연속 RF, 빠른 반복 펄스인 EFT, ESD, 비교적 에너지가 큰 서지, 전원 저하</td><td>동작 방해와 에너지·과전압 문제를 구분함</td></tr>
+<tr><td>어떻게 결합하나?</td><td>공유 임피던스, 기생 C, 상호 L, 전자기파 수신</td><td>최소 등가회로와 수정할 구조를 정함</td></tr>
+<tr><td>어디에서 문제가 되나?</td><td>RX 차동 입력, PHY 공통모드 범위, 전원, RESET, RBIAS, 절연 경계</td><td>어느 전압·전류를 관측하고 무엇과 비교할지 정함</td></tr>
+</tbody></table></div>
+<p><strong>RF·ESD·EFT·서지는 외부 노이즈의 완전한 네 분류가 아니다.</strong> RF가 케이블에 결합하면 장으로 들어와 전도 전류가 되고, 접속부의 불균형에서 차동 잡음으로 바뀔 수 있다. ESD도 함체 표면 전류, 내부 장, 배선 전류를 동시에 만들 수 있다. 따라서 시험 이름만으로 PCB 안의 경로를 결정하지 않는다.</p>
+<p class="eq">외부 RF → 케이블·함체에 공통모드 전류 → 접속부의 불균형·공유 경로 → RX 차동 잡음 또는 PHY 전원 변동</p>
+<p>“칩을 직접 지나가는 전선이 없다”는 것으로 경로를 배제할 수 없다. 입력 전압은 두 지점 사이의 값이다. 수신기 기준전위가 변하거나 두 입력으로의 결합량이 다르면, 칩과 멀리 떨어진 연결부도 입력에 영향을 준다. 공통임피던스 결합은 바로 이 문제를 간단한 회로로 설명한다.<sup><a href="#s2">[2]</a></sup></p>
+</section>
+
+<section id="scope">
+<h2>3. 무엇을 포함하고 무엇을 생략하는가</h2>
+<p><strong>첫 기준은 사용 환경과 제품의 실제 연결부다.</strong> IEC 61000-6-2:2016은 산업용 일반 내성 규격이며, 관련 제품·제품군 규격이 없을 때 적용한다. 그 범위는 관련성이 있는 외란을 포트별로 선택하며, 모든 극단적인 사건을 포괄하지 않는다. 따라서 “공사현장 전체를 모델링해야 한다”는 결론은 나오지 않는다.<sup><a href="#s8">[8]</a></sup></p>
+<p>가장 명료한 생략 사례는 외부 도선이 전혀 없는 건전지 센서다. IEC 61000-4-6은 RF와 결합할 외부 도선·케이블이 없는 장비를 해당 전도 RF 시험의 범위에서 제외한다. 반면 금속 함체가 있다는 사실만으로 외부 RF나 ESD가 제외되지는 않는다.<sup><a href="#s9">[9]</a></sup></p>
+<h3>조건을 바꾸며 보는 분석 범위</h3>
+<p class="small">아래는 원리에 따른 설계 선별표다. 인증용 시험 적용 판정을 자동화한 표가 아니다. ‘케이블 없음’은 충전·디버그·접지선을 포함해 사용 상태에서 외부 도선이 전혀 없다는 뜻이다.</p>
+<div class="controls" aria-label="제품 예제">
+<button type="button" data-preset="battery">건전지 센서</button><button type="button" data-preset="wired">플라스틱 유선 센서</button><button type="button" data-preset="pala" aria-pressed="true">PALA720 조건</button>
+</div>
+<div class="controls">
+<label><input id="has-cable" type="checkbox" checked>외부 케이블</label>
+<label><input id="has-metal" type="checkbox" checked>금속 함체</label>
+<label><input id="has-drive" type="checkbox" checked>스위칭 전력부 / 모터 구동부</label>
+<label><input id="has-dc" type="checkbox" checked>외부 DC 전원</label>
+<label><input id="has-magnetic" type="checkbox" checked>자기장에 민감한 소자</label>
+</div>
+<div class="table-wrap"><table aria-label="조건별 설계 검토 범위"><thead><tr><th>항목</th><th>선별 결과</th><th>왜 그렇게 보는가</th></tr></thead><tbody id="scope-results"></tbody></table></div>
+<noscript>대화형 표에는 JavaScript가 필요하다. PALA720의 기본 범위는 외부 RF, 케이블 RF·과도 외란, 외부 DC 전원 변동, 내부 스위칭 결합, 접촉 가능한 표면의 ESD, 자기장 민감 소자 검토다.</noscript>
+<h3>생략에는 서로 다른 세 가지 근거가 있다</h3>
+<ol>
+<li><strong>경로 자체가 없음:</strong> 외부 DC 전원이 없는 장치의 DC 입력 외란. 해당 포트 분석을 뺀다.</li>
+<li><strong>설계 범위 밖의 사건:</strong> 직접 낙뢰 전류를 받아내는 구조 설계는 일반 RF·EFT·서지 분석과 별도다. 크레인 설치에서는 시설 측 낙뢰 보호·배선 조건을 설계 전제로 기록하고, 유도 서지는 남긴다.</li>
+<li><strong>정량적으로 작음:</strong> 특정 경로의 최대 예상 입력과 전달량을 곱해도 정해진 허용 여유보다 충분히 작으면 후순위로 둔다. 조건이 바뀌면 다시 검토한다.</li>
+</ol>
+<p><strong>‘현재 모델에서 생략’과 ‘제품 설계에서 무시’도 구분한다.</strong> 외부 케이블을 단자 전압으로 바꾸는 것은 케이블로 인한 외란을 유지하면서 외부 수신 과정을 모델 밖으로 옮기는 일이다. 외부 전압 자체를 0으로 두고 통과했다고 하는 것과 다르다.</p>
+<h3>입력 세기를 모를 때의 출발점</h3>
+<p>사용 환경에 맞는 제품 규격을 먼저 확인하고, 없으면 산업용 일반 규격을 설계 출발점으로 삼는다. 전도 RF는 150kHz–80MHz, 방사 RF는 해당 요구 대역의 장 세기를 입력 조건으로 정한다. 예를 들어 산업용 Ethernet 실측 자료는 80MHz–1GHz의 10V/m 요구를 다룬다. 전체 80MHz–6GHz를 10V/m로 검토한다면 그것은 별도의 설계 여유를 둔 자체 조건이며, IEC의 모든 구간이 동일하게 10V/m라는 뜻은 아니다.<sup><a href="#s9">[9]</a><a href="#s10">[10]</a><a href="#s12">[12]</a></sup></p>
+<p>초기 모델은 1V/m 또는 단자에서 실제로 측정된 1V 공통모드 전압으로 정규화하면 된다. 이후 요구 입력을 곱한다. 다만 전도 RF 시험기의 ‘10V’와 PCB 단자에서의 실제 전압은 소스·결합기·부하 임피던스 때문에 같지 않을 수 있다. 시험기 레벨을 칩 핀에 직접 인가하는 식으로 옮기지 않는다.</p>
+<p class="note">판본 구분: IEC 61000-6-2:2016의 기본 시험 규격 인용에는 날짜가 붙어 있다. 현재 IEC 카탈로그의 61000-4-3:2020, 61000-4-6:2023, 61000-4-2:2025를 그 인용 판본과 임의로 섞지 않는다. 여기서는 물리와 범위 선정 원칙을 학습하며, 최종 시험 계획에서는 실제 적용 규격의 판본을 고정한다.<sup><a href="#s8">[8]</a><a href="#s9">[9]</a><a href="#s10">[10]</a><a href="#s18">[18]</a></sup></p>
+</section>
+
+<section id="eye">
+<h2>4. 구조를 보는 눈은 네 개의 관계식에서 시작한다</h2>
+<p>‘큰 전압’, ‘큰 전류’, ‘긴 선’ 자체만으로 위험을 판정하지 않는다. <strong>변화 속도, 결합 크기, 피해 회로의 임피던스</strong>를 붙여서 본다. 아래 관계식은 전기적으로 작은 구조와 약한 결합에서 첫 추정에 유용하다. 구조에 따른 공진·분포 효과가 지배하면 전송선 또는 전자기장 모델로 넘어간다.<sup><a href="#s2">[2]</a><a href="#s3">[3]</a><a href="#s4">[4]</a></sup></p>
+<div class="table-wrap"><table><thead><tr><th>구조에서 보이는 것</th><th>첫 관계식</th><th>먼저 의심할 상황</th><th>개선 방향의 예상</th></tr></thead><tbody>
+<tr><td>급변하는 전압 노드 옆의 도체</td><td>i ≈ C<sub>m</sub>·dV/dt<br>V<sub>n</sub> ≈ i·Z<sub>victim</sub></td><td>스위칭 노드 옆의 고임피던스 RESET·센서 입력·바이어스 배선</td><td>결합 C를 줄이고 입력 임피던스·대역을 관리하면 유입 전압 감소</td></tr>
+<tr><td>빠른 전류가 도는 루프 옆의 다른 루프</td><td>V<sub>loop</sub> ≈ M·dI/dt</td><td>벅의 고주파 전류 루프, 모터 구동 배선과 신호 리턴의 근접</td><td>두 루프 면적·자속 공유를 줄이면 결합 감소</td></tr>
+<tr><td>전력 전류와 민감 회로가 공유하는 도체</td><td>V<sub>shared</sub> = Z<sub>shared</sub>·I</td><td>가는 0V 연결, 길어진 리턴, 보호전류가 지나는 공통 경로</td><td>공유 임피던스 또는 그곳을 지나는 전류를 줄이면 기준전위 변동 감소</td></tr>
+<tr><td>긴 케이블·함체와 균형이 바뀌는 접속부</td><td>V<sub>victim</sub> = T(f)·외란</td><td>쌍의 한쪽만 금속에 접근, 비대칭 패드·종단·실드 연결</td><td>불균형 변화와 큰 구조를 구동하는 전압을 줄이면 모드 변환·방사 결합 완화</td></tr>
+</tbody></table></div>
+<h3>손으로 가늠하는 세 가지 크기</h3>
+<p><strong>교육용 가정:</strong> 24V가 10ns에 변하고 결합 C가 1pF라면 변하는 구간의 결합 전류는 약 2.4mA다. 상호 인덕턴스 2nH에 10ns 동안 1A가 변하면 피해 루프의 유도 기전력은 약 0.2V다. 공유 인덕턴스 10nH에 같은 전류 변화가 흐르면 그 도체 양끝의 전압은 약 1V다.</p>
+<p>이 값들은 LAN9354에서 측정된 값이 아니다. 특히 루프 전체의 기전력을 그대로 칩 핀 전압이라고 해석하면 안 된다. 종단과 병렬 경로를 포함해서 실제 피해 노드에 걸리는 몫을 구해야 한다. 이 추정의 가치는 “pF·nH라서 무시해도 된다”는 판단을 바로잡고, 정밀 해석할 경로를 좁히는 데 있다.</p>
+<h3>고주파를 의심하는 길이 기준</h3>
+<p>첫 경계는 구조의 최대 길이 D와 파장 λ의 비다. 공기 중 λ ≈ c/f이고, PCB에서는 유전체 때문에 파장이 더 짧다. 아래의 D/λ는 지름 0.30m인 구조를 공기 중에서 본 단순 계산이다.</p>
+<div class="table-wrap"><table><thead><tr><th>주파수</th><th>공기 중 파장</th><th>D/λ</th><th>첫 해석</th></tr></thead><tbody><tr><td>100MHz</td><td>3m</td><td>0.1</td><td>집중소자 근사의 유효성을 살펴볼 경계 규모</td></tr><tr><td>1GHz</td><td>0.30m</td><td>1</td><td>함체 위치·전류 분포·공진을 고려</td></tr><tr><td>6GHz</td><td>0.05m</td><td>6</td><td>하나의 접점·한 점 전위로 전체를 대표하기 어려움</td></tr></tbody></table></div>
+<p class="note">D/λ가 커졌다는 것은 분포 효과를 봐야 한다는 신호다. 곧바로 고장하거나 특정 주파수에서 공진한다는 판정은 아니다. 20m 케이블도 길이 하나만으로 수신량이 결정되지 않으며 배치·종단·실드와 주변 금속이 관여한다.</p>
+</section>
+
+<section id="imbalance">
+<h2>5. 같은 외란인데 왜 한 구조만 차동 잡음이 생기는가</h2>
+<p>LearnEMC의 불균형 차이 모델은 <strong>전송 경로의 전기적 균형이 바뀌는 지점</strong>에 주목한다. 소개 자료는 정해진 모드 정의에서 V<sub>CM</sub> = V<sub>DM</sub>·Δh라는 관계를 설명한다. 이는 DM이 CM을 구동하는 관계이며, 그 식을 뒤집어 임의의 케이블 RF 전압이나 PHY 고장 전압을 계산해서는 안 된다. 내성 분석에서는 CM 자극에 대한 실제 종단의 DM 출력을 직접 구하는 편이 명료하다.<sup><a href="#s6">[6]</a></sup></p>
+<h3>대화형 예제: 두 입력으로의 결합이 다르면</h3>
+<p>같은 이상적인 외란원 V<sub>s</sub>=1V<sub>rms</sub>가 C₁·C₂를 거쳐 두 입력에 결합한다고 가정한다. 각 입력은 동일한 50Ω으로 기준 도체에 연결된다. C₁=2pF를 고정하고 C₂와 주파수를 바꾼다. 회로에는 다른 기생소자와 입력 사이의 직접 연결이 없다.</p>
+<svg class="schematic" viewBox="0 0 760 280" role="img" aria-labelledby="rc-title rc-desc">
+<title id="rc-title">한 외란원에서 두 입력으로의 용량성 결합</title><desc id="rc-desc">1볼트 RMS 외란원이 2피코패럿 C1과 가변 C2를 통해 두 출력에 연결된다. 각각 50옴으로 동일한 기준 도체에 연결된다. 두 출력의 차이가 차동 잡음이다.</desc>
+<g class="model-path"><path d="M70 128 H155 V55 H300 M155 128 V188 H300 M330 55 H440 V82 M330 188 H560 V205 M440 112 V245 M560 235 V245 M70 245 H680"/><path d="M300 38 V72 M330 38 V72 M300 171 V205 M330 171 V205"/><rect x="427" y="82" width="26" height="30"/><rect x="547" y="205" width="26" height="30"/><path d="M440 55 H675 M560 188 H675"/></g>
+<text x="25" y="114" font-size="17">외란원</text><text x="25" y="145" font-size="17">1 V rms</text><text x="270" y="26" font-size="17">C₁ = 2 pF</text><text id="cap2-label" x="270" y="157" font-size="17">C₂ = 2.2 pF</text><text x="468" y="105" font-size="16">50 Ω</text><text x="590" y="227" font-size="16">50 Ω</text><text x="680" y="60" font-size="17">V₁</text><text x="680" y="193" font-size="17">V₂</text><text x="75" y="266" font-size="15">동일한 기준 도체</text>
+</svg>
+<div class="schematic-mobile"><p>외란원 → C₁ → 입력 V₁ → 50Ω → 기준 도체</p><p>같은 외란원 → C₂ → 입력 V₂ → 50Ω → 같은 기준 도체</p></div>
+<div class="sliders">
+<label for="freq-control">주파수 <output id="freq-label">100 MHz</output><br><input id="freq-control" type="range" min="1" max="300" step="1" value="100"></label>
+<label for="delta-control">결합 차이 C₂−C₁ <output id="delta-label">0.20 pF</output><br><input id="delta-control" type="range" min="0" max="2" step="0.02" value="0.2"></label>
+</div>
+<div class="model-output" aria-live="polite">차동 잡음 |V₁−V₂| = <strong id="vd-value">6.26</strong> mV rms<br><span class="small" id="rc-interpretation"></span></div>
+<p class="eq">Vᵢ / V<sub>s</sub> = jωRCᵢ / (1 + jωRCᵢ)<br>V<sub>DM</sub> = V₁ − V₂</p>
+<p><strong>예상할 것:</strong> C₁=C₂이면 이 이상 모델의 차동 출력은 0이다. 결합 차이가 생기면 차동 잡음이 생긴다. 약한 결합 범위에서는 주파수·결합 차이에 거의 비례한다. 그러나 두 입력의 공통 전압은 0이 아니므로, 차동 잡음이 작다는 사실만으로 실제 입력 소자의 CM 허용 범위를 만족한다고 말할 수 없다.</p>
+<p class="note">이 예제는 LearnEMC의 용량성 결합 원리를 이용해 별도로 구성한 정확한 RC 회로 계산이다. openEMS 결과나 LAN9354 모델이 아니며, 50Ω도 Ethernet PHY의 실제 내부 종단이라는 가정이 아니다.<sup><a href="#s3">[3]</a></sup></p>
+<p>실물에서는 한쪽 패드만 커지거나, 한 선만 24V 도체·함체에 가까워지거나, 한쪽 보호소자의 용량이 커지는 구조가 이런 차이를 만들 수 있다. <strong>길이가 같아도 주변 구조와 종단이 다르면 외란 결합이 달라질 수 있다.</strong> 반대로 길이만 조금 다르다는 이유로 바로 EMC 고장이라고 판정하지도 않는다. 해당 대역에서 생기는 변환량을 본다.<sup><a href="#s19">[19]</a></sup></p>
+</section>
+
+<section id="sensor">
+<h2>6. PALA720에 적용한 사전 설계 검토</h2>
+<p>검토 조건은 M12를 통한 약 20m 외부 케이블, Ethernet 두 쌍과 24V·0V, 적층 PCB, LAN9354, 금속 함체, 내부 모터 구동부다. 함체 접합부는 반지름 약 15cm, 틈은 1mm 미만이며 접합면은 아노다이징되어 있다는 현물 설명을 사용한다. 실드·기구·PCB 0V의 실제 RF 접촉 특성은 미확정이다. 금속의 정확한 재질도 이 설명만으로 확정하지 않는다.<sup><a href="#s20">[20]</a></sup></p>
+<div class="table-wrap"><table><thead><tr><th>눈에 들어오는 구조</th><th>첫 예측</th><th>남길 모델</th><th>설계 행동</th></tr></thead><tbody>
+<tr><td>20m 케이블이 금속 함체를 관통</td><td>외란 전류가 접속부에서 어떤 기준 도체로 돌아가는지가 중요</td><td>각 신호·24V·0V, 실드, 커넥터 몸체, 함체와의 연결</td><td>전류의 귀환 경로를 회로도·기구도에 명시</td></tr>
+<tr><td>Ethernet과 24V·0V가 근접</td><td>급변 전압·전류가 존재하고 결합이 비대칭이면 DM 잡음 가능</td><td>근접 구간의 실제 상대 위치와 양쪽 종단</td><td>고정 24V라는 이름보다 실제 리플·과도 전압과 리턴 위치를 확인</td></tr>
+<tr><td>모터 구동부와 벅이 함체 내부</td><td>내부 스위칭원이 PHY 전원·입력에 결합할 수 있음</td><td>스위칭 노드, 고주파 전류 루프, 공급·리턴 임피던스</td><td>노드 면적·루프·공유 경로부터 줄이는 변경 비교</td></tr>
+<tr><td>긴 절연성 접합면과 금속 겹침</td><td>벽 자체보다 접합부 임피던스와 분포 효과가 RF 결합을 바꿀 가능성</td><td>큰 외형, 겹침, 분포 접합 조건, 관통부</td><td>방수 압착과 RF 접합을 별도 사양으로 다룸</td></tr>
+<tr><td>PHY가 외란에 민감한 아날로그 핀을 가짐</td><td>MDI가 양호해도 전원·RBIAS·리셋 경로에서 통신 이상 가능</td><td>MDI DM/CM, 관련 전원−로컬 GND, RBIAS·RESET 관측점</td><td>한 지표로 보드 전체의 내성을 대표하지 않음</td></tr>
+</tbody></table></div>
+<p><strong>부품에 근거한 관측점 선택:</strong> LAN9354 제조사 지침은 디지털 GND의 연속성을 권고하고, RBIAS 배선에 유도된 잡음이 시스템 고장을 일으킬 수 있음을 명시한다. 따라서 “GND가 칩에서 멀다”보다 <em>입력·전원·바이어스와 그 로컬 기준 사이의 전압</em>을 관측하는 것이 구체적이다.<sup><a href="#s13">[13]</a></sup></p>
+<p><strong>시뮬레이션으로 바로 얻을 결정:</strong> 같은 단자 외란에서 현재 접속부와 대칭을 개선한 접속부를 비교한다. 같은 내부 스위칭 자극에서 리턴 경로 변경 전후를 비교한다. 같은 RF에서 함체 접합 조건에 따라 민감 단자 결합이 얼마나 움직이는지 본다. 그 결과로 PCB 변경, 커넥터·실드 변경, 기구 접합 사양 중 먼저 손댈 대상을 정한다.</p>
+<h3>이미 확보한 SI 분석의 정확한 위치</h3>
+<p>ATLAS의 PCB 구간 분석에는 Gerber 도체·기준면·근사 적층 커넥터가 포함되지만, 실제 M12 몸체, 트랜스 내부, PHY 실리콘, 외부 케이블과 잡음원은 제외된 구간이 있다. 기존 차동 전달 분석은 유용한 출발점이며, CM 자극·기준전위·실장 종단을 추가하는 것이 다음 단계다. 기존 RL·IL로 EMC 내성을 판정하지 않는다.<sup><a href="#s20">[20]</a></sup></p>
+<p class="note">회전 중 접촉·피복 손상과 통신 오류의 연관성은 별도 현물 관찰이다. 접촉 단절이나 도체의 기계적 접촉은 정적 선형 RF 모델이 자동으로 찾는 고장이 아니다. PortA의 외부 케이블 경로와 PortB의 슬립링 경로도 분리한다. 이 구분은 EMC 분석의 범위를 좁혀 주며, 현재 고장을 모두 EMC로 확정한다는 뜻이 아니다.</p>
+</section>
+
+<section id="enclosure">
+<h2>7. 함체의 전기적 경로를 남기며 간소화하기</h2>
+<p><strong>도체의 큰 배치와 전류 연결 관계는 남기고, 전기적으로 중요하지 않은 모양을 줄인다.</strong> LearnEMC는 RF 차폐에서 긴 접합부와 케이블 관통부를 강조하며, 겹침을 통해 접합 임피던스를 낮출 수 있다고 설명한다. 금속 두께만으로 전체 차폐를 대표하지 않는다.<sup><a href="#s5">[5]</a></sup></p>
+<div class="table-wrap"><table><thead><tr><th>실물</th><th>첫 모델</th><th>지켜야 할 조건</th></tr></thead><tbody>
+<tr><td>두꺼운 금속 벽</td><td>외형과 PCB 거리를 유지한 PEC 도체</td><td>RF 결합 경로 확인용. 실제 벽 손실·자성·저주파 차폐를 평가하는 모델로 확대하지 않음</td></tr>
+<tr><td>아노다이징·O링·겹침 접합</td><td>두 금속 부품을 분리하고 겹침과 유효 접합 어드미턴스를 표현</td><td>전기적 접촉과 용량성 결합을 구분. 틈을 크게 만들었다고 자동으로 최악이라 부르지 않음</td></tr>
+<tr><td>나사·체결부</td><td>명확히 도통하는 연결만 짧은 도체 또는 R/L 경로로 표현</td><td>DC 접촉과 RF의 낮은 임피던스를 동일시하지 않음</td></tr>
+<tr><td>회전부의 복잡한 내부 형상</td><td>주요 금속 덩어리·관통 경로·PCB와의 거리 유지</td><td>사라진 형상이 전류 루프나 긴 슬롯을 만들던 요소인지 확인</td></tr>
+</tbody></table></div>
+<h3>접합부 모델의 실행 순서</h3>
+<ol>
+<li><strong>접합을 완전히 도통시킨 기준 모델:</strong> 해당 접합부의 누설을 제거한 참조값을 구한다. 실제 제품의 최악값은 아니다.</li>
+<li><strong>두 부품이 절연되어 겹치는 모델:</strong> 알려진 틈의 범위 안에서 공기·절연층·겹침을 표현한다. 우선 단순 형상으로 만든다.</li>
+<li><strong>격자가 과도하면 분포 등가소자로 교체:</strong> 작은 접합 구간의 결합 C와 접촉 R/L을 산출하거나 추정해 둘레 여러 위치에 배치한다. 구간 길이는 분석 대역에서 전기적으로 짧아야 한다. 낮은 주파수에서 얻은 하나의 C를 GHz까지 그대로 적용하지 않는다.</li>
+</ol>
+<p>openEMS에는 방향을 지정한 집중 R·L·C 요소가 있다. 그러나 <strong>아노다이징 환형 접합부를 자동으로 검증해 주는 전용 기능이 확인된 것은 아니다.</strong> 분포 등가소자 방식은 별도 모델링 제안이다. 먼저 작은 접합 구간의 명시적 형상과 비교해 주파수 응답을 확인하고 사용한다.<sup><a href="#s16">[16]</a></sup></p>
+<p>현재 주어진 반지름으로 둘레는 약 0.94m다. 이를 그대로 직선 슬롯 공식에 넣어 차폐 컷오프를 정하지 않는다. 1mm 미만이라는 틈 폭도 전체 접합부의 RF 성능을 하나의 숫자로 정해 주지 않는다. 겹침·전류 방향·접촉 상태가 함께 작용한다.</p>
+<h3>실제로 생략할 수 있는 경우</h3>
+<p>현실적으로 가능한 접합 조건을 바꾸어도 관심 단자의 결합량 변화가 작고 설계 여유가 크다면 접합부 상세 모델링을 뒤로 미룬다. 변화가 크면 나사 하나씩 재현하기에 앞서 <strong>접합의 전기적 사양을 정할 것인지, 그 차폐에 의존하지 않도록 회로를 강화할 것인지</strong>를 결정한다. 접합이 불명확한 상태에서 차폐 이득을 확정적으로 설계 예산에 넣지 않는다.</p>
+<p><strong>함체 없는 PCB가 항상 더 나쁜 조건은 아니다.</strong> 함체는 장과 귀환 경로를 바꾸고 특정 결합·공진을 만들 수 있다. 무함체 분석은 취약 회로 탐색의 기준 모델로 쓰고, 단순 함체 모델로 결과가 뒤집히는지 확인한다. 감쇠를 일률적으로 1/10로 두는 규칙도 사용하지 않는다.<sup><a href="#s5">[5]</a><a href="#s14">[14]</a></sup></p>
+</section>
+
+<section id="models">
+<h2>8. openEMS로 구성할 최소 시뮬레이션</h2>
+<p>전자기장 계산의 입력 조건과 관측량을 먼저 정한다. 아래 세 모델은 공통 PCB 형상을 재사용하며 서로 다른 질문을 답한다. 정규화 값은 현장 노이즈의 실제 크기가 아니다.</p>
+<div class="table-wrap"><table><thead><tr><th>모델</th><th>입력</th><th>필수 구조</th><th>출력과 결정</th></tr></thead><tbody>
+<tr><td>A. 커넥터 외란 전달</td><td>신호 쌍의 CM, 24V–0V의 DM, 전원 도체 묶음의 CM을 각각 인가. 실드 전류 경로는 별도 자극</td><td>명시한 기준 도체, 소스·부하 임피던스, 실드·함체·0V, 관심 배선과 종단</td><td>V<sub>RX,DM</sub>/V<sub>in,CM</sub>, PHY CM, 전원−GND 변동. 어떤 경계가 외란을 변환하는지</td></tr>
+<tr><td>B. 내부 스위칭 결합</td><td>스위칭 노드의 전압 또는 명시한 공급·귀환 포트를 통한 루프 전류</td><td>스위칭 노드, 고주파 루프, 피해 배선·리턴, 관련 금속과 종단</td><td>V<sub>victim</sub>/V<sub>switch</sub> 또는 V<sub>victim</sub>/I<sub>loop</sub>. 면적·배치·공유 리턴 변경의 효과</td></tr>
+<tr><td>C. 외부 RF 결합</td><td>TFSF 평면파. 방향·편파별 1V/m 기준 응답</td><td>PCB·간단한 함체·접합·관통부·대표 배선·실제 또는 등가 종단, 외부 PML</td><td>V<sub>victim</sub>/E<sub>incident</sub>와 표면·경로 전류. RF 취약 대역과 함체 의존성</td></tr>
+</tbody></table></div>
+<p><strong>참조 도체를 숨기지 않는다.</strong> 신호 GND, 24V의 0V, 함체, 케이블 실드, PE/주변 기준면은 실제 연결 관계에 맞춰 구별한다. CM에는 신호 두 선 바깥의 귀환 경로가 필요하다. 계산 편의를 위해 모두 이상적인 한 노드로 합치면 검토하려던 외란 경로 자체가 사라질 수 있다.</p>
+<h3>A. 커넥터에서 ‘압축한다’는 말의 정확한 뜻</h3>
+<p>20m 케이블을 하나의 점으로 없애는 대신 <strong>커넥터의 여러 도체에 대한 전압·전류와 임피던스 관계</strong>로 대체한다. 첫 단계는 표준화한 CM·DM 자극을 따로 넣는 선별 분석이다. 동시에 유입되는 상관관계까지 보려면 다도체 전송선·다중 포트 모델이 필요하다.</p>
+<p>이 방식은 “커넥터에 이런 외란이 도달했을 때 보드가 어떻게 반응하는가”를 답한다. “어느 현장 RF가 실제 20m 케이블에서 이 전압을 만드는가”까지 답하려면 케이블 외부 수신 모델을 덧붙여야 한다. 모드의 정의를 고정한 후 S<sub>dc</sub>를 <em>CM 입력 → DM 출력</em>으로 사용한다. S<sub>cd</sub>는 반대 방향의 변환이다. 포트 번호와 기준 임피던스도 함께 기록한다.</p>
+<p>처음에는 전압 전달비를 직접 계산하는 편이 쉽다. 두 선에 동일 위상의 자극을 주고, 실제 입력 CM 전압과 출력 DM 전압을 측정한다. 100Ω 차동 종단 하나만 두면 CM 종단이 정의되지 않는다는 점에 주의한다. 트랜스·센터탭·기생 C·PHY측 종단을 관심 범위에 맞춰 포함한다.</p>
+<h3>B. 모터는 먼저 전기적 발생원으로 줄인다</h3>
+<p>모터 전체의 회전 전자기장을 먼저 풀지 않는다. 드라이버와 벅의 파형에서 고주파 전류 루프와 전압 노드를 정의하고, 그 부분의 결합을 구한다. kHz 기본파만 보는 것도 충분하지 않다. 에지의 상승시간과 링잉이 관련 대역을 확장할 수 있다. 저주파 공급 변동·자기 센서 응답은 회로·준정적 모델이 효율적이다.</p>
+<h3>C. 외부 RF의 구체적 구성</h3>
+<p>openEMS 공식 금속구 예제는 TFSF 평면파, 전파 방향, E 편파, 가우시안 자극과 PML을 제공한다. 이를 PCB·함체의 기하로 바꾸고 필요한 종단을 추가한다. 전압·전류·E·H 프로브도 제공된다.<sup><a href="#s15">[15]</a><a href="#s17">[17]</a></sup></p>
+<ol>
+<li>물체와 대표 도체를 TFSF 경계 안에 두고, 그 바깥 균질 영역과 PML을 마련한다.</li>
+<li>±X·±Y·±Z 방향과 각 방향의 직교 선형 편파 두 개로 시작한다. 이 12조건은 <strong>설계 선별용 제안</strong>이며 IEC의 보편적 규정이나 전 방향 최악값 보장은 아니다.</li>
+<li>가우시안 광대역 자극의 입사 스펙트럼으로 출력 스펙트럼을 나눈다. 코드의 E 방향 벡터 크기만 보고 모든 주파수에 1V/m가 입사했다고 처리하지 않는다.</li>
+<li>위험 후보 대역에서 주파수 해상도·관측 시간·각도를 보강한다. 선형 모델이면 두 편파의 <em>복소</em> 응답으로 같은 입사 방향의 다른 선형 편파를 합성할 수 있다. 진폭만 저장하면 이 정보를 잃는다.</li>
+</ol>
+<p>첫 구현은 80MHz–1GHz에서 정상 동작을 확인하고, 이어 1–3GHz·3–6GHz처럼 나누어 최대 주파수에 맞는 격자를 사용한다. 낮은 대역의 통과로 높은 대역을 생략하지 않는다. 세 대역을 나누는 방식은 실행 효율을 위한 제안이다.</p>
+<h3>ESD·EFT·서지를 같은 RF 계산으로 끝내지 않는다</h3>
+<p>선형 수동 구조의 전달함수는 외란 펄스가 어떤 경로로 전달되는지 계산하는 데 사용할 수 있다. 그러나 TVS 클램핑, 트랜스 포화, 절연 파괴, IC 오동작을 보려면 해당 비선형·동작 모델이 필요하다. <strong>openEMS의 역할은 경로의 기생 성분과 선형 결합을 얻는 것</strong>으로 두고, 보호소자·전원 응답은 SPICE 계열 해석과 연결한다. 150kHz에서 ms 단위 전원 변동까지 미세 격자 FDTD 한 번으로 처리하지 않는다.</p>
+<p>ESD가 함체에 닿는 경우에도 주입점뿐 아니라 방전 전류의 귀환 경로를 포함해야 한다. Ethernet 제조사 자료는 접지로의 방전이 CM 잡음과 링크 다운으로 이어질 수 있음을 다룬다. 큰 금속 함체라는 이유로 이 경로를 제거하지 않는다.<sup><a href="#s11">[11]</a><a href="#s18">[18]</a></sup></p>
+</section>
+
+<section id="decision">
+<h2>9. 결과를 설계 결정으로 연결하기</h2>
+<p>서로 단위가 다른 10V/m RF와 1A 루프 전류를 그대로 비교해서 큰 노이즈를 고를 수는 없다. <strong>동일한 피해 회로의 허용 여유로 환산</strong>한다. 입력이 서로 다르면 각 외란에 대한 전달함수를 따로 사용한다.</p>
+<p class="eq">예상 피해량 N(f,θ) = |T(f,θ)·S(f)|<br>여유 M = 20log₁₀[V<sub>allow</sub> / N<sub>max</sub>]</p>
+<p class="small">S는 정의한 외란, T는 그 외란에서 관측점으로의 전달함수, θ는 접합·종단·배치 등 가정이다. N과 V<sub>allow</sub>는 같은 물리량·대역·진폭 기준이어야 한다. 과도 펄스의 최대값은 주파수별 진폭만 곱한 최대값으로 대신하지 않고 위상을 포함해 시간 응답을 복원한다.</p>
+<div class="table-wrap"><table><thead><tr><th>확인된 상태</th><th>내릴 판단</th><th>다음 행동</th></tr></thead><tbody>
+<tr><td>알려진 기능 허용치를 초과하고 모델 변화에도 유지</td><td>설계 수정 대상</td><td>지배적인 결합 경로를 줄이는 변경을 선택</td></tr>
+<tr><td>허용치 아래이며 외란·가정·수치 오차를 고려한 여유가 충분</td><td>해당 범위에서는 후순위</td><td>추가 미세 모델링을 멈추고 다른 경로로 이동</td></tr>
+<tr><td>특정 가정에서만 크거나 개선안 순위가 바뀜</td><td>민감한 가정이 설계 결정 요인</td><td>그 값만 확보하거나, 그 값에 덜 의존하는 구조로 변경</td></tr>
+<tr><td>PHY의 해당 주파수·파형 허용치가 없음</td><td>취약 후보와 상대 개선량까지 판정</td><td>실제 동작 중 주입 시험으로 기능 한계 확보. 임의 mV로 합격선을 만들지 않음</td></tr>
+</tbody></table></div>
+<p><strong>교육용 판단 예:</strong> 어떤 회로의 검증된 허용 잡음이 100mV이고, 정의한 외란·가정에서 계산된 최대 잡음이 10mV라면 명목 여유는 20dB다. 별도로 근거 있게 정한 전체 불확실성·예비 여유가 6dB라면 남는 여유는 14dB다. 여기서 100mV와 6dB는 예시 값이며 LAN9354의 한계나 EMC 업계 공통 규칙이 아니다.</p>
+<h3>‘보수적’이라고 부를 수 있는 것과 없는 것</h3>
+<div class="table-wrap"><table><thead><tr><th>방법</th><th>성립 조건과 의미</th></tr></thead><tbody>
+<tr><td>외란 진폭을 높임</td><td>동일한 선형 모델·파형·주파수에서는 출력도 비례 증가. 명확한 진폭 여유를 둘 수 있음</td></tr>
+<tr><td>여러 선형 경로의 크기를 합산</td><td>각 복소 응답의 절댓값 합은 포함한 경로 합의 상한. 위상 취소에 기대지 않는 평가가 가능</td></tr>
+<tr><td>가정값 몇 개를 바꿔 최대값 선택</td><td>그 표본 집합의 최대값. 내부 공진이나 미탐색 조건까지 포함한 상한은 아님</td></tr>
+<tr><td>틈을 키움·함체를 제거함·PEC를 사용함</td><td>항상 나쁜 방향이라는 보장이 없음. 결합·공진·손실 변화의 효과를 확인해야 함</td></tr>
+</tbody></table></div>
+<p><strong>‘오류를 놓치지 않는 근사’의 핵심은 형상을 거칠게 만드는 데 있지 않다.</strong> 외란과 귀환 경로를 유지하고, 불확실한 변수가 판정을 뒤집는지 확인하며, 허용 여유보다 큰 모델 오차를 숨기지 않는 데 있다.</p>
+<h3>계산을 믿기 위한 최소 확인</h3>
+<ol>
+<li><strong>기본 원리:</strong> 대칭 RC·루프 등 답의 방향을 아는 작은 모델에서 단위·부호·포트·정규화를 확인한다.</li>
+<li><strong>수치 안정성:</strong> 중요한 대역에서 격자를 한 번 개선하고, PML 거리 또는 관측 시간을 바꿔 결론이 유지되는지 확인한다. 좁은 공진을 광대역의 성긴 샘플로 놓치지 않는다.</li>
+<li><strong>결정의 안정성:</strong> 접합·소스·종단의 현실적인 범위를 바꿔 비교한다. 예를 들어 1dB 안팎으로 계산값이 움직이는데 두 설계 차이가 0.5dB라면 우열을 확정하지 않는다.</li>
+</ol>
+<h3>통신 제품의 마지막 판정</h3>
+<p>완제품에서는 링크 다운, PHY 리셋, 심볼 오류·패킷 누락, 복구 시간과 데이터 유효성을 동작 조건에 맞춰 본다. <strong>PALA720의 설계 목표는 연속 RF 중 링크 다운·리셋이 없도록 두고, 과도 외란의 데이터 공백 허용치는 상위 시스템의 허용 시간으로 정하는 것이 타당하다.</strong> 이는 제품 적용 제안이다. 부품 Absolute Maximum은 정상 통신의 RF 허용치가 아니다.</p>
+<p>Würth의 Ethernet 시험 자료도 EFT 중 잠시 정지했다가 복구하는 동작이 부품의 평가 기준을 만족해도, 상위 시스템에서는 정지로 이어질 수 있음을 지적한다. 시험 통과 조건과 크레인 시스템의 연속 동작 요구를 함께 정의해야 한다.<sup><a href="#s12">[12]</a></sup></p>
+<p><strong>실측으로 확인된 구조의 영향:</strong> 같은 자료의 통합 Ethernet 잭 설계에서는 두 10nF를 이용한 실드 접속 조건에서 EFT의 기능 유지 기준 A를 1kV까지, 직접 도통 접속 조건에서는 2kV까지 만족했다. 이 숫자는 그 시험 장치의 결과다. 전달 신호가 같은 기능을 하더라도, 실드 접속과 외란 귀환 경로가 내성에 차이를 만든다는 근거로 읽어야 한다. PALA720의 보장값이나 특정 커패시터 값의 보편적 처방으로 사용하지 않는다.<sup><a href="#s12">[12]</a></sup></p>
+</section>
+
+<section id="practice">
+<h2>10. 예측하는 눈을 기르는 다섯 번의 실험</h2>
+<p>각 실험은 실행 전에 예상 방향을 한 문장으로 적는다. 결과가 다르면 더 복잡한 그림을 만들기 전에 <strong>가정한 발생원·귀환 경로·관측량 중 무엇이 달랐는지</strong> 확인한다. 아래는 자료에 근거해 구성한 학습 순서이며 특정 강의의 목차를 그대로 옮긴 것은 아니다.</p>
+<div class="table-wrap"><table><thead><tr><th>실험</th><th>먼저 할 예측</th><th>최소 모델과 관측량</th><th>센서에 연결되는 부분</th></tr></thead><tbody>
+<tr><td>1. 용량성 결합</td><td>약한 결합에서 C 또는 주파수가 증가하면 피해 전압 증가</td><td>위 RC 계산 → 도체 두 개와 기준면. V<sub>victim</sub>/V<sub>source</sub></td><td>벅 노드·24V 도체와 민감 입력의 근접</td></tr>
+<tr><td>2. 루프 결합</td><td>공유 자속·dI/dt가 증가하면 유도 기전력 증가</td><td>두 루프와 종단. V<sub>victim</sub>/I<sub>source</sub></td><td>구동부·적층 커넥터·리턴 배치</td></tr>
+<tr><td>3. 차동쌍의 비대칭</td><td>같은 CM 자극에서도 한쪽 환경이 달라지면 DM 출력 변화</td><td>실제 배선의 대칭안·비대칭안. CM→DM 전달과 CM 입력 임피던스</td><td>M12→적층 PCB→트랜스 경계</td></tr>
+<tr><td>4. 차폐와 접합</td><td>접합 상태에 민감한 대역·편파가 존재할 수 있음</td><td>단순 상자·피해 루프·접합. V/E와 표면 전류</td><td>아노다이징된 환형 접합부</td></tr>
+<tr><td>5. 실제 경로 비교</td><td>선택한 구조 개선이 여러 외란 조건에서도 피해량 감소</td><td>센서의 A/B/C 모델, 동일 입력·종단·관측점</td><td>PCB 수정과 기구·배선 수정의 우선순위</td></tr>
+</tbody></table></div>
+<h3>첫 설계 검토에서 남길 한 장</h3>
+<p>각 후보마다 <strong>발생원 / 입력 조건 / 결합 경로 / 피해 노드 / 허용 여유 / 생략한 것 / 생략 근거 / 확인할 출력</strong>을 한 줄로 기록한다. 숫자가 미확정이면 먼저 전달함수를 구하고, 미확정 입력을 확정값처럼 넣지 않는다.</p>
+<p>예: “M12 신호 도체의 CM 외란 → 접속부의 비대칭 → RX DM. 입력은 단자 1V로 정규화. 20m 외부 수신 과정은 모델 밖. 현재 구조와 대칭 개선안을 동일 종단에서 비교. PHY 기능 한계 확보 전에는 합격 대신 변환량 감소와 취약 대역을 보고한다.”</p>
+<p>이 단계의 성공은 실제 고장 주파수와 소수점까지 일치하는 것이 아니다. <strong>구조를 보고 세운 가설이 계산에서 확인되고, 원인을 바꿨을 때 예상한 방향으로 움직이며, 그 판단이 모델의 작은 변화에도 유지되는 것</strong>이다. 허용 입력·허용 출력까지 확보하면 그 위에 설계 여유 판정을 올릴 수 있다.</p>
+</section>
+
+<section id="reading">
+<h2>11. 먼저 읽을 자료와 얻어야 할 것</h2>
+<div class="reading"><strong>1. LearnEMC — Introduction to EMC</strong><p>‘Elements of an EMC Problem’부터 읽는다. 발생원·경로·피해 회로를 한 문장으로 적는 습관을 만든다. 시험 이름의 목록을 만드는 데서 멈추지 않는다. <a href="https://learnemc.com/introduction-to-emc" target="_blank" rel="noopener">원문 읽기</a></p></div>
+<div class="reading"><strong>2. LearnEMC — Common Impedance / Electric Field / Magnetic Field Coupling</strong><p>세 장의 관계식을 손으로 계산한다. 무엇을 생략했는지, 그 생략이 가능한 임피던스 조건이 무엇인지 확인한다. 특히 자기장 장의 추정값·정확값 비교가 이번 학습 목표와 직접 맞는다. <a href="https://learnemc.com/common-impedance-coupling" target="_blank" rel="noopener">공유 경로</a> · <a href="https://learnemc.com/electric-field-coupling" target="_blank" rel="noopener">전기장</a> · <a href="https://learnemc.com/magnetic-field-coupling" target="_blank" rel="noopener">자기장</a></p></div>
+<div class="reading"><strong>3. LearnEMC — Introduction to Imbalance Difference Modeling</strong><p>‘Point #2’와 ‘IDM for simple worst-case analysis’, ‘intuitive EMC design guidance’를 우선 읽는다. 복잡한 케이블을 간단하게 다루는 근거와, 특정 배치 하나의 결과에 의존하지 않는 설계 관점을 얻는다. <a href="https://learnemc.com/introduction-to-imbalance-difference-modeling" target="_blank" rel="noopener">원문 읽기</a></p></div>
+<div class="reading"><strong>4. LearnEMC — Practical EM Shielding</strong><p>‘Shielded Enclosures → Seams → Cable Penetrations’를 읽는다. 표면 전류가 접합부와 관통부에서 어떻게 이어지는지를 본다. 저주파 자기장 차폐는 별도의 절로 구분해 읽는다. <a href="https://learnemc.com/practical-em-shielding" target="_blank" rel="noopener">원문 읽기</a></p></div>
+<div class="reading"><strong>5. Würth ANP116b + TI SNLA466A + LAN9354 지침</strong><p>Würth의 §4.9–4.11로 실제 RF·EFT·서지의 결과가 어떻게 달라지는지 본다. TI의 §4는 Ethernet 링크 실패의 경로를 보강한다. 구체적인 회로 처방은 LAN9354 지침과 대조한다. 다른 PHY의 센터탭·GND·보호 부품 값을 그대로 복사하지 않는다. <a href="https://www.we-online.com/components/products/media/721297" target="_blank" rel="noopener">Würth 시험</a> · <a href="https://www.ti.com/lit/an/snla466/snla466.pdf" target="_blank" rel="noopener">TI 분석</a> · <a href="https://www.microchip.com/content/dam/mchp/documents/UNG/ProductDocuments/BoardDesignFiles/RoutingChecklistforLAN9354SQFNRevA.pdf" target="_blank" rel="noopener">LAN9354</a></p></div>
+<p><strong>자료 간의 적용 경계:</strong> LearnEMC의 차폐 접속 원칙은 금속 함체를 가로지르는 외란 전류의 처리에 초점을 둔다. PHY 문서는 신호 기준면·절연·전원 구성도 함께 다룬다. ‘실드를 함체에 짧게 연결’과 ‘디지털 GND를 아무 곳에서나 함체에 합침’은 같은 처방이 아니다. 연결하는 두 도체가 무엇인지 먼저 구별하면 상반돼 보이는 권고를 해석하기 쉬워진다.</p>
+<p class="note">공개 웹 교재와 제조사의 원문을 중심으로 선정했다. 유료 강의 전체를 열람했다거나 접근하지 못한 영상의 내용을 확인한 것으로 취급하지 않는다.</p>
+</section>
+
+<section id="sources">
+<h2>출처</h2>
+<p class="note">웹 자료 확인 기준: 2026-09-12. 날짜가 표시되지 않은 LearnEMC 페이지는 ‘날짜 미표기’로 기재했다. 원문 수식·표의 전체 번역이 아닌 필요한 요지와 자체 적용 설명을 제공한다.</p>
+<ol class="source-list">
+<li id="s1">LearnEMC. <a href="https://learnemc.com/introduction-to-emc" target="_blank" rel="noopener">Introduction to EMC</a>. 날짜 미표기. ‘Elements of an EMC Problem’. 세 요소, 네 결합 방식과 복합 경로.</li>
+<li id="s2">LearnEMC. <a href="https://learnemc.com/common-impedance-coupling" target="_blank" rel="noopener">Common Impedance Coupling</a>. 날짜 미표기. 공유 경로의 전압과 피해 회로로의 분배, 근사 계산.</li>
+<li id="s3">LearnEMC. <a href="https://learnemc.com/electric-field-coupling" target="_blank" rel="noopener">Electric-Field Coupling</a>. 날짜 미표기. 결합 C와 임피던스 조건에 따른 단순화. RC 대화형 예제는 이를 바탕으로 별도 구성.</li>
+<li id="s4">LearnEMC. <a href="https://learnemc.com/magnetic-field-coupling" target="_blank" rel="noopener">Magnetic Field Coupling</a>. 날짜 미표기. 식 (2)–(7), 추정 M과 계산 M의 비교 및 유도 루프 전압.</li>
+<li id="s5">LearnEMC. <a href="https://learnemc.com/practical-em-shielding" target="_blank" rel="noopener">Practical EM Shielding</a>. 날짜 미표기. ‘Shielded Enclosures’, ‘Seams’, ‘Cable Penetrations’. 접합·관통부·표면 전류.</li>
+<li id="s6">LearnEMC. <a href="https://learnemc.com/introduction-to-imbalance-difference-modeling" target="_blank" rel="noopener">An Introduction to Imbalance Difference Modeling</a>. 날짜 미표기. 균형 변화, 식 (6), 설계 검토에서의 worst-case analysis.</li>
+<li id="s7">LearnEMC. <a href="https://learnemc.com/cm-filtering" target="_blank" rel="noopener">Common-Mode Filtering</a>. 날짜 미표기. 기준 도체로 돌아가는 CM과 주변으로 돌아가는 CM의 구분. 결합과 필터의 귀환 경로를 해석할 때 참고.</li>
+<li id="s8">IEC. <a href="https://webstore.iec.ch/en/publication/25630" target="_blank" rel="noopener">IEC 61000-6-2:2016</a>. 2016-08-10, Edition 3.0. 산업용 일반 내성 규격의 적용 범위. <a href="https://webstore.ansi.org/preview-pages/IEC/preview_iec61000-6-2%7Bed3.0%7Db.pdf" target="_blank" rel="noopener">ANSI 공개 미리보기</a>의 §1–2: 관련 외란의 포트별 선택, 극단 조건의 한계, 제품 규격 우선 및 날짜가 있는 인용 규격.</li>
+<li id="s9">IEC. <a href="https://webstore.iec.ch/en/publication/65586" target="_blank" rel="noopener">IEC 61000-4-6:2023</a>. Edition 5.0. 전도 RF 내성의 범위. <a href="https://elstandard.se/documents/preview/3127801" target="_blank" rel="noopener">SEK의 공개 원문 미리보기</a>, §1. 외부 도선이 없는 장비의 범위 제외. 판본 비교는 <a href="https://webstore.iec.ch/en/publication/4224" target="_blank" rel="noopener">2013판 공식 설명</a> 참고.</li>
+<li id="s10">IEC. <a href="https://webstore.iec.ch/en/publication/59849" target="_blank" rel="noopener">IEC 61000-4-3:2020</a>. Edition 4.0. 가까이 붙은 RF 발생원과 구별되는 방사 RF 내성 시험의 공통 기준.</li>
+<li id="s11">Texas Instruments. <a href="https://www.ti.com/lit/an/snla466/snla466.pdf" target="_blank" rel="noopener">Optimizing EMC Performance in Industrial Ethernet Application</a>, SNLA466A. 2024-08, revised 2024-10. §4.3, §4.5–4.7, §5. CM 주입·ground bounce·모드 변환과 Ethernet 링크 영향. 부품별 처방은 TI 대상 PHY의 적용 조건을 따름.</li>
+<li id="s12">Adrian Stirn / Würth Elektronik. <a href="https://www.we-online.com/components/products/media/721297" target="_blank" rel="noopener">ANP116b — Gigabit Ethernet Interface from an EMC Perspective</a>. 문서 표기 2023/13/02. §4.8–4.11, pp.16–19. 실제 RF·EFT·서지 평가, 실드 접속과 시스템 동작 기준. 제품 소개 페이지는 <a href="https://www.we-online.com/en/support/knowledge/application-notes?d=anp116-gigabit-ethernet-interface-from-an-emc-perspective" target="_blank" rel="noopener">2022-11-16</a> 게시. 시험 장치의 결과를 PALA720의 보장값으로 적용하지 않음.</li>
+<li id="s13">Microchip. <a href="https://www.microchip.com/content/dam/mchp/documents/UNG/ProductDocuments/BoardDesignFiles/RoutingChecklistforLAN9354SQFNRevA.pdf" target="_blank" rel="noopener">Routing Checklist for LAN9354 SQFN</a>, Revision A. 날짜 미표기. pp.2–3, 5–7. PHY 경계, 전원·GND, RBIAS의 민감성.</li>
+<li id="s14">Analog Devices. <a href="https://www.analog.com/media/en/training-seminars/tutorials/MT-095.pdf" target="_blank" rel="noopener">MT-095: EMI, RFI, and Shielding Concepts</a>. 교육용 튜토리얼. 차폐·틈의 기하·접지에 대한 보조 자료. 단순 개구 공식은 전체 환형 함체의 보장값이 아님.</li>
+<li id="s15">openEMS. <a href="https://docs.openems.de/python/openEMS/Tutorials/RCS_Sphere.html" target="_blank" rel="noopener">Metal Sphere Radar Cross Section</a>. 문서 표시 0.0.35, 날짜 미표기. TFSF·PML·방향·편파·스펙트럼 정규화의 공식 구현 예제.</li>
+<li id="s16">openEMS / CSXCAD. <a href="https://docs.openems.de/python/CSXCAD/CSProperties/CSPropLumpedElement.html" target="_blank" rel="noopener">CSPropLumpedElement</a>. 문서 표시 0.0.35. 방향성 R·L·C 지원. 환형 접합부의 자동 모델 지원을 뜻하지 않음.</li>
+<li id="s17">openEMS / CSXCAD. <a href="https://docs.openems.de/python/CSXCAD/CSProperties/CSPropProbeBox.html" target="_blank" rel="noopener">CSPropProbeBox</a> 및 <a href="https://docs.openems.de/python/openEMS/ports.html" target="_blank" rel="noopener">Ports</a>. 문서 표시 0.0.35. 전압·전류·장 프로브와 종단 포트. FDTD·graded mesh의 범위는 <a href="https://docs.openems.de/intro.html" target="_blank" rel="noopener">공식 소개</a>.</li>
+<li id="s18">IEC. <a href="https://webstore.iec.ch/en/publication/68954" target="_blank" rel="noopener">IEC 61000-4-2:2025</a>. 정전기 방전 내성의 범위: 작업자와 인접 물체를 통한 방전 포함.</li>
+<li id="s19">Murata. <a href="https://www.murata.com/en-us/products/emc/emifil/library/knowhow/basic/chapter05-p1" target="_blank" rel="noopener">Conductor Conduction and Common Mode — Guidelines for EMI Suppression</a>. 날짜 미표기. 도체·종단·파형 불균형과 CM 발생에 관한 제조사 교재.</li>
+<li id="s20">PALA720 / ATLAS. <a href="https://github.com/ckh7488/showcase/tree/55732e6facc4dd79ba0c21a91785ea79594fb41a/reports/porta-pcb" target="_blank" rel="noopener">PortA PCB 통신 경로 분석</a>. 보존된 커밋의 README·보고서와 현물 조건 설명. PCB 구간 모델의 범위 확인용이며 신규 EMC 결과로 사용하지 않음. 함체 반지름·틈·아노다이징·20m 배선 등은 현물 설명에 근거.</li>
+</ol>
+</section>
+<footer class="series-footer"><p>함께 읽기 · 구조와 결합 경로를 다시 확인하려면 입문편으로 돌아간다.</p><nav class="series-nav" aria-label="EMC 학습 순서"><a href="../../#collection-emc">EMC 모음</a><a href="../emc-cable/">01 · 눈으로 배우는 EMC</a><a href="../emc-design/" aria-current="page">02 · EMC 설계 판단</a></nav><div class="related-links"><a href="../porta-pcb/">관련 분석 · PALA720 통신 경로 ↗</a><a href="../balun-routing/">관련 분석 · 차동 배선의 길이와 대칭 ↗</a></div><p class="article-meta">관련 자료는 신호 품질과 모드 변환 분석이다. 완제품 EMC 내성 판정과 구분해서 읽는다.</p></footer>
+</main>
+<script src="report.js"></script>
+</body>
+</html>

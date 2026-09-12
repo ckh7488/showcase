@@ -8,8 +8,8 @@
   <title>ATLAS · Interactive Library</title>
   <link rel="icon" href="assets/favicon.svg?v=20260910-atlas1" type="image/svg+xml">
   <link rel="stylesheet" href="assets/theme.v1.css">
-  <link rel="stylesheet" href="assets/site.css?v=20260910-atlas1">
-  <script src="assets/catalog.js" defer></script>
+  <link rel="stylesheet" href="assets/site.css?v=20260912-emc1">
+  <script src="assets/catalog.js?v=20260912-emc1" defer></script>
 </head>
 <body>
   <a class="skip" href="#reports">보고서 목록으로 건너뛰기</a>
@@ -18,8 +18,9 @@
     <div class="intro"><h1>ATLAS</h1><p class="lede">Interactive Library</p></div>
     <section id="reports" aria-labelledby="reports-title">
       <div class="section-heading"><h2 id="reports-title">Collections <span id="count"></span></h2><span>제목이나 이미지를 누르면 열립니다 ↗</span></div>
-      <div class="report-grid" id="report-grid" aria-live="polite"><p class="state">보고서를 불러오는 중입니다.</p></div>
-      <noscript><p>보고서: <a href="reports/porta-pcb/">PALA720 · PortA 통신 경로 분석</a>. 3D 화면을 사용하려면 JavaScript를 켜 주세요.</p></noscript>
+      <nav class="collection-nav" id="collection-nav" aria-label="주제별 모음" hidden></nav>
+      <div class="collection-list" id="report-grid" aria-live="polite"><p class="state">보고서를 불러오는 중입니다.</p></div>
+      <noscript><p>EMC: <a href="reports/emc-cable/">눈으로 배우는 입문편</a> · <a href="reports/emc-design/">설계 판단 심화편</a>. 관련 분석: <a href="reports/porta-pcb/">PALA720 · PortA 통신 경로 분석</a>. 3D 화면을 사용하려면 JavaScript를 켜 주세요.</p></noscript>
     </section>
   </main>
   <footer><span>ATLAS <span class="footer-divider">/</span> Interactive Library</span><a href="https://github.com/ckh7488/showcase#readme">보고서 등록 안내 ↗</a></footer>
