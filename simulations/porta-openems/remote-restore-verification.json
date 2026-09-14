@@ -1,0 +1,6777 @@
+{
+  "scope": "Clean checkout archive, native model-load and independent scalar DFT verification",
+  "checkedAtUTC": "2026-09-14T07:30:58.900146+00:00",
+  "commit": "6089098e2cf0486ad166b708740f5251fdae75ce",
+  "origin": "https://github.com/ckh7488/showcase.git",
+  "manifestSHA256": "55f91d1b353ebb814cc4ac880874df750411acc67460139ae679efb589caab07",
+  "archivesVerified": 20,
+  "memberHashesVerified": 783,
+  "pending": [],
+  "reportEvidenceHashesChecked": 588,
+  "modelsLoadedWithNativePythonBindings": [
+    {
+      "id": "reference/test00-straight-base",
+      "test": "00",
+      "modelLoaded": true,
+      "fieldSolveExecuted": false,
+      "meshLines": {
+        "x": 235,
+        "y": 82,
+        "z": 14
+      },
+      "originalInputSHA256": "10696ae55224ad7635b7bbecba48151338b2eb5e6bf2bead7038f8ff660accf6",
+      "originalGeometrySHA256": "fa58055974a7e7c662800e4d73ad02833d5d1690e0be3d11ad7d49ecfa3439e9",
+      "note": "Raw geometry replay; use the preserved original postprocessing for the relevant output definitions."
+    },
+    {
+      "id": "connected/test01-same-fine",
+      "test": "01",
+      "modelLoaded": true,
+      "fieldSolveExecuted": false,
+      "meshLines": {
+        "x": 427,
+        "y": 135,
+        "z": 114
+      },
+      "originalInputSHA256": "6efc66f4a6eb6278d07b3c2c4e80336d62fe31d7b74c8a7c4046d15a22d9f3eb",
+      "originalGeometrySHA256": "1031bc9c3ba41f32dd6e1ffa63935e8dc64b828161494af5fac5e3fa7b3b5cdd",
+      "note": "Raw geometry replay; use the preserved original postprocessing for the relevant output definitions."
+    },
+    {
+      "id": "connected/test02-near-long",
+      "test": "02",
+      "modelLoaded": true,
+      "fieldSolveExecuted": false,
+      "meshLines": {
+        "x": 427,
+        "y": 115,
+        "z": 97
+      },
+      "originalInputSHA256": "13feed8f325e3a0fd04031ec5f937e60bb5bbfcfe83d847ee619802bf1f93f92",
+      "originalGeometrySHA256": "32b695213d8778db94da60fa6489c40cb373914a43ca06fc7ccd3003afe9ac48",
+      "note": "Raw geometry replay; use the preserved original postprocessing for the relevant output definitions."
+    },
+    {
+      "id": "connected/test02-floating-fine",
+      "test": "02",
+      "modelLoaded": true,
+      "fieldSolveExecuted": false,
+      "meshLines": {
+        "x": 427,
+        "y": 135,
+        "z": 114
+      },
+      "originalInputSHA256": "5050b734a1eb986adb29f448fcbec79317ae5833a38b04114c99209762fe5d01",
+      "originalGeometrySHA256": "9017f5c9490126be76e378934d4fdd0ed5f70fb9d1062f27b66a6abafca7b967",
+      "note": "Raw geometry replay; use the preserved original postprocessing for the relevant output definitions."
+    },
+    {
+      "id": "connected/test02-near-fine",
+      "test": "02",
+      "modelLoaded": true,
+      "fieldSolveExecuted": false,
+      "meshLines": {
+        "x": 427,
+        "y": 135,
+        "z": 114
+      },
+      "originalInputSHA256": "063e637062fe7ca18ec34375961dde659cae39902d3c42631a9519add91e4c36",
+      "originalGeometrySHA256": "9f676f89e370cb7452c644977bba3505e4f85803358811fc4b7d614938cc85dc",
+      "note": "Raw geometry replay; use the preserved original postprocessing for the relevant output definitions."
+    },
+    {
+      "id": "topology/balanced-diagonal-opposed-fine",
+      "test": "01",
+      "modelLoaded": true,
+      "fieldSolveExecuted": false,
+      "meshLines": {
+        "x": 427,
+        "y": 135,
+        "z": 114
+      },
+      "originalInputSHA256": "6df133ca631dfdccf6c4dcb5156c1b43916161e10403aab640b80ad6ab6aed69",
+      "originalGeometrySHA256": "3dd824c54311b265281ee76e8b449374210d6dba3faeb6352e028b98eb1243ec",
+      "note": "Raw geometry replay; use the preserved original postprocessing for the relevant output definitions."
+    }
+  ],
+  "nativeCheckSkipped": false,
+  "fieldSolveRerun": false,
+  "independentRestoredOutputChecks": 512,
+  "maxAbsoluteDifference": 1.3680542743754176e-14,
+  "sourcePins": [
+    {
+      "file": "reports/porta-test-02/records/time-18/time-review.json",
+      "sha256": "0be7b4ce15a46cf1d8d4653598f917b2deb77aa74cb9d9d204ddd918e6558e9d"
+    },
+    {
+      "file": "reports/porta-test-02/records/mesh-20/manifest.json",
+      "sha256": "eddb48d4da7754101fe0d9fbbd9f505be4c2619364899a8b4a8b3e09952e0862"
+    },
+    {
+      "file": "reports/porta-test-02/records/mesh-20/drive-reference.json",
+      "sha256": "480ad8fc78f308ae4403cf92053aa87c44e6e2be2adda5094e83724e86bec38b"
+    },
+    {
+      "file": "reports/porta-test-02/records/mesh-20/screening-verdict.json",
+      "sha256": "327beb47d4c92c909fbf1e1a6c2ed2836f4b709be83b03564fc9ceaa1799736d"
+    }
+  ],
+  "checks": [
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.0007556505005335051,
+        "imag": -0.000506504373252971
+      },
+      "absoluteDifference": 1.5409408128351396e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.2376300360857681,
+        "imag": -0.00893854352542205
+      },
+      "absoluteDifference": 1.1188630228279524e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.0007012622773647765,
+        "imag": -0.0005073082425049984
+      },
+      "absoluteDifference": 5.421010862427522e-19
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.2519065233966051,
+        "imag": -0.00972845871181261
+      },
+      "absoluteDifference": 1.1107649934270853e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.000879685590528431,
+        "imag": 0.0005071689762035483
+      },
+      "absoluteDifference": 9.326659742954563e-19
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.23438681083579385,
+        "imag": -0.011094625766409601
+      },
+      "absoluteDifference": 1.4539632184201916e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.0008816261031978098,
+        "imag": 0.0004737525396846834
+      },
+      "absoluteDifference": 7.666467083416871e-19
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.250761855789268,
+        "imag": -0.01070922236674193
+      },
+      "absoluteDifference": 1.7010907505015192e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.0007388121207723447,
+        "imag": -0.0005317976646177506
+      },
+      "absoluteDifference": 1.5636586103463754e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.23795364593438542,
+        "imag": -0.001002273355089783
+      },
+      "absoluteDifference": 1.1104347626709818e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.0006843913140531665,
+        "imag": -0.0005307849674552844
+      },
+      "absoluteDifference": 4.599880250050122e-19
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.25225802252573576,
+        "imag": -0.0013154149506405673
+      },
+      "absoluteDifference": 1.119134048689757e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.000862838086548612,
+        "imag": 0.000536605302328801
+      },
+      "absoluteDifference": 8.741117365843378e-19
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.23478209531218383,
+        "imag": -0.0032669116309100984
+      },
+      "absoluteDifference": 1.6823296485818165e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.0008658949646625722,
+        "imag": 0.0005032501595176109
+      },
+      "absoluteDifference": 9.99585012992364e-19
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.25114599328863313,
+        "imag": -0.0023345156643949294
+      },
+      "absoluteDifference": 1.13037735088289e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.007693405346157585,
+        "imag": -0.0009339698875897341
+      },
+      "absoluteDifference": 5.169041167778662e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.10088143259890177,
+        "imag": 0.025509595457073743
+      },
+      "absoluteDifference": 3.4170089680666066e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.007548515700845173,
+        "imag": -0.0015033895616612897
+      },
+      "absoluteDifference": 4.755682002596558e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.1024500101315658,
+        "imag": 0.027806893002089158
+      },
+      "absoluteDifference": 2.797157557069881e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.007983874035496257,
+        "imag": 0.0025112790872931536
+      },
+      "absoluteDifference": 2.6020852139652106e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.2862182340440928,
+        "imag": 0.025756495831210088
+      },
+      "absoluteDifference": 1.2571659638300646e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.007967007139467316,
+        "imag": 0.0019382443466590953
+      },
+      "absoluteDifference": 2.3852447794681098e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.31022660327867896,
+        "imag": 0.02438805098383089
+      },
+      "absoluteDifference": 1.4526172914154867e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.006011832557738231,
+        "imag": -0.0039038050970408617
+      },
+      "absoluteDifference": 4.422694427346622e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.0734392764867595,
+        "imag": 0.06220792652163616
+      },
+      "absoluteDifference": 3.1031676915590914e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.005659953867354336,
+        "imag": -0.004317962255966002
+      },
+      "absoluteDifference": 4.336808689942018e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.07380842109986192,
+        "imag": 0.0647542136739222
+      },
+      "absoluteDifference": 1.962615573354719e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.005611868527941515,
+        "imag": 0.00533230207800472
+      },
+      "absoluteDifference": 2.4532694666933987e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.22731362549138537,
+        "imag": 0.13776472344853463
+      },
+      "absoluteDifference": 8.326672684688674e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.0058308323394786615,
+        "imag": 0.004849376842114073
+      },
+      "absoluteDifference": 2.6020852139652106e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.24781574251508193,
+        "imag": 0.14638883331736363
+      },
+      "absoluteDifference": 1.1443916996305594e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": -0.1952547491840468,
+        "imag": -0.18097578810528356
+      },
+      "absoluteDifference": 5.026748538604307e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -3.4953747740656036,
+        "imag": -4.940104224639413
+      },
+      "absoluteDifference": 1.1957467920563633e-14
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": -0.20205865505777088,
+        "imag": -0.16767111018614775
+      },
+      "absoluteDifference": 4.791355229691893e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -3.7991289823857226,
+        "imag": -5.410029796042575
+      },
+      "absoluteDifference": 1.2080532582046505e-14
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 0.3065842245401905,
+        "imag": 0.015832437142240474
+      },
+      "absoluteDifference": 6.004449063730082e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": 0.08008089481891306,
+        "imag": 1.5111870097947373
+      },
+      "absoluteDifference": 3.0915089113605443e-15
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.2935168788485481,
+        "imag": 0.028796128844057637
+      },
+      "absoluteDifference": 5.665406095720635e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": 0.2386741864874004,
+        "imag": 1.7820600883041937
+      },
+      "absoluteDifference": 3.59796202233893e-15
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": -0.006850389763031747,
+        "imag": -0.02026276265248155
+      },
+      "absoluteDifference": 4.336808689942018e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.05746010991104012,
+        "imag": -0.4827985007039094
+      },
+      "absoluteDifference": 1.6711069443220838e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": -0.007840775170689745,
+        "imag": -0.019584100136864277
+      },
+      "absoluteDifference": 8.673617379884035e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.06089649162181885,
+        "imag": -0.5276228693804506
+      },
+      "absoluteDifference": 3.469446951953614e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 0.02104124082184526,
+        "imag": 0.012869067770336362
+      },
+      "absoluteDifference": 3.878959614448864e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.05226804349024964,
+        "imag": 0.1097752072079117
+      },
+      "absoluteDifference": 4.3885418357208765e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.01962166011565555,
+        "imag": 0.013283580370401208
+      },
+      "absoluteDifference": 8.673617379884035e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.051452031906212205,
+        "imag": 0.13498046378937006
+      },
+      "absoluteDifference": 5.721958498152797e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": -0.04570515588444313,
+        "imag": 0.01028170327725653
+      },
+      "absoluteDifference": 6.938893903907228e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -1.3443536304763906,
+        "imag": 0.002774547077192537
+      },
+      "absoluteDifference": 4.440892098500626e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": -0.04423554377420055,
+        "imag": 0.012683091289875013
+      },
+      "absoluteDifference": 1.6365348541700844e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -1.4615014853846955,
+        "imag": -0.0003489940094702321
+      },
+      "absoluteDifference": 5.256251744129317e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 0.026641155275056148,
+        "imag": -0.049997371393050404
+      },
+      "absoluteDifference": 1.3877787807814457e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": 0.03172093600227656,
+        "imag": 0.02669718558173583
+      },
+      "absoluteDifference": 4.443059973708341e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.0274495355244019,
+        "imag": -0.046713997786475676
+      },
+      "absoluteDifference": 6.938893903907228e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": 0.07517138927069664,
+        "imag": 0.026296227286705776
+      },
+      "absoluteDifference": 2.0816681711721685e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": -0.01421284609206776,
+        "imag": -0.01672864132028436
+      },
+      "absoluteDifference": 1.0551910960100405e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.2937073235135551,
+        "imag": -0.557258509223706
+      },
+      "absoluteDifference": 3.3766115072321297e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": -0.014889528189961733,
+        "imag": -0.015596214867344138
+      },
+      "absoluteDifference": 1.3985787785349405e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.3179046766004442,
+        "imag": -0.6065507349226883
+      },
+      "absoluteDifference": 2.7755575615628914e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 0.026544859259997413,
+        "imag": 0.00017485451324295904
+      },
+      "absoluteDifference": 2.4665599424045226e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.004175392398615294,
+        "imag": 0.01897293616007217
+      },
+      "absoluteDifference": 2.9079264368403834e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.025358286139614855,
+        "imag": 0.0012248278325660757
+      },
+      "absoluteDifference": 4.755682002596558e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": 0.0054466066679283226,
+        "imag": 0.03691618157431566
+      },
+      "absoluteDifference": 2.6020852139652106e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 5.1768676531412315e-05,
+        "imag": -7.372773979071509e-05
+      },
+      "absoluteDifference": 1.794366878678709e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.25309233064423586,
+        "imag": 0.000998593765690155
+      },
+      "absoluteDifference": 1.1265022314309467e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 5.339887774159994e-05,
+        "imag": -0.00011304985315198398
+      },
+      "absoluteDifference": 9.413886221559166e-20
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.26867304845935563,
+        "imag": 0.0010952952507680407
+      },
+      "absoluteDifference": 6.724186561047276e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -7.017873242418973e-05,
+        "imag": 1.1905941589216353e-05
+      },
+      "absoluteDifference": 5.138607595326959e-19
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.2606481434337765,
+        "imag": 0.025382530996688416
+      },
+      "absoluteDifference": 6.546139416680338e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -6.660672009448749e-05,
+        "imag": -2.8256894740710733e-05
+      },
+      "absoluteDifference": 1.4163241938257009e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.27632038738808773,
+        "imag": 0.02529136007074136
+      },
+      "absoluteDifference": 6.206335383118183e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 4.9483039666339665e-05,
+        "imag": -7.522096810673778e-05
+      },
+      "absoluteDifference": 1.797179568066739e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.2528053661350327,
+        "imag": 0.008663449875832147
+      },
+      "absoluteDifference": 5.682377955034956e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 4.992056675670157e-05,
+        "imag": -0.00011455257288040767
+      },
+      "absoluteDifference": 1.2439566352016263e-19
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.26836735103966824,
+        "imag": 0.009231974890746248
+      },
+      "absoluteDifference": 6.285829819150323e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -6.974693130334891e-05,
+        "imag": 1.4019496337732366e-05
+      },
+      "absoluteDifference": 5.077254253774734e-19
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.25961495408425084,
+        "imag": 0.03325151051345008
+      },
+      "absoluteDifference": 3.469446951953614e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -6.739502723397743e-05,
+        "imag": -2.6210793811810567e-05
+      },
+      "absoluteDifference": 1.400311220395462e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.27527406272503807,
+        "imag": 0.033635125900423606
+      },
+      "absoluteDifference": 2.0816681711721685e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.006748291739617216,
+        "imag": -0.001966823790695475
+      },
+      "absoluteDifference": 3.878959614448864e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.11805587773258625,
+        "imag": 8.40112584399585e-05
+      },
+      "absoluteDifference": 2.7850443305721395e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.006614156945375761,
+        "imag": -0.002441406404322949
+      },
+      "absoluteDifference": 4.9065389333867974e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.12118937784418454,
+        "imag": 0.00019169956956874575
+      },
+      "absoluteDifference": 4.558584248893926e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.006513860594294776,
+        "imag": 0.0032890720497926545
+      },
+      "absoluteDifference": 4.690975831039127e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.3255492985574907,
+        "imag": 0.015952627061081335
+      },
+      "absoluteDifference": 1.2412670766236366e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.0065435927806904775,
+        "imag": 0.002762181233423392
+      },
+      "absoluteDifference": 1.939479807224432e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.3487086710329828,
+        "imag": 0.015790608036910323
+      },
+      "absoluteDifference": 1.6653345369377348e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.004817136984684144,
+        "imag": -0.004181779511140702
+      },
+      "absoluteDifference": 3.878959614448864e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.09729446240292597,
+        "imag": 0.044859839013449705
+      },
+      "absoluteDifference": 4.163336342344337e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.004526497679044686,
+        "imag": -0.004522138777688382
+      },
+      "absoluteDifference": 2.742838647325548e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.09983689120778572,
+        "imag": 0.046137472936866444
+      },
+      "absoluteDifference": 7.473417450352271e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.004122206823777511,
+        "imag": 0.005182909436397139
+      },
+      "absoluteDifference": 5.275955480050203e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.2623333436091869,
+        "imag": 0.13666538891245736
+      },
+      "absoluteDifference": 1.4946834900704541e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.004346621484138866,
+        "imag": 0.0047598163050273715
+      },
+      "absoluteDifference": 1.939479807224432e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.28148761060377886,
+        "imag": 0.14531852006181517
+      },
+      "absoluteDifference": 2.618455766672135e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": -0.2491546653699944,
+        "imag": 0.0507962400528979
+      },
+      "absoluteDifference": 4.847302891456678e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -5.9578788673424095,
+        "imag": -0.25647353971020964
+      },
+      "absoluteDifference": 9.007357837303593e-15
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": -0.24189635452170083,
+        "imag": 0.06432745151714873
+      },
+      "absoluteDifference": 3.757268488191713e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -6.504440937979772,
+        "imag": -0.2950258652174463
+      },
+      "absoluteDifference": 1.0239512985120001e-14
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 0.18616172083116525,
+        "imag": -0.23183332975180634
+      },
+      "absoluteDifference": 5.33167196845001e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": 0.5251959977251701,
+        "imag": 0.003424689989689347
+      },
+      "absoluteDifference": 1.2102970170291775e-15
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.1889675702290849,
+        "imag": -0.21403223262748552
+      },
+      "absoluteDifference": 3.8659043403122315e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": 0.8191809976287845,
+        "imag": 0.017062156537994772
+      },
+      "absoluteDifference": 1.6401643046719713e-15
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": -0.007774094109082635,
+        "imag": -0.0219444646224415
+      },
+      "absoluteDifference": 1.666147490140628e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.05251193638712015,
+        "imag": -0.5434524783578599
+      },
+      "absoluteDifference": 5.558049685633556e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": -0.008908642966987665,
+        "imag": -0.02111429015825075
+      },
+      "absoluteDifference": 2.2551405187698492e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.05596705627408603,
+        "imag": -0.5934986154043418
+      },
+      "absoluteDifference": 5.561946577567963e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 0.023387347266412145,
+        "imag": 0.013930762542658636
+      },
+      "absoluteDifference": 2.1457344368072987e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": 0.006368372918542296,
+        "imag": 0.0476621950308819
+      },
+      "absoluteDifference": 6.938893903907228e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.02180903334418768,
+        "imag": 0.014411539629806116
+      },
+      "absoluteDifference": 3.434577253370758e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": 0.008870475014694928,
+        "imag": 0.07449075048681102
+      },
+      "absoluteDifference": 1.168462140866474e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": -0.03993662439488827,
+        "imag": 0.008548956185964473
+      },
+      "absoluteDifference": 1.734723475976807e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -1.2102204507658723,
+        "imag": 0.0015244766639642797
+      },
+      "absoluteDifference": 4.768471037392701e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": -0.038536810926122225,
+        "imag": 0.010677134414507818
+      },
+      "absoluteDifference": 3.576224061345498e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -1.3141887689577838,
+        "imag": -0.0013757363160371667
+      },
+      "absoluteDifference": 8.881784197001252e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 0.023548667561844653,
+        "imag": -0.04418648248324801
+      },
+      "absoluteDifference": 4.563344992840996e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.020256516408242973,
+        "imag": 0.023191355638804468
+      },
+      "absoluteDifference": 5.561946577567963e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.024236703842474793,
+        "imag": -0.041281222085743606
+      },
+      "absoluteDifference": 3.469446951953614e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": 0.01528788258496886,
+        "imag": 0.02281200213036734
+      },
+      "absoluteDifference": 4.772854504744019e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": -0.015277406753703471,
+        "imag": -0.015590878846324402
+      },
+      "absoluteDifference": 8.845388854693243e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.3466583832800832,
+        "imag": -0.5460821497998976
+      },
+      "absoluteDifference": 3.1401849173675503e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": -0.015838291524283867,
+        "imag": -0.014350353687716054
+      },
+      "absoluteDifference": 2.3338317471424865e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.3750704759173747,
+        "imag": -0.5938618244763095
+      },
+      "absoluteDifference": 4.335559509131367e-16
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 0.026685912890042313,
+        "imag": -0.0019975084046827537
+      },
+      "absoluteDifference": 2.422797678359911e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.016263680144230828,
+        "imag": -0.0025177543271315606
+      },
+      "absoluteDifference": 2.949348774913697e-17
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.025570630878320944,
+        "imag": -0.0008562642773019054
+      },
+      "absoluteDifference": 1.4094628242311558e-18
+    },
+    {
+      "case": "test02-near-long",
+      "window_ns": 24,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.005931167995250473,
+        "imag": 0.013425132279249137
+      },
+      "absoluteDifference": 2.2767213025282562e-17
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": -0.0003108923616660864,
+        "imag": 4.662571634056221e-05
+      },
+      "absoluteDifference": 1.21217487951527e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.85245968588029,
+        "imag": -0.0056527292035940275
+      },
+      "absoluteDifference": 4.586104959431681e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": -0.0004317091393658324,
+        "imag": 0.00010216621566138504
+      },
+      "absoluteDifference": 3.7947076036992655e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.8615964149298192,
+        "imag": -0.005216221202296939
+      },
+      "absoluteDifference": 4.507486266058783e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.0005938962757623266,
+        "imag": 0.00011844636732755087
+      },
+      "absoluteDifference": 1.3552527156068805e-20
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.7765188089056769,
+        "imag": -0.033332714096618206
+      },
+      "absoluteDifference": 2.7755575615628914e-17
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.0007234491020117235,
+        "imag": 0.0001751989438138998
+      },
+      "absoluteDifference": 2.710505431213761e-20
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.7839508665560674,
+        "imag": -0.033515412874732906
+      },
+      "absoluteDifference": 5.594315114139762e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": -0.00031470739120919834,
+        "imag": 5.016264316941641e-05
+      },
+      "absoluteDifference": 1.2197274440461925e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.8641654982455701,
+        "imag": 0.0022205112472128245
+      },
+      "absoluteDifference": 5.627448370392666e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": -0.0004366577281393129,
+        "imag": 0.0001075891834785008
+      },
+      "absoluteDifference": 3.2554287362238764e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.8734230549214933,
+        "imag": 0.002748200512139976
+      },
+      "absoluteDifference": 4.490188970038976e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.0006009101188480242,
+        "imag": 0.0001256045316254197
+      },
+      "absoluteDifference": 0.0
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.7874446712674247,
+        "imag": -0.026546124845162257
+      },
+      "absoluteDifference": 3.8163916471489756e-17
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.0007317046212775224,
+        "imag": 0.0001843411953958454
+      },
+      "absoluteDifference": 1.1175700191704681e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.7949800288169857,
+        "imag": -0.0266620056064135
+      },
+      "absoluteDifference": 6.687398374172639e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.0008385780283965633,
+        "imag": -0.0009413868346114571
+      },
+      "absoluteDifference": 5.528368034183277e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.9053565771100773,
+        "imag": 0.009025572340385528
+      },
+      "absoluteDifference": 1.1857187100668868e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.001049127976784379,
+        "imag": -0.0008056799475543142
+      },
+      "absoluteDifference": 1.0842021724855044e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.9103195752211276,
+        "imag": 0.00842263795940779
+      },
+      "absoluteDifference": 5.095246377785861e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 9.047748138708472e-05,
+        "imag": -0.00035252413427889936
+      },
+      "absoluteDifference": 7.463739811209757e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -1.0706112788116258,
+        "imag": 0.04513760301718029
+      },
+      "absoluteDifference": 2.514331927660129e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.0002582202062026906,
+        "imag": -0.0001842005665678983
+      },
+      "absoluteDifference": 2.42434975903054e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -1.0796990765203816,
+        "imag": 0.045234106450073926
+      },
+      "absoluteDifference": 1.1796119636642288e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.0007705158481222591,
+        "imag": -0.0009683354461116982
+      },
+      "absoluteDifference": 5.528368034183277e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.8868040254313838,
+        "imag": 0.05821471042412479
+      },
+      "absoluteDifference": 2.3714374201337736e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.0009842657785686204,
+        "imag": -0.0008468169994715909
+      },
+      "absoluteDifference": 3.0665868333667484e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.8917008979001877,
+        "imag": 0.05789443637708995
+      },
+      "absoluteDifference": 3.891352488241671e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 6.944942743471518e-05,
+        "imag": -0.00035042559905014154
+      },
+      "absoluteDifference": 6.858435764233933e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -1.046792972903407,
+        "imag": 0.10261772021471396
+      },
+      "absoluteDifference": 1.249000902703301e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.00024302465938101737,
+        "imag": -0.000194606839183252
+      },
+      "absoluteDifference": 1.4596518457719279e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -1.055694221535865,
+        "imag": 0.10320785706777547
+      },
+      "absoluteDifference": 2.6945789820192466e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.0006676946595591734,
+        "imag": -0.0017762008772440828
+      },
+      "absoluteDifference": 8.467889666272201e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.8994400361745323,
+        "imag": 0.0050104069596565975
+      },
+      "absoluteDifference": 1.1178203268234443e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.0006806998887484247,
+        "imag": -0.0015374281314284397
+      },
+      "absoluteDifference": 3.9091465258659384e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.9047749104943337,
+        "imag": 0.004647013462896511
+      },
+      "absoluteDifference": 1.1168440202394181e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.0024628087439433513,
+        "imag": -0.00039910441211967016
+      },
+      "absoluteDifference": 9.95165308161301e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -1.00597533297373,
+        "imag": 0.030143463709289543
+      },
+      "absoluteDifference": 7.632783294297951e-17
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.002592887290204887,
+        "imag": -0.00011390729905492752
+      },
+      "absoluteDifference": 8.159701876572674e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -1.0149943999022106,
+        "imag": 0.030175211636597445
+      },
+      "absoluteDifference": 2.2247786310271853e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.0005116937544525842,
+        "imag": -0.0018466753420367948
+      },
+      "absoluteDifference": 1.21217487951527e-18
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.904238647760335,
+        "imag": 0.08600945084796484
+      },
+      "absoluteDifference": 2.7755575615628914e-17
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.0005462697985760236,
+        "imag": -0.0016076797407913541
+      },
+      "absoluteDifference": 3.9091465258659384e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.9096373731171016,
+        "imag": 0.08612419485670601
+      },
+      "absoluteDifference": 3.3306690738754696e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.002513111502346728,
+        "imag": -0.0001797257306550711
+      },
+      "absoluteDifference": 1.389514113359633e-18
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -1.009133207699619,
+        "imag": 0.12087976785457838
+      },
+      "absoluteDifference": 2.3263411494723067e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.0026182751191759584,
+        "imag": 0.00011884595047487175
+      },
+      "absoluteDifference": 7.724940478959219e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -1.018202057177533,
+        "imag": 0.12172361962842831
+      },
+      "absoluteDifference": 2.220446049250313e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.001150828284242067,
+        "imag": -0.0015078231364959393
+      },
+      "absoluteDifference": 6.505213034913027e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.9292876839910665,
+        "imag": -0.02542423843274234
+      },
+      "absoluteDifference": 2.8929862278582974e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.0011968039866029907,
+        "imag": -0.0009935016465300276
+      },
+      "absoluteDifference": 7.818293051731877e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.9324822740359962,
+        "imag": -0.02338065691557348
+      },
+      "absoluteDifference": 4.236704743275018e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.003403421512669317,
+        "imag": 0.0009371833728844695
+      },
+      "absoluteDifference": 1.2690261071493108e-18
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -1.157058543535946,
+        "imag": -0.1412580311164493
+      },
+      "absoluteDifference": 7.114312260401321e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.0035860970452777454,
+        "imag": 0.001530855977214029
+      },
+      "absoluteDifference": 6.505213034913027e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -1.1668909699597598,
+        "imag": -0.14210750596322205
+      },
+      "absoluteDifference": 4.742874840267547e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.0009637804067466609,
+        "imag": -0.0016838258306102645
+      },
+      "absoluteDifference": 5.421010862427522e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.9456573335495646,
+        "imag": 0.0993816526385147
+      },
+      "absoluteDifference": 3.11864493316497e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.0010796673815502132,
+        "imag": -0.0011685317858518849
+      },
+      "absoluteDifference": 1.1056736068366554e-18
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.9486211882672977,
+        "imag": 0.101883961961739
+      },
+      "absoluteDifference": 6.403362282114315e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.0033246092911683378,
+        "imag": 0.001408624762674056
+      },
+      "absoluteDifference": 1.1677214766175423e-18
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -1.1922020919500027,
+        "imag": 0.01261130181290127
+      },
+      "absoluteDifference": 9.185340329312661e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.0034298714553658164,
+        "imag": 0.002035170953622029
+      },
+      "absoluteDifference": 8.673617379884035e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -1.202285899261251,
+        "imag": 0.01307426263518605
+      },
+      "absoluteDifference": 2.237793284010081e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.0002058554819884369,
+        "imag": -0.0001584162913606231
+      },
+      "absoluteDifference": 3.030437198788175e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.8811469692840636,
+        "imag": 0.005904216849887465
+      },
+      "absoluteDifference": 2.2279043539139944e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.00023612981103989354,
+        "imag": -0.00015610218732811952
+      },
+      "absoluteDifference": 1.1175700191704681e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.8882044647400184,
+        "imag": 0.005519086016950666
+      },
+      "absoluteDifference": 8.673617379884035e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.00020271299059000406,
+        "imag": 4.1329766451511636e-05
+      },
+      "absoluteDifference": 2.2196788886855296e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.9355199291936155,
+        "imag": 0.030415594315209016
+      },
+      "absoluteDifference": 3.3524625175704445e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.0002020688721931193,
+        "imag": 5.800248192132727e-05
+      },
+      "absoluteDifference": 1.4149253747969214e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.9437020081907804,
+        "imag": 0.030529762510752415
+      },
+      "absoluteDifference": 3.469446951953614e-17
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.00020584158612451756,
+        "imag": -0.00016117539702173808
+      },
+      "absoluteDifference": 3.428548309156935e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.8867678193578908,
+        "imag": 0.013388405802061245
+      },
+      "absoluteDifference": 5.608176147203189e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.00023633030532872138,
+        "imag": -0.00015910223549786009
+      },
+      "absoluteDifference": 1.3552527156068805e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.8938739888828036,
+        "imag": 0.013060436244539795
+      },
+      "absoluteDifference": 1.2049774363595733e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.00020366831831402995,
+        "imag": 4.3308789638548816e-05
+      },
+      "absoluteDifference": 1.6940658945086007e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.9412835689857645,
+        "imag": 0.038517011994468615
+      },
+      "absoluteDifference": 1.1102230246251565e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.00020287916070354974,
+        "imag": 6.008336152538338e-05
+      },
+      "absoluteDifference": 9.091311596364526e-20
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.9495173401059912,
+        "imag": 0.03870105814248658
+      },
+      "absoluteDifference": 2.396682302503803e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.0003215914892715427,
+        "imag": -0.0005395093254298081
+      },
+      "absoluteDifference": 7.608751328437384e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.8786188826422611,
+        "imag": -0.013993295472389587
+      },
+      "absoluteDifference": 2.3654021677082165e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.00034961302585793865,
+        "imag": -0.0003472090101351666
+      },
+      "absoluteDifference": 1.21217487951527e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.8856207981386109,
+        "imag": -0.013053072976093646
+      },
+      "absoluteDifference": 3.716075702647928e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.0007668084207123056,
+        "imag": -0.0006549758576302292
+      },
+      "absoluteDifference": 9.326659742954563e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.920500031916576,
+        "imag": -0.08018939858841037
+      },
+      "absoluteDifference": 1.1188630228279524e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.0007895166493822478,
+        "imag": -0.00048478426012833677
+      },
+      "absoluteDifference": 2.42434975903054e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.928855314696379,
+        "imag": -0.08065305505393906
+      },
+      "absoluteDifference": 2.3714374201337736e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.00029724699859048236,
+        "imag": -0.0005538673657685612
+      },
+      "absoluteDifference": 6.705420115022808e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.879064403115833,
+        "imag": 0.02554612949570729
+      },
+      "absoluteDifference": 1.1123893155135927e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.0003339158789679677,
+        "imag": -0.00036286828195791917
+      },
+      "absoluteDifference": 1.0842021724855044e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.8860225424697422,
+        "imag": 0.026801230301293492
+      },
+      "absoluteDifference": 6.059128614320849e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.0007961206011658172,
+        "imag": -0.0006203333824174488
+      },
+      "absoluteDifference": 9.326659742954563e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.9239154965607581,
+        "imag": -0.038751512092375255
+      },
+      "absoluteDifference": 1.3472894910096233e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.000811165711356349,
+        "imag": -0.0004491556214255997
+      },
+      "absoluteDifference": 3.428548309156935e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.9322898919198112,
+        "imag": -0.03883909656285856
+      },
+      "absoluteDifference": 2.5476231888929306e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.0014917685941592171,
+        "imag": -0.002084419683440144
+      },
+      "absoluteDifference": 8.940560153363745e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.9400029146818054,
+        "imag": 0.023342062953703918
+      },
+      "absoluteDifference": 4.484587321511725e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.0017493134645773882,
+        "imag": -0.0017959917125206985
+      },
+      "absoluteDifference": 1.3884562417838567e-18
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.9422772109070238,
+        "imag": 0.021938581365825244
+      },
+      "absoluteDifference": 4.444278938805073e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.0013623742510085143,
+        "imag": 0.0007235557382208669
+      },
+      "absoluteDifference": 6.505213034913027e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -1.232971723208806,
+        "imag": 0.12760682144243723
+      },
+      "absoluteDifference": 4.577566798522237e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.0012512949338228643,
+        "imag": 0.0011578601401551062
+      },
+      "absoluteDifference": 1.5332934166833741e-18
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -1.2430898547053815,
+        "imag": 0.12802850560543103
+      },
+      "absoluteDifference": 6.684427777288335e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.0012080600670194813,
+        "imag": -0.002214749029814326
+      },
+      "absoluteDifference": 8.673617379884035e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.9155264419977758,
+        "imag": 0.13522728781805685
+      },
+      "absoluteDifference": 3.7238012298709097e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.0014941594617552457,
+        "imag": -0.0019637769465700814
+      },
+      "absoluteDifference": 1.2266347333466993e-18
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.9179161282725959,
+        "imag": 0.13412818718160296
+      },
+      "absoluteDifference": 4.577566798522237e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.001244409089157038,
+        "imag": 0.0008698031649561045
+      },
+      "absoluteDifference": 6.85709661831387e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -1.1892668064831151,
+        "imag": 0.2721256462450783
+      },
+      "absoluteDifference": 4.965068306494546e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.0010839497366741644,
+        "imag": 0.0012808036579589086
+      },
+      "absoluteDifference": 1.454609855418324e-18
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -1.1991010912751485,
+        "imag": 0.2737477241800778
+      },
+      "absoluteDifference": 7.021666937153402e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.0014232609837165709,
+        "imag": -0.002453555224735961
+      },
+      "absoluteDifference": 9.69739903612216e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.939667027242561,
+        "imag": 0.021890081991262404
+      },
+      "absoluteDifference": 4.0318795166576483e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.0016853996832960959,
+        "imag": -0.0021095855761625176
+      },
+      "absoluteDifference": 9.69739903612216e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.94174353529514,
+        "imag": 0.020593469876142523
+      },
+      "absoluteDifference": 2.6558837364083264e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.001573086637649887,
+        "imag": 0.0007390016015737776
+      },
+      "absoluteDifference": 1.2266347333466993e-18
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -1.2196403895915195,
+        "imag": 0.12028486340976889
+      },
+      "absoluteDifference": 2.6945789820192466e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.0014459733064497026,
+        "imag": 0.0012339726749218901
+      },
+      "absoluteDifference": 4.84869951806108e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -1.2298553897637872,
+        "imag": 0.1206457264985399
+      },
+      "absoluteDifference": 4.965068306494546e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.0010619425350118763,
+        "imag": -0.0025482851782033192
+      },
+      "absoluteDifference": 9.69739903612216e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.9039731123404111,
+        "imag": 0.14040827129577543
+      },
+      "absoluteDifference": 3.2487068343022356e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.0013585637527164453,
+        "imag": -0.0022496411620103888
+      },
+      "absoluteDifference": 9.69739903612216e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.9061414804369707,
+        "imag": 0.13942067748677164
+      },
+      "absoluteDifference": 2.618455766672135e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.0014241720906804738,
+        "imag": 0.0009128092020770945
+      },
+      "absoluteDifference": 1.2266347333466993e-18
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -1.1616488206999496,
+        "imag": 0.2708973346290856
+      },
+      "absoluteDifference": 4.965068306494546e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.001238677803891011,
+        "imag": 0.001374305935680468
+      },
+      "absoluteDifference": 2.168404344971009e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -1.1714601956352249,
+        "imag": 0.272542288850492
+      },
+      "absoluteDifference": 2.7755575615628914e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 9.431837431082055e-05,
+        "imag": -0.00013368252252833363
+      },
+      "absoluteDifference": 2.984634504813805e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.8743317472845454,
+        "imag": 0.004108473447768615
+      },
+      "absoluteDifference": 1.3472894910096233e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.00014997307215479158,
+        "imag": -0.00015624179205799354
+      },
+      "absoluteDifference": 7.666467083416871e-20
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.8817800695065833,
+        "imag": 0.003793496831843878
+      },
+      "absoluteDifference": 2.2530044628618934e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 0.0002840430526186374,
+        "imag": -0.00025766235829567755
+      },
+      "absoluteDifference": 3.428548309156935e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.8966975106413745,
+        "imag": 0.019921682321086234
+      },
+      "absoluteDifference": 3.3486903561235222e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.0003469955968735921,
+        "imag": -0.00028453898200110026
+      },
+      "absoluteDifference": 1.21217487951527e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.9047119205857206,
+        "imag": 0.019998273695129815
+      },
+      "absoluteDifference": 3.469446951953614e-18
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 9.360398392398876e-05,
+        "imag": -0.00013279401313228266
+      },
+      "absoluteDifference": 3.090451682267672e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.8682491695698438,
+        "imag": 0.004462034521694813
+      },
+      "absoluteDifference": 2.221817818891996e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.00014886175603925824,
+        "imag": -0.00015522071236822376
+      },
+      "absoluteDifference": 7.666467083416871e-20
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.8756458280373692,
+        "imag": 0.004152503854320927
+      },
+      "absoluteDifference": 3.334743633497465e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 0.00028195498295124574,
+        "imag": -0.00025599451771056214
+      },
+      "absoluteDifference": 2.9193036915438557e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.890452472730865,
+        "imag": 0.020175041217234464
+      },
+      "absoluteDifference": 4.442111658486589e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.0003444579596466285,
+        "imag": -0.00028271173447771996
+      },
+      "absoluteDifference": 5.421010862427522e-20
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.8984111107686665,
+        "imag": 0.020254602685646824
+      },
+      "absoluteDifference": 7.979727989493313e-17
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.0005906224135961168,
+        "imag": -0.000777442963056039
+      },
+      "absoluteDifference": 8.940560153363745e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.8922899934075319,
+        "imag": -0.0002596381571748818
+      },
+      "absoluteDifference": 4.736057693376371e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.0007193672004202727,
+        "imag": -0.0005874911581493908
+      },
+      "absoluteDifference": 2.168404344971009e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.8982315580882019,
+        "imag": -0.000201377263874161
+      },
+      "absoluteDifference": 5.686580344659e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.000315213192691196,
+        "imag": -0.00015939968767785616
+      },
+      "absoluteDifference": 6.600512054178148e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.996722894908532,
+        "imag": -0.0029137416970905633
+      },
+      "absoluteDifference": 3.716075702647928e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.00023629970459097534,
+        "imag": 5.84501422110931e-05
+      },
+      "absoluteDifference": 3.1848438816761693e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -1.0054733357037955,
+        "imag": -0.0030185904779147467
+      },
+      "absoluteDifference": 2.2204502844110104e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.0005380626517479936,
+        "imag": -0.0008035803357721186
+      },
+      "absoluteDifference": 9.75781955236954e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.8822684062670378,
+        "imag": 0.05244234932707236
+      },
+      "absoluteDifference": 3.4506610788621483e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.0006765778961920389,
+        "imag": -0.0006233689309114858
+      },
+      "absoluteDifference": 1.0842021724855044e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.8881396963582575,
+        "imag": 0.0528508664791708
+      },
+      "absoluteDifference": 6.919785635576268e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.0003210817385476989,
+        "imag": -0.0001389900412296234
+      },
+      "absoluteDifference": 7.047314121155779e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.9856833471720942,
+        "imag": 0.05598595677483952
+      },
+      "absoluteDifference": 3.3887102699122705e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.00023018959511845105,
+        "imag": 7.174863771193756e-05
+      },
+      "absoluteDifference": 3.431225817030187e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.9943415510769151,
+        "imag": 0.05639909253678258
+      },
+      "absoluteDifference": 2.396682302503803e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.0012623823163901767,
+        "imag": -0.0014206851698814597
+      },
+      "absoluteDifference": 1.0842021724855044e-18
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.9293979820556193,
+        "imag": -0.011912468245562989
+      },
+      "absoluteDifference": 3.3766115072321297e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.0013918003170624183,
+        "imag": -0.000992381666488399
+      },
+      "absoluteDifference": 1.3010426069826053e-18
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.9325898485624865,
+        "imag": -0.010815527547610998
+      },
+      "absoluteDifference": 1.2336067374247464e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.0022384911513257345,
+        "imag": 0.0006959521412061301
+      },
+      "absoluteDifference": 4.336808689942018e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -1.1740279856786076,
+        "imag": -0.06957644741528367
+      },
+      "absoluteDifference": 2.237726045655905e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.0022870819743918335,
+        "imag": 0.0012070716708109915
+      },
+      "absoluteDifference": 1.8526854844795106e-18
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -1.1838318379230834,
+        "imag": -0.07012115795678514
+      },
+      "absoluteDifference": 4.545902364027965e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.0010944856663140236,
+        "imag": -0.001570148126089495
+      },
+      "absoluteDifference": 1.1056736068366554e-18
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.930907303903887,
+        "imag": 0.09801172859741794
+      },
+      "absoluteDifference": 3.3335590258932494e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.0012745756710405697,
+        "imag": -0.001157105416090267
+      },
+      "absoluteDifference": 1.3010426069826053e-18
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.9339697733231614,
+        "imag": 0.09948630897916372
+      },
+      "absoluteDifference": 2.2247786310271853e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.0021564184376128056,
+        "imag": 0.0009607870923013969
+      },
+      "absoluteDifference": 5.421010862427522e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -1.1823839895893504,
+        "imag": 0.06927538276678208
+      },
+      "absoluteDifference": 2.220446049250313e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.0021445613302320276,
+        "imag": 0.0014777089446191866
+      },
+      "absoluteDifference": 1.6935779332544402e-18
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -1.192253326708271,
+        "imag": 0.06989017391101042
+      },
+      "absoluteDifference": 4.460365043975677e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.002106890789407154,
+        "imag": -0.0019203839655518179
+      },
+      "absoluteDifference": 6.133173666733497e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.976112953246608,
+        "imag": -0.004608492857037449
+      },
+      "absoluteDifference": 9.280770596475918e-17
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.00248837083764756,
+        "imag": -0.001377449721544524
+      },
+      "absoluteDifference": 6.133173666733497e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.9756590392558253,
+        "imag": -0.003844497931539984
+      },
+      "absoluteDifference": 9.280770596475918e-17
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.0018819484060511326,
+        "imag": 0.0016993384483401225
+      },
+      "absoluteDifference": 1.1677214766175423e-18
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -1.423498285403267,
+        "imag": -0.027618117627288708
+      },
+      "absoluteDifference": 3.712308238590367e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.0017176990119777836,
+        "imag": 0.002403029590281897
+      },
+      "absoluteDifference": 0.0
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -1.4347031300030555,
+        "imag": -0.028004259840546802
+      },
+      "absoluteDifference": 2.9052345828309734e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.0017584063572982202,
+        "imag": -0.0021877308529170154
+      },
+      "absoluteDifference": 1.2266347333466993e-18
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.9502905031420946,
+        "imag": 0.14355095066271856
+      },
+      "absoluteDifference": 2.3714374201337736e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.0022118611523306076,
+        "imag": -0.0017174024061771933
+      },
+      "absoluteDifference": 1.454609855418324e-18
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.9497330570926277,
+        "imag": 0.1442253483837266
+      },
+      "absoluteDifference": 2.237726045655905e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.0015730988137887274,
+        "imag": 0.0019385771700105288
+      },
+      "absoluteDifference": 6.133173666733497e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -1.3890097734281293,
+        "imag": 0.18901556243675943
+      },
+      "absoluteDifference": 3.3306690738754696e-16
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.0013065925465988843,
+        "imag": 0.0025982392084017976
+      },
+      "absoluteDifference": 4.84869951806108e-19
+    },
+    {
+      "case": "test02-floating-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -1.3999687392613993,
+        "imag": 0.1903392034433376
+      },
+      "absoluteDifference": 2.7755575615628914e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": -0.001070166836170035,
+        "imag": 0.0003831654974954634
+      },
+      "absoluteDifference": 3.9091465258659384e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.2823882233049162,
+        "imag": 0.014131093704535693
+      },
+      "absoluteDifference": 5.553824967135427e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": -0.0009163530399968517,
+        "imag": 0.00030765664297399025
+      },
+      "absoluteDifference": 6.133173666733497e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.30237937204329945,
+        "imag": 0.015321394663478602
+      },
+      "absoluteDifference": 1.214306433183765e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 0.00023029356906134895,
+        "imag": -0.0003124290058199571
+      },
+      "absoluteDifference": 6.710896163395683e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.259405590488074,
+        "imag": 0.0050694034752504615
+      },
+      "absoluteDifference": 1.1223875381922366e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.00037422265866517764,
+        "imag": -0.00038195657733644533
+      },
+      "absoluteDifference": 1.6263032587282567e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.2738278306243246,
+        "imag": 0.0042974417418435735
+      },
+      "absoluteDifference": 1.1129640277756033e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": -0.0011231739130622125,
+        "imag": 0.0004629230991886424
+      },
+      "absoluteDifference": 4.84869951806108e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.3007537686791429,
+        "imag": 0.029301262998675876
+      },
+      "absoluteDifference": 1.734723475976807e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": -0.0009627702767568163,
+        "imag": 0.00037457015035354424
+      },
+      "absoluteDifference": 8.467889666272201e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.3220355115531799,
+        "imag": 0.03157833778536173
+      },
+      "absoluteDifference": 6.938893903907228e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 0.00023012339343553244,
+        "imag": -0.00034512840869260254
+      },
+      "absoluteDifference": 7.496887597442729e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.2766746990198936,
+        "imag": 0.018470449906823214
+      },
+      "absoluteDifference": 1.1443916996305594e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.00038027565588234454,
+        "imag": -0.00042659840524025876
+      },
+      "absoluteDifference": 1.0842021724855044e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.29211010332213716,
+        "imag": 0.018372359081454927
+      },
+      "absoluteDifference": 2.0816681711721685e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.009500386455737673,
+        "imag": -0.003338057693386372
+      },
+      "absoluteDifference": 1.734723475976807e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.003588582050958449,
+        "imag": -0.01619094348539156
+      },
+      "absoluteDifference": 2.711112516444421e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.009075403937044101,
+        "imag": -0.0040136442011425135
+      },
+      "absoluteDifference": 7.152448122690996e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": 0.0002551330037679687,
+        "imag": -0.017383776955629208
+      },
+      "absoluteDifference": 2.03553724484156e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.0074942852208944736,
+        "imag": 0.006061159268660405
+      },
+      "absoluteDifference": 1.939479807224432e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.2543851052834829,
+        "imag": 0.007222549582618199
+      },
+      "absoluteDifference": 2.0816681711721685e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.00781509016630382,
+        "imag": 0.005314961400564854
+      },
+      "absoluteDifference": 2.4532694666933987e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.2840369788640485,
+        "imag": 0.007982917180064832
+      },
+      "absoluteDifference": 8.22668717966003e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.00553991434466166,
+        "imag": -0.00585902222523305
+      },
+      "absoluteDifference": 1.2266347333466993e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.008489949475148471,
+        "imag": -0.010211247688569677
+      },
+      "absoluteDifference": 2.314409786063609e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.004989707752463621,
+        "imag": -0.006184201703504669
+      },
+      "absoluteDifference": 4.9065389333867974e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.006190775901342263,
+        "imag": -0.012469454051978792
+      },
+      "absoluteDifference": 1.5442936699178228e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.0031135089476894435,
+        "imag": 0.007062282641397597
+      },
+      "absoluteDifference": 1.939479807224432e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.17845529453086373,
+        "imag": 0.0983924419477829
+      },
+      "absoluteDifference": 2.7755575615628914e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.0036154331865041658,
+        "imag": 0.006648644622198946
+      },
+      "absoluteDifference": 1.939479807224432e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.1992864475464717,
+        "imag": 0.10980332166387219
+      },
+      "absoluteDifference": 1.1188630228279524e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": -0.006471007023805744,
+        "imag": -0.06464267460322416
+      },
+      "absoluteDifference": 4.163336342344337e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.09987478916109685,
+        "imag": -1.5438658316341487
+      },
+      "absoluteDifference": 1.120668959476846e-15
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": -0.009702197464311191,
+        "imag": -0.06344486981990761
+      },
+      "absoluteDifference": 2.823925224926892e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.10065296838579647,
+        "imag": -1.6746268924064993
+      },
+      "absoluteDifference": 6.938893903907228e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 0.044050685148290955,
+        "imag": 0.04981551166215413
+      },
+      "absoluteDifference": 2.8609792490763984e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.4501081192652897,
+        "imag": 0.18566743256884197
+      },
+      "absoluteDifference": 1.7554167342883506e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.04023339229067745,
+        "imag": 0.0500675564648013
+      },
+      "absoluteDifference": 2.5018537765542006e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.47514972371703457,
+        "imag": 0.2692549488085404
+      },
+      "absoluteDifference": 2.9893669801409083e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": -0.0047451370082988754,
+        "imag": -0.01744066188234708
+      },
+      "absoluteDifference": 1.4304896245381992e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.09832628233109293,
+        "imag": -0.4190481385996603
+      },
+      "absoluteDifference": 2.7894008272968645e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": -0.00557675057030257,
+        "imag": -0.01696355333825492
+      },
+      "absoluteDifference": 4.9065389333867974e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.10454659538284031,
+        "imag": -0.4548931679852784
+      },
+      "absoluteDifference": 1.6653345369377348e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 0.014375867361508709,
+        "imag": 0.011645794397401769
+      },
+      "absoluteDifference": 7.152448122690996e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.11498044757160931,
+        "imag": 0.07162371224644595
+      },
+      "absoluteDifference": 5.003707553108401e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.013339982108262441,
+        "imag": 0.011890310657592948
+      },
+      "absoluteDifference": 4.9065389333867974e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.11801208641167152,
+        "imag": 0.09571042749581142
+      },
+      "absoluteDifference": 6.206335383118183e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": -0.05786995465026556,
+        "imag": -0.026177110244283045
+      },
+      "absoluteDifference": 2.0816681711721685e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -1.504290085386803,
+        "imag": -0.8798219851884992
+      },
+      "absoluteDifference": 7.108895957933346e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": -0.05834633420643144,
+        "imag": -0.022851502873332034
+      },
+      "absoluteDifference": 3.273069708340169e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -1.625050074633662,
+        "imag": -0.9578583429740823
+      },
+      "absoluteDifference": 5.551115123125783e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 0.06562513625039014,
+        "imag": -0.02101148042545214
+      },
+      "absoluteDifference": 1.3877787807814457e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.15676744897408296,
+        "imag": 0.2792241613862176
+      },
+      "absoluteDifference": 8.326672684688674e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.0638870708275538,
+        "imag": -0.01763153237570428
+      },
+      "absoluteDifference": 1.5515838457795457e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.10555682367452474,
+        "imag": 0.32701592246478933
+      },
+      "absoluteDifference": 8.326672684688674e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": -0.010542558528253013,
+        "imag": -0.01685258736641408
+      },
+      "absoluteDifference": 6.938893903907228e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.23948850096296134,
+        "imag": -0.49002350427156327
+      },
+      "absoluteDifference": 1.5700924586837752e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": -0.011243158235998208,
+        "imag": -0.016068556027157937
+      },
+      "absoluteDifference": 1.1636878843346593e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.2574300315657374,
+        "imag": -0.5312912697005987
+      },
+      "absoluteDifference": 1.2412670766236366e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 0.020743136073778295,
+        "imag": 0.00590018122858387
+      },
+      "absoluteDifference": 5.204170427930421e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.0892522234375711,
+        "imag": 0.04558782259787973
+      },
+      "absoluteDifference": 3.7367087251761353e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.019704339112448562,
+        "imag": 0.006479671976949774
+      },
+      "absoluteDifference": 5.553824967135427e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 8,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.08419168394676302,
+        "imag": 0.06691855773673182
+      },
+      "absoluteDifference": 2.7755575615628914e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": -0.0003725042811775482,
+        "imag": 7.448900507919807e-05
+      },
+      "absoluteDifference": 2.7641840170916385e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.2422391457054072,
+        "imag": -0.001581926973806312
+      },
+      "absoluteDifference": 2.927988285396154e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": -0.0004337539220018139,
+        "imag": 7.117313231212572e-05
+      },
+      "absoluteDifference": 6.594944350062753e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.2586480020267304,
+        "imag": -0.001792548031763634
+      },
+      "absoluteDifference": 9.324138683375338e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 0.0012954900159273415,
+        "imag": -0.0006558955656247229
+      },
+      "absoluteDifference": 8.940560153363745e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.2354904056754249,
+        "imag": -0.0021638073256459857
+      },
+      "absoluteDifference": 1.1116535886383198e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.0012612508246438944,
+        "imag": -0.0006736416584732656
+      },
+      "absoluteDifference": 4.84869951806108e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.25205193019974187,
+        "imag": -0.0020941648859046317
+      },
+      "absoluteDifference": 1.1143151226922295e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": -0.00035379211141679426,
+        "imag": 7.225861188130387e-05
+      },
+      "absoluteDifference": 2.7939250479261704e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.23026580294729415,
+        "imag": -0.000558596096757118
+      },
+      "absoluteDifference": 1.1492543028346347e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": -0.000412025694951549,
+        "imag": 6.934568615724981e-05
+      },
+      "absoluteDifference": 6.1226831970707105e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.24586400962493954,
+        "imag": -0.0006947818735813067
+      },
+      "absoluteDifference": 3.179227606753791e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 0.0012288648297669328,
+        "imag": -0.0006285137663438902
+      },
+      "absoluteDifference": 8.940560153363745e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.22385308030516338,
+        "imag": -0.001138030874365946
+      },
+      "absoluteDifference": 1.1103585416259206e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.0011962496413700718,
+        "imag": -0.0006452486724197363
+      },
+      "absoluteDifference": 6.942281208919283e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.23959531179398103,
+        "imag": -0.001007217459059314
+      },
+      "absoluteDifference": 1.114502879605742e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.0074998951265080206,
+        "imag": -0.0016624495998016904
+      },
+      "absoluteDifference": 2.6379777400251014e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.08315546129238013,
+        "imag": 0.01763989144107274
+      },
+      "absoluteDifference": 1.5515838457795457e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.007432767781300283,
+        "imag": -0.0022815595613650723
+      },
+      "absoluteDifference": 8.673617379884035e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.08628795213450093,
+        "imag": 0.019300775755734984
+      },
+      "absoluteDifference": 1.734723475976807e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.008046232216235193,
+        "imag": 0.004072421524904375
+      },
+      "absoluteDifference": 8.673617379884035e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.2937416375038706,
+        "imag": -0.001297115563498897
+      },
+      "absoluteDifference": 7.564748243446744e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.008054192203479008,
+        "imag": 0.003468693627046333
+      },
+      "absoluteDifference": 2.168404344971009e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.31915767840233106,
+        "imag": -0.0023925109550382885
+      },
+      "absoluteDifference": 0.0
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.005392264047029656,
+        "imag": -0.004702667314623129
+      },
+      "absoluteDifference": 1.939479807224432e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.06014030499099827,
+        "imag": 0.051492879538285366
+      },
+      "absoluteDifference": 5.0515910130503314e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.005061394985423719,
+        "imag": -0.0051790446363667395
+      },
+      "absoluteDifference": 2.6020852139652106e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.061961661780271265,
+        "imag": 0.05424746141695523
+      },
+      "absoluteDifference": 1.962615573354719e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.004764786987534099,
+        "imag": 0.006917044348836946
+      },
+      "absoluteDifference": 1.939479807224432e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.24079619452140896,
+        "imag": 0.12987691885940697
+      },
+      "absoluteDifference": 8.326672684688674e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.005040413094796416,
+        "imag": 0.006426871951000068
+      },
+      "absoluteDifference": 2.4532694666933987e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.2620693751640751,
+        "imag": 0.1403105224828432
+      },
+      "absoluteDifference": 1.2412670766236366e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": -0.03486822966489432,
+        "imag": -0.13663730940040414
+      },
+      "absoluteDifference": 1.4304896245381993e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.2878868249273477,
+        "imag": -3.4198755629690845
+      },
+      "absoluteDifference": 3.554447978966673e-15
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": -0.04304090236707873,
+        "imag": -0.13239301944012777
+      },
+      "absoluteDifference": 9.020562075079397e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.29967741838357964,
+        "imag": -3.711104339685542
+      },
+      "absoluteDifference": 3.552713678800501e-15
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 0.12028488222144748,
+        "imag": 0.09189863198755545
+      },
+      "absoluteDifference": 1.2794688166302258e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.12002430255770113,
+        "imag": 0.40655709326397876
+      },
+      "absoluteDifference": 3.973993651728112e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.1105464891732548,
+        "imag": 0.09357718556110746
+      },
+      "absoluteDifference": 1.0838898772828417e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.1340712466158233,
+        "imag": 0.5920050658383902
+      },
+      "absoluteDifference": 5.721958498152797e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": -0.004650922124710231,
+        "imag": -0.019153305319303066
+      },
+      "absoluteDifference": 1.411962612463446e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.03467147919729176,
+        "imag": -0.4784338552511236
+      },
+      "absoluteDifference": 2.779024842816778e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": -0.0058000488007348295,
+        "imag": -0.01857341514687909
+      },
+      "absoluteDifference": 7.410741937918042e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.03584553682811581,
+        "imag": -0.51915548451751
+      },
+      "absoluteDifference": 2.237726045655905e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 0.016661631909442805,
+        "imag": 0.013039546465902089
+      },
+      "absoluteDifference": 1.2509268882771003e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.017436164815302146,
+        "imag": 0.056625585324970515
+      },
+      "absoluteDifference": 3.7367087251761353e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.015297852744715307,
+        "imag": 0.01325829924857367
+      },
+      "absoluteDifference": 7.359808400080195e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.019701091395261404,
+        "imag": 0.08252113989810031
+      },
+      "absoluteDifference": 7.152448122690996e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": -0.05666521261278372,
+        "imag": -0.0005799524725107792
+      },
+      "absoluteDifference": 1.1926223897340549e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -1.623517114410566,
+        "imag": -0.312278577752851
+      },
+      "absoluteDifference": 2.482534153247273e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": -0.05543472181410566,
+        "imag": 0.0028500711417399787
+      },
+      "absoluteDifference": 2.083474391183281e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -1.756316352570082,
+        "imag": -0.3426419062666715
+      },
+      "absoluteDifference": 4.440892098500626e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 0.04543687336212791,
+        "imag": -0.04367332375321767
+      },
+      "absoluteDifference": 1.5515838457795457e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.17745809312878502,
+        "imag": 0.0012137405125245235
+      },
+      "absoluteDifference": 4.145453776553441e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.045371049920755586,
+        "imag": -0.03963804723615639
+      },
+      "absoluteDifference": 1.5515838457795457e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.11987331628426448,
+        "imag": 0.017727860177578308
+      },
+      "absoluteDifference": 6.546139416680338e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": -0.01216732721419551,
+        "imag": -0.017947578300519327
+      },
+      "absoluteDifference": 9.341771812940338e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.255620880167133,
+        "imag": -0.578653934173075
+      },
+      "absoluteDifference": 5.551115123125783e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": -0.012977892550459617,
+        "imag": -0.016813043794586067
+      },
+      "absoluteDifference": 7.152448122690996e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.2750141411486455,
+        "imag": -0.6270366717008647
+      },
+      "absoluteDifference": 5.551115123125783e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 0.0236378363383406,
+        "imag": 0.0047716295000797375
+      },
+      "absoluteDifference": 1.734723475976807e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.039057268191625104,
+        "imag": -0.05554596090147512
+      },
+      "absoluteDifference": 3.469446951953614e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.022354398112210728,
+        "imag": 0.005630383740002683
+      },
+      "absoluteDifference": 8.673617379884035e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 10,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.03170081742880385,
+        "imag": -0.033836458008553394
+      },
+      "absoluteDifference": 6.938893903907228e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.0007085158569015927,
+        "imag": -0.00046581273616418237
+      },
+      "absoluteDifference": 2.9193036915438557e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.2271694404388186,
+        "imag": -0.00839921959906378
+      },
+      "absoluteDifference": 1.4304896245381993e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.0006925761858757429,
+        "imag": -0.0004939669744571492
+      },
+      "absoluteDifference": 5.528368034183277e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.24242313562383042,
+        "imag": -0.009125910477052312
+      },
+      "absoluteDifference": 1.443994491455211e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.0009313206575161399,
+        "imag": 0.0005238603569231419
+      },
+      "absoluteDifference": 5.421010862427522e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.22096123590959643,
+        "imag": -0.012575836982960359
+      },
+      "absoluteDifference": 1.153297605929378e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.0009038315552600433,
+        "imag": 0.0004690560956989451
+      },
+      "absoluteDifference": 4.599880250050122e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.23827756299875932,
+        "imag": -0.0121742521651934
+      },
+      "absoluteDifference": 5.745575946153046e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.0006953889935787607,
+        "imag": -0.0004931381254066395
+      },
+      "absoluteDifference": 4.336808689942018e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.2285501407429063,
+        "imag": -0.0003900819771861476
+      },
+      "absoluteDifference": 1.6986984711915422e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.000678375750333187,
+        "imag": -0.0005208618144929831
+      },
+      "absoluteDifference": 4.336808689942018e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.2439023107366725,
+        "imag": -0.0005797608654864201
+      },
+      "absoluteDifference": 1.452675554453156e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.0009171993065540009,
+        "imag": 0.0005593570378451205
+      },
+      "absoluteDifference": 6.505213034913027e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.22246032486784698,
+        "imag": -0.004806584835738518
+      },
+      "absoluteDifference": 1.1509795486941974e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.0008915209946794715,
+        "imag": 0.0005033174738592328
+      },
+      "absoluteDifference": 3.9091465258659384e-19
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 10000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.23984498331068158,
+        "imag": -0.0037895244292767576
+      },
+      "absoluteDifference": 7.759010109592135e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.007052487375040224,
+        "imag": -0.000825345149131305
+      },
+      "absoluteDifference": 4.497805884834468e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.0923864145272728,
+        "imag": 0.02546820623346699
+      },
+      "absoluteDifference": 2.8609792490763984e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.006957902278829951,
+        "imag": -0.0013975729384517325
+      },
+      "absoluteDifference": 1.788112030672749e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.09622137109353082,
+        "imag": 0.027652807371103875
+      },
+      "absoluteDifference": 5.647850449853784e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.007460996698088921,
+        "imag": 0.0018806710698167774
+      },
+      "absoluteDifference": 2.611104600503256e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.2624534362940689,
+        "imag": 0.02828867027747502
+      },
+      "absoluteDifference": 1.734723475976807e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.0074480916269126975,
+        "imag": 0.0013408520418615566
+      },
+      "absoluteDifference": 3.836298902887396e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.2873061628248994,
+        "imag": 0.026886770885920012
+      },
+      "absoluteDifference": 9.159602786276758e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": 0.005692194595678407,
+        "imag": -0.0034557590121571144
+      },
+      "absoluteDifference": 3.998340051969456e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.0688478306136205,
+        "imag": 0.0577685468681581
+      },
+      "absoluteDifference": 2.8609792490763984e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": 0.0053882476281291855,
+        "imag": -0.003906838130390079
+      },
+      "absoluteDifference": 1.939479807224432e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.07126577743561228,
+        "imag": 0.06112796015940462
+      },
+      "absoluteDifference": 3.1031676915590914e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": -0.005628771072526955,
+        "imag": 0.004515126605028867
+      },
+      "absoluteDifference": 3.1273172206927508e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.2127777115441857,
+        "imag": 0.1265348442748343
+      },
+      "absoluteDifference": 2.7755575615628914e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": -0.005828406071529803,
+        "imag": 0.004049741929654536
+      },
+      "absoluteDifference": 2.742838647325548e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 100000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.23451874848767812,
+        "imag": 0.13503699209563227
+      },
+      "absoluteDifference": 1.0007415106216802e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": -0.033956709012942544,
+        "imag": -0.28907229609259427
+      },
+      "absoluteDifference": 4.440892098500626e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": 0.6890312779424326,
+        "imag": -6.9030176064620274
+      },
+      "absoluteDifference": 1.3680542743754176e-14
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": -0.05116536017057729,
+        "imag": -0.28335513741755874
+      },
+      "absoluteDifference": 3.888257972851056e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": 0.7691823671992276,
+        "imag": -7.485528027102323
+      },
+      "absoluteDifference": 1.2080532582046505e-14
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 0.2277392154191322,
+        "imag": 0.2408981005909626
+      },
+      "absoluteDifference": 5.338891568193822e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -1.0391514547310094,
+        "imag": 1.1915995003440176
+      },
+      "absoluteDifference": 2.401779625492033e-15
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.2075464716265406,
+        "imag": 0.24209998823566728
+      },
+      "absoluteDifference": 4.594365265244385e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -1.1089419058532262,
+        "imag": 1.5665457241743974
+      },
+      "absoluteDifference": 2.710399819191012e-15
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": -0.005713304289256084,
+        "imag": -0.02013122695536913
+      },
+      "absoluteDifference": 7.152448122690996e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.029964737531050525,
+        "imag": -0.4978697899683453
+      },
+      "absoluteDifference": 3.8864000809048077e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": -0.006869501376832065,
+        "imag": -0.019528778939465134
+      },
+      "absoluteDifference": 6.992893892674703e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.030931167729060974,
+        "imag": -0.540133936335794
+      },
+      "absoluteDifference": 2.2473876566261383e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 0.018918126580906296,
+        "imag": 0.014497509017133656
+      },
+      "absoluteDifference": 9.341771812940338e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.060146806517727844,
+        "imag": 0.09645670378914371
+      },
+      "absoluteDifference": 4.654751537338637e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.017498517928125023,
+        "imag": 0.01481354596004587
+      },
+      "absoluteDifference": 6.938893903907228e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 175000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": -0.0608165866229453,
+        "imag": 0.1238689400729692
+      },
+      "absoluteDifference": 4.3885418357208765e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": -0.05065067095136533,
+        "imag": 0.010652899509516261
+      },
+      "absoluteDifference": 3.469446951953614e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -1.5408985454573552,
+        "imag": -0.03127394792236402
+      },
+      "absoluteDifference": 3.7192730237993177e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": -0.04905461274019776,
+        "imag": 0.013484311916685145
+      },
+      "absoluteDifference": 2.8609792490763984e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -1.6671661085590876,
+        "imag": -0.037940483535276126
+      },
+      "absoluteDifference": 4.441434166503682e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 0.03338782657826471,
+        "imag": -0.051482358805837694
+      },
+      "absoluteDifference": 1.5515838457795457e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": 0.011576952772151173,
+        "imag": 0.029860609488827926
+      },
+      "absoluteDifference": 1.1812689913899012e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.034145098409090385,
+        "imag": -0.048011149368054326
+      },
+      "absoluteDifference": 1.3877787807814457e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "loaded",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": 0.06526979883613826,
+        "imag": 0.03147930640691412
+      },
+      "absoluteDifference": 2.5018537765542006e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 1,
+      "value": {
+        "real": -0.013503794353682224,
+        "imag": -0.01723239717622517
+      },
+      "absoluteDifference": 4.9065389333867974e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 1,
+      "value": {
+        "real": -0.2759532328441686,
+        "imag": -0.5906218851967419
+      },
+      "absoluteDifference": 1.2412670766236366e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HdiffNear",
+      "pair": 2,
+      "value": {
+        "real": -0.014280207344287319,
+        "imag": -0.016097808645769787
+      },
+      "absoluteDifference": 4.9065389333867974e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "HcommonNear",
+      "pair": 2,
+      "value": {
+        "real": -0.29700855118907216,
+        "imag": -0.6397864168309156
+      },
+      "absoluteDifference": 1.5700924586837752e-16
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 1,
+      "value": {
+        "real": 0.02577432192835005,
+        "imag": 0.0030545767867174744
+      },
+      "absoluteDifference": 3.903127820947816e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 1,
+      "value": {
+        "real": -0.009169841289791227,
+        "imag": 0.009971137021648507
+      },
+      "absoluteDifference": 4.97052010033583e-17
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hdiff",
+      "pair": 2,
+      "value": {
+        "real": 0.024598426594953354,
+        "imag": 0.003990347461713457
+      },
+      "absoluteDifference": 4.9065389333867974e-18
+    },
+    {
+      "case": "test02-near-fine",
+      "window_ns": 12,
+      "frequency_Hz": 200000000.0,
+      "basis": "drive",
+      "output": "Hcommon",
+      "pair": 2,
+      "value": {
+        "real": 0.00024505117297075733,
+        "imag": 0.030650249120750733
+      },
+      "absoluteDifference": 8.023096076392733e-18
+    }
+  ]
+}

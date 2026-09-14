@@ -4,7 +4,8 @@
 
 ## 먼저 확인할 파일
 
-- [HANDOFF.md](HANDOFF.md): 현재 결론, 남은 계산과 다음 작업
+- [HANDOFF.md](HANDOFF.md): 현재 결론, 다음 작업과 내려받기 명령
+- [리모트 복원 검증](remote-restore-verification.json): 실제 원격 커밋에서의 원본·모델·재분석 확인
 - [manifest.json](manifest.json): 완료 실행별 ZIP, 내부 파일 목록, SHA-256, 아직 보관되지 않은 실행
 - [environment.json](environment.json): 실제 사용한 Python·openEMS·CSXCAD 버전과 설치 자료
 - [TEST 02 결과서](../../reports/porta-test-02/index.html): 조건·관측점별 그래프와 3D
