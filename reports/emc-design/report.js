@@ -1,0 +1,51 @@
+(()=>{
+'use strict';
+const $=id=>document.getElementById(id);
+const paths={
+ cable:{source:'외부 케이블의 외란','source-note':'커넥터에서의 CM·DM 입력',coupling:'M12 · 실드 · 0 V 경계','coupling-note':'두 선의 불균형과 귀환 경로',victim:'PHY 입력과 전원','victim-note':'차동 잡음 · 공통모드 · 기준 전위',keep:'커넥터·신호선·실드·기준 도체와 양쪽 종단.',omit:'보드 민감도 비교에서는 20 m 상세 형상을 경계 입력과 소스 임피던스로 대체.',measure:'같은 입력에서 RX 차동 잡음과 PHY 전원 변동이 줄어드는가?'},
+ drive:{source:'벅 · 모터 구동부','source-note':'급변하는 전압과 전류',coupling:'근접 배선 · 공유 리턴','coupling-note':'기생 C · 루프 결합 · 공유 임피던스',victim:'민감 입력과 PHY 전원','victim-note':'입력 잡음 · 전원과 기준 전위의 변동',keep:'스위칭 노드·고주파 전류 루프·피해 배선과 리턴.',omit:'회전자·기어 등 기계 세부는 전압 노드와 전류 루프로 단순화.',measure:'같은 스위칭 자극에서 배치·루프·리턴 변경이 피해 전압을 줄이는가?'},
+ rf:{source:'외부 RF','source-note':'입사장 크기 · 방향 · 편파',coupling:'함체 접합부 · 관통부','coupling-note':'표면 전류와 내부 장의 결합',victim:'내부 배선과 회로 단자','victim-note':'같은 관측점의 전압·전류',keep:'큰 외형·접합의 전기적 조건·관통부·PCB와 배선 종단.',omit:'두꺼운 금속 벽의 미세 조직·도장 질감·장식 형상.',measure:'같은 RF 입력에서 접합 조건을 바꿨을 때 피해량이 얼마나 달라지는가?'}
+};
+for(const button of document.querySelectorAll('[data-overview]'))button.addEventListener('click',()=>{
+ const selected=paths[button.dataset.overview];
+ for(const [key,value] of Object.entries(selected))$('path-'+key).textContent=value;
+ for(const item of document.querySelectorAll('[data-overview]'))item.setAttribute('aria-pressed',String(item===button));
+});
+function revealSection(hash,scroll=false){
+ let id;try{id=decodeURIComponent((hash||'').slice(1))}catch{return}
+ const target=$(id);if(!target)return;
+ let parent=target;while(parent){if(parent.tagName==='DETAILS')parent.open=true;parent=parent.parentElement}
+ const sectionDetails=target.querySelector('details.deep-section');if(sectionDetails)sectionDetails.open=true;
+ if(scroll)target.scrollIntoView({block:'start'});
+}
+for(const link of document.querySelectorAll('a[href^="#"]'))link.addEventListener('click',()=>revealSection(link.getAttribute('href')));
+window.addEventListener('hashchange',()=>revealSection(location.hash,true));
+revealSection(location.hash,true);
+let printDetails=null;
+window.addEventListener('beforeprint',()=>{
+ if(printDetails)return;
+ printDetails=Array.from(document.querySelectorAll('.deep-section,.supporting-note')).map(node=>[node,node.open]);
+ for(const [node] of printDetails)node.open=true;
+});
+window.addEventListener('afterprint',()=>{for(const [node,open] of printDetails||[])node.open=open;printDetails=null});
+const inputs=['has-cable','has-metal','has-drive','has-dc','has-magnetic'];
+const presetValues={battery:[false,false,false,false,false],wired:[true,false,false,true,false],pala:[true,true,true,true,true]};
+function row(a,b,c){return '<tr><td>'+a+'</td><td>'+b+'</td><td>'+c+'</td></tr>';}
+function updateScope(){
+ const [c,m,d,p,h]=inputs.map(id=>$(id).checked);
+ const rows=[];
+ rows.push(row('외부 RF',m?'함체 포함 검토':'PCB·배선 직접 결합 검토',m?'금속 벽의 미세 모델은 줄이되 접합·관통부와 귀환 경로는 유지':'기본 RF 차폐 이득을 가정하지 않음. PCB와 대표 내부 배선이 수신 구조'));
+ rows.push(row('케이블 전도 RF·과도 외란',c?'주요 검토 항목':'외부 도선 경로는 기본 범위 제외',c?'접속부의 CM·DM·실드 경로를 구분. EFT·서지는 환경·포트 조건에 따라 적용':'충전·디버그·접지선이 연결되면 다시 포함. RF와 ESD는 별도'));
+ rows.push(row('외부 전원 변동',p?'DC 입력에서 검토':'외부 DC 입력 항목 제외',p?'입력 과도·저하와 로컬 전원 전달을 회로 모델로 확인':'배터리 내부 저항·잔량·내부 부하 변동은 별도의 전원 설계 항목'));
+ rows.push(row('내부 스위칭 결합',d?'주요 발생원으로 검토':'해당 전력부 발생원 제외',d?'전압 노드·전류 루프·공유 리턴을 남김. 외함은 내부 결합을 자동 제거하지 않음':'디지털 클록·센서 자체의 동작 전류까지 없다는 뜻은 아님'));
+ rows.push(row('ESD',m?'접촉 표면·함체 전류 경로 검토':'접근 가능한 입력·표면 검토',m?'함체에 방전해도 전류의 귀환·장 결합이 회로에 영향 가능':'외부 도선이 없어도 작업자·인접 물체의 방전 가능. 플라스틱은 ESD에서 무함체와 다름'));
+ rows.push(row('저주파 자기장',h?'민감 소자와 위치를 별도 검토':'기본 우선순위를 낮춤',h?'홀·자기 센서 등과 발생원 거리를 봄. 단순 PEC RF 해석으로 대체하지 않음':'민감 소자·큰 피해 루프·강한 근접 발생원이 새로 생기면 다시 포함'));
+ $('scope-results').innerHTML=rows.join('');
+ for(const b of document.querySelectorAll('[data-preset]'))b.setAttribute('aria-pressed',String(presetValues[b.dataset.preset].every((v,i)=>v===$(inputs[i]).checked)));
+}
+for(const id of inputs)$(id).addEventListener('change',()=>{if(id==='has-dc'&&$('has-dc').checked)$('has-cable').checked=true;if(id==='has-cable'&&!$('has-cable').checked)$('has-dc').checked=false;updateScope();});
+for(const b of document.querySelectorAll('[data-preset]'))b.addEventListener('click',()=>{presetValues[b.dataset.preset].forEach((v,i)=>$(inputs[i]).checked=v);updateScope();});
+function response(x){return [x*x/(1+x*x),x/(1+x*x)];}
+function updateRC(){const f=Number($('freq-control').value),delta=Number($('delta-control').value);const a=response(2*Math.PI*f*1e6*50*2e-12);const b=response(2*Math.PI*f*1e6*50*(2+delta)*1e-12);const mv=Math.hypot(a[0]-b[0],a[1]-b[1])*1000;$('freq-label').textContent=f+' MHz';$('delta-label').textContent=delta.toFixed(2)+' pF';$('cap2-label').textContent='C₂ = '+(2+delta).toFixed(2)+' pF';$('vd-value').textContent=mv.toFixed(2);$('rc-interpretation').textContent=delta===0?'대칭 조건: 이 이상 모델의 차동 잡음은 0. 두 입력의 공통 전압까지 0이라는 뜻은 아님.':'동일한 외란원이라도 두 결합 경로의 차이로 DM 잡음 발생. PHY 고장 판정값은 아님.';}
+$('freq-control').addEventListener('input',updateRC);$('delta-control').addEventListener('input',updateRC);$('print-report').addEventListener('click',()=>window.print());updateScope();updateRC();
+})();

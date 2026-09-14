@@ -14,3 +14,4 @@
 *.bin binary
 # Preserve the original simulation evidence bytes and their SHA-256 checksums.
 /reports/porta-pcb/records/tx-recheck/*-fem-checks.json -text
+/reports/porta-test-01/** -text

@@ -3,3 +3,20 @@
 @media(min-width:960px){.report-grid:has(.report-card:only-child){grid-template-columns:minmax(0,850px)}.report-card:only-child{display:grid;grid-template-columns:1.06fr 1fr}.report-card:only-child .cover{aspect-ratio:auto;min-height:300px}.report-card:only-child .card-body{padding:30px;display:flex;flex-direction:column}.report-card:only-child .card-bottom{margin-top:auto;padding-top:28px}}
 @media(max-width:700px){.header{height:78px;padding:0 22px}.header-note{font-size:10px;letter-spacing:.05em}.brand{font-size:14px}main{padding:0 22px 45px}.intro{padding:36px 0}.lede{font-size:16px}.section-heading>span{display:none}.report-grid{grid-template-columns:1fr}.card-body{padding:23px}.card-body h3{font-size:22px}.card-bottom{gap:12px;flex-wrap:wrap}footer{margin:0 22px;padding:23px 0;flex-wrap:wrap}.cover{aspect-ratio:1.65}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* Topic collections retain the same report cards and manifest ordering. */
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+.collection-list{display:grid;gap:52px}
+.collection-nav{display:flex;flex-wrap:wrap;gap:8px;margin:-8px 0 28px}
+.collection-nav[hidden]{display:none}
+.collection-nav a{padding:7px 13px;border:1px solid var(--line);border-radius:7px;background:var(--sc-surface);text-decoration:none;font-size:13px;color:var(--accent)}
+.collection-nav a:hover{background:var(--sc-accent-soft);border-color:var(--accent)}
+.collection-section{min-width:0;scroll-margin-top:24px}
+.collection-heading{margin-bottom:20px}
+.collection-heading h3{display:flex;align-items:center;gap:12px;font-size:24px;letter-spacing:-.035em;margin:0 0 9px}
+.collection-count{font-size:13px;color:var(--accent);font-weight:600;letter-spacing:0}
+.collection-heading p{max-width:760px;margin:0;font-size:15px;line-height:1.8;color:var(--muted)}
+.card-body h4{font-size:23px;letter-spacing:-.045em;line-height:1.45;margin:0 0 12px}
+#collection-emc .cover{background:var(--sc-surface)}
+#collection-emc .cover img{object-fit:contain}
+@media(max-width:700px){.collection-list{gap:38px}.collection-heading h3{font-size:22px}.card-body h4{font-size:22px}.collection-heading p{font-size:14px}}
