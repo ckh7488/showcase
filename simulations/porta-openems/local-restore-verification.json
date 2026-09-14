@@ -1,0 +1,20 @@
+{
+  "scope": "Local archive restored into a separate directory; not a remote-clone verification yet.",
+  "archivesVerified": 15,
+  "memberHashesVerified": 564,
+  "independentRestoredOutputChecks": 32,
+  "frequencies_MHz": [
+    100
+  ],
+  "windows_ns": [
+    12,
+    24
+  ],
+  "localPathsInArchivedText": [],
+  "fieldSolveRerun": false,
+  "modelsLoadedWithNativePythonBindings": [
+    "reference/test00-straight-base",
+    "connected/test01-same-fine",
+    "connected/test02-near-long"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "reason": "Suspend long field runs to inspect power-path connectivity/ports. Original TEST01 records show almost total source reflection and far power-voltage transmission near zero even at 10 MHz. Not a percent-accuracy issue.",
+  "timeUTC": "2026-09-13T02:55:16.698468+00:00",
+  "operation": "Official ABORT interface; preserve all partial samples.",
+  "screeningComplete": false
+}

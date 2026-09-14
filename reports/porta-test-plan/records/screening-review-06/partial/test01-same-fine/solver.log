@@ -1,0 +1,86 @@
+INPUT {"wiring": "same", "length_mm": 120, "meshLines": {"x": 427, "y": 135, "z": 114}, "cells": 6450492, "minCell_mm": {"x": 0.3999999999999915, "y": 0.15999999999999925, "z": 0.1599999999999966}}
+ ---------------------------------------------------------------------- 
+ | openEMS 64bit -- version v0.0.36
+ | (C) 2010-2023 Thorsten Liebig <thorsten.liebig@gmx.de>  GPL license
+ ---------------------------------------------------------------------- 
+	Used external libraries:
+		CSXCAD -- Version: v0.6.3
+		hdf5   -- Version: 1.12.0
+		          compiled against: HDF5 library version: 1.12.0
+		tinyxml -- compiled against: 2.6.2
+		fparser
+		boost  -- compiled against: 1_72
+		vtk -- Version: 8.2.0
+		       compiled against: 8.2.0
+
+Create FDTD operator (compressed SSE + multi-threading)
+Multithreaded operator using 2 threads.
+Compressing the FDTD operator... this may take a while...
+------- Stat: FDTD Operator -------
+Dimensions		: 427x135x114 = 6571530 Cells (6.57153 MCells)
+Size of Operator	: 315433440 Byte (300.821 MiB) 
+Size of Field-Data	: 157716720 Byte (150.41 MiB) 
+-----------------------------------
+Background materials (epsR/mueR/kappa/sigma): 1/1/0/0
+-----------------------------------
+Number of PEC edges	: 301317
+in x direction		: 113342
+in y direction		: 117062
+in z direction		: 70913
+-----------------------------------
+Timestep (s)		: 2.26533e-13
+Timestep method name	: Rennings_2
+Nyquist criteria (TS)	: 4414
+Nyquist criteria (s)	: 9.99916e-10
+-----------------------------------
+SSE compression enabled	: yes
+Unique SSE operators	: 31700
+-----------------------------------
+-----------------------------------
+--- Excitation Extension ---
+Voltage excitations	: 90	 (0, 90, 0)
+Current excitations	: 0	 (0, 0, 0)
+Excitation Length (TS)	: 25293
+Excitation Length (s)	: 5.72969e-09
+--- Uniaxial PML Extension ---
+ PML range		: [0,0,0] to [8,134,113]
+ Grading function	: " -log(1e-6)*log(2.5)/(2*dl*Z*(pow(2.5,W/dl)-1)) * pow(2.5, D/dl) "
+--- Uniaxial PML Extension ---
+ PML range		: [418,0,0] to [426,134,113]
+ Grading function	: " -log(1e-6)*log(2.5)/(2*dl*Z*(pow(2.5,W/dl)-1)) * pow(2.5, D/dl) "
+--- Uniaxial PML Extension ---
+ PML range		: [9,0,0] to [417,8,113]
+ Grading function	: " -log(1e-6)*log(2.5)/(2*dl*Z*(pow(2.5,W/dl)-1)) * pow(2.5, D/dl) "
+--- Uniaxial PML Extension ---
+ PML range		: [9,126,0] to [417,134,113]
+ Grading function	: " -log(1e-6)*log(2.5)/(2*dl*Z*(pow(2.5,W/dl)-1)) * pow(2.5, D/dl) "
+--- Uniaxial PML Extension ---
+ PML range		: [9,9,0] to [417,125,8]
+ Grading function	: " -log(1e-6)*log(2.5)/(2*dl*Z*(pow(2.5,W/dl)-1)) * pow(2.5, D/dl) "
+--- Uniaxial PML Extension ---
+ PML range		: [9,9,105] to [417,125,113]
+ Grading function	: " -log(1e-6)*log(2.5)/(2*dl*Z*(pow(2.5,W/dl)-1)) * pow(2.5, D/dl) "
+-----------------------------------
+Creation time for operator: 2201.41 s
+FDTD simulation size: 427x135x114 --> 6.57153e+06 FDTD cells 
+FDTD timestep is: 2.26533e-13 s; Nyquist rate: 4414 timesteps @5.00042e+08 Hz
+openEMS::SetupFDTD: Warning, the timestep seems to be very small --> long simulation. Check your mesh!?
+Excitation signal length is: 25293 timesteps (5.72969e-09s)
+Max. number of timesteps: 70629 ( --> 2.79243 * Excitation signal length)
+openEMS::SetupFDTD: Warning, max. number of timesteps is smaller than three times the excitation. 
+	You may want to choose a higher number of max. timesteps... 
+Create FDTD engine (compressed SSE + multi-threading)
+Multithreaded engine using 2 threads. Utilization: (214;213)
+Setting up processing...
+Running FDTD engine... this may take a while... grab a cup of coffee?!?
+[@    10m16s] Timestep:         1103 || Speed:   11.8 MC/s (5.592e-01 s/TS) || Energy: ~5.73e-21 (- 0.00dB)
+[@    20m28s] Timestep:         2206 || Speed:   11.9 MC/s (5.542e-01 s/TS) || Energy: ~9.65e-20 (- 0.00dB)
+[@    30m01s] Timestep:         3309 || Speed:   12.6 MC/s (5.200e-01 s/TS) || Energy: ~1.21e-18 (- 0.00dB)
+[@    40m36s] Timestep:         4412 || Speed:   11.4 MC/s (5.757e-01 s/TS) || Energy: ~1.17e-17 (- 0.00dB)
+openEMS::CheckAbortCond(): Found file "ABORT", aborting simulation...
+RunFDTD: Warning: Max. number of timesteps was reached before the end-criteria of -50dB was reached... 
+	You may want to choose a higher number of max. timesteps... 
+[@    50m40s] Timestep:         5515 || Speed:   12.0 MC/s (5.474e-01 s/TS) || Energy: ~8.60e-17 (- 0.00dB)
+Time for 5515 iterations with 6571530.00 cells : 3040.45 sec
+Speed: 11.92 MCells/s 
+RESULT {"peakHdiff": [8.623156164028224e-05, 0.00021095192985283315], "peakHdiffFrequency_Hz": [200000000.0, 200000000.0], "maxOutgoingOverIncidentPortPower": 0.003508334974779664, "minimumInputSpectrumMagnitude": 6.874093940582406e-14} elapsed_s 5243.225515600003

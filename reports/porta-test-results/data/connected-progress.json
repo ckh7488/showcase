@@ -1,0 +1,76 @@
+{
+  "revision": "connected-run-07",
+  "updatedAtUTC": "2026-09-13T17:53:34.138214+00:00",
+  "maximumTime_ns": 12.5,
+  "rows": [
+    {
+      "id": "test01-same-coarse",
+      "wiring": "same",
+      "mesh": "coarse",
+      "stage": "complete",
+      "time_ns": 12.498102750000001,
+      "lastSpeed_MC_per_s": 48.1,
+      "connectionsPassed": true,
+      "preliminaryPowerThroughAt100MHz": 0.9609488085144664,
+      "powerObservation_ns": 12.4981187228
+    },
+    {
+      "id": "test01-mixed-coarse",
+      "wiring": "mixed",
+      "mesh": "coarse",
+      "stage": "complete",
+      "time_ns": 12.498102750000001,
+      "lastSpeed_MC_per_s": 51.0,
+      "connectionsPassed": true,
+      "preliminaryPowerThroughAt100MHz": 1.1457371975812654,
+      "powerObservation_ns": 12.4981187228
+    },
+    {
+      "id": "test01-same-fine",
+      "wiring": "same",
+      "mesh": "fine",
+      "stage": "complete",
+      "time_ns": 12.499864407,
+      "lastSpeed_MC_per_s": 16.8,
+      "connectionsPassed": true,
+      "preliminaryPowerThroughAt100MHz": 0.9669254148309488,
+      "powerObservation_ns": 12.493282236
+    },
+    {
+      "id": "test01-mixed-fine",
+      "wiring": "mixed",
+      "mesh": "fine",
+      "stage": "complete",
+      "time_ns": 12.499864407,
+      "lastSpeed_MC_per_s": 41.0,
+      "connectionsPassed": true,
+      "preliminaryPowerThroughAt100MHz": 1.1284916766115238,
+      "powerObservation_ns": 12.493282236
+    }
+  ],
+  "commonMode": [
+    {
+      "id": "test02-floating",
+      "bond": "floating",
+      "stage": "complete",
+      "nativePreparationComplete": true,
+      "time_ns": 12.498102750000001
+    },
+    {
+      "id": "test02-near",
+      "bond": "near",
+      "stage": "complete",
+      "nativePreparationComplete": true,
+      "time_ns": 12.498102750000001
+    },
+    {
+      "id": "test02-both",
+      "bond": "both",
+      "stage": "complete",
+      "nativePreparationComplete": true,
+      "time_ns": 12.498102750000001
+    }
+  ],
+  "batchStage": "raw_calculations_complete",
+  "note": "Actual run progress only; no validated new noise comparison is implied."
+}

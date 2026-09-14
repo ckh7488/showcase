@@ -1,0 +1,19 @@
+{
+  "source": "Native cropped openEMS PEC edges; setup only, no field response.",
+  "componentCount": 8,
+  "terminalComponents": [
+    5,
+    3,
+    7,
+    4,
+    2,
+    2,
+    6,
+    6
+  ],
+  "plateComponent": 0,
+  "shieldComponent": 1,
+  "shieldConnectedToPlate": false,
+  "powerBusGroupsDistinct": true,
+  "noWireShortToShieldOrPlate": true
+}

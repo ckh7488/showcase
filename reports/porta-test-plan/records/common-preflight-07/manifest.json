@@ -1,0 +1,363 @@
+{
+  "revision": "common-preflight-07",
+  "fieldSolutionsComplete": false,
+  "purpose": "Prepared common-mode/shield comparison and native conductor checks only. No new coupling numbers or shield winner.",
+  "cases": [
+    {
+      "bond": "floating",
+      "fieldSolution": false,
+      "allEightWiresConnectAtBothEnds": true,
+      "localShieldBondNear": false,
+      "localShieldBondFar": false,
+      "sourcePorts": [
+        {
+          "number": 7,
+          "group": "plus",
+          "start": [
+            -80.4,
+            -2.4,
+            0
+          ],
+          "stop": [
+            -79.6,
+            -2.4,
+            24
+          ],
+          "R_ohm": 50,
+          "phase_deg": 0,
+          "return": "finite_reference_plate"
+        },
+        {
+          "number": 8,
+          "group": "zero",
+          "start": [
+            -80.4,
+            2.4,
+            0
+          ],
+          "stop": [
+            -79.6,
+            2.4,
+            24
+          ],
+          "R_ohm": 50,
+          "phase_deg": 0,
+          "return": "finite_reference_plate"
+        }
+      ],
+      "shieldBonds": [],
+      "input": "floating/input.json",
+      "model": "floating/model.json",
+      "nativeNear": "floating/native-check.json",
+      "nativeFar": "floating/native-far-check.json"
+    },
+    {
+      "bond": "near",
+      "fieldSolution": false,
+      "allEightWiresConnectAtBothEnds": true,
+      "localShieldBondNear": true,
+      "localShieldBondFar": false,
+      "sourcePorts": [
+        {
+          "number": 7,
+          "group": "plus",
+          "start": [
+            -80.4,
+            -2.4,
+            0
+          ],
+          "stop": [
+            -79.6,
+            -2.4,
+            24
+          ],
+          "R_ohm": 50,
+          "phase_deg": 0,
+          "return": "finite_reference_plate"
+        },
+        {
+          "number": 8,
+          "group": "zero",
+          "start": [
+            -80.4,
+            2.4,
+            0
+          ],
+          "stop": [
+            -79.6,
+            2.4,
+            24
+          ],
+          "R_ohm": 50,
+          "phase_deg": 0,
+          "return": "finite_reference_plate"
+        }
+      ],
+      "shieldBonds": [
+        {
+          "end": "near",
+          "start": [
+            -59.800000000000004,
+            -1,
+            0
+          ],
+          "stop": [
+            -59.4,
+            1,
+            17.599999999999998
+          ],
+          "material": "PEC",
+          "currentProbe": "shield_current_-1",
+          "normal": "+z"
+        }
+      ],
+      "input": "near/input.json",
+      "model": "near/model.json",
+      "nativeNear": "near/native-check.json",
+      "nativeFar": "near/native-far-check.json"
+    },
+    {
+      "bond": "both",
+      "fieldSolution": false,
+      "allEightWiresConnectAtBothEnds": true,
+      "localShieldBondNear": true,
+      "localShieldBondFar": true,
+      "sourcePorts": [
+        {
+          "number": 7,
+          "group": "plus",
+          "start": [
+            -80.4,
+            -2.4,
+            0
+          ],
+          "stop": [
+            -79.6,
+            -2.4,
+            24
+          ],
+          "R_ohm": 50,
+          "phase_deg": 0,
+          "return": "finite_reference_plate"
+        },
+        {
+          "number": 8,
+          "group": "zero",
+          "start": [
+            -80.4,
+            2.4,
+            0
+          ],
+          "stop": [
+            -79.6,
+            2.4,
+            24
+          ],
+          "R_ohm": 50,
+          "phase_deg": 0,
+          "return": "finite_reference_plate"
+        }
+      ],
+      "shieldBonds": [
+        {
+          "end": "near",
+          "start": [
+            -59.800000000000004,
+            -1,
+            0
+          ],
+          "stop": [
+            -59.4,
+            1,
+            17.599999999999998
+          ],
+          "material": "PEC",
+          "currentProbe": "shield_current_-1",
+          "normal": "+z"
+        },
+        {
+          "end": "far",
+          "start": [
+            59.4,
+            -1,
+            0
+          ],
+          "stop": [
+            59.800000000000004,
+            1,
+            17.599999999999998
+          ],
+          "material": "PEC",
+          "currentProbe": "shield_current_1",
+          "normal": "+z"
+        }
+      ],
+      "input": "both/input.json",
+      "model": "both/model.json",
+      "nativeNear": "both/native-check.json",
+      "nativeFar": "both/native-far-check.json"
+    }
+  ],
+  "files": [
+    {
+      "path": "floating/input.json",
+      "sha256": "b9dd8f19f84fff8ed292ea59637824a492db5b03b6df6a0aeea9ffde9a7c5a00"
+    },
+    {
+      "path": "floating/model.json",
+      "sha256": "41b731ec2eb4c9e1779e3431cfdc0787c2394939fafa34b97cc7850c15e48e80"
+    },
+    {
+      "path": "floating/mesh.json",
+      "sha256": "6c5208e62c95521d9373519987a2df2400de543eca68303ebd211829eb719120"
+    },
+    {
+      "path": "floating/geometry.xml",
+      "sha256": "e31e087aab0c2ce4523ecae47a0f682d6779de3f443f35f2cda5949e0156cd2e"
+    },
+    {
+      "path": "floating/native-check.json",
+      "sha256": "59bb5516bd6f36e941462ed8ce12af7532d2b0626b9a16e24201eb9e270d4004"
+    },
+    {
+      "path": "floating/native-far-check.json",
+      "sha256": "948637a2856d93ac8820ec65a401a27b71688e01d92e982e5523a4c4b2715e57"
+    },
+    {
+      "path": "floating/native-near-check/PEC_dump.vtp",
+      "sha256": "5faaa4a29da581c5ee3191f5d9091dd263264cdd333262469e0a3e2479598806"
+    },
+    {
+      "path": "floating/native-near-check/cropped-geometry.xml",
+      "sha256": "523316e4abaa1fe1aeec5d6cb4f30db36687b0b6af8347b0ba27baa6788fce2a"
+    },
+    {
+      "path": "floating/native-far-check/PEC_dump.vtp",
+      "sha256": "1a0c093e25fb61931b9b3cdba903380192fd502261047cc4a20625cbc64400ae"
+    },
+    {
+      "path": "floating/native-far-check/cropped-geometry.xml",
+      "sha256": "975908b3c38124818fa202d4816bb65424735761eb16dede0f79e3829c088850"
+    },
+    {
+      "path": "floating/near-setup.log",
+      "sha256": "5f80a17c41ede89b754096167241c70b1dffccda8e9ec8920b89f4ba0aa0e3f4"
+    },
+    {
+      "path": "floating/far-setup.log",
+      "sha256": "ad6ec9f84a0f75191ea741fb382278cb768a1c6eccbc4351b3c595115502fdd1"
+    },
+    {
+      "path": "near/input.json",
+      "sha256": "c14ca39393a430aa41ec31c99fb97189455acf3226c3ff7d33fdbb1c974bab41"
+    },
+    {
+      "path": "near/model.json",
+      "sha256": "1ee2f3ba0ff164e9a198777cc733882df2bf54bc229dd1815a73092f805d4e4a"
+    },
+    {
+      "path": "near/mesh.json",
+      "sha256": "6c5208e62c95521d9373519987a2df2400de543eca68303ebd211829eb719120"
+    },
+    {
+      "path": "near/geometry.xml",
+      "sha256": "32b695213d8778db94da60fa6489c40cb373914a43ca06fc7ccd3003afe9ac48"
+    },
+    {
+      "path": "near/native-check.json",
+      "sha256": "5cbeea28bd3a5eae54442da6ba74ef5cb33f6cb7202f6cf5ad0f9d4efa5c3ad3"
+    },
+    {
+      "path": "near/native-far-check.json",
+      "sha256": "948637a2856d93ac8820ec65a401a27b71688e01d92e982e5523a4c4b2715e57"
+    },
+    {
+      "path": "near/native-near-check/PEC_dump.vtp",
+      "sha256": "d301fdb62ce9bd49ca0d170c6e9776b0824657f62537250b779897344ea9b71a"
+    },
+    {
+      "path": "near/native-near-check/cropped-geometry.xml",
+      "sha256": "18d56bfd26eec17bb5f70f6821b8df684b67f2b25652ba6b95770c7e9e353140"
+    },
+    {
+      "path": "near/native-far-check/PEC_dump.vtp",
+      "sha256": "1a0c093e25fb61931b9b3cdba903380192fd502261047cc4a20625cbc64400ae"
+    },
+    {
+      "path": "near/native-far-check/cropped-geometry.xml",
+      "sha256": "5ab8a91bc56ee66cc680e44cf8c9657a2159f2f55eaf9344c2fc9be176b981bd"
+    },
+    {
+      "path": "near/near-setup.log",
+      "sha256": "4de753bfad45bf1b11d57a8a6f134ab5135eed4bda5ddf607c8782d6240a5a2b"
+    },
+    {
+      "path": "near/far-setup.log",
+      "sha256": "fcbce20f9c032357f3ac3b379465e650b729b4863e4af28ac5b325a648570579"
+    },
+    {
+      "path": "both/input.json",
+      "sha256": "d9fe4559bb0b749c453b75a12ba5236a2bd09f03f315428eb9c732638045067d"
+    },
+    {
+      "path": "both/model.json",
+      "sha256": "36f6d3cec91e41cc2cbe6350e34e6f1cf477062f716c9d778e71bfcb782895b3"
+    },
+    {
+      "path": "both/mesh.json",
+      "sha256": "6c5208e62c95521d9373519987a2df2400de543eca68303ebd211829eb719120"
+    },
+    {
+      "path": "both/geometry.xml",
+      "sha256": "4cd67e10279d3ce74ab66673595b344935f63e87be000cac3418fd82ddb1edc8"
+    },
+    {
+      "path": "both/native-check.json",
+      "sha256": "5cbeea28bd3a5eae54442da6ba74ef5cb33f6cb7202f6cf5ad0f9d4efa5c3ad3"
+    },
+    {
+      "path": "both/native-far-check.json",
+      "sha256": "3fd9188d28cdbf25780c4d7514f1b9d7f4e85b0e4f542334581d90c7a9304fe1"
+    },
+    {
+      "path": "both/native-near-check/PEC_dump.vtp",
+      "sha256": "d301fdb62ce9bd49ca0d170c6e9776b0824657f62537250b779897344ea9b71a"
+    },
+    {
+      "path": "both/native-near-check/cropped-geometry.xml",
+      "sha256": "f087cf9e8056540e0aa2588b9d7d606df03997fbe9a37dc1cdaa0299424300c0"
+    },
+    {
+      "path": "both/native-far-check/PEC_dump.vtp",
+      "sha256": "583236a3eba42f4af4e27951d3210228c6097862ee098cb7425432c59f91a4ff"
+    },
+    {
+      "path": "both/native-far-check/cropped-geometry.xml",
+      "sha256": "da62a411333c29aedafb395550c13222ef1c084e41aa24d320596e4346dc9545"
+    },
+    {
+      "path": "both/near-setup.log",
+      "sha256": "ef90ce31f6fc916ca4057bc9c8f0ecf9ebc731c6393232287d46897cc129ef77"
+    },
+    {
+      "path": "both/far-setup.log",
+      "sha256": "7c157963779567c12ed1043ed2d418e7812d94faa1b360d73ebde04c283b5903"
+    },
+    {
+      "path": "prepare_common_mode.py",
+      "sha256": "ca4db8181351d94af5e2f034c7c36f65f3e7a2b6eccfe7834781685ab44afdbf"
+    },
+    {
+      "path": "check_common_far.py",
+      "sha256": "a709d0e0152b91a41470af7416e28b9b54d36008a7102d6aaadf62c7267c18e4"
+    },
+    {
+      "path": "read_native_pec.py",
+      "sha256": "53da76fdf2a065f49fa9c507331b49e62b1cb6f5b5460eab64988d1c415e9fa1"
+    },
+    {
+      "path": "publish_common_preflight.py",
+      "sha256": "3fb6398ff04868d7f2e8ef1ffa2974bcc4333391670456bbf58b26490d11abaf"
+    }
+  ]
+}

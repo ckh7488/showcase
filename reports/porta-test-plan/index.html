@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PortA · openEMS 시험 계획 | ATLAS</title>
+<meta name="description" content="잡음 입력, 관측 위치, 시험편과 격자를 3D로 살펴보는 PortA 시험 계획서.">
+<link rel="icon" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/theme.v1.css">
+<link rel="stylesheet" href="plan.css?v=04">
+<link rel="stylesheet" href="document.css?v=09">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a><header class="topbar"><a href="../../">← ATLAS</a><span>PALA720 / EMC</span><nav><a href="../porta-lab-setup/">실제 구성</a><a href="#experiment">시험·3D</a><a href="#evidence">조건·근거</a></nav></header><main id="main"><section class="hero"><p class="eyebrow">PALA720 · TEST PLAN</p>
+<h1>PortA 잡음 경로 시험 계획</h1>
+<p class="lede">잡음을 넣을 곳과 읽을 곳을 정하고, 배선·실드·PCB를 차례로 비교합니다.</p></section><div class="document-nav" aria-label="시험 문서">
+<a aria-current="page" href="./"><small>TEST 00–04 · 다섯 단계</small><strong>시험 계획서</strong><span>목적 · 입력 · 관측 · 3D</span></a><a href="../porta-test-results/"><small>판단 기준과 시험별 결과</small><strong>결과 모음</strong><span>각 TEST 결과서로 들어가기 →</span></a>
+</div>
+<section id="experiment"><div class="section-head">
+<div>
+<p class="eyebrow">SELECT A TEST</p>
+<h2>시험 선택</h2>
+</div>
+<button id="export-plan">선택 설정 저장</button>
+</div>
+<div id="test-tabs" class="test-tabs" aria-label="시험 선택"></div>
+<div class="question-row">
+<span id="case-code"></span><div>
+<h3 id="case-title"></h3>
+<p id="case-question" hidden=""></p>
+</div>
+</div>
+<p id="case-plain"></p>
+<div class="workbench"><div class="visual-column">
+<div class="toolbar roles">
+<button data-role="all" aria-pressed="true">전체 범위</button><button data-role="source" aria-pressed="false">① 입력 위치</button><button data-role="probe" aria-pressed="false">② 관측 위치</button><button data-role="reference" aria-pressed="false">③ 기준 도체</button><button id="fullscreen">크게 보기</button>
+<label><input id="show-grid" type="checkbox"> 설명용 격자</label>
+</div>
+<div id="coupon-panel" class="stage-wrap">
+<div id="experiment-scene" class="stage" tabindex="0" aria-label="가상 시험편 3D. 드래그 회전, 휠 확대. 방향키 회전, + - 확대, Home 초기화"></div>
+<div id="trial-labels" class="labels"></div>
+<p class="stage-badge" id="trial-badge">시험편 준비 중</p>
+<p id="trial-error" class="stage-error">3D 준비 중…</p>
+</div>
+<div id="pcb-panel" class="scene-panel" hidden>
+<div class="toolbar">
+<button id="segment-cable" aria-pressed="true">T2 ↔ M12</button><button id="segment-phy" aria-pressed="false">T2 ↔ LAN9354</button><span class="pair-buttons"><button data-pair="both" aria-pressed="true">TX + RX</button><button data-pair="tx" aria-pressed="false">TX</button><button data-pair="rx" aria-pressed="false">RX</button></span>
+</div>
+<div class="stage-wrap">
+<div id="scene" class="stage pcb-stage" tabindex="0" aria-label="제조 Gerber 기반 PCB. 드래그 회전, 휠 확대. 방향키 회전, 더하기·빼기 확대, Home 초기화"></div>
+<div id="pcb-plan-labels" class="labels"></div>
+<p id="scene-badge" class="stage-badge">결합 간격 15 mm</p>
+<p id="viewer-error" class="stage-error">PCB 형상 준비 중…</p>
+</div>
+<div class="toolbar">
+<button id="view-all">전체 보드</button><button id="view-rx">선택 선로 확대</button><button id="view-side">옆면</button><button id="explode" aria-pressed="false">보드 분리</button><label><input type="checkbox" id="inner-toggle"> 내층 구리</label><label>GND 비아 <select id="ground-mode"><option value="near">선택 신호 주변</option>
+<option value="all">전체</option>
+<option value="none">숨김</option></select></label>
+</div>
+<div id="pcb-route" class="pcb-route"></div>
+<p class="small muted">TX + RX 보기의 마커는 RX 예시이며 TX를 누르면 해당 TX 패드로 이동합니다. GND 주변 표시는 신호 구리와 XY 거리 3 mm의 표시 필터입니다. 계산된 리턴 전류가 아닙니다. 보드 보기의 좌표축과 위아래 방향은 센서 조립 보기와 다릅니다.</p>
+</div>
+<div id="room-panel" class="scene-panel" hidden>
+<div class="toolbar">
+<button data-room="room" aria-pressed="true">실험실 전체</button><button data-room="breakout" aria-pressed="false">SMPS 근처 분기 확대</button><button data-room="sensor" aria-pressed="false">센서 외형</button><button data-room="inside" aria-pressed="false">센서 내부</button><button data-room="boards" aria-pressed="false">부품 위치</button><button id="room-reset">보기 초기화</button><button id="room-fullscreen">크게 보기</button>
+</div>
+<div class="stage-wrap" id="room-wrap">
+<div id="room-scene" class="stage" tabindex="0" aria-label="실험실과 센서 3D. 드래그 회전, 휠 확대. 방향키 회전, 더하기·빼기 확대, Home 초기화"></div>
+<div id="room-labels" aria-hidden="true"></div>
+<p class="stage-badge" id="room-badge">배치 개념도 · 방·거리·코일 치수 미확정</p>
+<p id="room-error" class="stage-error">3D 준비 중…</p>
+</div>
+<div class="toolbar">
+<label><input type="checkbox" id="room-shell" checked> 센서 외장</label><label>분리 보기 <input id="room-explode" type="range" min="0" max="100" value="0"><output id="room-gap">0%</output></label><label><input type="checkbox" id="room-cables" checked> 외부 연결선</label>
+</div>
+<p id="room-detail" class="detail-line" aria-live="polite">실물 사진이 아닌 구성 확인용 3D입니다. 부품 높이와 하네스는 근사이며, 전기적 접촉이 검증된 형상은 아닙니다.</p>
+</div>
+<p id="point-detail" class="point-detail" aria-live="polite">입력과 관측 마커를 선택해 보세요.</p>
+<p class="small muted plan-note">3D와 격자는 시험 설명용입니다. 조작하면 계획만 바뀌며, 새 계산이 실행되지는 않습니다.</p>
+<div class="legend">
+<span><i class="key source"></i>주입 위치</span><span><i class="key probe"></i>관측 위치</span><span><i class="key reference"></i>기준 도체·리턴</span><span><i class="key domain"></i>설명용 계산 경계</span>
+</div>
+<div id="coupon-controls">
+<div class="toolbar">
+<button id="baseline">현재 배선</button><button id="paired">각 전원쌍을 +/0 V로</button><label>실드 끝 연결 <select id="shield"><option value="floating">양끝 미접속 · 현재</option>
+<option value="near">분기 끝만 시험판에</option>
+<option value="both">양끝을 시험판에</option></select></label>
+</div>
+<details><summary>시험편 치수와 종단 가정 조정</summary><div class="parameter-grid">
+<label>시험편 길이 <span><input id="length" type="range" min="100" max="400" step="20" value="200"><output id="length-out"></output></span></label><label>꼬임 피치 · 미확인 가정 <span><input id="pitch" type="range" min="12" max="40" step="2" value="24"><output id="pitch-out"></output></span></label><label>중심선–시험판 거리 <span><input id="height" type="range" min="10" max="60" step="5" value="20"><output id="height-out"></output></span></label><label>신호쌍 한쪽 끝의 합산 CM 정전용량 <select id="cm-cap"><option value="0">0 pF · 추가 소자 없음</option>
+<option value="10">10 pF · 가정</option>
+<option value="100">100 pF · 가정</option></select></label>
+</div>
+<p class="small muted">선경·절연 외경·외피 외경과 재료 이름은 아래 케이블 도면을 반영했습니다. 이 슬라이더의 시험편 길이·피치·시험판 거리는 시험용 가정입니다. 각 신호 도체에서 기준판으로 C/2씩, 양 끝에 대칭으로 추가하는 비교입니다. 0 pF여도 형상에서 생기는 기생 정전용량은 남습니다. 실제 쌍별 피치·배열과 PHY/트랜스 종단을 확인하면 해당 가정을 대체합니다.</p></details><details><summary>실드 표시와 배선 비교 안내</summary><div class="fold-body">
+<p class="small muted">실드는 안쪽의 매끈한 포일과 바깥의 은색 편조입니다. 녹색 TPE 외피는 내부가 보이도록 한쪽 끝에만 표시했습니다. 그림의 선 색상은 기능 구분이며 실제 핀 색상 배정이 아닙니다. 실드 표시를 꺼도 해석 계획에는 실드가 남습니다. 접속을 바꾸려면 위의 실드 끝 연결을 선택하세요.</p>
+<p id="comparison-note" class="small muted"></p>
+</div></details>
+</div>
+<div id="reference-controls" hidden>
+<label><input id="stub" type="checkbox" checked> 공식 예제의 개방 스텁 표시</label><p class="small muted">예제 구조 확인 → 균일 선로 검증 순서입니다. 스텁을 끄는 것은 형상 비교이며 응답을 재계산하지 않습니다.</p>
+</div>
+<div id="display-controls" class="toolbar">
+<label><input id="show-shield" type="checkbox" checked> 실드 표시만 켜기/끄기</label><button id="reset-view">시점 초기화</button>
+</div>
+</div></div>
+<details><summary>선택한 시험의 수치 설정·포트 정의</summary><div id="numerical-recipe"></div>
+<pre id="config-preview"></pre></details>
+<details><summary>입력·관측·비교 조건 자세히</summary><div class="fold-body">
+<aside class="recipe"><p class="eyebrow">선택한 시험의 설계</p>
+<div class="recipe-line">
+<span class="number source">1</span><div>
+<h4>무엇을 넣는가</h4>
+<p id="recipe-input"></p>
+</div>
+</div>
+<div class="recipe-line">
+<span class="number reference">↩</span><div>
+<h4>무엇을 기준으로 하는가</h4>
+<p id="recipe-reference"></p>
+</div>
+</div>
+<div class="recipe-line">
+<span class="number probe">2</span><div>
+<h4>어디에서 읽는가</h4>
+<p id="recipe-probe"></p>
+</div>
+</div>
+<h4>무엇과 비교하는가</h4>
+<p id="recipe-compare"></p>
+<div class="decision">
+<h4>결과를 얻으면 하는 판단</h4>
+<p id="recipe-decision"></p>
+</div>
+<div id="case-sources" class="sources"></div></aside><div class="plain-case">
+<p id="case-route" class="case-route"></p>
+<p id="case-example" class="small muted" hidden></p>
+<div id="cm-wiring" class="cm-wiring" hidden>
+<p>①-A: 시험판 ↔ AC 소스 A ↔ <strong>+ 두 선이 모인 단자</strong></p>
+<p>①-B: 시험판 ↔ AC 소스 B ↔ <strong>0 V 두 선이 모인 단자</strong></p>
+<small>두 소스의 위상은 같습니다. 주황색 점은 배선 단자, 주황색 상자는 시험 소스입니다.</small>
+</div>
+</div>
+<div class="scope-grid">
+<div>
+<h4>이번 계산에 포함</h4>
+<p id="included"></p>
+</div>
+<div>
+<h4>다음 모델에서 다룰 부분</h4>
+<p id="excluded"></p>
+</div>
+</div>
+<p class="caution" id="limitation"></p>
+<p class="small muted">격자 검증에는 도체 연결 확인을 포함합니다. 그림의 연속성과 실제 계산 도체의 연결을 함께 확인합니다.</p>
+</div></details><details><summary>계산에서 기록할 값</summary><div class="fold-body">
+<div class="section-head compact">
+<div>
+<p class="eyebrow">OUTPUT CONTRACT</p>
+<h3>실행 후 채울 결과</h3>
+</div>
+<span class="small muted">선택·슬라이더 조작으로 결과가 생성되지 않습니다.</span>
+</div>
+<div id="metrics" class="metric-grid"></div>
+</div></details><details><summary>용어: 차동·공통모드·전달비</summary><div class="fold-body"><details><summary>차동·공통모드, 이 그림에서 무슨 뜻인가</summary><p><strong>차동전압 Vd</strong>는 Ethernet 쌍의 두 선 사이 전압입니다. 수신기가 읽으려는 신호도 이 차이에 담깁니다. <strong>공통모드 전압 Vcm</strong>은 두 선의 평균 전위가 기준 도체에 대해 얼마나 움직이는지입니다. 두 선에 완전히 똑같이 들어온 변화는 차이에서 상쇄되지만, 비대칭 경로를 만나면 차동 잡음으로 바뀔 수 있습니다.</p>
+<p><strong>Vin</strong>은 잡음을 넣은 지점에서 실제로 형성된 입력 전압입니다. 전달함수 H는 “입력에 비해 출력 잡음이 얼마나 생기는가”를 나타내는 주파수별 비율입니다. 시험판은 이 관계를 정의하기 위한 유한한 기준 도체이며, 실험실 철제 테이블과 같은 물체가 아닙니다.</p></details></div></details></section>
+<section id="evidence"><div class="section-head"><h2>조건과 근거</h2></div>
+<details id="cable-spec-section"><summary>사용 케이블 · 제조사 도면</summary><div class="fold-body">
+<p>사용자가 실사용 케이블로 확인한 <strong>FM-CAB001 / Northwire FAWM248-076</strong>. 제공 도면은 <strong>47674-1 Rev C</strong>이며 개정 기록은 2014.04.10입니다. 20 m 길이와 전원·통신 배정은 사용자 확인, 아래 수치는 제조사 도면의 규격입니다. 현물 측정 결과는 아닙니다.</p>
+<div class="plain-case">
+<p><strong>단면: 4개 꼬임쌍 → 나일론 테이프 → 알루미늄/Mylar 포일 → 주석도금 구리 편조 → 녹색 TPE 외피.</strong></p>
+<p>실드는 포일과 편조 두 층입니다. 편조 피복률은 최소 85%로 규정돼 있습니다. 양끝 미접속은 기존 실물 조건으로 유지하며, 포일과 편조 사이의 전기적 접촉은 아직 확인되지 않았습니다.</p>
+</div>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>도면에서 확인한 항목</th>
+<th>규격 · mm 환산</th>
+<th>해석에서의 의미</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>8선 / 4쌍 · 24 AWG<br>2쪽</td>
+<td>각 선은 19 × Ø0.0050 in 주석도금 구리 연선<br>각 소선 Ø0.127 mm</td>
+<td>도체 구성 확정. 그림은 구리 단면적이 같은 단일 원으로 근사하며 연선의 고주파 손실까지 재현한 것은 아님.</td>
+</tr>
+<tr>
+<td>PP 절연<br>2쪽</td>
+<td>절연 포함 외경 0.040 ± 0.001 in<br><strong>1.016 ± 0.0254 mm</strong><br>두께 8 mil / 최소 6.5 mil<br>0.2032 / 최소 0.1651 mm</td>
+<td>재료와 외경 규격 확보. 주파수별 유전율·손실은 미기재.</td>
+</tr>
+<tr>
+<td>두 선을 합친 폭<br>2쪽</td>
+<td>0.080 ± 0.004 in<br><strong>2.032 ± 0.1016 mm</strong>
+</td>
+<td>
+<strong>꼬임 피치가 아님.</strong> 쌍별 피치는 여전히 미확인. 화면의 24 mm는 가정값.</td>
+</tr>
+<tr>
+<td>포일 + 편조 실드<br>1쪽</td>
+<td>알루미늄/Mylar 포일<br>36 AWG 주석도금 구리 편조<br><strong>편조 피복률 최소 85%</strong>
+</td>
+<td>단일 등가 실드는 초기 근사로 명시. 포일 두께·겹침·접촉, 편조 각도·전달 임피던스는 미기재.</td>
+</tr>
+<tr>
+<td>녹색 TPE 외피<br>1쪽</td>
+<td>전체 외경 0.265 ± 0.010 in<br><strong>6.731 ± 0.254 mm</strong><br>외피 두께 30 mil / 최소 24 mil<br>0.762 / 최소 0.6096 mm</td>
+<td>전체 크기와 재료 확보. 외피의 주파수별 전기적 물성은 미기재.</td>
+</tr>
+<tr>
+<td>특성 임피던스<br>3쪽</td>
+<td><strong>100 ± 15 Ω</strong></td>
+<td>케이블 모델의 일관성 확인에 사용. 종단 저항값이나 실측값은 아니며, 시험 주파수·방법은 미기재.</td>
+</tr>
+</tbody>
+</table></div>
+<details><summary>단면 그림을 그대로 고정하면 안 되는 부분</summary><p>도면의 내부 치수는 가로 0.185 ± 0.010 in, 세로 0.205 ± 0.010 in, 즉 4.699 ± 0.254 mm와 5.207 ± 0.254 mm입니다. 도면에는 내부용 치수라는 주석이 있고 색상 위치가 바뀔 수 있다고 명시돼 있습니다. 이를 두 실드 층의 정확한 원형 직경이나 길이 전체의 고정된 쌍 위치로 해석하지 않습니다.</p>
+<p>3D는 도면의 절연 외경과 외피 외경을 반영하지만, 정사각형 쌍 배치·동일 피치·원형 실드 경계는 근사입니다. 구리 연선은 면적을 합산한 등가 원으로 표시했습니다. 색상별 Ethernet/+24 V/0 V 역할과 M12/RJ45 핀맵은 이 케이블 원자재 도면에 없습니다.</p></details>
+<p class="small muted">자료: 사용자 제공 PDF 3쪽 전체를 시각적으로 확인. <a href="data/cable-spec.json">원문 단위·환산값·남은 가정·자료 해시 ↗</a>. 과거 lab-review-03의 케이블 품명·선경·재료 미확인 항목은 이 후속 확인으로 보완합니다. 이 규격에서 확인한 값과 가정을 구분해 <a href="../porta-test-01/">첫 실행 모델</a>에 반영했습니다.</p>
+</div></details><details id="sequence"><summary>시험 순서 · 짧은 선로에서 20 m까지</summary><div class="fold-body">
+<div id="sequence-cards" class="sequence-cards"></div>
+<details><summary>openEMS를 실행하면 실제로 하는 일</summary><ol class="run-steps">
+<li>
+<strong>전기적으로 의미 있는 형상을 만든다.</strong> 도체·절연체의 치수와 물성을 CSXCAD 모델로 정의하고, 포트·종단·흡수 경계를 붙입니다. 위 Three.js 그림에서 가정으로 표시한 값부터 채웁니다.</li>
+<li>
+<strong>공간을 격자로 나누고 펄스를 넣는다.</strong> openEMS가 전기장과 자기장의 시간 변화를 계산합니다. 3일 동안 제품을 돌리는 대신, 입력 펄스가 진행하고 감쇠하는 시간을 계산합니다.</li>
+<li>
+<strong>정해진 경로의 전압과 전류를 기록한다.</strong> ① 입력의 실제 전압과 ② 관측점의 두 선 전압을 같은 실행에서 얻습니다. 전압을 읽는 두 끝과 적분 경로·기준면도 기록합니다.</li>
+<li>
+<strong>주파수별 전달을 구하고 같은 조건끼리 비교한다.</strong> 시간 파형을 주파수 영역으로 바꿔 복소 전달비를 구합니다. 시험 01에서는 전원 묶음 배정과 이를 연결하는 시험 지그를 바꾼 실행을 비교하고, 격자·종료 기준을 바꿔도 차이가 유지되는지 확인합니다.</li>
+</ol>
+<p class="small muted">TEST 00과 TEST 01의 실행 파일·실제 격자·전압 및 전류 기록은 <a href="records/initial-openems/manifest.json">첫 계산 기록</a>에 있습니다. 아래 계획의 나머지 조건은 아직 실행하지 않았습니다. <a href="https://docs.openems.de/intro.html">openEMS 계산 방법 ↗</a></p></details>
+<p>국부 openEMS 모델은 케이블·커넥터·PCB의 전자기적 전달을 구합니다. 긴 선로와 소자 부하를 연결하는 다도체 전송선·회로 계산은 별도의 단계입니다. 각 경계에서 <strong>도체 순서, 기준 도체, 포트 방향, 참조 임피던스, 기준면과 단위</strong>를 맞춥니다.</p>
+<div class="scope-grid">
+<div>
+<h3>짧은 시험편 → 20 m</h3>
+<p>두 길이의 시험편에서 추출·연결한 모델을 직접 계산과 비교합니다. 전압 전달함수를 길이 비율로 곱하지 않습니다. 신호쌍만 남기지 않고 전원·0 V·실드와 반환 경로의 결합도 보존합니다.</p>
+</div>
+<div>
+<h3>바닥에 감아 놓은 코일</h3>
+<p>턴 사이 결합과 바닥·테이블의 영향은 직선 선로 반복만으로 담기지 않습니다. 케이블 다발의 외부 공통모드 모델이나 짧은 코일 시험·실측으로 확인한 후 전체 판단에 사용합니다.</p>
+</div>
+</div>
+<details><summary>왜 방 전체와 20 m 케이블을 처음부터 한 번에 계산하지 않는가</summary><p>PCB의 작은 패드·비아와 케이블 속 선간격을 구분하는 격자로 방 전체를 채우면 계산량과 저장량이 크게 늘어납니다. 기계 외형을 닮게 만든 것만으로 물성·접촉·포트가 정확해지는 것도 아닙니다. 우선 국부 시험으로 경로와 결합을 확인하고, 장거리 전파와 코일·주변 도체의 영향을 각각 검증해 연결합니다. 어느 단계도 전체 링크와 맞춰 보는 검증을 생략하지 않습니다.</p></details>
+</div></details><details id="quality"><summary>검증 기준</summary><div class="fold-body">
+<p>이번 단계의 목적은 취약한 경로를 찾아 다음 측정과 설계 변경의 우선순위를 정하는 것입니다. 모든 계산값을 1% 이내로 맞추는 대신, 계산 조건을 바꾸어도 중요한 판단이 유지되는지 확인합니다.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>확인</th>
+<th>이번에 보는 것</th>
+<th>판단이 달라지면</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>도체·포트</td>
+<td>전선의 연결과 절연, 잡음을 넣는 두 끝, 관측 위치와 종단을 확인합니다.</td>
+<td>형상·포트부터 바로잡음</td>
+</tr>
+<tr>
+<td>공간 격자</td>
+<td>선경·선간격을 구분하고 더 촘촘한 격자와 비교합니다. 큰 잡음이 나타나는 관측점, 주파수와 배선 변경 효과를 봅니다.</td>
+<td>해당 위치의 해상도·연결 표현을 점검</td>
+</tr>
+<tr>
+<td>관측 시간</td>
+<td>실제 기록을 더 길게 얻어 출력의 변화와 순위를 비교합니다. 잔류 에너지는 보조 지표로 기록하며 전압 오차율로 해석하지 않습니다.</td>
+<td>추가 시간 구간과 감쇠·공진을 점검</td>
+</tr>
+<tr>
+<td>크기와 효과</td>
+<td>실제 전압 차이와 대역의 큰 값을 함께 봅니다. 3 dB 정도의 진폭 변화나 2배 정도의 배선 효과는 눈여겨볼 탐색용 참고선입니다.</td>
+<td>작은 차이를 배선의 확실한 우열로 해석하지 않음</td>
+</tr>
+<tr>
+<td>입력·전력</td>
+<td>실제 입력 전압으로 정규화하고 포트 전력의 일관성을 확인합니다. 전체 방사·손실 전력과 역방향 자극은 별도 범위입니다.</td>
+<td>정규화·포트·계산 상태를 점검</td>
+</tr>
+<tr>
+<td>모델의 실제성</td>
+<td>경계와 기준면, 시험 연결부, 실제 케이블 피치·재료·종단은 수치 비교와 구분합니다. 다음 단계에서 주요 경로의 가정을 보강합니다.</td>
+<td>관측된 위치와 실물의 대응을 보강</td>
+</tr>
+</tbody>
+</table></div>
+<p class="small muted">이 기준은 제품의 EMC 내성 합격선이나 정밀도 보증이 아닙니다. 이전 ATLAS의 PHY측 초기 openEMS와 케이블측 FEM의 검증 범위도 따로 보존합니다. <a href="../porta-pcb/">기존 범위와 기록 ↗</a></p>
+</div></details><details id="pcb-audit-section"><summary>기존 PCB 결과 · 재사용 범위</summary><div class="fold-body">
+<p><strong>같은 SI 해석을 처음부터 반복하는 계획은 줄입니다.</strong> 기존 Gerber와 SI 자료를 출발점으로 삼고, 추가 작업은 아직 답하지 못한 잡음 전달과 실제 부품 부하에 집중합니다.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>기존 자료</th>
+<th>확인한 범위와 한계</th>
+<th>이번 계획에서의 사용</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="../porta-pcb/records/tx-recheck/summary.json">M12 ↔ T2 · 최신 정밀 FEM</a></td>
+<td>100 MHz, 두 TX/RX 쌍의 양끝. 100 Ω 차동 포트 4개. TX 반사손실 28.611 dB, RX 26.188 dB. 격자 비교 목표 미달.</td>
+<td>기존 SI 근거와 형상을 재사용. 공통모드 전달을 알려면 포트와 기준 도체를 보완.</td>
+</tr>
+<tr>
+<td><a href="../porta-pcb/records/phy-initial-summary.json">T2 ↔ LAN9354 · 초기 openEMS</a></td>
+<td>트랜스·PHY 실리콘과 실제 실장 부하 제외. 시간·공간·경계 수렴 미검증.</td>
+<td>원본 도체별 응답이 남았는지 먼저 점검. 재사용할 수 있는 값과 추가 실행할 범위를 구분.</td>
+</tr>
+<tr>
+<td>T2 내부와 실제 종단</td>
+<td>기존 PCB 해석에서 제외. 설계 기록에 HX1260FNLT와 중심탭 핀 연결이 있음.</td>
+<td>T2의 전기 모델, 중심탭 부하와 보호·PHY 부하를 포함한 응답을 추가 검토.</td>
+</tr>
+</tbody>
+</table></div>
+<p class="small muted">기존 케이블측 원본 파일은 주파수 1개 × 4 × 4 복소 S행렬입니다. 네 포트 모두 차동 포트이므로 표기만 바꿔 공통모드 응답을 만들 수 없습니다. 위 수치는 기존 결과이며 이번 계획의 새 계산값이 아닙니다. <a href="data/pcb-audit.json">확인 항목·해시·원본 경로 ↗</a></p>
+<div class="scope-grid">
+<div>
+<h3>왜 트랜스 양쪽을 나누는가</h3>
+<p>PCB는 Gerber의 구리 형상을 계산하고, 트랜스는 전기적 등가회로 또는 다중포트 모델로 표현해 연결할 수 있습니다. 따라서 내부 권선 전체를 먼저 3D로 재현해야만 진행할 수 있는 것은 아닙니다. 최종 연결에는 T2를 포함합니다.</p>
+<p class="case-route">M12 → PCB A → [T2 전기 모델] → PCB B → LAN9354 부하</p>
+</div>
+<div>
+<h3>품번 확인과 모델 확보는 별개</h3>
+<p>설계 자료의 T2는 <strong>HX1260FNLT</strong>입니다. PHY측 중심탭 2·7번은 VDD33TXRX1_43, 케이블측 10·15번은 별도 CT 네트로 기록돼 있습니다. 실제 조립품 대조와 완전한 부하망은 추가 확인합니다.</p>
+<p>이번 ATLAS 확인 범위에서 실행 가능한 HX1260FNLT 내부 모델은 확보하지 못했습니다. 권선 사이 기생 결합과 중심탭을 표현할 자료가 필요하며, 이상적인 1:1 트랜스만으로 EMC 전달을 확정하지 않습니다.</p>
+</div>
+</div>
+<p class="small muted"><a href="https://www.we-online.com/en/components/products/WE-LAN">제조사 회로·S-파라미터 모델 제공 사례</a>는 모델 연결 방법의 예시이며 HX1260FNLT의 대체 모델이 아닙니다. 과거 lab-review-03 스냅샷의 T2 품번 미확인 표기는 이 후속 설계 확인으로 보완합니다.</p>
+</div></details><details id="physical"><summary>실물 시험과 연결</summary><div class="fold-body">
+<div class="scope-grid">
+<div>
+<h3>모델이 요구하는 실물 정보</h3>
+<p>케이블의 주요 단면 치수와 재료는 확인됐습니다. 남은 쌍별 피치·분기 길이·접촉·종단은 범위로 둡니다. 그 범위에서 결론이 바뀌는 항목을 우선 측정합니다. 확인된 HX1260FNLT의 전기 모델, 케이블의 남은 물성과 실제 잡음 파형은 모델을 현실에 연결하는 자료입니다.</p>
+</div>
+<div>
+<h3>한 변수와 같은 시간축</h3>
+<p>해석에서 의심한 항목 하나를 바꿔 비교하고, PHY의 link 상태·symbol/CRC 카운터·PC 로그와 전원/잡음 관측의 시간을 맞춥니다. 짧은 무오류 운전만으로 해결됐다고 판정하지 않습니다.</p>
+</div>
+</div>
+<p class="caution">고주파 배선 결합 시험과 저주파 전원 강하·리셋·클록·소프트웨어 동작은 각각 관측합니다. openEMS의 수동 전자기장 응답만으로 실제 LAN9354의 CRC 오류율이나 3일 뒤 발생 확률을 생성하지 않습니다.</p>
+</div></details></section><div id="run-results" class="legacy-link">
+<span id="connected-progress"></span><a href="../porta-test-results/">시험별 결과 모음 →</a>
+</div>
+<footer><a href="../../">← ATLAS</a><a href="../porta-lab-setup/">실험실 구성으로 돌아가기</a><a href="data/plan.json" download>전체 시험 계획 JSON</a></footer>
+</main><script src="vendor/three.min.js"></script><script src="vendor/OrbitControls.js"></script><script src="data/cable-spec.js?v=04"></script><script src="cases.js?v=09"></script><script src="data/pcb-audit.js?v=04"></script><script src="trial-scene.js?v=04"></script><script src="plan.js?v=08"></script>
+</body>
+</html>

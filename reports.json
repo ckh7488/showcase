@@ -84,6 +84,103 @@
       ]
     },
     {
+      "id": "porta-lab-setup",
+      "title": "PALA720 · PortA 실험실 구성 확인",
+      "summary": "두 콘센트, PC·모니터, SMPS, 8선 복합 케이블·양끝 미접속 실드·철제 테이블. 전원·통신·접지 후보를 연결 지도와 실제 PCB·센서 3D로 대조합니다.",
+      "category": "EMC · 구성 검토",
+      "collection": "emc",
+      "date": "2026-09-13",
+      "path": "reports/porta-lab-setup/",
+      "cover": "reports/porta-lab-setup/cover.png",
+      "coverAlt": "실험실 연결 지도. PC와 센서의 별도 전원, 수동 RJ45 커플러와 20 m 케이블, 센서 내부 LAN9354 경로를 표시합니다.",
+      "tags": [
+        "구성 확인",
+        "전원·접지",
+        "3D",
+        "openEMS 준비"
+      ]
+    },
+    {
+      "id": "porta-test-plan",
+      "title": "PortA · openEMS 시험 계획",
+      "summary": "잡음을 넣을 곳과 읽을 곳. 다섯 시험의 형상·격자·비교 조건을 3D로 살펴보고 각 결과서로 이동합니다.",
+      "category": "EMC · 해석·시험 계획",
+      "collection": "emc",
+      "date": "2026-09-13",
+      "path": "reports/porta-test-plan/",
+      "cover": "reports/porta-test-plan/cover.png",
+      "coverAlt": "8선 케이블 국부 시험편의 잡음 입력·Ethernet 관측·기준 도체를 표시한 3D 시험 설계. 계산된 전자기장이 아닙니다.",
+      "tags": [
+        "시험 설계",
+        "3D",
+        "입력·관측"
+      ]
+    },
+    {
+      "id": "porta-test-results",
+      "title": "PortA · 시험 결과 모음",
+      "summary": "잡음 경로를 판단할 만큼 계산하고, 남은 차이를 기록합니다. 실험의 판단 기준과 각 TEST의 결과·허용 범위를 모았습니다.",
+      "category": "EMC · 결과 모음",
+      "collection": "emc",
+      "date": "2026-09-13",
+      "path": "reports/porta-test-results/",
+      "cover": "reports/porta-test-results/cover.png",
+      "coverAlt": "잡음 경로 판단을 위한 계산 종료 원칙과, TEST 00부터 연결 단계 04까지의 개별 결과 카드.",
+      "tags": [
+        "실험 철학",
+        "판단 기준",
+        "시험별 결과"
+      ]
+    },
+    {
+      "id": "porta-test-00",
+      "title": "TEST 00 · 계산 기준 검사",
+      "summary": "간단한 선로의 두 격자를 비교했습니다. 10–200 MHz의 확인 결과와 저장된 응답·실제 격자를 살펴봅니다.",
+      "category": "EMC · 시험 결과",
+      "collection": "emc",
+      "date": "2026-09-13",
+      "path": "reports/porta-test-00/",
+      "cover": "reports/porta-test-00/cover.png",
+      "coverAlt": "기준 선로의 기본·세분화 격자별 전달 응답 비교.",
+      "tags": [
+        "결과서",
+        "기준 선로",
+        "격자 비교"
+      ]
+    },
+    {
+      "id": "porta-test-01",
+      "title": "TEST 01 · 전원에서 Ethernet으로",
+      "summary": "두 배선·두 격자 검토 완료. 입력 쪽 차동 증가와 공통모드 감소는 유지됐고, 반대쪽 쌍 2의 배선 우열은 불명으로 남깁니다.",
+      "category": "EMC · 시험 결과",
+      "collection": "emc",
+      "date": "2026-09-13",
+      "path": "reports/porta-test-01/",
+      "cover": "reports/porta-test-01/cover.png",
+      "coverAlt": "현재 배선과 비교 배선의 차동 잡음 곡선 및 8선 케이블 계산 형상",
+      "tags": [
+        "경향 확인 완료",
+        "두 배선·두 격자",
+        "3D·원본 파형"
+      ]
+    },
+    {
+      "id": "porta-test-02",
+      "title": "TEST 02 · 실드 끝 연결",
+      "summary": "실드 세 조건과 시간·두 격자 검토를 마쳤습니다. 100 MHz에서 평균 전압 감소·차동 증가가 유지됐고, 작은 접속 우열은 채택하지 않았습니다.",
+      "category": "EMC · 시험 결과",
+      "collection": "emc",
+      "date": "2026-09-14",
+      "path": "reports/porta-test-02/",
+      "cover": "reports/porta-test-02/cover.png",
+      "coverAlt": "실드가 있는 8선 케이블, 시험판으로 연결된 잡음 입력 포트와 공통모드 전달 응답",
+      "tags": [
+        "실드 조건 비교",
+        "공통모드 입력",
+        "3D·실드"
+      ]
+    },
+    {
       "id": "porta-pcb",
       "title": "PALA720 · PortA 통신 경로 분석",
       "summary": "실제 PCB 두 장과 20 m 케이블의 연결 구조. 트랜스–M12의 TX/RX 정밀 해석을 3D 선로와 함께 살펴봅니다.",

@@ -1,0 +1,320 @@
+{
+  "revision": "interim-time-review-17",
+  "scientificVerdictComplete": false,
+  "snapshot_sha256": "d2bd94e6ab78a4cdf7282ea0008e23b06c20ad60587663b5d0f672d534b667f2",
+  "evidenceHashesChecked": 36,
+  "status": "20ns_interim_review_25ns_running",
+  "scope": "Intermediate time check only; no new TEST02 grid comparison has been completed.",
+  "finding": "At100MHz the large near-bond common-mode reduction and differential increase persist through20ns. Small near-versus-both differential order changes when the near record is extended, so no small shield advantage is adopted.",
+  "limitation": "The same-source record settles far more than loaded-voltage-normalized ratios near their input null. Need the final longer record and an explicit decision about the remaining mesh-sensitive claims; no universal energy/percent criterion.",
+  "windows": [
+    {
+      "window_ns": 12,
+      "reference": "loaded",
+      "commonAt100MHz_VperV": [
+        0.10405672925664305,
+        0.10615661955049042,
+        0.287374798089224,
+        0.3111837438116212
+      ],
+      "differentialAt100MHz_mVperV": [
+        7.749889390901683,
+        7.696770066723982,
+        8.369514159671827,
+        8.199389849719253
+      ],
+      "commonPeak_VperV": [
+        6.532688663214737,
+        7.139963281336486,
+        1.7700372327485776,
+        2.0922701773894214
+      ],
+      "differentialPeak_mVperV": [
+        293.9527105144867,
+        289.97722643387544,
+        337.82354919462705,
+        324.64645582372424
+      ]
+    },
+    {
+      "window_ns": 12,
+      "reference": "drive",
+      "commonAt100MHz_VperV": [
+        0.09624527756217441,
+        0.09818753084675524,
+        0.2658018121851111,
+        0.28782344025169354
+      ],
+      "differentialAt100MHz_mVperV": [
+        7.168111671700127,
+        7.118979970791206,
+        7.7412217269623484,
+        7.583868506767667
+      ],
+      "commonPeak_VperV": [
+        0.6299214538239857,
+        0.6848117824918655,
+        0.2866350831017401,
+        0.3041208721646257
+      ],
+      "differentialPeak_mVperV": [
+        22.072423611661975,
+        21.716312441342154,
+        26.545435148700644,
+        25.38784904551805
+      ]
+    },
+    {
+      "window_ns": 16,
+      "reference": "loaded",
+      "commonAt100MHz_VperV": [
+        0.12391476120936674,
+        0.12744905426200617,
+        0.30526127233082245,
+        0.3281046183207671
+      ],
+      "differentialAt100MHz_mVperV": [
+        6.729064988109531,
+        6.734778760467917,
+        6.8686812153340915,
+        6.73915055808002
+      ],
+      "commonPeak_VperV": [
+        17.684678631624628,
+        19.322246535997433,
+        2.781806077503463,
+        3.7028834853297417
+      ],
+      "differentialPeak_mVperV": [
+        793.307859884607,
+        781.4625341206682,
+        909.3506074471661,
+        874.2406795822868
+      ]
+    },
+    {
+      "window_ns": 16,
+      "reference": "drive",
+      "commonAt100MHz_VperV": [
+        0.1136658774562987,
+        0.11690785215806322,
+        0.28001337398603865,
+        0.3009673663969816
+      ],
+      "differentialAt100MHz_mVperV": [
+        6.172509787123826,
+        6.177750978264919,
+        6.300578475791225,
+        6.181761188241449
+      ],
+      "commonPeak_VperV": [
+        0.6552361291865028,
+        0.7119575184670195,
+        0.3061182060130203,
+        0.3303889988155869
+      ],
+      "differentialPeak_mVperV": [
+        23.148865735325664,
+        22.739410103482857,
+        27.44592483840365,
+        26.312833589772314
+      ]
+    },
+    {
+      "window_ns": 20,
+      "reference": "loaded",
+      "commonAt100MHz_VperV": [
+        0.11681970868731553,
+        0.11966300500234703,
+        0.27798231608079466,
+        0.30122299057202656
+      ],
+      "differentialAt100MHz_mVperV": [
+        7.089478154094779,
+        7.054655291778735,
+        7.128494723339593,
+        6.963140640639646
+      ],
+      "commonPeak_VperV": [
+        38.92138864214113,
+        42.54099899073689,
+        7.202394941450558,
+        9.256978296165018
+      ],
+      "differentialPeak_mVperV": [
+        1753.715947503589,
+        1725.5075853266587,
+        2025.9808361981868,
+        1948.488831591982
+      ]
+    },
+    {
+      "window_ns": 20,
+      "reference": "drive",
+      "commonAt100MHz_VperV": [
+        0.10572050641555335,
+        0.10829365721084587,
+        0.251570831333712,
+        0.27260337716233257
+      ],
+      "differentialAt100MHz_mVperV": [
+        6.415897018533523,
+        6.384382724582103,
+        6.451206569511773,
+        6.3015630071595625
+      ],
+      "commonPeak_VperV": [
+        0.6493584886019789,
+        0.7051818976367089,
+        0.2917224764302127,
+        0.3164284995075133
+      ],
+      "differentialPeak_mVperV": [
+        23.33998676077915,
+        22.94446408646356,
+        27.752981862117107,
+        26.647349868663397
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "start_ns": 12,
+      "end_ns": 16,
+      "reference": "loaded",
+      "maxAbsoluteMagnitudeChanges": {
+        "HcommonNear": [
+          12.061550265109208,
+          13.172987653613436
+        ],
+        "Hcommon": [
+          1.1352023895187184,
+          1.7651535574175692
+        ],
+        "HdiffNear": [
+          0.5342924656669167,
+          0.5258945765757352
+        ],
+        "Hdiff": [
+          0.6126588309031198,
+          0.5890332329951458
+        ]
+      }
+    },
+    {
+      "start_ns": 12,
+      "end_ns": 16,
+      "reference": "drive",
+      "maxAbsoluteMagnitudeChanges": {
+        "HcommonNear": [
+          0.04724871903644012,
+          0.050979649075582945
+        ],
+        "Hcommon": [
+          0.07005265407603356,
+          0.06970634678568549
+        ],
+        "HdiffNear": [
+          0.0013591995287624142,
+          0.001294730596302869
+        ],
+        "Hdiff": [
+          0.0015767130199452369,
+          0.0015246677663013943
+        ]
+      }
+    },
+    {
+      "start_ns": 16,
+      "end_ns": 20,
+      "reference": "loaded",
+      "maxAbsoluteMagnitudeChanges": {
+        "HcommonNear": [
+          21.236710010516504,
+          23.218752454739455
+        ],
+        "Hcommon": [
+          4.420588863947096,
+          5.554094810835276
+        ],
+        "HdiffNear": [
+          0.9604080876189821,
+          0.9440450512059906
+        ],
+        "Hdiff": [
+          1.1166302287510206,
+          1.0742481520096951
+        ]
+      }
+    },
+    {
+      "start_ns": 16,
+      "end_ns": 20,
+      "reference": "drive",
+      "maxAbsoluteMagnitudeChanges": {
+        "HcommonNear": [
+          0.010065633005286845,
+          0.011194534486205998
+        ],
+        "Hcommon": [
+          0.046145646127767476,
+          0.04634891493181642
+        ],
+        "HdiffNear": [
+          0.0005912655879081845,
+          0.0005530919856486481
+        ],
+        "Hdiff": [
+          0.0008396773544005302,
+          0.0008175624994853636
+        ]
+      }
+    },
+    {
+      "start_ns": 12,
+      "end_ns": 20,
+      "reference": "loaded",
+      "maxAbsoluteMagnitudeChanges": {
+        "HcommonNear": [
+          33.298260275625715,
+          36.39174010835289
+        ],
+        "Hcommon": [
+          5.555791253465814,
+          7.319248368252845
+        ],
+        "HdiffNear": [
+          1.4947005532858988,
+          1.4699396277817258
+        ],
+        "Hdiff": [
+          1.7292890596541404,
+          1.663281385004841
+        ]
+      }
+    },
+    {
+      "start_ns": 12,
+      "end_ns": 20,
+      "reference": "drive",
+      "maxAbsoluteMagnitudeChanges": {
+        "HcommonNear": [
+          0.0557290977735736,
+          0.06029114825842652
+        ],
+        "Hcommon": [
+          0.06588459780894085,
+          0.06531955701787925
+        ],
+        "HdiffNear": [
+          0.001882661253791041,
+          0.0017945590127400116
+        ],
+        "Hdiff": [
+          0.0024013788059576192,
+          0.002326673117641301
+        ]
+      }
+    }
+  ]
+}

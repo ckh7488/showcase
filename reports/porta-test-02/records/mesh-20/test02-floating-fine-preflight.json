@@ -1,0 +1,11 @@
+{
+  "coarseGeometrySHA256": "e31e087aab0c2ce4523ecae47a0f682d6779de3f443f35f2cda5949e0156cd2e",
+  "fineGeometrySHA256": "9017f5c9490126be76e378934d4fdd0ed5f70fb9d1062f27b66a6abafca7b967",
+  "changedMetadata": [
+    "meshLines",
+    "cells",
+    "minCell_mm",
+    "baseGeometry_sha256"
+  ],
+  "modelGeometryUnchanged": true
+}

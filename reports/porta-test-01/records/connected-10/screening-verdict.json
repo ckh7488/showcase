@@ -1,0 +1,963 @@
+{
+  "test": "01",
+  "revision": "screening-verdict-13",
+  "scientificVerdictComplete": true,
+  "status": "screening_complete_with_far_pair2_unresolved",
+  "scope": "Dominant local noise-output screening of a 120 mm coupon and two 20 mm fanouts, 10–200 MHz. Both power assignments, both connected meshes and 8/10/12 ns records.",
+  "conclusion": "The largest differential output remains input-side pair 2 in all cases/windows. Mixed +/0 wiring increases both input-side differential outputs and reduces all four common-mode outputs in both meshes and all recorded windows.",
+  "unresolved": "Far-side pair 2 does not have a mesh-stable wiring-effect direction. Label it inconclusive; do not repeat the initial coarse-only all-four-differential-outputs-increase statement as a final conclusion.",
+  "stoppingDecision": "Enough for prioritizing the largest local output and identifying the input-side DM/CM tradeoff. Remaining far-side uncertainty does not change that priority. Further work on the far-side transfer is needed if it is used for a downstream-link decision; no exact all-channel convergence is claimed.",
+  "acceptedDifference": "Mesh changes and short-window differences below are retained as observed differences, not universal tolerances. Common-mode voltage stays in the same broad scale. Small spectral features, close channel rankings, and the ambiguous far pair are not resolved as design priorities.",
+  "maxMeshMagnitudeChange_mVperV": {
+    "same": {
+      "differential": 0.25258716037284856,
+      "common": 4.298985375935066
+    },
+    "mixed": {
+      "differential": 5.526520394249487,
+      "common": 1.4742470832575099
+    }
+  },
+  "energyPolicy": "All four runs reached their time cap before the -50 dB goal. Acceptance is for the scoped output judgment after the 8/10/12 ns comparisons; energy is not an independent universal pass line.",
+  "physicalLimits": [
+    "Actual braid loss, pair pitches/phases and device loads are assumed or omitted.",
+    "Changed power fanout is included; cable-interior and fanout contributions are not isolated.",
+    "No measured sensor noise, 20 m link, transformer/PHY or CRC outcome is inferred."
+  ],
+  "evidenceHashesChecked": 136,
+  "independentScalarOutputsChecked": 288,
+  "sources": [
+    {
+      "id": "test01-same-coarse",
+      "analysis_sha256": "a1b05427b95188d4867bcca6e86d4479639663417aa9c90a606267f29623d150",
+      "response_sha256": "c2c4d7564b7d16867a49a6f487a6336795e6160e20b9d5617d81f442e28a3efb",
+      "source_sha256": "7bf0958bfc8067c58fb37deaaf19b2e6c5535de21935235d0bf23ada3f6d731b",
+      "lastReportedEnergy_dB": -34.58
+    },
+    {
+      "id": "test01-same-fine",
+      "analysis_sha256": "9e9ad85a14a7e7a4af7e47babb51ddbf79a872b591295448a6e02e832d91ff62",
+      "response_sha256": "a185998102b493b6c789d4ebed3dae36746be18e5d65729a48e198b2eaaa4e80",
+      "source_sha256": "7bf0958bfc8067c58fb37deaaf19b2e6c5535de21935235d0bf23ada3f6d731b",
+      "lastReportedEnergy_dB": -36.36
+    },
+    {
+      "id": "test01-mixed-coarse",
+      "analysis_sha256": "e4abca4cbb7b9eb11aec31f913f1998a0e30bfe58d8f6afdf32a37c8614ff1b9",
+      "response_sha256": "d5441c90b9fba5996600227c16f9f961efac8e459886f000d1a96f224267f34f",
+      "source_sha256": "7bf0958bfc8067c58fb37deaaf19b2e6c5535de21935235d0bf23ada3f6d731b",
+      "lastReportedEnergy_dB": -37.02
+    },
+    {
+      "id": "test01-mixed-fine",
+      "analysis_sha256": "87c6278ded0b7844bb02c988f963fd28e2e60e4c4016a7a54a241be6612f4470",
+      "response_sha256": "c72b4559baaba6d11d17c6a7ce2d88d8241e9153c79beb8c7e1c35f6b1438962",
+      "source_sha256": "7bf0958bfc8067c58fb37deaaf19b2e6c5535de21935235d0bf23ada3f6d731b",
+      "lastReportedEnergy_dB": -39.64
+    }
+  ],
+  "peaks": [
+    {
+      "case": "test01-same-coarse",
+      "window_ns": 8,
+      "peakDifferential_mVperV": 3.395868996173661,
+      "observation": "input_side_pair_2",
+      "frequency_Hz": 200000000.0
+    },
+    {
+      "case": "test01-same-coarse",
+      "window_ns": 10,
+      "peakDifferential_mVperV": 3.459811397616484,
+      "observation": "input_side_pair_2",
+      "frequency_Hz": 200000000.0
+    },
+    {
+      "case": "test01-same-coarse",
+      "window_ns": 12,
+      "peakDifferential_mVperV": 3.615821839804457,
+      "observation": "input_side_pair_2",
+      "frequency_Hz": 200000000.0
+    },
+    {
+      "case": "test01-same-fine",
+      "window_ns": 8,
+      "peakDifferential_mVperV": 3.5389375036309088,
+      "observation": "input_side_pair_2",
+      "frequency_Hz": 200000000.0
+    },
+    {
+      "case": "test01-same-fine",
+      "window_ns": 10,
+      "peakDifferential_mVperV": 3.4656485718416326,
+      "observation": "input_side_pair_2",
+      "frequency_Hz": 200000000.0
+    },
+    {
+      "case": "test01-same-fine",
+      "window_ns": 12,
+      "peakDifferential_mVperV": 3.5608263883761255,
+      "observation": "input_side_pair_2",
+      "frequency_Hz": 200000000.0
+    },
+    {
+      "case": "test01-mixed-coarse",
+      "window_ns": 8,
+      "peakDifferential_mVperV": 39.666047734676546,
+      "observation": "input_side_pair_2",
+      "frequency_Hz": 200000000.0
+    },
+    {
+      "case": "test01-mixed-coarse",
+      "window_ns": 10,
+      "peakDifferential_mVperV": 39.476993381249976,
+      "observation": "input_side_pair_2",
+      "frequency_Hz": 200000000.0
+    },
+    {
+      "case": "test01-mixed-coarse",
+      "window_ns": 12,
+      "peakDifferential_mVperV": 39.48045419304324,
+      "observation": "input_side_pair_2",
+      "frequency_Hz": 200000000.0
+    },
+    {
+      "case": "test01-mixed-fine",
+      "window_ns": 8,
+      "peakDifferential_mVperV": 34.64245257929328,
+      "observation": "input_side_pair_2",
+      "frequency_Hz": 200000000.0
+    },
+    {
+      "case": "test01-mixed-fine",
+      "window_ns": 10,
+      "peakDifferential_mVperV": 34.643369535905926,
+      "observation": "input_side_pair_2",
+      "frequency_Hz": 200000000.0
+    },
+    {
+      "case": "test01-mixed-fine",
+      "window_ns": 12,
+      "peakDifferential_mVperV": 34.60334834975186,
+      "observation": "input_side_pair_2",
+      "frequency_Hz": 200000000.0
+    }
+  ],
+  "wiringComparisons": [
+    {
+      "mesh": "coarse",
+      "window_ns": 8,
+      "output": "HdiffNear",
+      "pair": 1,
+      "at100MHz_mVperV": [
+        1.3926283477090915,
+        14.110249047173305
+      ],
+      "ratioAt100MHz": 10.132099544279003,
+      "ratioRange": [
+        7.039026504785888,
+        13.846494905003842
+      ],
+      "mixedLowerFrequencyCount": 0,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "coarse",
+      "window_ns": 8,
+      "output": "HdiffNear",
+      "pair": 2,
+      "at100MHz_mVperV": [
+        2.5023775311735714,
+        15.10956699076078
+      ],
+      "ratioAt100MHz": 6.038084502650827,
+      "ratioRange": [
+        4.359225200929987,
+        11.680676663137115
+      ],
+      "mixedLowerFrequencyCount": 0,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "coarse",
+      "window_ns": 8,
+      "output": "Hdiff",
+      "pair": 1,
+      "at100MHz_mVperV": [
+        0.6111241364501625,
+        4.597940701809845
+      ],
+      "ratioAt100MHz": 7.523742604109714,
+      "ratioRange": [
+        3.657585571987052,
+        9.718608434188877
+      ],
+      "mixedLowerFrequencyCount": 0,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "coarse",
+      "window_ns": 8,
+      "output": "Hdiff",
+      "pair": 2,
+      "at100MHz_mVperV": [
+        1.7678987774367978,
+        3.7699045720156183
+      ],
+      "ratioAt100MHz": 2.1324210526812197,
+      "ratioRange": [
+        1.6897657543932225,
+        3.091459665313994
+      ],
+      "mixedLowerFrequencyCount": 0,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "coarse",
+      "window_ns": 8,
+      "output": "HcommonNear",
+      "pair": 1,
+      "at100MHz_mVperV": [
+        56.89760202888937,
+        2.8968649185714903
+      ],
+      "ratioAt100MHz": 0.050913655677450646,
+      "ratioRange": [
+        0.029795582054057728,
+        0.09180889418767814
+      ],
+      "mixedLowerFrequencyCount": 191,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "coarse",
+      "window_ns": 8,
+      "output": "HcommonNear",
+      "pair": 2,
+      "at100MHz_mVperV": [
+        55.51999966255094,
+        4.653067776038229
+      ],
+      "ratioAt100MHz": 0.08380885814696416,
+      "ratioRange": [
+        0.08348768051654629,
+        0.17414517171339086
+      ],
+      "mixedLowerFrequencyCount": 191,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "coarse",
+      "window_ns": 8,
+      "output": "Hcommon",
+      "pair": 1,
+      "at100MHz_mVperV": [
+        55.22303280695027,
+        5.636533814530342
+      ],
+      "ratioAt100MHz": 0.1020685306117584,
+      "ratioRange": [
+        0.032613297205379595,
+        0.2726099211044457
+      ],
+      "mixedLowerFrequencyCount": 191,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "coarse",
+      "window_ns": 8,
+      "output": "Hcommon",
+      "pair": 2,
+      "at100MHz_mVperV": [
+        53.957411107371776,
+        5.367140675742309
+      ],
+      "ratioAt100MHz": 0.09946994426886133,
+      "ratioRange": [
+        0.08837884619767429,
+        0.13262086081148536
+      ],
+      "mixedLowerFrequencyCount": 191,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "coarse",
+      "window_ns": 10,
+      "output": "HdiffNear",
+      "pair": 1,
+      "at100MHz_mVperV": [
+        1.300185951888944,
+        14.05940313060634
+      ],
+      "ratioAt100MHz": 10.813378740310547,
+      "ratioRange": [
+        9.834939452940027,
+        13.347202636185365
+      ],
+      "mixedLowerFrequencyCount": 0,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "coarse",
+      "window_ns": 10,
+      "output": "HdiffNear",
+      "pair": 2,
+      "at100MHz_mVperV": [
+        2.5153874323154466,
+        15.170640475811947
+      ],
+      "ratioAt100MHz": 6.031134719412658,
+      "ratioRange": [
+        4.944197161705745,
+        11.41015761970328
+      ],
+      "mixedLowerFrequencyCount": 0,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "coarse",
+      "window_ns": 10,
+      "output": "Hdiff",
+      "pair": 1,
+      "at100MHz_mVperV": [
+        0.6807311343445202,
+        4.548858768466202
+      ],
+      "ratioAt100MHz": 6.682313381841016,
+      "ratioRange": [
+        5.772115217675592,
+        11.388013908955635
+      ],
+      "mixedLowerFrequencyCount": 0,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "coarse",
+      "window_ns": 10,
+      "output": "Hdiff",
+      "pair": 2,
+      "at100MHz_mVperV": [
+        1.7829805578793814,
+        3.8106014524058898
+      ],
+      "ratioAt100MHz": 2.137208639525545,
+      "ratioRange": [
+        1.549585532129785,
+        3.1208922100934577
+      ],
+      "mixedLowerFrequencyCount": 0,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "coarse",
+      "window_ns": 10,
+      "output": "HcommonNear",
+      "pair": 1,
+      "at100MHz_mVperV": [
+        56.97948940243262,
+        3.0046761600166643
+      ],
+      "ratioAt100MHz": 0.05273259187697084,
+      "ratioRange": [
+        0.0283008664993899,
+        0.09012951986173715
+      ],
+      "mixedLowerFrequencyCount": 191,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "coarse",
+      "window_ns": 10,
+      "output": "HcommonNear",
+      "pair": 2,
+      "at100MHz_mVperV": [
+        55.39484812143771,
+        4.742069501219161
+      ],
+      "ratioAt100MHz": 0.08560488316212188,
+      "ratioRange": [
+        0.08410964568657757,
+        0.17643192673234456
+      ],
+      "mixedLowerFrequencyCount": 191,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "coarse",
+      "window_ns": 10,
+      "output": "Hcommon",
+      "pair": 1,
+      "at100MHz_mVperV": [
+        55.38916271957833,
+        5.665580430093557
+      ],
+      "ratioAt100MHz": 0.10228680398685557,
+      "ratioRange": [
+        0.02814958246643335,
+        0.2804749103468214
+      ],
+      "mixedLowerFrequencyCount": 191,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "coarse",
+      "window_ns": 10,
+      "output": "Hcommon",
+      "pair": 2,
+      "at100MHz_mVperV": [
+        53.893784570920594,
+        5.645866501772599
+      ],
+      "ratioAt100MHz": 0.10475913960621969,
+      "ratioRange": [
+        0.08479469985432746,
+        0.12248081548731282
+      ],
+      "mixedLowerFrequencyCount": 191,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "coarse",
+      "window_ns": 12,
+      "output": "HdiffNear",
+      "pair": 1,
+      "at100MHz_mVperV": [
+        1.3529133804317062,
+        14.06547704343817
+      ],
+      "ratioAt100MHz": 10.396435756256594,
+      "ratioRange": [
+        10.176175137452127,
+        13.160996741311532
+      ],
+      "mixedLowerFrequencyCount": 0,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "coarse",
+      "window_ns": 12,
+      "output": "HdiffNear",
+      "pair": 2,
+      "at100MHz_mVperV": [
+        2.5444327351568896,
+        15.163181311960482
+      ],
+      "ratioAt100MHz": 5.959356324279298,
+      "ratioRange": [
+        5.124477865891231,
+        10.9188051685584
+      ],
+      "mixedLowerFrequencyCount": 0,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "coarse",
+      "window_ns": 12,
+      "output": "Hdiff",
+      "pair": 1,
+      "at100MHz_mVperV": [
+        0.6198336525385811,
+        4.525200286086647
+      ],
+      "ratioAt100MHz": 7.300668925530756,
+      "ratioRange": [
+        3.406611229224811,
+        12.40578732409443
+      ],
+      "mixedLowerFrequencyCount": 0,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "coarse",
+      "window_ns": 12,
+      "output": "Hdiff",
+      "pair": 2,
+      "at100MHz_mVperV": [
+        1.719824588089775,
+        3.832008533069465
+      ],
+      "ratioAt100MHz": 2.2281391716382615,
+      "ratioRange": [
+        1.2202437849211516,
+        3.344933767301924
+      ],
+      "mixedLowerFrequencyCount": 0,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "coarse",
+      "window_ns": 12,
+      "output": "HcommonNear",
+      "pair": 1,
+      "at100MHz_mVperV": [
+        57.01476159726346,
+        3.007659563551567
+      ],
+      "ratioAt100MHz": 0.05275229570890508,
+      "ratioRange": [
+        0.025864427032788427,
+        0.09621845308638388
+      ],
+      "mixedLowerFrequencyCount": 191,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "coarse",
+      "window_ns": 12,
+      "output": "HcommonNear",
+      "pair": 2,
+      "at100MHz_mVperV": [
+        55.278923948687556,
+        4.571030684212002
+      ],
+      "ratioAt100MHz": 0.08269029781504147,
+      "ratioRange": [
+        0.08089440314189317,
+        0.17821858919588907
+      ],
+      "mixedLowerFrequencyCount": 191,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "coarse",
+      "window_ns": 12,
+      "output": "Hcommon",
+      "pair": 1,
+      "at100MHz_mVperV": [
+        55.31023799506344,
+        5.604043190430124
+      ],
+      "ratioAt100MHz": 0.10132017857038145,
+      "ratioRange": [
+        0.028640622989825185,
+        0.2761399223953118
+      ],
+      "mixedLowerFrequencyCount": 191,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "coarse",
+      "window_ns": 12,
+      "output": "Hcommon",
+      "pair": 2,
+      "at100MHz_mVperV": [
+        53.999127877477605,
+        5.679937270845563
+      ],
+      "ratioAt100MHz": 0.10518572232746368,
+      "ratioRange": [
+        0.08205316667313771,
+        0.12904065664357708
+      ],
+      "mixedLowerFrequencyCount": 191,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "fine",
+      "window_ns": 8,
+      "output": "HdiffNear",
+      "pair": 1,
+      "at100MHz_mVperV": [
+        1.2354804689996002,
+        12.439811538586518
+      ],
+      "ratioAt100MHz": 10.0688046883164,
+      "ratioRange": [
+        9.674627888626572,
+        12.077317803001016
+      ],
+      "mixedLowerFrequencyCount": 0,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "fine",
+      "window_ns": 8,
+      "output": "HdiffNear",
+      "pair": 2,
+      "at100MHz_mVperV": [
+        2.4727810177619753,
+        13.48385252635907
+      ],
+      "ratioAt100MHz": 5.452910075540299,
+      "ratioRange": [
+        4.427834681395936,
+        9.788941608533783
+      ],
+      "mixedLowerFrequencyCount": 0,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "fine",
+      "window_ns": 8,
+      "output": "Hdiff",
+      "pair": 1,
+      "at100MHz_mVperV": [
+        0.71453964399366,
+        2.6111374195883266
+      ],
+      "ratioAt100MHz": 3.65429328034806,
+      "ratioRange": [
+        2.882659196842862,
+        5.786875850936962
+      ],
+      "mixedLowerFrequencyCount": 0,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "fine",
+      "window_ns": 8,
+      "output": "Hdiff",
+      "pair": 2,
+      "at100MHz_mVperV": [
+        1.8353226219847836,
+        1.8251198379139262
+      ],
+      "ratioAt100MHz": 0.9944408770705263,
+      "ratioRange": [
+        0.765467623304643,
+        1.6059921827866144
+      ],
+      "mixedLowerFrequencyCount": 92,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "fine",
+      "window_ns": 8,
+      "output": "HcommonNear",
+      "pair": 1,
+      "at100MHz_mVperV": [
+        53.40783343156067,
+        2.982275682367817
+      ],
+      "ratioAt100MHz": 0.05583966790544774,
+      "ratioRange": [
+        0.03144738022346875,
+        0.10526471841951085
+      ],
+      "mixedLowerFrequencyCount": 191,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "fine",
+      "window_ns": 8,
+      "output": "HcommonNear",
+      "pair": 2,
+      "at100MHz_mVperV": [
+        51.89272296323224,
+        4.857701873187088
+      ],
+      "ratioAt100MHz": 0.09361046396869431,
+      "ratioRange": [
+        0.09360617633374203,
+        0.16340365432583512
+      ],
+      "mixedLowerFrequencyCount": 191,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "fine",
+      "window_ns": 8,
+      "output": "Hcommon",
+      "pair": 1,
+      "at100MHz_mVperV": [
+        52.101706411575265,
+        5.561698290161196
+      ],
+      "ratioAt100MHz": 0.10674695078558065,
+      "ratioRange": [
+        0.034571465954197175,
+        0.2720097095265838
+      ],
+      "mixedLowerFrequencyCount": 191,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "fine",
+      "window_ns": 8,
+      "output": "Hcommon",
+      "pair": 2,
+      "at100MHz_mVperV": [
+        50.251388928310774,
+        5.595179342408911
+      ],
+      "ratioAt100MHz": 0.11134377500273793,
+      "ratioRange": [
+        0.1002468536080295,
+        0.1408103040172764
+      ],
+      "mixedLowerFrequencyCount": 191,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "fine",
+      "window_ns": 10,
+      "output": "HdiffNear",
+      "pair": 1,
+      "at100MHz_mVperV": [
+        1.266464902782051,
+        12.425663793162329
+      ],
+      "ratioAt100MHz": 9.811297388397263,
+      "ratioRange": [
+        9.6584063090127,
+        12.58505209754453
+      ],
+      "mixedLowerFrequencyCount": 0,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "fine",
+      "window_ns": 10,
+      "output": "HdiffNear",
+      "pair": 2,
+      "at100MHz_mVperV": [
+        2.5307809455605312,
+        13.486073196721081
+      ],
+      "ratioAt100MHz": 5.328818845573421,
+      "ratioRange": [
+        4.6263943897202,
+        9.996215374340904
+      ],
+      "mixedLowerFrequencyCount": 0,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "fine",
+      "window_ns": 10,
+      "output": "Hdiff",
+      "pair": 1,
+      "at100MHz_mVperV": [
+        0.6711341058794812,
+        2.581303396058106
+      ],
+      "ratioAt100MHz": 3.846181222865231,
+      "ratioRange": [
+        1.9639211700615438,
+        5.346258063287057
+      ],
+      "mixedLowerFrequencyCount": 0,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "fine",
+      "window_ns": 10,
+      "output": "Hdiff",
+      "pair": 2,
+      "at100MHz_mVperV": [
+        1.7741497934672141,
+        1.8328671503365517
+      ],
+      "ratioAt100MHz": 1.0330960537185456,
+      "ratioRange": [
+        0.6845534572392431,
+        1.5363180178856541
+      ],
+      "mixedLowerFrequencyCount": 84,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "fine",
+      "window_ns": 10,
+      "output": "HcommonNear",
+      "pair": 1,
+      "at100MHz_mVperV": [
+        53.48838138282696,
+        3.01045176776573
+      ],
+      "ratioAt100MHz": 0.05628234936143102,
+      "ratioRange": [
+        0.03130815423294667,
+        0.10331454854212296
+      ],
+      "mixedLowerFrequencyCount": 191,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "fine",
+      "window_ns": 10,
+      "output": "HcommonNear",
+      "pair": 2,
+      "at100MHz_mVperV": [
+        51.659416700239035,
+        4.963250767863279
+      ],
+      "ratioAt100MHz": 0.09607639971359401,
+      "ratioRange": [
+        0.09492061822760871,
+        0.16485082940310297
+      ],
+      "mixedLowerFrequencyCount": 191,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "fine",
+      "window_ns": 10,
+      "output": "Hcommon",
+      "pair": 1,
+      "at100MHz_mVperV": [
+        52.294914177130316,
+        5.592670814732669
+      ],
+      "ratioAt100MHz": 0.10694483206893689,
+      "ratioRange": [
+        0.03134285661666007,
+        0.27675854410752515
+      ],
+      "mixedLowerFrequencyCount": 191,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "fine",
+      "window_ns": 10,
+      "output": "Hcommon",
+      "pair": 2,
+      "at100MHz_mVperV": [
+        50.22739191706482,
+        5.902774352103041
+      ],
+      "ratioAt100MHz": 0.11752102043939823,
+      "ratioRange": [
+        0.09495439279760733,
+        0.13478478770570226
+      ],
+      "mixedLowerFrequencyCount": 191,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "fine",
+      "window_ns": 12,
+      "output": "HdiffNear",
+      "pair": 1,
+      "at100MHz_mVperV": [
+        1.2978556536416306,
+        12.46164431769491
+      ],
+      "ratioAt100MHz": 9.60171825174009,
+      "ratioRange": [
+        9.494560254783991,
+        12.238141961156602
+      ],
+      "mixedLowerFrequencyCount": 0,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "fine",
+      "window_ns": 12,
+      "output": "HdiffNear",
+      "pair": 2,
+      "at100MHz_mVperV": [
+        2.485208677974708,
+        13.502329138459991
+      ],
+      "ratioAt100MHz": 5.433076609672697,
+      "ratioRange": [
+        4.352604986858462,
+        9.717785866424204
+      ],
+      "mixedLowerFrequencyCount": 0,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "fine",
+      "window_ns": 12,
+      "output": "Hdiff",
+      "pair": 1,
+      "at100MHz_mVperV": [
+        0.6648869106708036,
+        2.6253645899824924
+      ],
+      "ratioAt100MHz": 3.948588170180347,
+      "ratioRange": [
+        2.062277280921896,
+        6.026732259976681
+      ],
+      "mixedLowerFrequencyCount": 0,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "fine",
+      "window_ns": 12,
+      "output": "Hdiff",
+      "pair": 2,
+      "at100MHz_mVperV": [
+        1.8095247101473646,
+        1.8377525223026068
+      ],
+      "ratioAt100MHz": 1.015599572637471,
+      "ratioRange": [
+        0.7889131333751247,
+        1.5859272483107174
+      ],
+      "mixedLowerFrequencyCount": 87,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "fine",
+      "window_ns": 12,
+      "output": "HcommonNear",
+      "pair": 1,
+      "at100MHz_mVperV": [
+        53.45226261181061,
+        3.0881371577656163
+      ],
+      "ratioAt100MHz": 0.05777374065888978,
+      "ratioRange": [
+        0.028187929908631663,
+        0.10810428534229388
+      ],
+      "mixedLowerFrequencyCount": 191,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "fine",
+      "window_ns": 12,
+      "output": "HcommonNear",
+      "pair": 2,
+      "at100MHz_mVperV": [
+        51.69314570044256,
+        4.743597603496318
+      ],
+      "ratioAt100MHz": 0.09176453742987646,
+      "ratioRange": [
+        0.08871078069048789,
+        0.161005700039991
+      ],
+      "mixedLowerFrequencyCount": 191,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "fine",
+      "window_ns": 12,
+      "output": "Hcommon",
+      "pair": 1,
+      "at100MHz_mVperV": [
+        52.19380511976043,
+        5.628879253320981
+      ],
+      "ratioAt100MHz": 0.10784573457339103,
+      "ratioRange": [
+        0.03206276848397142,
+        0.27937445864843213
+      ],
+      "mixedLowerFrequencyCount": 191,
+      "storedFrequencyCount": 191
+    },
+    {
+      "mesh": "fine",
+      "window_ns": 12,
+      "output": "Hcommon",
+      "pair": 2,
+      "at100MHz_mVperV": [
+        50.24895899036978,
+        5.832859310369397
+      ],
+      "ratioAt100MHz": 0.11607920696401422,
+      "ratioRange": [
+        0.09256931448949364,
+        0.13679938778103298
+      ],
+      "mixedLowerFrequencyCount": 191,
+      "storedFrequencyCount": 191
+    }
+  ]
+}

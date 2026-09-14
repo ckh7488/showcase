@@ -1,0 +1,644 @@
+{
+  "revision": "screening-review-06",
+  "date": "2026-09-13",
+  "status": "review_complete_test01_recompute_required",
+  "purpose": "Find dominant coupling and meaningful design changes; no fixed 1% accuracy target.",
+  "test00": {
+    "status": "target_band_baseline_checked",
+    "band_Hz": [
+      10000000.0,
+      200000000.0
+    ],
+    "checks": {
+      "band_Hz": [
+        500000000.0,
+        6000000000.0
+      ],
+      "uniformLineMagnitudeDifferenceMax_dB": 0.02024820300866248,
+      "uniformLinePhaseDifferenceMax_deg": 28.52455877215585,
+      "maxOutgoingOverIncidentPower": 1.002465033312008,
+      "thresholds": {
+        "magnitude_dB": 0.15,
+        "phase_deg": 5,
+        "maxPowerRatio": 1.01
+      },
+      "energyCriteriaConfirmed": true,
+      "scope": "Official notch example, uniform-line comparison and spatial refinement. Not an EMC validation of the cable.",
+      "unperformed": [
+        "full radiation/loss power balance",
+        "independent boundary and port-position sweep",
+        "reverse-source reciprocity run"
+      ],
+      "passed": false,
+      "referencePlaneAligned": {
+        "referencePlanes": [
+          {
+            "id": "test00-notch-base",
+            "nominalReferencePlanes_um": [
+              -33333.333333333336,
+              33333.333333333336
+            ],
+            "sampledReferencePlanes_um": [
+              -33541.33955966694,
+              33541.33955966694
+            ],
+            "operation": "openEMS CalcPort ref_plane_shift = 50000/3 um at both ports; no rerun.",
+            "responseFile": "test00-notch-base/reference-aligned.npz"
+          },
+          {
+            "id": "test00-straight-base",
+            "nominalReferencePlanes_um": [
+              -33333.333333333336,
+              33333.333333333336
+            ],
+            "sampledReferencePlanes_um": [
+              -33541.33955966694,
+              33541.33955966694
+            ],
+            "operation": "openEMS CalcPort ref_plane_shift = 50000/3 um at both ports; no rerun.",
+            "responseFile": "test00-straight-base/reference-aligned.npz"
+          },
+          {
+            "id": "test00-straight-fine",
+            "nominalReferencePlanes_um": [
+              -33333.333333333336,
+              33333.333333333336
+            ],
+            "sampledReferencePlanes_um": [
+              -33349.560884483224,
+              33349.560884483224
+            ],
+            "operation": "openEMS CalcPort ref_plane_shift = 50000/3 um at both ports; no rerun.",
+            "responseFile": "test00-straight-fine/reference-aligned.npz"
+          }
+        ],
+        "bands": {
+          "target": {
+            "band_Hz": [
+              10000000.0,
+              200000000.0
+            ],
+            "maxMagnitudeDifference_dB": 0.009741537137037085,
+            "maxPhaseDifference_deg": 1.0611603351089325,
+            "passMagnitudeAndPhase": true
+          },
+          "microwave": {
+            "band_Hz": [
+              500000000.0,
+              6000000000.0
+            ],
+            "maxMagnitudeDifference_dB": 0.020248203008661973,
+            "maxPhaseDifference_deg": 33.19140516931658,
+            "passMagnitudeAndPhase": false
+          }
+        }
+      },
+      "targetBandCheck": {
+        "band_Hz": [
+          10000000.0,
+          200000000.0
+        ],
+        "maxMagnitudeDifference_dB": 0.009741537137037085,
+        "maxPhaseDifference_deg": 1.0611603351089325,
+        "passMagnitudeAndPhase": true,
+        "maxOutgoingOverIncidentPower": 1.0045938596822426,
+        "passed": true
+      },
+      "scopeNote": "The initial microwave-band phase check failed. Separately, the 10-200 MHz target band passes the same magnitude/phase thresholds after aligning reference planes. No broadband convergence claim."
+    },
+    "curves": [
+      {
+        "id": "test00-straight-base",
+        "frequency_Hz": [
+          10998571.42857143,
+          20997142.85714286,
+          30995714.285714287,
+          40994285.71428572,
+          50992857.14285715,
+          60991428.571428575,
+          70990000.0,
+          80988571.42857143,
+          90987142.85714287,
+          100985714.2857143,
+          110984285.71428572,
+          120982857.14285715,
+          130981428.57142858,
+          140980000.0,
+          150978571.42857143,
+          160977142.85714287,
+          170975714.2857143,
+          180974285.71428573,
+          190972857.14285716
+        ],
+        "transmissionMagnitude_dB": [
+          0.014765372939888437,
+          0.01454148146225984,
+          0.014180243375304557,
+          0.013685318803936742,
+          0.01306171505461292,
+          0.012315729056460842,
+          0.011454875233181923,
+          0.010487799805614335,
+          0.009424182701415117,
+          0.00827462840303042,
+          0.007050547195398948,
+          0.005764028379086855,
+          0.004427707091834288,
+          0.0030546264312220368,
+          0.0016580965941022918,
+          0.00025155274481338094,
+          -0.0011515867036082424,
+          -0.002538059762218423,
+          -0.003894896931475829
+        ],
+        "transmissionPhase_deg": [
+          -1.5038007929721557,
+          -2.8708284195408273,
+          -4.237657130908795,
+          -5.604204743842943,
+          -6.970388390337259,
+          -8.33612794236495,
+          -9.701347626326479,
+          -11.065977058048796,
+          -12.429952060437856,
+          -13.793215353964062,
+          -15.155717143585953,
+          -16.51741560731381,
+          -17.87827728632668,
+          -19.23827737540519,
+          -20.597399912753733,
+          -21.955637869147502,
+          -23.3129931374039,
+          -24.669476424289456,
+          -26.02510704806089
+        ],
+        "evidence": "../initial-openems/test00-straight-base/reference-aligned.npz",
+        "sha256": "329228573bb822fe96f74549554977826cb9b6b9e562bc2abfe2f98c317989c5"
+      },
+      {
+        "id": "test00-straight-fine",
+        "frequency_Hz": [
+          10998571.42857143,
+          20997142.85714286,
+          30995714.285714287,
+          40994285.71428572,
+          50992857.14285715,
+          60991428.571428575,
+          70990000.0,
+          80988571.42857143,
+          90987142.85714287,
+          100985714.2857143,
+          110984285.71428572,
+          120982857.14285715,
+          130981428.57142858,
+          140980000.0,
+          150978571.42857143,
+          160977142.85714287,
+          170975714.2857143,
+          180974285.71428573,
+          190972857.14285716
+        ],
+        "transmissionMagnitude_dB": [
+          0.014946421122535096,
+          0.014855489586583623,
+          0.01470816279756361,
+          0.01450506184712482,
+          0.014247042101893675,
+          0.01393518878415459,
+          0.013570811376146642,
+          0.013155436884901743,
+          0.0126908020117318,
+          0.012178844277467083,
+          0.011621692160895244,
+          0.011021654313974937,
+          0.010381207922518922,
+          0.009702986286152718,
+          0.008989765695218047,
+          0.008244451686050844,
+          0.007470064758748047,
+          0.00666972564382239,
+          0.005846640205560779
+        ],
+        "transmissionPhase_deg": [
+          -1.5614087100583092,
+          -2.9808334321941157,
+          -4.400207017904512,
+          -5.819507175142254,
+          -7.238711156141726,
+          -8.657796498093441,
+          -10.07674124074489,
+          -11.495524058313281,
+          -12.914124367621783,
+          -14.332522425641747,
+          -15.750699419868932,
+          -17.168637552415518,
+          -18.586320117916934,
+          -20.003731575093568,
+          -21.42085761172957,
+          -22.837685202822286,
+          -24.25420266167767,
+          -25.670399683763108,
+          -27.086267383169822
+        ],
+        "evidence": "../initial-openems/test00-straight-fine/reference-aligned.npz",
+        "sha256": "1226f3eb7540345af51a98b0e9b3d048095e18e57098494c3bf617e142c4c195"
+      }
+    ]
+  },
+  "test01": {
+    "status": "initial_coupling_interpretation_withdrawn",
+    "finding": "The original 0.8 mm axial mesh disconnects the four power wires in the fanouts. The 0.4 mm axial / 0.16 mm transverse mesh connects all eight wires. A native cropped PEC dump independently confirms the near fanout difference for current wiring.",
+    "coarsePowerWiresDisconnected": 4,
+    "ethernetWiresConnected": 4,
+    "fineWiresConnected": 8,
+    "powerThroughDiagnostics": [
+      {
+        "wiring": "same",
+        "frequency_Hz": 10000000.0,
+        "farPowerOverInputVoltage": 3.516021781503125e-07,
+        "inputReflectionMagnitude": 1.0000080991303468,
+        "interpretation": "Symptom in the invalid initial mesh, not the real cable attenuation."
+      },
+      {
+        "wiring": "same",
+        "frequency_Hz": 100000000.0,
+        "farPowerOverInputVoltage": 2.5119654540382627e-06,
+        "inputReflectionMagnitude": 0.9999727909857701,
+        "interpretation": "Symptom in the invalid initial mesh, not the real cable attenuation."
+      },
+      {
+        "wiring": "same",
+        "frequency_Hz": 200000000.0,
+        "farPowerOverInputVoltage": 5.225774999732345e-06,
+        "inputReflectionMagnitude": 0.9998644859983108,
+        "interpretation": "Symptom in the invalid initial mesh, not the real cable attenuation."
+      },
+      {
+        "wiring": "mixed",
+        "frequency_Hz": 10000000.0,
+        "farPowerOverInputVoltage": 3.70864025384042e-07,
+        "inputReflectionMagnitude": 1.0000073417586417,
+        "interpretation": "Symptom in the invalid initial mesh, not the real cable attenuation."
+      },
+      {
+        "wiring": "mixed",
+        "frequency_Hz": 100000000.0,
+        "farPowerOverInputVoltage": 3.149457153065773e-06,
+        "inputReflectionMagnitude": 0.9999849655418136,
+        "interpretation": "Symptom in the invalid initial mesh, not the real cable attenuation."
+      },
+      {
+        "wiring": "mixed",
+        "frequency_Hz": 200000000.0,
+        "farPowerOverInputVoltage": 6.664520135967635e-06,
+        "inputReflectionMagnitude": 0.9999130358546957,
+        "interpretation": "Symptom in the invalid initial mesh, not the real cable attenuation."
+      }
+    ],
+    "nativeScope": "Near fanout, current wiring. Identical retained local geometry and mesh; outer domain cropped for setup-only PEC inspection. Whole-model graph audits cover both wirings and meshes.",
+    "replacementTransientComplete": false,
+    "longerWindowComparisonComplete": false,
+    "partialRuns": [
+      {
+        "id": "test01-same-coarse",
+        "status": "aborted_for_connection_review",
+        "usableCouplingComparison": false,
+        "lastVoltageSample_ns": 4.49932274022,
+        "inputPulseApproxDuration_ns": 5.73,
+        "reason": "The coarse power path is disconnected. The fine run was stopped before its excitation ended. Neither is a completed longer-window comparison."
+      },
+      {
+        "id": "test01-same-fine",
+        "status": "aborted_for_connection_review",
+        "usableCouplingComparison": false,
+        "lastVoltageSample_ns": 1.2493282236,
+        "inputPulseApproxDuration_ns": 5.73,
+        "reason": "The coarse power path is disconnected. The fine run was stopped before its excitation ended. Neither is a completed longer-window comparison."
+      }
+    ],
+    "guardAdded": "Future screening runs refuse to solve if the eight terminals do not connect to the intended six electrical nets.",
+    "nextCalculation": "Use electrically connected meshes; first verify power transmission into the cable, then compare large Ethernet outputs and wiring effects across two adequate record lengths and two connected meshes."
+  },
+  "evidence": [
+    {
+      "file": "check_pec_connections.py",
+      "sha256": "a39832097a5e17bee619b7e2a53669b06b704069f24548c066714feaa87196e6"
+    },
+    {
+      "file": "connectivity-mixed-coarse.json",
+      "sha256": "0045ddd11f66aada5c4e2526cc585a9e3d5cd34edcea9f5b2c4fd113719e98da"
+    },
+    {
+      "file": "connectivity-mixed-fine.json",
+      "sha256": "24353a05900e58d65998ad850a4d8e1d26d1840bf73030fb0161363d77303b45"
+    },
+    {
+      "file": "connectivity-same-coarse.json",
+      "sha256": "7d9ff40ea4d41b3122056818992d304be8bcdeaf296fdc20b5ba610464f10596"
+    },
+    {
+      "file": "connectivity-same-fine.json",
+      "sha256": "6a76bc79a7d5395af69c746784c324bed594912b230107279bbeeb04403cdeb8"
+    },
+    {
+      "file": "COPYING-openEMS.txt",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "file": "debug_fanout.py",
+      "sha256": "eccaf1dc9dfc109f93ca671edcb967bc04fd2213a1abe100e70a4569245f953f"
+    },
+    {
+      "file": "guard-verification.json",
+      "sha256": "ee48a7f8d9eab48f9be5692b50ced9848f46ada5a3f59d76d07fc17c3bcde457"
+    },
+    {
+      "file": "model.json",
+      "sha256": "6e20c42625a154c0640d84c88cce93bcf8d13509ba9d046b32c7b0fd9fcc7140"
+    },
+    {
+      "file": "native-coarse/cropped-geometry.xml",
+      "sha256": "7d15e520da247eb1dc2167fdb940d29e878c552323250bf825472ad561bcc853"
+    },
+    {
+      "file": "native-coarse/PEC_dump.vtp",
+      "sha256": "3094dd39918a8b5b88c0e7c6b99ef4dcd3fde11adc9e54fb6d4718f06346e368"
+    },
+    {
+      "file": "native-coarse/setup.log",
+      "sha256": "06420ad73eaa61a3ead84be5001d18311b11507363944b5ab322358d765781ba"
+    },
+    {
+      "file": "native-coarse-edges.json",
+      "sha256": "48179d906ea4bf00fac07d28cf6ed04fe1a1b69884a53ca52b3c79d792e45a2e"
+    },
+    {
+      "file": "native-fine/cropped-geometry.xml",
+      "sha256": "856dc0cf8ad32627235e1b54abc5fabdb1ef39d24bf54ca46bcc69f15dea59f2"
+    },
+    {
+      "file": "native-fine/PEC_dump.vtp",
+      "sha256": "02a54f1909ce16b6bdeec6c8408c4c424522c49cf45ede73f988b8954a24be77"
+    },
+    {
+      "file": "native-fine/setup.log",
+      "sha256": "f91bee0a53d3770d9810071f3100f518c9631b2c327728d105ca75b17356b72f"
+    },
+    {
+      "file": "native-fine-edges.json",
+      "sha256": "d36306998b15e9149f51c31178707549ba5866d52d2eaead6eeaf05a5a86cbe2"
+    },
+    {
+      "file": "partial/test01-same-coarse/ABORT",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "partial/test01-same-coarse/cm_-1_0_0",
+      "sha256": "12db12776483d15535f7bc3496c5a9213c96ca335fe66bd5f7d599fdb37d4ee1"
+    },
+    {
+      "file": "partial/test01-same-coarse/cm_-1_0_1",
+      "sha256": "f4d1a878a01802b71549fb411af3b1126a830270a878e5ffaf9b2390306f6c56"
+    },
+    {
+      "file": "partial/test01-same-coarse/cm_-1_1_0",
+      "sha256": "3a68c60c78121c9da6cdc1bdc17c38ce591dd90e3fde5375f106946437da062d"
+    },
+    {
+      "file": "partial/test01-same-coarse/cm_-1_1_1",
+      "sha256": "59573ad8e137688d34eb0153fd8854a3fe90df950ff2865a40723bdb0903440a"
+    },
+    {
+      "file": "partial/test01-same-coarse/cm_1_0_0",
+      "sha256": "413267fdc022d6a949d25641a5d0be0af4d66bb168ad97798397558e87bf2ab2"
+    },
+    {
+      "file": "partial/test01-same-coarse/cm_1_0_1",
+      "sha256": "2746eac5fc13961ea991ef9f2e5e4a05123d86102b1c6254e00086056ce31b3d"
+    },
+    {
+      "file": "partial/test01-same-coarse/cm_1_1_0",
+      "sha256": "04bfb57b3d8333b9d1324e71db2a8b9f9303ce73f329a7322dbb710f6e7d68ab"
+    },
+    {
+      "file": "partial/test01-same-coarse/cm_1_1_1",
+      "sha256": "032d87cecd95dd592de602d5686f5a9e1e2241f7ed7540ea5eb63dbd5f29d04f"
+    },
+    {
+      "file": "partial/test01-same-coarse/connection-review-stop.json",
+      "sha256": "f5f261ec256e8f24aedcfb5f395083a0148a2922c1c6226613cc411b80e1ab51"
+    },
+    {
+      "file": "partial/test01-same-coarse/geometry.xml",
+      "sha256": "a2a9447836763babafe43d03cd85eb6c6b86fbbff68828f5589a7780356e1f36"
+    },
+    {
+      "file": "partial/test01-same-coarse/input.json",
+      "sha256": "86a1bea96c3c1a3a0ccc0d053859343aadabaf649669de918893842f5ad71fd8"
+    },
+    {
+      "file": "partial/test01-same-coarse/mesh.json",
+      "sha256": "2fbe1221433716b24c9767d0d183c3c5e8f651f71f9cadc39b99769bcfe8c242"
+    },
+    {
+      "file": "partial/test01-same-coarse/model.json",
+      "sha256": "6e20c42625a154c0640d84c88cce93bcf8d13509ba9d046b32c7b0fd9fcc7140"
+    },
+    {
+      "file": "partial/test01-same-coarse/port_it_1",
+      "sha256": "8eee4e993cd7ea8072ce912a9dd3d2ad3df0fef50fc804eee0edb8312f0802ba"
+    },
+    {
+      "file": "partial/test01-same-coarse/port_it_2",
+      "sha256": "e88bf6f201ac84c9bebfa447ffab79762311c7fc86661903859e2cac0b9fa4e0"
+    },
+    {
+      "file": "partial/test01-same-coarse/port_it_3",
+      "sha256": "0305312ce7aace69c910addd9671ce12f88d6c79fcade9f2609f0dcc12cbc585"
+    },
+    {
+      "file": "partial/test01-same-coarse/port_it_4",
+      "sha256": "fd4bfdf70c141c55516fe56b661957df09e434bdf6dbca2d63bb9d9ff7c06fa2"
+    },
+    {
+      "file": "partial/test01-same-coarse/port_it_5",
+      "sha256": "79deb9a2f2742a7a19b602f170428f0be851855e4dcfa1a665f5bc0b3d892728"
+    },
+    {
+      "file": "partial/test01-same-coarse/port_it_6",
+      "sha256": "a46127f0768b47b02eb7f9869647381153e6170c35a2604b559eb3658ade12d0"
+    },
+    {
+      "file": "partial/test01-same-coarse/port_ut_1",
+      "sha256": "a8d0e5376b1ebee49e1cb3decc506e19f4de8db130b865e34920dc567c7feef2"
+    },
+    {
+      "file": "partial/test01-same-coarse/port_ut_2",
+      "sha256": "a3ae53ad56e8133e789264646a57e8d150b2db053e7037f3f42677866f8a0926"
+    },
+    {
+      "file": "partial/test01-same-coarse/port_ut_3",
+      "sha256": "b2a627fb409dbacbcc1ab7a7020cf6626d6da65ef76f3812b11501fa9b40c56e"
+    },
+    {
+      "file": "partial/test01-same-coarse/port_ut_4",
+      "sha256": "89e0e238f017d4ed4cc81db901346e55da4e9a990cb8240fb6213409ac5d71c4"
+    },
+    {
+      "file": "partial/test01-same-coarse/port_ut_5",
+      "sha256": "0609a38fda418c050e0ce6959421a7c036588e3a47a10e3fd13dc6538d9381d0"
+    },
+    {
+      "file": "partial/test01-same-coarse/port_ut_6",
+      "sha256": "22305fa27ca38527de57fc6794867e231bf25292fac552a4eb288e713df51091"
+    },
+    {
+      "file": "partial/test01-same-coarse/response.json",
+      "sha256": "beb30a0a48a512aa8d5a601fe4a42283665824ec27d7117a22890a820c43b3f1"
+    },
+    {
+      "file": "partial/test01-same-coarse/response.npz",
+      "sha256": "65d75ffda390f065a78d4eafa1b2ef019f5dd410e2d9b5dbb95994f4e78f5382"
+    },
+    {
+      "file": "partial/test01-same-coarse/solver.log",
+      "sha256": "b7b9d123c5f63fc4cc22bd561a8a1a3c9e0104fbd5c021273d1d34041081e2e9"
+    },
+    {
+      "file": "partial/test01-same-fine/ABORT",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "partial/test01-same-fine/cm_-1_0_0",
+      "sha256": "1a28158be72a08de52a334c5fb42ba1d812f7e0ce02f045a8ec1f3324e6eba5c"
+    },
+    {
+      "file": "partial/test01-same-fine/cm_-1_0_1",
+      "sha256": "fe3efd65761beab3050b1a3588c75859c1620ae64b42d41233f4f1e4e3021911"
+    },
+    {
+      "file": "partial/test01-same-fine/cm_-1_1_0",
+      "sha256": "2ad4b2d67035ede940a30b87dfb3d8ec575893790f20ec307a48d5452231f193"
+    },
+    {
+      "file": "partial/test01-same-fine/cm_-1_1_1",
+      "sha256": "a738571b002c2f440f5373ced6817a87aa0418183c9b81ea641c8bef8178f15b"
+    },
+    {
+      "file": "partial/test01-same-fine/cm_1_0_0",
+      "sha256": "2528a1b892e26502decb21c0189bac9c1c7efcbc5a693c5d0201d187e4d2f794"
+    },
+    {
+      "file": "partial/test01-same-fine/cm_1_0_1",
+      "sha256": "fcf204f1d80fdf67da2e7323641d489ec2fa8ae971c956768212fb39cc1e5a21"
+    },
+    {
+      "file": "partial/test01-same-fine/cm_1_1_0",
+      "sha256": "8f41cbbc9a9e89158a012acca53b5c86c9dd4565e3e76edb2d2ee7841bc06097"
+    },
+    {
+      "file": "partial/test01-same-fine/cm_1_1_1",
+      "sha256": "f60699920f1f66dbf8e94d8f3ff237a728c1e93f41e838d03eb343de1022f4a0"
+    },
+    {
+      "file": "partial/test01-same-fine/connection-review-stop.json",
+      "sha256": "01c2d7792993254033219a33529890150a475f5e36fe86a575b28a21b5277b1d"
+    },
+    {
+      "file": "partial/test01-same-fine/geometry.xml",
+      "sha256": "1031bc9c3ba41f32dd6e1ffa63935e8dc64b828161494af5fac5e3fa7b3b5cdd"
+    },
+    {
+      "file": "partial/test01-same-fine/input.json",
+      "sha256": "7ec0c2c34566a5ab8d1e93f6ab171f32d16dede38737f98baf9cb5852f6a2d28"
+    },
+    {
+      "file": "partial/test01-same-fine/mesh.json",
+      "sha256": "ae1696eb35f144fee2e0aa944cfb7a586d87bb4b39baa36acfa7d1fedd964853"
+    },
+    {
+      "file": "partial/test01-same-fine/model.json",
+      "sha256": "fb42a49121c81663054049ca9a1edcce678bece267d1d7a2b377d0ce9b018f39"
+    },
+    {
+      "file": "partial/test01-same-fine/port_it_1",
+      "sha256": "ad5697d3202a4664d051a9c6fe3e15fe9f7eb769ffb672809db68f0a0afc3fe2"
+    },
+    {
+      "file": "partial/test01-same-fine/port_it_2",
+      "sha256": "065102136dc0f856414802842469f4fe49e0304432652bcd9a86200c359b844d"
+    },
+    {
+      "file": "partial/test01-same-fine/port_it_3",
+      "sha256": "bdf65527bd23e02fc793861d7fc8f9ff2c65ab54563a9ce9d2af51e5c4fb8bca"
+    },
+    {
+      "file": "partial/test01-same-fine/port_it_4",
+      "sha256": "11bf68728502fea1d13610fcedaabaac21f583c6f31da75413bd2bb0bfe2acf9"
+    },
+    {
+      "file": "partial/test01-same-fine/port_it_5",
+      "sha256": "e97a7f72ecd32b57b336f5d44f3df2c43d8d499fa2069f1ccab05f6c72404269"
+    },
+    {
+      "file": "partial/test01-same-fine/port_it_6",
+      "sha256": "4acead122ee18994272f5b983337d303c10f0e21eafdf4f104a4af7395b4a604"
+    },
+    {
+      "file": "partial/test01-same-fine/port_ut_1",
+      "sha256": "f5ec4ca158f0a46832226b63af37571b7a48755dd5f14a423a7ab0f7c4cee9c9"
+    },
+    {
+      "file": "partial/test01-same-fine/port_ut_2",
+      "sha256": "c62f9678b188eb4faf8b78eda58427115d4fa08ed6fc4b63e91a2b411cd26774"
+    },
+    {
+      "file": "partial/test01-same-fine/port_ut_3",
+      "sha256": "70e6fb03512a0ad4946d1b0db2cbe3f0d25f590a895483f00d38148d451dc2f1"
+    },
+    {
+      "file": "partial/test01-same-fine/port_ut_4",
+      "sha256": "76e0bd70bac3383999628cca15305b2404144af8209224bf7283ae0e037c5657"
+    },
+    {
+      "file": "partial/test01-same-fine/port_ut_5",
+      "sha256": "6d7418380ef2f0543cba26d4a13b7864cf21f46530b57394def1343f5b0a965d"
+    },
+    {
+      "file": "partial/test01-same-fine/port_ut_6",
+      "sha256": "4685b0cceb05ba8fe94f48a451edab2a6ee0265e019ba77f641dfba67e43e4c4"
+    },
+    {
+      "file": "partial/test01-same-fine/response.json",
+      "sha256": "7ca1d354b1d249fd16cae9ef872cd4a0da994080506872b13c026f48fee5dac2"
+    },
+    {
+      "file": "partial/test01-same-fine/response.npz",
+      "sha256": "c713ab0412d42cbe761037dbce00f99ebc54eea61ecbc6d78a20873bd028cad9"
+    },
+    {
+      "file": "partial/test01-same-fine/solver.log",
+      "sha256": "0f00c75f873f7e3f84d947568420754f40947cb45e32b91d49248ebc2fbb5069"
+    },
+    {
+      "file": "publish_connection_review.py",
+      "sha256": "fe9f49cca1868baa30e7b65c4e7da3bda9e8f5996295ee01684440b56c15f4d7"
+    },
+    {
+      "file": "read_native_pec.py",
+      "sha256": "53da76fdf2a065f49fa9c507331b49e62b1cb6f5b5460eab64988d1c415e9fa1"
+    },
+    {
+      "file": "run_cable_screening.py",
+      "sha256": "821461fec26cbc7d52b4081504c1d85940e0b5bd1a680c6a2b382114bc091f06"
+    },
+    {
+      "file": "runner-version-note.json",
+      "sha256": "c2d2f1eda496111e59088c33d9db717b2665d5a5c1966801df03d565c0397bef"
+    },
+    {
+      "file": "verify_connection_review.py",
+      "sha256": "44e64eb6e5737a0b5671b5c2811728f8e82be48ffb2fc970e1e138768e5832a1"
+    }
+  ]
+}

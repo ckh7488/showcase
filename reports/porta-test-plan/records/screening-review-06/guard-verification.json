@@ -1,0 +1,17 @@
+{
+  "newDefault": {
+    "geometryOnly": true,
+    "connectedElectricalNets": 6,
+    "transverse_mm": 0.2,
+    "commandExitCode": 0,
+    "axial_mm": 0.4
+  },
+  "checked": true,
+  "replacementTransientPerformed": false,
+  "originalCoarse": {
+    "transverse_mm": 0.2,
+    "commandExitCode": 1,
+    "axial_mm": 0.8,
+    "rejectedBeforeNativeSetup": true
+  }
+}

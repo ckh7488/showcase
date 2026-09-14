@@ -1,0 +1,160 @@
+{
+  "revision": "pcb-reuse-review-07",
+  "date": "2026-09-13",
+  "newPCBSolverRun": false,
+  "verifiedSavedMatrices": [
+    {
+      "mesh": "base",
+      "frequency_Hz": 100000000.0,
+      "S_shape": [
+        1,
+        4,
+        4
+      ],
+      "ports": [
+        "T2_TX_diff",
+        "T2_RX_diff",
+        "M12_TX_diff",
+        "M12_RX_diff"
+      ],
+      "pairs": [
+        {
+          "pair": "TX",
+          "returnLoss_dB": 27.85336889509097,
+          "insertionLoss_dB": 0.007131225304665613
+        },
+        {
+          "pair": "RX",
+          "returnLoss_dB": 25.49338933753088,
+          "insertionLoss_dB": 0.012280749160573087
+        }
+      ]
+    },
+    {
+      "mesh": "fine",
+      "frequency_Hz": 100000000.0,
+      "S_shape": [
+        1,
+        4,
+        4
+      ],
+      "ports": [
+        "T2_TX_diff",
+        "T2_RX_diff",
+        "M12_TX_diff",
+        "M12_RX_diff"
+      ],
+      "pairs": [
+        {
+          "pair": "TX",
+          "returnLoss_dB": 28.61104812841291,
+          "insertionLoss_dB": 0.00598891977153928
+        },
+        {
+          "pair": "RX",
+          "returnLoss_dB": 26.18849314220519,
+          "insertionLoss_dB": 0.010465058007245521
+        }
+      ]
+    }
+  ],
+  "scope": {
+    "source_input_sha256": "93810213a86cff18f276a8c36ec5139799ed6a9b8386ccb21bde367e0ec76bc3",
+    "unchanged": true,
+    "boards": 2,
+    "source_faces": 62603,
+    "plated_holes": 788,
+    "approximate_connector_contacts": 64,
+    "ports": "Four 100-ohm differential ports; both TX/RX and both ends solved."
+  },
+  "validationRetained": {
+    "same_geometry_and_physics": true,
+    "mesh_with_same_local_p_comparison_pass": false,
+    "original_residual_reciprocity_passivity_port_power_pass": true,
+    "independent_port_geometry_variation_completed": false,
+    "independent_outer_boundary_variation_completed": false,
+    "scope_note": "Numerical refinement evidence for this model, not hardware measurement or product compliance."
+  },
+  "limitsRetained": [
+    "PEC copper and lossless FR4, epsilon_r 4.5.",
+    "Approximate straight 64-pin contacts; actual connector body and manufacturing spread omitted.",
+    "T2 internals, PHY silicon, populated device behavior, M12 body and external cable/noise omitted.",
+    "No claim of measured link-error probability, EMC immunity or whole-board compliance."
+  ],
+  "reuseDecision": {
+    "existing100MHzDifferentialSI": "Reuse both saved TX/RX meshes and geometry; no repeat of the same four-port SI solve.",
+    "commonModeInput": "Not present in the saved four-differential-port matrix. Common-mode-to-differential conversion requires common-mode input/reference/return paths; relabeling these four ports cannot supply it.",
+    "T2AndMountedLoads": "Not included in existing PCB field solves. Add electrical models only when integrating measured or assumed noise with the PCB.",
+    "PHYSide": "Reuse saved PCB geometry and initial differential evidence. Individual-port raw traces may permit additional output combinations for the original excitation, but a common-mode excitation response is not established by this summary.",
+    "immediateNext": "Complete the corrected short-cable TEST01 before TEST02 shield/common-mode tests. PCB TEST03 uses this reuse audit; full20m model is TEST04."
+  },
+  "phyScope": {
+    "board": "Control board",
+    "segment": "T2 PHY-side PCB pads to U6 LAN9354 PCB pads",
+    "included": [
+      "Gerber copper on four layers",
+      "TXA+/TXA-/RXA+/RXA- tracks, pads and branches",
+      "board outline and plated/non-plated hole geometry",
+      "unrelated copper geometry"
+    ],
+    "excluded": [
+      "transformer internal electrical model",
+      "PHY silicon electrical model",
+      "mounted 49.9-ohm resistor and capacitor electrical loads",
+      "other PCB and board-to-board connector",
+      "external sensor cable and field EMC excitation"
+    ],
+    "loaded_components": false,
+    "copper_model": "perfect electric conductor (PEC)",
+    "dielectric_relative_permittivity": 4.5,
+    "dielectric_loss_model": "lossless assumed",
+    "solder_mask_included": false,
+    "via_plating_thickness_um_assumed": 25,
+    "boundary": "MUR on six faces"
+  },
+  "phyValidation": {
+    "status": "initial_not_converged",
+    "fully_converged": false,
+    "time_convergence_pass": false,
+    "spatial_convergence_checked": false,
+    "boundary_convergence_checked": false,
+    "configured_max_steps": 40000,
+    "configured_end_energy_ratio": 0.0001,
+    "configured_end_energy_db": -40,
+    "grid_points": {
+      "x": 486,
+      "y": 409,
+      "z": 37
+    },
+    "nominal_local_xy_step_mm": 0.08,
+    "selected_signal_path_connectivity_checked": true,
+    "all_eight_port_contacts_checked": true,
+    "continuous_material_sampling": {
+      "tested": 2000,
+      "mismatches": 0
+    },
+    "interpretation": "Connectivity and material checks do not establish time, mesh, boundary, or EMC convergence."
+  },
+  "evidence": [
+    {
+      "file": "reports/porta-pcb/records/tx-recheck/summary.json",
+      "sha256": "235cf797bc43dc55d56fdf76b6bd34466ad9178d74472bf565d4e300981461a2"
+    },
+    {
+      "file": "reports/porta-pcb/records/tx-recheck/base-fem-results.npz",
+      "sha256": "07611c611e1f421d19816b7e0c136632b0be254db6cf7c4a66af82a159378e20"
+    },
+    {
+      "file": "reports/porta-pcb/records/tx-recheck/fine-fem-results.npz",
+      "sha256": "5929aeefa52fc28acdacd9534c1479cce4f665aa8c688fd515da1cfbe207909a"
+    },
+    {
+      "file": "reports/porta-pcb/records/phy-initial-summary.json",
+      "sha256": "3df14a1dd584579970555ceba94cd2e60fce8fb03b6fb6dfccd8e33e6ffbc378"
+    },
+    {
+      "file": "reports/porta-pcb/assessment.md",
+      "sha256": "18a2fbf791a81ed47e9a78521514263be47a4c543812a8168a6f642565ebb750"
+    }
+  ]
+}

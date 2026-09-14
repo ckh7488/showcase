@@ -1,0 +1,1143 @@
+{
+  "revision": "mesh-data-19",
+  "scientificVerdictComplete": false,
+  "sources": [
+    {
+      "id": "test02-floating",
+      "analysis_sha256": "e313d8ccfbcf4c0ad7eca6f8f09b2ca4142ade8fb5993e58d134cec5f1abb6a8",
+      "response_sha256": "e190688d4a7ff5eefdd064ebf7ec145c9ef1dface7b1d6f8c0752b0be5079542",
+      "evidenceHashesChecked": 40
+    },
+    {
+      "id": "test02-near",
+      "analysis_sha256": "0eceb61cee1a7a9e8c2139501150e98f2e16dbd4a90ea65c5454c72ce27d564d",
+      "response_sha256": "506ce1f22209d82e3eb0e7ad91c7490e5db8d65fc8feea153924af18c1a5ecba",
+      "evidenceHashesChecked": 41
+    },
+    {
+      "id": "test02-floating-fine",
+      "analysis_sha256": "8342b0eb302e12e91ceed5653540954f60d4add135be85d7b9932e96d47be4be",
+      "response_sha256": "fc79bb09d33a7bd7a0e10306ae67868fcfe9345224bee78022da2f4b8d79ecaf",
+      "evidenceHashesChecked": 40
+    },
+    {
+      "id": "test02-near-fine",
+      "analysis_sha256": "616dbab24ac75b4d6e7a4928aff111dd9083e712f844545cb5d5f97c76539818",
+      "response_sha256": "0a29ab3cbef214f85635a2990ecdab207a55ca9e5068aa328ade2d824e3c4feb",
+      "evidenceHashesChecked": 41
+    }
+  ],
+  "geometry": [
+    {
+      "bond": "floating",
+      "allPhysicalPropertiesIdentical": true,
+      "coarseGeometrySHA256": "e31e087aab0c2ce4523ecae47a0f682d6779de3f443f35f2cda5949e0156cd2e",
+      "fineGeometrySHA256": "9017f5c9490126be76e378934d4fdd0ed5f70fb9d1062f27b66a6abafca7b967",
+      "preflightSHA256": "68f47db185256c0678bd65785175298a486529bf3996759933d63d4d9bac0b96"
+    },
+    {
+      "bond": "near",
+      "allPhysicalPropertiesIdentical": true,
+      "coarseGeometrySHA256": "32b695213d8778db94da60fa6489c40cb373914a43ca06fc7ccd3003afe9ac48",
+      "fineGeometrySHA256": "9f676f89e370cb7452c644977bba3505e4f85803358811fc4b7d614938cc85dc",
+      "preflightSHA256": "2491dc5ecfc8f380df035c9d12276d0297d109af94a63fe8679ae9187d3189b5"
+    }
+  ],
+  "independentSourceReferencedChecks": 570,
+  "meshComparisons": {
+    "floating": {
+      "loaded": {
+        "8": {
+          "HdiffNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 2.3356367965360665,
+              "atWorstFrequency_Hz": 30000000.0,
+              "beforeAtWorst_VperV": 0.00020941978292505933,
+              "afterAtWorst_VperV": 0.0001600426984250326,
+              "maxAbsoluteMagnitudeChange_VperV": 0.00012359513608836844,
+              "peakBefore_VperV": 0.002026001885017241,
+              "peakAfter_VperV": 0.001952059620344641
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 1.955638709040544,
+              "atWorstFrequency_Hz": 42000000.0,
+              "beforeAtWorst_VperV": 0.00031344138382539434,
+              "afterAtWorst_VperV": 0.00025025018118513714,
+              "maxAbsoluteMagnitudeChange_VperV": 0.0001392985401850906,
+              "peakBefore_VperV": 0.001960708650374819,
+              "peakAfter_VperV": 0.0019025502254057455
+            }
+          ],
+          "Hdiff": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 2.5884542228333323,
+              "atWorstFrequency_Hz": 62000000.0,
+              "beforeAtWorst_VperV": 0.0003847115579285861,
+              "afterAtWorst_VperV": 0.00028556996145107414,
+              "maxAbsoluteMagnitudeChange_VperV": 0.00024696422078452534,
+              "peakBefore_VperV": 0.0037770620476600646,
+              "peakAfter_VperV": 0.0035300978268755392
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 3.26762777450963,
+              "atWorstFrequency_Hz": 92000000.0,
+              "beforeAtWorst_VperV": 0.0004273806700574277,
+              "afterAtWorst_VperV": 0.0002933820148912951,
+              "maxAbsoluteMagnitudeChange_VperV": 0.0002829015701670736,
+              "peakBefore_VperV": 0.004182082515073541,
+              "peakAfter_VperV": 0.0038991809449064677
+            }
+          ],
+          "HcommonNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 0.09802133206422703,
+              "atWorstFrequency_Hz": 200000000.0,
+              "beforeAtWorst_VperV": 0.9401858773765893,
+              "afterAtWorst_VperV": 0.9296354078440456,
+              "maxAbsoluteMagnitudeChange_VperV": 0.010550469532543572,
+              "peakBefore_VperV": 0.9401858773765893,
+              "peakAfter_VperV": 0.9296354078440457
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.09153083477501357,
+              "atWorstFrequency_Hz": 200000000.0,
+              "beforeAtWorst_VperV": 0.9426567911659262,
+              "afterAtWorst_VperV": 0.9327753462164117,
+              "maxAbsoluteMagnitudeChange_VperV": 0.009881444949514484,
+              "peakBefore_VperV": 0.9426567911659263,
+              "peakAfter_VperV": 0.9327753462164118
+            }
+          ],
+          "Hcommon": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 0.15927209466852987,
+              "atWorstFrequency_Hz": 200000000.0,
+              "beforeAtWorst_VperV": 1.1872208474862282,
+              "afterAtWorst_VperV": 1.165649305976897,
+              "maxAbsoluteMagnitudeChange_VperV": 0.021571541509330938,
+              "peakBefore_VperV": 1.187220847486228,
+              "peakAfter_VperV": 1.165649305976897
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.1539781052523642,
+              "atWorstFrequency_Hz": 200000000.0,
+              "beforeAtWorst_VperV": 1.1965368248921975,
+              "afterAtWorst_VperV": 1.1755122623880685,
+              "maxAbsoluteMagnitudeChange_VperV": 0.021024562504128985,
+              "peakBefore_VperV": 1.1965368248921975,
+              "peakAfter_VperV": 1.1755122623880685
+            }
+          ]
+        },
+        "10": {
+          "HdiffNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 1.5441666067260322,
+              "atWorstFrequency_Hz": 10000000.0,
+              "beforeAtWorst_VperV": 0.0003102921356374615,
+              "afterAtWorst_VperV": 0.0002597541161043371,
+              "maxAbsoluteMagnitudeChange_VperV": 0.00010653977959855553,
+              "peakBefore_VperV": 0.002860063594399899,
+              "peakAfter_VperV": 0.0028364775811909717
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 1.184894940397471,
+              "atWorstFrequency_Hz": 10000000.0,
+              "beforeAtWorst_VperV": 0.00032443616381607013,
+              "afterAtWorst_VperV": 0.0002830639160160813,
+              "maxAbsoluteMagnitudeChange_VperV": 7.985692830631561e-05,
+              "peakBefore_VperV": 0.002707028232582624,
+              "peakAfter_VperV": 0.002704089475209721
+            }
+          ],
+          "Hdiff": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 6.903196727244025,
+              "atWorstFrequency_Hz": 44000000.0,
+              "beforeAtWorst_VperV": 0.00018947223216372162,
+              "afterAtWorst_VperV": 8.558265103316479e-05,
+              "maxAbsoluteMagnitudeChange_VperV": 0.00011408153200718725,
+              "peakBefore_VperV": 0.0018510682464042592,
+              "peakAfter_VperV": 0.0017380232842747621
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 4.200355749405852,
+              "atWorstFrequency_Hz": 13000000.0,
+              "beforeAtWorst_VperV": 0.00012410184223073453,
+              "afterAtWorst_VperV": 0.00020127786443232236,
+              "maxAbsoluteMagnitudeChange_VperV": 0.00010263451813522493,
+              "peakBefore_VperV": 0.0020035625455520887,
+              "peakAfter_VperV": 0.0019009280274168638
+            }
+          ],
+          "HcommonNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 0.09507074454724969,
+              "atWorstFrequency_Hz": 146000000.0,
+              "beforeAtWorst_VperV": 0.9388098186845706,
+              "afterAtWorst_VperV": 0.9285901783782265,
+              "maxAbsoluteMagnitudeChange_VperV": 0.010223961063434817,
+              "peakBefore_VperV": 0.9489954918268971,
+              "peakAfter_VperV": 0.9403214435069026
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.08748687031688267,
+              "atWorstFrequency_Hz": 146000000.0,
+              "beforeAtWorst_VperV": 0.9413749019479747,
+              "afterAtWorst_VperV": 0.9319406851263159,
+              "maxAbsoluteMagnitudeChange_VperV": 0.009444451510287388,
+              "peakBefore_VperV": 0.9507246463278735,
+              "peakAfter_VperV": 0.9425430226223975
+            }
+          ],
+          "Hcommon": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 0.12339824295398912,
+              "atWorstFrequency_Hz": 134000000.0,
+              "beforeAtWorst_VperV": 1.1404124230105925,
+              "afterAtWorst_VperV": 1.124325414012218,
+              "maxAbsoluteMagnitudeChange_VperV": 0.016268973835008582,
+              "peakBefore_VperV": 1.247612965374617,
+              "peakAfter_VperV": 1.239557490038737
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.11972067266359764,
+              "atWorstFrequency_Hz": 134000000.0,
+              "beforeAtWorst_VperV": 1.1494673164481162,
+              "afterAtWorst_VperV": 1.1337324924476704,
+              "maxAbsoluteMagnitudeChange_VperV": 0.015905469602876643,
+              "peakBefore_VperV": 1.2571341433858951,
+              "peakAfter_VperV": 1.2496654292725733
+            }
+          ]
+        },
+        "12": {
+          "HdiffNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 0.7675751284921102,
+              "atWorstFrequency_Hz": 23000000.0,
+              "beforeAtWorst_VperV": 0.0002962390289397088,
+              "afterAtWorst_VperV": 0.0002711836607333121,
+              "maxAbsoluteMagnitudeChange_VperV": 5.351496422692915e-05,
+              "peakBefore_VperV": 0.0028885459422109266,
+              "peakAfter_VperV": 0.002850765401368066
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.4299576736712206,
+              "atWorstFrequency_Hz": 76000000.0,
+              "beforeAtWorst_VperV": 0.0003854002900073206,
+              "afterAtWorst_VperV": 0.00036678718481176565,
+              "maxAbsoluteMagnitudeChange_VperV": 8.482439216273875e-05,
+              "peakBefore_VperV": 0.0029290039155117674,
+              "peakAfter_VperV": 0.0028441795233490287
+            }
+          ],
+          "Hdiff": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 1.3645381906482699,
+              "atWorstFrequency_Hz": 98000000.0,
+              "beforeAtWorst_VperV": 0.0002947306147439586,
+              "afterAtWorst_VperV": 0.00034486741320565535,
+              "maxAbsoluteMagnitudeChange_VperV": 0.00010514923933759154,
+              "peakBefore_VperV": 0.002603587476066711,
+              "peakAfter_VperV": 0.0025381428233030895
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.6321616651343315,
+              "atWorstFrequency_Hz": 110000000.0,
+              "beforeAtWorst_VperV": 0.00029087049637920416,
+              "afterAtWorst_VperV": 0.00031282953945703344,
+              "maxAbsoluteMagnitudeChange_VperV": 0.00010330267532974221,
+              "peakBefore_VperV": 0.003043283219625281,
+              "peakAfter_VperV": 0.0029538180559269107
+            }
+          ],
+          "HcommonNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 0.10302397762410383,
+              "atWorstFrequency_Hz": 187000000.0,
+              "beforeAtWorst_VperV": 0.9627304411336951,
+              "afterAtWorst_VperV": 0.9513788783098934,
+              "maxAbsoluteMagnitudeChange_VperV": 0.011409484611534793,
+              "peakBefore_VperV": 0.9874230613456134,
+              "peakAfter_VperV": 0.9761238321556482
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.09652453405294814,
+              "atWorstFrequency_Hz": 191000000.0,
+              "beforeAtWorst_VperV": 0.9707430038302428,
+              "afterAtWorst_VperV": 0.9600150524276962,
+              "maxAbsoluteMagnitudeChange_VperV": 0.010776304002755865,
+              "peakBefore_VperV": 0.9864172641752241,
+              "peakAfter_VperV": 0.9756666136780255
+            }
+          ],
+          "Hcommon": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 0.14233467608073885,
+              "atWorstFrequency_Hz": 171000000.0,
+              "beforeAtWorst_VperV": 1.1607355379508844,
+              "afterAtWorst_VperV": 1.141869696338626,
+              "maxAbsoluteMagnitudeChange_VperV": 0.019179459455931802,
+              "peakBefore_VperV": 1.4371633261451107,
+              "peakAfter_VperV": 1.4237661777719386
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.1387636567308917,
+              "atWorstFrequency_Hz": 170000000.0,
+              "beforeAtWorst_VperV": 1.1618434849312005,
+              "afterAtWorst_VperV": 1.143429635695863,
+              "maxAbsoluteMagnitudeChange_VperV": 0.018797200592685526,
+              "peakBefore_VperV": 1.4475911504328811,
+              "peakAfter_VperV": 1.4349764143740413
+            }
+          ]
+        }
+      },
+      "drive": {
+        "8": {
+          "HdiffNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 2.339622443316906,
+              "atWorstFrequency_Hz": 30000000.0,
+              "beforeAtWorst_VperV": 0.0002113986017965257,
+              "afterAtWorst_VperV": 0.00016148083571774626,
+              "maxAbsoluteMagnitudeChange_VperV": 0.00012357525123305835,
+              "peakBefore_VperV": 0.0020174840896048417,
+              "peakAfter_VperV": 0.001949120567332411
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 1.956703669524115,
+              "atWorstFrequency_Hz": 42000000.0,
+              "beforeAtWorst_VperV": 0.00031484498169845977,
+              "afterAtWorst_VperV": 0.00025133998916026433,
+              "maxAbsoluteMagnitudeChange_VperV": 0.00013997437997698235,
+              "peakBefore_VperV": 0.0019413718567606786,
+              "peakAfter_VperV": 0.001886892739540072
+            }
+          ],
+          "Hdiff": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 2.4995151907432493,
+              "atWorstFrequency_Hz": 61000000.0,
+              "beforeAtWorst_VperV": 0.0003928186486539947,
+              "afterAtWorst_VperV": 0.0002945888721770315,
+              "maxAbsoluteMagnitudeChange_VperV": 0.00025865845653252244,
+              "peakBefore_VperV": 0.0038693717740006066,
+              "peakAfter_VperV": 0.003610713317468084
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 3.2160683682630467,
+              "atWorstFrequency_Hz": 89000000.0,
+              "beforeAtWorst_VperV": 0.0004305380367107754,
+              "afterAtWorst_VperV": 0.0002973090352474917,
+              "maxAbsoluteMagnitudeChange_VperV": 0.0002960657173948864,
+              "peakBefore_VperV": 0.00428429076254969,
+              "peakAfter_VperV": 0.003988225045154803
+            }
+          ],
+          "HcommonNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 0.11162279310459983,
+              "atWorstFrequency_Hz": 200000000.0,
+              "beforeAtWorst_VperV": 0.9631636044974986,
+              "afterAtWorst_VperV": 0.9508651352201505,
+              "maxAbsoluteMagnitudeChange_VperV": 0.012298469277348012,
+              "peakBefore_VperV": 0.9631636044974985,
+              "peakAfter_VperV": 0.9508651352201505
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.10513229581538633,
+              "atWorstFrequency_Hz": 200000000.0,
+              "beforeAtWorst_VperV": 0.9656949063272824,
+              "afterAtWorst_VperV": 0.9540767791612381,
+              "maxAbsoluteMagnitudeChange_VperV": 0.011618127166044379,
+              "peakBefore_VperV": 0.9656949063272824,
+              "peakAfter_VperV": 0.954076779161238
+            }
+          ],
+          "Hcommon": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 0.17287355570890078,
+              "atWorstFrequency_Hz": 200000000.0,
+              "beforeAtWorst_VperV": 1.2162360000451156,
+              "afterAtWorst_VperV": 1.1922687922542388,
+              "maxAbsoluteMagnitudeChange_VperV": 0.023967207790876577,
+              "peakBefore_VperV": 1.2162360000451153,
+              "peakAfter_VperV": 1.1922687922542388
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.16757956629273457,
+              "atWorstFrequency_Hz": 200000000.0,
+              "beforeAtWorst_VperV": 1.225779655819639,
+              "afterAtWorst_VperV": 1.202356985219402,
+              "maxAbsoluteMagnitudeChange_VperV": 0.023422670600237172,
+              "peakBefore_VperV": 1.225779655819639,
+              "peakAfter_VperV": 1.2023569852194018
+            }
+          ]
+        },
+        "10": {
+          "HdiffNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 1.5383350793764794,
+              "atWorstFrequency_Hz": 10000000.0,
+              "beforeAtWorst_VperV": 0.0003120904706945603,
+              "afterAtWorst_VperV": 0.0002614350152205553,
+              "maxAbsoluteMagnitudeChange_VperV": 0.00010303153660698623,
+              "peakBefore_VperV": 0.0027872068086593205,
+              "peakAfter_VperV": 0.002760702681767482
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 1.1790634130479185,
+              "atWorstFrequency_Hz": 10000000.0,
+              "beforeAtWorst_VperV": 0.0003263164722743637,
+              "afterAtWorst_VperV": 0.00028489565556038784,
+              "maxAbsoluteMagnitudeChange_VperV": 7.687605617562494e-05,
+              "peakBefore_VperV": 0.0026404087382921196,
+              "peakAfter_VperV": 0.0026327288415222993
+            }
+          ],
+          "Hdiff": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 6.905151512143627,
+              "atWorstFrequency_Hz": 44000000.0,
+              "beforeAtWorst_VperV": 0.00018870531356005114,
+              "afterAtWorst_VperV": 8.521706131061673e-05,
+              "maxAbsoluteMagnitudeChange_VperV": 0.00011580883569513615,
+              "peakBefore_VperV": 0.0018034951250179261,
+              "peakAfter_VperV": 0.0016915929721034576
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 4.27026929016852,
+              "atWorstFrequency_Hz": 14000000.0,
+              "beforeAtWorst_VperV": 0.0001216522800696275,
+              "afterAtWorst_VperV": 0.000198899512017429,
+              "maxAbsoluteMagnitudeChange_VperV": 0.00010192445881617405,
+              "peakBefore_VperV": 0.0019520702656916277,
+              "peakAfter_VperV": 0.0018501458068754537
+            }
+          ],
+          "HcommonNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 0.08502102205376073,
+              "atWorstFrequency_Hz": 141000000.0,
+              "beforeAtWorst_VperV": 0.9389799291892712,
+              "afterAtWorst_VperV": 0.9298336483594604,
+              "maxAbsoluteMagnitudeChange_VperV": 0.009151822470257032,
+              "peakBefore_VperV": 0.9427336129538308,
+              "peakAfter_VperV": 0.9337710286203833
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.07731257692835435,
+              "atWorstFrequency_Hz": 142000000.0,
+              "beforeAtWorst_VperV": 0.9424124077446014,
+              "afterAtWorst_VperV": 0.9340612736591979,
+              "maxAbsoluteMagnitudeChange_VperV": 0.008353315250536286,
+              "peakBefore_VperV": 0.9449392349792902,
+              "peakAfter_VperV": 0.9367003080941747
+            }
+          ],
+          "Hcommon": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 0.11597694176952614,
+              "atWorstFrequency_Hz": 130000000.0,
+              "beforeAtWorst_VperV": 1.126186917348375,
+              "afterAtWorst_VperV": 1.1112496337652429,
+              "maxAbsoluteMagnitudeChange_VperV": 0.01518955159671398,
+              "peakBefore_VperV": 1.2329518465224176,
+              "peakAfter_VperV": 1.2235409723557071
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.11228640040549569,
+              "atWorstFrequency_Hz": 131000000.0,
+              "beforeAtWorst_VperV": 1.1408968524842433,
+              "afterAtWorst_VperV": 1.1262428892057206,
+              "maxAbsoluteMagnitudeChange_VperV": 0.014821996368560963,
+              "peakBefore_VperV": 1.242387200614872,
+              "peakAfter_VperV": 1.2334992656695327
+            }
+          ]
+        },
+        "12": {
+          "HdiffNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 0.7801025220317035,
+              "atWorstFrequency_Hz": 22000000.0,
+              "beforeAtWorst_VperV": 0.00028796698745684135,
+              "afterAtWorst_VperV": 0.0002632313293278335,
+              "maxAbsoluteMagnitudeChange_VperV": 5.254304381173804e-05,
+              "peakBefore_VperV": 0.002839837846594308,
+              "peakAfter_VperV": 0.0028068058718393432
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.42988644453388375,
+              "atWorstFrequency_Hz": 76000000.0,
+              "beforeAtWorst_VperV": 0.0003866076409017247,
+              "afterAtWorst_VperV": 0.00036793924336839864,
+              "maxAbsoluteMagnitudeChange_VperV": 7.929204772612764e-05,
+              "peakBefore_VperV": 0.0028796135974651044,
+              "peakAfter_VperV": 0.0028003215497389767
+            }
+          ],
+          "Hdiff": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 1.36993870165455,
+              "atWorstFrequency_Hz": 98000000.0,
+              "beforeAtWorst_VperV": 0.0002919990037142718,
+              "afterAtWorst_VperV": 0.0003418836286188715,
+              "maxAbsoluteMagnitudeChange_VperV": 0.000107450736178421,
+              "peakBefore_VperV": 0.002584738906679095,
+              "peakAfter_VperV": 0.002512575484396427
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.6372044115192224,
+              "atWorstFrequency_Hz": 110000000.0,
+              "beforeAtWorst_VperV": 0.0002871927882917697,
+              "afterAtWorst_VperV": 0.00030905356006218586,
+              "maxAbsoluteMagnitudeChange_VperV": 0.00010296119994773843,
+              "peakBefore_VperV": 0.002996976909673989,
+              "peakAfter_VperV": 0.0029092663228517403
+            }
+          ],
+          "HcommonNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 0.10177559915074104,
+              "atWorstFrequency_Hz": 174000000.0,
+              "beforeAtWorst_VperV": 0.945780719062988,
+              "afterAtWorst_VperV": 0.9347633496554001,
+              "maxAbsoluteMagnitudeChange_VperV": 0.011034725017954328,
+              "peakBefore_VperV": 0.9707726435062269,
+              "peakAfter_VperV": 0.9610717537198905
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.09371667607325002,
+              "atWorstFrequency_Hz": 175000000.0,
+              "beforeAtWorst_VperV": 0.9494424332141735,
+              "afterAtWorst_VperV": 0.9392534605502472,
+              "maxAbsoluteMagnitudeChange_VperV": 0.010204587827938316,
+              "peakBefore_VperV": 0.9697838065870251,
+              "peakAfter_VperV": 0.9606215856677988
+            }
+          ],
+          "Hcommon": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 0.1465343593987892,
+              "atWorstFrequency_Hz": 169000000.0,
+              "beforeAtWorst_VperV": 1.1552320422983844,
+              "afterAtWorst_VperV": 1.1359063001562137,
+              "maxAbsoluteMagnitudeChange_VperV": 0.019566274441658482,
+              "peakBefore_VperV": 1.4129291646995104,
+              "peakAfter_VperV": 1.4018113402031487
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.14302981330294456,
+              "atWorstFrequency_Hz": 168000000.0,
+              "beforeAtWorst_VperV": 1.1568883221295652,
+              "afterAtWorst_VperV": 1.1379939326486095,
+              "maxAbsoluteMagnitudeChange_VperV": 0.01921954325525088,
+              "peakBefore_VperV": 1.4231811498375342,
+              "peakAfter_VperV": 1.4128487120978654
+            }
+          ]
+        }
+      }
+    },
+    "near": {
+      "loaded": {
+        "8": {
+          "HdiffNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 0.7857235997743308,
+              "atWorstFrequency_Hz": 155000000.0,
+              "beforeAtWorst_VperV": 0.043214319788952835,
+              "afterAtWorst_VperV": 0.039476760007459366,
+              "maxAbsoluteMagnitudeChange_VperV": 0.004385125227072288,
+              "peakBefore_VperV": 0.0717954314531305,
+              "peakAfter_VperV": 0.07299066061797393
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.7615298966369759,
+              "atWorstFrequency_Hz": 154000000.0,
+              "beforeAtWorst_VperV": 0.04147622910482732,
+              "afterAtWorst_VperV": 0.037994678144140634,
+              "maxAbsoluteMagnitudeChange_VperV": 0.004275266706026362,
+              "peakBefore_VperV": 0.07061877600095853,
+              "peakAfter_VperV": 0.07207554256664661
+            }
+          ],
+          "Hdiff": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 0.709800753754505,
+              "atWorstFrequency_Hz": 155000000.0,
+              "beforeAtWorst_VperV": 0.04233969190788734,
+              "afterAtWorst_VperV": 0.03901733979040063,
+              "maxAbsoluteMagnitudeChange_VperV": 0.00472061060107512,
+              "peakBefore_VperV": 0.0743226729093551,
+              "peakAfter_VperV": 0.07668337398924323
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.6816494674613173,
+              "atWorstFrequency_Hz": 155000000.0,
+              "beforeAtWorst_VperV": 0.04089530009511277,
+              "afterAtWorst_VperV": 0.03780862870614844,
+              "maxAbsoluteMagnitudeChange_VperV": 0.004722920337683664,
+              "peakBefore_VperV": 0.07148013378221425,
+              "peakAfter_VperV": 0.07390864727000905
+            }
+          ],
+          "HcommonNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 0.9648226555795074,
+              "atWorstFrequency_Hz": 200000000.0,
+              "beforeAtWorst_VperV": 1.559478900872587,
+              "afterAtWorst_VperV": 1.7426919941900423,
+              "maxAbsoluteMagnitudeChange_VperV": 0.18619269834688001,
+              "peakBefore_VperV": 1.7307844296010466,
+              "peakAfter_VperV": 1.8792841591709177
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.9205706890040224,
+              "atWorstFrequency_Hz": 200000000.0,
+              "beforeAtWorst_VperV": 1.6966472078261419,
+              "afterAtWorst_VperV": 1.886340465099534,
+              "maxAbsoluteMagnitudeChange_VperV": 0.1923550323228298,
+              "peakBefore_VperV": 1.8862857374129036,
+              "peakAfter_VperV": 2.0356363615544915
+            }
+          ],
+          "Hcommon": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 1.128470204944339,
+              "atWorstFrequency_Hz": 150000000.0,
+              "beforeAtWorst_VperV": 0.4125101540211429,
+              "afterAtWorst_VperV": 0.36225228453326874,
+              "maxAbsoluteMagnitudeChange_VperV": 0.05472943597310537,
+              "peakBefore_VperV": 0.5227041762775493,
+              "peakAfter_VperV": 0.4916305560672965
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 1.0101175480227902,
+              "atWorstFrequency_Hz": 152000000.0,
+              "beforeAtWorst_VperV": 0.4748066834932089,
+              "afterAtWorst_VperV": 0.4226792675342792,
+              "maxAbsoluteMagnitudeChange_VperV": 0.0558577009029918,
+              "peakBefore_VperV": 0.5823592423407968,
+              "peakAfter_VperV": 0.5497425873859304
+            }
+          ]
+        },
+        "10": {
+          "HdiffNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 1.772370859067918,
+              "atWorstFrequency_Hz": 166000000.0,
+              "beforeAtWorst_VperV": 0.11384932283539011,
+              "afterAtWorst_VperV": 0.09283503572279471,
+              "maxAbsoluteMagnitudeChange_VperV": 0.022712910998447897,
+              "peakBefore_VperV": 0.14661425046787271,
+              "peakAfter_VperV": 0.1417630599458542
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 1.7166625001124867,
+              "atWorstFrequency_Hz": 166000000.0,
+              "beforeAtWorst_VperV": 0.11198641162931912,
+              "afterAtWorst_VperV": 0.0919035323097923,
+              "maxAbsoluteMagnitudeChange_VperV": 0.02165441500500921,
+              "peakBefore_VperV": 0.14387073053796837,
+              "peakAfter_VperV": 0.13990776995784918
+            }
+          ],
+          "Hdiff": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 1.8458687111095062,
+              "atWorstFrequency_Hz": 166000000.0,
+              "beforeAtWorst_VperV": 0.12259229126240158,
+              "afterAtWorst_VperV": 0.0991219247478186,
+              "maxAbsoluteMagnitudeChange_VperV": 0.025395612774816,
+              "peakBefore_VperV": 0.1583413841576627,
+              "peakAfter_VperV": 0.1523018828958685
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 1.8390351109850127,
+              "atWorstFrequency_Hz": 166000000.0,
+              "beforeAtWorst_VperV": 0.11727842117794156,
+              "afterAtWorst_VperV": 0.09490003120697868,
+              "maxAbsoluteMagnitudeChange_VperV": 0.024215292861513818,
+              "peakBefore_VperV": 0.15143223429449965,
+              "peakAfter_VperV": 0.1457153540371236
+            }
+          ],
+          "HcommonNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 1.655251046377237,
+              "atWorstFrequency_Hz": 184000000.0,
+              "beforeAtWorst_VperV": 2.361641826498333,
+              "afterAtWorst_VperV": 2.857436475317571,
+              "maxAbsoluteMagnitudeChange_VperV": 0.5264888006697563,
+              "peakBefore_VperV": 3.326424945954253,
+              "peakAfter_VperV": 3.489398511684094
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 1.6027496158871681,
+              "atWorstFrequency_Hz": 184000000.0,
+              "beforeAtWorst_VperV": 2.5750427999352374,
+              "afterAtWorst_VperV": 3.0968625674425376,
+              "maxAbsoluteMagnitudeChange_VperV": 0.5523374677954318,
+              "peakBefore_VperV": 3.634761279439309,
+              "peakAfter_VperV": 3.7845828485902304
+            }
+          ],
+          "Hcommon": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 7.180907629059487,
+              "atWorstFrequency_Hz": 191000000.0,
+              "beforeAtWorst_VperV": 0.04417409365418771,
+              "afterAtWorst_VperV": 0.1009748063727155,
+              "maxAbsoluteMagnitudeChange_VperV": 0.20858551857919927,
+              "peakBefore_VperV": 0.7146031405146294,
+              "peakAfter_VperV": 0.506904090405992
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 6.133841676942784,
+              "atWorstFrequency_Hz": 197000000.0,
+              "beforeAtWorst_VperV": 0.047129425543246145,
+              "afterAtWorst_VperV": 0.0954957909312006,
+              "maxAbsoluteMagnitudeChange_VperV": 0.22277770874584868,
+              "peakBefore_VperV": 0.8815519530917725,
+              "peakAfter_VperV": 0.6677034355306894
+            }
+          ]
+        },
+        "12": {
+          "HdiffNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 3.214197551840078,
+              "atWorstFrequency_Hz": 170000000.0,
+              "beforeAtWorst_VperV": 0.23021835834726342,
+              "afterAtWorst_VperV": 0.15901206410584665,
+              "maxAbsoluteMagnitudeChange_VperV": 0.07977516029192203,
+              "peakBefore_VperV": 0.2939527105144867,
+              "peakAfter_VperV": 0.30098187388048336
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 3.1823674351694664,
+              "atWorstFrequency_Hz": 170000000.0,
+              "beforeAtWorst_VperV": 0.22717818608250073,
+              "afterAtWorst_VperV": 0.1574882857712637,
+              "maxAbsoluteMagnitudeChange_VperV": 0.07936400100964683,
+              "peakBefore_VperV": 0.28997722643387547,
+              "peakAfter_VperV": 0.297682688485168
+            }
+          ],
+          "Hdiff": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 3.306078840703223,
+              "atWorstFrequency_Hz": 170000000.0,
+              "beforeAtWorst_VperV": 0.2632786380945155,
+              "afterAtWorst_VperV": 0.17993335620681167,
+              "maxAbsoluteMagnitudeChange_VperV": 0.0920669373325991,
+              "peakBefore_VperV": 0.33782354919462704,
+              "peakAfter_VperV": 0.3432749938580326
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 3.298561540338551,
+              "atWorstFrequency_Hz": 170000000.0,
+              "beforeAtWorst_VperV": 0.2531267074544797,
+              "afterAtWorst_VperV": 0.17314497542153143,
+              "maxAbsoluteMagnitudeChange_VperV": 0.08831718980092237,
+              "peakBefore_VperV": 0.32464645582372426,
+              "peakAfter_VperV": 0.3301823435812144
+            }
+          ],
+          "HcommonNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 3.4786264813270495,
+              "atWorstFrequency_Hz": 179000000.0,
+              "beforeAtWorst_VperV": 3.970730708394391,
+              "afterAtWorst_VperV": 5.926547351473028,
+              "maxAbsoluteMagnitudeChange_VperV": 2.169819872030553,
+              "peakBefore_VperV": 6.532688663214737,
+              "peakAfter_VperV": 7.25002734834121
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 3.4212465591445134,
+              "atWorstFrequency_Hz": 179000000.0,
+              "beforeAtWorst_VperV": 4.33340550506888,
+              "afterAtWorst_VperV": 6.425274091312309,
+              "maxAbsoluteMagnitudeChange_VperV": 2.3204652076554506,
+              "peakBefore_VperV": 7.139963281336486,
+              "peakAfter_VperV": 7.863091073417933
+            }
+          ],
+          "Hcommon": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 3.5662964621991566,
+              "atWorstFrequency_Hz": 170000000.0,
+              "beforeAtWorst_VperV": 1.50213093074003,
+              "afterAtWorst_VperV": 0.9963065047178329,
+              "maxAbsoluteMagnitudeChange_VperV": 0.5448921935397473,
+              "peakBefore_VperV": 1.7700372327485776,
+              "peakAfter_VperV": 1.5839871432830537
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 3.393767860936949,
+              "atWorstFrequency_Hz": 170000000.0,
+              "beforeAtWorst_VperV": 1.7641565496473453,
+              "afterAtWorst_VperV": 1.193572291925648,
+              "maxAbsoluteMagnitudeChange_VperV": 0.6148854888551545,
+              "peakBefore_VperV": 2.0922701773894214,
+              "peakAfter_VperV": 1.9292852268494478
+            }
+          ]
+        }
+      },
+      "drive": {
+        "8": {
+          "HdiffNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 0.28103488025536105,
+              "atWorstFrequency_Hz": 71000000.0,
+              "beforeAtWorst_VperV": 0.004278792608739739,
+              "afterAtWorst_VperV": 0.00414256653911383,
+              "maxAbsoluteMagnitudeChange_VperV": 0.00042355887473458087,
+              "peakBefore_VperV": 0.020297746007295392,
+              "peakAfter_VperV": 0.0198785120485478
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.3828518872247726,
+              "atWorstFrequency_Hz": 53000000.0,
+              "beforeAtWorst_VperV": 0.002197504993653729,
+              "afterAtWorst_VperV": 0.0021027482310027744,
+              "maxAbsoluteMagnitudeChange_VperV": 0.00034815598728865985,
+              "peakBefore_VperV": 0.019927361423454443,
+              "peakAfter_VperV": 0.01961140229350284
+            }
+          ],
+          "Hdiff": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 0.5848161785156833,
+              "atWorstFrequency_Hz": 48000000.0,
+              "beforeAtWorst_VperV": 0.0022355717839163463,
+              "afterAtWorst_VperV": 0.0020900073366647894,
+              "maxAbsoluteMagnitudeChange_VperV": 0.0003400340181743504,
+              "peakBefore_VperV": 0.021905975516412164,
+              "peakAfter_VperV": 0.021565941498237814
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.23514129192110697,
+              "atWorstFrequency_Hz": 54000000.0,
+              "beforeAtWorst_VperV": 0.002680951833568482,
+              "afterAtWorst_VperV": 0.002609347660452427,
+              "maxAbsoluteMagnitudeChange_VperV": 0.0002754836838070431,
+              "peakBefore_VperV": 0.021010392558124574,
+              "peakAfter_VperV": 0.02074239930160536
+            }
+          ],
+          "HcommonNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 1.8333347600207284,
+              "atWorstFrequency_Hz": 91000000.0,
+              "beforeAtWorst_VperV": 0.05612970141086787,
+              "afterAtWorst_VperV": 0.04544917392067774,
+              "maxAbsoluteMagnitudeChange_VperV": 0.013783276675857214,
+              "peakBefore_VperV": 0.5316319567308282,
+              "peakAfter_VperV": 0.5454152334066854
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 1.3374658814342881,
+              "atWorstFrequency_Hz": 90000000.0,
+              "beforeAtWorst_VperV": 0.05994578826866524,
+              "afterAtWorst_VperV": 0.051390800348193384,
+              "maxAbsoluteMagnitudeChange_VperV": 0.011980175812831617,
+              "peakBefore_VperV": 0.578393125084161,
+              "peakAfter_VperV": 0.5903733008969926
+            }
+          ],
+          "Hcommon": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 0.6308176042031931,
+              "atWorstFrequency_Hz": 121000000.0,
+              "beforeAtWorst_VperV": 0.1976967022124312,
+              "afterAtWorst_VperV": 0.18384784546191393,
+              "maxAbsoluteMagnitudeChange_VperV": 0.014612623975872985,
+              "peakBefore_VperV": 0.2891200606331406,
+              "peakAfter_VperV": 0.27729054545279624
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.4993855634158087,
+              "atWorstFrequency_Hz": 116000000.0,
+              "beforeAtWorst_VperV": 0.22548067005460126,
+              "afterAtWorst_VperV": 0.21288253765574316,
+              "maxAbsoluteMagnitudeChange_VperV": 0.013226740180764085,
+              "peakBefore_VperV": 0.30388150181213713,
+              "peakAfter_VperV": 0.2926873007854758
+            }
+          ]
+        },
+        "10": {
+          "HdiffNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 1.0891799460005227,
+              "atWorstFrequency_Hz": 59000000.0,
+              "beforeAtWorst_VperV": 0.002198310677317343,
+              "afterAtWorst_VperV": 0.0019392333529678985,
+              "maxAbsoluteMagnitudeChange_VperV": 0.0005801172944813332,
+              "peakBefore_VperV": 0.02190873963165162,
+              "peakAfter_VperV": 0.02168315978796851
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 1.1503850707877536,
+              "atWorstFrequency_Hz": 58000000.0,
+              "beforeAtWorst_VperV": 0.0021586207778029587,
+              "afterAtWorst_VperV": 0.0018908500941156713,
+              "maxAbsoluteMagnitudeChange_VperV": 0.000551551144655547,
+              "peakBefore_VperV": 0.02131994560952544,
+              "peakAfter_VperV": 0.021239212242687922
+            }
+          ],
+          "Hdiff": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 1.316995430781736,
+              "atWorstFrequency_Hz": 47000000.0,
+              "beforeAtWorst_VperV": 0.002514917096129176,
+              "afterAtWorst_VperV": 0.0021610952144499886,
+              "maxAbsoluteMagnitudeChange_VperV": 0.0008175913746110951,
+              "peakBefore_VperV": 0.024498744121846976,
+              "peakAfter_VperV": 0.02411463777136631
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 1.0741730012568682,
+              "atWorstFrequency_Hz": 44000000.0,
+              "beforeAtWorst_VperV": 0.002347954182792157,
+              "afterAtWorst_VperV": 0.002074822590523749,
+              "maxAbsoluteMagnitudeChange_VperV": 0.0007425045565721475,
+              "peakBefore_VperV": 0.023405124760580275,
+              "peakAfter_VperV": 0.02305255595414307
+            }
+          ],
+          "HcommonNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 1.006791617006651,
+              "atWorstFrequency_Hz": 122000000.0,
+              "beforeAtWorst_VperV": 0.057047872103104365,
+              "afterAtWorst_VperV": 0.06405883418771402,
+              "maxAbsoluteMagnitudeChange_VperV": 0.019332778840189913,
+              "peakBefore_VperV": 0.6132669444536138,
+              "peakAfter_VperV": 0.6325997232938038
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.5738472963903017,
+              "atWorstFrequency_Hz": 122000000.0,
+              "beforeAtWorst_VperV": 0.06783548243973551,
+              "afterAtWorst_VperV": 0.07246850178997707,
+              "maxAbsoluteMagnitudeChange_VperV": 0.017717585714073447,
+              "peakBefore_VperV": 0.6669777958165932,
+              "peakAfter_VperV": 0.6846953815306667
+            }
+          ],
+          "Hcommon": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 5.885235453921915,
+              "atWorstFrequency_Hz": 192000000.0,
+              "beforeAtWorst_VperV": 0.015862557943713017,
+              "afterAtWorst_VperV": 0.031234531360143872,
+              "maxAbsoluteMagnitudeChange_VperV": 0.017403819387940805,
+              "peakBefore_VperV": 0.2924252627528845,
+              "peakAfter_VperV": 0.27796995163336286
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 5.120850448880242,
+              "atWorstFrequency_Hz": 197000000.0,
+              "beforeAtWorst_VperV": 0.018252886465933895,
+              "afterAtWorst_VperV": 0.03291350057392963,
+              "maxAbsoluteMagnitudeChange_VperV": 0.015520876378694093,
+              "peakBefore_VperV": 0.3138298972933698,
+              "peakAfter_VperV": 0.3002335996870695
+            }
+          ]
+        },
+        "12": {
+          "HdiffNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 0.7390250549479087,
+              "atWorstFrequency_Hz": 74000000.0,
+              "beforeAtWorst_VperV": 0.0024618854628194924,
+              "afterAtWorst_VperV": 0.002261083449700281,
+              "maxAbsoluteMagnitudeChange_VperV": 0.0007626879596386686,
+              "peakBefore_VperV": 0.022072423611661975,
+              "peakAfter_VperV": 0.021922914690138805
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.8051676895106832,
+              "atWorstFrequency_Hz": 72000000.0,
+              "beforeAtWorst_VperV": 0.0022380786282724407,
+              "afterAtWorst_VperV": 0.002039937941556005,
+              "maxAbsoluteMagnitudeChange_VperV": 0.0006488652074659214,
+              "peakBefore_VperV": 0.021716312441342155,
+              "peakAfter_VperV": 0.021574872073453467
+            }
+          ],
+          "Hdiff": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 1.0096701360036069,
+              "atWorstFrequency_Hz": 74000000.0,
+              "beforeAtWorst_VperV": 0.002682560676086208,
+              "afterAtWorst_VperV": 0.0023881744468271693,
+              "maxAbsoluteMagnitudeChange_VperV": 0.000884477012945608,
+              "peakBefore_VperV": 0.026545435148700645,
+              "peakAfter_VperV": 0.025954693413950767
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.806480929965939,
+              "atWorstFrequency_Hz": 73000000.0,
+              "beforeAtWorst_VperV": 0.002562449218973451,
+              "afterAtWorst_VperV": 0.0023352383871930523,
+              "maxAbsoluteMagnitudeChange_VperV": 0.0008544083948868915,
+              "peakBefore_VperV": 0.025387849045518048,
+              "peakAfter_VperV": 0.024919981216134802
+            }
+          ],
+          "HcommonNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 0.7055041781928711,
+              "atWorstFrequency_Hz": 105000000.0,
+              "beforeAtWorst_VperV": 0.06698892698522586,
+              "afterAtWorst_VperV": 0.061762918905321755,
+              "maxAbsoluteMagnitudeChange_VperV": 0.021986820391414197,
+              "peakBefore_VperV": 0.6299214538239857,
+              "peakAfter_VperV": 0.6519082742153999
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.4350667221257414,
+              "atWorstFrequency_Hz": 60000000.0,
+              "beforeAtWorst_VperV": 0.24663567057434008,
+              "afterAtWorst_VperV": 0.23458624959140437,
+              "maxAbsoluteMagnitudeChange_VperV": 0.0205538947570163,
+              "peakBefore_VperV": 0.6848117824918655,
+              "peakAfter_VperV": 0.7053656772488818
+            }
+          ],
+          "Hcommon": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 2.213256881479246,
+              "atWorstFrequency_Hz": 198000000.0,
+              "beforeAtWorst_VperV": 0.029304706539902275,
+              "afterAtWorst_VperV": 0.022713001657636175,
+              "maxAbsoluteMagnitudeChange_VperV": 0.019801874843154377,
+              "peakBefore_VperV": 0.2866350831017401,
+              "peakAfter_VperV": 0.27443193811782224
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 1.7089006573436585,
+              "atWorstFrequency_Hz": 200000000.0,
+              "beforeAtWorst_VperV": 0.037315814157310896,
+              "afterAtWorst_VperV": 0.03065122870687985,
+              "maxAbsoluteMagnitudeChange_VperV": 0.018449581815617094,
+              "peakBefore_VperV": 0.3041208721646257,
+              "peakAfter_VperV": 0.292340976579551
+            }
+          ]
+        }
+      }
+    }
+  },
+  "manifest_sha256": "eddb48d4da7754101fe0d9fbbd9f505be4c2619364899a8b4a8b3e09952e0862",
+  "drive_sha256": "480ad8fc78f308ae4403cf92053aa87c44e6e2be2adda5094e83724e86bec38b"
+}

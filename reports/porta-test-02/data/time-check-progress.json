@@ -1,0 +1,13 @@
+{
+  "controllerPID": 54048,
+  "case": "test02-near-long",
+  "stage": "raw_complete",
+  "waitPID": 8960,
+  "maximumPhysicalTime_ns": 25.0,
+  "numThreads": 4,
+  "reason": "Near-bond upper-band peaks and source imbalance change materially between8/10/12ns. Extend the same geometry before interpreting those peaks.",
+  "startedAtUTC": "2026-09-13T17:40:07.740585+00:00",
+  "updatedAtUTC": "2026-09-13T23:17:50.376529+00:00",
+  "childPID": 51620,
+  "time_ns": 24.996205500000002
+}

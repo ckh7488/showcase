@@ -1,0 +1,52 @@
+{
+  "test": "00",
+  "shape": "straight",
+  "solver": "openEMS",
+  "versions": {
+    "openEMS": "0.0.36",
+    "CSXCAD": "0.6.3",
+    "numpy": "1.26.4"
+  },
+  "source": "https://docs.openems.de/python/openEMS/Tutorials/MSL_NotchFilter.html",
+  "script_sha256": "a0cde9468deb880585490d7c4112348393eee07af53974b08b2953faf528acbd",
+  "geometry": {
+    "units": "um",
+    "length": 100000,
+    "width": 600,
+    "substrateThickness": 254,
+    "epsilon_r": 3.66,
+    "stubLength": 0
+  },
+  "changes": [
+    "Explicit timestep cap/end criterion and numerical output; no plotting GUI.",
+    "Uniform-line, refinement, reverse-source and margin variants are explicit.",
+    "FeedShift fixed at original baseline distance across refinements."
+  ],
+  "refinement": 1.5,
+  "margin": 1,
+  "reverse": false,
+  "boundary": [
+    "PML_8",
+    "PML_8",
+    "MUR",
+    "MUR",
+    "PEC",
+    "MUR"
+  ],
+  "EndCriteria": 1e-06,
+  "NrTS": 200000,
+  "numThreads": 1,
+  "meshLines": {
+    "x": 353,
+    "y": 122,
+    "z": 19
+  },
+  "cells": 766656,
+  "minCell_um": {
+    "x": 37.310482882272424,
+    "y": 37.310482882272424,
+    "z": 42.333333333333314
+  },
+  "referenceImpedance_ohm": 50,
+  "solverRun": false
+}

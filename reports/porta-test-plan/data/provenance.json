@@ -1,0 +1,79 @@
+[
+  {
+    "source": "reports/porta-lab-setup/vendor/three.min.js",
+    "copy": "vendor/three.min.js",
+    "source_sha256": "9274bbcec8d96168626c732b5d31c775aa8cfb7eaa0599bec0c175908a2c1ce2",
+    "copy_sha256": "9274bbcec8d96168626c732b5d31c775aa8cfb7eaa0599bec0c175908a2c1ce2",
+    "adapted": false
+  },
+  {
+    "source": "reports/porta-lab-setup/vendor/OrbitControls.js",
+    "copy": "vendor/OrbitControls.js",
+    "source_sha256": "02bb4ade710f3e607329e37a21f098bc3ac70eb6e33daf8a65e79f4db785e7b2",
+    "copy_sha256": "02bb4ade710f3e607329e37a21f098bc3ac70eb6e33daf8a65e79f4db785e7b2",
+    "adapted": false
+  },
+  {
+    "source": "reports/porta-lab-setup/vendor/LICENSE-three.txt",
+    "copy": "vendor/LICENSE-three.txt",
+    "source_sha256": "abe364d9a4939d4c0bae8c091c26f9e576381729f329f0d23fd428b752b71a84",
+    "copy_sha256": "abe364d9a4939d4c0bae8c091c26f9e576381729f329f0d23fd428b752b71a84",
+    "adapted": false
+  },
+  {
+    "source": "reports/porta-lab-setup/data/board-components.js",
+    "copy": "data/board-components.js",
+    "source_sha256": "9c6bad082c4c20d4526ad834ba7c3ba516d0c807bad92b693399df31218e8cf6",
+    "copy_sha256": "9c6bad082c4c20d4526ad834ba7c3ba516d0c807bad92b693399df31218e8cf6",
+    "adapted": false
+  },
+  {
+    "source": "reports/porta-lab-setup/data/sensor-construction.js",
+    "copy": "data/sensor-construction.js",
+    "source_sha256": "0e372a0a22fb83d7266e79e25ac81e25d6bb9340a50aa4b8ebd8bf59702991c7",
+    "copy_sha256": "0e372a0a22fb83d7266e79e25ac81e25d6bb9340a50aa4b8ebd8bf59702991c7",
+    "adapted": false
+  },
+  {
+    "source": "reports/porta-lab-setup/room.js",
+    "copy": "room.js",
+    "source_sha256": "556a275f05a9f3c158ce1916469f0c0c88194cc1e3043e3ee26b573c52a23257",
+    "copy_sha256": "2dea92650ccf26aea6cc94a5a2c40516400f7cb234bd11f4f93dbae0d266598f",
+    "adapted": true
+  },
+  {
+    "source": "reports/porta-lab-setup/geometry.js",
+    "copy": "geometry.js",
+    "source_sha256": "799a229de39c18a5706b5ea9f04c43b30c75517b4620c5a2a11f026f405cdfb3",
+    "copy_sha256": "799a229de39c18a5706b5ea9f04c43b30c75517b4620c5a2a11f026f405cdfb3",
+    "adapted": false
+  },
+  {
+    "source": "reports/porta-lab-setup/phy-geometry.js",
+    "copy": "phy-geometry.js",
+    "source_sha256": "3abbb14b19169a4627df8f217e5fa47778ccbca8046ca67002fd69f20b763464",
+    "copy_sha256": "3abbb14b19169a4627df8f217e5fa47778ccbca8046ca67002fd69f20b763464",
+    "adapted": false
+  },
+  {
+    "source": "reports/porta-lab-setup/ground-vias.js",
+    "copy": "ground-vias.js",
+    "source_sha256": "b12476444ff553dfff9dca0391f9d2cbfa3be37010b87a520b3e5a752fe9d3f1",
+    "copy_sha256": "b12476444ff553dfff9dca0391f9d2cbfa3be37010b87a520b3e5a752fe9d3f1",
+    "adapted": false
+  },
+  {
+    "source": "reports/porta-lab-setup/inner-copper.js",
+    "copy": "inner-copper.js",
+    "source_sha256": "370eac513cfbac059c13007d167b31f28b09af5e47608e174dc103cc6cad03c5",
+    "copy_sha256": "370eac513cfbac059c13007d167b31f28b09af5e47608e174dc103cc6cad03c5",
+    "adapted": false
+  },
+  {
+    "source": "reports/porta-lab-setup/viewer.js",
+    "copy": "viewer.js",
+    "source_sha256": "bcf4e2ea6e239799de0f2ccc0e1b387037ea1a382b5d192d65f8764cf3fb4bfd",
+    "copy_sha256": "62215710073c90b90c380edffd47ded96c15fcc9d601febf1a035a264559700b",
+    "adapted": true
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "id": "test00-straight-fine",
+  "nominalReferencePlanes_um": [
+    -33333.333333333336,
+    33333.333333333336
+  ],
+  "sampledReferencePlanes_um": [
+    -33349.560884483224,
+    33349.560884483224
+  ],
+  "operation": "openEMS CalcPort ref_plane_shift = 50000/3 um at both ports; no rerun.",
+  "responseFile": "test00-straight-fine/reference-aligned.npz"
+}

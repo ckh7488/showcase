@@ -1,0 +1,33 @@
+{
+  "controllerPID": 524,
+  "stage": "raw_complete",
+  "queue": [],
+  "finished": [
+    "near",
+    "floating"
+  ],
+  "numThreads": 4,
+  "maximumPhysicalTime_ns": 12.5,
+  "meshComparison": {
+    "transverse_mm": [
+      0.2,
+      0.16
+    ],
+    "axial_mm": [
+      0.4,
+      0.4
+    ]
+  },
+  "reason": "Check the large floating-versus-near CM/DM change on a matched finer transverse grid. Small near/both advantages are not being ranked.",
+  "startedAtUTC": "2026-09-13T23:46:01.584896+00:00",
+  "baseSourceHashes": {
+    "geometry.xml": "1031bc9c3ba41f32dd6e1ffa63935e8dc64b828161494af5fac5e3fa7b3b5cdd",
+    "model.json": "24e0257af6e8190e79ce0aa6923a25e8c09ba650ead34b1fb871059790b7840b",
+    "mesh.json": "ae1696eb35f144fee2e0aa944cfb7a586d87bb4b39baa36acfa7d1fedd964853",
+    "pec-connection-audit.json": "6a76bc79a7d5395af69c746784c324bed594912b230107279bbeeb04403cdeb8"
+  },
+  "updatedAtUTC": "2026-09-14T06:18:24.947258+00:00",
+  "current": null,
+  "childPID": null,
+  "time_ns": 12.499864407
+}

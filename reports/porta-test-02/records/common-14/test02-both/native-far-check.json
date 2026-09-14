@@ -1,0 +1,31 @@
+{
+  "fieldSolution": false,
+  "scope": "Cropped far end only. Checks the local strap, not global shield-to-plate connectivity via a remote bond. Zero source excitations are expected in this source-free crop.",
+  "componentCount": 7,
+  "terminalComponents": [
+    4,
+    1,
+    6,
+    3,
+    2,
+    2,
+    5,
+    5
+  ],
+  "cableEntryComponents": [
+    4,
+    1,
+    6,
+    3,
+    2,
+    2,
+    5,
+    5
+  ],
+  "allWiresConnectToCable": true,
+  "plateComponent": 0,
+  "shieldComponent": 0,
+  "localShieldBondConnected": true,
+  "powerBusGroupsDistinct": true,
+  "noWireShortToShieldOrPlate": true
+}

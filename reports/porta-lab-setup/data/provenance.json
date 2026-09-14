@@ -1,0 +1,77 @@
+[
+  {
+    "source": "reports/porta-pcb/geometry.js",
+    "copy": "geometry.js",
+    "sha256": "799a229de39c18a5706b5ea9f04c43b30c75517b4620c5a2a11f026f405cdfb3",
+    "source_sha256": "799a229de39c18a5706b5ea9f04c43b30c75517b4620c5a2a11f026f405cdfb3"
+  },
+  {
+    "source": "reports/porta-pcb/phy-geometry.js",
+    "copy": "phy-geometry.js",
+    "sha256": "3abbb14b19169a4627df8f217e5fa47778ccbca8046ca67002fd69f20b763464",
+    "source_sha256": "3abbb14b19169a4627df8f217e5fa47778ccbca8046ca67002fd69f20b763464"
+  },
+  {
+    "source": "reports/porta-pcb/ground-vias.js",
+    "copy": "ground-vias.js",
+    "sha256": "b12476444ff553dfff9dca0391f9d2cbfa3be37010b87a520b3e5a752fe9d3f1",
+    "source_sha256": "b12476444ff553dfff9dca0391f9d2cbfa3be37010b87a520b3e5a752fe9d3f1"
+  },
+  {
+    "source": "reports/porta-pcb/inner-copper.js",
+    "copy": "inner-copper.js",
+    "sha256": "370eac513cfbac059c13007d167b31f28b09af5e47608e174dc103cc6cad03c5",
+    "source_sha256": "370eac513cfbac059c13007d167b31f28b09af5e47608e174dc103cc6cad03c5"
+  },
+  {
+    "source": "reports/porta-pcb/viewer.js",
+    "copy": "viewer.js",
+    "sha256": "bcf4e2ea6e239799de0f2ccc0e1b387037ea1a382b5d192d65f8764cf3fb4bfd",
+    "source_sha256": "8c8bcf01e42c8e114215dd2e2b01b31a0e268aa6acd610a9ddeb925e5eeb53ea",
+    "adaptation": "Keyboard rotation/zoom added; original display geometry and selection behavior preserved."
+  },
+  {
+    "source": "reports/porta-pcb/vendor/three.min.js",
+    "copy": "vendor/three.min.js",
+    "sha256": "9274bbcec8d96168626c732b5d31c775aa8cfb7eaa0599bec0c175908a2c1ce2",
+    "source_sha256": "9274bbcec8d96168626c732b5d31c775aa8cfb7eaa0599bec0c175908a2c1ce2"
+  },
+  {
+    "source": "reports/porta-pcb/vendor/OrbitControls.js",
+    "copy": "vendor/OrbitControls.js",
+    "sha256": "02bb4ade710f3e607329e37a21f098bc3ac70eb6e33daf8a65e79f4db785e7b2",
+    "source_sha256": "02bb4ade710f3e607329e37a21f098bc3ac70eb6e33daf8a65e79f4db785e7b2"
+  },
+  {
+    "source": "reports/porta-pcb/vendor/LICENSE-three.txt",
+    "copy": "vendor/LICENSE-three.txt",
+    "sha256": "abe364d9a4939d4c0bae8c091c26f9e576381729f329f0d23fd428b752b71a84",
+    "source_sha256": "abe364d9a4939d4c0bae8c091c26f9e576381729f329f0d23fd428b752b71a84"
+  },
+  {
+    "source": "reports/porta-pcb/assets/image65.png",
+    "copy": "assets/image65.png",
+    "sha256": "4c861b475eb153d319c224403baaa31818745910578c74b854344959c7ae31a6",
+    "source_sha256": "4c861b475eb153d319c224403baaa31818745910578c74b854344959c7ae31a6"
+  },
+  {
+    "source": "reports/porta-pcb/assets/image82.jpg",
+    "copy": "assets/image82.jpg",
+    "sha256": "63278fd2f36170a8eeef2e3d2621d8141d2ed07325387e55a18edccef9596687",
+    "source_sha256": "63278fd2f36170a8eeef2e3d2621d8141d2ed07325387e55a18edccef9596687"
+  },
+  {
+    "source": "reports/porta-pcb/assembly.html",
+    "copy": "data/board-components.js",
+    "source_sha256": "2d5694d055976219e9c7a5517fbfe0a9257d4232562945811dbc868dcd8e78b3",
+    "scope": "Embedded KiCad-derived board outlines, part XY and pad/track data. Part body heights and mechanical positions are approximate.",
+    "sha256": "9c6bad082c4c20d4526ad834ba7c3ba516d0c807bad92b693399df31218e8cf6"
+  },
+  {
+    "source": "reports/porta-pcb/assembly.html",
+    "copy": "data/sensor-construction.js",
+    "sha256": "0e372a0a22fb83d7266e79e25ac81e25d6bb9340a50aa4b8ebd8bf59702991c7",
+    "adaptation": "Extracted sensor construction only; removed prior external cabinet/cable illustration. Mechanical assumptions retained and disclosed.",
+    "source_sha256": "2d5694d055976219e9c7a5517fbfe0a9257d4232562945811dbc868dcd8e78b3"
+  }
+]

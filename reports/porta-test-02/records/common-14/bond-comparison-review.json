@@ -1,0 +1,1554 @@
+{
+  "revision": "common-bond-comparison-16",
+  "scientificVerdictComplete": false,
+  "status": "bond_comparison_time_and_input_review_pending",
+  "sources": [
+    {
+      "id": "test02-floating",
+      "analysis_sha256": "e313d8ccfbcf4c0ad7eca6f8f09b2ca4142ade8fb5993e58d134cec5f1abb6a8",
+      "response_sha256": "e190688d4a7ff5eefdd064ebf7ec145c9ef1dface7b1d6f8c0752b0be5079542"
+    },
+    {
+      "id": "test02-near",
+      "analysis_sha256": "0eceb61cee1a7a9e8c2139501150e98f2e16dbd4a90ea65c5454c72ce27d564d",
+      "response_sha256": "506ce1f22209d82e3eb0e7ad91c7490e5db8d65fc8feea153924af18c1a5ecba"
+    },
+    {
+      "id": "test02-both",
+      "analysis_sha256": "fc9c89d17a88e421d9d82715f6ba71e500a69c673bedb99cdae1abe4e5d61bcd",
+      "response_sha256": "ceee3cdc4a11ba03bdc96d7001babf8c068f106fef0eff519c1876cd7ab95428"
+    }
+  ],
+  "evidenceHashesChecked": 123,
+  "independentOutputChecks": 216,
+  "independentInputChecks": 81,
+  "independentBondCurrentChecks": 27,
+  "geometryComparison": "Same wire paths, source ports, reference plate and mesh verified; shield straps differ.",
+  "finding": "At 100 MHz both bonded cases reduce common-mode pickup but increase differential pickup versus floating in all sampled windows. Both-end and near-only differential differences are smaller than the observed time-window changes. Large upper-band loaded-voltage-normalized peaks require separate source-reference and time review.",
+  "acceptance": "Three shield conditions available; no final TEST02 acceptance. Preserve loaded-voltage results, inspect the source-reference comparison, and complete the ongoing near-bond longer-record check before deciding the remaining time/grid scope.",
+  "cases": [
+    {
+      "id": "test02-floating",
+      "energy_dB": -17.59,
+      "windows": [
+        {
+          "window_ns": 8,
+          "commonAt100MHz_VperV": [
+            0.9121157648477421,
+            0.9165876109879738,
+            1.0743333634452872,
+            1.0829607653187032
+          ],
+          "differentialAt100MHz_mVperV": [
+            1.3437398116969912,
+            1.4060201716215628,
+            0.4378761945705159,
+            0.4362431696842671
+          ],
+          "sourceDifferenceOverCommonAt100MHz": 0.0010003437262500444,
+          "sourceDifferenceOverCommonPeak": 0.0030493985768098625,
+          "sourceDifferencePeakFrequency_Hz": 200000000.0,
+          "directBusDifferenceOverCommonAt100MHz": 0.0003573599151402798,
+          "inputSpectrumMinimum_Vs": 2.9731829357862256e-11,
+          "inputSpectrumAt100MHz_Vs": 3.7312273323342244e-11,
+          "commonPeak_VperV": [
+            0.9401858773765893,
+            0.9426567911659263,
+            1.187220847486228,
+            1.1965368248921975
+          ],
+          "commonPeak_Hz": [
+            200000000.0,
+            200000000.0,
+            200000000.0,
+            200000000.0
+          ],
+          "differentialPeak_mVperV": [
+            2.0260018850172408,
+            1.960708650374819,
+            3.7770620476600647,
+            4.1820825150735415
+          ],
+          "differentialPeak_Hz": [
+            152000000.0,
+            143000000.0,
+            200000000.0,
+            200000000.0
+          ],
+          "bondCurrentAt100MHz_mAperV": []
+        },
+        {
+          "window_ns": 10,
+          "commonAt100MHz_VperV": [
+            0.8848571599175797,
+            0.891395499667186,
+            0.9314158483832483,
+            0.9393593604717503
+          ],
+          "differentialAt100MHz_mVperV": [
+            0.5899801192043626,
+            0.4549108756494151,
+            0.9899203266055421,
+            0.9155396149913589
+          ],
+          "sourceDifferenceOverCommonAt100MHz": 0.0009638597066062681,
+          "sourceDifferenceOverCommonPeak": 0.002729233143008048,
+          "sourceDifferencePeakFrequency_Hz": 171000000.0,
+          "directBusDifferenceOverCommonAt100MHz": 0.00020212539706247214,
+          "inputSpectrumMinimum_Vs": 2.8290901540867427e-11,
+          "inputSpectrumAt100MHz_Vs": 3.8112413878930365e-11,
+          "commonPeak_VperV": [
+            0.9489954918268971,
+            0.9507246463278735,
+            1.247612965374617,
+            1.2571341433858951
+          ],
+          "commonPeak_Hz": [
+            172000000.0,
+            172000000.0,
+            172000000.0,
+            172000000.0
+          ],
+          "differentialPeak_mVperV": [
+            2.860063594399899,
+            2.707028232582624,
+            1.8510682464042592,
+            2.003562545552089
+          ],
+          "differentialPeak_Hz": [
+            195000000.0,
+            191000000.0,
+            200000000.0,
+            200000000.0
+          ],
+          "bondCurrentAt100MHz_mAperV": []
+        },
+        {
+          "window_ns": 12,
+          "commonAt100MHz_VperV": [
+            0.8979629915084155,
+            0.9036353504565063,
+            0.9991379336486157,
+            1.007272323887888
+          ],
+          "differentialAt100MHz_mVperV": [
+            1.0119575948864108,
+            0.9502671124188639,
+            0.3034074553434526,
+            0.21999491843142696
+          ],
+          "sourceDifferenceOverCommonAt100MHz": 0.0007218579018058159,
+          "sourceDifferenceOverCommonPeak": 0.0038475021928110515,
+          "sourceDifferencePeakFrequency_Hz": 200000000.0,
+          "directBusDifferenceOverCommonAt100MHz": 0.000342367793526693,
+          "inputSpectrumMinimum_Vs": 2.8510978976466737e-11,
+          "inputSpectrumAt100MHz_Vs": 3.7675641058187087e-11,
+          "commonPeak_VperV": [
+            0.9874230613456134,
+            0.9864172641752241,
+            1.4371633261451107,
+            1.4475911504328811
+          ],
+          "commonPeak_Hz": [
+            200000000.0,
+            200000000.0,
+            200000000.0,
+            200000000.0
+          ],
+          "differentialPeak_mVperV": [
+            2.8885459422109268,
+            2.9290039155117675,
+            2.603587476066711,
+            3.043283219625281
+          ],
+          "differentialPeak_Hz": [
+            200000000.0,
+            200000000.0,
+            194000000.0,
+            200000000.0
+          ],
+          "bondCurrentAt100MHz_mAperV": []
+        }
+      ],
+      "timeComparisons": {
+        "8→10 ns": {
+          "HdiffNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 14.223686761131118,
+              "atWorstFrequency_Hz": 42000000.0,
+              "beforeAtWorst_VperV": 0.00011226659659756964,
+              "afterAtWorst_VperV": 0.0005773443167971953,
+              "maxAbsoluteMagnitudeChange_VperV": 0.0011048074990364998,
+              "peakBefore_VperV": 0.002026001885017241,
+              "peakAfter_VperV": 0.002860063594399899
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 10.620508132622914,
+              "atWorstFrequency_Hz": 93000000.0,
+              "beforeAtWorst_VperV": 0.001243482819183684,
+              "afterAtWorst_VperV": 0.0003661123528664768,
+              "maxAbsoluteMagnitudeChange_VperV": 0.0013273982528041552,
+              "peakBefore_VperV": 0.001960708650374819,
+              "peakAfter_VperV": 0.002707028232582624
+            }
+          ],
+          "Hdiff": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 18.803820894808474,
+              "atWorstFrequency_Hz": 25000000.0,
+              "beforeAtWorst_VperV": 0.0006708705898806085,
+              "afterAtWorst_VperV": 7.699237358569712e-05,
+              "maxAbsoluteMagnitudeChange_VperV": 0.0019259938012558054,
+              "peakBefore_VperV": 0.0037770620476600646,
+              "peakAfter_VperV": 0.0018510682464042592
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 26.944105289025213,
+              "atWorstFrequency_Hz": 34000000.0,
+              "beforeAtWorst_VperV": 0.0008060469933144819,
+              "afterAtWorst_VperV": 3.623723879346948e-05,
+              "maxAbsoluteMagnitudeChange_VperV": 0.0021785199695214526,
+              "peakBefore_VperV": 0.004182082515073541,
+              "peakAfter_VperV": 0.0020035625455520887
+            }
+          ],
+          "HcommonNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 0.42824250465408226,
+              "atWorstFrequency_Hz": 164000000.0,
+              "beforeAtWorst_VperV": 0.9025264208632177,
+              "afterAtWorst_VperV": 0.9481390847295872,
+              "maxAbsoluteMagnitudeChange_VperV": 0.045621905743642444,
+              "peakBefore_VperV": 0.9401858773765893,
+              "peakAfter_VperV": 0.9489954918268971
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.395767328140022,
+              "atWorstFrequency_Hz": 164000000.0,
+              "beforeAtWorst_VperV": 0.9076539775348731,
+              "afterAtWorst_VperV": 0.9499673555873076,
+              "maxAbsoluteMagnitudeChange_VperV": 0.04231413723357147,
+              "peakBefore_VperV": 0.9426567911659263,
+              "peakAfter_VperV": 0.9507246463278735
+            }
+          ],
+          "Hcommon": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 1.8784357116523431,
+              "atWorstFrequency_Hz": 166000000.0,
+              "beforeAtWorst_VperV": 1.0031771169402133,
+              "afterAtWorst_VperV": 1.2453728761091847,
+              "maxAbsoluteMagnitudeChange_VperV": 0.24228587316984052,
+              "peakBefore_VperV": 1.187220847486228,
+              "peakAfter_VperV": 1.247612965374617
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 1.87198747317824,
+              "atWorstFrequency_Hz": 166000000.0,
+              "beforeAtWorst_VperV": 1.0116006711903072,
+              "afterAtWorst_VperV": 1.2548981599084716,
+              "maxAbsoluteMagnitudeChange_VperV": 0.24338276790943447,
+              "peakBefore_VperV": 1.1965368248921975,
+              "peakAfter_VperV": 1.2571341433858951
+            }
+          ]
+        },
+        "10→12 ns": {
+          "HdiffNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 4.6864987379338015,
+              "atWorstFrequency_Hz": 100000000.0,
+              "beforeAtWorst_VperV": 0.0005899801192043625,
+              "afterAtWorst_VperV": 0.0010119575948864107,
+              "maxAbsoluteMagnitudeChange_VperV": 0.0008016461336194172,
+              "peakBefore_VperV": 0.002860063594399899,
+              "peakAfter_VperV": 0.0028885459422109266
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 6.908244766572386,
+              "atWorstFrequency_Hz": 60000000.0,
+              "beforeAtWorst_VperV": 0.0005249044612595916,
+              "afterAtWorst_VperV": 0.00023695617218990277,
+              "maxAbsoluteMagnitudeChange_VperV": 0.0009050528103956171,
+              "peakBefore_VperV": 0.002707028232582624,
+              "peakAfter_VperV": 0.0029290039155117674
+            }
+          ],
+          "Hdiff": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 17.690881158319204,
+              "atWorstFrequency_Hz": 28000000.0,
+              "beforeAtWorst_VperV": 7.780161680430665e-05,
+              "afterAtWorst_VperV": 0.000596393195996255,
+              "maxAbsoluteMagnitudeChange_VperV": 0.0010347537414321115,
+              "peakBefore_VperV": 0.0018510682464042592,
+              "peakAfter_VperV": 0.002603587476066711
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 24.988517591345996,
+              "atWorstFrequency_Hz": 34000000.0,
+              "beforeAtWorst_VperV": 3.623723879346948e-05,
+              "afterAtWorst_VperV": 0.0006435480481390246,
+              "maxAbsoluteMagnitudeChange_VperV": 0.0012077874845075208,
+              "peakBefore_VperV": 0.0020035625455520887,
+              "peakAfter_VperV": 0.003043283219625281
+            }
+          ],
+          "HcommonNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 0.36544712832207926,
+              "atWorstFrequency_Hz": 200000000.0,
+              "beforeAtWorst_VperV": 0.9467403989613413,
+              "afterAtWorst_VperV": 0.9874230613456134,
+              "maxAbsoluteMagnitudeChange_VperV": 0.040682662384272095,
+              "peakBefore_VperV": 0.9489954918268971,
+              "peakAfter_VperV": 0.9874230613456134
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 0.34023480906311715,
+              "atWorstFrequency_Hz": 200000000.0,
+              "beforeAtWorst_VperV": 0.9485253106369778,
+              "afterAtWorst_VperV": 0.9864172641752242,
+              "maxAbsoluteMagnitudeChange_VperV": 0.03789195353824637,
+              "peakBefore_VperV": 0.9507246463278735,
+              "peakAfter_VperV": 0.9864172641752241
+            }
+          ],
+          "Hcommon": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 1.3880952796145505,
+              "atWorstFrequency_Hz": 200000000.0,
+              "beforeAtWorst_VperV": 1.2249020522274325,
+              "afterAtWorst_VperV": 1.4371633261451107,
+              "maxAbsoluteMagnitudeChange_VperV": 0.21226127391767813,
+              "peakBefore_VperV": 1.247612965374617,
+              "peakAfter_VperV": 1.4371633261451107
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 1.3842391191720524,
+              "atWorstFrequency_Hz": 200000000.0,
+              "beforeAtWorst_VperV": 1.2343376141444213,
+              "afterAtWorst_VperV": 1.4475911504328811,
+              "maxAbsoluteMagnitudeChange_VperV": 0.21325353628845978,
+              "peakBefore_VperV": 1.2571341433858951,
+              "peakAfter_VperV": 1.4475911504328811
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "test02-near",
+      "energy_dB": -14.98,
+      "windows": [
+        {
+          "window_ns": 8,
+          "commonAt100MHz_VperV": [
+            0.028434884764287238,
+            0.026244409018817368,
+            0.2800949467398873,
+            0.3087016683936883
+          ],
+          "differentialAt100MHz_mVperV": [
+            10.65164727076274,
+            10.499989148897066,
+            10.146895437828658,
+            9.873984802315697
+          ],
+          "sourceDifferenceOverCommonAt100MHz": 0.007755754309442637,
+          "sourceDifferenceOverCommonPeak": 0.04960449883111858,
+          "sourceDifferencePeakFrequency_Hz": 183000000.0,
+          "directBusDifferenceOverCommonAt100MHz": 0.005665595045783907,
+          "inputSpectrumMinimum_Vs": 8.307463850768898e-12,
+          "inputSpectrumAt100MHz_Vs": 2.96120284345697e-11,
+          "commonPeak_VperV": [
+            1.7307844296010466,
+            1.8862857374129036,
+            0.5227041762775493,
+            0.5823592423407968
+          ],
+          "commonPeak_Hz": [
+            187000000.0,
+            186000000.0,
+            174000000.0,
+            174000000.0
+          ],
+          "differentialPeak_mVperV": [
+            71.7954314531305,
+            70.61877600095853,
+            74.32267290935509,
+            71.48013378221425
+          ],
+          "differentialPeak_Hz": [
+            183000000.0,
+            183000000.0,
+            184000000.0,
+            184000000.0
+          ],
+          "bondCurrentAt100MHz_mAperV": [
+            24.576772208632352
+          ]
+        },
+        {
+          "window_ns": 10,
+          "commonAt100MHz_VperV": [
+            0.09211908964355216,
+            0.09299405712991066,
+            0.3149970126865703,
+            0.33960172814425144
+          ],
+          "differentialAt100MHz_mVperV": [
+            8.373397899393458,
+            8.474538675538072,
+            9.963813853636099,
+            9.618358171204985
+          ],
+          "sourceDifferenceOverCommonAt100MHz": 0.0056434255622204044,
+          "sourceDifferenceOverCommonPeak": 0.10165257269037652,
+          "sourceDifferencePeakFrequency_Hz": 173000000.0,
+          "directBusDifferenceOverCommonAt100MHz": 0.00446456822152263,
+          "inputSpectrumMinimum_Vs": 4.347324071078336e-12,
+          "inputSpectrumAt100MHz_Vs": 3.4812030406429374e-11,
+          "commonPeak_VperV": [
+            3.326424945954253,
+            3.634761279439309,
+            0.7146031405146294,
+            0.8815519530917725
+          ],
+          "commonPeak_Hz": [
+            174000000.0,
+            174000000.0,
+            168000000.0,
+            169000000.0
+          ],
+          "differentialPeak_mVperV": [
+            146.61425046787272,
+            143.87073053796837,
+            158.3413841576627,
+            151.43223429449964
+          ],
+          "differentialPeak_Hz": [
+            173000000.0,
+            173000000.0,
+            173000000.0,
+            173000000.0
+          ],
+          "bondCurrentAt100MHz_mAperV": [
+            21.142064723094414
+          ]
+        },
+        {
+          "window_ns": 12,
+          "commonAt100MHz_VperV": [
+            0.10405672925664305,
+            0.10615661955049042,
+            0.287374798089224,
+            0.3111837438116212
+          ],
+          "differentialAt100MHz_mVperV": [
+            7.749889390901683,
+            7.696770066723982,
+            8.369514159671827,
+            8.199389849719253
+          ],
+          "sourceDifferenceOverCommonAt100MHz": 0.005248858610970044,
+          "sourceDifferenceOverCommonPeak": 0.20793705506326401,
+          "sourceDifferencePeakFrequency_Hz": 173000000.0,
+          "directBusDifferenceOverCommonAt100MHz": 0.003933229204229917,
+          "inputSpectrumMinimum_Vs": 2.3148067663789436e-12,
+          "inputSpectrumAt100MHz_Vs": 3.5110350038757144e-11,
+          "commonPeak_VperV": [
+            6.532688663214737,
+            7.139963281336486,
+            1.7700372327485776,
+            2.0922701773894214
+          ],
+          "commonPeak_Hz": [
+            173000000.0,
+            173000000.0,
+            173000000.0,
+            173000000.0
+          ],
+          "differentialPeak_mVperV": [
+            293.9527105144867,
+            289.97722643387544,
+            337.82354919462705,
+            324.64645582372424
+          ],
+          "differentialPeak_Hz": [
+            173000000.0,
+            173000000.0,
+            173000000.0,
+            173000000.0
+          ],
+          "bondCurrentAt100MHz_mAperV": [
+            18.517085605479743
+          ]
+        }
+      ],
+      "timeComparisons": {
+        "8→10 ns": {
+          "HdiffNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 7.06609170377426,
+              "atWorstFrequency_Hz": 171000000.0,
+              "beforeAtWorst_VperV": 0.06362333746048415,
+              "afterAtWorst_VperV": 0.14352284417459726,
+              "maxAbsoluteMagnitudeChange_VperV": 0.08120093291876895,
+              "peakBefore_VperV": 0.0717954314531305,
+              "peakAfter_VperV": 0.14661425046787271
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 7.042593908427142,
+              "atWorstFrequency_Hz": 171000000.0,
+              "beforeAtWorst_VperV": 0.06264405184796122,
+              "afterAtWorst_VperV": 0.1409319742371766,
+              "maxAbsoluteMagnitudeChange_VperV": 0.07951918408569314,
+              "peakBefore_VperV": 0.07061877600095853,
+              "peakAfter_VperV": 0.14387073053796837
+            }
+          ],
+          "Hdiff": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 7.659595652057946,
+              "atWorstFrequency_Hz": 171000000.0,
+              "beforeAtWorst_VperV": 0.0641038249801083,
+              "afterAtWorst_VperV": 0.15483307057777232,
+              "maxAbsoluteMagnitudeChange_VperV": 0.0921694521788814,
+              "peakBefore_VperV": 0.0743226729093551,
+              "peakAfter_VperV": 0.1583413841576627
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 7.594044172897689,
+              "atWorstFrequency_Hz": 171000000.0,
+              "beforeAtWorst_VperV": 0.061776231076637184,
+              "afterAtWorst_VperV": 0.1480892785702012,
+              "maxAbsoluteMagnitudeChange_VperV": 0.08768410386049945,
+              "peakBefore_VperV": 0.07148013378221425,
+              "peakAfter_VperV": 0.15143223429449965
+            }
+          ],
+          "HcommonNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 7.139381623019024,
+              "atWorstFrequency_Hz": 172000000.0,
+              "beforeAtWorst_VperV": 1.43948020242192,
+              "afterAtWorst_VperV": 3.2747245634924704,
+              "maxAbsoluteMagnitudeChange_VperV": 1.8473057565040654,
+              "peakBefore_VperV": 1.7307844296010466,
+              "peakAfter_VperV": 3.326424945954253
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 7.147358079247457,
+              "atWorstFrequency_Hz": 172000000.0,
+              "beforeAtWorst_VperV": 1.5722579984893994,
+              "afterAtWorst_VperV": 3.580071635380939,
+              "maxAbsoluteMagnitudeChange_VperV": 2.0203924170931478,
+              "peakBefore_VperV": 1.8862857374129036,
+              "peakAfter_VperV": 3.634761279439309
+            }
+          ],
+          "Hcommon": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 19.52472448261301,
+              "atWorstFrequency_Hz": 190000000.0,
+              "beforeAtWorst_VperV": 0.41939343996467393,
+              "afterAtWorst_VperV": 0.04429813159359207,
+              "maxAbsoluteMagnitudeChange_VperV": 0.3800966552975953,
+              "peakBefore_VperV": 0.5227041762775493,
+              "peakAfter_VperV": 0.7146031405146294
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 20.543337653432552,
+              "atWorstFrequency_Hz": 195000000.0,
+              "beforeAtWorst_VperV": 0.39224370621275206,
+              "afterAtWorst_VperV": 0.036845894233912595,
+              "maxAbsoluteMagnitudeChange_VperV": 0.3768868475488924,
+              "peakBefore_VperV": 0.5823592423407968,
+              "peakAfter_VperV": 0.8815519530917725
+            }
+          ]
+        },
+        "10→12 ns": {
+          "HdiffNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 6.042025693065329,
+              "atWorstFrequency_Hz": 173000000.0,
+              "beforeAtWorst_VperV": 0.14661425046787271,
+              "afterAtWorst_VperV": 0.2939527105144867,
+              "maxAbsoluteMagnitudeChange_VperV": 0.14733846004661397,
+              "peakBefore_VperV": 0.14661425046787271,
+              "peakAfter_VperV": 0.2939527105144867
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 6.087828855408015,
+              "atWorstFrequency_Hz": 173000000.0,
+              "beforeAtWorst_VperV": 0.14387073053796837,
+              "afterAtWorst_VperV": 0.28997722643387547,
+              "maxAbsoluteMagnitudeChange_VperV": 0.1461064958959071,
+              "peakBefore_VperV": 0.14387073053796837,
+              "peakAfter_VperV": 0.28997722643387547
+            }
+          ],
+          "Hdiff": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 6.581909665688835,
+              "atWorstFrequency_Hz": 173000000.0,
+              "beforeAtWorst_VperV": 0.1583413841576627,
+              "afterAtWorst_VperV": 0.3378235491946271,
+              "maxAbsoluteMagnitudeChange_VperV": 0.17948216503696435,
+              "peakBefore_VperV": 0.1583413841576627,
+              "peakAfter_VperV": 0.33782354919462704
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 6.6238467173722,
+              "atWorstFrequency_Hz": 173000000.0,
+              "beforeAtWorst_VperV": 0.15143223429449965,
+              "afterAtWorst_VperV": 0.32464645582372426,
+              "maxAbsoluteMagnitudeChange_VperV": 0.1732142215292246,
+              "peakBefore_VperV": 0.15143223429449965,
+              "peakAfter_VperV": 0.32464645582372426
+            }
+          ],
+          "HcommonNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 5.874090257789232,
+              "atWorstFrequency_Hz": 173000000.0,
+              "beforeAtWorst_VperV": 3.3219068337786206,
+              "afterAtWorst_VperV": 6.532688663214738,
+              "maxAbsoluteMagnitudeChange_VperV": 3.2107818294361157,
+              "peakBefore_VperV": 3.326424945954253,
+              "peakAfter_VperV": 6.532688663214737
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 5.874052732107535,
+              "atWorstFrequency_Hz": 173000000.0,
+              "beforeAtWorst_VperV": 3.630724883799891,
+              "afterAtWorst_VperV": 7.139963281336487,
+              "maxAbsoluteMagnitudeChange_VperV": 3.509238397536596,
+              "peakBefore_VperV": 3.634761279439309,
+              "peakAfter_VperV": 7.139963281336486
+            }
+          ],
+          "Hcommon": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 13.645870607444262,
+              "atWorstFrequency_Hz": 190000000.0,
+              "beforeAtWorst_VperV": 0.04429813159359207,
+              "afterAtWorst_VperV": 0.2131468600710199,
+              "maxAbsoluteMagnitudeChange_VperV": 1.1427954170225394,
+              "peakBefore_VperV": 0.7146031405146294,
+              "peakAfter_VperV": 1.7700372327485776
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 11.830235728173097,
+              "atWorstFrequency_Hz": 192000000.0,
+              "beforeAtWorst_VperV": 0.057290646782323,
+              "afterAtWorst_VperV": 0.22366370341339323,
+              "maxAbsoluteMagnitudeChange_VperV": 1.2888756753809933,
+              "peakBefore_VperV": 0.8815519530917725,
+              "peakAfter_VperV": 2.0922701773894214
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "test02-both",
+      "energy_dB": -18.78,
+      "windows": [
+        {
+          "window_ns": 8,
+          "commonAt100MHz_VperV": [
+            0.03746429371131591,
+            0.03382888120570455,
+            0.4729857891422394,
+            0.5014231788365857
+          ],
+          "differentialAt100MHz_mVperV": [
+            10.064949859539162,
+            10.066080859905922,
+            9.694193403375728,
+            9.489690527212868
+          ],
+          "sourceDifferenceOverCommonAt100MHz": 0.008046668599584791,
+          "sourceDifferenceOverCommonPeak": 0.0551091630269058,
+          "sourceDifferencePeakFrequency_Hz": 185000000.0,
+          "directBusDifferenceOverCommonAt100MHz": 0.005148847499681127,
+          "inputSpectrumMinimum_Vs": 7.910218441054995e-12,
+          "inputSpectrumAt100MHz_Vs": 2.995352990042915e-11,
+          "commonPeak_VperV": [
+            1.7400922574519417,
+            1.8970591371356493,
+            1.5467043099863444,
+            1.6332932206470279
+          ],
+          "commonPeak_Hz": [
+            188000000.0,
+            188000000.0,
+            181000000.0,
+            181000000.0
+          ],
+          "differentialPeak_mVperV": [
+            72.85915459219747,
+            72.41607382398068,
+            76.27745065304592,
+            73.7859547156013
+          ],
+          "differentialPeak_Hz": [
+            185000000.0,
+            185000000.0,
+            186000000.0,
+            186000000.0
+          ],
+          "bondCurrentAt100MHz_mAperV": [
+            21.44885715003902,
+            2.261698605154112
+          ]
+        },
+        {
+          "window_ns": 10,
+          "commonAt100MHz_VperV": [
+            0.10224674534890206,
+            0.10417900486631046,
+            0.4044831240751183,
+            0.4288752847190706
+          ],
+          "differentialAt100MHz_mVperV": [
+            7.901047973621539,
+            8.052246675206941,
+            9.399767199997381,
+            9.119717149095063
+          ],
+          "sourceDifferenceOverCommonAt100MHz": 0.005734347144104499,
+          "sourceDifferenceOverCommonPeak": 0.11379445267852024,
+          "sourceDifferencePeakFrequency_Hz": 175000000.0,
+          "directBusDifferenceOverCommonAt100MHz": 0.004082587004951182,
+          "inputSpectrumMinimum_Vs": 4.177322824232436e-12,
+          "inputSpectrumAt100MHz_Vs": 3.4957049770599776e-11,
+          "commonPeak_VperV": [
+            3.3288773207828717,
+            3.6383132914370084,
+            3.2731162549215753,
+            3.4582436727927695
+          ],
+          "commonPeak_Hz": [
+            176000000.0,
+            176000000.0,
+            174000000.0,
+            174000000.0
+          ],
+          "differentialPeak_mVperV": [
+            146.8409693127165,
+            145.31059033115307,
+            158.60240272044845,
+            153.8263154695755
+          ],
+          "differentialPeak_Hz": [
+            175000000.0,
+            175000000.0,
+            175000000.0,
+            175000000.0
+          ],
+          "bondCurrentAt100MHz_mAperV": [
+            18.855139323354372,
+            1.9888939389040061
+          ]
+        },
+        {
+          "window_ns": 12,
+          "commonAt100MHz_VperV": [
+            0.11383864611208301,
+            0.11688423534067215,
+            0.39439653789573004,
+            0.41820453458628054
+          ],
+          "differentialAt100MHz_mVperV": [
+            7.223403690313043,
+            7.253441404080577,
+            7.847280471689597,
+            7.769853786535803
+          ],
+          "sourceDifferenceOverCommonAt100MHz": 0.005492319936892137,
+          "sourceDifferenceOverCommonPeak": 0.2414601603160343,
+          "sourceDifferencePeakFrequency_Hz": 175000000.0,
+          "directBusDifferenceOverCommonAt100MHz": 0.0035771276662063616,
+          "inputSpectrumMinimum_Vs": 2.09946009615064e-12,
+          "inputSpectrumAt100MHz_Vs": 3.526390389245841e-11,
+          "commonPeak_VperV": [
+            6.933164482517348,
+            7.580040757596913,
+            6.845282348498902,
+            7.2314862781213325
+          ],
+          "commonPeak_Hz": [
+            175000000.0,
+            175000000.0,
+            175000000.0,
+            175000000.0
+          ],
+          "differentialPeak_mVperV": [
+            311.2028941899987,
+            309.6844672442378,
+            358.37710585411145,
+            347.5505666701445
+          ],
+          "differentialPeak_Hz": [
+            175000000.0,
+            175000000.0,
+            175000000.0,
+            175000000.0
+          ],
+          "bondCurrentAt100MHz_mAperV": [
+            16.386055268198326,
+            1.7179430329756316
+          ]
+        }
+      ],
+      "timeComparisons": {
+        "8→10 ns": {
+          "HdiffNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 7.0056892663785355,
+              "atWorstFrequency_Hz": 173000000.0,
+              "beforeAtWorst_VperV": 0.06420063538439084,
+              "afterAtWorst_VperV": 0.14382149192038082,
+              "maxAbsoluteMagnitudeChange_VperV": 0.08084472652752658,
+              "peakBefore_VperV": 0.07285915459219747,
+              "peakAfter_VperV": 0.1468409693127165
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 6.955501263602651,
+              "atWorstFrequency_Hz": 173000000.0,
+              "beforeAtWorst_VperV": 0.06393163022598135,
+              "afterAtWorst_VperV": 0.14239372198455869,
+              "maxAbsoluteMagnitudeChange_VperV": 0.07963973784861829,
+              "peakBefore_VperV": 0.07241607382398069,
+              "peakAfter_VperV": 0.14531059033115307
+            }
+          ],
+          "Hdiff": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 7.490348827401644,
+              "atWorstFrequency_Hz": 173000000.0,
+              "beforeAtWorst_VperV": 0.06548634128289435,
+              "afterAtWorst_VperV": 0.15512013301456898,
+              "maxAbsoluteMagnitudeChange_VperV": 0.09100532198355112,
+              "peakBefore_VperV": 0.07627745065304592,
+              "peakAfter_VperV": 0.15860240272044845
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 7.5011124809825205,
+              "atWorstFrequency_Hz": 173000000.0,
+              "beforeAtWorst_VperV": 0.06343261667300755,
+              "afterAtWorst_VperV": 0.15044170646511437,
+              "maxAbsoluteMagnitudeChange_VperV": 0.08835151131881369,
+              "peakBefore_VperV": 0.0737859547156013,
+              "peakAfter_VperV": 0.15382631546957548
+            }
+          ],
+          "HcommonNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 7.167866190476238,
+              "atWorstFrequency_Hz": 174000000.0,
+              "beforeAtWorst_VperV": 1.437717277997668,
+              "afterAtWorst_VperV": 3.281457633435655,
+              "maxAbsoluteMagnitudeChange_VperV": 1.8526494119283377,
+              "peakBefore_VperV": 1.7400922574519417,
+              "peakAfter_VperV": 3.3288773207828717
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 7.1747409382781395,
+              "atWorstFrequency_Hz": 174000000.0,
+              "beforeAtWorst_VperV": 1.5709097085241397,
+              "afterAtWorst_VperV": 3.5882960798650045,
+              "maxAbsoluteMagnitudeChange_VperV": 2.0265198395624617,
+              "peakBefore_VperV": 1.8970591371356493,
+              "peakAfter_VperV": 3.6383132914370084
+            }
+          ],
+          "Hcommon": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 6.914745254559539,
+              "atWorstFrequency_Hz": 173000000.0,
+              "beforeAtWorst_VperV": 1.4630516802967803,
+              "afterAtWorst_VperV": 3.2433732460793343,
+              "maxAbsoluteMagnitudeChange_VperV": 1.7923320662877569,
+              "peakBefore_VperV": 1.5467043099863444,
+              "peakAfter_VperV": 3.2731162549215753
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 6.915603049422718,
+              "atWorstFrequency_Hz": 173000000.0,
+              "beforeAtWorst_VperV": 1.54575631906796,
+              "afterAtWorst_VperV": 3.4270558575261028,
+              "maxAbsoluteMagnitudeChange_VperV": 1.8938502990519424,
+              "peakBefore_VperV": 1.6332932206470279,
+              "peakAfter_VperV": 3.4582436727927695
+            }
+          ]
+        },
+        "10→12 ns": {
+          "HdiffNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 6.523927692287044,
+              "atWorstFrequency_Hz": 175000000.0,
+              "beforeAtWorst_VperV": 0.14684096931271653,
+              "afterAtWorst_VperV": 0.3112028941899987,
+              "maxAbsoluteMagnitudeChange_VperV": 0.16436192487728218,
+              "peakBefore_VperV": 0.1468409693127165,
+              "peakAfter_VperV": 0.3112028941899987
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 6.572443119999612,
+              "atWorstFrequency_Hz": 175000000.0,
+              "beforeAtWorst_VperV": 0.14531059033115307,
+              "afterAtWorst_VperV": 0.3096844672442378,
+              "maxAbsoluteMagnitudeChange_VperV": 0.16437387691308475,
+              "peakBefore_VperV": 0.14531059033115307,
+              "peakAfter_VperV": 0.3096844672442378
+            }
+          ],
+          "Hdiff": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 7.080609912207222,
+              "atWorstFrequency_Hz": 175000000.0,
+              "beforeAtWorst_VperV": 0.15860240272044848,
+              "afterAtWorst_VperV": 0.3583771058541115,
+              "maxAbsoluteMagnitudeChange_VperV": 0.19977470313366297,
+              "peakBefore_VperV": 0.15860240272044845,
+              "peakAfter_VperV": 0.3583771058541114
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 7.0797472647412265,
+              "atWorstFrequency_Hz": 175000000.0,
+              "beforeAtWorst_VperV": 0.15382631546957548,
+              "afterAtWorst_VperV": 0.34755056667014445,
+              "maxAbsoluteMagnitudeChange_VperV": 0.19372425120056902,
+              "peakBefore_VperV": 0.15382631546957548,
+              "peakAfter_VperV": 0.3475505666701445
+            }
+          ],
+          "HcommonNear": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 6.376833270237865,
+              "atWorstFrequency_Hz": 175000000.0,
+              "beforeAtWorst_VperV": 3.3272837579410126,
+              "afterAtWorst_VperV": 6.933164482517348,
+              "maxAbsoluteMagnitudeChange_VperV": 3.6058807245763353,
+              "peakBefore_VperV": 3.3288773207828717,
+              "peakAfter_VperV": 6.933164482517348
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 6.377429338868643,
+              "atWorstFrequency_Hz": 175000000.0,
+              "beforeAtWorst_VperV": 3.637475475216686,
+              "afterAtWorst_VperV": 7.580040757596913,
+              "maxAbsoluteMagnitudeChange_VperV": 3.9425652823802264,
+              "peakBefore_VperV": 3.6383132914370084,
+              "peakAfter_VperV": 7.580040757596913
+            }
+          ],
+          "Hcommon": [
+            {
+              "pair": 1,
+              "maxMagnitudeChangeProminentBand_dB": 6.445024772745348,
+              "atWorstFrequency_Hz": 175000000.0,
+              "beforeAtWorst_VperV": 3.259418510551966,
+              "afterAtWorst_VperV": 6.845282348498902,
+              "maxAbsoluteMagnitudeChange_VperV": 3.585863837946936,
+              "peakBefore_VperV": 3.2731162549215753,
+              "peakAfter_VperV": 6.845282348498902
+            },
+            {
+              "pair": 2,
+              "maxMagnitudeChangeProminentBand_dB": 6.444474457405045,
+              "atWorstFrequency_Hz": 175000000.0,
+              "beforeAtWorst_VperV": 3.4435297833814116,
+              "afterAtWorst_VperV": 7.231486278121333,
+              "maxAbsoluteMagnitudeChange_VperV": 3.7879564947399205,
+              "peakBefore_VperV": 3.4582436727927695,
+              "peakAfter_VperV": 7.2314862781213325
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "case": "test02-near",
+      "window_ns": 8,
+      "output": "HcommonNear",
+      "ratioAt100MHz": [
+        0.031174644557353772,
+        0.028632733744381484
+      ],
+      "ratioMin": [
+        0.03113845495712355,
+        0.028632733744381484
+      ],
+      "ratioMax": [
+        1.8871432091941944,
+        2.0474779014019355
+      ],
+      "lowerPointCount": [
+        148,
+        145
+      ],
+      "totalFrequencyPoints": 191
+    },
+    {
+      "case": "test02-near",
+      "window_ns": 8,
+      "output": "Hcommon",
+      "ratioAt100MHz": [
+        0.2607151153173246,
+        0.2850534186276276
+      ],
+      "ratioMin": [
+        0.25173920350068957,
+        0.2707000332122292
+      ],
+      "ratioMax": [
+        0.5154531237273023,
+        0.569815581872093
+      ],
+      "lowerPointCount": [
+        191,
+        191
+      ],
+      "totalFrequencyPoints": 191
+    },
+    {
+      "case": "test02-near",
+      "window_ns": 8,
+      "output": "HdiffNear",
+      "ratioAt100MHz": [
+        7.926867372717727,
+        7.467879452104468
+      ],
+      "ratioMin": [
+        2.647747305752302,
+        1.5302864337770927
+      ],
+      "ratioMax": [
+        39.70339388133672,
+        48.880101207224754
+      ],
+      "lowerPointCount": [
+        0,
+        0
+      ],
+      "totalFrequencyPoints": 191
+    },
+    {
+      "case": "test02-near",
+      "window_ns": 8,
+      "output": "Hdiff",
+      "ratioAt100MHz": [
+        23.172978032708727,
+        22.634130431112624
+      ],
+      "ratioMin": [
+        0.35786437939650145,
+        0.3177086124534331
+      ],
+      "ratioMax": [
+        27.787844038081005,
+        23.89616236064125
+      ],
+      "lowerPointCount": [
+        13,
+        17
+      ],
+      "totalFrequencyPoints": 191
+    },
+    {
+      "case": "test02-near",
+      "window_ns": 10,
+      "output": "HcommonNear",
+      "ratioAt100MHz": [
+        0.10410616969199031,
+        0.104324126792912
+      ],
+      "ratioMin": [
+        0.004051088356984689,
+        0.001721779793704262
+      ],
+      "ratioMax": [
+        3.505382615049377,
+        3.823364968285658
+      ],
+      "lowerPointCount": [
+        144,
+        143
+      ],
+      "totalFrequencyPoints": 191
+    },
+    {
+      "case": "test02-near",
+      "window_ns": 10,
+      "output": "Hcommon",
+      "ratioAt100MHz": [
+        0.33819159641028457,
+        0.36152482472065006
+      ],
+      "ratioMin": [
+        0.03590020863440915,
+        0.029809708544788868
+      ],
+      "ratioMax": [
+        0.573189983280102,
+        0.7014919870351934
+      ],
+      "lowerPointCount": [
+        191,
+        191
+      ],
+      "totalFrequencyPoints": 191
+    },
+    {
+      "case": "test02-near",
+      "window_ns": 10,
+      "output": "HdiffNear",
+      "ratioAt100MHz": [
+        14.192678069704593,
+        18.62900873372199
+      ],
+      "ratioMin": [
+        0.6299992003215148,
+        0.6869834570911413
+      ],
+      "ratioMax": [
+        56.03061280457426,
+        56.84684428690371
+      ],
+      "lowerPointCount": [
+        17,
+        15
+      ],
+      "totalFrequencyPoints": 191
+    },
+    {
+      "case": "test02-near",
+      "window_ns": 10,
+      "output": "Hdiff",
+      "ratioAt100MHz": [
+        10.06526847246609,
+        10.505671206041438
+      ],
+      "ratioMin": [
+        8.505704635444188,
+        9.923046687841062
+      ],
+      "ratioMax": [
+        108.3274621655409,
+        91.75385655546869
+      ],
+      "lowerPointCount": [
+        0,
+        0
+      ],
+      "totalFrequencyPoints": 191
+    },
+    {
+      "case": "test02-near",
+      "window_ns": 12,
+      "output": "HcommonNear",
+      "ratioAt100MHz": [
+        0.11588086618341203,
+        0.11747727609025178
+      ],
+      "ratioMin": [
+        0.012156335001585526,
+        0.015091821259164223
+      ],
+      "ratioMax": [
+        6.973020963615666,
+        7.600247958566611
+      ],
+      "lowerPointCount": [
+        144,
+        143
+      ],
+      "totalFrequencyPoints": 191
+    },
+    {
+      "case": "test02-near",
+      "window_ns": 12,
+      "output": "Hcommon",
+      "ratioAt100MHz": [
+        0.2876227479821521,
+        0.3089370534976168
+      ],
+      "ratioMin": [
+        0.02884871300283557,
+        0.05501423161555915
+      ],
+      "ratioMax": [
+        1.5030449239229517,
+        1.7626421111780213
+      ],
+      "lowerPointCount": [
+        182,
+        179
+      ],
+      "totalFrequencyPoints": 191
+    },
+    {
+      "case": "test02-near",
+      "window_ns": 12,
+      "output": "HdiffNear",
+      "ratioAt100MHz": [
+        7.658314370150644,
+        8.0995858597402
+      ],
+      "ratioMin": [
+        2.3090939768900256,
+        3.315015559723892
+      ],
+      "ratioMax": [
+        160.8017947583204,
+        173.83645441761877
+      ],
+      "lowerPointCount": [
+        0,
+        0
+      ],
+      "totalFrequencyPoints": 191
+    },
+    {
+      "case": "test02-near",
+      "window_ns": 12,
+      "output": "Hdiff",
+      "ratioAt100MHz": [
+        27.585064283267737,
+        37.270814745091606
+      ],
+      "ratioMin": [
+        0.44726159804688326,
+        0.3424438576678542
+      ],
+      "ratioMax": [
+        140.02757677332033,
+        123.35528502736771
+      ],
+      "lowerPointCount": [
+        18,
+        20
+      ],
+      "totalFrequencyPoints": 191
+    },
+    {
+      "case": "test02-both",
+      "window_ns": 8,
+      "output": "HcommonNear",
+      "ratioAt100MHz": [
+        0.04107405567929172,
+        0.03690741703266204
+      ],
+      "ratioMin": [
+        0.03563003007469929,
+        0.03358349063690642
+      ],
+      "ratioMax": [
+        1.8925051449193648,
+        2.054467993367921
+      ],
+      "lowerPointCount": [
+        150,
+        148
+      ],
+      "totalFrequencyPoints": 191
+    },
+    {
+      "case": "test02-both",
+      "window_ns": 8,
+      "output": "Hcommon",
+      "ratioAt100MHz": [
+        0.4402597975971052,
+        0.46301139883772474
+      ],
+      "ratioMin": [
+        0.2796348384893447,
+        0.29457803134131433
+      ],
+      "ratioMax": [
+        1.4938448354307552,
+        1.5646594398594815
+      ],
+      "lowerPointCount": [
+        144,
+        140
+      ],
+      "totalFrequencyPoints": 191
+    },
+    {
+      "case": "test02-both",
+      "window_ns": 8,
+      "output": "HdiffNear",
+      "ratioAt100MHz": [
+        7.4902520353462405,
+        7.1592720098010485
+      ],
+      "ratioMin": [
+        2.6562388287547276,
+        1.6660578882002246
+      ],
+      "ratioMax": [
+        40.58752854699242,
+        50.72217510079902
+      ],
+      "lowerPointCount": [
+        0,
+        0
+      ],
+      "totalFrequencyPoints": 191
+    },
+    {
+      "case": "test02-both",
+      "window_ns": 8,
+      "output": "Hdiff",
+      "ratioAt100MHz": [
+        22.139119512729224,
+        21.753212856217495
+      ],
+      "ratioMin": [
+        0.3669076684312799,
+        0.3733627091471842
+      ],
+      "ratioMax": [
+        26.561866962781266,
+        23.736684772847646
+      ],
+      "lowerPointCount": [
+        14,
+        17
+      ],
+      "totalFrequencyPoints": 191
+    },
+    {
+      "case": "test02-both",
+      "window_ns": 10,
+      "output": "HcommonNear",
+      "ratioAt100MHz": [
+        0.11555169577700639,
+        0.11687180932056201
+      ],
+      "ratioMin": [
+        0.0036546070491375038,
+        0.001315281295621074
+      ],
+      "ratioMax": [
+        3.5084574923448777,
+        3.827635389699607
+      ],
+      "lowerPointCount": [
+        146,
+        145
+      ],
+      "totalFrequencyPoints": 191
+    },
+    {
+      "case": "test02-both",
+      "window_ns": 10,
+      "output": "Hcommon",
+      "ratioAt100MHz": [
+        0.43426695474123633,
+        0.45656146387223695
+      ],
+      "ratioMin": [
+        0.2656104559681813,
+        0.2799511401051308
+      ],
+      "ratioMax": [
+        2.624299944778063,
+        2.751737803319437
+      ],
+      "lowerPointCount": [
+        149,
+        146
+      ],
+      "totalFrequencyPoints": 191
+    },
+    {
+      "case": "test02-both",
+      "window_ns": 10,
+      "output": "HdiffNear",
+      "ratioAt100MHz": [
+        13.392057997270758,
+        17.700712614777196
+      ],
+      "ratioMin": [
+        0.4870998574435992,
+        0.5500028597334425
+      ],
+      "ratioMax": [
+        55.28856375893082,
+        56.64397477858037
+      ],
+      "lowerPointCount": [
+        21,
+        18
+      ],
+      "totalFrequencyPoints": 191
+    },
+    {
+      "case": "test02-both",
+      "window_ns": 10,
+      "output": "Hdiff",
+      "ratioAt100MHz": [
+        9.495478522225504,
+        9.961029539045274
+      ],
+      "ratioMin": [
+        8.060168255229,
+        9.4106224932368
+      ],
+      "ratioMax": [
+        108.0312063674222,
+        92.82331715958581
+      ],
+      "lowerPointCount": [
+        0,
+        0
+      ],
+      "totalFrequencyPoints": 191
+    },
+    {
+      "case": "test02-both",
+      "window_ns": 12,
+      "output": "HcommonNear",
+      "ratioAt100MHz": [
+        0.12677431830554026,
+        0.1293488964122791
+      ],
+      "ratioMin": [
+        0.008706218866278866,
+        0.010388747829144153
+      ],
+      "ratioMax": [
+        7.3736770791605935,
+        8.041611726873905
+      ],
+      "lowerPointCount": [
+        146,
+        145
+      ],
+      "totalFrequencyPoints": 191
+    },
+    {
+      "case": "test02-both",
+      "window_ns": 12,
+      "output": "Hcommon",
+      "ratioAt100MHz": [
+        0.39473682723213904,
+        0.4151851735309147
+      ],
+      "ratioMin": [
+        0.29640073498467157,
+        0.3120766680325388
+      ],
+      "ratioMax": [
+        5.728231398007934,
+        6.004172945492094
+      ],
+      "lowerPointCount": [
+        148,
+        146
+      ],
+      "totalFrequencyPoints": 191
+    },
+    {
+      "case": "test02-both",
+      "window_ns": 12,
+      "output": "HdiffNear",
+      "ratioAt100MHz": [
+        7.138049782732101,
+        7.633055284442344
+      ],
+      "ratioMin": [
+        2.422325203051374,
+        3.1942541178706234
+      ],
+      "ratioMax": [
+        165.62078732240968,
+        179.39943235253492
+      ],
+      "lowerPointCount": [
+        0,
+        0
+      ],
+      "totalFrequencyPoints": 191
+    },
+    {
+      "case": "test02-both",
+      "window_ns": 12,
+      "output": "Hdiff",
+      "ratioAt100MHz": [
+        25.863835358978225,
+        35.31833299575821
+      ],
+      "ratioMin": [
+        0.47039399565818185,
+        0.3721032939573747
+      ],
+      "ratioMax": [
+        146.45850891604687,
+        129.35253605981003
+      ],
+      "lowerPointCount": [
+        18,
+        21
+      ],
+      "totalFrequencyPoints": 191
+    }
+  ]
+}

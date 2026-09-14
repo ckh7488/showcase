@@ -1,0 +1,11 @@
+{
+  "operation": "Controlled stop through the official ABORT file, with probe-data flushing.",
+  "reason": "First diagnostic window: slow residual-energy decay; inspect saved transfer and tail sensitivity before a longer field run.",
+  "requestedDuration_s": 8e-09,
+  "lastObservedTime_s": 8.248747815000001e-09,
+  "lastObservedIteration": 29205,
+  "timeUTC": "2026-09-12T20:06:11.573894+00:00",
+  "EndCriteriaWaived": false,
+  "convergenceStatus": "Configured energy criterion must still be assessed; manual stop is not convergence.",
+  "source": "https://wiki.openems.de/index.php/Frequently_Asked_Questions.html"
+}

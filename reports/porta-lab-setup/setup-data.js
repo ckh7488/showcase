@@ -1,0 +1,1114 @@
+/* User-reviewed topology; display coordinates are not solver inputs. */
+const SETUP = {
+  "revision": "lab-review-03",
+  "date": "2026-09-13",
+  "approved": false,
+  "simulationRun": false,
+  "displayCoordinatesArePhysical": false,
+  "sources": {
+    "user": {
+      "label": "사용자 설명 · 2026-09-13 전원 분기·실드·철제 테이블 확인",
+      "href": null
+    },
+    "pcb": {
+      "label": "ATLAS · PortA 제조 Gerber 경로",
+      "href": "../porta-pcb/index.html"
+    },
+    "assembly": {
+      "label": "ATLAS · 센서 조립 형상과 부품 위치",
+      "href": "../porta-pcb/assembly.html"
+    },
+    "diag": {
+      "label": "ATLAS · LAN9354 세 포트의 역할",
+      "href": "../fw-lan9354-diag/index.html"
+    },
+    "emc": {
+      "label": "ATLAS · EMC 설계 검토의 기존 조건",
+      "href": "../emc-design/index.html"
+    },
+    "microchip": {
+      "label": "Microchip · LAN9354 배선 지침",
+      "href": "https://www.microchip.com/content/dam/mchp/documents/UNG/ProductDocuments/BoardDesignFiles/RoutingChecklistforLAN9354SQFNRevA.pdf"
+    },
+    "openems": {
+      "label": "openEMS · 포트·재료·경계 API",
+      "href": "https://docs.openems.de/python/openEMS/openEMS.html"
+    },
+    "meanwell": {
+      "label": "MEAN WELL · LRS-350 데이터시트",
+      "href": "https://www.meanwell.com/Upload/PDF/LRS-350/LRS-350-SPEC.PDF"
+    },
+    "meanwelltest": {
+      "label": "MEAN WELL · LRS-350-24 시험보고서의 FG↔외함 연속성",
+      "href": "https://display.meanwell.com/Upload/PDF/LRS-350/LRS-350-24-rpt.pdf"
+    }
+  },
+  "nodes": [
+    {
+      "id": "oa",
+      "code": "P01",
+      "title": "아웃렛 A",
+      "sub": "한국 220 VAC",
+      "x": 65,
+      "y": 100,
+      "w": 200,
+      "h": 65,
+      "status": "confirmed",
+      "sources": [
+        "user"
+      ],
+      "detail": "PC 쪽 벽 콘센트. 이 콘센트에서 멀티탭 A로 공급합니다.",
+      "unknown": "분전반의 분기회로, L/N 배선 임피던스, 보호접지(PE) 접속 상태."
+    },
+    {
+      "id": "sa",
+      "code": "P02",
+      "title": "멀티탭 A",
+      "sub": "PC + 모니터",
+      "x": 65,
+      "y": 205,
+      "w": 200,
+      "h": 65,
+      "status": "confirmed",
+      "sources": [
+        "user"
+      ],
+      "detail": "러기드 PC와 모니터가 같은 멀티탭을 사용합니다.",
+      "unknown": "전원선 길이, 멀티탭의 PE 연속성, 필터·서지보호 소자 유무."
+    },
+    {
+      "id": "pc",
+      "code": "E01",
+      "title": "러기드 PC",
+      "sub": "책상 위 · LAN 포트 직결",
+      "x": 75,
+      "y": 380,
+      "w": 230,
+      "h": 100,
+      "status": "confirmed",
+      "sources": [
+        "user"
+      ],
+      "detail": "한쪽 Ethernet 종단입니다. 전원 공급 방식(내장 PSU/어댑터)은 아직 확인되지 않았습니다. PC 내부 PHY와 마그네틱의 특성은 별도 모델이 필요합니다.",
+      "unknown": "PC 모델·NIC/PHY, LAN 마그네틱, 전원장치 구조, 금속 외함과 PE·신호 GND 연결, 운용 링크 속도."
+    },
+    {
+      "id": "monitor",
+      "code": "P03",
+      "title": "모니터",
+      "sub": "멀티탭 A · HDMI",
+      "x": 325,
+      "y": 205,
+      "w": 210,
+      "h": 80,
+      "status": "confirmed",
+      "sources": [
+        "user"
+      ],
+      "detail": "별도 전원을 받고 HDMI로 PC와 연결됩니다. 모니터도 PC의 고주파 기준전위에 영향을 줄 수 있는 연결 장치로 남깁니다.",
+      "unknown": "모니터 전원 방식, 접지 유무, HDMI 실드·GND 연결과 케이블 길이."
+    },
+    {
+      "id": "dongle",
+      "code": "E02",
+      "title": "공용 무선 동글",
+      "sub": "마우스 + 키보드",
+      "x": 75,
+      "y": 565,
+      "w": 230,
+      "h": 60,
+      "status": "confirmed",
+      "sources": [
+        "user"
+      ],
+      "detail": "하나의 동글로 마우스와 키보드를 사용합니다. PC 주변 구성으로 보존합니다.",
+      "unknown": "동글의 정확한 모델과 접속 위치. 현재 고장 원인으로 특정하지 않습니다."
+    },
+    {
+      "id": "pcg",
+      "code": "G01",
+      "title": "PC 외함 / LAN 실드",
+      "sub": "PE·신호 GND 결합 미확인",
+      "x": 340,
+      "y": 430,
+      "w": 205,
+      "h": 70,
+      "status": "unknown",
+      "sources": [
+        "user"
+      ],
+      "detail": "PC 외함, LAN 커넥터 실드, PC 신호 GND는 하나의 이상적인 접지로 단락하지 않습니다.",
+      "unknown": "직결·R/C 결합·절연 여부. 책상이 도전성인지도 미확인입니다."
+    },
+    {
+      "id": "pe",
+      "code": "G00",
+      "title": "건물 전원·보호접지 PE",
+      "sub": "두 아웃렛의 공유 관계 미확인",
+      "x": 595,
+      "y": 100,
+      "w": 350,
+      "h": 65,
+      "status": "unknown",
+      "sources": [
+        "user"
+      ],
+      "detail": "같은 방의 두 콘센트라는 사실만 확인되었습니다. 같은 차단기·같은 임피던스·동일한 고주파 전위라고 가정하지 않습니다.",
+      "unknown": "두 아웃렛의 분기회로/PE 관계와 각 전원장치의 PE 연결."
+    },
+    {
+      "id": "ob",
+      "code": "P04",
+      "title": "아웃렛 B",
+      "sub": "같은 방의 다른 220 VAC",
+      "x": 1050,
+      "y": 100,
+      "w": 220,
+      "h": 65,
+      "status": "confirmed",
+      "sources": [
+        "user"
+      ],
+      "detail": "센서 쪽 SMPS의 전원 출발점. 아웃렛 A와 다른 물리적 콘센트입니다.",
+      "unknown": "A와의 분기회로·PE 공유 관계, 전원선 경로."
+    },
+    {
+      "id": "sb",
+      "code": "P05",
+      "title": "멀티탭 B",
+      "sub": "SMPS 전원",
+      "x": 1050,
+      "y": 205,
+      "w": 220,
+      "h": 65,
+      "status": "confirmed",
+      "sources": [
+        "user"
+      ],
+      "detail": "센서용 SMPS가 연결된 멀티탭입니다.",
+      "unknown": "케이블 길이, PE 배선, 필터 구성."
+    },
+    {
+      "id": "smps",
+      "code": "P06",
+      "title": "LRS-350-24 · SMPS",
+      "sub": "24 V · L / N / FG 연결 확인",
+      "x": 1310,
+      "y": 205,
+      "w": 255,
+      "h": 85,
+      "status": "confirmed",
+      "sources": [
+        "user",
+        "meanwell",
+        "meanwelltest"
+      ],
+      "detail": "사용자 확인: MEAN WELL LRS-350-24이며 전원 코드 3선이 L·N·접지(FG) 단자에 모두 연결돼 있습니다. 센서와 같은 철제 테이블 위에 놓였습니다. +24 V 두 선과 0 V 두 선은 SMPS 근처 분기점에서 20 m 케이블에 들어갑니다. 제조사 외형 215 × 115 × 30 mm, 정격 24 V/14.6 A. 제조사 시험보고서에는 FG(PE)↔외함 연속성 시험이 있습니다. 이는 현재 테이블 접촉을 측정한 결과는 아닙니다.",
+      "unknown": "출력 −V(0 V)와 FG를 추가로 묶었는지, SMPS 외함과 테이블의 실제 접촉 임피던스, 분기선 길이, 운용 부하와 잡음 파형."
+    },
+    {
+      "id": "patch",
+      "code": "E03",
+      "title": "상용 랜선",
+      "sub": "PC까지 긴 구간 · 길이 미확인",
+      "x": 355,
+      "y": 720,
+      "w": 235,
+      "h": 70,
+      "status": "confirmed",
+      "sources": [
+        "user"
+      ],
+      "detail": "사용자 확인: SMPS 근처의 분기/RJ45 암–암 커플러에서 PC LAN 포트까지 상용 Ethernet 케이블이 비교적 길게 이어집니다. 20 m 복합 케이블 길이에 이 상용 랜선 길이가 더해집니다. 아직 실제 길이를 숫자로 지정하지 않았습니다.",
+      "unknown": "길이, Cat 등급, UTP/STP, 커넥터 실드와 쌍별 연결."
+    },
+    {
+      "id": "coupler",
+      "code": "E04",
+      "title": "RJ45 암–암 커플러",
+      "sub": "전원 없는 짧은 연결 젠더",
+      "x": 635,
+      "y": 720,
+      "w": 250,
+      "h": 70,
+      "status": "confirmed",
+      "sources": [
+        "user"
+      ],
+      "detail": "사용자 확인: 전원이 없는 수동 커플러입니다. 신호 재생이나 스위칭 없이 하나의 연속된 링크를 잇습니다.",
+      "unknown": "제품명, 접점 형상·저항, 내부 배선, 실드 연속성."
+    },
+    {
+      "id": "plug",
+      "code": "E05",
+      "title": "플라스틱 RJ45",
+      "sub": "SMPS 근처 · 복합 케이블 끝",
+      "x": 635,
+      "y": 835,
+      "w": 250,
+      "h": 65,
+      "status": "confirmed",
+      "sources": [
+        "user"
+      ],
+      "detail": "20 m 복합 케이블의 SMPS 근처 분기에서 나온 Ethernet 4선이 플라스틱 RJ45에 연결되고, 수동 암–암 커플러와 상용 랜선을 거쳐 PC로 갑니다. 복합 케이블 편조 실드는 이쪽에서도 연결하지 않았습니다.",
+      "unknown": "두 Ethernet 쌍은 유지했다고 사용자 확인. 실제 RJ45 핀맵, 분기 길이, 꼬임이 풀린 길이, 플러그/변환부 접점 구조는 미확인."
+    },
+    {
+      "id": "cable",
+      "code": "E06",
+      "title": "20 m 복합 케이블",
+      "sub": "Ethernet 2쌍 · (+/+) · (0 V/0 V)",
+      "x": 635,
+      "y": 955,
+      "w": 250,
+      "h": 80,
+      "status": "confirmed",
+      "sources": [
+        "user",
+        "emc"
+      ],
+      "detail": "사용자 확인: Ethernet용 8선 케이블의 네 꼬임쌍 중 두 쌍은 Ethernet, 한 쌍은 +24 V/+24 V, 남은 한 쌍은 0 V/0 V입니다. 약 20 m 외피를 함께 지나 M12 8핀 하나로 센서에 연결됩니다. SMPS 근처에서 RJ45와 SMPS 전원 네 선으로 갈라지며, 바닥에 감아 놓았습니다. 편조 실드는 양끝 모두 미접속입니다.",
+      "unknown": "케이블 품명/등급, 네 쌍의 실제 공간 배열·꼬임 피치·선경·유전체·실드 치수/피복률, 코일 형상. 같은 극성끼리 꼬였다는 점만으로 오류 원인을 확정하지 않습니다."
+    },
+    {
+      "id": "floor",
+      "code": "G02",
+      "title": "바닥 / PC 책상",
+      "sub": "케이블은 바닥 · PC는 책상 위",
+      "x": 65,
+      "y": 945,
+      "w": 485,
+      "h": 85,
+      "status": "unknown",
+      "sources": [
+        "user"
+      ],
+      "detail": "20 m 복합 케이블은 방 바닥에 감아 놓았고 PC는 책상 위입니다. 센서와 SMPS는 별도 표기한 철제 테스트 테이블에 함께 있습니다. 화면에서 두 테이블 사이 거리는 표시용입니다.",
+      "unknown": "바닥과 PC 책상의 재질·접지, 테이블 사이 거리, 바닥 코일의 지름·높이·횟수."
+    },
+    {
+      "id": "lidar",
+      "code": "S01",
+      "title": "회전하는 라이다",
+      "sub": "ATLAS: Ouster OS1 계열",
+      "x": 980,
+      "y": 370,
+      "w": 200,
+      "h": 85,
+      "status": "reference",
+      "sources": [
+        "user",
+        "assembly",
+        "diag"
+      ],
+      "detail": "사용자 확인: 모터 위의 라이다가 함께 회전합니다. ATLAS의 PPT 기반 표현은 Ouster OS1 계열이며 이전 문서에는 OS1-16 표기가 있습니다.",
+      "unknown": "이번 장비의 정확한 모델·금속 외함 접촉·소비 전류·동작 모드."
+    },
+    {
+      "id": "motor",
+      "code": "S02",
+      "title": "모터 / 감속기",
+      "sub": "회전 구동 · 기구 결합",
+      "x": 1220,
+      "y": 370,
+      "w": 180,
+      "h": 85,
+      "status": "reference",
+      "sources": [
+        "user",
+        "assembly"
+      ],
+      "detail": "ATLAS 기구도: Maxon 542002 계열, SHD17 50:1 감속부와 EM2. 실제 모터가 회전한다는 점은 사용자 확인입니다. 표시 형상은 기구 근사입니다.",
+      "unknown": "실제 구동기·PWM 주파수·상전류·스위칭 파형·회전속도·프레임 접촉. 모터가 정상 회전해도 PHY 간섭을 배제하지 않습니다."
+    },
+    {
+      "id": "dcin",
+      "code": "P07",
+      "title": "M12 전원 4핀",
+      "sub": "+24 V × 2 / 0 V × 2",
+      "x": 1440,
+      "y": 370,
+      "w": 180,
+      "h": 85,
+      "status": "confirmed",
+      "sources": [
+        "user",
+        "assembly"
+      ],
+      "detail": "센서에는 20 m 복합 케이블과 M12 8핀 하나가 연결됩니다. 그중 +24 V 두 선과 0 V 두 선이 전원을 공급합니다. SMPS 선은 SMPS 근처 분기점에서 이 케이블로 들어옵니다.",
+      "unknown": "M12의 실제 핀 번호와 내부 CON1까지의 매핑, 선경/접촉 저항. 전원 네 선의 존재는 확인됐지만 기존 핀 번호는 아직 대조 전입니다."
+    },
+    {
+      "id": "slip",
+      "code": "S03",
+      "title": "슬립링 / 내부 하네스",
+      "sub": "PortB · 별도 경로",
+      "x": 980,
+      "y": 505,
+      "w": 200,
+      "h": 80,
+      "status": "reference",
+      "sources": [
+        "assembly",
+        "diag"
+      ],
+      "detail": "ATLAS에서는 회전측 라이다가 슬립링을 거쳐 Control 보드에 연결됩니다. PortA 외부 PC 경로는 슬립링을 통과하지 않습니다.",
+      "unknown": "현물 슬립링 세부 형번, 핀맵·하네스·실드. 그림에는 내부 부하/간섭원으로 남깁니다."
+    },
+    {
+      "id": "power",
+      "code": "P08",
+      "title": "Motor PCB 전원부",
+      "sub": "TPS26630 · TPS5430 · 22 µH",
+      "x": 1420,
+      "y": 505,
+      "w": 210,
+      "h": 80,
+      "status": "reference",
+      "sources": [
+        "assembly"
+      ],
+      "detail": "현재 KiCad 기반 부품 목록에는 TPS26630RGET 보호 IC, TPS5430DDA와 22 µH 인덕터가 있습니다. 이 부품 목록만으로 정확한 전원 네트 전체를 검증한 것은 아닙니다.",
+      "unknown": "24 V→각 부하의 실제 회로, 출력 커패시터·ESR, 구동 전류, 스위칭 노드와 귀환 경로."
+    },
+    {
+      "id": "portb",
+      "code": "S04",
+      "title": "J1 / T3 / Port2·B",
+      "sub": "라이다 입력 경로",
+      "x": 980,
+      "y": 625,
+      "w": 200,
+      "h": 70,
+      "status": "reference",
+      "sources": [
+        "assembly",
+        "diag"
+      ],
+      "detail": "ATLAS: 라이다 → 슬립링 → J1 → 트랜스/PHY B → LAN9354 Port2. P1으로 전달될 트래픽과 부하를 제공합니다.",
+      "unknown": "T3의 정확한 부품 모델·현재 하네스 배치. 이번 PortA 모델과 별개의 고장 경로입니다."
+    },
+    {
+      "id": "lan",
+      "code": "S05",
+      "title": "LAN9354 · U6",
+      "sub": "Port1/A = 외부 PC",
+      "x": 1220,
+      "y": 625,
+      "w": 180,
+      "h": 100,
+      "status": "reference",
+      "sources": [
+        "pcb",
+        "assembly",
+        "diag",
+        "microchip"
+      ],
+      "detail": "Control 보드 U6. Port1/A는 PC, Port2/B는 라이다, Port0/RMII는 STM32입니다. 이번 해결 대상은 Port1/A의 양방향 경로입니다.",
+      "unknown": "PHY 내부 완전 동작 모델, 잡음 허용치, 실제 3.3/1.2 V·RBIAS·RESET·25 MHz 상태. 수동 선로 결과에서 CRC/링크 단절을 자동 판정하지 않습니다.",
+      "pcb": "phy"
+    },
+    {
+      "id": "reg",
+      "code": "P09",
+      "title": "Control 전원 / 기준",
+      "sub": "TLV76133 · 25 MHz · RBIAS",
+      "x": 1440,
+      "y": 625,
+      "w": 190,
+      "h": 90,
+      "status": "reference",
+      "sources": [
+        "assembly",
+        "microchip"
+      ],
+      "detail": "부품 자료에 TLV76133KVUR와 25 MHz SiT1602가 있습니다. LAN9354 전원·바이어스·클록·리셋을 독립 관측점으로 둡니다.",
+      "unknown": "각 핀 전원망과 실제 수동소자 값, 디커플링·비드 모델, 지터·전원 변동. IC 이름으로 회로를 추정해 확정하지 않습니다."
+    },
+    {
+      "id": "mcu",
+      "code": "S06",
+      "title": "STM32F407 / RMII",
+      "sub": "Port0 · 제어 / 엔코더",
+      "x": 980,
+      "y": 750,
+      "w": 200,
+      "h": 75,
+      "status": "reference",
+      "sources": [
+        "assembly",
+        "diag"
+      ],
+      "detail": "MCU는 LAN9354 Port0에 RMII로 연결됩니다. 모터 제어와 EM2 RS422 인터포저도 내부 동작 구조에 포함됩니다.",
+      "unknown": "구동 모드와 내부 부하 변화. 외부 PortA 신호선과 RMII 선로를 같은 경로로 섞지 않습니다."
+    },
+    {
+      "id": "t2",
+      "code": "S07",
+      "title": "트랜스 T2",
+      "sub": "PHY측 / 케이블측",
+      "x": 1220,
+      "y": 770,
+      "w": 180,
+      "h": 65,
+      "status": "reference",
+      "sources": [
+        "pcb",
+        "assembly"
+      ],
+      "detail": "기존 두 PCB 해석은 T2의 양쪽 패드에서 나눴습니다. T2 내부 권선·기생 C·누설 L·공통모드 초크는 기존 수치에 포함되지 않았습니다.",
+      "unknown": "정확한 T2 품번·내부 접속·중심탭·S 파라미터/등가회로. 이상적인 1:1 트랜스만으로 잡음 경로를 확정하지 않습니다.",
+      "pcb": "phy"
+    },
+    {
+      "id": "molex",
+      "code": "S08",
+      "title": "CON2 ↔ CON2",
+      "sub": "64핀 · 높이 15 mm",
+      "x": 1440,
+      "y": 840,
+      "w": 190,
+      "h": 80,
+      "status": "reference",
+      "sources": [
+        "pcb",
+        "assembly"
+      ],
+      "detail": "Control 714362364와 Motor 714393364. 제조 Gerber 기반 경로는 실제 패드 위치와 대응을 사용하되 접점은 직선 형상으로 근사했습니다.",
+      "unknown": "실제 스프링 접점·하우징 물성·접촉 저항. 신호뿐 아니라 전원·귀환 연결을 포함해야 합니다.",
+      "pcb": "cable"
+    },
+    {
+      "id": "con1",
+      "code": "S09",
+      "title": "Motor PCB CON1",
+      "sub": "내부 하네스 ↔ 보드 입력",
+      "x": 1220,
+      "y": 960,
+      "w": 180,
+      "h": 65,
+      "status": "reference",
+      "sources": [
+        "pcb",
+        "assembly"
+      ],
+      "detail": "ATLAS의 PCB 입력 8핀 커넥터입니다. 외부 M12와 PCB CON1은 서로 다른 핀 번호 체계를 사용합니다.",
+      "unknown": "이번 현물의 외부 M12→CON1 하네스와 접촉 특성. 기존 핀맵은 아래 표에서 확인 대상으로 제시합니다.",
+      "pcb": "cable"
+    },
+    {
+      "id": "m12",
+      "code": "E07",
+      "title": "센서 M12 · 8핀",
+      "sub": "Ethernet 4 + 전원 4",
+      "x": 980,
+      "y": 960,
+      "w": 200,
+      "h": 65,
+      "status": "confirmed",
+      "sources": [
+        "user",
+        "assembly",
+        "pcb"
+      ],
+      "detail": "사용자 확인: 20 m 케이블 하나가 M12 8핀으로 센서에 연결됩니다. 전원 4선과 Ethernet 4선이 모두 이 커넥터를 통과합니다. 케이블 편조 실드는 M12 쪽에도 연결하지 않았습니다.",
+      "unknown": "품번·실제 핀맵·커넥터 몸체와 센서 함체의 접촉. 실드 미접속과 M12 금속 몸체의 함체 접촉은 별개의 항목입니다.",
+      "pcb": "cable"
+    },
+    {
+      "id": "chassis",
+      "code": "G03",
+      "title": "센서 금속 함체",
+      "sub": "접합부·아노다이징",
+      "x": 1440,
+      "y": 755,
+      "w": 190,
+      "h": 60,
+      "status": "reference",
+      "sources": [
+        "assembly",
+        "emc"
+      ],
+      "detail": "기존 자료의 금속 함체와 접합부를 남깁니다. 방수/기계적 접촉이 고주파 전기 접촉을 보장하지는 않습니다.",
+      "unknown": "실제 치수·재질·벽두께·접합면 임피던스·볼트·M12 몸체 접속. 기존 155 mm 폭과 접합부 반지름 약 15 cm 설명은 대조가 필요합니다."
+    },
+    {
+      "id": "gnd",
+      "code": "G04",
+      "title": "PCB 0 V / GND",
+      "sub": "PE·함체와 별도 노드",
+      "x": 1440,
+      "y": 960,
+      "w": 190,
+      "h": 65,
+      "status": "unknown",
+      "sources": [
+        "pcb",
+        "emc"
+      ],
+      "detail": "두 PCB의 기준 구리는 실제 Gerber 자료로 표시합니다. PCB 0 V, 금속 함체, 케이블 실드, 건물 PE를 자동으로 하나로 묶지 않습니다.",
+      "unknown": "전기적 연결점·R/C·기생성분, 마운팅홀/스페이서 접촉, 24 V 리턴 경로."
+    },
+    {
+      "id": "breakout",
+      "code": "E08",
+      "title": "SMPS 근처 분기",
+      "sub": "전원 짧게 · 상용 랜선 길게",
+      "x": 355,
+      "y": 835,
+      "w": 230,
+      "h": 80,
+      "status": "confirmed",
+      "sources": [
+        "user"
+      ],
+      "detail": "사용자 수정: 20 m 복합 케이블의 분기점은 실제 공간에서 SMPS에 훨씬 가깝습니다. SMPS와 분기 사이 전원 네 선은 짧고, RJ45/암–암 커플러에서 PC까지 상용 랜선이 길게 이어집니다. 센서 반대쪽 케이블 끝이라는 의미와 PC 가까이에 놓였다는 의미를 구분합니다. 케이블의 네 꼬임쌍과 양끝 미접속 편조 조건은 같습니다.",
+      "unknown": "분기점→RJ45와 분기점→SMPS 길이, 분기 후 전원선 배열, 외피·편조가 끝나는 위치."
+    },
+    {
+      "id": "braid",
+      "code": "G06",
+      "title": "케이블 편조 실드",
+      "sub": "양끝 미접속 · 사용자 확인",
+      "x": 635,
+      "y": 215,
+      "w": 250,
+      "h": 80,
+      "status": "confirmed",
+      "sources": [
+        "user"
+      ],
+      "detail": "사용자가 braid로 설명한 케이블 실드는 존재하지만 PC 쪽과 센서 M12 쪽 모두 연결하지 않았습니다. 모델에는 독립된 도체로 남기며 PE·PC 외함·센서 함체에 단락하지 않습니다. 주변과의 기생 결합 크기는 아직 계산하지 않았습니다.",
+      "unknown": "실드 재질·피복률·직경·길이·편조의 끝 처리, 드레인선 유무. 양끝 미접속을 잡음 원인으로 확정하지 않습니다."
+    },
+    {
+      "id": "table",
+      "code": "G05",
+      "title": "철제 테스트 테이블",
+      "sub": "센서 + SMPS · 별도 연결 없음",
+      "x": 65,
+      "y": 755,
+      "w": 250,
+      "h": 90,
+      "status": "confirmed",
+      "sources": [
+        "user",
+        "meanwelltest"
+      ],
+      "detail": "사용자 확인: 아노다이징된 센서와 LRS-350-24가 같은 철제면 위에 그대로 놓였습니다. 테이블에 별도 접지선을 연결하지 않았습니다. SMPS 표면의 절연 상태는 확인되지 않았습니다. 제조사 FG↔외함 연결을 근거로, SMPS 외함 접촉을 통한 테이블의 PE 연결 가능성을 별도로 확인합니다. 이 가능성을 이미 측정된 연결로 취급하지 않습니다.",
+      "unknown": "아노다이징·접촉면의 실제 상태, SMPS↔테이블 접촉 임피던스와 테이블 치수/접지. 아노다이징만으로 기생 결합이 0이라고 두지 않습니다."
+    }
+  ],
+  "edges": [
+    {
+      "id": "ac1",
+      "a": "oa",
+      "b": "sa",
+      "kind": "ac",
+      "status": "confirmed",
+      "label": "220 VAC",
+      "d": "M165 165V205"
+    },
+    {
+      "id": "ac2",
+      "a": "sa",
+      "b": "pc",
+      "kind": "ac",
+      "status": "confirmed",
+      "label": "PC 전원",
+      "d": "M165 270V380"
+    },
+    {
+      "id": "ac3",
+      "a": "sa",
+      "b": "monitor",
+      "kind": "ac",
+      "status": "confirmed",
+      "label": "모니터 전원",
+      "d": "M265 238H325"
+    },
+    {
+      "id": "hdmi",
+      "a": "monitor",
+      "b": "pc",
+      "kind": "control",
+      "status": "confirmed",
+      "label": "HDMI",
+      "d": "M430 285V330H245V380",
+      "lx": 365,
+      "ly": 323
+    },
+    {
+      "id": "usb",
+      "a": "dongle",
+      "b": "pc",
+      "kind": "control",
+      "status": "confirmed",
+      "label": "동글",
+      "d": "M190 565V480"
+    },
+    {
+      "id": "ac4",
+      "a": "ob",
+      "b": "sb",
+      "kind": "ac",
+      "status": "confirmed",
+      "label": "220 VAC",
+      "d": "M1160 165V205"
+    },
+    {
+      "id": "ac5",
+      "a": "sb",
+      "b": "smps",
+      "kind": "ac",
+      "status": "confirmed",
+      "label": "AC 입력",
+      "d": "M1270 238H1310"
+    },
+    {
+      "id": "dc1",
+      "a": "smps",
+      "b": "breakout",
+      "kind": "dc",
+      "status": "confirmed",
+      "label": "+24 V × 2 / 0 V × 2 → SMPS 근처 분기",
+      "d": "M1310 285H1280V300H945V690H600V875H585",
+      "lx": 640,
+      "ly": 683
+    },
+    {
+      "id": "dc2",
+      "a": "dcin",
+      "b": "power",
+      "kind": "dc",
+      "status": "reference",
+      "label": "M12 → 내부 전원 입력",
+      "d": "M1530 455V505"
+    },
+    {
+      "id": "dc3",
+      "a": "power",
+      "b": "reg",
+      "kind": "dc",
+      "status": "reference",
+      "label": "보드 전원",
+      "d": "M1550 585V625"
+    },
+    {
+      "id": "dc4",
+      "a": "reg",
+      "b": "lan",
+      "kind": "dc",
+      "status": "reference",
+      "label": "전원·기준",
+      "d": "M1440 655H1400"
+    },
+    {
+      "id": "dc5",
+      "a": "power",
+      "b": "motor",
+      "kind": "dc",
+      "status": "reference",
+      "label": "구동 전원",
+      "d": "M1420 530H1310V455"
+    },
+    {
+      "id": "dc6",
+      "a": "power",
+      "b": "lidar",
+      "kind": "dc",
+      "status": "reference",
+      "label": "라이다 전원 · CON3/슬립링",
+      "d": "M1420 560H1200V435H1180",
+      "lx": 1205,
+      "ly": 491
+    },
+    {
+      "id": "e1",
+      "a": "pc",
+      "b": "patch",
+      "kind": "ethernet",
+      "status": "confirmed",
+      "label": "PC LAN",
+      "d": "M305 460H320V650H455V720",
+      "lx": 463,
+      "ly": 674
+    },
+    {
+      "id": "e2",
+      "a": "patch",
+      "b": "coupler",
+      "kind": "ethernet",
+      "status": "confirmed",
+      "label": "RJ45",
+      "d": "M560 755H635"
+    },
+    {
+      "id": "e3",
+      "a": "coupler",
+      "b": "plug",
+      "kind": "ethernet",
+      "status": "confirmed",
+      "label": "수동 접속",
+      "d": "M760 790V835"
+    },
+    {
+      "id": "e4",
+      "a": "plug",
+      "b": "breakout",
+      "kind": "ethernet",
+      "status": "confirmed",
+      "label": "분기된 Ethernet 4선",
+      "d": "M635 872H585"
+    },
+    {
+      "id": "e5",
+      "a": "cable",
+      "b": "m12",
+      "kind": "ethernet",
+      "status": "confirmed",
+      "label": "약 20 m",
+      "d": "M885 995H980"
+    },
+    {
+      "id": "e6",
+      "a": "m12",
+      "b": "con1",
+      "kind": "ethernet",
+      "status": "reference",
+      "label": "하네스",
+      "d": "M1180 995H1220"
+    },
+    {
+      "id": "e7",
+      "a": "con1",
+      "b": "molex",
+      "kind": "ethernet",
+      "status": "reference",
+      "label": "Motor PCB",
+      "d": "M1360 975H1410V885H1440",
+      "lx": 1355,
+      "ly": 937
+    },
+    {
+      "id": "e8",
+      "a": "molex",
+      "b": "t2",
+      "kind": "ethernet",
+      "status": "reference",
+      "label": "Control PCB",
+      "d": "M1440 875H1310V835",
+      "lx": 1280,
+      "ly": 870
+    },
+    {
+      "id": "e9",
+      "a": "t2",
+      "b": "lan",
+      "kind": "ethernet",
+      "status": "reference",
+      "label": "TXA± / RXA±",
+      "d": "M1310 770V725",
+      "lx": 1184,
+      "ly": 752
+    },
+    {
+      "id": "b1",
+      "a": "lidar",
+      "b": "slip",
+      "kind": "internal",
+      "status": "reference",
+      "label": "회전측",
+      "d": "M1080 455V505"
+    },
+    {
+      "id": "b2",
+      "a": "slip",
+      "b": "portb",
+      "kind": "internal",
+      "status": "reference",
+      "label": "내부 Ethernet",
+      "d": "M1080 585V625"
+    },
+    {
+      "id": "b3",
+      "a": "portb",
+      "b": "lan",
+      "kind": "internal",
+      "status": "reference",
+      "label": "Port2/B",
+      "d": "M1180 660H1220"
+    },
+    {
+      "id": "rmi",
+      "a": "mcu",
+      "b": "lan",
+      "kind": "control",
+      "status": "reference",
+      "label": "RMII · Port0",
+      "d": "M1180 775H1202V700H1220",
+      "lx": 1045,
+      "ly": 722
+    },
+    {
+      "id": "pe1",
+      "a": "pe",
+      "b": "oa",
+      "kind": "bond",
+      "status": "unknown",
+      "label": "분기/PE ?",
+      "d": "M595 132H265",
+      "lx": 380,
+      "ly": 125
+    },
+    {
+      "id": "pe2",
+      "a": "pe",
+      "b": "ob",
+      "kind": "bond",
+      "status": "unknown",
+      "label": "분기/PE ?",
+      "d": "M945 132H1050"
+    },
+    {
+      "id": "pe3",
+      "a": "oa",
+      "b": "pcg",
+      "kind": "bond",
+      "status": "unknown",
+      "label": "PC 전원 PE ?",
+      "d": "M95 100V65H570V465H545",
+      "lx": 575,
+      "ly": 360
+    },
+    {
+      "id": "bondpc",
+      "a": "pc",
+      "b": "pcg",
+      "kind": "bond",
+      "status": "unknown",
+      "label": "외함·실드 ?",
+      "d": "M305 430H340"
+    },
+    {
+      "id": "pe4",
+      "a": "ob",
+      "b": "smps",
+      "kind": "bond",
+      "status": "confirmed",
+      "label": "코드 PE → SMPS FG · 연결 확인",
+      "d": "M1220 100V65H1590V250H1565",
+      "lx": 1280,
+      "ly": 58
+    },
+    {
+      "id": "bondg",
+      "a": "chassis",
+      "b": "gnd",
+      "kind": "bond",
+      "status": "unknown",
+      "label": "함체↔0 V ?",
+      "d": "M1615 815V960",
+      "lx": 1580,
+      "ly": 939
+    },
+    {
+      "id": "bondm",
+      "a": "m12",
+      "b": "chassis",
+      "kind": "bond",
+      "status": "unknown",
+      "label": "M12 몸체 접속 ?",
+      "d": "M1000 960V910H1418V785H1440",
+      "lx": 1095,
+      "ly": 903
+    },
+    {
+      "id": "floorc",
+      "a": "cable",
+      "b": "floor",
+      "kind": "coupling",
+      "status": "hypothesis",
+      "label": "C4 · 바닥과 결합",
+      "d": "M635 1010H550",
+      "lx": 440,
+      "ly": 1053
+    },
+    {
+      "id": "noise1",
+      "a": "smps",
+      "b": "cable",
+      "kind": "coupling",
+      "status": "hypothesis",
+      "label": "C1 · 전원 공통모드",
+      "d": "M1310 275H915V920H800V955",
+      "lx": 919,
+      "ly": 305
+    },
+    {
+      "id": "noise2",
+      "a": "motor",
+      "b": "lan",
+      "kind": "coupling",
+      "status": "hypothesis",
+      "label": "C2 · 내부 구동 간섭",
+      "d": "M1250 455Q1205 525 1260 625",
+      "lx": 1180,
+      "ly": 599
+    },
+    {
+      "id": "noise3",
+      "a": "power",
+      "b": "reg",
+      "kind": "coupling",
+      "status": "hypothesis",
+      "label": "C3 · 전원·귀환 변동",
+      "d": "M1630 550Q1668 600 1630 650",
+      "lx": 1440,
+      "ly": 606
+    },
+    {
+      "id": "noise5",
+      "a": "pcg",
+      "b": "cable",
+      "kind": "coupling",
+      "status": "hypothesis",
+      "label": "C5 · PC측 결합",
+      "d": "M545 450Q895 490 895 690V945L875 955",
+      "lx": 677,
+      "ly": 523
+    },
+    {
+      "id": "e4b",
+      "a": "breakout",
+      "b": "cable",
+      "kind": "ethernet",
+      "status": "confirmed",
+      "label": "같은 외피 안 Ethernet 4선",
+      "d": "M585 893H615V980H635"
+    },
+    {
+      "id": "dc7",
+      "a": "breakout",
+      "b": "cable",
+      "kind": "dc",
+      "status": "confirmed",
+      "label": "같은 외피 안 전원 4선",
+      "d": "M480 915V927H600V1012H635"
+    },
+    {
+      "id": "dc8",
+      "a": "cable",
+      "b": "m12",
+      "kind": "dc",
+      "status": "confirmed",
+      "label": "M12 전원 4핀",
+      "d": "M885 1012H980"
+    },
+    {
+      "id": "dc9",
+      "a": "m12",
+      "b": "dcin",
+      "kind": "dc",
+      "status": "confirmed",
+      "label": "M12 전원 → 센서 인입",
+      "d": "M1180 1012H1190V930H1640V420H1620"
+    },
+    {
+      "id": "shieldc",
+      "a": "braid",
+      "b": "cable",
+      "kind": "coupling",
+      "status": "hypothesis",
+      "label": "C6 · 편조↔내선 결합",
+      "d": "M760 295V355H885V910H835V955",
+      "lx": 643,
+      "ly": 344
+    },
+    {
+      "id": "tablec",
+      "a": "table",
+      "b": "chassis",
+      "kind": "coupling",
+      "status": "hypothesis",
+      "label": "C7 · 테이블↔장비 결합",
+      "d": "M190 845V1060H1658V785H1630",
+      "lx": 67,
+      "ly": 884
+    },
+    {
+      "id": "table-smps",
+      "a": "table",
+      "b": "smps",
+      "kind": "bond",
+      "status": "unknown",
+      "label": "SMPS 외함↔철제면 접촉 ?",
+      "d": "M65 795H30V315H1290V270H1310",
+      "lx": 615,
+      "ly": 308
+    }
+  ],
+  "unknowns": [
+    [
+      "U01",
+      "네 꼬임쌍의 실제 형상",
+      "Ethernet 2쌍, +24 V끼리 1쌍, 0 V끼리 1쌍은 확인. 쌍 사이 배열·피치·선경·유전체·편조 치수가 남아 있습니다.",
+      "cable"
+    ],
+    [
+      "U02",
+      "짧은 전원 분기와 긴 상용 랜선",
+      "분기는 SMPS 근처, 전원 네 선은 짧고 PC까지 상용 랜선은 길다는 관계를 반영했습니다. 정확한 길이는 이후 입력 범위로 남깁니다.",
+      "breakout"
+    ],
+    [
+      "U03",
+      "FG·함체·0 V와 테이블 접촉",
+      "L/N/FG의 코드 연결과 양끝 미접속 실드는 확인. 출력 0 V↔FG의 추가 결선, SMPS↔철제면과 센서 아노다이징 접촉 상태를 남깁니다.",
+      "table"
+    ],
+    [
+      "U04",
+      "확인된 SMPS와 남은 종단 모델",
+      "LRS-350-24 확인. 실제 운용 파형·출력 임피던스, PC/NIC·모니터 모델과 PC측 마그네틱/종단 자료가 필요합니다.",
+      "smps"
+    ],
+    [
+      "U05",
+      "T2와 실장 보호부품",
+      "T2 품번/내부회로, SRV05-4 등 보호소자·센터탭·종단 연결 및 주파수 특성을 확인합니다.",
+      "t2"
+    ],
+    [
+      "U06",
+      "케이블 양 끝과 커플러",
+      "M12→RJ45 핀맵, 실제 두 쌍, 꼬임이 풀린 길이, 커플러 실드와 상용 랜선의 길이·등급.",
+      "coupler"
+    ],
+    [
+      "U07",
+      "철제면 접촉과 배치 치수",
+      "센서·SMPS를 같은 철제면에 그대로 올림. 장비 간 거리, 테이블 치수, 분기선 길이, 코일 지름·높이는 아직 미확정입니다.",
+      "table"
+    ],
+    [
+      "U08",
+      "함체 치수 설명의 대조",
+      "조립도 기반 폭 155 mm·전체 489 mm와 EMC 문서의 접합부 반지름 약 15 cm는 같은 치수라고 확정할 수 없습니다. 실제 대상/단위를 확인합니다.",
+      "chassis"
+    ],
+    [
+      "U09",
+      "동작 조건과 내부 자극",
+      "실제 링크 속도, 송수신 데이터/부하, 모터 PWM·상전류·속도, 24 V와 로컬 전원의 변동 범위.",
+      "motor"
+    ],
+    [
+      "U10",
+      "측정 노드와 판정 기준",
+      "수신 차동/공통모드, 전원−로컬 GND, RBIAS·리셋. 아직 확인되지 않은 LAN9354 한계에서 CRC/링크 판정을 만들어내지 않습니다.",
+      "lan"
+    ]
+  ]
+};

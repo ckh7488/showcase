@@ -1,0 +1,68 @@
+{
+  "revision": "topology-run-01",
+  "startedAtUTC": "2026-09-13T20:54:02.107908+00:00",
+  "updatedAtUTC": "2026-09-14T07:21:43.219285+00:00",
+  "stage": "complete",
+  "current": null,
+  "rows": [
+    {
+      "id": "legacy-adjacent",
+      "wiring": "same",
+      "topology": "adjacent",
+      "polarity": "aligned",
+      "coarse": "complete",
+      "fine": "not_selected_after_coarse"
+    },
+    {
+      "id": "balanced-adjacent-aligned",
+      "wiring": "mixed",
+      "topology": "adjacent",
+      "polarity": "aligned",
+      "coarse": "complete",
+      "fine": "not_selected_after_coarse"
+    },
+    {
+      "id": "balanced-adjacent-opposed",
+      "wiring": "mixed",
+      "topology": "adjacent",
+      "polarity": "opposed",
+      "coarse": "complete",
+      "fine": "complete",
+      "lastTimestep": 55179,
+      "lastSpeed_MC_per_s": 32.8,
+      "powerThroughAt100MHz": 1.0813344129657132
+    },
+    {
+      "id": "balanced-diagonal-aligned",
+      "wiring": "mixed",
+      "topology": "diagonal",
+      "polarity": "aligned",
+      "coarse": "complete",
+      "fine": "not_selected_after_coarse",
+      "lastTimestep": 44250,
+      "lastSpeed_MC_per_s": 54.7,
+      "powerThroughAt100MHz": 1.1063839936796007
+    },
+    {
+      "id": "balanced-diagonal-opposed",
+      "wiring": "mixed",
+      "topology": "diagonal",
+      "polarity": "opposed",
+      "coarse": "complete",
+      "fine": "complete",
+      "lastTimestep": 55150,
+      "lastSpeed_MC_per_s": 59.0,
+      "powerThroughAt100MHz": 1.0932722617632937
+    }
+  ],
+  "note": "Actual openEMS progress only. A topology verdict is published only after the declared comparisons complete.",
+  "childPID": null,
+  "winner": {
+    "id": "balanced-diagonal-opposed",
+    "label": "대각 · 반대 방향",
+    "basis": "fine_top_two",
+    "currentWorstDifferentialRatio": 0.3709981202138078,
+    "currentWorstDifferentialChange_dB": -8.612565817555614
+  },
+  "completedAtUTC": "2026-09-14T07:21:43.219285+00:00"
+}

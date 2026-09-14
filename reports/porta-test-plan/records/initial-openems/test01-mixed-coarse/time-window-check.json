@@ -1,0 +1,48 @@
+{
+  "operation": "DFT of the same saved samples with earlier cutoffs; no solver run.",
+  "fullDuration_s": 8.49872073152e-09,
+  "checks": [
+    {
+      "windowFraction": 0.8,
+      "stop_s": 6.798976585216e-09,
+      "maxComplexDifferenceEachPair": [
+        1.5284840485094054e-06,
+        6.673456480777156e-07
+      ],
+      "passFractionEachPair": [
+        1.0,
+        1.0
+      ],
+      "passed": true,
+      "commonMode": {
+        "maxComplexDifferenceEachPair": [
+          5.700847671335613e-05,
+          2.7421500084521737e-05
+        ],
+        "passed": false
+      }
+    },
+    {
+      "windowFraction": 0.9,
+      "stop_s": 7.648848658367999e-09,
+      "maxComplexDifferenceEachPair": [
+        8.963767471614106e-07,
+        1.112981666198829e-06
+      ],
+      "passFractionEachPair": [
+        1.0,
+        1.0
+      ],
+      "passed": true,
+      "commonMode": {
+        "maxComplexDifferenceEachPair": [
+          3.6141966047227116e-05,
+          2.812634560917045e-05
+        ],
+        "passed": true
+      }
+    }
+  ],
+  "threshold": "|Hshorter-Hfull| <= max(0.05|Hfull|,1e-5)",
+  "scope": "Tail-window stability only. It does not test spatial resolution, a stricter solver energy setting, boundary distance, or a longer unrecorded tail."
+}

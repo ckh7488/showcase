@@ -1,0 +1,86 @@
+INPUT {"test": "00", "shape": "notch", "solver": "openEMS", "versions": {"openEMS": "0.0.36", "CSXCAD": "0.6.3", "numpy": "1.26.4"}, "source": "https://docs.openems.de/python/openEMS/Tutorials/MSL_NotchFilter.html", "script_sha256": "a0cde9468deb880585490d7c4112348393eee07af53974b08b2953faf528acbd", "geometry": {"units": "um", "length": 100000, "width": 600, "substrateThickness": 254, "epsilon_r": 3.66, "stubLength": 12000}, "changes": ["Explicit timestep cap/end criterion and numerical output; no plotting GUI.", "Uniform-line, refinement, reverse-source and margin variants are explicit.", "FeedShift fixed at original baseline distance across refinements."], "refinement": 1, "margin": 1, "reverse": false, "boundary": ["PML_8", "PML_8", "MUR", "MUR", "PEC", "MUR"], "EndCriteria": 1e-05, "NrTS": 200000, "numThreads": 4, "meshLines": {"x": 235, "y": 82, "z": 14}, "cells": 246402, "minCell_um": {"x": 87.56317237257585, "y": 87.56317237257585, "z": 63.5}, "referenceImpedance_ohm": 50, "solverRun": false}
+ ---------------------------------------------------------------------- 
+ | openEMS 64bit -- version v0.0.36
+ | (C) 2010-2023 Thorsten Liebig <thorsten.liebig@gmx.de>  GPL license
+ ---------------------------------------------------------------------- 
+	Used external libraries:
+		CSXCAD -- Version: v0.6.3
+		hdf5   -- Version: 1.12.0
+		          compiled against: HDF5 library version: 1.12.0
+		tinyxml -- compiled against: 2.6.2
+		fparser
+		boost  -- compiled against: 1_72
+		vtk -- Version: 8.2.0
+		       compiled against: 8.2.0
+
+Create FDTD operator (compressed SSE + multi-threading)
+Multithreaded operator using 4 threads.
+Compressing the FDTD operator... this may take a while...
+------- Stat: FDTD Operator -------
+Dimensions		: 235x82x14 = 269780 Cells (0.26978 MCells)
+Size of Operator	: 12949440 Byte (12.3495 MiB) 
+Size of Field-Data	: 6474720 Byte (6.17477 MiB) 
+-----------------------------------
+Background materials (epsR/mueR/kappa/sigma): 1/1/0/0
+-----------------------------------
+Number of PEC edges	: 3451
+in x direction		: 1824
+in y direction		: 1627
+in z direction		: 0
+-----------------------------------
+Timestep (s)		: 1.73955e-13
+Timestep method name	: Rennings_2
+Nyquist criteria (TS)	: 410
+Nyquist criteria (s)	: 7.13214e-11
+-----------------------------------
+SSE compression enabled	: yes
+Unique SSE operators	: 2529
+-----------------------------------
+-----------------------------------
+--- Excitation Extension ---
+Voltage excitations	: 28	 (0, 0, 28)
+Current excitations	: 0	 (0, 0, 0)
+Excitation Length (TS)	: 4706
+Excitation Length (s)	: 8.1863e-10
+--- Mur ABC Extension ---
+ Active direction	: y at line: 0
+--- Mur ABC Extension ---
+ Active direction	: y at line: 81
+--- Mur ABC Extension ---
+ Active direction	: z at line: 13
+--- Uniaxial PML Extension ---
+ PML range		: [0,0,0] to [8,81,13]
+ Grading function	: " -log(1e-6)*log(2.5)/(2*dl*Z*(pow(2.5,W/dl)-1)) * pow(2.5, D/dl) "
+--- Uniaxial PML Extension ---
+ PML range		: [226,0,0] to [234,81,13]
+ Grading function	: " -log(1e-6)*log(2.5)/(2*dl*Z*(pow(2.5,W/dl)-1)) * pow(2.5, D/dl) "
+-----------------------------------
+Creation time for operator: 3.33776 s
+FDTD simulation size: 235x82x14 --> 269780 FDTD cells 
+FDTD timestep is: 1.73955e-13 s; Nyquist rate: 410 timesteps @7.01052e+09 Hz
+Excitation signal length is: 4706 timesteps (8.1863e-10s)
+Max. number of timesteps: 200000 ( --> 42.4989 * Excitation signal length)
+Create FDTD engine (compressed SSE + multi-threading)
+Multithreaded engine using 4 threads. Utilization: (59;59;59;58)
+Setting up processing...
+Running FDTD engine... this may take a while... grab a cup of coffee?!?
+[@        4s] Timestep:          510 || Speed:   33.4 MC/s (8.086e-03 s/TS) || Energy: ~3.07e-20 (- 0.00dB)
+[@        8s] Timestep:         1122 || Speed:   38.4 MC/s (7.029e-03 s/TS) || Energy: ~4.28e-18 (- 0.00dB)
+[@       13s] Timestep:         1734 || Speed:   33.9 MC/s (7.953e-03 s/TS) || Energy: ~1.62e-15 (- 0.00dB)
+[@       17s] Timestep:         2244 || Speed:   32.6 MC/s (8.268e-03 s/TS) || Energy: ~6.28e-15 (- 0.00dB)
+[@       21s] Timestep:         2754 || Speed:   34.3 MC/s (7.876e-03 s/TS) || Energy: ~1.02e-14 (- 0.00dB)
+[@       25s] Timestep:         3264 || Speed:   33.7 MC/s (8.001e-03 s/TS) || Energy: ~1.16e-14 (- 0.00dB)
+[@       29s] Timestep:         3978 || Speed:   44.7 MC/s (6.038e-03 s/TS) || Energy: ~1.58e-14 (- 0.00dB)
+[@       33s] Timestep:         4590 || Speed:   40.9 MC/s (6.603e-03 s/TS) || Energy: ~1.64e-14 (- 0.00dB)
+[@       37s] Timestep:         5202 || Speed:   41.2 MC/s (6.546e-03 s/TS) || Energy: ~1.05e-14 (- 1.93dB)
+[@       42s] Timestep:         5916 || Speed:   44.5 MC/s (6.056e-03 s/TS) || Energy: ~6.07e-15 (- 4.32dB)
+[@       47s] Timestep:         6630 || Speed:   40.1 MC/s (6.728e-03 s/TS) || Energy: ~2.20e-15 (- 8.73dB)
+[@       51s] Timestep:         7242 || Speed:   37.5 MC/s (7.186e-03 s/TS) || Energy: ~3.25e-16 (-17.03dB)
+[@       55s] Timestep:         7752 || Speed:   34.1 MC/s (7.916e-03 s/TS) || Energy: ~1.35e-16 (-20.86dB)
+[@     1m00s] Timestep:         8364 || Speed:   35.6 MC/s (7.571e-03 s/TS) || Energy: ~2.75e-17 (-27.75dB)
+[@     1m04s] Timestep:         8976 || Speed:   37.4 MC/s (7.213e-03 s/TS) || Energy: ~3.71e-18 (-36.45dB)
+[@     1m08s] Timestep:         9588 || Speed:   37.6 MC/s (7.169e-03 s/TS) || Energy: ~3.67e-19 (-46.50dB)
+[@     1m13s] Timestep:        10302 || Speed:   43.8 MC/s (6.159e-03 s/TS) || Energy: ~4.82e-20 (-55.32dB)
+Time for 10302 iterations with 269780.00 cells : 73.36 sec
+Speed: 37.88 MCells/s 
+RESULT {"assessmentBand_Hz": [500000000.0, 6000000000.0], "maxOutgoingOverIncidentPower": 1.0022633268257575, "minimumTransmission_dB": -50.34695112087672, "notchFrequency_Hz": 3670475714.2857146} elapsed_s 76.81399190000957

@@ -1,0 +1,546 @@
+ReadFromXML: ''
+ ---------------------------------------------------------------------- 
+ | openEMS 64bit -- version v0.0.36
+ | (C) 2010-2023 Thorsten Liebig <thorsten.liebig@gmx.de>  GPL license
+ ---------------------------------------------------------------------- 
+	Used external libraries:
+		CSXCAD -- Version: v0.6.3
+		hdf5   -- Version: 1.12.0
+		          compiled against: HDF5 library version: 1.12.0
+		tinyxml -- compiled against: 2.6.2
+		fparser
+		boost  -- compiled against: 1_72
+		vtk -- Version: 8.2.0
+		       compiled against: 8.2.0
+
+Create FDTD operator (compressed SSE + multi-threading)
+Multithreaded operator using 2 threads.
+Operator: Dumping PEC information to vtk file: PEC_dump ... done.
+Compressing the FDTD operator... this may take a while...
+Operator::CalcGaussianPulsExcitation: Requested excitation pusle would be 15778 timesteps or 5.7296e-09 s long. Cutting to max number of timesteps!
+------- Stat: FDTD Operator -------
+Dimensions		: 58x76x68 = 299744 Cells (0.299744 MCells)
+Size of Operator	: 14387712 Byte (13.7212 MiB) 
+Size of Field-Data	: 7193856 Byte (6.8606 MiB) 
+-----------------------------------
+Background materials (epsR/mueR/kappa/sigma): 1/1/0/0
+-----------------------------------
+Number of PEC edges	: 16532
+in x direction		: 5558
+in y direction		: 5459
+in z direction		: 5515
+-----------------------------------
+openEMS::SetupFDTD: Warning, the timestep seems to be very small --> long simulation. Check your mesh!?
+openEMS::SetupFDTD: Warning, max. number of timesteps is smaller than three times the excitation. 
+	You may want to choose a higher number of max. timesteps... 
+Timestep (s)		: 3.63139e-13
+Timestep method name	: Rennings_2
+Nyquist criteria (TS)	: 2753
+Nyquist criteria (s)	: 9.9972e-10
+-----------------------------------
+SSE compression enabled	: yes
+Unique SSE operators	: 3339
+-----------------------------------
+-----------------------------------
+--- Excitation Extension ---
+Voltage excitations	: 90	 (0, 90, 0)
+Current excitations	: 0	 (0, 0, 0)
+Excitation Length (TS)	: 1
+Excitation Length (s)	: 3.63139e-13
+-----------------------------------
+Creation time for operator: 68.3077 s
+FDTD simulation size: 58x76x68 --> 299744 FDTD cells 
+FDTD timestep is: 3.63139e-13 s; Nyquist rate: 2753 timesteps @5.0014e+08 Hz
+Excitation signal length is: 1 timesteps (3.63139e-13s)
+Max. number of timesteps: 1 ( --> 1 * Excitation signal length)
+Create FDTD engine (compressed SSE + multi-threading)
+Multithreaded engine using 2 threads. Utilization: (29;29)
+Setting up processing...
+Processing::DefineStartStopCoord: Warning in port_it_4 (current integration) : Box is outside the field domain!! Disabling
+Processing::DefineStartStopCoord: Warning in port_it_5 (current integration) : Box is outside the field domain!! Disabling
+Processing::DefineStartStopCoord: Warning in port_it_6 (current integration) : Box is outside the field domain!! Disabling
+Warning: Unused primitive (type: Box) detected in property: finite_reference_plate!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: PP_assumed_epsilon!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_0_signal_0_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_0_1_signal_0_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_0_signal_1_0!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_1_1_signal_1_1!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_0_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_2_1_plus!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_0_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Wire) detected in property: wire_3_1_zero!
+Warning: Unused primitive (type: Box) detected in property: port_resist_4!
+Warning: Unused primitive (type: Box) detected in property: port_resist_5!
+Warning: Unused primitive (type: Box) detected in property: port_resist_6!
+NATIVE SETUP ONLY: no transient response.

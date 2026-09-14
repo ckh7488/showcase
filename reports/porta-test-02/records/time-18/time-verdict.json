@@ -1,0 +1,442 @@
+{
+  "revision": "completed-time-review-18",
+  "scientificVerdictComplete": false,
+  "timeScreeningAccepted": true,
+  "meshScreeningComplete": false,
+  "status": "completed25ns_time_screening_accepted_matched_finer_grid_running",
+  "snapshot_sha256": "0be7b4ce15a46cf1d8d4653598f917b2deb77aa74cb9d9d204ddd918e6558e9d",
+  "originalManifestSHA256": "85164f76285793b153293daaf5396d4d3d399c2bf3c7996563e9d553de584a9d",
+  "originalDriveReferenceSHA256": "f96f91ddbf7af47946f0d6642930947310d0acacfaebfee880ae9777bf7c0945",
+  "evidenceHashesChecked": 39,
+  "independentScalarChecks": 380,
+  "acceptedScope": "Near-bond100MHz large common-mode reduction/differential increase and approximate source-referenced noise scale. Not a full-band shield ranking or precise resonance.",
+  "decision": "Stop extending this near-bond record:20->24ns changes are small relative to the adopted large effect. Continue the matched floating/near transverse-grid check before the overallTEST02 verdict.",
+  "acceptedTimeVariation": {
+    "lastWindowPair_ns": [
+      20,
+      24
+    ],
+    "maxDifferentialMagnitudeChange_mVperV": 0.23048895867501876,
+    "maxCommonMagnitudeChange_VperV": 0.05671305492742157,
+    "lastReportedResidualEnergy_dB": -20.5,
+    "energyUsedAsPassCriterion": false
+  },
+  "exclusions": [
+    "No small near/both advantage is adopted; both has no long-window run.",
+    "Loaded-input-null ratio peaks are not fixed-source output peaks or pure-CM transfer.",
+    "The far-end CM spectrum still changes with time; exact spectral features are outside the accepted scope.",
+    "NoTEST02 finer-grid result has completed yet. Axial-grid refinement is not claimed."
+  ],
+  "windows": [
+    {
+      "window_ns": 12,
+      "reference": "loaded",
+      "commonAt100MHz_VperV": [
+        0.10405672925664305,
+        0.10615661955049042,
+        0.287374798089224,
+        0.3111837438116212
+      ],
+      "differentialAt100MHz_mVperV": [
+        7.749889390901683,
+        7.696770066723982,
+        8.369514159671827,
+        8.199389849719253
+      ],
+      "commonPeak_VperV": [
+        6.532688663214737,
+        7.139963281336486,
+        1.7700372327485776,
+        2.0922701773894214
+      ],
+      "differentialPeak_mVperV": [
+        293.9527105144867,
+        289.97722643387544,
+        337.82354919462705,
+        324.64645582372424
+      ]
+    },
+    {
+      "window_ns": 12,
+      "reference": "drive",
+      "commonAt100MHz_VperV": [
+        0.09624527756217441,
+        0.09818753084675524,
+        0.2658018121851111,
+        0.28782344025169354
+      ],
+      "differentialAt100MHz_mVperV": [
+        7.168111671700127,
+        7.118979970791206,
+        7.7412217269623484,
+        7.583868506767667
+      ],
+      "commonPeak_VperV": [
+        0.6299214538239857,
+        0.6848117824918655,
+        0.2866350831017401,
+        0.3041208721646257
+      ],
+      "differentialPeak_mVperV": [
+        22.072423611661975,
+        21.716312441342154,
+        26.545435148700644,
+        25.38784904551805
+      ]
+    },
+    {
+      "window_ns": 16,
+      "reference": "loaded",
+      "commonAt100MHz_VperV": [
+        0.12391476120936674,
+        0.12744905426200617,
+        0.30526127233082245,
+        0.3281046183207671
+      ],
+      "differentialAt100MHz_mVperV": [
+        6.729064988109531,
+        6.734778760467917,
+        6.8686812153340915,
+        6.73915055808002
+      ],
+      "commonPeak_VperV": [
+        17.684678631624628,
+        19.322246535997433,
+        2.781806077503463,
+        3.7028834853297417
+      ],
+      "differentialPeak_mVperV": [
+        793.307859884607,
+        781.4625341206682,
+        909.3506074471661,
+        874.2406795822868
+      ]
+    },
+    {
+      "window_ns": 16,
+      "reference": "drive",
+      "commonAt100MHz_VperV": [
+        0.1136658774562987,
+        0.11690785215806322,
+        0.28001337398603865,
+        0.3009673663969816
+      ],
+      "differentialAt100MHz_mVperV": [
+        6.172509787123826,
+        6.177750978264919,
+        6.300578475791225,
+        6.181761188241449
+      ],
+      "commonPeak_VperV": [
+        0.6552361291865028,
+        0.7119575184670195,
+        0.3061182060130203,
+        0.3303889988155869
+      ],
+      "differentialPeak_mVperV": [
+        23.148865735325664,
+        22.739410103482857,
+        27.44592483840365,
+        26.312833589772314
+      ]
+    },
+    {
+      "window_ns": 20,
+      "reference": "loaded",
+      "commonAt100MHz_VperV": [
+        0.11681970868731553,
+        0.11966300500234703,
+        0.27798231608079466,
+        0.30122299057202656
+      ],
+      "differentialAt100MHz_mVperV": [
+        7.089478154094779,
+        7.054655291778735,
+        7.128494723339593,
+        6.963140640639646
+      ],
+      "commonPeak_VperV": [
+        38.92138864214113,
+        42.54099899073689,
+        7.202394941450558,
+        9.256978296165018
+      ],
+      "differentialPeak_mVperV": [
+        1753.715947503589,
+        1725.5075853266587,
+        2025.9808361981868,
+        1948.488831591982
+      ]
+    },
+    {
+      "window_ns": 20,
+      "reference": "drive",
+      "commonAt100MHz_VperV": [
+        0.10572050641555335,
+        0.10829365721084587,
+        0.251570831333712,
+        0.27260337716233257
+      ],
+      "differentialAt100MHz_mVperV": [
+        6.415897018533523,
+        6.384382724582103,
+        6.451206569511773,
+        6.3015630071595625
+      ],
+      "commonPeak_VperV": [
+        0.6493584886019789,
+        0.7051818976367089,
+        0.2917224764302127,
+        0.3164284995075133
+      ],
+      "differentialPeak_mVperV": [
+        23.33998676077915,
+        22.94446408646356,
+        27.752981862117107,
+        26.647349868663397
+      ]
+    },
+    {
+      "window_ns": 24,
+      "reference": "loaded",
+      "commonAt100MHz_VperV": [
+        0.11805590762474744,
+        0.12118952946102848,
+        0.3259399209999049,
+        0.34906601174529184
+      ],
+      "differentialAt100MHz_mVperV": [
+        7.02907086510242,
+        7.050357248333704,
+        7.2971484013026275,
+        7.10269326704884
+      ],
+      "commonPeak_VperV": [
+        88.92585683440669,
+        97.21140940673155,
+        13.903586751685141,
+        18.629417240804408
+      ],
+      "differentialPeak_mVperV": [
+        3988.8334150413134,
+        3930.9333928010033,
+        4633.411766189315,
+        4451.304004538977
+      ]
+    },
+    {
+      "window_ns": 24,
+      "reference": "drive",
+      "commonAt100MHz_VperV": [
+        0.10713831047103083,
+        0.10998214061853546,
+        0.29579758568279246,
+        0.3167850173167611
+      ],
+      "differentialAt100MHz_mVperV": [
+        6.37903508447853,
+        6.398352941427186,
+        6.622321294220957,
+        6.44584901963907
+      ],
+      "commonPeak_VperV": [
+        0.6468212651331426,
+        0.70238858794489,
+        0.2981651086878906,
+        0.3187977226893811
+      ],
+      "differentialPeak_mVperV": [
+        23.403406033003364,
+        23.011707442553618,
+        27.705692593145052,
+        26.57887342183517
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "start_ns": 12,
+      "end_ns": 16,
+      "reference": "loaded",
+      "maxAbsoluteMagnitudeChanges": {
+        "HcommonNear": [
+          12.061550265109208,
+          13.172987653613436
+        ],
+        "Hcommon": [
+          1.1352023895187184,
+          1.7651535574175692
+        ],
+        "HdiffNear": [
+          0.5342924656669167,
+          0.5258945765757352
+        ],
+        "Hdiff": [
+          0.6126588309031198,
+          0.5890332329951458
+        ]
+      }
+    },
+    {
+      "start_ns": 12,
+      "end_ns": 16,
+      "reference": "drive",
+      "maxAbsoluteMagnitudeChanges": {
+        "HcommonNear": [
+          0.04724871903644012,
+          0.050979649075582945
+        ],
+        "Hcommon": [
+          0.07005265407603356,
+          0.06970634678568549
+        ],
+        "HdiffNear": [
+          0.0013591995287624142,
+          0.001294730596302869
+        ],
+        "Hdiff": [
+          0.0015767130199452369,
+          0.0015246677663013943
+        ]
+      }
+    },
+    {
+      "start_ns": 16,
+      "end_ns": 20,
+      "reference": "loaded",
+      "maxAbsoluteMagnitudeChanges": {
+        "HcommonNear": [
+          21.236710010516504,
+          23.218752454739455
+        ],
+        "Hcommon": [
+          4.420588863947096,
+          5.554094810835276
+        ],
+        "HdiffNear": [
+          0.9604080876189821,
+          0.9440450512059906
+        ],
+        "Hdiff": [
+          1.1166302287510206,
+          1.0742481520096951
+        ]
+      }
+    },
+    {
+      "start_ns": 16,
+      "end_ns": 20,
+      "reference": "drive",
+      "maxAbsoluteMagnitudeChanges": {
+        "HcommonNear": [
+          0.010065633005286845,
+          0.011194534486205998
+        ],
+        "Hcommon": [
+          0.046145646127767476,
+          0.04634891493181642
+        ],
+        "HdiffNear": [
+          0.0005912655879081845,
+          0.0005530919856486481
+        ],
+        "Hdiff": [
+          0.0008396773544005302,
+          0.0008175624994853636
+        ]
+      }
+    },
+    {
+      "start_ns": 20,
+      "end_ns": 24,
+      "reference": "loaded",
+      "maxAbsoluteMagnitudeChanges": {
+        "HcommonNear": [
+          50.004468192265556,
+          54.67041041599466
+        ],
+        "Hcommon": [
+          6.701191810234583,
+          9.37243894463939
+        ],
+        "HdiffNear": [
+          2.2351174675377243,
+          2.2054258074743442
+        ],
+        "Hdiff": [
+          2.6074309299911285,
+          2.5028151729469945
+        ]
+      }
+    },
+    {
+      "start_ns": 20,
+      "end_ns": 24,
+      "reference": "drive",
+      "maxAbsoluteMagnitudeChanges": {
+        "HcommonNear": [
+          0.005420548949118559,
+          0.00615621474905903
+        ],
+        "Hcommon": [
+          0.05671305492742157,
+          0.0565662578889391
+        ],
+        "HdiffNear": [
+          0.00013955670352888477,
+          0.00011032878266415639
+        ],
+        "Hdiff": [
+          0.00023048895867501876,
+          0.00022299794376064164
+        ]
+      }
+    },
+    {
+      "start_ns": 12,
+      "end_ns": 24,
+      "reference": "loaded",
+      "maxAbsoluteMagnitudeChanges": {
+        "HcommonNear": [
+          83.30272846789127,
+          91.06215052434756
+        ],
+        "Hcommon": [
+          12.256983063700396,
+          16.691687312892235
+        ],
+        "HdiffNear": [
+          3.729818020823623,
+          3.6753654352560705
+        ],
+        "Hdiff": [
+          4.336719989645269,
+          4.166096557951835
+        ]
+      }
+    },
+    {
+      "start_ns": 12,
+      "end_ns": 24,
+      "reference": "drive",
+      "maxAbsoluteMagnitudeChanges": {
+        "HcommonNear": [
+          0.060694702382716015,
+          0.06588441942046042
+        ],
+        "Hcommon": [
+          0.07914443873355731,
+          0.07643118978229246
+        ],
+        "HdiffNear": [
+          0.0019392373505691084,
+          0.0018857206715613174
+        ],
+        "Hdiff": [
+          0.002595943427959657,
+          0.0024801093825147953
+        ]
+      }
+    }
+  ]
+}

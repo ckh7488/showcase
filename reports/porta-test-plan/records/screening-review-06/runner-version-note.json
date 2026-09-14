@@ -1,0 +1,5 @@
+{
+  "partialRunSourceHash": "a1a455887908f9e03c85b473926002f4a317680b02269c758090d4e891815c4a",
+  "currentRunnerHash": "821461fec26cbc7d52b4081504c1d85940e0b5bd1a680c6a2b382114bc091f06",
+  "note": "The maintained runner includes the new connectivity guard and differs from the source used for the stopped partial runs. Their original geometry XML, model, mesh, inputs, probes and source hash are preserved; an exact pre-guard source snapshot was not archived. The original initial-run source remains in initial-openems/run_cable.py."
+}

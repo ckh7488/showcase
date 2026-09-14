@@ -1,0 +1,18 @@
+{
+  "platformUsed": "Windows x64",
+  "pythonUsed": "3.10.11",
+  "packages": {
+    "openEMS": "0.0.36",
+    "CSXCAD": "0.6.3",
+    "numpy": "1.26.4",
+    "scipy": "1.15.3",
+    "h5py": "3.14.0",
+    "matplotlib": "3.10.6"
+  },
+  "nativeRelease": {
+    "url": "https://github.com/thliebig/openEMS-Project/releases/tag/v0.0.36",
+    "originalArchiveSHA256": "e0d62b1176c0897ad18876b45667de877d7d3b58b37c0be95545f9b988896059",
+    "redistributedBinary": false
+  },
+  "portability": "Paths are supplied by the user on the destination computer; no original drive letter is required. Linux/FreeBSD native solver execution has not been tested for this archive."
+}

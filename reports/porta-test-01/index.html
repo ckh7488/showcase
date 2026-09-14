@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="120 mm 4쌍 케이블에서 전원쌍과 Ethernet쌍의 배치 및 전원 극성 방향을 비교하는 openEMS 토폴로지 선별 보고서">
+  <title>TEST 01 · 120 mm 4쌍 토폴로지 | ATLAS</title>
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/theme.v1.css">
+  <link rel="stylesheet" href="topology.css?v=20260913-1">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header>
+  <a href="../../" aria-label="ATLAS 라이브러리로 돌아가기">← ATLAS</a>
+  <span>PALA720 / EMC</span>
+  <a href="#method">조건과 한계</a>
+</header>
+<main id="main">
+  <nav class="document-nav" aria-label="시험 문서">
+    <a href="../porta-test-plan/">계획서</a>
+    <a href="../porta-test-results/">결과 모음</a>
+    <a href="../porta-test-00/">TEST 00 · 기준 검사</a>
+    <a href="./" aria-current="page">TEST 01 · 토폴로지</a>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <p class="eyebrow">TEST 01 · 120 MM FOUR-PAIR SCREENING</p>
+      <h1>네 쌍을 어떻게 놓아야<br>Ethernet 차동 잡음이 가장 작은가</h1>
+      <p class="lede">현재 배선을 기준으로, 각 전원쌍을 +/0 V로 만든 뒤 인접·대각 배치와 두 전원쌍의 극성 방향을 비교합니다. 여기서 ‘최적’은 이 120 mm 시험편과 연결부에서 계산한 후보 중 최저값을 뜻합니다.</p>
+    </div>
+    <aside class="status-card" aria-live="polite">
+      <div class="status-line"><i class="status-dot running" id="status-dot"></i><span id="status-title">새 토폴로지 계산 준비 중</span></div>
+      <strong id="status-detail">기존 결과를 보존하고 별도 계산을 시작합니다.</strong>
+      <p id="status-time">실행 기록을 확인하는 중입니다.</p>
+    </aside>
+  </section>
+
+  <section class="known-result" aria-label="기존 계산에서 확인된 값">
+    <div class="intro"><span class="eyebrow">기존 A/B에서 확인</span><strong>전체는 줄었지만<br>차동 비율은 커졌다</strong></div>
+    <div><span>두 선 전체 전압 크기</span><strong class="down">78.2 → 12.5</strong><small>mV/V · 100 MHz · 입력 쪽 Ethernet 2 · 약 84% 감소</small></div>
+    <div><span>차동 잡음</span><strong class="up">2.54 → 15.16</strong><small>mV/V · 같은 관측점 · 5.96배 증가</small></div>
+    <div><span>공통모드</span><strong class="down">55.28 → 4.57</strong><small>mV/V · 같은 관측점 · 약 92% 감소</small></div>
+  </section>
+
+  <section id="comparison">
+    <div class="section-head">
+      <div><p class="eyebrow">INTERACTIVE COMPARISON</p><h2>후보를 선택해 구조와 결과를 함께 보기</h2></div>
+      <p>선택한 결과와 실제 계산 형상을 연결합니다. 계산 전 후보는 구조와 진행 상태만 표시합니다.</p>
+    </div>
+    <div class="workspace">
+      <aside class="candidate-panel">
+        <h3>120 mm 후보 5개</h3>
+        <div class="candidate-list" id="candidate-list"></div>
+      </aside>
+      <article class="result-panel">
+        <div class="result-top">
+          <div><p class="eyebrow" id="selected-kicker">기준 배선</p><h3 id="selected-title">현재 배선</h3><p id="selected-description">+/+ 한 쌍과 0/0 한 쌍이 Ethernet 두 쌍 옆에 놓입니다.</p></div>
+          <span class="badge" id="selected-badge">기존 결과 있음</span>
+        </div>
+        <div id="computed-result" hidden>
+          <div class="mode-bar" aria-label="표시할 잡음 모드">
+            <button data-mode="differential" aria-pressed="true">차동 · Ethernet 기준</button>
+            <button data-mode="combined" aria-pressed="false">두 선 전체 크기</button>
+            <button data-mode="common" aria-pressed="false">공통모드</button>
+          </div>
+          <div class="channel-bar" id="channel-bar" aria-label="관측 위치"></div>
+          <div class="chart-wrap">
+            <svg id="result-chart" viewBox="0 0 680 320" role="img" aria-label="선택한 후보의 10에서 200 MHz 잡음 전달 곡선"></svg>
+            <label class="frequency"><span>계산 주파수</span><input id="frequency" type="range" min="0" max="190" step="1" value="90"><output id="frequency-output">100 MHz</output></label>
+            <div class="readout">
+              <div><small>선택 지점</small><strong id="selected-value">—</strong></div>
+              <div><small>현재 배선과 비교</small><strong id="baseline-value">—</strong></div>
+              <div><small>전 대역 최악 차동</small><strong id="worst-value">—</strong></div>
+            </div>
+          </div>
+        </div>
+        <div class="empty-result" id="empty-result"><strong>이 후보는 계산 대기 중입니다.</strong><span>연결 검사 → 기본 격자 → 상위 두 후보 세분화 순서로 진행합니다.</span></div>
+      </article>
+    </div>
+
+    <div class="structure-grid">
+      <article class="cross-section">
+        <div class="panel-title"><h3>4쌍 단면 배치</h3><span>역할·극성 배정</span></div>
+        <svg id="cross-section" viewBox="0 0 360 330" role="img" aria-label="선택한 네 꼬임쌍의 단면 토폴로지"></svg>
+      </article>
+      <article class="model-panel">
+        <div class="panel-title"><h3>계산 형상</h3><span>드래그 회전 · 휠 확대 · 방향키 회전</span></div>
+        <div id="model-stage" tabindex="0" aria-label="선택한 openEMS 케이블 형상"></div>
+        <div class="stage-controls">
+          <button id="model-reset">전체 보기</button>
+          <label><input id="show-fanout" type="checkbox" checked> 연결부 포함</label>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="ranking-section">
+    <div class="section-head">
+      <div><p class="eyebrow">RANKING</p><h2>현재 배선과 후보는 얼마나 다른가</h2></div>
+      <p id="ranking-note">다섯 기본 격자가 끝나면 10–200 MHz 최악 차동값으로 순위를 표시합니다.</p>
+    </div>
+    <div class="ranking" id="ranking"><p class="muted">계산 결과를 기다리고 있습니다.</p></div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <div><p class="eyebrow">RUN STATUS</p><h2>실제 계산 진행</h2></div>
+      <p>완료된 계산만 결과 선택에 나타납니다. 상위 두 후보는 0.16 mm 단면 격자로 다시 확인합니다.</p>
+    </div>
+    <div class="progress-grid" id="progress-grid"></div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <div><p class="eyebrow">PRESERVED EVIDENCE</p><h2>기존 데이터는 이렇게 사용합니다</h2></div>
+    </div>
+    <div class="history-panel">
+      <div class="history-grid">
+        <article><h3>기존 `+/+ · 0/0` 배선</h3><p>현재 배선의 두 격자와 8·10·12 ns 기록은 그대로 보존합니다. 기존 연결부를 포함한 기준 결과이며 새 계산으로 덮어쓰지 않습니다.</p></article>
+        <article><h3>첫 `+/0 · +/0` 비교</h3><p><strong>전체 전압 크기는 감소</strong>했지만 차동 성분은 증가했습니다. 새 시험은 이 현상이 쌍의 위치와 극성 방향 때문에 생겼는지 분리해 봅니다.</p></article>
+      </div>
+      <p><a href="records/connected-10/manifest.json">기존 완료 조건과 수치 기록 ↗</a> · <a href="records/connected-10/wiring-review.json">첫 배선 비교의 판단 범위 ↗</a></p>
+    </div>
+  </section>
+
+  <section id="method">
+    <div class="section-head"><div><p class="eyebrow">METHOD & LIMITS</p><h2>무엇을 최적화하고, 무엇은 말하지 않는가</h2></div></div>
+    <div class="method-panel">
+      <details open><summary>선정 기준</summary><p>1차 기준은 두 Ethernet쌍의 양끝, 10–200 MHz, 8·10·12 ns 기록에서 가장 큰 차동 전달값입니다. 공통모드와 <code>√(2|Vcm|² + |Vdiff|²/2)</code>로 계산한 두 선 전체 전압 크기를 함께 보며, 한 숫자로 숨기지 않습니다.</p></details>
+      <details><summary>비교하는 다섯 후보</summary><p>현재 `+/+ · 0/0` 인접 배선을 기준으로 둡니다. `+/0 · +/0` 후보는 인접/대각 배치와 두 번째 전원쌍의 극성 방향 정렬/반전을 조합한 네 가지입니다. 대각선의 좌우 거울상은 현재 대칭 가정에서 같은 후보로 봅니다.</p></details>
+      <details><summary>계산 조건과 해석 한계</summary><p>120 mm 시험편, 24 mm 공통 가정 피치, 20 mm 표준화 연결부, 이상 도체와 부유 PEC 등가 실드, 100 Ω 시험 종단을 사용합니다. 쌍 위치를 바꾸면 연결부도 함께 바뀌므로 케이블 내부만의 결과는 아닙니다. 실제 20 m 케이블, 커넥터, 트랜스, PHY, 실제 잡음 파형과 CRC 결과는 포함하지 않습니다.</p></details>
+      <details><summary>원본과 재현 자료</summary><p><a href="data/topology-progress.json">실행 진행 원본 ↗</a> · <a href="data/topology-results.json">토폴로지 결과 원본 ↗</a>. 결과 파일에는 각 후보의 분석·형상 기록 링크와 계산 한계가 함께 저장됩니다.</p></details>
+    </div>
+  </section>
+
+  <footer>
+    <a href="../porta-test-00/">← TEST 00 결과서</a>
+    <a href="../porta-test-plan/">시험 계획서로 →</a>
+    <a href="../porta-test-results/">전체 결과와 판단 기준 ↗</a>
+  </footer>
+</main>
+<script src="vendor/three.min.js"></script>
+<script src="vendor/OrbitControls.js"></script>
+<script src="topology.js?v=20260913-1"></script>
+</body>
+</html>

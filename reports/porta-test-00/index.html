@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TEST 00 · 계산 기준 검사 | ATLAS</title>
+<meta name="description" content="10–200 MHz 기준 선로의 격자 비교 결과. 저장된 전달 응답과 실제 격자를 직접 살펴봅니다.">
+<link rel="icon" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/theme.v1.css">
+<link rel="stylesheet" href="result.css?v=09">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a><header><a href="../../">← ATLAS</a><span>PALA720 / EMC</span><a href="../porta-test-plan/?test=check#experiment">시험 설명·3D ↗</a></header>
+<main id="main"><div class="document-nav" aria-label="시험 문서">
+<a href="../porta-test-plan/">계획서</a><a href="../porta-test-results/">결과 모음</a><a href="./" aria-current="page">TEST 00 · 기준 검사</a><a href="../porta-test-01/">TEST 01 · 전원 잡음</a>
+</div>
+<section class="hero"><p class="eyebrow">TEST 00 · RESULT · 2026.09.13</p>
+<h1>계산 기준을 확인했습니다.</h1>
+<p class="lede">간단한 선로에서는 격자를 더 잘게 나눠도 전달 크기가 거의 같습니다.<br> 10–200 MHz의 케이블 잡음 경로를 살펴보는 다음 단계로 넘어갑니다.</p></section>
+<div class="metrics">
+<div>
+<small>전달 크기 차이 · 최대</small><strong>0.0097 <span>dB</span></strong>
+</div>
+<div>
+<small>위상 차이 · 최대</small><strong>1.06 <span>°</span></strong>
+</div>
+<div>
+<small>잔류 에너지 종료 조건</small><strong>3 / 3 <span>충족</span></strong>
+</div>
+</div>
+<aside class="acceptance-note"><h2>이번 단계에서 어디까지 허용했나</h2>
+<p><strong>10–200 MHz의 기준 선로 검사</strong>에서, 위 격자 차이는 다음 단계로 진행하는 판단을 바꾸지 않는 수준으로 받아들였습니다. 세 계산 모두 에너지 종료 조건을 충족했습니다.</p></aside><section id="comparison"><div class="section-head">
+<h2>두 격자를 직접 비교하기</h2>
+<span class="muted">저장된 계산값</span>
+</div>
+<div class="toolbar">
+<div class="segmented" aria-label="격자 선택">
+<button id="mesh-base" aria-pressed="true">기본 격자</button><button id="mesh-fine" aria-pressed="false">세분화 격자</button>
+</div>
+<label>그래프 <select id="quantity"><option value="magnitude">전달 크기 · dB</option>
+<option value="phase">전달 위상 · °</option></select></label>
+</div>
+<div class="comparison-grid">
+<div class="chart-panel">
+<div class="chart-legend">
+<span class="base-key">● 기본</span><span class="fine-key">◆ 세분화</span><span class="muted">점을 눌러 선택</span>
+</div>
+<svg id="response-chart" viewbox="0 0 640 340" role="img" aria-label="두 격자의 저장된 전달 응답"></svg><label class="frequency">계산 주파수 <input id="frequency" type="range" min="0" max="18" value="9" step="1"><output id="frequency-value"></output></label><div id="point-values" class="point-values" aria-live="polite"></div>
+</div>
+<div class="model-panel">
+<div class="stage-wrap">
+<div id="reference-scene" tabindex="0" aria-label="기준 선로 3D. 드래그 회전, 휠 확대, 방향키 회전, + - 확대, Home 초기화"></div>
+<span class="stage-label">100 mm 기준 선로 · 실제 격자 좌표</span>
+</div>
+<div class="toolbar model-tools">
+<label><input id="grid" type="checkbox" checked> 격자 단면</label><button id="overview">전체</button><button id="closeup">선로 확대</button>
+</div>
+<p id="mesh-caption" class="muted"></p>
+</div>
+</div>
+<p class="reading">격자 선택은 해당 계산의 형상을 보여줍니다. 그래프는 같은 기준면으로 맞춘 두 응답을 함께 비교합니다.</p>
+<p id="load-error" role="alert" hidden></p></section>
+<details><summary>허용한 차이 · 판단 범위 자세히</summary><p>실행 당시 정한 수치 확인선은 전달 크기 차이 0.15 dB 이내, 위상 차이 5° 이내였습니다. 실제 차이는 최대 0.0097 dB / 1.06°였습니다. 이 확인선을 다른 모든 시험에 일괄 적용하지 않습니다.</p>
+<p>100 mm 균일 선로의 기본·세분화 격자를 비교했습니다. 10–200 MHz에서 전달 크기와 위상 차이가 작아, 초기 경로 탐색에 사용할 기준으로 삼습니다. 케이블 모델이나 실제 제품의 잡음 내성을 검증한 결과는 아닙니다.</p>
+<p>초기 예제의 0.5–6 GHz 위상 비교는 기준을 충족하지 않았습니다. 이 결과를 그 대역까지 확장하지 않습니다. 경계·포트 위치의 독립 변경, 역방향 여기, 전체 에너지 수지는 이번 확인 범위 밖입니다.</p>
+<p>이번 TEST 00은 잔류 에너지 목표를 완화해서 종료한 사례는 아닙니다. 균일 선로 두 계산은 10⁻⁶, 스텁 예제는 10⁻⁵를 충족했습니다. 별도의 관측 시간 연장 비교로 에너지 목표 미달을 허용한 결과로 해석하지 않습니다.</p></details>
+<details><summary>실행 조건 · 에너지 · 원본 자료</summary><p>openEMS 0.0.36 / CSXCAD 0.6.3. 선로 폭 0.6 mm, 기판 두께 0.254 mm, 유전율 3.66, 기준 임피던스 50 Ω. 도체는 이상 도체, 바닥은 PEC 경계입니다. 3D는 선로 형상과 실제 XY 격자 단면을 보여줍니다.</p>
+<p>두 균일 선로의 에너지 기준은 10⁻⁶, 스텁 예제는 10⁻⁵입니다. 각각의 계산 로그에서 종료 조건 충족을 확인했습니다. 위 두 응답은 관심 대역 안의 저장된 19개 주파수만 표시합니다.</p>
+<div id="evidence-links"></div>
+<p><a href="data/results.json">수치·검증·원본 해시 ↗</a> · <a href="https://docs.openems.de/python/openEMS/Tutorials/MSL_NotchFilter.html">바탕이 된 openEMS 공식 예제 ↗</a></p></details>
+<footer><a href="../porta-test-plan/">← 시험 계획서</a><a href="../porta-test-01/">다음 · TEST 01 전원 잡음 →</a><a href="../porta-test-results/">전체 결과와 판단 기준 ↗</a></footer></main>
+<script src="vendor/three.min.js"></script><script src="vendor/OrbitControls.js"></script><script src="result.js?v=08"></script>
+</body>
+</html>
