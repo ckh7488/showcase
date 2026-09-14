@@ -1,0 +1,897 @@
+{
+  "method": "Exact midpoint capsule rule reconstructed from openEMS 0.0.36 CalcPEC_Range and CSXCAD 0.6.3 CSPrimWire::IsInside; metal Wire primitives plus lumped-port caps. Not a native operator dump.",
+  "mesh": {
+    "x": 427,
+    "y": 115,
+    "z": 97
+  },
+  "wiring": "same",
+  "wireAudits": [
+    {
+      "wire": 0,
+      "group": "signal_0_0",
+      "edges": 7132,
+      "components": 1,
+      "terminalsConnected": true,
+      "terminalComponents": [
+        0,
+        0
+      ],
+      "pieces": [
+        {
+          "nodes": 4115,
+          "xRange_mm": [
+            -80.4,
+            80.4
+          ]
+        }
+      ]
+    },
+    {
+      "wire": 1,
+      "group": "signal_0_1",
+      "edges": 7152,
+      "components": 1,
+      "terminalsConnected": true,
+      "terminalComponents": [
+        0,
+        0
+      ],
+      "pieces": [
+        {
+          "nodes": 4117,
+          "xRange_mm": [
+            -80.4,
+            80.4
+          ]
+        }
+      ]
+    },
+    {
+      "wire": 2,
+      "group": "signal_1_0",
+      "edges": 7238,
+      "components": 1,
+      "terminalsConnected": true,
+      "terminalComponents": [
+        0,
+        0
+      ],
+      "pieces": [
+        {
+          "nodes": 4177,
+          "xRange_mm": [
+            -80.4,
+            80.4
+          ]
+        }
+      ]
+    },
+    {
+      "wire": 3,
+      "group": "signal_1_1",
+      "edges": 7220,
+      "components": 1,
+      "terminalsConnected": true,
+      "terminalComponents": [
+        0,
+        0
+      ],
+      "pieces": [
+        {
+          "nodes": 4185,
+          "xRange_mm": [
+            -80.4,
+            80.4
+          ]
+        }
+      ]
+    },
+    {
+      "wire": 4,
+      "group": "plus",
+      "edges": 8404,
+      "components": 1,
+      "terminalsConnected": true,
+      "terminalComponents": [
+        0,
+        0
+      ],
+      "pieces": [
+        {
+          "nodes": 5091,
+          "xRange_mm": [
+            -80.4,
+            80.4
+          ]
+        }
+      ]
+    },
+    {
+      "wire": 5,
+      "group": "plus",
+      "edges": 8552,
+      "components": 1,
+      "terminalsConnected": true,
+      "terminalComponents": [
+        0,
+        0
+      ],
+      "pieces": [
+        {
+          "nodes": 5181,
+          "xRange_mm": [
+            -80.4,
+            80.4
+          ]
+        }
+      ]
+    },
+    {
+      "wire": 6,
+      "group": "zero",
+      "edges": 7568,
+      "components": 1,
+      "terminalsConnected": true,
+      "terminalComponents": [
+        0,
+        0
+      ],
+      "pieces": [
+        {
+          "nodes": 4685,
+          "xRange_mm": [
+            -80.4,
+            80.4
+          ]
+        }
+      ]
+    },
+    {
+      "wire": 7,
+      "group": "zero",
+      "edges": 7450,
+      "components": 99,
+      "terminalsConnected": false,
+      "terminalComponents": [
+        0,
+        97
+      ],
+      "pieces": [
+        {
+          "nodes": 3627,
+          "xRange_mm": [
+            -64.0,
+            64.0
+          ]
+        },
+        {
+          "nodes": 422,
+          "xRange_mm": [
+            -80.4,
+            -66.0
+          ]
+        },
+        {
+          "nodes": 422,
+          "xRange_mm": [
+            66.0,
+            80.4
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -66.0,
+            -66.0
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -64.4,
+            -64.4
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -64.8,
+            -64.8
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -64.8,
+            -64.8
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -64.8,
+            -64.8
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -64.8,
+            -64.8
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -64.8,
+            -64.8
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -64.8,
+            -64.8
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -64.8,
+            -64.8
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -64.8,
+            -64.8
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -64.4,
+            -64.4
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -64.4,
+            -64.4
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -64.8,
+            -64.8
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -64.4,
+            -64.4
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -64.4,
+            -64.4
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -64.4,
+            -64.4
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -64.4,
+            -64.4
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -64.4,
+            -64.4
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -64.4,
+            -64.4
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -64.4,
+            -64.4
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -66.0,
+            -66.0
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -64.0,
+            -64.0
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -64.8,
+            -64.8
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -65.2,
+            -65.2
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -66.0,
+            -66.0
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -65.6,
+            -65.6
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -66.0,
+            -66.0
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -66.0,
+            -66.0
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -65.6,
+            -65.6
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -65.6,
+            -65.6
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -65.6,
+            -65.6
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -65.6,
+            -65.6
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -65.6,
+            -65.6
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -65.6,
+            -65.6
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -65.6,
+            -65.6
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -65.6,
+            -65.6
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -64.0,
+            -64.0
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -65.6,
+            -65.6
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -65.2,
+            -65.2
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -65.2,
+            -65.2
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -65.2,
+            -65.2
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -65.2,
+            -65.2
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -65.2,
+            -65.2
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -65.2,
+            -65.2
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -65.2,
+            -65.2
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -65.2,
+            -65.2
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -65.2,
+            -65.2
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            66.0,
+            66.0
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            64.0,
+            64.0
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            64.0,
+            64.0
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            65.2,
+            65.2
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            65.2,
+            65.2
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            65.2,
+            65.2
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            65.2,
+            65.2
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            65.2,
+            65.2
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            65.2,
+            65.2
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            65.2,
+            65.2
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            65.6,
+            65.6
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            65.6,
+            65.6
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            65.6,
+            65.6
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            65.6,
+            65.6
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            65.6,
+            65.6
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            65.6,
+            65.6
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            65.6,
+            65.6
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            65.6,
+            65.6
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            65.6,
+            65.6
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            65.6,
+            65.6
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            66.0,
+            66.0
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            66.0,
+            66.0
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            66.0,
+            66.0
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            66.0,
+            66.0
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            65.2,
+            65.2
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            65.2,
+            65.2
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            65.2,
+            65.2
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            64.4,
+            64.4
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            64.0,
+            64.0
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            64.4,
+            64.4
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            64.4,
+            64.4
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            64.4,
+            64.4
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            64.4,
+            64.4
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            64.4,
+            64.4
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            64.4,
+            64.4
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            64.4,
+            64.4
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            64.4,
+            64.4
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            64.4,
+            64.4
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            64.8,
+            64.8
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            64.8,
+            64.8
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            64.8,
+            64.8
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            64.8,
+            64.8
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            64.8,
+            64.8
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            64.8,
+            64.8
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            64.8,
+            64.8
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            64.8,
+            64.8
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            64.8,
+            64.8
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            64.8,
+            64.8
+          ]
+        },
+        {
+          "nodes": 2,
+          "xRange_mm": [
+            -64.0,
+            -64.0
+          ]
+        }
+      ]
+    }
+  ],
+  "allWireAndCapComponents": 103,
+  "terminalComponentsWithCaps": [
+    [
+      1,
+      1
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      3,
+      3
+    ]
+  ],
+  "sources": [
+    "https://github.com/thliebig/openEMS/blob/v0.0.36/FDTD/operator.cpp",
+    "https://github.com/thliebig/CSXCAD/blob/v0.6.3/src/CSPrimWire.cpp",
+    "https://github.com/thliebig/CSXCAD/blob/v0.6.3/src/CSPrimitives.h"
+  ]
+}

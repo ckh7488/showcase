@@ -1,0 +1,391 @@
+{
+  "revision": "same-wiring-mesh-review-12",
+  "scientificVerdictComplete": false,
+  "scopeStatus": "current_wiring_screening_accepted_mixed_wiring_mesh_pending",
+  "scope": "120 mm coupon plus 20 mm fanout at each end; current +/+ and 0/0 power assignment; 10–200 MHz stored points; both Ethernet pairs and ends.",
+  "geometry": "Length direction 0.4 mm in both; transverse grid 0.20 → 0.16 mm. Physical geometry, source and loads held fixed.",
+  "decision": "The current-wiring response is sufficient for screening the broad output scale and largest observed differential channel. Do not extend this acceptance to the uncompleted mixed-wiring mesh comparison.",
+  "evidence": "The band maximum remains input-side pair 2 at 200 MHz for both meshes and each 8/10/12 ns record. The four differential outputs at 100 MHz keep the same ordering.",
+  "allowedDifference": "Across the recorded band, all four outputs and the three observation windows, maximum mesh-induced magnitude changes are recorded below. Common-mode channels remain similar in scale; their close rankings and small differential spectral features are not resolved as design priorities.",
+  "maxMeshMagnitudeChange_mVperV": {
+    "differential": 0.25258716037284856,
+    "common": 4.298985375935066
+  },
+  "timeWindowPolicy": "8/10/12 ns windows support the broad scale and peak-channel judgment, not exact convergence of every frequency point.",
+  "energyPolicy": "Both runs reached their time cap before the -50 dB energy target. This is accepted for the stated screening scope based on output comparisons, not treated as a universal energy tolerance.",
+  "sources": [
+    {
+      "id": "test01-same-coarse",
+      "analysis_sha256": "a1b05427b95188d4867bcca6e86d4479639663417aa9c90a606267f29623d150",
+      "solverResponse_sha256": "c2c4d7564b7d16867a49a6f487a6336795e6160e20b9d5617d81f442e28a3efb",
+      "source_sha256": "7bf0958bfc8067c58fb37deaaf19b2e6c5535de21935235d0bf23ada3f6d731b",
+      "lastReportedEnergy_dB": -34.58
+    },
+    {
+      "id": "test01-same-fine",
+      "analysis_sha256": "9e9ad85a14a7e7a4af7e47babb51ddbf79a872b591295448a6e02e832d91ff62",
+      "solverResponse_sha256": "a185998102b493b6c789d4ebed3dae36746be18e5d65729a48e198b2eaaa4e80",
+      "source_sha256": "7bf0958bfc8067c58fb37deaaf19b2e6c5535de21935235d0bf23ada3f6d731b",
+      "lastReportedEnergy_dB": -36.36
+    }
+  ],
+  "evidenceHashesChecked": 102,
+  "independentScalarOutputsChecked": 216,
+  "peakAndOrderingChecks": [
+    {
+      "case": "test01-same-coarse",
+      "window_ns": 8,
+      "maximumDifferential_mVperV": 3.395868996173661,
+      "maximumChannel": "input_side_pair_2",
+      "maximumFrequency_Hz": 200000000.0,
+      "channelOrderAt100MHz": [
+        1,
+        3,
+        0,
+        2
+      ]
+    },
+    {
+      "case": "test01-same-coarse",
+      "window_ns": 10,
+      "maximumDifferential_mVperV": 3.459811397616484,
+      "maximumChannel": "input_side_pair_2",
+      "maximumFrequency_Hz": 200000000.0,
+      "channelOrderAt100MHz": [
+        1,
+        3,
+        0,
+        2
+      ]
+    },
+    {
+      "case": "test01-same-coarse",
+      "window_ns": 12,
+      "maximumDifferential_mVperV": 3.615821839804457,
+      "maximumChannel": "input_side_pair_2",
+      "maximumFrequency_Hz": 200000000.0,
+      "channelOrderAt100MHz": [
+        1,
+        3,
+        0,
+        2
+      ]
+    },
+    {
+      "case": "test01-same-fine",
+      "window_ns": 8,
+      "maximumDifferential_mVperV": 3.5389375036309088,
+      "maximumChannel": "input_side_pair_2",
+      "maximumFrequency_Hz": 200000000.0,
+      "channelOrderAt100MHz": [
+        1,
+        3,
+        0,
+        2
+      ]
+    },
+    {
+      "case": "test01-same-fine",
+      "window_ns": 10,
+      "maximumDifferential_mVperV": 3.4656485718416326,
+      "maximumChannel": "input_side_pair_2",
+      "maximumFrequency_Hz": 200000000.0,
+      "channelOrderAt100MHz": [
+        1,
+        3,
+        0,
+        2
+      ]
+    },
+    {
+      "case": "test01-same-fine",
+      "window_ns": 12,
+      "maximumDifferential_mVperV": 3.5608263883761255,
+      "maximumChannel": "input_side_pair_2",
+      "maximumFrequency_Hz": 200000000.0,
+      "channelOrderAt100MHz": [
+        1,
+        3,
+        0,
+        2
+      ]
+    }
+  ],
+  "meshComparisons": {
+    "8": {
+      "HdiffNear": [
+        {
+          "pair": 1,
+          "maxMagnitudeChangeProminentBand_dB": 2.441780706780916,
+          "atWorstFrequency_Hz": 18000000.0,
+          "beforeAtWorst_VperV": 0.000274635954636687,
+          "afterAtWorst_VperV": 0.0002073329647956788,
+          "maxAbsoluteMagnitudeChange_VperV": 0.00015840749823985948,
+          "peakBefore_VperV": 0.002735124007240336,
+          "peakAfter_VperV": 0.0027195906139857997
+        },
+        {
+          "pair": 2,
+          "maxMagnitudeChangeProminentBand_dB": 0.9468148596452942,
+          "atWorstFrequency_Hz": 12000000.0,
+          "beforeAtWorst_VperV": 0.0003657100478812159,
+          "afterAtWorst_VperV": 0.00032794132705203747,
+          "maxAbsoluteMagnitudeChange_VperV": 0.0001878618696151439,
+          "peakBefore_VperV": 0.003395868996173661,
+          "peakAfter_VperV": 0.003538937503630909
+        }
+      ],
+      "Hdiff": [
+        {
+          "pair": 1,
+          "maxMagnitudeChangeProminentBand_dB": 2.913175337614009,
+          "atWorstFrequency_Hz": 45000000.0,
+          "beforeAtWorst_VperV": 0.00026146655868085,
+          "afterAtWorst_VperV": 0.0003656578638339447,
+          "maxAbsoluteMagnitudeChange_VperV": 0.0001326005033245142,
+          "peakBefore_VperV": 0.0012104501692621352,
+          "peakAfter_VperV": 0.0010945184297540176
+        },
+        {
+          "pair": 2,
+          "maxMagnitudeChangeProminentBand_dB": 0.9726261412029333,
+          "atWorstFrequency_Hz": 28000000.0,
+          "beforeAtWorst_VperV": 0.0005173730318042173,
+          "afterAtWorst_VperV": 0.0005786754983465919,
+          "maxAbsoluteMagnitudeChange_VperV": 0.00013378324762400567,
+          "peakBefore_VperV": 0.003261530166038334,
+          "peakAfter_VperV": 0.0031302088438965865
+        }
+      ],
+      "HcommonNear": [
+        {
+          "pair": 1,
+          "maxMagnitudeChangeProminentBand_dB": 0.5822945400501165,
+          "atWorstFrequency_Hz": 10000000.0,
+          "beforeAtWorst_VperV": 0.05711460029417961,
+          "afterAtWorst_VperV": 0.053411209758942285,
+          "maxAbsoluteMagnitudeChange_VperV": 0.0037033905352373137,
+          "peakBefore_VperV": 0.057114600294179606,
+          "peakAfter_VperV": 0.05348768023171374
+        },
+        {
+          "pair": 2,
+          "maxMagnitudeChangeProminentBand_dB": 0.6855574947454957,
+          "atWorstFrequency_Hz": 10000000.0,
+          "beforeAtWorst_VperV": 0.05603347702557928,
+          "afterAtWorst_VperV": 0.05178091229069121,
+          "maxAbsoluteMagnitudeChange_VperV": 0.0042525647348880605,
+          "peakBefore_VperV": 0.05670590912054304,
+          "peakAfter_VperV": 0.053125968989509366
+        }
+      ],
+      "Hcommon": [
+        {
+          "pair": 1,
+          "maxMagnitudeChangeProminentBand_dB": 0.6032223736303204,
+          "atWorstFrequency_Hz": 10000000.0,
+          "beforeAtWorst_VperV": 0.05724261094721883,
+          "afterAtWorst_VperV": 0.0534020975638362,
+          "maxAbsoluteMagnitudeChange_VperV": 0.003840513383382628,
+          "peakBefore_VperV": 0.05724261094721883,
+          "peakAfter_VperV": 0.0534020975638362
+        },
+        {
+          "pair": 2,
+          "maxMagnitudeChangeProminentBand_dB": 0.6471000026936564,
+          "atWorstFrequency_Hz": 10000000.0,
+          "beforeAtWorst_VperV": 0.055999559667062264,
+          "afterAtWorst_VperV": 0.05197920249822606,
+          "maxAbsoluteMagnitudeChange_VperV": 0.004020357168836204,
+          "peakBefore_VperV": 0.055999559667062264,
+          "peakAfter_VperV": 0.05197920249822606
+        }
+      ]
+    },
+    "10": {
+      "HdiffNear": [
+        {
+          "pair": 1,
+          "maxMagnitudeChangeProminentBand_dB": 2.1867610448125796,
+          "atWorstFrequency_Hz": 26000000.0,
+          "beforeAtWorst_VperV": 0.00033049431441578423,
+          "afterAtWorst_VperV": 0.00025693658076185796,
+          "maxAbsoluteMagnitudeChange_VperV": 0.00023710083974038754,
+          "peakBefore_VperV": 0.002854009324703316,
+          "peakAfter_VperV": 0.0026169084849629286
+        },
+        {
+          "pair": 2,
+          "maxMagnitudeChangeProminentBand_dB": 0.37769304351073124,
+          "atWorstFrequency_Hz": 23000000.0,
+          "beforeAtWorst_VperV": 0.0006229236430555425,
+          "afterAtWorst_VperV": 0.0005964172042923127,
+          "maxAbsoluteMagnitudeChange_VperV": 8.387462574262639e-05,
+          "peakBefore_VperV": 0.0034598113976164837,
+          "peakAfter_VperV": 0.0034656485718416326
+        }
+      ],
+      "Hdiff": [
+        {
+          "pair": 1,
+          "maxMagnitudeChangeProminentBand_dB": 4.283789924931124,
+          "atWorstFrequency_Hz": 10000000.0,
+          "beforeAtWorst_VperV": 7.606933039625818e-05,
+          "afterAtWorst_VperV": 0.00012456587689312873,
+          "maxAbsoluteMagnitudeChange_VperV": 0.00015464179193570805,
+          "peakBefore_VperV": 0.0010523418837621093,
+          "peakAfter_VperV": 0.0012062028751035558
+        },
+        {
+          "pair": 2,
+          "maxMagnitudeChangeProminentBand_dB": 0.5885866734826612,
+          "atWorstFrequency_Hz": 15000000.0,
+          "beforeAtWorst_VperV": 0.00032183165494604506,
+          "afterAtWorst_VperV": 0.0003443959948461817,
+          "maxAbsoluteMagnitudeChange_VperV": 7.1746446344805e-05,
+          "peakBefore_VperV": 0.003190118214535978,
+          "peakAfter_VperV": 0.003261864660880783
+        }
+      ],
+      "HcommonNear": [
+        {
+          "pair": 1,
+          "maxMagnitudeChangeProminentBand_dB": 0.5896081100705911,
+          "atWorstFrequency_Hz": 57000000.0,
+          "beforeAtWorst_VperV": 0.05711209337933763,
+          "afterAtWorst_VperV": 0.05336391374547442,
+          "maxAbsoluteMagnitudeChange_VperV": 0.0037481796338632092,
+          "peakBefore_VperV": 0.05711380648180693,
+          "peakAfter_VperV": 0.05353201663413849
+        },
+        {
+          "pair": 2,
+          "maxMagnitudeChangeProminentBand_dB": 0.6815866277100842,
+          "atWorstFrequency_Hz": 10000000.0,
+          "beforeAtWorst_VperV": 0.05618647015252695,
+          "afterAtWorst_VperV": 0.0519460366428972,
+          "maxAbsoluteMagnitudeChange_VperV": 0.004240433509629757,
+          "peakBefore_VperV": 0.05668903497000576,
+          "peakAfter_VperV": 0.05347573830786857
+        }
+      ],
+      "Hcommon": [
+        {
+          "pair": 1,
+          "maxMagnitudeChangeProminentBand_dB": 0.6157019997672133,
+          "atWorstFrequency_Hz": 10000000.0,
+          "beforeAtWorst_VperV": 0.05704210295920937,
+          "afterAtWorst_VperV": 0.05313863915112971,
+          "maxAbsoluteMagnitudeChange_VperV": 0.0039034638080796547,
+          "peakBefore_VperV": 0.05704210295920936,
+          "peakAfter_VperV": 0.05318033716698127
+        },
+        {
+          "pair": 2,
+          "maxMagnitudeChangeProminentBand_dB": 0.6525564054910525,
+          "atWorstFrequency_Hz": 37000000.0,
+          "beforeAtWorst_VperV": 0.055678071802512955,
+          "afterAtWorst_VperV": 0.051648339856030026,
+          "maxAbsoluteMagnitudeChange_VperV": 0.004050117612751432,
+          "peakBefore_VperV": 0.05608105605370251,
+          "peakAfter_VperV": 0.05203093844095108
+        }
+      ]
+    },
+    "12": {
+      "HdiffNear": [
+        {
+          "pair": 1,
+          "maxMagnitudeChangeProminentBand_dB": 0.7777512066737652,
+          "atWorstFrequency_Hz": 200000000.0,
+          "beforeAtWorst_VperV": 0.0029490598579728334,
+          "afterAtWorst_VperV": 0.0026964726975999853,
+          "maxAbsoluteMagnitudeChange_VperV": 0.00025258716037284855,
+          "peakBefore_VperV": 0.002949059857972834,
+          "peakAfter_VperV": 0.0026964726975999853
+        },
+        {
+          "pair": 2,
+          "maxMagnitudeChangeProminentBand_dB": 1.2071265917006564,
+          "atWorstFrequency_Hz": 17000000.0,
+          "beforeAtWorst_VperV": 0.0004131617017513884,
+          "afterAtWorst_VperV": 0.00047476247710460083,
+          "maxAbsoluteMagnitudeChange_VperV": 0.0001467139492740948,
+          "peakBefore_VperV": 0.003615821839804457,
+          "peakAfter_VperV": 0.0035608263883761255
+        }
+      ],
+      "Hdiff": [
+        {
+          "pair": 1,
+          "maxMagnitudeChangeProminentBand_dB": 1.4812633192828562,
+          "atWorstFrequency_Hz": 10000000.0,
+          "beforeAtWorst_VperV": 0.00012874430703461095,
+          "afterAtWorst_VperV": 0.00010855875850883106,
+          "maxAbsoluteMagnitudeChange_VperV": 0.0001282697444817758,
+          "peakBefore_VperV": 0.0010340138955229972,
+          "peakAfter_VperV": 0.0010900725748666943
+        },
+        {
+          "pair": 2,
+          "maxMagnitudeChangeProminentBand_dB": 2.19634139063042,
+          "atWorstFrequency_Hz": 12000000.0,
+          "beforeAtWorst_VperV": 0.00031604406313035346,
+          "afterAtWorst_VperV": 0.0002454316499574783,
+          "maxAbsoluteMagnitudeChange_VperV": 0.0001581991864459979,
+          "peakBefore_VperV": 0.0029947596316652688,
+          "peakAfter_VperV": 0.0031529588181112666
+        }
+      ],
+      "HcommonNear": [
+        {
+          "pair": 1,
+          "maxMagnitudeChangeProminentBand_dB": 0.6076021176495539,
+          "atWorstFrequency_Hz": 10000000.0,
+          "beforeAtWorst_VperV": 0.057028613422383086,
+          "afterAtWorst_VperV": 0.05317563766413429,
+          "maxAbsoluteMagnitudeChange_VperV": 0.0038529757582487917,
+          "peakBefore_VperV": 0.05715022900411711,
+          "peakAfter_VperV": 0.05364010740434233
+        },
+        {
+          "pair": 2,
+          "maxMagnitudeChangeProminentBand_dB": 0.6786001825550447,
+          "atWorstFrequency_Hz": 48000000.0,
+          "beforeAtWorst_VperV": 0.05590634192321932,
+          "afterAtWorst_VperV": 0.05170482436289506,
+          "maxAbsoluteMagnitudeChange_VperV": 0.004202490562368447,
+          "peakBefore_VperV": 0.05643209841411527,
+          "peakAfter_VperV": 0.05330868335306026
+        }
+      ],
+      "Hcommon": [
+        {
+          "pair": 1,
+          "maxMagnitudeChangeProminentBand_dB": 0.590244584818812,
+          "atWorstFrequency_Hz": 45000000.0,
+          "beforeAtWorst_VperV": 0.05691985535006538,
+          "afterAtWorst_VperV": 0.05318039496972392,
+          "maxAbsoluteMagnitudeChange_VperV": 0.003739620659278485,
+          "peakBefore_VperV": 0.05693486953511693,
+          "peakAfter_VperV": 0.0532118147191294
+        },
+        {
+          "pair": 2,
+          "maxMagnitudeChangeProminentBand_dB": 0.6889693203643343,
+          "atWorstFrequency_Hz": 10000000.0,
+          "beforeAtWorst_VperV": 0.056375548127266174,
+          "afterAtWorst_VperV": 0.052076562751331115,
+          "maxAbsoluteMagnitudeChange_VperV": 0.004298985375935066,
+          "peakBefore_VperV": 0.05637554812726618,
+          "peakAfter_VperV": 0.052076562751331115
+        }
+      ]
+    }
+  },
+  "unresolved": [
+    "Mixed-wiring fine-grid run is active; no final wiring-effect acceptance yet.",
+    "Cable-interior versus changed fanout coupling has not been separated.",
+    "No actual 20 m link, transformer/PHY termination, measured noise or CRC outcome is included."
+  ]
+}

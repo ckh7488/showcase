@@ -1,0 +1,211 @@
+{
+  "method": "Exact midpoint capsule rule reconstructed from openEMS 0.0.36 CalcPEC_Range and CSXCAD 0.6.3 CSPrimWire::IsInside; metal Wire primitives plus lumped-port caps. Not a native operator dump.",
+  "mesh": {
+    "x": 427,
+    "y": 135,
+    "z": 114
+  },
+  "wiring": "mixed",
+  "wireAudits": [
+    {
+      "wire": 0,
+      "group": "signal_0_0",
+      "edges": 11381,
+      "components": 1,
+      "terminalsConnected": true,
+      "terminalComponents": [
+        0,
+        0
+      ],
+      "pieces": [
+        {
+          "nodes": 5874,
+          "xRange_mm": [
+            -80.4,
+            80.4
+          ]
+        }
+      ]
+    },
+    {
+      "wire": 1,
+      "group": "signal_0_1",
+      "edges": 11433,
+      "components": 1,
+      "terminalsConnected": true,
+      "terminalComponents": [
+        0,
+        0
+      ],
+      "pieces": [
+        {
+          "nodes": 5845,
+          "xRange_mm": [
+            -80.4,
+            80.4
+          ]
+        }
+      ]
+    },
+    {
+      "wire": 2,
+      "group": "signal_1_0",
+      "edges": 11557,
+      "components": 1,
+      "terminalsConnected": true,
+      "terminalComponents": [
+        0,
+        0
+      ],
+      "pieces": [
+        {
+          "nodes": 5957,
+          "xRange_mm": [
+            -80.4,
+            80.4
+          ]
+        }
+      ]
+    },
+    {
+      "wire": 3,
+      "group": "signal_1_1",
+      "edges": 11511,
+      "components": 1,
+      "terminalsConnected": true,
+      "terminalComponents": [
+        0,
+        0
+      ],
+      "pieces": [
+        {
+          "nodes": 5986,
+          "xRange_mm": [
+            -80.4,
+            80.4
+          ]
+        }
+      ]
+    },
+    {
+      "wire": 4,
+      "group": "plus",
+      "edges": 13321,
+      "components": 1,
+      "terminalsConnected": true,
+      "terminalComponents": [
+        0,
+        0
+      ],
+      "pieces": [
+        {
+          "nodes": 7446,
+          "xRange_mm": [
+            -80.4,
+            80.4
+          ]
+        }
+      ]
+    },
+    {
+      "wire": 5,
+      "group": "zero",
+      "edges": 12489,
+      "components": 1,
+      "terminalsConnected": true,
+      "terminalComponents": [
+        0,
+        0
+      ],
+      "pieces": [
+        {
+          "nodes": 6767,
+          "xRange_mm": [
+            -80.4,
+            80.4
+          ]
+        }
+      ]
+    },
+    {
+      "wire": 6,
+      "group": "zero",
+      "edges": 12051,
+      "components": 1,
+      "terminalsConnected": true,
+      "terminalComponents": [
+        0,
+        0
+      ],
+      "pieces": [
+        {
+          "nodes": 6843,
+          "xRange_mm": [
+            -80.4,
+            80.4
+          ]
+        }
+      ]
+    },
+    {
+      "wire": 7,
+      "group": "plus",
+      "edges": 13269,
+      "components": 1,
+      "terminalsConnected": true,
+      "terminalComponents": [
+        0,
+        0
+      ],
+      "pieces": [
+        {
+          "nodes": 7550,
+          "xRange_mm": [
+            -80.4,
+            80.4
+          ]
+        }
+      ]
+    }
+  ],
+  "allWireAndCapComponents": 6,
+  "terminalComponentsWithCaps": [
+    [
+      1,
+      1
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      2,
+      2
+    ]
+  ],
+  "sources": [
+    "https://github.com/thliebig/openEMS/blob/v0.0.36/FDTD/operator.cpp",
+    "https://github.com/thliebig/CSXCAD/blob/v0.6.3/src/CSPrimWire.cpp",
+    "https://github.com/thliebig/CSXCAD/blob/v0.6.3/src/CSPrimitives.h"
+  ]
+}

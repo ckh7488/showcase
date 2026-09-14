@@ -50,6 +50,22 @@
       ]
     },
     {
+      "id": "porta-test-01",
+      "title": "TEST 01 · 120 mm 4쌍 토폴로지",
+      "summary": "현재 +/+·0/0와 +/0 네 배치를 openEMS로 비교했습니다. +/0 중 대각·반대 방향의 차동이 가장 낮았지만, 현재 배선보다 최악 차동은 2.70배 컸습니다.",
+      "category": "EMC · 시험 결과",
+      "collection": "emc",
+      "date": "2026-09-14",
+      "path": "reports/porta-test-01/",
+      "cover": "reports/porta-test-01/cover.png",
+      "coverAlt": "현재 배선과 네 가지 +/0 전원쌍 토폴로지의 openEMS 차동 잡음 및 4쌍 배치 비교",
+      "tags": [
+        "120 mm 선별",
+        "openEMS 결과",
+        "4쌍 토폴로지"
+      ]
+    },
+    {
       "id": "embedding-first-steps",
       "title": "임베딩 첫걸음",
       "summary": "왜 여러 차원이 필요한지, 거리·코사인·내적은 무엇을 비교하는지 직접 조작하며 이해합니다. 마지막에는 작은 모델을 학습시키고 새 문장으로 검색합니다.",
