@@ -34,11 +34,11 @@
     },
     {
       "project_relative_path": "hardware/calibration_fixture_PCB_A02/README.md",
-      "sha256": "a30e3ae9280b034889900e22ce0e285a6ccec29d2ca922dbb018f6f0353034a5"
+      "sha256": "eecb36473e6c9b2eb2fb50528cad6fb048a2186e6cb18272788f51701f786087"
     },
     {
       "project_relative_path": "hardware/calibration_fixture_PCB_A02/ASSEMBLY.md",
-      "sha256": "78ec25d117bd3f00b3e72e67280c8f50034b66720ed0e300af70dfc15576f664"
+      "sha256": "092e868706ac33013a55e5e4b75216e814c266795e36c7e25cfd640754f6e180"
     },
     {
       "project_relative_path": "hardware/calibration_fixture_PCB_A02/BOM_DELTA.md",
@@ -62,7 +62,7 @@
     },
     {
       "project_relative_path": "hardware/probe_head_A02/README.md",
-      "sha256": "d39fcc410d965bf9ea28847b0652dd4ecf06d6e3c875ba4a29689000157c14a8"
+      "sha256": "4350ca2d9faa1c8de5d2fc7bcdf840c6b6ce802d0a5dcf04dcd6639939feb2a4"
     },
     {
       "project_relative_path": "mechanical/clamp_A03_DRAFT/README.md",
@@ -108,7 +108,7 @@
     },
     {
       "project_relative_path": "docs/atlas/source/sections/assembly-procedure.html",
-      "sha256": "20b4d3d836ebabcba831ceef854c19b8bd5f6870cded065778c6a439274221b3"
+      "sha256": "45956916e0d31f8162eb236ae00c34a3e27fc7250017ed9174763697ba51a4e7"
     },
     {
       "project_relative_path": "docs/atlas/source/sections/calibration.html",
