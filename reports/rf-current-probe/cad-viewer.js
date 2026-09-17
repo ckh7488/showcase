@@ -3,21 +3,23 @@
 // Only external cables, mating connectors and calibration standards are illustrative.
 (() => {
   const T = THREE;
+  const design=window.RFCP_DESIGN;
   const V = a => new T.Vector3(...a);
   const style = getComputedStyle(document.documentElement);
   const token = name => style.getPropertyValue(name).trim();
   const colors = {p1:token("--sc-accent"), p2:token("--sc-phy"), load:token("--sc-focus"),
     ink:token("--sc-ink"), stage:token("--sc-stage"), sig:"#e5af4d", ret:"#66d9c0"};
-  const anchors = {input:[0,0,-35.05], output:[0,0,47.75], probe:[0,-41,15.95]};
+  const anchors = Object.fromEntries(Object.entries(design.ports).map(([key,port])=>[key,port.anchor]));
   const moving = new Set(["Head_MovingTray","Head_MovingKeeper","Head_MovingCore","Head_LatchNut"]);
   const openOmissions = new Set(["Head_BackingPads","Head_RadialPads","Head_FrontPads","Head_KeeperScrews","Head_KeeperNuts","Head_LatchScrew"]);
-  const signalParts = new Set(["Frame_SIG","InputCup","OutputCup","InputJumper","OutputJumper"]);
-  const returnParts = new Set(["Frame_RET_L","Frame_RET_R","Input_GND","Output_GND"]);
-  const isPCB = name => /^(Frame|InputPCB|OutputPCB|Input_GND|Output_GND|SMA|InputCup|OutputCup|InputJumper|OutputJumper)/.test(name);
+  const signalParts = new Set([...design.cad.signal_parts,"Frame_SIG","InputCup","OutputCup","InputJumper","OutputJumper"]);
+  const returnParts = new Set([...design.cad.return_parts,"Frame_RET_L","Frame_RET_R","Input_GND","Output_GND"]);
+  const isPCB = name => /^(FlatPCB|SignalCopper|ReturnCopper|Frame|InputPCB|OutputPCB|Input_GND|Output_GND|SMA|InputCup|OutputCup|InputJumper|OutputJumper)/.test(name);
 
-  async function loadModel() {
+  async function loadModel(revision="A02") {
+    const asset=revision==="A02"?design.fixture.asset:"fixture-cad";
     const [manifestResponse, binaryResponse] = await Promise.all([
-      fetch("assets/fixture-cad.json?v=20260917-cad1"), fetch("assets/fixture-cad.bin?v=20260917-cad1")]);
+      fetch(`assets/${asset}.json?v=20260917-split5`), fetch(`assets/${asset}.bin?v=20260917-split5`)]);
     if (!manifestResponse.ok || !binaryResponse.ok) throw new Error("CAD 모델 파일을 불러오지 못했습니다.");
     const manifest = await manifestResponse.json(), buffer = await binaryResponse.arrayBuffer();
     return manifest.parts.map(p => {
@@ -31,7 +33,7 @@
 
   class CADViewer {
     constructor(host, parts, kind) {
-      this.host=host; this.kind=kind; this.mode="open"; this.path="all"; this.step=0;
+      this.host=host; this.kind=kind; this.mode="open"; this.path="all"; this.step=0;this.revision="A02";
       this.standard="thru"; this.standardPort=1; this.labels=[]; this.parts=new Map();
       this.scene=new T.Scene(); this.scene.background=new T.Color(colors.stage);
       this.camera=new T.OrthographicCamera(-150,150,110,-110,.1,2500);
@@ -50,13 +52,7 @@
         const light=new T.DirectionalLight(0xffffff,intensity); light.position.copy(V(position)); this.scene.add(light);
       }
       this.fixture=new T.Group(); this.scene.add(this.fixture);
-      for(const p of parts) {
-        const metal=/SMA|Screw|Nut|Pin|Cup|Winding|Jumper/.test(p.name);
-        const material=new T.MeshStandardMaterial({color:p.color,roughness:metal?.37:.78,metalness:metal?.45:.04,side:T.DoubleSide,flatShading:true});
-        material.color.convertSRGBToLinear();
-        const mesh=new T.Mesh(p.geometry,material); mesh.name=p.name;
-        mesh.userData.baseColor=p.color; this.parts.set(p.name,mesh); this.fixture.add(mesh);
-      }
+      this.populate(parts);
       this.accessories=new T.Group(); this.scene.add(this.accessories);
       this.controls=new T.OrbitControls(this.camera,this.renderer.domElement);
       this.controls.enableDamping=false; this.controls.enablePan=true;
@@ -66,6 +62,24 @@
       host.querySelector(".cad-loading")?.remove();
       this.resizeObserver=new ResizeObserver(()=>this.resize()); this.resizeObserver.observe(host);
       this.update(); this.reset(); this.resize(); host.dataset.ready="true";
+    }
+
+    populate(parts) {
+      this.parts.forEach(mesh=>mesh.material.dispose());this.parts.clear();this.fixture.clear();
+      for(const p of parts) {
+        const metal=/SMA|Screw|Nut|Pin|Cup|Winding|Jumper/.test(p.name);
+        const material=new T.MeshStandardMaterial({color:p.color,roughness:metal?.37:.78,metalness:metal?.45:.04,side:T.DoubleSide,flatShading:true});
+        material.color.convertSRGBToLinear();
+        const mesh=new T.Mesh(p.geometry,material);mesh.name=p.name;mesh.userData.baseColor=p.color;
+        this.parts.set(p.name,mesh);this.fixture.add(mesh);
+      }
+    }
+    async setRevision(revision) {
+      if(this.kind!=="structure")return;
+      const parts=await getModel(revision);this.revision=revision;this.populate(parts);this.update();this.reset();
+      this.host.querySelector('.cad-badge').textContent=revision==="A02"?"현재 · 평판 PCB A0.2 / 집게 A0.3":"이전 비교용 · 3장 PCB A0.1 / 집게 A0.3";
+      document.getElementById('revision-note').textContent=revision==="A02"?"현재 A0.2: 평판 1장 · SMA 직접 납땜 · 나일론 기둥 4곳. 아래 제작·교정 설명의 기준입니다.":"이전 A0.1: PCB 3장 · 세로 접합 · 점퍼 2개. 구조 비교용이며 아래 제작·교정은 현재 A0.2 기준입니다.";
+      window.updateRFCPPath?.();
     }
 
     clearAccessories() {
@@ -104,17 +118,26 @@
       this.labels.push({el,line,dot,point:V(point),offset});
     }
     structureLabels() {
+      const flat=this.revision==="A02";
+      if(this.mode==="head") {
+        this.label("고정 코어 · 5턴 권선",[0,-24,13],[-90,-25],"sig");
+        this.label("헤드 PCB · S+ / S−",[0,-36,6],[85,10]);
+        this.label("HEAD.J1 · SMA 출력",anchors.probe,[70,50]);
+        this.label("두 코어의 맞댐면",[25,0,8],[60,-35]);return;
+      }
       if(this.path==="signal") {
-        this.label("중앙 SIG · 코어 안",[0,.8,6.35],[0,-48],"sig");
-        this.label("SMA 중심 → 연결선",[0,.8,-16.5],[-92,-27],"sig");
+        this.label("중앙 SIG · 코어 안",[0,flat?-.4:.8,6.35],[0,-48],"sig");
+        this.label(flat?"SMA 핀 → PCB 동박":"SMA 중심 → 연결선",[0,flat?-.4:.8,-19],[-92,-27],"sig");
       } else if(this.path==="return") {
         this.label("바깥 귀환 레일",[-55,1,6],[-25,-38],"ret");
         this.label("바깥 귀환 레일",[55,1,6],[35,-25],"ret");
-        this.label("EndPanel · SMA 외피",[35,8,36.85],[35,46],"ret");
+        this.label(flat?"같은 보드의 GND · 접지 핀":"EndPanel · SMA 외피",flat?[15,-.4,40.7]:[35,8,36.85],[35,46],"ret");
       } else {
-        this.label("Frame PCB · 2개의 창",[48,.5,6.35],[66,-55]);
-        this.label("EndPanel PCB",[-45,7,36.85],[-65,8]);
-        this.label("IN",anchors.input,[-48,-12]);this.label("OUT",anchors.output,[45,20]);
+        this.label(flat?"평판 PCB 1장 · 2개의 창":"Frame PCB · 2개의 창",[48,flat?-.4:.5,6.35],[85,-40]);
+        if(flat&&this.mode!=="pcb")this.label("65 mm 나일론 기둥 × 4",[-65,-40,44.7],[-87,8]);
+        if(!flat)this.label("EndPanel PCB",[-45,7,36.85],[-65,8]);
+        this.label(flat?"J1 · IN":"IN",flat?anchors.input:[0,0,-35.05],[-70,-12]);
+        this.label(flat?"J2 · OUT":"OUT",flat?anchors.output:[0,0,47.75],[65,25]);
         if(this.mode!=="pcb") this.label(this.mode==="open"?"집게 · 90° 열림":"집게 · 닫힘",this.mode==="open"?[-60,48,7]:[0,32,7],[-28,-35]);
       }
     }
@@ -122,21 +145,21 @@
       const s=this.step;
       this.fixture.visible=s!==0;
       if(s===0) { this.solT(); return; }
-      this.cable(anchors.input,[0,0,-1],[[0,0,-66],[-90,-5,-83],[-128,-23,-34],[-133,-40,68]],colors.p1,"P1-to-IN");
-      this.label("P1 → IN",anchors.input,[-82,-26],"p1");
+      this.cable(anchors.input,design.ports.input.direction,[[0,50,-28],[-85,53,-60],[-130,-5,-30],[-133,-40,68]],colors.p1,"P1-to-IN");
+      this.label("P1 → J1 · IN",anchors.input,[-82,-26],"p1");
       this.label("VNA P1 쪽",[-133,-40,68],[-9,28],"p1");
       if(s<3) {
-        this.cable(anchors.output,[0,0,1],[[0,0,81],[83,-9,112],[134,-30,64]],colors.p2,"OUT-to-P2");
-        this.label("OUT → P2",anchors.output,[92,-20],"p2");
+        this.cable(anchors.output,design.ports.output.direction,[[0,50,40.7],[82,48,90],[134,-30,64]],colors.p2,"OUT-to-P2");
+        this.label("J2 · OUT → P2",anchors.output,[100,8],"p2");
       } else {
-        this.cable(anchors.probe,[0,0,1],[[0,-41,48],[73,-42,88],[134,-30,64]],colors.p2,"Probe-to-P2");
-        this.load(anchors.output,[0,0,1]);
-        this.label("OUT · 50 Ω 부하",[0,0,61],[93,-30],"load");
+        this.cable(anchors.probe,design.ports.probe.direction,[[0,-41,48],[73,-42,88],[134,-30,64]],colors.p2,"Probe-to-P2");
+        this.load(anchors.output,design.ports.output.direction);
+        this.label("J2 · OUT · 50 Ω 부하",[0,22,40.7],[98,-7],"load");
         this.label("프로브 출력 → P2",anchors.probe,[5,55],"p2");
       }
       this.label("VNA P2 쪽",[134,-30,64],[17,28],"p2");
       if(s===2) {
-        this.load(anchors.probe,[0,0,1]);
+        this.load(anchors.probe,design.ports.probe.direction);
         this.label("프로브 출력 · 50 Ω",[0,-41,30],[-2,55],"load");
       }
       if(s===1) this.label("중앙 SIG · 헤드 없음",[0,0,6],[7,-63],"sig");
@@ -167,7 +190,8 @@
         mesh.position.set(0,0,0); mesh.rotation.set(0,0,0);mesh.visible=true;
         mesh.material.color.set(mesh.userData.baseColor).convertSRGBToLinear();mesh.material.opacity=1;mesh.material.transparent=false;mesh.material.depthWrite=true;
         if(this.kind==="structure") {
-          if(this.mode==="pcb" || this.path!=="all") mesh.visible=isPCB(name);
+          if(this.mode==="head") mesh.visible=name.startsWith("Head_");
+          else if(this.mode==="pcb" || this.path!=="all") mesh.visible=design.cad.pcb_parts.includes(name)||isPCB(name);
           else if(this.mode==="open") {
             if(moving.has(name)){mesh.rotation.z=Math.PI/2;mesh.position.set(-40,40,0);}
             if(openOmissions.has(name))mesh.visible=false;
@@ -180,7 +204,7 @@
         } else if(this.step===1 && (name.startsWith("Head_")||name.startsWith("BenchPCB")))mesh.visible=false;
       }
       if(this.kind==="structure")this.structureLabels(); else this.calibration();
-      this.host.dataset.activeStep=String(this.step);this.host.dataset.mode=this.mode;this.host.dataset.activePath=this.path;
+      this.host.dataset.activeStep=String(this.step);this.host.dataset.mode=this.mode;this.host.dataset.activePath=this.path;this.host.dataset.revision=this.revision;
       if(this.kind==="calibration") {
         this.host.dataset.p2=["standard","output","output","probe"][this.step];
         this.host.dataset.load=["standard","none","probe","output"][this.step];
@@ -189,18 +213,26 @@
     }
     setStep(step) {const changed=(step===0)!==(this.step===0);this.step=step;this.update();if(changed)this.reset();}
     setMode(mode) {this.mode=mode;this.path="all";this.update();this.reset();}
-    setPath(path) {this.path=path;this.update();this.reset();}
+    setPath(path) {
+      this.path=path;
+      if(path!=="all"&&this.mode==="head") {
+        this.mode="pcb";
+        document.querySelectorAll('[data-assembly]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.assembly==='pcb')));
+      }
+      this.update();this.reset();
+    }
     setStandard(standard,port) {this.standard=standard;this.standardPort=port;this.update();}
     reset(view="overview") {
       const calibration=this.kind==="calibration", empty=calibration&&this.step===0;
       const pcb=this.kind==="structure"&&(this.mode==="pcb"||this.path!=="all");
       const opened=this.kind==="structure"&&this.mode==="open"&&this.path==="all";
-      const target=empty?[0,-4,18]:pcb?[0,0,7]:opened?[0,5,12]:[0,-19,12];
+      const headOnly=this.mode==="head"&&this.kind==="structure";
+      const target=empty?[0,-4,18]:headOnly?[0,-8,6]:pcb?[0,0,7]:opened?[0,5,12]:calibration?[0,-5,12]:[0,-19,12];
       this.controls.target.copy(V(target));
       this.camera.up.set(0,1,0);
       const vector=view==="top"?[0,300,.01]:view==="front"?[0,45,320]:[205,170,270];
       this.camera.position.copy(V(target).add(V(vector)));
-      this.span=empty?165:calibration?220:pcb?145:opened?245:200;
+      this.span=empty?165:headOnly?125:calibration?250:pcb?165:opened?245:210;
       this.camera.zoom=1;this.controls.update();this.resize();
     }
     zoom(factor) {this.camera.zoom=Math.min(5,Math.max(.5,this.camera.zoom*factor));this.camera.updateProjectionMatrix();this.render();}
@@ -249,15 +281,22 @@
   }
 
   window.rfcpViewers={};
-  const model=loadModel();
+  const models=new Map();
+  function getModel(revision){if(!models.has(revision))models.set(revision,loadModel(revision));return models.get(revision);}
   async function init(host) {
     try {
-      const kind=host.dataset.viewer, viewer=new CADViewer(host,await model,kind);window.rfcpViewers[kind]=viewer;
+      const kind=host.dataset.viewer, viewer=new CADViewer(host,await getModel("A02"),kind);window.rfcpViewers[kind]=viewer;
       document.querySelectorAll(`[data-for="${kind}"]`).forEach(button=>button.addEventListener("click",()=>{
         if(button.dataset.camera)viewer.reset(button.dataset.camera);
         if(button.dataset.zoom)viewer.zoom(Number(button.dataset.zoom));
       }));
       if(kind==="structure") {
+        document.querySelectorAll("[data-revision-choice]").forEach(button=>button.addEventListener("click",async()=>{
+          const choices=[...document.querySelectorAll("[data-revision-choice]")];choices.forEach(b=>b.disabled=true);
+          try {await viewer.setRevision(button.dataset.revisionChoice);choices.forEach(b=>b.setAttribute("aria-pressed",String(b===button)));}
+          catch(error){document.getElementById('revision-note').textContent="비교 모델을 불러오지 못했습니다. 현재 모델과 아래 비교표를 확인하세요.";console.error(error);}
+          finally{choices.forEach(b=>b.disabled=false);}
+        }));
         document.querySelectorAll("[data-assembly]").forEach(button=>button.addEventListener("click",()=>{
           document.querySelectorAll("[data-assembly]").forEach(b=>b.setAttribute("aria-pressed",String(b===button)));
           viewer.setMode(button.dataset.assembly);

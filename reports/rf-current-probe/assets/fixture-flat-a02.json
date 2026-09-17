@@ -1,0 +1,749 @@
+{
+  "format": "RFCP CAD indexed mesh v1",
+  "units": "mm",
+  "binary": "fixture-flat-a02.bin",
+  "source": "hardware/calibration_fixture_PCB_A02/assembly/assembly_mesh.json",
+  "source_sha256": "aa898dc24829eece62c75bc68e592cb26595911169fd9a23a98455ce8bf821b3",
+  "binary_sha256": "cf96f9133437e0d4db063c3f310bb2bfc886ea6900606780421e10a430e70976",
+  "precision": "float32 position; uint32 triangle indices; little endian",
+  "maximum_coordinate_rounding_mm": 3.803295172133403e-06,
+  "triangle_count": 456702,
+  "geometry_reduction": false,
+  "parts": [
+    {
+      "name": "Base",
+      "color": "#858d9a",
+      "category": "RETAINED_FIXTURE",
+      "vertex_offset": 0,
+      "vertex_count": 1592,
+      "index_offset": 19104,
+      "index_count": 9612,
+      "bounds": [
+        [
+          -78.0,
+          -72.0,
+          -45.0
+        ],
+        [
+          78.0,
+          -67.0,
+          58.0
+        ]
+      ]
+    },
+    {
+      "name": "HeadBracket",
+      "color": "#858d9a",
+      "category": "RETAINED_FIXTURE",
+      "vertex_offset": 57552,
+      "vertex_count": 1528,
+      "index_offset": 75888,
+      "index_count": 9204,
+      "bounds": [
+        [
+          -18.0,
+          -67.0,
+          -16.0
+        ],
+        [
+          18.0,
+          -37.0,
+          -3.0
+        ]
+      ]
+    },
+    {
+      "name": "BenchPCBScrews",
+      "color": "#ccd3d9",
+      "category": "RETAINED_FIXTURE",
+      "vertex_offset": 112704,
+      "vertex_count": 1008,
+      "index_offset": 124800,
+      "index_count": 6024,
+      "bounds": [
+        [
+          -8.9,
+          -46.89940944580155,
+          -13.65
+        ],
+        [
+          8.9,
+          -43.10059055419845,
+          7.6499999999999995
+        ]
+      ]
+    },
+    {
+      "name": "BenchPCBNuts",
+      "color": "#a9b5bd",
+      "category": "RETAINED_FIXTURE",
+      "vertex_offset": 148896,
+      "vertex_count": 528,
+      "index_offset": 155232,
+      "index_count": 3168,
+      "bounds": [
+        [
+          -9.0,
+          -47.309401076758505,
+          -9.6
+        ],
+        [
+          9.0,
+          -42.690598923241495,
+          -7.999999999999996
+        ]
+      ]
+    },
+    {
+      "name": "RubberFeet",
+      "color": "#2f3942",
+      "category": "RETAINED_FIXTURE",
+      "vertex_offset": 167904,
+      "vertex_count": 32,
+      "index_offset": 168288,
+      "index_count": 144,
+      "bounds": [
+        [
+          -74.0,
+          -75.0,
+          -42.0
+        ],
+        [
+          74.0,
+          -72.0,
+          55.0
+        ]
+      ]
+    },
+    {
+      "name": "BracketBaseScrews",
+      "color": "#ccd3d9",
+      "category": "RETAINED_FIXTURE",
+      "vertex_offset": 168864,
+      "vertex_count": 1008,
+      "index_offset": 180960,
+      "index_count": 6024,
+      "bounds": [
+        [
+          -14.749145250502245,
+          -73.0,
+          -14.75
+        ],
+        [
+          14.749145250502245,
+          -58.5,
+          -9.25
+        ]
+      ]
+    },
+    {
+      "name": "BracketBaseNuts",
+      "color": "#a9b5bd",
+      "category": "RETAINED_FIXTURE",
+      "vertex_offset": 205056,
+      "vertex_count": 528,
+      "index_offset": 211392,
+      "index_count": 3168,
+      "bounds": [
+        [
+          -14.75,
+          -72.0,
+          -15.175426480542942
+        ],
+        [
+          14.75,
+          -69.6,
+          -8.824573519457058
+        ]
+      ]
+    },
+    {
+      "name": "Head_FixedTray",
+      "color": "#255f78",
+      "category": "CLAMP_A03",
+      "vertex_offset": 224064,
+      "vertex_count": 3393,
+      "index_offset": 264780,
+      "index_count": 20430,
+      "bounds": [
+        [
+          -48.0,
+          -50.2,
+          -3.0
+        ],
+        [
+          45.0,
+          4.499937940151175,
+          16.4
+        ]
+      ]
+    },
+    {
+      "name": "Head_MovingTray",
+      "color": "#448ca3",
+      "category": "CLAMP_A03",
+      "vertex_offset": 346500,
+      "vertex_count": 2241,
+      "index_offset": 373392,
+      "index_count": 13482,
+      "bounds": [
+        [
+          -44.49938487246611,
+          -4.499384872466109,
+          -3.0000000000000004
+        ],
+        [
+          45.0,
+          36.0,
+          14.000000000000004
+        ]
+      ]
+    },
+    {
+      "name": "Head_FixedKeeper",
+      "color": "#63b8c5",
+      "category": "CLAMP_A03",
+      "vertex_offset": 427320,
+      "vertex_count": 632,
+      "index_offset": 434904,
+      "index_count": 3804,
+      "bounds": [
+        [
+          -35.5,
+          -36.0,
+          14.0
+        ],
+        [
+          35.5,
+          -0.4,
+          16.400000000000002
+        ]
+      ]
+    },
+    {
+      "name": "Head_MovingKeeper",
+      "color": "#86cdd4",
+      "category": "CLAMP_A03",
+      "vertex_offset": 450120,
+      "vertex_count": 690,
+      "index_offset": 458400,
+      "index_count": 4152,
+      "bounds": [
+        [
+          -35.5,
+          0.4,
+          14.0
+        ],
+        [
+          35.5,
+          36.0,
+          16.400000000000006
+        ]
+      ]
+    },
+    {
+      "name": "Head_FixedCore",
+      "color": "#303a43",
+      "category": "CLAMP_A03",
+      "vertex_offset": 475008,
+      "vertex_count": 2702,
+      "index_offset": 507432,
+      "index_count": 16200,
+      "bounds": [
+        [
+          -30.479999999999986,
+          -29.6418,
+          0.0
+        ],
+        [
+          30.480000000000008,
+          9e-15,
+          12.7
+        ]
+      ]
+    },
+    {
+      "name": "Head_MovingCore",
+      "color": "#53616d",
+      "category": "CLAMP_A03",
+      "vertex_offset": 572232,
+      "vertex_count": 7716,
+      "index_offset": 664824,
+      "index_count": 46284,
+      "bounds": [
+        [
+          -30.479999999999986,
+          -9e-15,
+          0.0
+        ],
+        [
+          30.480000000000008,
+          29.6418,
+          12.700000000000001
+        ]
+      ]
+    },
+    {
+      "name": "Head_Winding",
+      "color": "#e1a24c",
+      "category": "CLAMP_A03",
+      "vertex_offset": 849960,
+      "vertex_count": 18499,
+      "index_offset": 1071948,
+      "index_count": 110982,
+      "bounds": [
+        [
+          -4.199832526416086,
+          -34.69999512678871,
+          -1.0
+        ],
+        [
+          4.19979999721556,
+          -17.40025600036119,
+          13.7
+        ]
+      ]
+    },
+    {
+      "name": "Head_PCB",
+      "color": "#35975d",
+      "category": "CLAMP_A03",
+      "vertex_offset": 1515876,
+      "vertex_count": 2022,
+      "index_offset": 1540140,
+      "index_count": 12228,
+      "bounds": [
+        [
+          -10.0,
+          -48.0,
+          4.75
+        ],
+        [
+          10.0,
+          -32.0,
+          6.3500000000000005
+        ]
+      ]
+    },
+    {
+      "name": "Head_SMAEnvelope",
+      "color": "#d3ba72",
+      "category": "CLAMP_A03",
+      "vertex_offset": 1589052,
+      "vertex_count": 1772,
+      "index_offset": 1610316,
+      "index_count": 10572,
+      "bounds": [
+        [
+          -3.5,
+          -44.5,
+          2.4499999999999997
+        ],
+        [
+          3.5,
+          -37.5,
+          15.95
+        ]
+      ]
+    },
+    {
+      "name": "Head_HingePin",
+      "color": "#c6cdd1",
+      "category": "CLAMP_A03",
+      "vertex_offset": 1652604,
+      "vertex_count": 504,
+      "index_offset": 1658652,
+      "index_count": 3012,
+      "bounds": [
+        [
+          -42.75,
+          -2.749145250502245,
+          -5.5
+        ],
+        [
+          -37.25,
+          2.7491452505022447,
+          22.0
+        ]
+      ]
+    },
+    {
+      "name": "Head_HingeNut",
+      "color": "#acb8be",
+      "category": "CLAMP_A03",
+      "vertex_offset": 1670700,
+      "vertex_count": 264,
+      "index_offset": 1673868,
+      "index_count": 1584,
+      "bounds": [
+        [
+          -42.75,
+          -3.175426480542942,
+          16.9
+        ],
+        [
+          -37.25,
+          3.175426480542942,
+          19.3
+        ]
+      ]
+    },
+    {
+      "name": "Head_LatchScrew",
+      "color": "#d4dadd",
+      "category": "CLAMP_A03",
+      "vertex_offset": 1680204,
+      "vertex_count": 504,
+      "index_offset": 1686252,
+      "index_count": 3012,
+      "bounds": [
+        [
+          36.001243271996735,
+          -9.5,
+          3.0
+        ],
+        [
+          43.998756728003265,
+          9.0,
+          11.0
+        ]
+      ]
+    },
+    {
+      "name": "Head_LatchNut",
+      "color": "#acb8be",
+      "category": "CLAMP_A03",
+      "vertex_offset": 1698300,
+      "vertex_count": 264,
+      "index_offset": 1701468,
+      "index_count": 1584,
+      "bounds": [
+        [
+          37.25,
+          4.2,
+          3.824573519457058
+        ],
+        [
+          42.75,
+          6.6,
+          10.175426480542942
+        ]
+      ]
+    },
+    {
+      "name": "Head_BackingPads",
+      "color": "#abbb9c",
+      "category": "CLAMP_A03",
+      "vertex_offset": 1707804,
+      "vertex_count": 32,
+      "index_offset": 1708188,
+      "index_count": 144,
+      "bounds": [
+        [
+          -23.0,
+          -14.0,
+          -2.0
+        ],
+        [
+          23.0,
+          14.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "name": "Head_RadialPads",
+      "color": "#8ba67b",
+      "category": "CLAMP_A03",
+      "vertex_offset": 1708764,
+      "vertex_count": 32,
+      "index_offset": 1709148,
+      "index_count": 144,
+      "bounds": [
+        [
+          -11.0,
+          -31.5,
+          1.0
+        ],
+        [
+          11.0,
+          31.5,
+          11.0
+        ]
+      ]
+    },
+    {
+      "name": "Head_FrontPads",
+      "color": "#8ba67b",
+      "category": "CLAMP_A03",
+      "vertex_offset": 1709724,
+      "vertex_count": 32,
+      "index_offset": 1710108,
+      "index_count": 144,
+      "bounds": [
+        [
+          -29.5,
+          -9.0,
+          12.7
+        ],
+        [
+          29.5,
+          9.0,
+          14.0
+        ]
+      ]
+    },
+    {
+      "name": "Head_KeeperScrews",
+      "color": "#d4dadd",
+      "category": "CLAMP_A03",
+      "vertex_offset": 1710684,
+      "vertex_count": 2016,
+      "index_offset": 1734876,
+      "index_count": 12048,
+      "bounds": [
+        [
+          -25.9,
+          -26.899409445801552,
+          -3.6
+        ],
+        [
+          25.9,
+          26.899409445801552,
+          17.7
+        ]
+      ]
+    },
+    {
+      "name": "Head_KeeperNuts",
+      "color": "#acb8be",
+      "category": "CLAMP_A03",
+      "vertex_offset": 1783068,
+      "vertex_count": 1056,
+      "index_offset": 1795740,
+      "index_count": 6336,
+      "bounds": [
+        [
+          -26.0,
+          -27.309401076758505,
+          -3.0000000000000004
+        ],
+        [
+          26.0,
+          27.309401076758505,
+          -1.4
+        ]
+      ]
+    },
+    {
+      "name": "Head_PCBNuts",
+      "color": "#acb8be",
+      "category": "CLAMP_A03",
+      "vertex_offset": 1821084,
+      "vertex_count": 528,
+      "index_offset": 1827420,
+      "index_count": 3168,
+      "bounds": [
+        [
+          -9.0,
+          -47.309401076758505,
+          -3.0000000000000004
+        ],
+        [
+          9.0,
+          -42.690598923241495,
+          -1.4
+        ]
+      ]
+    },
+    {
+      "name": "FlatPCB",
+      "color": "#237d54",
+      "category": "EXPORTED_PCB",
+      "vertex_offset": 1840092,
+      "vertex_count": 4436,
+      "index_offset": 1893324,
+      "index_count": 26796,
+      "bounds": [
+        [
+          -72.0,
+          -1.9550000000000005,
+          -40.0
+        ],
+        [
+          72.0,
+          -0.44499999999999995,
+          52.7
+        ]
+      ]
+    },
+    {
+      "name": "SignalCopper",
+      "color": "#e5af4d",
+      "category": "EXPORTED_PCB",
+      "vertex_offset": 2000508,
+      "vertex_count": 38705,
+      "index_offset": 2464968,
+      "index_count": 232518,
+      "bounds": [
+        [
+          -3.4000000000000057,
+          -1.9900000000000004,
+          -29.24980883262947
+        ],
+        [
+          3.4000000000000057,
+          -0.41000000000000003,
+          41.9498088326295
+        ]
+      ]
+    },
+    {
+      "name": "ReturnCopper",
+      "color": "#4c956a",
+      "category": "EXPORTED_PCB",
+      "vertex_offset": 3395040,
+      "vertex_count": 122187,
+      "index_offset": 4861284,
+      "index_count": 734226,
+      "bounds": [
+        [
+          -71.5,
+          -1.9900000000000004,
+          -39.5
+        ],
+        [
+          71.5,
+          -0.41000000000000003,
+          52.2
+        ]
+      ]
+    },
+    {
+      "name": "SMAInput",
+      "color": "#d3ba72",
+      "category": "DRAWING_BASED_SMA_ENVELOPE",
+      "vertex_offset": 7798188,
+      "vertex_count": 1772,
+      "index_offset": 7819452,
+      "index_count": 10572,
+      "bounds": [
+        [
+          -3.5,
+          -4.300000000000001,
+          -31.5
+        ],
+        [
+          3.5,
+          9.2,
+          -24.5
+        ]
+      ]
+    },
+    {
+      "name": "SMAOutput",
+      "color": "#d3ba72",
+      "category": "DRAWING_BASED_SMA_ENVELOPE",
+      "vertex_offset": 7861740,
+      "vertex_count": 1772,
+      "index_offset": 7883004,
+      "index_count": 10572,
+      "bounds": [
+        [
+          -3.5,
+          -4.300000000000002,
+          37.2
+        ],
+        [
+          3.5,
+          9.2,
+          44.2
+        ]
+      ]
+    },
+    {
+      "name": "Posts30FF",
+      "color": "#343d46",
+      "category": "WURTH_970300365_NOMINAL",
+      "vertex_offset": 7925292,
+      "vertex_count": 2064,
+      "index_offset": 7950060,
+      "index_count": 12336,
+      "bounds": [
+        [
+          -68.0,
+          -67.0,
+          -35.46410161513776
+        ],
+        [
+          68.0,
+          -37.0,
+          48.16410161513776
+        ]
+      ]
+    },
+    {
+      "name": "Posts35MF",
+      "color": "#343d46",
+      "category": "WURTH_971350365_NOMINAL",
+      "vertex_offset": 7999404,
+      "vertex_count": 2064,
+      "index_offset": 8024172,
+      "index_count": 12336,
+      "bounds": [
+        [
+          -68.0,
+          -45.0,
+          -35.46410161513776
+        ],
+        [
+          68.0,
+          -2.0,
+          48.16410161513776
+        ]
+      ]
+    },
+    {
+      "name": "CornerBaseScrews",
+      "color": "#b7c4ca",
+      "category": "NYLON_M3X12_REUSED",
+      "vertex_offset": 8073516,
+      "vertex_count": 2016,
+      "index_offset": 8097708,
+      "index_count": 12048,
+      "bounds": [
+        [
+          -67.74914525050224,
+          -72.1,
+          -34.75
+        ],
+        [
+          67.74914525050224,
+          -57.599999999999994,
+          47.45
+        ]
+      ]
+    },
+    {
+      "name": "CornerPCBScrews",
+      "color": "#b7c4ca",
+      "category": "NYLON_M3X10_REUSED",
+      "vertex_offset": 8145900,
+      "vertex_count": 2016,
+      "index_offset": 8170092,
+      "index_count": 12048,
+      "bounds": [
+        [
+          -67.74914525050224,
+          -10.4,
+          -34.75
+        ],
+        [
+          67.74914525050224,
+          2.1,
+          47.45
+        ]
+      ]
+    }
+  ]
+}
