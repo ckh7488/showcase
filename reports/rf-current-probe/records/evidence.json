@@ -1,0 +1,97 @@
+{
+  "document_date": "2026-09-17",
+  "document_revision": "0.2",
+  "status": "PCB fixture design and planned calibration. No measured RF results.",
+  "illustrations": "Original explanatory vectors based on the source geometry; not scale fabrication drawings.",
+  "software_test_log": {
+    "tests": "110",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "timestamp": "2026-09-16T09:40:12.130694+09:00"
+  },
+  "sources": [
+    {
+      "project_relative_path": "docs/RF_CURRENT_PROBE_WHITEPAPER.md",
+      "sha256": "77b3a77ea6ecf3b64fed42eb54ecc00caeeaa9362d5015ab54e168695ff60347"
+    },
+    {
+      "project_relative_path": "docs/ASSEMBLY_CONSTRAINTS_20260917.md",
+      "sha256": "72eb1874e3094642a9b3b2fa5fdafeafdf72c5f2308481334c0ef99c1997f03c"
+    },
+    {
+      "project_relative_path": "docs/G2_BENCH_PROCEDURE.md",
+      "sha256": "38be3bbd3d48c6a7c46566381efb5a06f3ed5b9de31128dac6e4ce6c798705e8"
+    },
+    {
+      "project_relative_path": "docs/END_TO_END_REHEARSAL.md",
+      "sha256": "839442982860b921167ec614a3574b40ec2f6a801f9a95fbd2754882cb311f37"
+    },
+    {
+      "project_relative_path": "hardware/calibration_fixture_PCB_A01/build_pcbs.py",
+      "sha256": "21d24f302d9683debcf8c7895890119d36b0dd749b23e510bdcab4a4f9185099"
+    },
+    {
+      "project_relative_path": "hardware/calibration_fixture_PCB_A01/Frame/geometry.json",
+      "sha256": "a6668ae2c4506d172f54e4c3b7c375458a144b99fa562ecfdaf9ed334d616842"
+    },
+    {
+      "project_relative_path": "hardware/calibration_fixture_PCB_A01/EndPanel/geometry.json",
+      "sha256": "36b2214d82af300e14b81b6043964c867ee09b0ddbde74186ab4e476b24d2558"
+    },
+    {
+      "project_relative_path": "hardware/calibration_fixture_PCB_A01/README.md",
+      "sha256": "520478df5aed732ff23826a60973405c0579d5d48a6622723df5edf1543aaafe"
+    },
+    {
+      "project_relative_path": "hardware/calibration_fixture_PCB_A01/ASSEMBLY_AND_VALIDATION.md",
+      "sha256": "8710791b9e041b8f3e02500fa656579dbd83d0e8d47c54fc0fb5ea5ec6010170"
+    },
+    {
+      "project_relative_path": "hardware/calibration_fixture_PCB_A01/verification.json",
+      "sha256": "30eebe6f7de5bc8a13c420a72e8474d59efd64ae22072c2a9f2bd3bfb211986e"
+    },
+    {
+      "project_relative_path": "hardware/calibration_fixture_PCB_A01/assembly/assembly_preview.png",
+      "sha256": "0e2b00882bd01e72df0680aad1d4e27349f7617dc28f248ac017170088232315"
+    },
+    {
+      "project_relative_path": "hardware/calibration_fixture_PCB_A01/assembly/pcb_overview.png",
+      "sha256": "3de1bef67889c6ab9e0b7eaa19346aa58b7522c177c07fab86c77fba805763d8"
+    },
+    {
+      "project_relative_path": "hardware/calibration_fixture_PCB_A01/assembly/assembly_checks.json",
+      "sha256": "2975c54b452e122eb61e37a7ae13f177ae4abc52a57f1e29f2f49ce993542416"
+    },
+    {
+      "project_relative_path": "hardware/probe_head_A02/review/erc.json",
+      "sha256": "73e216f875780c3b9bfcd9ed4321f0f419619d2ba7227f7b36fca67119e04128"
+    },
+    {
+      "project_relative_path": "hardware/probe_head_A02/review/drc.json",
+      "sha256": "b64bc02d14228804c86083a616e93571b8cc8d2ad3aa4987fee1f7f3f0c33c3e"
+    },
+    {
+      "project_relative_path": "mechanical/clamp_A03_DRAFT/README.md",
+      "sha256": "6a05802bb417f7fdbb18d8a735faebf067041e28cfe8bb066a013281768d96fa"
+    },
+    {
+      "project_relative_path": "tests/results/process_review_tests.xml",
+      "sha256": "2f524996f7b23be33597d6e22d4ac244e0b6dcc06217f425bf5d3e28c2745eff"
+    },
+    {
+      "project_relative_path": "tests/results/process_rehearsal_final_20260916/report.json",
+      "sha256": "40a66f5fc2a29f5fed7e33e2f745d9820f455c461829c9546b183f6ab6814c78"
+    }
+  ],
+  "external_sources_checked": "2026-09-17",
+  "external_sources": [
+    "https://www.tekbox.com/product/TBCPx_Calibrators_Manual.pdf",
+    "https://www.tekbox.com/product/FAQ_Current_Probes.pdf"
+  ],
+  "limitations": [
+    "No physical assembly or RF calibration performed for this report.",
+    "Old copper fixture validation and cost do not establish PCB fixture validity.",
+    "No entire-band 50-ohm or current-model claim."
+  ]
+}
