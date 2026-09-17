@@ -4,13 +4,14 @@
     {
       "id": "rf-current-probe",
       "title": "RF 전류 프로브 · 제작과 캘리브레이션",
-      "summary": "집게형 센서와 PCB 교정지그의 전류 경로를 살펴보고, LibreVNA 케이블·50 Ω 부하를 옮기는 네 단계를 그림으로 따라갑니다. 실물 RF 측정 전의 설계·시험 절차입니다.",
+      "summary": "PCB 교정지그와 집게의 원본 CAD를 돌려 보고, 실제 SMA 위치에서 LibreVNA 케이블·50 Ω 부하를 옮기는 교정 순서를 따라갑니다. 실물 RF 측정 전의 설계·시험 절차입니다.",
       "category": "하드웨어 · 측정 도구",
       "date": "2026-09-17",
       "path": "reports/rf-current-probe/",
       "cover": "reports/rf-current-probe/cover.png",
-      "coverAlt": "PCB 중앙 신호와 외부 귀환 경로, 교정 단계에서 프로브로 이동하는 P2 연결을 보여주는 실제 문서 화면",
+      "coverAlt": "PCB 교정지그와 집게 원본 CAD에 P1·P2 동축 케이블과 50 Ω 부하를 연결한 교정 안내 화면",
       "tags": [
+        "3D CAD",
         "PCB 교정지그",
         "RF 합전류",
         "LibreVNA",

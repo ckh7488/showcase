@@ -1,8 +1,8 @@
 {
   "document_date": "2026-09-17",
-  "document_revision": "0.2",
+  "document_revision": "0.3",
   "status": "PCB fixture design and planned calibration. No measured RF results.",
-  "illustrations": "Original explanatory vectors based on the source geometry; not scale fabrication drawings.",
+  "illustrations": "Original saved CAD tessellation for the fixture, PCB, clamp and supports. External cables, mating plugs, load and O/S/L/T standards are illustrative envelopes. No new RF measurement.",
   "software_test_log": {
     "tests": "110",
     "failures": "0",
@@ -82,6 +82,10 @@
     {
       "project_relative_path": "tests/results/process_rehearsal_final_20260916/report.json",
       "sha256": "40a66f5fc2a29f5fed7e33e2f745d9820f455c461829c9546b183f6ab6814c78"
+    },
+    {
+      "project_relative_path": "hardware/calibration_fixture_PCB_A01/assembly/assembly_mesh.json",
+      "sha256": "0636431ea38cfa911caac5435731bbea6f1ffce7faaa3bf9836af96423ecd5f5"
     }
   ],
   "external_sources_checked": "2026-09-17",
@@ -93,5 +97,18 @@
     "No physical assembly or RF calibration performed for this report.",
     "Old copper fixture validation and cost do not establish PCB fixture validity.",
     "No entire-band 50-ohm or current-model claim."
-  ]
+  ],
+  "cad_viewer": {
+    "source": "hardware/calibration_fixture_PCB_A01/assembly/assembly_mesh.json",
+    "source_sha256": "0636431ea38cfa911caac5435731bbea6f1ffce7faaa3bf9836af96423ecd5f5",
+    "binary_sha256": "bda73f1bd3a99f1778938e7a249da6171c6371359b15f7b01dcece8a746024a4",
+    "precision": "float32 position; uint32 triangle indices; little endian",
+    "maximum_coordinate_rounding_mm": 3.8135447510967424e-06,
+    "triangle_count": 654058,
+    "geometry_reduction": false,
+    "parts": 44,
+    "display_omissions": "Open-clamp view hides backing/radial/front pads, keeper screws/nuts and latch screw. PCB-only and net modes intentionally hide the support and head. All 44 source parts remain in the asset.",
+    "accessories": "Illustrative 50-ohm load, mating connectors and coax routes are anchored at the saved SMA envelope end coordinates, not manufacturer-certified fits or cable lengths.",
+    "library": "Three.js r128 with matching OrbitControls and MIT license, vendored in this report."
+  }
 }
