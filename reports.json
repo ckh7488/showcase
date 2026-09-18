@@ -3,19 +3,19 @@
   "reports": [
     {
       "id": "rf-current-probe",
-      "title": "RF 전류 프로브 · 조립과 테스트",
-      "summary": "평판 PCB 1장 A0.2 기준의 조립 절차서와 점검·교정·측정 절차서. 실제 CAD, 이전 구조 비교, VNA 연결 순서와 설계 변경 시 재확인할 항목을 살펴봅니다.",
+      "title": "RF 전류 프로브 · 제작과 사용",
+      "summary": "A13/C07 문서 세트. 설명서, BOM을 연결한 36단계 3D 조립절차, 현재 부품표, 캘리브레이션과 사용법을 한 표지에서 엽니다.",
       "category": "하드웨어 · 측정 도구",
-      "date": "2026-09-17",
+      "date": "2026-09-18",
       "path": "reports/rf-current-probe/",
       "cover": "reports/rf-current-probe/cover.png",
-      "coverAlt": "평판 PCB 한 장과 네 모서리 기둥, 위로 향한 SMA에 연결한 케이블·50 Ω 부하를 보여주는 실제 CAD 교정 화면",
+      "coverAlt": "RFCP A13/C07 통합 문서 표지: 설명서, 조립절차서, BOM, 캘리브레이션 및 사용법",
       "tags": [
-        "3D CAD",
-        "PCB 교정지그",
-        "RF 합전류",
-        "LibreVNA",
-        "교정 절차"
+        "3D 조립절차",
+        "BOM",
+        "RF 전류",
+        "캘리브레이션",
+        "제작 검토"
       ]
     },
     {

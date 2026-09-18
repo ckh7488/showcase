@@ -1,18 +1,9 @@
-# RF 전류 프로브 · 조립과 테스트
+# RF 전류 프로브 · 제작과 사용
 
-문서 v0.5 / 2026-09-17 / DRAFT, 실측 전.
+A13/C07 현재 문서 세트. index.html → manual.html / assembly-guide.html / bom.html / assembly.html.
 
-한 보고서 패키지 안의 두 문서:
+3D는 각 HTML에 내장한다. document-set.css와 ATLAS 공통 테마를 사용한다. ZIP에서는 CSS까지 내장하며 제조사 링크 이외의 문서·제작 파일을 오프라인에서 연다.
 
-- `index.html`: 전체 조립 A01–A08, 실제 CAD, 이전 지그 비교.
-- `testing.html`: 준비·무전원 점검, 4단계 VNA 연결, 비교 시험, 조건부 환산·기록.
+RFCP 원본 프로젝트의 viewer_A05/build_guide.py → build_document_set.py → docs/atlas/publish_document_set.py 순서로 생성한다. 이번 게시에서 CAD는 수정하지 않았다. 기존 testing.html은 현재 설명서로 이동한다. 기존 A0.2 assets/records는 과거 근거이며 현행 제작 근거로 혼용하지 않는다.
 
-기존 `?step=3#calibration` 등 시험 링크는 `testing.html`로 이동한다. 문서 상단/하단에서 두 절차서를 오간다.
-
-현재 설계는 평판 지그 A0.2, 헤드 A0.2, 집게 A0.3, 고정 반쪽 5턴이다. 기존 3장 PCB 모델은 비교용이다. `records/design.json`과 같은 내용의 `design-data.js`를 두 문서와 CAD 뷰어가 사용한다.
-
-원본 편집 위치는 Current_Probe 프로젝트의 `docs/atlas/source/`이며 `docs/atlas/build_docs.py`로 이 폴더에 생성한다. 문단은 `sections/`, 공통 값은 `design.json`, 상호작용은 `runtime/`에서 수정한다. 출력 HTML/JS만 수동 편집하면 다음 생성 시 덮어쓰므로 원본부터 고친다.
-
-실제 CAD는 `assets/fixture-flat-a02.json`과 `.bin`이다. 소스 해시·원시 설계 근거는 `records/evidence.json`, 독립 검사 범위는 `records/a02-design-review.md`와 `.json`에 있다. 케이블·플러그·부하·SOLT 표준 외형은 예시다.
-
-Three.js r128과 OrbitControls는 `vendor/`에 고정하며 MIT 라이선스를 함께 유지한다. 런타임 외부 의존은 ATLAS 공통 테마와 favicon뿐이다. 로컬 HTTP 서버 또는 GitHub Pages로 연다.
+DRAFT — NOT FOR FABRICATION. 미선정 부품·실물 조립·RF 검증은 남아 있다. 공개판에는 계정 구매 카트·개인 경로·인보이스를 넣지 않는다.
