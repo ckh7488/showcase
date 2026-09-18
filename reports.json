@@ -4,12 +4,12 @@
     {
       "id": "rf-current-probe",
       "title": "RF 전류 프로브 · 제작과 사용",
-      "summary": "A13/C07 문서 세트. 설명서, BOM을 연결한 36단계 3D 조립절차, 현재 부품표, 캘리브레이션과 사용법을 한 표지에서 엽니다.",
+      "summary": "A13/C07 실제 3D와 36단계 조립절차. 설명서, 부품표, 구매팀용 링크와 교정 PCB 검토를 함께 확인합니다.",
       "category": "하드웨어 · 측정 도구",
       "date": "2026-09-18",
       "path": "reports/rf-current-probe/",
-      "cover": "reports/rf-current-probe/cover.png",
-      "coverAlt": "RFCP A13/C07 통합 문서 표지: 설명서, 조립절차서, BOM, 캘리브레이션 및 사용법",
+      "cover": "reports/rf-current-probe/cover-a13.png",
+      "coverAlt": "실제 A13/C07 CAD에서 렌더링한 개방형 RF 프로브, 앞뒤 중심 클램프와 분리형 공통 바닥",
       "tags": [
         "3D 조립절차",
         "BOM",

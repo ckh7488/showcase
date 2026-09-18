@@ -1,0 +1,101 @@
+[
+  {
+    "id": "RFCP-E04",
+    "name": "수직 SMA 암",
+    "note": "헤드 1 + 교정 PCB용 2. 표준 SMA / THT; RP-SMA 금지.",
+    "qty": 3,
+    "line_krw": 7734,
+    "sku": "2073-RFPC-SMA28-F-ND",
+    "url": "https://www.digikey.kr/ko/products/detail/gct/RFPC-SMA28-F/22162141",
+    "price_date": "2026-09-18",
+    "price_evidence": "actual new DigiKey cart UI"
+  },
+  {
+    "id": "RFCP-R05",
+    "name": "10 dB 감쇠기",
+    "note": "VAT-10A+ / 50 Ω. 별도의 현장 과전압 보호는 아님.",
+    "qty": 1,
+    "line_krw": 36413,
+    "sku": "3157-VAT-10A+-ND",
+    "url": "https://www.digikey.kr/ko/products/detail/mini-circuits/VAT-10A/19186400",
+    "price_date": "2026-09-18",
+    "price_evidence": "actual new DigiKey cart UI"
+  },
+  {
+    "id": "RFCP-R01",
+    "name": "SMA–SMA 케이블",
+    "note": "수–수 / 50 Ω / 305 mm. 보유 1개에 추가 1개.",
+    "qty": 1,
+    "line_krw": 13223,
+    "sku": "343-CSE-SGAM-305-SGAM-ND",
+    "url": "https://www.digikey.kr/ko/products/detail/te-connectivity-linx/CSE-SGAM-305-SGAM/14633985",
+    "price_date": "2026-09-18",
+    "price_evidence": "actual new DigiKey cart UI"
+  },
+  {
+    "id": "RFCP-R06",
+    "name": "SMA–BNC 케이블",
+    "note": "양쪽 수 / 50 Ω / RG316 / 1 m.",
+    "qty": 1,
+    "line_krw": 15643,
+    "sku": "1568-27480-ND",
+    "url": "https://www.digikey.kr/ko/products/detail/sparkfun-electronics/27480/26266456",
+    "price_date": "2026-09-18",
+    "price_evidence": "actual new DigiKey cart UI"
+  },
+  {
+    "id": "BALUN-M12F",
+    "name": "발룬 M12 암",
+    "note": "T4143012081-000 / 8핀. 기존 구매 수량 유지.",
+    "qty": 2,
+    "line_krw": 49464,
+    "sku": "A142125-ND",
+    "url": "https://www.digikey.kr/ko/products/detail/te-connectivity-amp-connectors/T4143012081-000/9837142",
+    "price_date": "2026-09-18",
+    "price_evidence": "actual new DigiKey cart UI"
+  },
+  {
+    "id": "BALUN-MOLEX",
+    "name": "발룬 Molex",
+    "note": "5055680571 / 컷 테이프(CT).",
+    "qty": 5,
+    "line_krw": 6050,
+    "sku": "WM17036CT-ND",
+    "url": "https://www.digikey.kr/ko/products/detail/molex/5055680571/7807019",
+    "price_date": "2026-09-18",
+    "price_evidence": "actual new DigiKey cart UI"
+  },
+  {
+    "id": "BALUN-SMA",
+    "name": "발룬 직각 SMA",
+    "note": "SMA-J-P-H-RA-TH1. 8개 사용 + 예비 2개.",
+    "qty": 10,
+    "line_krw": 55460,
+    "sku": "SAM8856-ND",
+    "url": "https://www.digikey.kr/ko/products/detail/samtec-inc/SMA-J-P-H-RA-TH1/2664715",
+    "price_date": "2026-09-18",
+    "price_evidence": "actual new DigiKey cart UI"
+  },
+  {
+    "id": "BALUN-XFMR",
+    "name": "발룬 트랜스",
+    "note": "ADT2-1T+ / 컷 테이프(CT). 8개 사용 + 예비 2개.",
+    "qty": 10,
+    "line_krw": 100110,
+    "sku": "3157-ADT2-1T+CT-ND",
+    "url": "https://www.digikey.kr/ko/products/detail/mini-circuits/ADT2-1T/13927001",
+    "price_date": "2026-09-18",
+    "price_evidence": "actual new DigiKey cart UI"
+  },
+  {
+    "id": "BALUN-RJ45",
+    "name": "발룬 RJ45",
+    "note": "RJE591885401 / 8개. 10개 할인 제안 선택하지 않음.",
+    "qty": 8,
+    "line_krw": 64416,
+    "sku": "664-RJE591885401-ND",
+    "url": "https://www.digikey.kr/ko/products/detail/amphenol-cs-commercial-products/RJE591885401/6189327",
+    "price_date": "2026-09-18",
+    "price_evidence": "actual new DigiKey cart UI"
+  }
+]

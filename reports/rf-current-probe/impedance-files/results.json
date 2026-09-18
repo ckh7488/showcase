@@ -1,0 +1,203 @@
+{
+  "kind": "SIMULATED",
+  "model": "2D quasi-static central cross-section; no core/launch/via inductance/loss; not 3D full-board EM",
+  "geometry_mm": {
+    "signal_width": 6.8,
+    "FR4_center_width": 8,
+    "FR4_thickness": 1.6,
+    "ground_inner_abs_x": 51.3,
+    "ground_outer_abs_x": 71.5,
+    "window_length": 33.75
+  },
+  "benchmark": [
+    {
+      "h_mm": 0.3,
+      "domain_half_mm": 1000,
+      "er": 1,
+      "benchmark": true,
+      "nodes": 50301,
+      "C_F_per_m": 1.3691587850129176e-11,
+      "charge_balance_relative": 1.0786244921017847e-12,
+      "energy_relative_error": 1.0820464492477155e-13,
+      "analytic_C_F_per_m": 1.3571850654734708e-11,
+      "relative_error": 0.008822466326852574
+    },
+    {
+      "h_mm": 0.15,
+      "domain_half_mm": 2000,
+      "er": 1,
+      "benchmark": true,
+      "nodes": 70959,
+      "C_F_per_m": 1.3654742262486776e-11,
+      "charge_balance_relative": 7.044589791799483e-13,
+      "energy_relative_error": 2.60297237856212e-15,
+      "analytic_C_F_per_m": 1.3571850654734708e-11,
+      "relative_error": 0.006107612724367106
+    },
+    {
+      "h_mm": 0.075,
+      "domain_half_mm": 3000,
+      "er": 1,
+      "benchmark": true,
+      "nodes": 91875,
+      "C_F_per_m": 1.3637753997912663e-11,
+      "charge_balance_relative": 3.385117692990198e-12,
+      "energy_relative_error": 5.993109504405043e-13,
+      "analytic_C_F_per_m": 1.3571850654734708e-11,
+      "relative_error": 0.004855884790845755
+    }
+  ],
+  "cases": [
+    {
+      "air": {
+        "h_mm": 0.3,
+        "domain_half_mm": 500,
+        "er": 1,
+        "benchmark": false,
+        "nodes": 101931,
+        "C_F_per_m": 1.3648273671016026e-11,
+        "charge_balance_relative": 2.498617337563031e-12,
+        "energy_relative_error": 5.926936237056138e-13
+      },
+      "dielectric": {
+        "h_mm": 0.3,
+        "domain_half_mm": 500,
+        "er": 4.3,
+        "benchmark": false,
+        "nodes": 101931,
+        "C_F_per_m": 1.4012140334795465e-11,
+        "charge_balance_relative": 2.5914625142027486e-12,
+        "energy_relative_error": 7.414884956770723e-13
+      },
+      "Z_ohm": 241.20605007150652,
+      "effective_er": 1.0266602701960879,
+      "L_H_per_m": 8.152313493071896e-07
+    },
+    {
+      "air": {
+        "h_mm": 0.15,
+        "domain_half_mm": 500,
+        "er": 1,
+        "benchmark": false,
+        "nodes": 133929,
+        "C_F_per_m": 1.3631057809792108e-11,
+        "charge_balance_relative": 1.1860547196307534e-12,
+        "energy_relative_error": 2.963062655218231e-13
+      },
+      "dielectric": {
+        "h_mm": 0.15,
+        "domain_half_mm": 500,
+        "er": 4.3,
+        "benchmark": false,
+        "nodes": 133929,
+        "C_F_per_m": 1.4001467482144183e-11,
+        "charge_balance_relative": 1.0960609810662474e-12,
+        "energy_relative_error": 2.3504329070764774e-13
+      },
+      "Z_ohm": 241.45029435427762,
+      "effective_er": 1.027173949191675,
+      "L_H_per_m": 8.162609766457941e-07
+    },
+    {
+      "air": {
+        "h_mm": 0.075,
+        "domain_half_mm": 500,
+        "er": 1,
+        "benchmark": false,
+        "nodes": 169455,
+        "C_F_per_m": 1.3614642510233817e-11,
+        "charge_balance_relative": 9.726528986501406e-12,
+        "energy_relative_error": 2.367493592583383e-12
+      },
+      "dielectric": {
+        "h_mm": 0.075,
+        "domain_half_mm": 500,
+        "er": 4.3,
+        "benchmark": false,
+        "nodes": 169455,
+        "C_F_per_m": 1.3995167154246657e-11,
+        "charge_balance_relative": 1.03443671579911e-11,
+        "energy_relative_error": 2.8724669172995184e-12
+      },
+      "Z_ohm": 241.65018446420666,
+      "effective_er": 1.0279496610892873,
+      "L_H_per_m": 8.172451500046841e-07
+    },
+    {
+      "air": {
+        "h_mm": 0.15,
+        "domain_half_mm": 1000,
+        "er": 1,
+        "benchmark": false,
+        "nodes": 158625,
+        "C_F_per_m": 1.363125704194964e-11,
+        "charge_balance_relative": 1.259164701953299e-12,
+        "energy_relative_error": 3.693107314840436e-13
+      },
+      "dielectric": {
+        "h_mm": 0.15,
+        "domain_half_mm": 1000,
+        "er": 4.3,
+        "benchmark": false,
+        "nodes": 158625,
+        "C_F_per_m": 1.4001677474050594e-11,
+        "charge_balance_relative": 1.453623449797358e-12,
+        "energy_relative_error": 4.486178736951998e-13
+      },
+      "Z_ohm": 241.44671926538058,
+      "effective_er": 1.0271743413656569,
+      "L_H_per_m": 8.162490463128112e-07
+    }
+  ],
+  "uniform_section_illustration": [
+    {
+      "f_MHz": 1,
+      "S11_dB": -55.603948045207844,
+      "S21_dB": -1.195061084166871e-05,
+      "I_center_over_incident_magnitude": 0.9999985625978861
+    },
+    {
+      "f_MHz": 10,
+      "S11_dB": -35.60520468440549,
+      "S21_dB": -0.0011948780560883832,
+      "I_center_over_incident_magnitude": 0.9998562910729075
+    },
+    {
+      "f_MHz": 30,
+      "S11_dB": -26.072920986247297,
+      "S21_dB": -0.01074061458592879,
+      "I_center_over_incident_magnitude": 0.9987088899134535
+    },
+    {
+      "f_MHz": 100,
+      "S11_dB": -15.729074581013915,
+      "S21_dB": -0.11769233540980875,
+      "I_center_over_incident_magnitude": 0.9859345281083496
+    },
+    {
+      "f_MHz": 200,
+      "S11_dB": -10.063693528328466,
+      "S21_dB": -0.4505551663710377,
+      "I_center_over_incident_magnitude": 0.9471143431180666
+    },
+    {
+      "f_MHz": 300,
+      "S11_dB": -7.076333619973424,
+      "S21_dB": -0.9477090957765522,
+      "I_center_over_incident_magnitude": 0.8916720996367369
+    },
+    {
+      "f_MHz": 500,
+      "S11_dB": -4.009811199277452,
+      "S21_dB": -2.19833108675538,
+      "I_center_over_incident_magnitude": 0.764487880650334
+    }
+  ],
+  "low_frequency_pi_matching_candidate": {
+    "L_nH": 27.58202381265809,
+    "intrinsic_C_pF": 0.4723368914558247,
+    "extra_shunt_each_end_pF": 5.280236316803705,
+    "status": "CALCULATED candidate only. Full launches/core/3D and measured S-parameters required before PCB change."
+  },
+  "source_sha256": "fdcac3183e61b1026be4ceb9fac442b5c07508744ad48829981518f0153c9ddc"
+}
