@@ -1,0 +1,221 @@
+{
+  "classification": "CALCULATED_STL_SAMPLING",
+  "trimesh_version": "4.11.5",
+  "parts": [
+    {
+      "part": "BaseCenter_A14_DRAFT.stl",
+      "stl_sha256": "843d6d6254fb4379ffdb953ad6def59e675fb25ade7b1e89542e8e1f04617f0a",
+      "watertight": true,
+      "samples": 4000,
+      "sampled_min_mm": 2.399999618530274,
+      "below_2mm_samples": 0,
+      "below_1p5mm_samples": 0,
+      "percentiles_mm": [
+        2.400001525878903,
+        5.0,
+        11.999999999999996
+      ]
+    },
+    {
+      "part": "BaseFront_A14_DRAFT.stl",
+      "stl_sha256": "ab6883e4dba091b75cbe60001c81845e1dc16a36cb3b110b348287f42e21f098",
+      "watertight": true,
+      "samples": 4000,
+      "sampled_min_mm": 2.999999999999997,
+      "below_2mm_samples": 0,
+      "below_1p5mm_samples": 0,
+      "percentiles_mm": [
+        2.999999999999997,
+        4.0,
+        11.999999999999996
+      ]
+    },
+    {
+      "part": "BaseRear_A14_DRAFT.stl",
+      "stl_sha256": "23f75b1e7a23afabf4bbab48e9bff02eaeef738607dff42c64a005520737975a",
+      "watertight": true,
+      "samples": 4000,
+      "sampled_min_mm": 2.999999999999997,
+      "below_2mm_samples": 0,
+      "below_1p5mm_samples": 0,
+      "percentiles_mm": [
+        2.999999999999997,
+        4.0,
+        10.0
+      ]
+    },
+    {
+      "part": "C07_DriveYoke_DRAFT.stl",
+      "stl_sha256": "8bed8235b55fcb8f6ffa9182ad031c43cec80a77c70bc72ccfb1fa1110a93868",
+      "watertight": true,
+      "samples": 4000,
+      "sampled_min_mm": 2.1999969482421844,
+      "below_2mm_samples": 0,
+      "below_1p5mm_samples": 0,
+      "percentiles_mm": [
+        2.3904924950814124,
+        3.539400767185068,
+        10.0
+      ]
+    },
+    {
+      "part": "C07_Frame_DRAFT.stl",
+      "stl_sha256": "6f730a2b568c0932b97b59962a2d069c0cc998b54824a1ce908383c132ce1807",
+      "watertight": true,
+      "samples": 4000,
+      "sampled_min_mm": 2.399999618530274,
+      "below_2mm_samples": 0,
+      "below_1p5mm_samples": 0,
+      "percentiles_mm": [
+        3.4999997615814213,
+        4.400000887789061,
+        5.700000198043945
+      ]
+    },
+    {
+      "part": "C07_Jaw1_DRAFT.stl",
+      "stl_sha256": "49cc91a2fdbb6efb1b4a3368edf535df3927171beb0e7b3c939a4f2408cd0fe6",
+      "watertight": true,
+      "samples": 4000,
+      "sampled_min_mm": 2.599999790966515,
+      "below_2mm_samples": 0,
+      "below_1p5mm_samples": 0,
+      "percentiles_mm": [
+        2.5999999334078776,
+        2.6000000950545945,
+        10.0
+      ]
+    },
+    {
+      "part": "C07_Jaw2_DRAFT.stl",
+      "stl_sha256": "35cd0f5320cec7596fcd31e1c385168b7d82897c6d302644b3c9afa8f23cf8b0",
+      "watertight": true,
+      "samples": 4000,
+      "sampled_min_mm": 2.600000203777392,
+      "below_2mm_samples": 0,
+      "below_1p5mm_samples": 0,
+      "percentiles_mm": [
+        2.6000002576857515,
+        2.6000004081692243,
+        10.0
+      ]
+    },
+    {
+      "part": "C07_TopBridgeJaw_DRAFT.stl",
+      "stl_sha256": "46a284515d61f4bf7b3134a6dcedd5d5f0af36cbed1698a831445530edf38b36",
+      "watertight": true,
+      "samples": 4000,
+      "sampled_min_mm": 2.3003498844740418,
+      "below_2mm_samples": 0,
+      "below_1p5mm_samples": 0,
+      "percentiles_mm": [
+        2.468144000180565,
+        4.351876512552772,
+        10.0
+      ]
+    },
+    {
+      "part": "LowerArmLeft_A14_DRAFT.stl",
+      "stl_sha256": "33c5f3c9a00b302090f6a2cd49e394cc2c4503219de38c150ce064c4c9af4449",
+      "watertight": true,
+      "samples": 4000,
+      "sampled_min_mm": 3.0612869998867147,
+      "below_2mm_samples": 0,
+      "below_1p5mm_samples": 0,
+      "percentiles_mm": [
+        3.7999992370605473,
+        3.7999992370605473,
+        15.469862750727952
+      ]
+    },
+    {
+      "part": "LowerArmRight_A14_DRAFT.stl",
+      "stl_sha256": "290adebcb95725a36c461ac2f1a94c1880c141a50409dec644721598aeedb670",
+      "watertight": true,
+      "samples": 4000,
+      "sampled_min_mm": 3.7999992370605473,
+      "below_2mm_samples": 0,
+      "below_1p5mm_samples": 0,
+      "percentiles_mm": [
+        3.7999992370605473,
+        3.7999992370605473,
+        21.58267361045863
+      ]
+    },
+    {
+      "part": "LowerCenter_A14_DRAFT.stl",
+      "stl_sha256": "b9a4b2ae4c7dea1199f1937bc8a3099a85a25d17941361c6165612ce7ef2cf75",
+      "watertight": true,
+      "samples": 4000,
+      "sampled_min_mm": 2.3051344426334706,
+      "below_2mm_samples": 0,
+      "below_1p5mm_samples": 0,
+      "percentiles_mm": [
+        2.499999999999997,
+        3.0000000000000004,
+        9.0
+      ]
+    },
+    {
+      "part": "LowerKeeper_FREE_DRAFT.stl",
+      "stl_sha256": "178cc4b861b3578b68d134eaaa5b24c906b6e820e7283d3c8997f598a31f200c",
+      "watertight": true,
+      "samples": 4000,
+      "sampled_min_mm": 2.0000000000000004,
+      "below_2mm_samples": 0,
+      "below_1p5mm_samples": 0,
+      "percentiles_mm": [
+        2.0000000000000004,
+        2.0000000000000004,
+        4.0
+      ]
+    },
+    {
+      "part": "UpperKeeper_FREE_DRAFT.stl",
+      "stl_sha256": "7a9238360fef5088b8bcc252fb72cfc2d20c59e782aa1c06b27c3cec39f95cad",
+      "watertight": true,
+      "samples": 4000,
+      "sampled_min_mm": 1.9999999999999998,
+      "below_2mm_samples": 123,
+      "below_1p5mm_samples": 0,
+      "percentiles_mm": [
+        1.9999999999999998,
+        2.0000000000000004,
+        4.0
+      ]
+    },
+    {
+      "part": "UpperLeft_A14_DRAFT.stl",
+      "stl_sha256": "33c6917d76ab4290d491c76cbf92f39b1b000e456917197b16d9abc9e8956211",
+      "watertight": true,
+      "samples": 4000,
+      "sampled_min_mm": 2.400001525878903,
+      "below_2mm_samples": 0,
+      "below_1p5mm_samples": 0,
+      "percentiles_mm": [
+        2.400001525878903,
+        2.400001525878903,
+        10.176135514864235
+      ]
+    },
+    {
+      "part": "UpperRight_A14_DRAFT.stl",
+      "stl_sha256": "a0ba5e16168e59a429124aa15f7c61df35ed67524cfe18e1442b5ab760229caa",
+      "watertight": true,
+      "samples": 4000,
+      "sampled_min_mm": 2.400001525878903,
+      "below_2mm_samples": 0,
+      "below_1p5mm_samples": 0,
+      "percentiles_mm": [
+        2.400001525878903,
+        2.400001525878903,
+        10.0
+      ]
+    }
+  ],
+  "limitations": [
+    "Not a certified minimum-wall or manufacturer DFM check.",
+    "Normal chords near edges/chamfers/curved surfaces can flag intentional geometry; inspect coordinates.",
+    "Area sampling may miss small features; explicit CAD section checks supplement it."
+  ]
+}

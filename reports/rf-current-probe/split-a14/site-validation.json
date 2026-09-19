@@ -1,0 +1,9 @@
+{
+  "classification": "STATIC_ARTIFACT_VALIDATION_NOT_BROWSER_TEST",
+  "parts_decoded": 187,
+  "html_bytes": 17687200,
+  "zip_integrity": true,
+  "entrypoints": 7,
+  "pass_checks": true,
+  "native_sha256": "ab5f91e0d8473456247753f5cdbab64ba5a27dd08bd81b13af064eaf5ca4c19b"
+}
