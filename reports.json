@@ -2,6 +2,24 @@
   "version": 1,
   "reports": [
     {
+      "id": "vna-tdr",
+      "title": "VNA → TDR · 반사는 어떻게 위치가 되는가",
+      "summary": "복소 S11의 위상에서 반사 위치를 복원하는 원리를 직접 조작합니다. 유한 대역·윈도우·분해능·거리 접힘·다중반사·시간 게이팅과 LibreVNA 설정까지 연결합니다.",
+      "category": "하드웨어 · 측정",
+      "date": "2026-09-20",
+      "path": "reports/vna-tdr/",
+      "cover": "reports/vna-tdr/cover.svg",
+      "coverAlt": "VNA의 주파수별 복소 S11 곡선이 시간·거리축의 3 m, 9 m, 15 m 반사 봉우리로 변환되는 기술 도식",
+      "tags": [
+        "VNA",
+        "TDR",
+        "S11",
+        "IFFT",
+        "LibreVNA",
+        "Time gating"
+      ]
+    },
+    {
       "id": "rf-current-probe",
       "title": "RF 전류 프로브 · 제작과 사용",
       "summary": "A13/C07 실제 3D와 36단계 조립절차. 설명서, 부품표, 구매팀용 링크와 교정 PCB 검토를 함께 확인합니다.",

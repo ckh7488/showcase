@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+<title id="t">VNA에서 TDR로, 복소 S11에서 반사 위치를 복원하는 인터랙티브 강의</title>
+<desc id="d">왼쪽의 VNA 주파수 sweep과 위상 벡터가 오른쪽 거리축의 세 반사 봉우리로 변환되는 기술 도식</desc>
+<rect width="1200" height="675" fill="#f4f6f7"/>
+<rect x="70" y="58" width="1060" height="559" rx="24" fill="#fff" stroke="#d9e1e4" stroke-width="2"/>
+<text x="110" y="125" font-family="Malgun Gothic,Segoe UI,sans-serif" font-size="24" font-weight="700" fill="#197d71">ATLAS · 하드웨어 · 측정</text>
+<text x="110" y="190" font-family="Malgun Gothic,Segoe UI,sans-serif" font-size="52" font-weight="800" fill="#172e33">VNA → TDR</text>
+<text x="110" y="235" font-family="Malgun Gothic,Segoe UI,sans-serif" font-size="25" font-weight="600" fill="#5f737b">반사는 어떻게 위치가 되는가</text>
+<rect x="110" y="290" width="420" height="230" rx="18" fill="#172e33"/>
+<text x="142" y="330" font-family="Segoe UI,sans-serif" font-size="18" font-weight="700" fill="#e5f0ec">S11(f) · magnitude + phase</text>
+<line x1="150" y1="468" x2="495" y2="468" stroke="#577c96" stroke-width="2"/>
+<line x1="150" y1="355" x2="150" y2="468" stroke="#577c96" stroke-width="2"/>
+<path d="M150 401 C205 340 255 452 312 388 S418 435 495 366" fill="none" stroke="#66d9c0" stroke-width="5"/>
+<circle cx="212" cy="389" r="7" fill="#edaa65"/><circle cx="340" cy="393" r="7" fill="#bba7ff"/>
+<path d="M555 405 H650" stroke="#197d71" stroke-width="5" stroke-linecap="round"/><path d="M635 390 L655 405 L635 420" fill="none" stroke="#197d71" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="680" y="290" width="400" height="230" rx="18" fill="#f8fafb" stroke="#d9e1e4" stroke-width="2"/>
+<text x="712" y="330" font-family="Segoe UI,sans-serif" font-size="18" font-weight="700" fill="#172e33">Time / distance response</text>
+<line x1="720" y1="468" x2="1040" y2="468" stroke="#9baeb3" stroke-width="2"/>
+<path d="M720 467 C744 465 755 460 766 405 C778 350 790 459 808 466 C836 470 855 463 874 430 C891 401 907 463 925 467 C950 470 970 466 989 442 C1004 423 1015 463 1040 467" fill="none" stroke="#197d71" stroke-width="5"/>
+<text x="766" y="388" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="16" font-weight="700" fill="#197d71">3 m</text>
+<text x="890" y="390" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="16" font-weight="700" fill="#c76f22">9 m</text>
+<text x="1003" y="414" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="16" font-weight="700" fill="#6d59b5">15 m</text>
+<text x="110" y="570" font-family="Malgun Gothic,Segoe UI,sans-serif" font-size="19" fill="#5f737b">위상 정렬 · 유한 대역/윈도우 · 분해능 · 거리 접힘 · 시간 게이팅 · LibreVNA 계산</text>
+</svg>
