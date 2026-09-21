@@ -11,13 +11,13 @@
     "(HEAD detached at 1.0.2)",
     "256fc7eff3379911ab5daf88e10182c509aa8052"
   ],
-  "source_sha256": "a95834daa4a192edcc4ef0c009d3af4e84ab49453378d9b638c2bf3f9699c45e",
+  "source_sha256": "ef22f49de5f44554eaf7d7eaa8ee6d9e6692573c42e7b7d3877d7909f1b13329",
   "input_sha256": {
     "mechanical\\assembly_A13_DRAFT\\RFCP_A13_Integrated_DRAFT.FCStd": "5338d317e73dd15f1c95182864a2cf8f4377bbea19776716b925b8b2af7ed846",
     "mechanical\\assembly_A13_DRAFT\\parts\\UpperLid_FREE_DRAFT.step": "9abd0094ac364ad3d2c1dd458cc8f2d96e1a475b05ac0d3263454ae1e9958e4e"
   },
-  "native_sha256": "ab5f91e0d8473456247753f5cdbab64ba5a27dd08bd81b13af064eaf5ca4c19b",
-  "mesh_sha256": "b771637d81cec73908f776d5c6428c5a6eb57886667b8f627cc2f545e89395b0",
+  "native_sha256": "8e547665d45ae71bc991756215d55e3f9a3e7d457b75f29fe904123e6636d606",
+  "mesh_sha256": "93170ab1a06dca7e5f3418438b257d74002341f1c1b3740fda5087a28635cd6c",
   "parts": {
     "LowerArmLeft": {
       "valid": true,
@@ -42,10 +42,10 @@
     "LowerCenter": {
       "valid": true,
       "solids": 1,
-      "volume_mm3": 170984.73222494827,
+      "volume_mm3": 173555.62183942963,
       "bbox_mm": [
         172.0,
-        69.0,
+        69.00000000000001,
         102.0
       ]
     },
@@ -196,28 +196,31 @@
   },
   "hardware": [
     {
-      "use": "Base seams",
+      "use": "Base seams; screw from underside",
       "qty": 4,
-      "screw": "M4 x 16",
-      "washer": "M4 ID4.4 OD10 t0.8 x2",
-      "nut": "M4 AF7 H3.2",
-      "material": "nonconductive PA candidate"
+      "screw": "M4 x 20",
+      "mpn": "50M040070P020",
+      "washer": "17M04DIN34815 ID4.3 OD9 t0.8 x2",
+      "nut": "04M040070HNDIN34814 AF7 H3.2",
+      "material": "nonconductive PA66"
     },
     {
       "use": "Lower arm seams",
       "qty": 4,
       "screw": "M4 x 30",
-      "washer": "M4 ID4.4 OD10 t0.8 x2",
-      "nut": "M4 AF7 H3.2",
-      "material": "nonconductive PA candidate"
+      "mpn": "50M040070P030",
+      "washer": "17M04DIN34815 ID4.3 OD9 t0.8 x2",
+      "nut": "04M040070HNDIN34814 AF7 H3.2",
+      "material": "nonconductive PA66"
     },
     {
       "use": "Upper center seam",
       "qty": 2,
-      "screw": "M4 x 25",
-      "washer": "M4 ID4.4 OD10 t0.8 x2",
-      "nut": "M4 AF7 H3.2",
-      "material": "nonconductive PA candidate"
+      "screw": "M4 x 30",
+      "mpn": "50M040070P030",
+      "washer": "17M04DIN34815 ID4.3 OD9 t0.8 x2",
+      "nut": "04M040070HNDIN34814 AF7 H3.2",
+      "material": "nonconductive PA66"
     }
   ],
   "limitations": [

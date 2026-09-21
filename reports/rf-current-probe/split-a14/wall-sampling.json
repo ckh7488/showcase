@@ -144,14 +144,14 @@
     },
     {
       "part": "LowerCenter_A14_DRAFT.stl",
-      "stl_sha256": "b9a4b2ae4c7dea1199f1937bc8a3099a85a25d17941361c6165612ce7ef2cf75",
+      "stl_sha256": "bfc6b32c6e7be167b0908f91b0d0fa07581f472301412f922693d503b7777353",
       "watertight": true,
       "samples": 4000,
-      "sampled_min_mm": 2.3051344426334706,
+      "sampled_min_mm": 2.399999618530274,
       "below_2mm_samples": 0,
       "below_1p5mm_samples": 0,
       "percentiles_mm": [
-        2.499999999999997,
+        2.5000000000000004,
         3.0000000000000004,
         9.0
       ]

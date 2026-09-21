@@ -1,0 +1,6303 @@
+{
+  "classification": "CALCULATED_SAVED_CAD_DISCRETE_SERIAL_ASSEMBLY_AND_TOOL_ENVELOPES",
+  "sources": {
+    "mechanical\\assembly_A14_DRAFT\\RFCP_A14_Integrated_DRAFT.FCStd": "ab5f91e0d8473456247753f5cdbab64ba5a27dd08bd81b13af064eaf5ca4c19b",
+    "mechanical\\assembly_A14_DRAFT\\build_report.json": "8cc23312079cceafb19f7755a759208c08fd821798c4885ad1e9f43ee8d94556",
+    "mechanical\\build_assembly_A14.py": "a95834daa4a192edcc4ef0c009d3af4e84ab49453378d9b638c2bf3f9699c45e",
+    "mechanical\\verify_assembly_A14.py": "cea8dadd576ab64693a1c8497c6a14fce2c8ed672ca07626bf6b6a8ce1305240",
+    "reviews\\a14_recheck_20260921\\independent\\check_access_and_paths.py": "48845da3bf8de4bd7ea368f1d9b7730cf11e4d8a57d1120a33d252147150c4d1"
+  },
+  "tools": [
+    {
+      "joint": "LowerJointL66",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 30,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 30,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 30,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 30,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 30,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 30,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 30,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 30,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 30,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 30,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 30,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 30,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 30,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 30,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 30,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 30,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 30,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 30,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "kind": "OD12 socket starts at nut bearing face",
+      "offset_mm": 30,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "kind": "OD6 straight driver at back of screw head",
+      "offset_mm": 30,
+      "collisions": []
+    }
+  ],
+  "serial_fastener_paths": [
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66Screw",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66Screw",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66Screw",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66Screw",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66Screw",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66Screw",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66Screw",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66Screw",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66RearWasher",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66RearWasher",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66RearWasher",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66RearWasher",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66RearWasher",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66RearWasher",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66RearWasher",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66RearWasher",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66FrontWasher",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66FrontWasher",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66FrontWasher",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66FrontWasher",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66FrontWasher",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66FrontWasher",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66FrontWasher",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66FrontWasher",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66Nut",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66Nut",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66Nut",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66Nut",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66Nut",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66Nut",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66Nut",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL66",
+      "part": "LowerJointL66Nut",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78Screw",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78Screw",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78Screw",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78Screw",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78Screw",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78Screw",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78Screw",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78Screw",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78RearWasher",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78RearWasher",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78RearWasher",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78RearWasher",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78RearWasher",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78RearWasher",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78RearWasher",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78RearWasher",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78FrontWasher",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78FrontWasher",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78FrontWasher",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78FrontWasher",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78FrontWasher",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78FrontWasher",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78FrontWasher",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78FrontWasher",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78Nut",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78Nut",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78Nut",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78Nut",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78Nut",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78Nut",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78Nut",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointL78",
+      "part": "LowerJointL78Nut",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66Screw",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66Screw",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66Screw",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66Screw",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66Screw",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66Screw",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66Screw",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66Screw",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66RearWasher",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66RearWasher",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66RearWasher",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66RearWasher",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66RearWasher",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66RearWasher",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66RearWasher",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66RearWasher",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66FrontWasher",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66FrontWasher",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66FrontWasher",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66FrontWasher",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66FrontWasher",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66FrontWasher",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66FrontWasher",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66FrontWasher",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66Nut",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66Nut",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66Nut",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66Nut",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66Nut",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66Nut",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66Nut",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR66",
+      "part": "LowerJointR66Nut",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78Screw",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78Screw",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78Screw",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78Screw",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78Screw",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78Screw",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78Screw",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78Screw",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78RearWasher",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78RearWasher",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78RearWasher",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78RearWasher",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78RearWasher",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78RearWasher",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78RearWasher",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78RearWasher",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78FrontWasher",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78FrontWasher",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78FrontWasher",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78FrontWasher",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78FrontWasher",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78FrontWasher",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78FrontWasher",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78FrontWasher",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78Nut",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78Nut",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78Nut",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78Nut",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78Nut",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78Nut",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78Nut",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "LowerJointR78",
+      "part": "LowerJointR78Nut",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LScrew",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LScrew",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LScrew",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LScrew",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LScrew",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LScrew",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LScrew",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LScrew",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LRearWasher",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LRearWasher",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LRearWasher",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LRearWasher",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LRearWasher",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LRearWasher",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LRearWasher",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LRearWasher",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LFrontWasher",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LFrontWasher",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LFrontWasher",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LFrontWasher",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LFrontWasher",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LFrontWasher",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LFrontWasher",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LFrontWasher",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LNut",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LNut",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LNut",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LNut",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LNut",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LNut",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LNut",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "part": "UpperJoint6LNut",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RScrew",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RScrew",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RScrew",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RScrew",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RScrew",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RScrew",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RScrew",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RScrew",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RRearWasher",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RRearWasher",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RRearWasher",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RRearWasher",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RRearWasher",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RRearWasher",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RRearWasher",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RRearWasher",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RFrontWasher",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RFrontWasher",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RFrontWasher",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RFrontWasher",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RFrontWasher",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RFrontWasher",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RFrontWasher",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RFrontWasher",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RNut",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RNut",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RNut",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RNut",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RNut",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RNut",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RNut",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "part": "UpperJoint6RNut",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLScrew",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLScrew",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLScrew",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLScrew",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLScrew",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLScrew",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLScrew",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLScrew",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLRearWasher",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLRearWasher",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLRearWasher",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLRearWasher",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLRearWasher",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLRearWasher",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLRearWasher",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLRearWasher",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLFrontWasher",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLFrontWasher",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLFrontWasher",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLFrontWasher",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLFrontWasher",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLFrontWasher",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLFrontWasher",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLFrontWasher",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLNut",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLNut",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLNut",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLNut",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLNut",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLNut",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLNut",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFL",
+      "part": "BaseJointFLNut",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRScrew",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRScrew",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRScrew",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRScrew",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRScrew",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRScrew",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRScrew",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRScrew",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRRearWasher",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRRearWasher",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRRearWasher",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRRearWasher",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRRearWasher",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRRearWasher",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRRearWasher",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRRearWasher",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRFrontWasher",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRFrontWasher",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRFrontWasher",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRFrontWasher",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRFrontWasher",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRFrontWasher",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRFrontWasher",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRFrontWasher",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRNut",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRNut",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRNut",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRNut",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRNut",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRNut",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRNut",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointFR",
+      "part": "BaseJointFRNut",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLScrew",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLScrew",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLScrew",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLScrew",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLScrew",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLScrew",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLScrew",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLScrew",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLRearWasher",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLRearWasher",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLRearWasher",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLRearWasher",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLRearWasher",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLRearWasher",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLRearWasher",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLRearWasher",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLFrontWasher",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLFrontWasher",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLFrontWasher",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLFrontWasher",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLFrontWasher",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLFrontWasher",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLFrontWasher",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLFrontWasher",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLNut",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLNut",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLNut",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLNut",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLNut",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLNut",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLNut",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRL",
+      "part": "BaseJointRLNut",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRScrew",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRScrew",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRScrew",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRScrew",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRScrew",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRScrew",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRScrew",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRScrew",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRRearWasher",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRRearWasher",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRRearWasher",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRRearWasher",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRRearWasher",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRRearWasher",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRRearWasher",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRRearWasher",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRFrontWasher",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRFrontWasher",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRFrontWasher",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRFrontWasher",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRFrontWasher",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRFrontWasher",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRFrontWasher",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRFrontWasher",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRNut",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRNut",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRNut",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRNut",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRNut",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRNut",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRNut",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "BaseJointRR",
+      "part": "BaseJointRRNut",
+      "outward_mm": 60,
+      "collisions": []
+    }
+  ],
+  "upper_M4x30_paths": [
+    {
+      "joint": "UpperJoint6L",
+      "candidate": "same envelope with M4x30 length",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "candidate": "same envelope with M4x30 length",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "candidate": "same envelope with M4x30 length",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "candidate": "same envelope with M4x30 length",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "candidate": "same envelope with M4x30 length",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "candidate": "same envelope with M4x30 length",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "candidate": "same envelope with M4x30 length",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6L",
+      "candidate": "same envelope with M4x30 length",
+      "outward_mm": 60,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "candidate": "same envelope with M4x30 length",
+      "outward_mm": 0,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "candidate": "same envelope with M4x30 length",
+      "outward_mm": 1,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "candidate": "same envelope with M4x30 length",
+      "outward_mm": 2,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "candidate": "same envelope with M4x30 length",
+      "outward_mm": 5,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "candidate": "same envelope with M4x30 length",
+      "outward_mm": 10,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "candidate": "same envelope with M4x30 length",
+      "outward_mm": 20,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "candidate": "same envelope with M4x30 length",
+      "outward_mm": 40,
+      "collisions": []
+    },
+    {
+      "joint": "UpperJoint6R",
+      "candidate": "same envelope with M4x30 length",
+      "outward_mm": 60,
+      "collisions": []
+    }
+  ],
+  "nominal_length_margins": [
+    {
+      "joint": "LowerJointL66",
+      "nominal_shaft_protrusion_beyond_nut_mm": 3.1999999999999993,
+      "nut_axial_height_mm": 3.2000000000000046
+    },
+    {
+      "joint": "LowerJointL78",
+      "nominal_shaft_protrusion_beyond_nut_mm": 3.1999999999999993,
+      "nut_axial_height_mm": 3.1999999999999993
+    },
+    {
+      "joint": "LowerJointR66",
+      "nominal_shaft_protrusion_beyond_nut_mm": 3.1999999999999993,
+      "nut_axial_height_mm": 3.1999999999999993
+    },
+    {
+      "joint": "LowerJointR78",
+      "nominal_shaft_protrusion_beyond_nut_mm": 3.1999999999999993,
+      "nut_axial_height_mm": 3.1999999999999993
+    },
+    {
+      "joint": "UpperJoint6L",
+      "nominal_shaft_protrusion_beyond_nut_mm": 0.19999999999999218,
+      "nut_axial_height_mm": 3.2000000000000064
+    },
+    {
+      "joint": "UpperJoint6R",
+      "nominal_shaft_protrusion_beyond_nut_mm": 0.19999999999999218,
+      "nut_axial_height_mm": 3.2000000000000064
+    },
+    {
+      "joint": "BaseJointFL",
+      "nominal_shaft_protrusion_beyond_nut_mm": 1.2000000000000028,
+      "nut_axial_height_mm": 3.200000000000003
+    },
+    {
+      "joint": "BaseJointFR",
+      "nominal_shaft_protrusion_beyond_nut_mm": 1.2000000000000028,
+      "nut_axial_height_mm": 3.200000000000003
+    },
+    {
+      "joint": "BaseJointRL",
+      "nominal_shaft_protrusion_beyond_nut_mm": 1.2000000000000028,
+      "nut_axial_height_mm": 3.200000000000003
+    },
+    {
+      "joint": "BaseJointRR",
+      "nominal_shaft_protrusion_beyond_nut_mm": 1.2000000000000028,
+      "nut_axial_height_mm": 3.200000000000003
+    }
+  ],
+  "mount_screw_paths": [
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        0,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        1,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        2,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        3,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        4,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        5,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        6,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        7,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        8,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        9,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        10,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        11,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        12,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        13,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        14,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        15,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        16,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        17,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        18,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        19,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        20,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        21,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        22,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        23,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        24,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        25,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        26,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        27,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        28,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        29,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        30,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        31,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        32,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        33,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        34,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        35,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        36,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        37,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        38,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        39,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        40,
+        0
+      ],
+      "collisions": [
+        {
+          "part": "Cable1_Frame",
+          "volume_mm3": 0.06347127238160215
+        }
+      ]
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        0,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        1,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        2,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        3,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        4,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        5,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        6,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        7,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        8,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        9,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        10,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        11,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        12,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        13,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        14,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        15,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        16,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        17,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        18,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        19,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        20,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        21,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        22,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        23,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        24,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        25,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -1.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -3.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -5.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -7.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -9.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -11.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -13.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -15.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -17.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -19.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -21.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -23.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -25.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -27.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -29.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -31.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -33.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -35.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -37.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew2",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -39.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        0,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        1,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        2,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        3,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        4,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        5,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        6,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        7,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        8,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        9,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        10,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        11,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        12,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        13,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        14,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        15,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        16,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        17,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        18,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        19,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        20,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        21,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        22,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        23,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        24,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        25,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        26,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        27,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        28,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        29,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        30,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        31,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        32,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        33,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        34,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        35,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        36,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        37,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        38,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        39,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        40,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        0,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        1,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        2,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        3,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        4,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        5,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        6,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        7,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        8,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        9,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        10,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        11,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        12,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        13,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        14,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        15,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        16,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        17,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        18,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        19,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        20,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        21,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        22,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        23,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        24,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        25,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        1.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        3.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        5.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        7.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        9.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        11.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        13.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        15.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        17.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        19.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        21.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        23.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        25.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        27.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        29.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        31.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        33.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        35.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        37.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew3",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        39.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        0,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        1,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        2,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        3,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        4,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        5,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        6,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        7,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        8,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        9,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        10,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        11,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        12,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        13,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        14,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        15,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        16,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        17,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        18,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        19,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        20,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        21,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        22,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        23,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        24,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        25,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        26,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        27,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        28,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        29,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        30,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        31,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        32,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        33,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        34,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        35,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        36,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        37,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        38,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        39,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        40,
+        0
+      ],
+      "collisions": [
+        {
+          "part": "Cable2_Frame",
+          "volume_mm3": 0.06347127238160215
+        }
+      ]
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        0,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        1,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        2,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        3,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        4,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        5,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        6,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        7,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        8,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        9,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        10,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        11,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        12,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        13,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        14,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        15,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        16,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        17,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        18,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        19,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        20,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        21,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        22,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        23,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        24,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        25,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -1.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -3.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -5.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -7.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -9.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -11.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -13.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -15.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -17.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -19.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -21.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -23.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -25.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -27.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -29.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -31.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -33.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -35.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -37.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew4",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        -39.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        0,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        1,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        2,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        3,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        4,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        5,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        6,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        7,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        8,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        9,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        10,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        11,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        12,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        13,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        14,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        15,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        16,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        17,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        18,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        19,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        20,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        21,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        22,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        23,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        24,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        25,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        26,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        27,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        28,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        29,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        30,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        31,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        32,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        33,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        34,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        35,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        36,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        37,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        38,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        39,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "old straight up 40",
+      "position_mm": [
+        0,
+        40,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        0,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        1,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        2,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        3,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        4,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        5,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        6,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        7,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        8,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        9,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        10,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        11,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        12,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        13,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        14,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        15,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        16,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        17,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        18,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        19,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        20,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        21,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        22,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        23,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        24,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        0,
+        25,
+        0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        1.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        3.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        5.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        7.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        9.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        11.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        13.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        15.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        17.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        19.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        21.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        23.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        25.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        27.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        29.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        31.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        33.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        35.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        37.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    },
+    {
+      "screw": "MountScrew5",
+      "path": "candidate lift25 then outwardX",
+      "position_mm": [
+        39.0,
+        25.0,
+        0.0
+      ],
+      "collisions": []
+    }
+  ],
+  "limits": [
+    "Bare subassembly order for new joints; actual hands, socket engagement/lead chamfer, driver head pattern, friction and force not validated.",
+    "Sockets are conservative solid OD12 outside envelopes with deliberate target nut/screw omitted; selected tool product is not yet specified.",
+    "M4x30 virtual check changes length only, not vendor-specific head, thread, washer or nut dimensions.",
+    "No printed errors or flexibility in this geometric check; no continuous swept-volume or thread simulation."
+  ],
+  "sources_unchanged": false
+}

@@ -1,0 +1,81 @@
+{
+  "classification": "SIMULATED_A14_IDEAL_BONDED_REFERENCE_NOT_BOLTED_JOINT_QUALIFICATION",
+  "models": [
+    {
+      "classification": "SIMULATED_A14_IDEAL_BONDED_UPPER_LINEAR_STATIC",
+      "step_sha256": "1bc9ccb0a9ac3fe955b5fcbc205ac2faf002b1da9191c69bc60422ffec13d80f",
+      "source_step": "E:\\Current_Probe\\reviews\\a14_recheck_20260921\\structure\\upper_A14_IDEAL_BONDED.step",
+      "mesh_parameter_mm": 1.6,
+      "gmsh_version": "4.15.2",
+      "node_count": 175856,
+      "foot_nodes": 766,
+      "core_seat_nodes": 102,
+      "E_MPa": 1500,
+      "poisson": 0.4,
+      "seat_displacement_mm": 1.8,
+      "foot_constraint": "All translations fixed on two outer pillar bottom faces Y=0",
+      "core_constraint": "Prescribed Y displacement on two bare-ferrite support lands; X/Z free",
+      "limits": [
+        "NEW A14 geometry, all touching lap faces ideally bonded. No bolt preload, friction, slip or clearance model.",
+        "No creep, fatigue, material nonlinearity, temperature/humidity or print anisotropy.",
+        "Ideal fixed feet and uniform contact displacement; real ferrite seating/contact not solved.",
+        "No prediction of production acceptance or allowable hand torque."
+      ],
+      "reaction_N": [
+        -4.387113e-12,
+        5.109489,
+        -8.71002e-12
+      ],
+      "integration_points": 431932,
+      "max_von_mises_MPa": 5.28629057773141,
+      "von_mises_percentiles_MPa": [
+        2.7494645841602763,
+        3.5072826153346046,
+        4.039315271345776
+      ]
+    },
+    {
+      "classification": "SIMULATED_A14_IDEAL_BONDED_UPPER_LINEAR_STATIC",
+      "step_sha256": "1bc9ccb0a9ac3fe955b5fcbc205ac2faf002b1da9191c69bc60422ffec13d80f",
+      "source_step": "E:\\Current_Probe\\reviews\\a14_recheck_20260921\\structure\\upper_A14_IDEAL_BONDED.step",
+      "mesh_parameter_mm": 2.4,
+      "gmsh_version": "4.15.2",
+      "node_count": 64979,
+      "foot_nodes": 498,
+      "core_seat_nodes": 66,
+      "E_MPa": 1500,
+      "poisson": 0.4,
+      "seat_displacement_mm": 1.8,
+      "foot_constraint": "All translations fixed on two outer pillar bottom faces Y=0",
+      "core_constraint": "Prescribed Y displacement on two bare-ferrite support lands; X/Z free",
+      "limits": [
+        "NEW A14 geometry, all touching lap faces ideally bonded. No bolt preload, friction, slip or clearance model.",
+        "No creep, fatigue, material nonlinearity, temperature/humidity or print anisotropy.",
+        "Ideal fixed feet and uniform contact displacement; real ferrite seating/contact not solved.",
+        "No prediction of production acceptance or allowable hand torque."
+      ],
+      "reaction_N": [
+        -1.131226e-11,
+        5.16973,
+        1.190206e-11
+      ],
+      "integration_points": 147860,
+      "max_von_mises_MPa": 4.581776054974905,
+      "von_mises_percentiles_MPa": [
+        2.741699346403138,
+        3.410573917194464,
+        3.8541829066514826
+      ]
+    }
+  ],
+  "two_mesh_relative_change_percent": {
+    "reaction": 1.1790024403614616,
+    "peak_stress": 13.32720009233478
+  },
+  "limits": [
+    "Actual new A14 free upper halves fused only at nominal touching faces; represents perfect bonding.",
+    "No simulation of screw preload, washer contact, friction/slip, joint clearance, ferrite contact distribution, anisotropy or creep.",
+    "E1500MPa is a nominal reference, not measured lot-specific printed material. Short-term tensile strength is not an allowable fatigue/creep stress.",
+    "Two mesh sizes test one idealized boundary condition; no production acceptance or zero-warp conclusion."
+  ]
+}
