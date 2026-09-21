@@ -11,13 +11,13 @@
     "(HEAD detached at 1.0.2)",
     "256fc7eff3379911ab5daf88e10182c509aa8052"
   ],
-  "source_sha256": "ef22f49de5f44554eaf7d7eaa8ee6d9e6692573c42e7b7d3877d7909f1b13329",
+  "source_sha256": "93c80466f267ed9964454ac71ee28ac52facadef2eaa80132cb9452ddb400183",
   "input_sha256": {
     "mechanical\\assembly_A13_DRAFT\\RFCP_A13_Integrated_DRAFT.FCStd": "5338d317e73dd15f1c95182864a2cf8f4377bbea19776716b925b8b2af7ed846",
     "mechanical\\assembly_A13_DRAFT\\parts\\UpperLid_FREE_DRAFT.step": "9abd0094ac364ad3d2c1dd458cc8f2d96e1a475b05ac0d3263454ae1e9958e4e"
   },
-  "native_sha256": "8e547665d45ae71bc991756215d55e3f9a3e7d457b75f29fe904123e6636d606",
-  "mesh_sha256": "93170ab1a06dca7e5f3418438b257d74002341f1c1b3740fda5087a28635cd6c",
+  "native_sha256": "93ba7a61650cfc94c3a9d644f7af4473283908f98d1194f296e7ecd7819f7f92",
+  "mesh_sha256": "06e7972359b9f7506b23835239943ff1c124c933f9cd05162c85a2753ba9a482",
   "parts": {
     "LowerArmLeft": {
       "valid": true,
@@ -223,6 +223,52 @@
       "material": "nonconductive PA66"
     }
   ],
+  "catalogue_only_update_20260921": {
+    "lower_thrust_washer": "Fabory 50060.060.001 ID6.4 OD12 t1.6; qty2, same as top washer",
+    "lower_nyloc_y_mm": [
+      34.2,
+      40.2
+    ],
+    "lower_washer_y_mm": [
+      40.2,
+      41.8
+    ],
+    "frame_endplay_nominal_mm": 0.2,
+    "pcb_screw": "Essentra 50M020040P010; qty2; maximum head D4 H1.6; existing M2x10 shank unchanged",
+    "changed_shape_objects": [
+      "Cable1_ThrustWasher",
+      "Cable2_ThrustWasher",
+      "Cable1_LeadLockNut",
+      "Cable2_LeadLockNut",
+      "PCBScrews"
+    ]
+  },
+  "closure_catalogue_20260921": {
+    "stud": "Fabory 20106.040.070 M4x70",
+    "knob": "NBK KNFS-16-M4 through-thread",
+    "jamnut": "Fabory 51080.040.001 M4 AF7 H3.2",
+    "washer": "Essentra 17M04DIN34815 PA66 ID4.3 OD9 t0.8",
+    "quantity_each": 2,
+    "stud_y_mm": [
+      -16.5,
+      53.5
+    ],
+    "washer_y_mm": [
+      40,
+      40.8
+    ],
+    "nut_y_mm": [
+      40.8,
+      44
+    ],
+    "knob_y_mm": [
+      44,
+      53.5
+    ],
+    "nominal_effective_under_washer_length_mm": 56.5,
+    "nominal_tip_projection_mm": 6.9,
+    "assembly": "Preassemble outside the probe: stud top flush with knob top, counter-tighten jamnut against knob hub, then place PA washer; keep each four-part unit together for routine removal."
+  },
   "limitations": [
     "Splitting reduces individual span; no warp magnitude/probability or supplier acceptance established.",
     "New lap joint slip, nylon screw creep, preload, fatigue and core contact force untested.",

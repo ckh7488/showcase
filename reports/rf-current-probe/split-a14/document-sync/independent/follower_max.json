@@ -1,0 +1,776 @@
+{
+  "classification": "CALCULATED_MAX_CATALOGUE_SHOULDER_ENVELOPE_NOT_TORQUE_OR_FRICTION_TEST",
+  "sources": {
+    "mechanical\\assembly_A14_DRAFT\\RFCP_A14_Integrated_DRAFT.FCStd": "c718d11f9cfbef3ffe4db12e3a99dc0545465992dd276c2620768d76f9f86f91",
+    "reviews\\a14_document_sync_20260921\\independent\\check_follower_max.py": "a56a5e749f3eade803213bc094b995615f62b939cc4129294f32d3199fe64833"
+  },
+  "candidate": {
+    "product": "NBK SBSMS-M4-5-20",
+    "shoulder_d_max_mm": 5,
+    "shoulder_l_max_mm": 20.25,
+    "thread_m4_length_mm": 8,
+    "head_d_mm": 9,
+    "head_h_mm": 4,
+    "hex_key_nominal_mm": 2.5
+  },
+  "motion": [
+    {
+      "radius_mm": 3.0,
+      "part": "Follower1",
+      "collisions": []
+    },
+    {
+      "radius_mm": 3.0,
+      "part": "Follower2",
+      "collisions": []
+    },
+    {
+      "radius_mm": 3.5,
+      "part": "Follower1",
+      "collisions": []
+    },
+    {
+      "radius_mm": 3.5,
+      "part": "Follower2",
+      "collisions": []
+    },
+    {
+      "radius_mm": 4.0,
+      "part": "Follower1",
+      "collisions": []
+    },
+    {
+      "radius_mm": 4.0,
+      "part": "Follower2",
+      "collisions": []
+    },
+    {
+      "radius_mm": 4.5,
+      "part": "Follower1",
+      "collisions": []
+    },
+    {
+      "radius_mm": 4.5,
+      "part": "Follower2",
+      "collisions": []
+    },
+    {
+      "radius_mm": 5.0,
+      "part": "Follower1",
+      "collisions": []
+    },
+    {
+      "radius_mm": 5.0,
+      "part": "Follower2",
+      "collisions": []
+    },
+    {
+      "radius_mm": 5.5,
+      "part": "Follower1",
+      "collisions": []
+    },
+    {
+      "radius_mm": 5.5,
+      "part": "Follower2",
+      "collisions": []
+    },
+    {
+      "radius_mm": 6.0,
+      "part": "Follower1",
+      "collisions": []
+    },
+    {
+      "radius_mm": 6.0,
+      "part": "Follower2",
+      "collisions": []
+    },
+    {
+      "radius_mm": 6.5,
+      "part": "Follower1",
+      "collisions": []
+    },
+    {
+      "radius_mm": 6.5,
+      "part": "Follower2",
+      "collisions": []
+    },
+    {
+      "radius_mm": 7.0,
+      "part": "Follower1",
+      "collisions": []
+    },
+    {
+      "radius_mm": 7.0,
+      "part": "Follower2",
+      "collisions": []
+    },
+    {
+      "radius_mm": 7.5,
+      "part": "Follower1",
+      "collisions": []
+    },
+    {
+      "radius_mm": 7.5,
+      "part": "Follower2",
+      "collisions": []
+    },
+    {
+      "radius_mm": 8.0,
+      "part": "Follower1",
+      "collisions": []
+    },
+    {
+      "radius_mm": 8.0,
+      "part": "Follower2",
+      "collisions": []
+    },
+    {
+      "radius_mm": 8.5,
+      "part": "Follower1",
+      "collisions": []
+    },
+    {
+      "radius_mm": 8.5,
+      "part": "Follower2",
+      "collisions": []
+    },
+    {
+      "radius_mm": 9.0,
+      "part": "Follower1",
+      "collisions": []
+    },
+    {
+      "radius_mm": 9.0,
+      "part": "Follower2",
+      "collisions": []
+    },
+    {
+      "radius_mm": 9.5,
+      "part": "Follower1",
+      "collisions": []
+    },
+    {
+      "radius_mm": 9.5,
+      "part": "Follower2",
+      "collisions": []
+    },
+    {
+      "radius_mm": 10.0,
+      "part": "Follower1",
+      "collisions": []
+    },
+    {
+      "radius_mm": 10.0,
+      "part": "Follower2",
+      "collisions": []
+    },
+    {
+      "radius_mm": 10.5,
+      "part": "Follower1",
+      "collisions": []
+    },
+    {
+      "radius_mm": 10.5,
+      "part": "Follower2",
+      "collisions": []
+    },
+    {
+      "radius_mm": 11.0,
+      "part": "Follower1",
+      "collisions": []
+    },
+    {
+      "radius_mm": 11.0,
+      "part": "Follower2",
+      "collisions": []
+    },
+    {
+      "radius_mm": 11.5,
+      "part": "Follower1",
+      "collisions": []
+    },
+    {
+      "radius_mm": 11.5,
+      "part": "Follower2",
+      "collisions": []
+    },
+    {
+      "radius_mm": 12.0,
+      "part": "Follower1",
+      "collisions": []
+    },
+    {
+      "radius_mm": 12.0,
+      "part": "Follower2",
+      "collisions": []
+    },
+    {
+      "radius_mm": 12.5,
+      "part": "Follower1",
+      "collisions": []
+    },
+    {
+      "radius_mm": 12.5,
+      "part": "Follower2",
+      "collisions": []
+    },
+    {
+      "radius_mm": 13.0,
+      "part": "Follower1",
+      "collisions": []
+    },
+    {
+      "radius_mm": 13.0,
+      "part": "Follower2",
+      "collisions": []
+    }
+  ],
+  "loading": [
+    {
+      "part": "Follower1",
+      "front_offset_mm": 0,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 2,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 4,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 6,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 8,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 10,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 12,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 14,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 16,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 18,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 20,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 22,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 24,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 26,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 28,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 30,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 32,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 34,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 36,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 38,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 40,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 42,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 44,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 46,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 48,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 50,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 52,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 54,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 56,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 58,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "front_offset_mm": 60,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 0,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 2,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 4,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 6,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 8,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 10,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 12,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 14,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 16,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 18,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 20,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 22,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 24,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 26,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 28,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 30,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 32,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 34,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 36,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 38,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 40,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 42,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 44,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 46,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 48,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 50,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 52,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 54,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 56,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 58,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "front_offset_mm": 60,
+      "collisions": []
+    }
+  ],
+  "straight_driver_gauge": [
+    {
+      "part": "Follower1",
+      "driver_front_offset_mm": 0,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "driver_front_offset_mm": 2,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "driver_front_offset_mm": 4,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "driver_front_offset_mm": 6,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "driver_front_offset_mm": 8,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "driver_front_offset_mm": 10,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "driver_front_offset_mm": 12,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "driver_front_offset_mm": 14,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "driver_front_offset_mm": 16,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "driver_front_offset_mm": 18,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "driver_front_offset_mm": 20,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "driver_front_offset_mm": 22,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "driver_front_offset_mm": 24,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "driver_front_offset_mm": 26,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "driver_front_offset_mm": 28,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "driver_front_offset_mm": 30,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "driver_front_offset_mm": 32,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "driver_front_offset_mm": 34,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "driver_front_offset_mm": 36,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "driver_front_offset_mm": 38,
+      "collisions": []
+    },
+    {
+      "part": "Follower1",
+      "driver_front_offset_mm": 40,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "driver_front_offset_mm": 0,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "driver_front_offset_mm": 2,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "driver_front_offset_mm": 4,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "driver_front_offset_mm": 6,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "driver_front_offset_mm": 8,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "driver_front_offset_mm": 10,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "driver_front_offset_mm": 12,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "driver_front_offset_mm": 14,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "driver_front_offset_mm": 16,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "driver_front_offset_mm": 18,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "driver_front_offset_mm": 20,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "driver_front_offset_mm": 22,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "driver_front_offset_mm": 24,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "driver_front_offset_mm": 26,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "driver_front_offset_mm": 28,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "driver_front_offset_mm": 30,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "driver_front_offset_mm": 32,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "driver_front_offset_mm": 34,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "driver_front_offset_mm": 36,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "driver_front_offset_mm": 38,
+      "collisions": []
+    },
+    {
+      "part": "Follower2",
+      "driver_front_offset_mm": 40,
+      "collisions": []
+    }
+  ],
+  "engagement": {
+    "shoulder_root_z_mm": 10,
+    "thread_range_z_mm": [
+      2,
+      10
+    ],
+    "nut_range_z_mm": [
+      3.5,
+      6.7
+    ],
+    "nominal_full_nut_thread_overlap_mm": 3.2,
+    "tip_beyond_nut_mm": 1.5,
+    "nominal_yoke_face_z_mm": 28,
+    "max_shoulder_head_bearing_z_mm": 30.25,
+    "max_shoulder_yoke_axial_gap_mm": 2.25
+  },
+  "limits": [
+    "Diameter5mm is the conservative upper envelope of f9 tolerance; length20.25 is supplier maximum. Thread, fillets/undercuts, tolerances of other parts and printed errors are not modeled.",
+    "The unchanged shoulder root means the nominal thread/nut overlap is unchanged; actual complete-thread engagement and jaw seating still require inspection.",
+    "Tool is a straight OD5mm gauge aligned to a2.5mm hex recess, not proof that an arbitrary L-key can swing here.",
+    "Do not replace shoulder fastener with a plain M4 screw; tightening must seat on the jaw without pressing the sliding yoke."
+  ],
+  "pass_scoped": true,
+  "sources_unchanged": true
+}

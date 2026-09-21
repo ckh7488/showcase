@@ -1,0 +1,71 @@
+{
+  "classification": "CALCULATED_CATALOGUE_ONLY_A14_FINAL_EVIDENCE_CHAIN",
+  "native_sha256": "93ba7a61650cfc94c3a9d644f7af4473283908f98d1194f296e7ecd7819f7f92",
+  "builder_sha256": "93c80466f267ed9964454ac71ee28ac52facadef2eaa80132cb9452ddb400183",
+  "mesh_sha256": "06e7972359b9f7506b23835239943ff1c124c933f9cd05162c85a2753ba9a482",
+  "objects": 125,
+  "printed_unique": 15,
+  "printed_total": 20,
+  "all15_stl_byte_identical_to_8e_baseline": true,
+  "current_build_pass": true,
+  "intermediate_455_pose_pass": true,
+  "final_82_assembly_pose_pass": true,
+  "independent_f05_candidate_geometry_matches": true,
+  "intermediate_to_final_unchanged_existing_objects": 121,
+  "added_objects": [
+    "HeadClosureJamNuts",
+    "HeadClosureKnobs",
+    "HeadClosureWashers"
+  ],
+  "updated_existing_from_original8e": [
+    "Cable1_ThrustWasher",
+    "Cable2_ThrustWasher",
+    "Cable1_LeadLockNut",
+    "Cable2_LeadLockNut",
+    "PCBScrews",
+    "HeadHandScrews"
+  ],
+  "source_files_sha256": {
+    "mechanical/build_assembly_A14.py": "93c80466f267ed9964454ac71ee28ac52facadef2eaa80132cb9452ddb400183",
+    "mechanical/assembly_A14_DRAFT/RFCP_A14_Integrated_DRAFT.FCStd": "93ba7a61650cfc94c3a9d644f7af4473283908f98d1194f296e7ecd7819f7f92",
+    "mechanical/assembly_A14_DRAFT/mesh.json": "06e7972359b9f7506b23835239943ff1c124c933f9cd05162c85a2753ba9a482",
+    "mechanical/assembly_A14_DRAFT/RFCP_A14_Integrated_DRAFT.step": "ed02a8a5b58fab51d4cafa7ce6cc9b2311d0d0fea9b4ffa4579747581d0810b2",
+    "mechanical/assembly_A14_DRAFT/build_report.json": "d630b30ad3a0a482ce68b63e246e2532c11250e790c453186536f671df698489",
+    "mechanical/assembly_A14_DRAFT/README.md": "6414d9709ba14a1c32e893a8efdc83e3d0ee098fba253e4ebaeb2b5d2d3feedd",
+    "reviews/a14_document_sync_20260921/cad_hardware/README.md": "27b93d86620081563b6a1becb78c96d929c21047d48c5eb2976f33bed67ec059",
+    "reviews/a14_document_sync_20260921/cad_hardware/verify_final_head_delta.py": "3127a92cad14309a5d3939e3c15de52402f73c328838ad6024d802187e2600f0",
+    "reviews/a14_document_sync_20260921/cad_hardware/final_head_delta_verification.json": "2e61f141efe8028c6539ea97f766893e2256650541375b0e4c1f70c2f2e306cb",
+    "reviews/a14_document_sync_20260921/cad_hardware/before_f05/manifest.json": "a79432d3ac1273ffe6ab4953e32769ec025f3bfc7be64a82b9201b40a1d116ee",
+    "reviews/a14_document_sync_20260921/cad_hardware/before_f05/catalogue_delta_verification.json": "ea0910414732f8e4ed921d976554af2ad53ba01befaa2fa978c2794e98eda873",
+    "reviews/a14_document_sync_20260921/before_cad/manifest.json": "80069f17e897ae795de525bdb6f38bdc16cefccf099c4345fddae306ed8c31c1",
+    "reviews/a14_document_sync_20260921/independent/f05_stud_knob.json": "66692765d1fbed72b767d48da1fd34040032214f6ea775fb867daf6f603f192b",
+    "reviews/a14_document_sync_20260921/independent/lower_washer_candidates.json": "8be1ca6a62a4198e4f5d102947b2ed9a3cbbd759de55f06633b7b6c615810829",
+    "mechanical/assembly_A14_DRAFT/catalogue_delta_verification.json": "05976458e5e2cf8987ebaf2745281c07888a153ebee410d0d3e3dfce806e244b"
+  },
+  "production_stl_sha256": {
+    "BaseCenter_A14_DRAFT.stl": "843d6d6254fb4379ffdb953ad6def59e675fb25ade7b1e89542e8e1f04617f0a",
+    "BaseFront_A14_DRAFT.stl": "ab6883e4dba091b75cbe60001c81845e1dc16a36cb3b110b348287f42e21f098",
+    "BaseRear_A14_DRAFT.stl": "23f75b1e7a23afabf4bbab48e9bff02eaeef738607dff42c64a005520737975a",
+    "C07_DriveYoke_DRAFT.stl": "8bed8235b55fcb8f6ffa9182ad031c43cec80a77c70bc72ccfb1fa1110a93868",
+    "C07_Frame_DRAFT.stl": "6f730a2b568c0932b97b59962a2d069c0cc998b54824a1ce908383c132ce1807",
+    "C07_Jaw1_DRAFT.stl": "49cc91a2fdbb6efb1b4a3368edf535df3927171beb0e7b3c939a4f2408cd0fe6",
+    "C07_Jaw2_DRAFT.stl": "35cd0f5320cec7596fcd31e1c385168b7d82897c6d302644b3c9afa8f23cf8b0",
+    "C07_TopBridgeJaw_DRAFT.stl": "46a284515d61f4bf7b3134a6dcedd5d5f0af36cbed1698a831445530edf38b36",
+    "LowerArmLeft_A14_DRAFT.stl": "33c5f3c9a00b302090f6a2cd49e394cc2c4503219de38c150ce064c4c9af4449",
+    "LowerArmRight_A14_DRAFT.stl": "290adebcb95725a36c461ac2f1a94c1880c141a50409dec644721598aeedb670",
+    "LowerCenter_A14_DRAFT.stl": "bfc6b32c6e7be167b0908f91b0d0fa07581f472301412f922693d503b7777353",
+    "LowerKeeper_FREE_DRAFT.stl": "178cc4b861b3578b68d134eaaa5b24c906b6e820e7283d3c8997f598a31f200c",
+    "UpperKeeper_FREE_DRAFT.stl": "7a9238360fef5088b8bcc252fb72cfc2d20c59e782aa1c06b27c3cec39f95cad",
+    "UpperLeft_A14_DRAFT.stl": "33c6917d76ab4290d491c76cbf92f39b1b000e456917197b16d9abc9e8956211",
+    "UpperRight_A14_DRAFT.stl": "a0ba5e16168e59a429124aa15f7c61df35ed67524cfe18e1442b5ab760229caa"
+  },
+  "legacy_verification_native_sha256": "8e547665d45ae71bc991756215d55e3f9a3e7d457b75f29fe904123e6636d606",
+  "legacy_verification_relabelled": false,
+  "physical_validation_executed": false,
+  "notes": [
+    "455 poses were executed on c718, not falsely attributed to final native. Final changes are linked by whole-object geometry delta plus added-material separation from prior-path envelopes.",
+    "Final82 assembly poses are the same sampling as independent328 component poses; do not sum them as independent trajectories.",
+    "Printed geometry remains byte identical; no new print quote implied.",
+    "Actual screw friction, torque, hand force, creep, RF and source purchasing availability are not qualified."
+  ]
+}

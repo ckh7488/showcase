@@ -1,0 +1,602 @@
+{
+  "classification": "READ_ONLY_GUIDE_OBJECT_AND_SEQUENCE_CONTRACT_NOT_FULL_ANIMATION_COLLISION_TEST",
+  "sources": {
+    "viewer_A05\\current_guide_steps.py": "84cbb4b07ebec41ff61c2068756c6e8bebc2cc4334a446646d18e9ce04e25409",
+    "viewer_A05\\guide_motion.js": "dce0ba3627a8bf353544a85a2852f2bddc1f4bd3569b304465c89864da37316d",
+    "viewer_A05\\guide_bom.py": "7caa0fe13d09361ec53a0919b493d9e235a2633821004d619e5e58a72a881006",
+    "mechanical\\assembly_A14_DRAFT\\mesh.json": "06e7972359b9f7506b23835239943ff1c124c933f9cd05162c85a2753ba9a482",
+    "viewer_A05\\guide_sources\\geometry_supplements_a14.json": "d277860b30edb5c9b68e173343162bf35a0b12e48020a7d0cc3ced2ac88fbbae",
+    "reviews\\a14_document_sync_20260921\\independent\\audit_guide_contract.py": "5687c73b2f1d0f2392891642dd47c3449aad1c51153576a163ef22fb661af8d2"
+  },
+  "step_count": 45,
+  "checks": {
+    "unique_ids": true,
+    "L00A_before_L00B": true,
+    "L00B_before_H03": true,
+    "U00A_before_U00B": true,
+    "U00B_before_H09": true,
+    "B00A_before_B00B": true,
+    "B00B_before_B01": true,
+    "C04A_before_C04B": true,
+    "C04B_before_C05": true,
+    "C05_before_C06": true,
+    "C06_before_C07": true,
+    "H12A_before_H13": true,
+    "lower_rear_path": true,
+    "upper_rear_path": true,
+    "base_center_up_path": true,
+    "pcb_selected_keys": true,
+    "jam_nut_and_parked_knob_separate": true,
+    "B05_selected_lift_side": true,
+    "B07_selected_lift_side": true,
+    "lower_spanner_X_text": true,
+    "head_unit_same_regular_lift": true,
+    "head_unit_same_special_lift_and_hiding": true,
+    "LowerJoint_coverage": true,
+    "UpperJoint_coverage": true,
+    "BaseJoint_coverage": true
+  },
+  "object_errors": [],
+  "joint_hardware": {
+    "LowerJoint": {
+      "required_count": 16,
+      "missing": []
+    },
+    "UpperJoint": {
+      "required_count": 8,
+      "missing": []
+    },
+    "BaseJoint": {
+      "required_count": 16,
+      "missing": []
+    }
+  },
+  "actual_JS_head_unit_motion": [
+    {
+      "step": "Q01",
+      "t": 0,
+      "states": [
+        {
+          "name": "HeadHandScrews",
+          "visible": true,
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureKnobs",
+          "visible": true,
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureJamNuts",
+          "visible": true,
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureWashers",
+          "visible": true,
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        }
+      ]
+    },
+    {
+      "step": "Q01",
+      "t": 0.15,
+      "states": [
+        {
+          "name": "HeadHandScrews",
+          "visible": true,
+          "pos": [
+            0,
+            37.5,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureKnobs",
+          "visible": true,
+          "pos": [
+            0,
+            37.5,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureJamNuts",
+          "visible": true,
+          "pos": [
+            0,
+            37.5,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureWashers",
+          "visible": true,
+          "pos": [
+            0,
+            37.5,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        }
+      ]
+    },
+    {
+      "step": "Q01",
+      "t": 0.3,
+      "states": [
+        {
+          "name": "HeadHandScrews",
+          "visible": true,
+          "pos": [
+            0,
+            75,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureKnobs",
+          "visible": true,
+          "pos": [
+            0,
+            75,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureJamNuts",
+          "visible": true,
+          "pos": [
+            0,
+            75,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureWashers",
+          "visible": true,
+          "pos": [
+            0,
+            75,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        }
+      ]
+    },
+    {
+      "step": "Q01",
+      "t": 0.31,
+      "states": [
+        {
+          "name": "HeadHandScrews",
+          "visible": false,
+          "pos": [
+            0,
+            75,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureKnobs",
+          "visible": false,
+          "pos": [
+            0,
+            75,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureJamNuts",
+          "visible": false,
+          "pos": [
+            0,
+            75,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureWashers",
+          "visible": false,
+          "pos": [
+            0,
+            75,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        }
+      ]
+    },
+    {
+      "step": "Q01",
+      "t": 1,
+      "states": [
+        {
+          "name": "HeadHandScrews",
+          "visible": false,
+          "pos": [
+            0,
+            75,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureKnobs",
+          "visible": false,
+          "pos": [
+            0,
+            75,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureJamNuts",
+          "visible": false,
+          "pos": [
+            0,
+            75,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureWashers",
+          "visible": false,
+          "pos": [
+            0,
+            75,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        }
+      ]
+    },
+    {
+      "step": "Q04",
+      "t": 0,
+      "states": [
+        {
+          "name": "HeadHandScrews",
+          "visible": true,
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureKnobs",
+          "visible": true,
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureJamNuts",
+          "visible": true,
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureWashers",
+          "visible": true,
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        }
+      ]
+    },
+    {
+      "step": "Q04",
+      "t": 0.15,
+      "states": [
+        {
+          "name": "HeadHandScrews",
+          "visible": true,
+          "pos": [
+            0,
+            37.5,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureKnobs",
+          "visible": true,
+          "pos": [
+            0,
+            37.5,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureJamNuts",
+          "visible": true,
+          "pos": [
+            0,
+            37.5,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureWashers",
+          "visible": true,
+          "pos": [
+            0,
+            37.5,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        }
+      ]
+    },
+    {
+      "step": "Q04",
+      "t": 0.3,
+      "states": [
+        {
+          "name": "HeadHandScrews",
+          "visible": true,
+          "pos": [
+            0,
+            75,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureKnobs",
+          "visible": true,
+          "pos": [
+            0,
+            75,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureJamNuts",
+          "visible": true,
+          "pos": [
+            0,
+            75,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureWashers",
+          "visible": true,
+          "pos": [
+            0,
+            75,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        }
+      ]
+    },
+    {
+      "step": "Q04",
+      "t": 0.31,
+      "states": [
+        {
+          "name": "HeadHandScrews",
+          "visible": false,
+          "pos": [
+            0,
+            75,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureKnobs",
+          "visible": false,
+          "pos": [
+            0,
+            75,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureJamNuts",
+          "visible": false,
+          "pos": [
+            0,
+            75,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureWashers",
+          "visible": false,
+          "pos": [
+            0,
+            75,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        }
+      ]
+    },
+    {
+      "step": "Q04",
+      "t": 1,
+      "states": [
+        {
+          "name": "HeadHandScrews",
+          "visible": false,
+          "pos": [
+            0,
+            75,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureKnobs",
+          "visible": false,
+          "pos": [
+            0,
+            75,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureJamNuts",
+          "visible": false,
+          "pos": [
+            0,
+            75,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        },
+        {
+          "name": "HeadClosureWashers",
+          "visible": false,
+          "pos": [
+            0,
+            75,
+            0
+          ],
+          "rx": 0,
+          "active": true,
+          "lidRelax": 0
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "This checks object mapping, selected validated directions and step order, not all44animations at every position.",
+    "Historical guide mesh/renders and first-article mechanical/RF acceptance are outside this static contract."
+  ],
+  "pass_scoped": true,
+  "sources_unchanged": true
+}

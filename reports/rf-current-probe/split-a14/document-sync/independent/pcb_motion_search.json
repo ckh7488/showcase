@@ -1,0 +1,429 @@
+{
+  "native_sha256": "c718d11f9cfbef3ffe4db12e3a99dc0545465992dd276c2620768d76f9f86f91",
+  "script_sha256": "471c5a360c18188c76d8bb19d84659fe43b14705ee97238ceef7299c0a1357ce",
+  "cases": [
+    {
+      "angle_deg": 30,
+      "drop_mm": 1.6,
+      "checked": 30,
+      "pass_coarse": false,
+      "first_collision": {
+        "part": "PCB",
+        "obstacle": "LowerCenter",
+        "volume_mm3": 8.555444566227637,
+        "bounds_mm": [
+          -18.0,
+          -62.248711305964285,
+          11.857179676972446,
+          18.0,
+          -37.2,
+          27.242820323027544
+        ],
+        "pose": [
+          30,
+          -1.6,
+          7
+        ]
+      }
+    },
+    {
+      "angle_deg": 30,
+      "drop_mm": 2.4,
+      "checked": 30,
+      "pass_coarse": false,
+      "first_collision": {
+        "part": "PCB",
+        "obstacle": "LowerCenter",
+        "volume_mm3": 0.2707317798783092,
+        "bounds_mm": [
+          -18.0,
+          -63.04871130596428,
+          11.857179676972446,
+          18.0,
+          -38.0,
+          27.242820323027544
+        ],
+        "pose": [
+          30,
+          -2.4,
+          7
+        ]
+      }
+    },
+    {
+      "angle_deg": 30,
+      "drop_mm": 3.2,
+      "checked": 29,
+      "pass_coarse": false,
+      "first_collision": {
+        "part": "PCB",
+        "obstacle": "LowerCenter",
+        "volume_mm3": 1.0139007079478457,
+        "bounds_mm": [
+          -18.0,
+          -63.84871130596428,
+          10.857179676972446,
+          18.0,
+          -38.8,
+          26.242820323027544
+        ],
+        "pose": [
+          30,
+          -3.2,
+          6
+        ]
+      }
+    },
+    {
+      "angle_deg": 30,
+      "drop_mm": 4.0,
+      "checked": 29,
+      "pass_coarse": false,
+      "first_collision": {
+        "part": "PCB",
+        "obstacle": "LowerCenter",
+        "volume_mm3": 2.450992227978123,
+        "bounds_mm": [
+          -18.0,
+          -64.64871130596428,
+          10.857179676972446,
+          18.0,
+          -39.6,
+          26.242820323027544
+        ],
+        "pose": [
+          30,
+          -4.0,
+          6
+        ]
+      }
+    },
+    {
+      "angle_deg": 35,
+      "drop_mm": 1.6,
+      "checked": 30,
+      "pass_coarse": false,
+      "first_collision": {
+        "part": "PCB",
+        "obstacle": "LowerCenter",
+        "volume_mm3": 10.055899196488543,
+        "bounds_mm": [
+          -18.0,
+          -60.9951183891726,
+          11.894678364568808,
+          18.0,
+          -37.14113885091916,
+          29.265461853260483
+        ],
+        "pose": [
+          35,
+          -1.6,
+          7
+        ]
+      }
+    },
+    {
+      "angle_deg": 35,
+      "drop_mm": 2.4,
+      "checked": 30,
+      "pass_coarse": false,
+      "first_collision": {
+        "part": "PCB",
+        "obstacle": "LowerCenter",
+        "volume_mm3": 0.5204030397498041,
+        "bounds_mm": [
+          -18.0,
+          -61.79511838917261,
+          11.894678364568808,
+          18.0,
+          -37.94113885091917,
+          29.265461853260483
+        ],
+        "pose": [
+          35,
+          -2.4,
+          7
+        ]
+      }
+    },
+    {
+      "angle_deg": 35,
+      "drop_mm": 3.2,
+      "checked": 63,
+      "pass_coarse": true,
+      "first_collision": null
+    },
+    {
+      "angle_deg": 35,
+      "drop_mm": 4.0,
+      "checked": 28,
+      "pass_coarse": false,
+      "first_collision": {
+        "part": "PCB",
+        "obstacle": "LowerCenter",
+        "volume_mm3": 3.396343354668271,
+        "bounds_mm": [
+          -18.0,
+          -63.3951183891726,
+          9.894678364568808,
+          18.0,
+          -39.54113885091916,
+          27.265461853260483
+        ],
+        "pose": [
+          35,
+          -4.0,
+          5
+        ]
+      }
+    },
+    {
+      "angle_deg": 40,
+      "drop_mm": 1.6,
+      "checked": 30,
+      "pass_coarse": false,
+      "first_collision": {
+        "part": "PCB",
+        "obstacle": "LowerCenter",
+        "volume_mm3": 11.847562377389641,
+        "bounds_mm": [
+          -18.0,
+          -59.56347449508062,
+          11.937164445504816,
+          18.0,
+          -37.08576991225077,
+          31.16088862571828
+        ],
+        "pose": [
+          40,
+          -1.6,
+          7
+        ]
+      }
+    },
+    {
+      "angle_deg": 40,
+      "drop_mm": 2.4,
+      "checked": 30,
+      "pass_coarse": false,
+      "first_collision": {
+        "part": "PCB",
+        "obstacle": "LowerCenter",
+        "volume_mm3": 0.7454351213855306,
+        "bounds_mm": [
+          -18.0,
+          -60.36347449508062,
+          11.937164445504816,
+          18.0,
+          -37.885769912250765,
+          31.16088862571828
+        ],
+        "pose": [
+          40,
+          -2.4,
+          7
+        ]
+      }
+    },
+    {
+      "angle_deg": 40,
+      "drop_mm": 3.2,
+      "checked": 63,
+      "pass_coarse": true,
+      "first_collision": null
+    },
+    {
+      "angle_deg": 40,
+      "drop_mm": 4.0,
+      "checked": 63,
+      "pass_coarse": true,
+      "first_collision": null
+    },
+    {
+      "angle_deg": 45,
+      "drop_mm": 1.6,
+      "checked": 29,
+      "pass_coarse": false,
+      "first_collision": {
+        "part": "PCB",
+        "obstacle": "LowerCenter",
+        "volume_mm3": 0.07945458255839016,
+        "bounds_mm": [
+          -18.0,
+          -57.96467529817258,
+          10.98431457505076,
+          18.0,
+          -37.03431457505077,
+          31.91467529817257
+        ],
+        "pose": [
+          45,
+          -1.6,
+          6
+        ]
+      }
+    },
+    {
+      "angle_deg": 45,
+      "drop_mm": 2.4,
+      "checked": 30,
+      "pass_coarse": false,
+      "first_collision": {
+        "part": "PCB",
+        "obstacle": "LowerCenter",
+        "volume_mm3": 0.944129880730934,
+        "bounds_mm": [
+          -18.0,
+          -58.76467529817258,
+          11.98431457505076,
+          18.0,
+          -37.83431457505077,
+          32.91467529817257
+        ],
+        "pose": [
+          45,
+          -2.4,
+          7
+        ]
+      }
+    },
+    {
+      "angle_deg": 45,
+      "drop_mm": 3.2,
+      "checked": 63,
+      "pass_coarse": true,
+      "first_collision": null
+    },
+    {
+      "angle_deg": 45,
+      "drop_mm": 4.0,
+      "checked": 63,
+      "pass_coarse": true,
+      "first_collision": null
+    },
+    {
+      "angle_deg": 50,
+      "drop_mm": 1.6,
+      "checked": 29,
+      "pass_coarse": false,
+      "first_collision": {
+        "part": "PCB",
+        "obstacle": "LowerCenter",
+        "volume_mm3": 0.8494837105199641,
+        "bounds_mm": [
+          -18.0,
+          -56.21088862571828,
+          11.035769912250768,
+          18.0,
+          -36.987164445504824,
+          33.513474495080615
+        ],
+        "pose": [
+          50,
+          -1.6,
+          6
+        ]
+      }
+    },
+    {
+      "angle_deg": 50,
+      "drop_mm": 2.4,
+      "checked": 30,
+      "pass_coarse": false,
+      "first_collision": {
+        "part": "PCB",
+        "obstacle": "LowerCenter",
+        "volume_mm3": 1.1439080816754537,
+        "bounds_mm": [
+          -18.0,
+          -57.01088862571828,
+          12.035769912250768,
+          18.0,
+          -37.78716444550482,
+          34.513474495080615
+        ],
+        "pose": [
+          50,
+          -2.4,
+          7
+        ]
+      }
+    },
+    {
+      "angle_deg": 50,
+      "drop_mm": 3.2,
+      "checked": 63,
+      "pass_coarse": true,
+      "first_collision": null
+    },
+    {
+      "angle_deg": 50,
+      "drop_mm": 4.0,
+      "checked": 63,
+      "pass_coarse": true,
+      "first_collision": null
+    },
+    {
+      "angle_deg": 55,
+      "drop_mm": 1.6,
+      "checked": 29,
+      "pass_coarse": false,
+      "first_collision": {
+        "part": "PCB",
+        "obstacle": "LowerCenter",
+        "volume_mm3": 2.6240354084638637,
+        "bounds_mm": [
+          -18.0,
+          -54.31546185326049,
+          11.091138850919162,
+          18.0,
+          -36.94467836456881,
+          34.945118389172606
+        ],
+        "pose": [
+          55,
+          -1.6,
+          6
+        ]
+      }
+    },
+    {
+      "angle_deg": 55,
+      "drop_mm": 2.4,
+      "checked": 30,
+      "pass_coarse": false,
+      "first_collision": {
+        "part": "PCB",
+        "obstacle": "LowerCenter",
+        "volume_mm3": 1.4562905961142332,
+        "bounds_mm": [
+          -18.0,
+          -55.115461853260484,
+          12.091138850919162,
+          18.0,
+          -37.744678364568806,
+          35.945118389172606
+        ],
+        "pose": [
+          55,
+          -2.4,
+          7
+        ]
+      }
+    },
+    {
+      "angle_deg": 55,
+      "drop_mm": 3.2,
+      "checked": 63,
+      "pass_coarse": true,
+      "first_collision": null
+    },
+    {
+      "angle_deg": 55,
+      "drop_mm": 4.0,
+      "checked": 63,
+      "pass_coarse": true,
+      "first_collision": null
+    }
+  ]
+}

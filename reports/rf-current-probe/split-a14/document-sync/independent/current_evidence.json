@@ -1,0 +1,88 @@
+{
+  "classification": "CALCULATED_SCOPED_DOCUMENT_ASSEMBLY_REVIEW_NO_PHYSICAL_TEST",
+  "date": "2026-09-21",
+  "final_native_sha256": "93ba7a61650cfc94c3a9d644f7af4473283908f98d1194f296e7ecd7819f7f92",
+  "final_geometry_chain": {
+    "path": "reviews\\a14_document_sync_20260921\\cad_hardware\\final_head_delta_verification.json",
+    "sha256": "2e61f141efe8028c6539ea97f766893e2256650541375b0e4c1f70c2f2e306cb",
+    "pass_nominal": true,
+    "binding_matches_current_native": true,
+    "note": "Mechanics-owned final saved CAD audit: old geometry preserved except selected catalogue hardware. New F05 unit has direct saved-CAD extraction checks and prior-path bounds checks."
+  },
+  "original_report_scopes": {
+    "selected_pcb_path.json": {
+      "sha256": "6db5e502bc68c4e6dcd039b5b2b319b861b1229f51fa1315eae8af818528b891",
+      "native_sha256": "c718d11f9cfbef3ffe4db12e3a99dc0545465992dd276c2620768d76f9f86f91",
+      "scoped_pass": true,
+      "sources_unchanged_when_run": true
+    },
+    "follower_max.json": {
+      "sha256": "409a9592625a1ecd7050f7bac0cfe7ac61beabd8a5cdc2153870c61bf26834ab",
+      "native_sha256": "c718d11f9cfbef3ffe4db12e3a99dc0545465992dd276c2620768d76f9f86f91",
+      "scoped_pass": true,
+      "sources_unchanged_when_run": true
+    },
+    "f05_stud_knob.json": {
+      "sha256": "66692765d1fbed72b767d48da1fd34040032214f6ea775fb867daf6f603f192b",
+      "native_sha256": "c718d11f9cfbef3ffe4db12e3a99dc0545465992dd276c2620768d76f9f86f91",
+      "scoped_pass": true,
+      "sources_unchanged_when_run": true
+    }
+  },
+  "latest_guide_contract": {
+    "path": "guide_contract.json",
+    "sha256": "2b4902b6ab5fbd15ee55a665a59f37eb9afe3b1cd74492c27f3abc5a7bf13a11",
+    "step_count": 45,
+    "pass_scoped": true,
+    "all_source_hashes_current": true,
+    "node_motion_cases": 10
+  },
+  "resolved": {
+    "PCB_old_route": "30deg/1.6mm blocked by added roof;45deg/4mm362poses clear without CAD edits",
+    "F11": "Fabory lower washer1.6mm + nyloc down0.8mm adopted; local candidate197poses passed and mechanics verified actual saved change",
+    "F12": "NBK maximum shoulder20.25mm146poses clear; threads/fillets/friction need first-article checks",
+    "F05": "70mm stud/through-knob/jamnut/washer328candidateposes+26outside-spannerposes clear;6.9mm nominal tip projection",
+    "guide": "A14 split subassemblies, rear/up paths, short-lift mount path, new shaft preassembly,4-object closure motion and separate upper/lower wrench roles aligned"
+  },
+  "inherited_scope_notes": [
+    "PCB insertion occurs before head screw installation; its tested LowerCenter/core/PCB/rear-nut objects are unchanged by final F05 addition.",
+    "F12 and lower-washer tests are on the bare independent C07 module, before mounting near the probe.",
+    "Candidate and failed diagnostic reports retain original native hashes; no earlier test is relabeled as a new full-assembly run."
+  ],
+  "historical_diagnostics": [
+    "sequence_checks.json (old PCB path fails; other new insertion rows pass)",
+    "pcb_adjusted_path.json",
+    "pcb_motion_search.json",
+    "head_handknob_candidates.json (50/55/60mm single-piece alternatives, not selected)"
+  ],
+  "physical_not_run": [
+    "Actual hands and support during small-nut assembly",
+    "Printed warp/form/fit and coaxial alignment",
+    "Actual thread/fillet/shoulder seating and incomplete tip threads",
+    "Torque, jamnut locking, axial drag, creep and endurance",
+    "RF calibration, insertion and repeatability"
+  ],
+  "pass_scoped": true,
+  "evidence_hashes": {
+    "audit_guide_contract.py": "5687c73b2f1d0f2392891642dd47c3449aad1c51153576a163ef22fb661af8d2",
+    "check_f05_stud_knob.py": "ebb380454a0d34f1c561626810e698a2d2e1d055afc48b0fd0ea655f81ff4370",
+    "check_follower_max.py": "a56a5e749f3eade803213bc094b995615f62b939cc4129294f32d3199fe64833",
+    "check_head_handknob.py": "f6b6221b6379e49c7b9c6a07d50aefd66d49374e44f1a28d4d4de14ab3d87ebb",
+    "check_lower_washer_candidates.py": "6609e1a29b9b3099ed3370ca68020943e839ec94042d6d69fb5434fe3115a2a7",
+    "check_new_sequence.py": "18fa73729232c8de0504ce3edca078c9ccceaf9ad68ef4dcb022cfccfcb086e0",
+    "check_pcb_adjusted_path.py": "fc2fa9000abafcaba75efa2f2248907c1b04bf84de1b42818afcdc395008b6bc",
+    "check_selected_pcb_path.py": "76560a2488d7a0dad76523f6717fc18a9f88038d07a03afb8d17c54eff54a555",
+    "f05_stud_knob.json": "66692765d1fbed72b767d48da1fd34040032214f6ea775fb867daf6f603f192b",
+    "finalize_evidence.py": "956b4afcbf0f29f6bbf9457977f403e5ee0c9b7ff29218e88fb936768f89789c",
+    "follower_max.json": "409a9592625a1ecd7050f7bac0cfe7ac61beabd8a5cdc2153870c61bf26834ab",
+    "guide_contract.json": "2b4902b6ab5fbd15ee55a665a59f37eb9afe3b1cd74492c27f3abc5a7bf13a11",
+    "head_handknob_candidates.json": "841e2a1f06e0a3e07d38dbbb4aeca03e92c26f43b713eaa0c7236d4fbd3a6fdd",
+    "lower_washer_candidates.json": "8be1ca6a62a4198e4f5d102947b2ed9a3cbbd759de55f06633b7b6c615810829",
+    "pcb_adjusted_path.json": "b95c7229cd0d2d994c3f5226151945903b643e5b055e288b7c91936496557581",
+    "pcb_motion_search.json": "faeb7d73af433f5fb0eb7b9caaa116964707dacd04f786c5d6f6b7036e4d4234",
+    "README.md": "08c90dcc2b6912ac9cb7377d6d838db18342e4de2333dd3009c47619e04aca80",
+    "search_pcb_motion.py": "471c5a360c18188c76d8bb19d84659fe43b14705ee97238ceef7299c0a1357ce",
+    "selected_pcb_path.json": "6db5e502bc68c4e6dcd039b5b2b319b861b1229f51fa1315eae8af818528b891",
+    "sequence_checks.json": "94de694301bf98c03a0821ac568cca8506a37b54511c67be2e7e344981e68033"
+  }
+}

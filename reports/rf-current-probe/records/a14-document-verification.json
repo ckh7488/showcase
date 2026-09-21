@@ -1,0 +1,23 @@
+{
+  "classification": "STATIC_ROUTE_OFFLINE_BUNDLE_CAD_IDENTITY_BOM_CHECK_NOT_PHYSICAL_ASSEMBLY",
+  "pass_": true,
+  "native_sha256": "93ba7a61650cfc94c3a9d644f7af4473283908f98d1194f296e7ecd7819f7f92",
+  "documents": [
+    "index.html",
+    "manual.html",
+    "assembly-guide.html",
+    "bom.html",
+    "assembly.html",
+    "purchase.html",
+    "impedance-review.html"
+  ],
+  "steps": 45,
+  "bom_rows": 58,
+  "printed_types": 15,
+  "printed_pieces": 20,
+  "cad_quantity_rows": 44,
+  "actual_mesh_parts": 125,
+  "local_links": 119,
+  "offline_links": 98,
+  "fixture_A02_on_hold": true
+}

@@ -1,0 +1,1325 @@
+{
+  "classification": "CALCULATED_HANDKNOB_HEAD_AND_LENGTH_CANDIDATES_NOT_CATALOGUE_APPROVAL",
+  "sources": {
+    "mechanical\\assembly_A14_DRAFT\\RFCP_A14_Integrated_DRAFT.FCStd": "c718d11f9cfbef3ffe4db12e3a99dc0545465992dd276c2620768d76f9f86f91",
+    "reviews\\a14_document_sync_20260921\\independent\\check_head_handknob.py": "f6b6221b6379e49c7b9c6a07d50aefd66d49374e44f1a28d4d4de14ab3d87ebb"
+  },
+  "candidates": [
+    {
+      "shaft_length_mm": 50,
+      "shaft_y_mm": [
+        -10,
+        40
+      ],
+      "head_hub_y_mm": [
+        40,
+        44
+      ],
+      "head_grip_y_mm": [
+        44,
+        49
+      ],
+      "nut_y_mm": [
+        -9.6,
+        -6.4
+      ],
+      "nominal_tip_beyond_nut_mm": 0.3999999999999986,
+      "poses": [
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 0,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 2,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 4,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 6,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 8,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 10,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 12,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 14,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 16,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 18,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 20,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 22,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 24,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 26,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 28,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 30,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 32,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 34,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 36,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 38,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 40,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 42,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 44,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 46,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 48,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 50,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 52,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 54,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 56,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 58,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 60,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 62,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 64,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 66,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 68,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 70,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 72,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 74,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 76,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 78,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 80,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 0,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 2,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 4,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 6,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 8,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 10,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 12,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 14,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 16,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 18,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 20,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 22,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 24,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 26,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 28,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 30,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 32,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 34,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 36,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 38,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 40,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 42,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 44,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 46,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 48,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 50,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 52,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 54,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 56,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 58,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 60,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 62,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 64,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 66,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 68,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 70,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 72,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 74,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 76,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 78,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 80,
+          "collisions": []
+        }
+      ],
+      "pass_nominal": true
+    },
+    {
+      "shaft_length_mm": 55,
+      "shaft_y_mm": [
+        -15,
+        40
+      ],
+      "head_hub_y_mm": [
+        40,
+        44
+      ],
+      "head_grip_y_mm": [
+        44,
+        49
+      ],
+      "nut_y_mm": [
+        -9.6,
+        -6.4
+      ],
+      "nominal_tip_beyond_nut_mm": 5.399999999999999,
+      "poses": [
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 0,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 2,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 4,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 6,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 8,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 10,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 12,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 14,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 16,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 18,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 20,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 22,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 24,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 26,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 28,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 30,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 32,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 34,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 36,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 38,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 40,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 42,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 44,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 46,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 48,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 50,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 52,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 54,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 56,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 58,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 60,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 62,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 64,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 66,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 68,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 70,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 72,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 74,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 76,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 78,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 80,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 0,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 2,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 4,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 6,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 8,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 10,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 12,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 14,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 16,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 18,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 20,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 22,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 24,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 26,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 28,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 30,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 32,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 34,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 36,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 38,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 40,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 42,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 44,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 46,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 48,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 50,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 52,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 54,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 56,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 58,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 60,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 62,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 64,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 66,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 68,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 70,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 72,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 74,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 76,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 78,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 80,
+          "collisions": []
+        }
+      ],
+      "pass_nominal": true
+    },
+    {
+      "shaft_length_mm": 60,
+      "shaft_y_mm": [
+        -20,
+        40
+      ],
+      "head_hub_y_mm": [
+        40,
+        44
+      ],
+      "head_grip_y_mm": [
+        44,
+        49
+      ],
+      "nut_y_mm": [
+        -9.6,
+        -6.4
+      ],
+      "nominal_tip_beyond_nut_mm": 10.399999999999999,
+      "poses": [
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 0,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 2,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 4,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 6,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 8,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 10,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 12,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 14,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 16,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 18,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 20,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 22,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 24,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 26,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 28,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 30,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 32,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 34,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 36,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 38,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 40,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 42,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 44,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 46,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 48,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 50,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 52,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 54,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 56,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 58,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 60,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 62,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 64,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 66,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 68,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 70,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 72,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 74,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 76,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 78,
+          "collisions": []
+        },
+        {
+          "x_mm": -111,
+          "upward_offset_mm": 80,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 0,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 2,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 4,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 6,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 8,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 10,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 12,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 14,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 16,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 18,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 20,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 22,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 24,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 26,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 28,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 30,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 32,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 34,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 36,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 38,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 40,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 42,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 44,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 46,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 48,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 50,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 52,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 54,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 56,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 58,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 60,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 62,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 64,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 66,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 68,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 70,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 72,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 74,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 76,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 78,
+          "collisions": []
+        },
+        {
+          "x_mm": 111,
+          "upward_offset_mm": 80,
+          "collisions": []
+        }
+      ],
+      "pass_nominal": true
+    }
+  ],
+  "bearing": {
+    "hub_nominal_d_mm": 7,
+    "upper_hole_nominal_d_mm": 5.2,
+    "centered_radial_land_mm": 0.9,
+    "centered_annular_area_mm2": 17.24734366820796,
+    "assumed_hole_max_mm": 5.5,
+    "centered_area_at_assumed_hole_max_mm2": 14.726215563702155,
+    "min_edge_land_with_M4_floating_to_hole_edge_mm": 0.0,
+    "note": "The7mm hub remains larger than the hole. At hole5.5 and maximum shaft eccentricity, the minimum local radial land reaches0; total bearing area remains positive. This is not a load or print-tolerance guarantee."
+  },
+  "limits": [
+    "Verpas M4x50 actual SKU defines the14x9mm head with7x4mm hub.55/60 are geometric alternatives only until a supplier SKU is matched.",
+    "Nominal50mm tip projection0.4mm has little allowance for length tolerance and incomplete tip threads; full-thread engagement requires confirmation.",
+    "No washer added. A washer would raise the head and reduce engagement by its thickness.",
+    "Only nominal rigid geometry and contact area arithmetic tested; PA head bearing stress, clamp force, creep and hand comfort require actual tests."
+  ],
+  "sources_unchanged": true
+}

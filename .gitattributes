@@ -14,3 +14,9 @@
 *.bin binary
 # Preserve the original simulation evidence bytes and their SHA-256 checksums.
 /reports/porta-pcb/records/tx-recheck/*-fem-checks.json -text
+# RFCP CAD and calculation records carry source-byte checksums.
+/reports/rf-current-probe/split-a14/** -text
+/reports/rf-current-probe/files/parts/** -text
+/reports/rf-current-probe/assembly/*.step -text
+/reports/rf-current-probe/impedance-files/** -text
+/reports/rf-current-probe/records/** -text
