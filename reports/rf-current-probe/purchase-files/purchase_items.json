@@ -8,7 +8,9 @@
     "sku": "2073-RFPC-SMA28-F-ND",
     "url": "https://www.digikey.kr/ko/products/detail/gct/RFPC-SMA28-F/22162141",
     "price_date": "2026-09-18",
-    "price_evidence": "actual new DigiKey cart UI"
+    "price_evidence": "actual new DigiKey cart UI",
+    "vendor": "DigiKey",
+    "in_existing_9_item_cart": true
   },
   {
     "id": "RFCP-R05",
@@ -19,7 +21,9 @@
     "sku": "3157-VAT-10A+-ND",
     "url": "https://www.digikey.kr/ko/products/detail/mini-circuits/VAT-10A/19186400",
     "price_date": "2026-09-18",
-    "price_evidence": "actual new DigiKey cart UI"
+    "price_evidence": "actual new DigiKey cart UI",
+    "vendor": "DigiKey",
+    "in_existing_9_item_cart": true
   },
   {
     "id": "RFCP-R01",
@@ -30,7 +34,9 @@
     "sku": "343-CSE-SGAM-305-SGAM-ND",
     "url": "https://www.digikey.kr/ko/products/detail/te-connectivity-linx/CSE-SGAM-305-SGAM/14633985",
     "price_date": "2026-09-18",
-    "price_evidence": "actual new DigiKey cart UI"
+    "price_evidence": "actual new DigiKey cart UI",
+    "vendor": "DigiKey",
+    "in_existing_9_item_cart": true
   },
   {
     "id": "RFCP-R06",
@@ -41,7 +47,9 @@
     "sku": "1568-27480-ND",
     "url": "https://www.digikey.kr/ko/products/detail/sparkfun-electronics/27480/26266456",
     "price_date": "2026-09-18",
-    "price_evidence": "actual new DigiKey cart UI"
+    "price_evidence": "actual new DigiKey cart UI",
+    "vendor": "DigiKey",
+    "in_existing_9_item_cart": true
   },
   {
     "id": "BALUN-M12F",
@@ -52,7 +60,9 @@
     "sku": "A142125-ND",
     "url": "https://www.digikey.kr/ko/products/detail/te-connectivity-amp-connectors/T4143012081-000/9837142",
     "price_date": "2026-09-18",
-    "price_evidence": "actual new DigiKey cart UI"
+    "price_evidence": "actual new DigiKey cart UI",
+    "vendor": "DigiKey",
+    "in_existing_9_item_cart": true
   },
   {
     "id": "BALUN-MOLEX",
@@ -63,7 +73,9 @@
     "sku": "WM17036CT-ND",
     "url": "https://www.digikey.kr/ko/products/detail/molex/5055680571/7807019",
     "price_date": "2026-09-18",
-    "price_evidence": "actual new DigiKey cart UI"
+    "price_evidence": "actual new DigiKey cart UI",
+    "vendor": "DigiKey",
+    "in_existing_9_item_cart": true
   },
   {
     "id": "BALUN-SMA",
@@ -74,7 +86,9 @@
     "sku": "SAM8856-ND",
     "url": "https://www.digikey.kr/ko/products/detail/samtec-inc/SMA-J-P-H-RA-TH1/2664715",
     "price_date": "2026-09-18",
-    "price_evidence": "actual new DigiKey cart UI"
+    "price_evidence": "actual new DigiKey cart UI",
+    "vendor": "DigiKey",
+    "in_existing_9_item_cart": true
   },
   {
     "id": "BALUN-XFMR",
@@ -85,7 +99,9 @@
     "sku": "3157-ADT2-1T+CT-ND",
     "url": "https://www.digikey.kr/ko/products/detail/mini-circuits/ADT2-1T/13927001",
     "price_date": "2026-09-18",
-    "price_evidence": "actual new DigiKey cart UI"
+    "price_evidence": "actual new DigiKey cart UI",
+    "vendor": "DigiKey",
+    "in_existing_9_item_cart": true
   },
   {
     "id": "BALUN-RJ45",
@@ -96,6 +112,90 @@
     "sku": "664-RJE591885401-ND",
     "url": "https://www.digikey.kr/ko/products/detail/amphenol-cs-commercial-products/RJE591885401/6189327",
     "price_date": "2026-09-18",
-    "price_evidence": "actual new DigiKey cart UI"
+    "price_evidence": "actual new DigiKey cart UI",
+    "vendor": "DigiKey",
+    "in_existing_9_item_cart": true
+  },
+  {
+    "id": "SHARED-FLUX",
+    "name": "무세척 플럭스 10mL",
+    "mpn": "SMD291-10M",
+    "note": "SMD291-10M / 무세척 플럭스 10 mL / 2개. 이전 확정 구매량 복원.",
+    "qty": 2,
+    "line_krw": 34426,
+    "sku": "315-SMD291-10M-ND",
+    "url": "https://www.digikey.kr/ko/products/detail/chip-quik-inc/SMD291-10M/14636534",
+    "price_date": "2026-09-17",
+    "price_evidence": "2026-09-17 saved purchase record; not a fresh quote",
+    "vendor": "DigiKey",
+    "in_existing_9_item_cart": false
+  },
+  {
+    "id": "SHARED-LOAD",
+    "name": "SMA 수 50Ω 종단기",
+    "mpn": "2467938-1",
+    "note": "2467938-1 / SMA 수 / 50 Ω / 발룬 6개 + 공유·예비 1개. 보유 SOL 교정 표준과 별개.",
+    "qty": 7,
+    "line_krw": 28028,
+    "sku": "343-2467938-1-ND",
+    "url": "https://www.digikey.kr/ko/products/detail/te-connectivity-linx/2467938-1/22535225",
+    "price_date": "2026-09-17",
+    "price_evidence": "2026-09-17 saved purchase record; not a fresh quote",
+    "vendor": "DigiKey",
+    "in_existing_9_item_cart": false
+  },
+  {
+    "id": "WDG-01",
+    "name": "UEW-0.3파이",
+    "mpn": "UEW-0.3파이",
+    "qty": 1,
+    "note": "Ø0.3 mm / 1판매단위. 권선용 한 종류만 구매.",
+    "line_krw": 26840,
+    "url": "https://www.devicemart.co.kr/goods/view?no=24937",
+    "vendor": "디바이스마트",
+    "price_date": "2026-09-17",
+    "price_evidence": "saved purchase record; not a fresh quote",
+    "in_existing_9_item_cart": false
+  },
+  {
+    "id": "INS-01",
+    "name": "SMG-A 5mm×33m",
+    "mpn": "SMG-A 5mm×33m",
+    "qty": 1,
+    "note": "SMG-A / 폭 5 mm × 33 m / 1롤.",
+    "line_krw": 3300,
+    "url": "https://www.devicemart.co.kr/goods/view?no=34614",
+    "vendor": "디바이스마트",
+    "price_date": "2026-09-17",
+    "price_evidence": "saved purchase record; not a fresh quote",
+    "in_existing_9_item_cart": false
+  },
+  {
+    "id": "TIP-1.6D",
+    "name": "HAKKO 900M 인두팁 1.6D",
+    "mpn": "900M-T-1.6D",
+    "note": "900M-T-1.6D / 보유 HAKKO 936·907용 / 1개.",
+    "qty": 1,
+    "line_krw": 9350,
+    "sku": "2290",
+    "url": "https://www.devicemart.co.kr/goods/view?no=2290",
+    "price_date": "2026-09-17",
+    "price_evidence": "2026-09-17 saved purchase record; not a fresh quote",
+    "vendor": "디바이스마트",
+    "in_existing_9_item_cart": false
+  },
+  {
+    "id": "TIP-2.4D",
+    "name": "HAKKO 900M 인두팁 2.4D",
+    "mpn": "900M-T-2.4D",
+    "note": "900M-T-2.4D / 보유 HAKKO 936·907용 / 1개.",
+    "qty": 1,
+    "line_krw": 9350,
+    "sku": "2291",
+    "url": "https://www.devicemart.co.kr/goods/view?no=2291",
+    "price_date": "2026-09-17",
+    "price_evidence": "2026-09-17 saved purchase record; not a fresh quote",
+    "vendor": "디바이스마트",
+    "in_existing_9_item_cart": false
   }
 ]
