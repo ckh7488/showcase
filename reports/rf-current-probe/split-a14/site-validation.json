@@ -1,7 +1,7 @@
 {
   "classification": "STATIC_ARTIFACT_VALIDATION_NOT_BROWSER_TEST",
   "parts_decoded": 196,
-  "html_bytes": 20056968,
+  "html_bytes": 20057075,
   "zip_integrity": true,
   "entrypoints": 7,
   "pass_checks": true,
