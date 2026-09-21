@@ -1,0 +1,626 @@
+{
+  "classification": "CALCULATED_MAXIMUM_NUT_ENVELOPE_NOT_FULL_TOLERANCE_OR_THREAD_QUALIFICATION",
+  "native_sha256": "93ba7a61650cfc94c3a9d644f7af4473283908f98d1194f296e7ecd7819f7f92",
+  "source": {
+    "url": "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/936/04M020040HN.PDF",
+    "path": "reviews/full_audit_20260921/sources/04M020040HN.PDF",
+    "sha256": "b2d955258e081d03005747b4c5538c1a850052e41e062bc1b7909aa9828919f7",
+    "visual_read": true,
+    "date_field": "blank; UNCONTROLLED DOCUMENT"
+  },
+  "assumption": {
+    "AF_nominal": 3.9,
+    "height_nominal": 1.2,
+    "tolerance_each": 0.26,
+    "max_AF": 4.16,
+    "max_height": 1.46,
+    "rotation_envelope": "circumscribed cylinder, bore2.1, nut front bearing face preserved"
+  },
+  "rows": [
+    {
+      "index": 0,
+      "original_bbox": {
+        "x": [
+          -16.45,
+          -12.549999999999999
+        ],
+        "y": [
+          -62.75166604983954,
+          -58.24833395016046
+        ],
+        "z": [
+          -3.2,
+          -2.0
+        ]
+      },
+      "candidate_bbox": {
+        "x": [
+          -16.901777119828843,
+          -12.098222880171157
+        ],
+        "y": [
+          -62.90177711982884,
+          -58.09822288017116
+        ],
+        "z": [
+          -3.46,
+          -2.0
+        ]
+      },
+      "static_collisions": [],
+      "rear_insertion": [
+        {
+          "rear_travel_mm": 0,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 1,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 2,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 3,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 4,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 5,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 6,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 7,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 8,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 9,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 10,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 11,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 12,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 13,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 14,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 15,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 16,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 17,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 18,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 19,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 20,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 21,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 22,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 23,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 24,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 25,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 26,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 27,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 28,
+          "collisions": []
+        }
+      ],
+      "screw_bbox": {
+        "x": [
+          -16.5,
+          -12.5
+        ],
+        "y": [
+          -62.5,
+          -58.5
+        ],
+        "z": [
+          -3.65,
+          7.949999999999999
+        ]
+      },
+      "nominal_screw_tip_projection_mm": 0.18999999999999995,
+      "original_nut_front_face_z_mm": -2.0
+    },
+    {
+      "index": 1,
+      "original_bbox": {
+        "x": [
+          12.549999999999999,
+          16.45
+        ],
+        "y": [
+          -62.75166604983954,
+          -58.24833395016046
+        ],
+        "z": [
+          -3.200000000000001,
+          -2.0
+        ]
+      },
+      "candidate_bbox": {
+        "x": [
+          12.098222880171157,
+          16.901777119828843
+        ],
+        "y": [
+          -62.90177711982884,
+          -58.09822288017116
+        ],
+        "z": [
+          -3.46,
+          -2.0
+        ]
+      },
+      "static_collisions": [],
+      "rear_insertion": [
+        {
+          "rear_travel_mm": 0,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 1,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 2,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 3,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 4,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 5,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 6,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 7,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 8,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 9,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 10,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 11,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 12,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 13,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 14,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 15,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 16,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 17,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 18,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 19,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 20,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 21,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 22,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 23,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 24,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 25,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 26,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 27,
+          "collisions": []
+        },
+        {
+          "rear_travel_mm": 28,
+          "collisions": []
+        }
+      ],
+      "screw_bbox": {
+        "x": [
+          12.5,
+          16.5
+        ],
+        "y": [
+          -62.5,
+          -58.5
+        ],
+        "z": [
+          -3.65,
+          7.949999999999999
+        ]
+      },
+      "nominal_screw_tip_projection_mm": 0.18999999999999995,
+      "original_nut_front_face_z_mm": -2.0
+    }
+  ],
+  "nominal_geometry_pass": true,
+  "length_sensitivity": {
+    "nominal_shank_available_beyond_bearing_mm": 1.65,
+    "max_nut_thickness_mm": 1.46,
+    "remaining_nominal_tip_projection_mm": 0.19,
+    "illustrative_screw_length_minus_mm": 0.3,
+    "illustrative_remaining_mm": -0.11,
+    "illustrative_not_lot_tolerance": true
+  },
+  "superseded_initial_assumption": "f02_unconfirmed_initial_assumption.json used unverified3.98/H1.62; not the retrieved manufacturer drawing and not current evidence",
+  "limits": [
+    "All-body insertion envelope passes for this manufacturer maximum; no product defect established by the superseded unverified larger-height case.",
+    "Threads and physical nut/spanner not modeled; tool size cannot be inferred solely from nominalAF.",
+    "Actual incomplete screw-end threads and full screw/PCB/holder tolerance stack remain. Nominal0.19 tip margin is not a worst-case pass.",
+    "Manufacturer revision/lot is uncontrolled in retrieved document; confirm supplied product.",
+    "No new product CAD or STL was written."
+  ],
+  "M2x12_candidate": {
+    "description": "same existing maximum D4/H1.6 head; nominal shank12 instead of10; exactSKU not yet adopted",
+    "poses": 61,
+    "rows": [
+      {
+        "front_travel_mm": 0.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 1.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 3.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 4.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 6.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 7.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 9.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 10.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 12.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 13.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 15.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 16.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 18.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 19.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 21.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 22.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 24.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 25.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 27.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 28.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 30.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 31.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 33.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 34.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 36.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 37.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 39.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 40.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 42.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 43.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 45.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 46.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 48.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 49.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 51.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 52.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 54.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 55.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 57.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 58.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 60.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 61.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 63.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 64.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 66.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 67.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 69.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 70.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 72.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 73.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 75.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 76.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 78.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 79.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 81.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 82.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 84.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 85.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 87.0,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 88.5,
+        "collisions": []
+      },
+      {
+        "front_travel_mm": 90.0,
+        "collisions": []
+      }
+    ],
+    "pass_nominal": true,
+    "projection_past_maximum_nut_mm": 2.19,
+    "limits": [
+      "No supplier product/length tolerance or completed threads qualified by this geometric candidate.",
+      "Actual wrist/driver manipulation and variable print/PCB grip not modeled."
+    ]
+  }
+}

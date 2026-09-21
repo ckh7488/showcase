@@ -1,4 +1,4 @@
 DRAFT — NOT FOR FABRICATION
-Fixture PCB A02 is ON HOLD. 50-ohm matching has NOT been established. Do NOT order this revision. See impedance-review.html.
-교정 PCB A02는 과거 참고 파일입니다. 정합 검증 및 새 리비전 확정 전 발주 금지.
-A14/C07 기구의 구매품 대조와 실물 맞춤 검증도 남아 있습니다.
+Fixture PCB A02 is ON HOLD. Local primary-current calibration has NOT been established. Do NOT order this revision before review. See bom.html#readiness and impedance-review.html.
+교정 PCB A02는 전류 모델 검증 전 참고 파일입니다. 검증 결과로 기존 유지 또는 수정 여부를 결정한 뒤 발주합니다.
+헤드 SMA 핀·홀 공차, A14/C07 기구의 조달과 실물 맞춤 검증도 남아 있습니다.
