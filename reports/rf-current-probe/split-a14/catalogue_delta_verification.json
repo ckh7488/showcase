@@ -1,55 +1,34 @@
 {
   "classification": "CALCULATED_SCOPED_HARDWARE_DELTA_CHAIN_NOT_FULL_RETEST",
-  "native_sha256": "93ba7a61650cfc94c3a9d644f7af4473283908f98d1194f296e7ecd7819f7f92",
-  "source_sha256": "93c80466f267ed9964454ac71ee28ac52facadef2eaa80132cb9452ddb400183",
-  "mesh_sha256": "06e7972359b9f7506b23835239943ff1c124c933f9cd05162c85a2753ba9a482",
+  "native_sha256": "400618d82bd9f1d98a7f45a7e3e4bda1664310d61d81435e3d18fd1194b9e2a7",
+  "source_sha256": "a7cd0baa102cd987445c187bfd41a16b5300fb790d20a83692af9135f101e0ac",
+  "mesh_sha256": "d7b22ceb230a093943872b5a9cd0abc39096fc282fae383d65120d6cacc0b0ac",
   "pass_scoped": true,
-  "baseline_native_sha256": "8e547665d45ae71bc991756215d55e3f9a3e7d457b75f29fe904123e6636d606",
-  "intermediate_native_sha256": "c718d11f9cfbef3ffe4db12e3a99dc0545465992dd276c2620768d76f9f86f91",
-  "final_native_sha256": "93ba7a61650cfc94c3a9d644f7af4473283908f98d1194f296e7ecd7819f7f92",
-  "original_full_path_tests_rerun_on_final": false,
-  "intermediate_455_pose_pass": true,
-  "final_82_assembly_pose_pass": true,
+  "baseline_native_sha256": "93ba7a61650cfc94c3a9d644f7af4473283908f98d1194f296e7ecd7819f7f92",
+  "prior_verification_record": "reviews/technical_closure_20260921/before_m2/catalogue_delta_verification.json",
+  "prior_verification_sha256": "05976458e5e2cf8987ebaf2745281c07888a153ebee410d0d3e3dfce806e244b",
+  "delta_record": "reviews/technical_closure_20260921/m2x12_result.json",
+  "delta_sha256": "18cb784269799faf39cdafed0d99f96e4fbba10e6d8448933a71f332980acb1a",
+  "unchanged_objects": 124,
+  "changed_objects": [
+    "PCBScrews"
+  ],
   "all15_stl_byte_identical_to_original": true,
-  "final_existing_objects_unchanged_from_intermediate": 121,
-  "final_added_objects": [
-    "HeadClosureJamNuts",
-    "HeadClosureKnobs",
-    "HeadClosureWashers"
-  ],
-  "independent_candidate_symmetric_difference_mm3": {
-    "HeadHandScrews": 0.0,
-    "HeadClosureJamNuts": 0.0,
-    "HeadClosureWashers": 0.0,
-    "HeadClosureKnobs": 0.0
-  },
-  "references": {
-    "original_8e_path_record": {
-      "path": "reviews/a14_document_sync_20260921/before_cad/assembly_A14_DRAFT/verification.json",
-      "sha256": "8929620026b013f37c5fe742ab774c3bc3c9ab08b4c359b1059d14560b050a7d"
-    },
-    "original_8e_independent_record": {
-      "path": "reviews/a14_recheck_20260921/independent/current_evidence.json",
-      "sha256": "8763a91b770b31a9fc97d75bf27f523710a4b22cd589018107842fd5ac9329e5"
-    },
-    "intermediate_c718_455_pose_record": {
-      "path": "reviews/a14_document_sync_20260921/cad_hardware/before_f05/catalogue_delta_verification.json",
-      "sha256": "ea0910414732f8e4ed921d976554af2ad53ba01befaa2fa978c2794e98eda873"
-    },
-    "final_93ba_82_assembly_pose_record": {
-      "path": "reviews/a14_document_sync_20260921/cad_hardware/final_head_delta_verification.json",
-      "sha256": "2e61f141efe8028c6539ea97f766893e2256650541375b0e4c1f70c2f2e306cb"
-    },
-    "independent_f05_328_component_and_26_spanner_record": {
-      "path": "reviews/a14_document_sync_20260921/independent/f05_stud_knob.json",
-      "sha256": "66692765d1fbed72b767d48da1fd34040032214f6ea775fb867daf6f603f192b"
-    }
-  },
+  "physical_validation_executed": false,
+  "original_full_path_tests_rerun_on_final": false,
   "limitations": [
-    "455 poses were executed on c718, not falsely attributed to final native. Final changes are linked by whole-object geometry delta plus added-material separation from prior-path envelopes.",
-    "Final82 assembly poses are the same sampling as independent328 component poses; do not sum them as independent trajectories.",
-    "Printed geometry remains byte identical; no new print quote implied.",
-    "Actual screw friction, torque, hand force, creep, RF and source purchasing availability are not qualified."
+    "These inspection bounds are specified design acceptance, not a claim of supplier guaranteed tolerances.",
+    "No torque, nylon creep, physical thread quality, print error or hand manipulation has been tested.",
+    "The prior PCB insertion path is preserved; attach these screws only AFTER PCB seating."
   ],
-  "physical_validation_executed": false
+  "references": {
+    "prior_chain": {
+      "path": "reviews/technical_closure_20260921/before_m2/catalogue_delta_verification.json",
+      "sha256": "05976458e5e2cf8987ebaf2745281c07888a153ebee410d0d3e3dfce806e244b"
+    },
+    "m2_delta": {
+      "path": "reviews/technical_closure_20260921/m2x12_result.json",
+      "sha256": "18cb784269799faf39cdafed0d99f96e4fbba10e6d8448933a71f332980acb1a"
+    }
+  }
 }

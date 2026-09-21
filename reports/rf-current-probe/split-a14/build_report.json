@@ -11,13 +11,13 @@
     "(HEAD detached at 1.0.2)",
     "256fc7eff3379911ab5daf88e10182c509aa8052"
   ],
-  "source_sha256": "93c80466f267ed9964454ac71ee28ac52facadef2eaa80132cb9452ddb400183",
+  "source_sha256": "a7cd0baa102cd987445c187bfd41a16b5300fb790d20a83692af9135f101e0ac",
   "input_sha256": {
     "mechanical\\assembly_A13_DRAFT\\RFCP_A13_Integrated_DRAFT.FCStd": "5338d317e73dd15f1c95182864a2cf8f4377bbea19776716b925b8b2af7ed846",
     "mechanical\\assembly_A13_DRAFT\\parts\\UpperLid_FREE_DRAFT.step": "9abd0094ac364ad3d2c1dd458cc8f2d96e1a475b05ac0d3263454ae1e9958e4e"
   },
-  "native_sha256": "93ba7a61650cfc94c3a9d644f7af4473283908f98d1194f296e7ecd7819f7f92",
-  "mesh_sha256": "06e7972359b9f7506b23835239943ff1c124c933f9cd05162c85a2753ba9a482",
+  "native_sha256": "400618d82bd9f1d98a7f45a7e3e4bda1664310d61d81435e3d18fd1194b9e2a7",
+  "mesh_sha256": "d7b22ceb230a093943872b5a9cd0abc39096fc282fae383d65120d6cacc0b0ac",
   "parts": {
     "LowerArmLeft": {
       "valid": true,
@@ -234,7 +234,7 @@
       41.8
     ],
     "frame_endplay_nominal_mm": 0.2,
-    "pcb_screw": "Essentra 50M020040P010; qty2; maximum head D4 H1.6; existing M2x10 shank unchanged",
+    "pcb_screw": "Essentra 50M020040P012; qty2; maximum head D4 H1.6; nominal M2x12 shank",
     "changed_shape_objects": [
       "Cable1_ThrustWasher",
       "Cable2_ThrustWasher",
@@ -278,5 +278,6 @@
     "A13 remaining DFM warning in PCB holder needs fresh supplier review.",
     "Existing C07 candidate screw/shaft sourcing and calibration PCB impedance holds remain."
   ],
-  "pass_geometry": true
+  "pass_geometry": true,
+  "m2x12_adoption_record": "reviews/technical_closure_20260921/m2x12_result.json"
 }
