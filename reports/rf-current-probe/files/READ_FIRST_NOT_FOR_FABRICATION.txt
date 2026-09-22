@@ -1,4 +1,12 @@
+RFCP A14 / C07 — DESIGN REFERENCE
 DRAFT — NOT FOR FABRICATION
-Fixture PCB A02 is ON HOLD. Local primary-current calibration has NOT been established. Do NOT order this revision before review. See bom.html#readiness and impedance-review.html.
-교정 PCB A02는 전류 모델 검증 전 참고 파일입니다. 검증 결과로 기존 유지 또는 수정 여부를 결정한 뒤 발주합니다.
-헤드 SMA 핀·홀 공차, A14/C07 기구의 조달과 실물 맞춤 검증도 남아 있습니다.
+
+출력 STL: 15종 / 한 세트20개. 파일별 수량은 bom.html 참조.
+STEP: 조립 배치 참고용. 출력 형상은 개별 자유 형상 STL 사용.
+PCB: Head A04 / Fixture A03, FR4 2층, 공칭1.6 mm, 외층1 oz.
+일반 도금 through via. 중실 PEC 해석 모델을 비아 충전 공정으로 해석하지 않음.
+SMA 완성 홀: 중심1.70 / 접지1.90 mm. 수신기 쪽 단일50 Ω 종단.
+
+CAD와 수치 모델에 기반한 시제품 자료이며 실측 유효 대역·정확도·안전 정격을 보증하지 않음.
+실제 부품 치수와 제조 공정 조건을 확인하고 조립·특성화 절차를 적용할 것.
+설명: manual.html / 조립: assembly-guide.html / 해석: design-review.html

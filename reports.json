@@ -21,19 +21,19 @@
     },
     {
       "id": "rf-current-probe",
-      "title": "RF 전류 프로브 · 제작과 사용",
-      "summary": "A14/C07 실제 3D와 45단계 조립절차. 설명서·현재 BOM·구매 링크와 교정 PCB 검토를 같은 형상 기준으로 확인합니다.",
+      "title": "RF 전류 프로브 · 구조와 사용",
+      "summary": "분할 코어와 수동 권선으로 케이블의 RF 합전류를 관측하는 시제품 설계. 3D 구조, 45단계 조립절차, 부품 규격과 교정 원리를 살펴봅니다.",
       "category": "하드웨어 · 측정 도구",
-      "date": "2026-09-21",
+      "date": "2026-09-22",
       "path": "reports/rf-current-probe/",
       "cover": "reports/rf-current-probe/cover-a14.png",
-      "coverAlt": "실제 A14 CAD의 분할 바닥·앞뒤 중심 클램프와 상부를 연 RF 프로브",
+      "coverAlt": "A14 분할 바닥 위 RF 프로브와 앞뒤 케이블 클램프의 CAD 형상",
       "tags": [
         "3D 조립절차",
         "BOM",
         "RF 전류",
         "캘리브레이션",
-        "제작 검토"
+        "시제품 설계"
       ]
     },
     {

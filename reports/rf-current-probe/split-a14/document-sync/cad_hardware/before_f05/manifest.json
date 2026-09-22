@@ -1,8 +1,0 @@
-{
-  "RFCP_A14_Integrated_DRAFT.FCStd": "c718d11f9cfbef3ffe4db12e3a99dc0545465992dd276c2620768d76f9f86f91",
-  "mesh.json": "fde5a11dc1d0368a6a20168897348f9974bcf7404548e5d9db8ce632f8f4dcb3",
-  "build_report.json": "3b7fc51cf24976e88d80971040b321d8f0510c75bfb9929c798552e8a62d5086",
-  "build_assembly_A14.py": "a3b9172e34a2ae7a939de6137c2507612f3bea66e0720baae1f796716dfa6d40",
-  "catalogue_delta_verification.json": "ea0910414732f8e4ed921d976554af2ad53ba01befaa2fa978c2794e98eda873",
-  "verify_catalogue_delta.py": "6a7a7925110147435f1c4f646f3797466962446d0635106e05a92c6d6572b24c"
-}
