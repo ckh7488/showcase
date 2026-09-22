@@ -1,10 +1,26 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RFCP A14 · 캘리브레이션 및 사용법 | ATLAS</title><style>:root{font-family:Inter,"Segoe UI","Malgun Gothic",sans-serif;color:#142c40;background:#edf2f6;font-size:16px;font-synthesis:none}*{box-sizing:border-box}body{margin:0}button,input{font:inherit}button{cursor:pointer;color:inherit;background:#fff;border:1px solid #c6d3dd;border-radius:7px;padding:.6rem .85rem}button:hover{background:#eaf3f9}button:focus-visible,input:focus-visible{outline:3px solid #218fd1;outline-offset:3px}header{background:#132c40;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:18px 28px;gap:20px}.brand{display:flex;align-items:center;gap:20px}.brand>b{letter-spacing:.12em;font-size:24px;border-right:1px solid #637585;padding-right:20px}.brand span{font-size:16px}.brand strong{margin-left:8px;color:#6ed4e3}.draft{font-size:13px;color:#ffd69f}nav{display:flex;padding:16px 28px 0;gap:8px;flex-wrap:wrap}nav button{background:transparent;border-color:transparent;font-weight:650}nav .active{background:#fff;border-color:#bacddb;color:#006d8d;box-shadow:0 2px 5px #172b4020}main{display:grid;grid-template-columns:minmax(0,1fr) 355px;gap:20px;padding:18px 28px 22px;max-width:1800px;margin:auto}.workspace{min-width:0;background:#fff;border:1px solid #cbd7e0;border-radius:12px;overflow:hidden}.viewtop{padding:20px 22px 4px;display:flex;justify-content:space-between;align-items:center;gap:10px}h1{margin:5px 0 0;font-size:23px;line-height:1.4}#sceneTag{font-size:12px;color:#527186;text-transform:uppercase;letter-spacing:.08em}.quiet{font-size:14px;background:#f4f7f9}#stage{height:clamp(360px,54vh,640px);position:relative;isolation:isolate;background:#f8fafc}canvas{width:100%;height:100%;display:block;touch-action:none}#labels{position:absolute;inset:0;pointer-events:none;overflow:hidden}.label{position:absolute;left:0;top:0;transform:translate(-50%,-50%);font-size:13px;line-height:1.25;font-weight:600;background:#fffffff2;border:1px solid #b6cad7;border-left:3px solid var(--color,#14758e);padding:5px 8px;border-radius:4px;box-shadow:0 2px 5px #12283c16;white-space:nowrap}.viewtools{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 20px;border-top:1px solid #e4ebf0;font-size:12px;color:#597184}.viewtools button{font-size:13px;padding:.35rem .55rem}.viewtools>div{display:flex;gap:5px}.motion{padding:15px 22px 19px;background:#f1f6fa;border-top:1px solid #dbe5ec}.motionline{display:flex;align-items:center;gap:12px;font-size:14px}.motionline label{font-weight:700}.motionline output{color:#13718a;flex:1}#play{font-size:14px;border-color:#107994;color:#096981}input[type=range]{width:100%;accent-color:#007c97;margin:20px 0 10px;cursor:pointer}.ends{display:flex;justify-content:space-between;font-size:12px;color:#60778a}aside{min-width:0}aside h2{font-size:19px;margin:0 0 12px}aside h3{font-size:16px;margin:22px 0 9px}aside p{line-height:1.75;margin:10px 0}aside ol{padding-left:22px;line-height:1.75}aside li{margin:8px 0}.eyebrow{font-size:13px;color:#187a91;font-weight:700;letter-spacing:.02em}.callout{border-left:3px solid #13859c;padding:12px 14px;background:#e3f1f6;font-size:15px;line-height:1.7;margin:16px 0}.caution{border-color:#bb771d;background:#fff3dd}.display{border-top:1px solid #cbd7e0;padding-top:20px;margin-top:22px}.display h2{font-size:16px}.display label{display:block;margin:12px 0;font-size:14px}input[type=checkbox]{width:16px;height:16px;vertical-align:-3px;accent-color:#087d98;margin-right:7px}.selection{font-size:14px;line-height:1.6;border-radius:7px;padding:12px;background:#fff;min-height:68px}.fine{font-size:12px;color:#657b8d;line-height:1.6}footer{padding:0 28px 22px;font-size:12px;color:#60798b;display:flex;justify-content:space-between;gap:15px;max-width:1800px;margin:auto}.connections{display:grid;gap:8px;margin:16px 0}.connection{border:1px solid #c4d7e1;border-left:4px solid var(--c);background:#fff;padding:9px 11px;font-size:14px;line-height:1.6}.stepbuttons{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:12px 0}.stepbuttons button{text-align:left;font-size:14px;padding:9px 10px}.stepbuttons .active{background:#d7edf4;border-color:#007d99}.metric{display:flex;justify-content:space-between;font-size:14px;border-bottom:1px solid #d1dde5;padding:8px 0}#loading{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;font-size:16px;background:#f8fafc;z-index:4;padding:25px}#loading.hidden{display:none}.error{color:#9b351c}a{color:#007a98}noscript{display:block;padding:30px} @media(max-width:1000px){main{grid-template-columns:minmax(0,1fr) 310px;padding:14px;gap:14px}header{padding:16px 20px}nav{padding:14px 16px 0}.viewtop{padding:16px 16px 4px}h1{font-size:20px}.viewtools{flex-wrap:wrap}.viewtools span{font-size:12px}}@media(max-width:760px){header{align-items:flex-start;flex-direction:column;gap:7px;padding:15px 16px}.brand{gap:12px}.brand>b{font-size:21px;padding-right:12px}nav{gap:3px}nav button{font-size:14px;padding:9px 10px}main{display:flex;flex-direction:column;padding:12px}#stage{height:420px;height:55vh;min-height:350px}.viewtop{align-items:flex-start}.quiet{padding:7px;font-size:12px}.motion{padding:13px 15px}aside{padding:12px}.viewtools{padding:9px 14px}.viewtools span{max-width:62%;line-height:1.5}footer{padding:8px 23px 25px;flex-direction:column}.label{font-size:12px;padding:4px 6px}aside h2{font-size:20px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
 .workspace{align-self:start}
+/* The canvas keeps its full height. Text lives in normal document flow below it. */
+.annotation-dock{display:flex;flex-wrap:wrap;justify-content:space-evenly;gap:8px 18px;padding:10px 14px;background:var(--sc-surface,#fff);border-top:1px solid var(--sc-line,#d9e1e4);color:var(--sc-ink,#172e33);font-size:13px;line-height:1.5}
+.annotation-caption{display:flex;align-items:center;gap:7px;min-width:0;overflow-wrap:anywhere}
+.annotation-caption b{display:inline-grid;place-items:center;width:20px;height:20px;flex:0 0 20px;border:1px solid var(--sc-line,#d9e1e4);border-radius:50%;font-size:11px;font-weight:600;color:var(--sc-accent,#197d71)}
+#stage .annotation-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:hidden;z-index:2}
+.annotation-lines path{fill:none;stroke:var(--sc-accent,#197d71);stroke-width:1;stroke-opacity:.52;vector-effect:non-scaling-stroke}
+.annotation-lines circle{fill:var(--sc-accent,#197d71);fill-opacity:.8;stroke:white;stroke-width:1;vector-effect:non-scaling-stroke}
+.annotation-toggle{display:inline-flex!important;align-items:center;gap:6px;margin:0!important;white-space:nowrap;cursor:pointer;font-size:14px!important;font-weight:500!important;color:var(--sc-ink,#172e33)}
+.annotation-toggle input{width:16px!important;height:16px!important;accent-color:var(--sc-accent,#197d71);margin:0!important}
+.viewtop,.viewhead{flex-wrap:wrap}.annotation-options{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:8px 12px;margin-left:auto}
+.annotation-toggle:focus-within{outline:2px solid var(--sc-accent,#197d71);outline-offset:4px;border-radius:2px}
+.viewtools{flex-wrap:wrap}.annotation-hint{font-size:12px;color:var(--sc-muted,#5f737b);line-height:1.5}
+.viewtools #viewHint{position:static;pointer-events:auto}
+.comparison-caption{padding:8px 16px;border-top:1px solid var(--sc-line,#d9e1e4);font-size:13px;color:var(--sc-muted,#5f737b)}
+.annotation-dock[hidden],.annotation-lines[hidden],.comparison-caption[hidden],.annotation-hint[hidden]{display:none!important}
+@media(max-width:480px){.annotation-dock{gap:8px 12px;padding:10px}.annotation-caption{flex:1 1 120px;font-size:12px}.viewtools .annotation-hint{max-width:100%}}
 </style><style>
 [hidden]{display:none!important}.controls{display:grid;gap:12px}.controls label{font-size:14px;font-weight:650}.controls output{float:right;font-weight:400;color:#17677c}.controls input{margin:12px 0 0}.summary-table{width:100%;border-collapse:collapse;font-size:14px}.summary-table td{padding:8px 0;border-bottom:1px solid #cbd7de}.summary-table td:last-child{text-align:right}.label{font-size:13px}.viewtools{font-size:14px}.fine,footer{font-size:13px}#selection{min-height:80px}.toolbar{display:flex;gap:10px;flex-wrap:wrap}.toolbar a{font-size:14px}header a{color:#9cdce6}.result{padding:10px 14px;background:#e2edf2;border-radius:7px;font-size:14px;line-height:1.6}
 </style><style id="document-set-style">.set-header{display:flex!important;align-items:center!important;justify-content:space-between!important;flex-wrap:wrap!important;gap:12px!important;padding:16px 24px!important}.set-brand{font:800 23px/1.4 system-ui!important;letter-spacing:.06em;color:white!important}.set-brand span{font-size:14px;font-weight:500;letter-spacing:0;margin-left:16px}.set-nav{display:flex!important;flex-wrap:wrap!important;gap:16px!important;padding:0!important;margin:0!important;font:14px/1.5 system-ui!important}.set-nav a{color:#b9e8ef!important}.set-nav a{background:transparent!important;border:0!important;box-shadow:none!important;padding:4px 0!important}.set-nav a.active{color:white!important;font-weight:750;text-decoration:underline;text-underline-offset:6px}.set-nav a:focus-visible{outline:3px solid #de8e28;outline-offset:3px}</style><link rel="stylesheet" href="../../assets/theme.v1.css"><link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="document-set.css?v=20260922-showcase-1"></head><body><header class="set-header"><div class="atlas-brand"><a class="atlas-back" href="../../" aria-label="ATLAS 라이브러리로 돌아가기">← ATLAS</a><a class="set-brand" href="index.html">RFCP<span>캘리브레이션 및 사용법</span></a></div><nav class="set-nav" aria-label="문서 세트"><a href="index.html">표지</a><a href="manual.html">설명서</a><a href="assembly-guide.html">조립절차서</a><a href="bom.html">BOM</a><a href="assembly.html" class="active" aria-current="page">캘리브레이션 및 사용법</a><a id="downloadHtml" href="assembly.html" download>HTML 저장</a></nav></header>
 <nav aria-label="사용 장면"><button data-mode="structure" class="active">01 구조 · 개폐</button><button data-mode="calibration">02 실험실 교정</button><button data-mode="detach">03 지그 · 분리</button><button data-mode="measurement">04 케이블 측정</button></nav>
-<main><section class="workspace"><div class="viewtop"><div><span id="sceneTag">실제 A14 / C07 CAD · mm</span><h1 id="sceneTitle">같은 바닥, 같은 중심축</h1></div><button id="reset">시점 초기화</button></div><div id="stage"><div id="loading">조립체를 불러오는 중…</div><div id="labels"></div></div><div class="viewtools"><span>드래그: 회전 · 휠: 확대 · 부품 클릭: 설명</span><div><button data-view="front">정면</button><button data-view="side">옆면</button><button data-view="top">위</button></div></div>
+<main><section class="workspace"><div class="viewtop"><div><span id="sceneTag">실제 A14 / C07 CAD · mm</span><h1 id="sceneTitle">같은 바닥, 같은 중심축</h1></div><button id="reset">시점 초기화</button></div><div id="stage"><div id="loading">조립체를 불러오는 중…</div></div><div class="viewtools"><span>드래그: 회전 · 휠: 확대 · 부품 클릭: 설명</span><div><button data-view="front">정면</button><button data-view="side">옆면</button><button data-view="top">위</button></div></div>
 <div class="motion controls"><div class="toolbar"><button data-view="all">전체 보기</button><button data-view="probe">프로브만 확대</button></div><label id="openLabel" for="opening">열고 닫기 <output id="openingOut">닫힘</output><input id="opening" type="range" min="0" max="100" value="0"></label><label id="centerLabel" for="centering" hidden>큰 노브 조임 · Ø12 선 예시 <output id="centerOut">풀림</output><input id="centering" type="range" min="0" max="100" value="0" step=".5"></label><label id="detachLabel" for="detach" hidden>교정 PCB 제거 → 프로브 분리 <output id="detachOut">교정 상태</output><input id="detach" type="range" min="0" max="100" value="0"></label><label id="explodeLabel" for="explode">부품 펼쳐 보기 <output>위치를 보는 분해도</output><input id="explode" type="range" min="0" max="100" value="0"></label><p class="fine" id="motionNote">나사 제거 후 상부가 열립니다. 탄성부의 변형은 형상 설명이며 힘·마찰 시뮬레이션은 아닙니다.</p></div></section>
 <aside><div id="explanation"></div><section class="display"><h2>보기</h2><label><input type="checkbox" id="guides" checked>공통 중심축 표시</label><label><input type="checkbox" id="transparent">플라스틱을 반투명하게</label><div id="selection" class="selection">부품을 누르면 역할과 조립 방법이 나옵니다.</div></section><details class="display"><summary>모델과 검증 범위</summary><p id="verification" class="fine"></p><p class="fine">실물의 출력 편차·접촉력·반복 내구성·RF 특성은 별도 확인이 필요합니다.</p><div class="toolbar"><a href="compare.html">분할 구조 비교</a><a href="bom.html#downloads">현재 설계 파일</a></div></details></aside></main><footer><span>권선과 SMA 앞을 열고, 케이블 하중은 앞뒤 클램프로 받습니다.</span><a href="manual.html#measurement">케이블 측정 설명</a></footer><noscript>3D를 보려면 JavaScript를 켜 주세요.</noscript><script>/**
  * @license
@@ -1083,6 +1099,74 @@ function centerCable(apertureRadius,cableRadius,initial=[5,-3]){
 root.C01_POSE=pose;root.C01_CENTER_CABLE=centerCable;if(typeof module!=='undefined')module.exports={pose,centerCable};
 })(typeof window!=='undefined'?window:globalThis);
 
+/* Shared RFCP annotation preference and text outside the 3D canvas. */
+"use strict";
+(()=>{
+ const key='rfcp.viewer.annotations.visible.v1',views=new Set();
+ let visible=true;
+ try{visible=localStorage.getItem(key)!=='off';}catch(e){}
+ const svgNS='http://www.w3.org/2000/svg';
+ function svgElement(name){return document.createElementNS(svgNS,name);}
+ function apply(value,save){
+  visible=value;
+  if(save)try{localStorage.setItem(key,value?'on':'off');}catch(e){}
+  for(const view of views)view.refresh();
+ }
+ window.addEventListener('storage',e=>{if(e.key===key||e.key===null)apply(e.newValue!=='off',false);});
+ window.RFCP_ANNOTATIONS={create({stage,camera,resetButton,extraText=[]}){
+  const toggle=document.createElement('label'),input=document.createElement('input');
+  toggle.className='annotation-toggle';toggle.title='다른 3D 페이지에서도 이 설정을 유지합니다.';
+  input.type='checkbox';input.id='showAnnotations';input.checked=visible;
+  input.addEventListener('change',()=>apply(input.checked,true));
+  toggle.append(input,document.createTextNode('3D 글씨 표시'));
+  const options=document.createElement('div');options.className='annotation-options';
+  resetButton.before(options);options.append(toggle,resetButton);
+  const dock=document.createElement('div');dock.id='annotationDock';dock.className='annotation-dock';
+  dock.setAttribute('role','group');dock.setAttribute('aria-label','3D 위치 설명');stage.after(dock);
+  const svg=svgElement('svg');svg.classList.add('annotation-lines');svg.setAttribute('aria-hidden','true');stage.append(svg);
+  let entries=[],active=true,needsLayout=true,stageWidth=0,stageHeight=0;
+  new ResizeObserver(()=>{needsLayout=true;}).observe(stage);
+  new ResizeObserver(()=>{needsLayout=true;}).observe(dock);
+  function refresh(){
+   input.checked=visible;dock.hidden=!(visible&&active&&entries.length);svg.toggleAttribute('hidden',dock.hidden);
+   for(const el of extraText)el.hidden=!visible;
+   needsLayout=true;
+  }
+  const view={refresh};views.add(view);
+  function set(items){
+   dock.replaceChildren();svg.replaceChildren();
+   entries=items.map(([text,pos],i)=>{
+    const el=document.createElement('span');el.className='annotation-caption';
+    const number=document.createElement('b');number.textContent=String(i+1);number.setAttribute('aria-hidden','true');
+    el.append(number,document.createTextNode(text));dock.append(el);
+    const group=svgElement('g'),path=svgElement('path'),point=svgElement('circle');
+    point.setAttribute('r','3');group.append(path,point);svg.append(group);
+    return{el,pos,group,path,point,x:0};
+   });
+   refresh();
+  }
+  function update(show=true){
+   if(active!==show){active=show;refresh();}
+   if(!visible||!active||!entries.length)return;
+   if(needsLayout){
+    const box=stage.getBoundingClientRect();stageWidth=box.width;stageHeight=box.height;
+    svg.setAttribute('viewBox',`0 0 ${stageWidth} ${stageHeight}`);
+    for(const e of entries){const r=e.el.getBoundingClientRect();e.x=r.left+r.width/2-box.left;}
+    needsLayout=false;
+   }
+   for(const e of entries){
+    const p=e.pos.clone().project(camera),on=p.z>=-1&&p.z<=1&&Math.abs(p.x)<=1&&Math.abs(p.y)<=1;
+    e.group.style.display=on?'':'none';
+    if(!on)continue;
+    const x=(p.x+1)*stageWidth/2,y=(1-p.y)*stageHeight/2;
+    e.path.setAttribute('d',`M ${x} ${y} L ${e.x} ${stageHeight-12} L ${e.x} ${stageHeight}`);
+    e.point.setAttribute('cx',x);e.point.setAttribute('cy',y);
+   }
+  }
+  refresh();return{set,update};
+ }};
+})();
+
 "use strict";
 (()=>{
 const T=THREE,$=id=>document.getElementById(id),V=(x,y,z)=>new T.Vector3(x,y,z),data=window.A14_MODEL,clamp=(x)=>Math.max(0,Math.min(1,x));
@@ -1102,8 +1186,9 @@ const outputCoax=tube([[0,-49,16],[0,-49,40],[-25,-49,65],[-145,-49,75],[-170,-4
 const inputCoax=tube([[0,12,-28],[0,38,-28],[-40,52,-35],[-150,52,-75]],'#b57a4f');
 const load=new T.Mesh(new T.CylinderGeometry(5.8,5.8,26,24),new T.MeshStandardMaterial({color:'#c6b06c'}));load.position.set(0,25,40.7);scene.add(load);
 const knobMarks=[-118.65,121.35].map(z=>{const p=new T.Group();p.position.set(80,76.8,26+z);const m=new T.Mesh(new T.BoxGeometry(2,.4,10),new T.MeshBasicMaterial({color:'#215d74'}));m.position.z=6;p.add(m);scene.add(p);return p;});
-let mode='structure',selected=null,focusProbe=false;const labels=[];
-for(const [text,pos] of [['프로브',[0,60,6.35]],['앞 클램프',[0,80,-113.65]],['뒤 클램프',[0,80,126.35]],['88 mm · 공칭',[-110,-35,158]]]){const el=document.createElement('div');el.className='label';el.textContent=text;$('labels').append(el);labels.push({el,pos:V(...pos)});}
+let mode='structure',selected=null,focusProbe=false;
+const annotations=window.RFCP_ANNOTATIONS.create({stage:host,camera,resetButton:$('reset')});
+annotations.set([['프로브',[0,60,6.35]],['앞 클램프',[0,80,-113.65]],['뒤 클램프',[0,80,126.35]],['88 mm · 공칭',[-110,-35,158]]].map(([text,pos])=>[text,V(...pos)]));
 function pose(p,r,opening,explode){let x=0,y=0,z=0,visible=true;const g=p.group,headLift=120*clamp((opening-.25)/.75),release=75*clamp(opening/.25);
  if(g==='HEAD_SCREW'){y=release;visible=opening<=.25;}
  if(g==='HEAD_CAP')y=['UpperLeft','UpperRight'].includes(p.name)?headLift:Math.max(0,headLift-1.8);
@@ -1152,6 +1237,6 @@ document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>setMode(b.data
 const descriptions={LowerCenter:'프로브 중앙 몸체 — 코어 받침과 보강된 PCB 창을 유지합니다.',LowerArmLeft:'왼팔 — M4×30 2개와 양쪽 와셔로 중앙 몸체에 체결합니다.',LowerArmRight:'오른팔 — M4×30 2개와 양쪽 와셔로 중앙 몸체에 체결합니다.',UpperLeft:'왼쪽 뚜껑 — 오른쪽과 중앙 두꺼운 겹침부에서 M4×30 2개로 연결합니다. 자유 형상 STL만 출력합니다.',UpperRight:'오른쪽 뚜껑 — 별도 스프링 없이 기존2.4 mm 탄성부를 유지합니다.',BaseFront:'앞 바닥 — 아래에서 M4×20을 넣고 위에 와셔와 육각너트를 체결합니다.',BaseCenter:'가운데 바닥 — 바닥3조각을 조립한 뒤 모듈을 올립니다. 중심높이88 mm.',BaseRear:'뒤 바닥 — 아래에서 M4×20을 넣고 위에 와셔와 육각너트를 체결합니다.',LowerBody:'프로브 아래 몸체 — 왼쪽 바깥 기둥의 ㄱ자 기준에 뚜껑을 가볍게 맞대고 조입니다. 코어는 넓은 일체형 받침에 놓습니다.',UpperLid:'일체형 뚜껑 — 양옆 멈춤 기둥과 두 플라스틱 탄성부를 함께 출력합니다. 별도 스프링은 없지만 탄성 원리를 이용하므로 힘·피로 시험이 필요합니다.',LowerKeeper:'아래 코어 고정바 — 가로대를 위로 옮겨 SMA 플러그와 S+ / S− 앞을 열었습니다. 코어에 닿는 면과 안쪽 이탈 방지턱은 유지했습니다.',UpperKeeper:'위 코어 고정바 — 나사로 분리됩니다. 안쪽 두 턱은 이탈 방지용이며 케이블을 잡는 턱이 아닙니다.',CommonBase:'공통 바닥 — 프로브와 앞뒤 클램프가 동일한 Y=-72 면에 놓입니다. 정렬용 어깨는 억지 끼워맞춤을 하지 않습니다.',FixedCore:'아래 페라이트 코어 — 권선을 감는 실제 코어입니다.',MovingCore:'위 페라이트 코어 — 아래 코어와 깨끗한 면끼리 맞닿아야 합니다.',PCB:'프로브 헤드 PCB — 36×28 mm. M2 나일론 나사와 나일론 너트 두 쌍으로 고정합니다. 철 나사의 RF 무영향을 보증한 설계가 아닙니다.',FlatPCB:'교정용 PCB — 교정 때만 설치합니다.',HeadHandScrews:'프로브 개폐 손나사 — 양옆의 노출된 손잡이를 돌립니다. 끝까지 닫을 때 바깥 멈춤 기둥이 하중을 받습니다.'};
 const ray=new T.Raycaster();let down;renderer.domElement.addEventListener('pointerdown',e=>down=[e.clientX,e.clientY]);renderer.domElement.addEventListener('pointerup',e=>{if(!down||Math.hypot(e.clientX-down[0],e.clientY-down[1])>4)return;const b=renderer.domElement.getBoundingClientRect();ray.setFromCamera(new T.Vector2((e.clientX-b.left)/b.width*2-1,1-(e.clientY-b.top)/b.height*2),camera);const hit=ray.intersectObjects(meshes.filter(m=>m.visible),false)[0];if(selected)selected.material.emissive.set(0);selected=hit?.object;if(selected){selected.material.emissive.set('#244652');const p=selected.userData;$('selection').textContent=descriptions[p.name]||(['LeadStud','HandKnob','TopJamNut'].includes(p.local)?'큰 조절 노브 — 이 노브 하나가 세 턱을 동시에 움직입니다.':p.local==='DriveYoke'?'연결틀 — 대각선 홈 위쪽을 4 mm 높여 끝을 막았습니다. 홈 위 남는 두께는 공칭 3.7 mm이며 핀은 앞에서 조립합니다.':p.local==='TopBridgeJaw'?'위 가로대와 턱 — 작은 손나사 두 개를 빼고 들어내면 연결된 선을 넣을 수 있습니다.':p.group==='CABLE'?'케이블 중심 클램프 — 열린 가이드에 부품을 넣고 기성 체결품으로 연결합니다. 부품별 규격은 BOM에서 확인할 수 있습니다.':'체결품 / 연결부 — 형상 검토용입니다. 실제 규격과 조임은 조립 검토서를 따릅니다.');}});
 new ResizeObserver(()=>{camera.aspect=host.clientWidth/host.clientHeight;camera.updateProjectionMatrix();renderer.setSize(host.clientWidth,host.clientHeight,false);}).observe(host);camera.aspect=host.clientWidth/host.clientHeight;camera.updateProjectionMatrix();renderer.setSize(host.clientWidth,host.clientHeight,false);$('verification').textContent=data.summary;setMode('structure');$('loading').hidden=true;
-function animate(){requestAnimationFrame(animate);if(document.hidden)return;orbit.update();for(const l of labels){const q=l.pos.clone().project(camera);l.el.hidden=!$('guides').checked||q.z>1||mode==='detach'||focusProbe;l.el.style.left=(q.x+1)*host.clientWidth/2+'px';l.el.style.top=(1-q.y)*host.clientHeight/2+'px';}renderer.render(scene,camera);}animate();
+function animate(){requestAnimationFrame(animate);if(document.hidden)return;orbit.update();annotations.update(mode!=='detach'&&!focusProbe);renderer.render(scene,camera);}animate();
 })();
 </script></body></html>

@@ -1,14 +1,30 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RFCP · 단계별 조립절차서 | ATLAS</title><style>:root{font-family:system-ui,-apple-system,"Malgun Gothic",sans-serif;color:#153448;background:#edf3f7;font-size:16px;line-height:1.6}*{box-sizing:border-box}body{margin:0}a{color:#08768e;text-decoration:none}a:hover{text-decoration:underline}button,input{font:inherit}button{color:#20475a;border:1px solid #bfcfdc;border-radius:6px;padding:7px 12px;background:#fff;cursor:pointer;line-height:1.5}button:hover{background:#e9f3f7}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #de8e28;outline-offset:3px}button:disabled{opacity:.4;cursor:default}header{background:#133246;color:white;padding:17px 26px;display:flex;align-items:center;justify-content:space-between;gap:24px}header a{color:#b5e4ef}.brand{font-size:22px;font-weight:800;letter-spacing:.04em;color:white;white-space:nowrap}.brand span{font-size:16px;font-weight:500;letter-spacing:0;border-left:1px solid #608494;margin-left:16px;padding-left:16px}.header-links{display:flex;align-items:center;gap:22px;font-size:14px}.draft{color:#efc777;font-size:13px}.intro{padding:22px 26px 12px;display:flex;align-items:flex-start;justify-content:space-between;gap:30px}.intro h1{font-size:23px;line-height:1.4;margin:0 0 6px}.intro p{margin:0;color:#466579;font-size:15px}.intro details{max-width:440px;font-size:14px;flex-shrink:0}.intro details p{font-size:14px;margin:8px 0}summary{cursor:pointer;color:#326b82}nav{padding:0 26px 18px;display:flex;gap:10px;flex-wrap:wrap}nav button{padding:9px 18px;font-weight:650;font-size:15px}nav button[aria-pressed=true]{background:#067f96;color:white;border-color:#067f96}main{padding:0 26px 28px;display:grid;grid-template-columns:208px minmax(360px,1fr) 340px;gap:18px;align-items:start}.step-list{background:#e4edf3;border-radius:10px;overflow:hidden}.list-heading{padding:13px 14px;display:flex;justify-content:space-between;font-size:14px}.list-heading span{color:#5e788b}#steps{max-height:730px;overflow:auto;padding:0 7px 8px}.step-button{display:block;width:100%;text-align:left;display:grid;grid-template-columns:32px 1fr;gap:5px;border:0;background:transparent;margin-bottom:3px;padding:10px 8px;font-size:14px}.step-button small{font-size:12px;color:#53758b;padding-top:2px}.step-button[aria-current=step]{background:#fff;box-shadow:0 1px 5px #18334818;color:#006c85;font-weight:700;border-left:3px solid #008ba2;padding-left:5px}.workspace{background:#fff;border:1px solid #cbdbe6;border-radius:12px;overflow:hidden;min-width:0}.viewtop{padding:16px 18px;display:flex;align-items:center;gap:14px;justify-content:space-between;min-height:92px}.eyebrow{font-size:13px;letter-spacing:.04em;color:#477c94}.viewtop h2{font-size:21px;margin:3px 0 0;line-height:1.35}.viewtop button{font-size:14px;white-space:nowrap}#stage{height:clamp(380px,53vh,660px);position:relative;background:#f8fafc;overflow:hidden}#stage canvas{display:block;width:100%;height:100%;touch-action:none}#loading{position:absolute;inset:0;display:grid;place-content:center;color:#567487;z-index:3}#labels{position:absolute;inset:0;pointer-events:none}.anchor{position:absolute;background:#fffffff0;border:1px solid #c2d6e0;border-left:3px solid #bb7723;border-radius:4px;padding:4px 7px;font-size:13px;white-space:nowrap;transform:translate(-50%,-100%);box-shadow:0 1px 6px #28475615}#viewHint{position:absolute;bottom:10px;left:13px;font-size:12px;color:#627f91;pointer-events:none}.viewtools{display:flex;align-items:center;flex-wrap:wrap;gap:7px;padding:9px 14px;border-top:1px solid #e1e9ef}.viewtools button{font-size:14px;padding:4px 9px}.viewtools label{font-size:14px;display:flex;gap:4px;align-items:center;margin-left:3px}.motion{border-top:1px solid #d7e3eb;background:#f0f6fa;padding:15px 18px}.motion-top{display:flex;justify-content:space-between;gap:12px;font-size:15px;font-weight:650}.motion-top output{font-weight:500;color:#03778d}input[type=range]{width:100%;margin:16px 0 8px;accent-color:#07869d;cursor:pointer}.endpoints{display:flex;justify-content:space-between}.endpoints button{font-size:13px;padding:2px 8px;background:transparent;border:0;color:#456f85}.motion p{font-size:13px;margin:9px 0 0;color:#617b8d}.selection{padding:10px 18px;font-size:14px;min-height:44px;border-top:1px solid #e0e9ef;color:#46677c}.step-controls{border-top:1px solid #dbe5ec;padding:13px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px}.step-controls button{font-size:14px}.primary{background:#057e95;color:white;border-color:#057e95}.primary:hover{background:#056b80}.step-controls span{font-size:13px;color:#608095}.instructions{padding:8px 2px}.instructions h2{font-size:21px;margin:2px 0 13px}.instructions ol{padding-left:23px;margin:0 0 22px}.instructions li{padding-left:2px;margin-bottom:10px}.instruction-block{border-top:1px solid #cedce5;padding-top:12px;margin-bottom:15px}.instructions h3{font-size:15px;margin:0 0 5px;color:#31586e}.instructions p{margin:0}.review-block{border-left:3px solid #bc7c27;padding:12px 14px;background:#f8efdf;margin:20px 0 14px;border-radius:0 6px 6px 0}.review-block h3{color:#875516}.note{font-size:14px;color:#5b7182;margin-bottom:18px!important}.proof{border-top:1px solid #ccdbe5;padding-top:12px;font-size:13px;color:#5e7789}.proof p{margin:5px 0}.path-bad{color:#a34034!important;font-weight:650}footer{padding:16px 26px 24px;display:flex;justify-content:space-between;gap:20px;font-size:13px;color:#5a798d}[hidden]{display:none!important}@media(min-width:1650px){main{grid-template-columns:230px minmax(500px,1fr) 370px;gap:24px}}@media(max-width:1200px){main{grid-template-columns:minmax(0,1fr) 325px}.step-list{grid-column:1/-1}.list-heading{display:none}#steps{display:flex;max-height:none;padding:8px;overflow-x:auto}.step-button{min-width:205px;max-width:205px;margin:0 4px 0 0}.intro details{max-width:340px}#stage{height:470px}}@media(max-width:800px){header{padding:14px 16px;align-items:flex-start;flex-direction:column;gap:10px}.brand{font-size:20px}.header-links{flex-wrap:wrap;gap:15px}.intro{padding:18px 16px 14px;display:block}.intro details{max-width:none;margin-top:10px}nav{padding:0 16px 14px;gap:7px}nav button{font-size:14px;padding:7px 10px}main{padding:0 12px 22px;grid-template-columns:minmax(0,1fr)}.instructions{padding:8px 12px}#stage{height:420px}.viewtop{padding:13px}.viewtop h2{font-size:18px}.viewtop button{font-size:13px;padding:5px 8px}.intro h1{font-size:21px}footer{padding:12px 20px;display:block}footer a{display:block;margin-top:10px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 
 .step-bom{background:#fff;border:1px solid #cbdbe6;border-radius:7px;padding:14px;margin:0 0 20px}.step-bom ul{list-style:none;padding:0;margin:8px 0}.step-bom li{display:flex;justify-content:space-between;gap:10px;font-size:14px;margin:7px 0}.step-bom li span{white-space:nowrap;color:#496b7d}.step-bom p{font-size:12px;color:#607c8d;line-height:1.5}
+/* The canvas keeps its full height. Text lives in normal document flow below it. */
+.annotation-dock{display:flex;flex-wrap:wrap;justify-content:space-evenly;gap:8px 18px;padding:10px 14px;background:var(--sc-surface,#fff);border-top:1px solid var(--sc-line,#d9e1e4);color:var(--sc-ink,#172e33);font-size:13px;line-height:1.5}
+.annotation-caption{display:flex;align-items:center;gap:7px;min-width:0;overflow-wrap:anywhere}
+.annotation-caption b{display:inline-grid;place-items:center;width:20px;height:20px;flex:0 0 20px;border:1px solid var(--sc-line,#d9e1e4);border-radius:50%;font-size:11px;font-weight:600;color:var(--sc-accent,#197d71)}
+#stage .annotation-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:hidden;z-index:2}
+.annotation-lines path{fill:none;stroke:var(--sc-accent,#197d71);stroke-width:1;stroke-opacity:.52;vector-effect:non-scaling-stroke}
+.annotation-lines circle{fill:var(--sc-accent,#197d71);fill-opacity:.8;stroke:white;stroke-width:1;vector-effect:non-scaling-stroke}
+.annotation-toggle{display:inline-flex!important;align-items:center;gap:6px;margin:0!important;white-space:nowrap;cursor:pointer;font-size:14px!important;font-weight:500!important;color:var(--sc-ink,#172e33)}
+.annotation-toggle input{width:16px!important;height:16px!important;accent-color:var(--sc-accent,#197d71);margin:0!important}
+.viewtop,.viewhead{flex-wrap:wrap}.annotation-options{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:8px 12px;margin-left:auto}
+.annotation-toggle:focus-within{outline:2px solid var(--sc-accent,#197d71);outline-offset:4px;border-radius:2px}
+.viewtools{flex-wrap:wrap}.annotation-hint{font-size:12px;color:var(--sc-muted,#5f737b);line-height:1.5}
+.viewtools #viewHint{position:static;pointer-events:auto}
+.comparison-caption{padding:8px 16px;border-top:1px solid var(--sc-line,#d9e1e4);font-size:13px;color:var(--sc-muted,#5f737b)}
+.annotation-dock[hidden],.annotation-lines[hidden],.comparison-caption[hidden],.annotation-hint[hidden]{display:none!important}
+@media(max-width:480px){.annotation-dock{gap:8px 12px;padding:10px}.annotation-caption{flex:1 1 120px;font-size:12px}.viewtools .annotation-hint{max-width:100%}}
 </style><style id="document-set-style">.set-header{display:flex!important;align-items:center!important;justify-content:space-between!important;flex-wrap:wrap!important;gap:12px!important;padding:16px 24px!important}.set-brand{font:800 23px/1.4 system-ui!important;letter-spacing:.06em;color:white!important}.set-brand span{font-size:14px;font-weight:500;letter-spacing:0;margin-left:16px}.set-nav{display:flex!important;flex-wrap:wrap!important;gap:16px!important;padding:0!important;margin:0!important;font:14px/1.5 system-ui!important}.set-nav a{color:#b9e8ef!important}.set-nav a{background:transparent!important;border:0!important;box-shadow:none!important;padding:4px 0!important}.set-nav a.active{color:white!important;font-weight:750;text-decoration:underline;text-underline-offset:6px}.set-nav a:focus-visible{outline:3px solid #de8e28;outline-offset:3px}</style><link rel="stylesheet" href="../../assets/theme.v1.css"><link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="document-set.css?v=20260922-showcase-1"></head><body>
 <header class="set-header"><div class="atlas-brand"><a class="atlas-back" href="../../" aria-label="ATLAS 라이브러리로 돌아가기">← ATLAS</a><a class="set-brand" href="index.html">RFCP<span>조립절차서</span></a></div><nav class="set-nav" aria-label="문서 세트"><a href="index.html">표지</a><a href="manual.html">설명서</a><a href="assembly-guide.html" class="active" aria-current="page">조립절차서</a><a href="bom.html">BOM</a><a href="assembly.html">캘리브레이션 및 사용법</a><a id="downloadHtml" href="assembly-guide.html" download>HTML 저장</a></nav></header>
 <div class="intro"><div><h1>어디를 잡고, 어느 쪽에서 조이나</h1><p>단계를 고른 뒤 슬라이더로 현재 부품을 꺼내 보세요. 주황색이 이번에 다루는 부품입니다.</p></div><details><summary>이 문서의 범위</summary><p>CAD 기준 시제품 조립절차이며 실물 조립은 검증 전입니다. 슬라이더는 부품의 위치와 순서를 보여 주며 나사산·마찰·손의 움직임은 재현하지 않습니다. 각 단계의 계산 조건과 한계는 ‘검증 범위’를 펼쳐 확인할 수 있습니다.</p></details></div>
 <nav id="groups" aria-label="조립 구역"></nav>
 <main><aside class="step-list"><div class="list-heading"><b>조립 순서</b><span id="listCount"></span></div><div id="steps"></div></aside>
 <section class="workspace"><div class="viewtop"><div><span id="stepNumber" class="eyebrow"></span><h2 id="stepTitle"></h2></div><button id="reset" type="button">시점 초기화</button></div>
-<div id="stage"><div id="loading">현재 형상을 불러오는 중…</div><div id="labels"></div><span id="viewHint">드래그: 회전 · 휠: 확대 · 부품 클릭: 이름</span></div>
-<div class="viewtools"><button data-view="front">앞</button><button data-view="back">뒤</button><button data-view="bottom">밑면</button><button id="focus">현재 부품 확대</button><label><input id="transparent" type="checkbox">주변 반투명</label><label id="toolOption" hidden><input id="showTool" type="checkbox" checked>공구 외형</label></div>
+<div id="stage"><div id="loading">현재 형상을 불러오는 중…</div></div>
+<div class="viewtools"><span id="viewHint" class="annotation-hint">드래그: 회전 · 휠: 확대 · 부품 클릭: 이름</span><button data-view="front">앞</button><button data-view="back">뒤</button><button data-view="bottom">밑면</button><button id="focus">현재 부품 확대</button><label><input id="transparent" type="checkbox">주변 반투명</label><label id="toolOption" hidden><input id="showTool" type="checkbox" checked>공구 외형</label></div>
 <div class="motion"><div class="motion-top"><label for="separation">현재 부품 꺼내 보기</label><output id="separationOut">조립 위치</output></div><input id="separation" type="range" min="0" max="100" value="0" step="1"><div class="endpoints"><button id="assembled">조립 위치</button><button id="separated">분리 위치</button></div><p id="motionNote"></p></div>
 <div class="selection" id="selection" aria-live="polite">부품을 누르면 이름을 볼 수 있습니다.</div>
 <div class="step-controls"><button id="previous">← 이전 단계</button><span id="pageCount"></span><button id="next" class="primary">다음 단계 →</button></div></section>
@@ -1087,6 +1103,74 @@
  const api={state,clamp};if(typeof module!=='undefined')module.exports=api;root.GUIDE_MOTION=api;
 })(typeof window!=='undefined'?window:globalThis);
 
+/* Shared RFCP annotation preference and text outside the 3D canvas. */
+"use strict";
+(()=>{
+ const key='rfcp.viewer.annotations.visible.v1',views=new Set();
+ let visible=true;
+ try{visible=localStorage.getItem(key)!=='off';}catch(e){}
+ const svgNS='http://www.w3.org/2000/svg';
+ function svgElement(name){return document.createElementNS(svgNS,name);}
+ function apply(value,save){
+  visible=value;
+  if(save)try{localStorage.setItem(key,value?'on':'off');}catch(e){}
+  for(const view of views)view.refresh();
+ }
+ window.addEventListener('storage',e=>{if(e.key===key||e.key===null)apply(e.newValue!=='off',false);});
+ window.RFCP_ANNOTATIONS={create({stage,camera,resetButton,extraText=[]}){
+  const toggle=document.createElement('label'),input=document.createElement('input');
+  toggle.className='annotation-toggle';toggle.title='다른 3D 페이지에서도 이 설정을 유지합니다.';
+  input.type='checkbox';input.id='showAnnotations';input.checked=visible;
+  input.addEventListener('change',()=>apply(input.checked,true));
+  toggle.append(input,document.createTextNode('3D 글씨 표시'));
+  const options=document.createElement('div');options.className='annotation-options';
+  resetButton.before(options);options.append(toggle,resetButton);
+  const dock=document.createElement('div');dock.id='annotationDock';dock.className='annotation-dock';
+  dock.setAttribute('role','group');dock.setAttribute('aria-label','3D 위치 설명');stage.after(dock);
+  const svg=svgElement('svg');svg.classList.add('annotation-lines');svg.setAttribute('aria-hidden','true');stage.append(svg);
+  let entries=[],active=true,needsLayout=true,stageWidth=0,stageHeight=0;
+  new ResizeObserver(()=>{needsLayout=true;}).observe(stage);
+  new ResizeObserver(()=>{needsLayout=true;}).observe(dock);
+  function refresh(){
+   input.checked=visible;dock.hidden=!(visible&&active&&entries.length);svg.toggleAttribute('hidden',dock.hidden);
+   for(const el of extraText)el.hidden=!visible;
+   needsLayout=true;
+  }
+  const view={refresh};views.add(view);
+  function set(items){
+   dock.replaceChildren();svg.replaceChildren();
+   entries=items.map(([text,pos],i)=>{
+    const el=document.createElement('span');el.className='annotation-caption';
+    const number=document.createElement('b');number.textContent=String(i+1);number.setAttribute('aria-hidden','true');
+    el.append(number,document.createTextNode(text));dock.append(el);
+    const group=svgElement('g'),path=svgElement('path'),point=svgElement('circle');
+    point.setAttribute('r','3');group.append(path,point);svg.append(group);
+    return{el,pos,group,path,point,x:0};
+   });
+   refresh();
+  }
+  function update(show=true){
+   if(active!==show){active=show;refresh();}
+   if(!visible||!active||!entries.length)return;
+   if(needsLayout){
+    const box=stage.getBoundingClientRect();stageWidth=box.width;stageHeight=box.height;
+    svg.setAttribute('viewBox',`0 0 ${stageWidth} ${stageHeight}`);
+    for(const e of entries){const r=e.el.getBoundingClientRect();e.x=r.left+r.width/2-box.left;}
+    needsLayout=false;
+   }
+   for(const e of entries){
+    const p=e.pos.clone().project(camera),on=p.z>=-1&&p.z<=1&&Math.abs(p.x)<=1&&Math.abs(p.y)<=1;
+    e.group.style.display=on?'':'none';
+    if(!on)continue;
+    const x=(p.x+1)*stageWidth/2,y=(1-p.y)*stageHeight/2;
+    e.path.setAttribute('d',`M ${x} ${y} L ${e.x} ${stageHeight-12} L ${e.x} ${stageHeight}`);
+    e.point.setAttribute('cx',x);e.point.setAttribute('cy',y);
+   }
+  }
+  refresh();return{set,update};
+ }};
+})();
+
 "use strict";
 (()=>{
  const $=id=>document.getElementById(id),D=window.RFCP_GUIDE,T=THREE,V=(...x)=>new T.Vector3(...x),motion=window.GUIDE_MOTION;
@@ -1096,12 +1180,13 @@
  renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.outputEncoding=T.sRGBEncoding;host.prepend(renderer.domElement);renderer.domElement.setAttribute('aria-label','현재 조립 단계의 실제 A14 C07 부품');renderer.domElement.setAttribute('role','img');
  const camera=new T.PerspectiveCamera(35,1,.1,4000),orbit=new T.OrbitControls(camera,renderer.domElement);orbit.enableDamping=true;scene.add(new T.HemisphereLight(0xffffff,0x758da0,1.15));
  for(const [x,y,z] of [[100,160,160],[-100,50,-160]]){const l=new T.DirectionalLight(0xffffff,.65);l.position.set(x,y,z);scene.add(l);}
- const bytes=Uint8Array.from(atob(D.data),c=>c.charCodeAt(0)),meshes=new Map(),labels=[];
+ const annotations=window.RFCP_ANNOTATIONS.create({stage:host,camera,resetButton:$('reset'),extraText:[$('viewHint')]});
+ const bytes=Uint8Array.from(atob(D.data),c=>c.charCodeAt(0)),meshes=new Map();
  for(const p of D.parts){const g=new T.BufferGeometry();g.setAttribute('position',new T.BufferAttribute(new Float32Array(bytes.buffer,p.vo,p.vc*3).slice(),3));g.setIndex(new T.BufferAttribute(new Uint32Array(bytes.buffer,p.io,p.ic),1));g.computeVertexNormals();g.computeBoundingBox();
   const m=new T.Mesh(g,new T.MeshStandardMaterial({color:p.color,roughness:.72,metalness:.03,side:T.DoubleSide,flatShading:true}));m.userData={...p,sourceVertices:g.attributes.position.array.slice(),normalColor:new T.Color(p.color).convertSRGBToLinear()};m.material.color.copy(m.userData.normalColor);meshes.set(p.name,m);scene.add(m);
  }
  const driver=new T.Mesh(new T.CylinderGeometry(4,4,60,24),new T.MeshStandardMaterial({color:'#778da0',transparent:true,opacity:.62}));driver.rotation.x=Math.PI/2;scene.add(driver);
- let index=0,step=D.steps[0],selected=null,focusActive=false,anchors=[];
+ let index=0,step=D.steps[0],selected=null,focusActive=false;
  function update(){const t=Number($('separation').value)/100,transparent=$('transparent').checked;
   for(const [name,m] of meshes){const q=motion.state(step,name,t);m.visible=q.visible;m.position.set(...q.pos);m.rotation.x=q.rx;m.material.color.copy(q.active?new T.Color('#e9b35e').convertSRGBToLinear():m.userData.normalColor);m.material.emissive.set(selected===m?'#4b3720':'#000000');m.material.transparent=transparent&&!q.active;m.material.opacity=m.material.transparent?.19:1;m.material.depthWrite=!m.material.transparent;
    if(['UpperLeft','UpperRight'].includes(name)){const a=m.geometry.attributes.position,src=m.userData.sourceVertices;for(let i=0;i<src.length;i+=3){const x=Math.abs(src[i]),u=Math.max(0,Math.min(1,(103-x)/63));const f=x<=40?1:x<103?u*u*(3-2*u):0;a.array[i+1]=src[i+1]-q.lidRelax*f;}a.needsUpdate=true;}
@@ -1124,7 +1209,7 @@
   $('proofDetails').open=false;
   $('sources').replaceChildren();for(const [label,url]of step.sources||[]){const a=document.createElement('a');a.href=url;a.textContent=label;a.target='_blank';a.rel='noopener noreferrer';$('sources').append(a);}
   $('pageCount').textContent=(index+1)+' / '+D.steps.length;$('previous').disabled=index===0;$('next').disabled=index===D.steps.length-1;$('toolOption').hidden=!step.toolModel;$('focus').textContent='현재 부품 확대';
-  $('labels').replaceChildren();anchors=(step.anchors||[]).map(([name,pos])=>{const el=document.createElement('div');el.className='anchor';el.textContent=name;$('labels').append(el);return{el,pos:V(...pos)};});
+  annotations.set((step.anchors||[]).map(([name,pos])=>[name,V(...pos)]));
   renderList();update();fit();const url=new URL(location.href);url.searchParams.set('step',step.id);try{history.replaceState(null,'',url);}catch(e){}
  }
  for(const [i,g]of [...new Set(D.steps.map(s=>s.group))].entries()){const b=document.createElement('button');b.textContent=String(i+1).padStart(2,'0')+' '+g;b.dataset.group=g;b.onclick=()=>show(D.steps.findIndex(s=>s.group===g));$('groups').append(b);}
@@ -1134,6 +1219,6 @@
  const ray=new T.Raycaster();let down;renderer.domElement.addEventListener('pointerdown',e=>down=[e.clientX,e.clientY]);renderer.domElement.addEventListener('pointerup',e=>{if(!down||Math.hypot(e.clientX-down[0],e.clientY-down[1])>4)return;const r=renderer.domElement.getBoundingClientRect();ray.setFromCamera(new T.Vector2((e.clientX-r.left)/r.width*2-1,1-(e.clientY-r.top)/r.height*2),camera);selected=ray.intersectObjects([...meshes.values()].filter(m=>m.visible),false)[0]?.object||null;$('selection').textContent=selected?selected.userData.label+(step.previewOnly?.includes(selected.userData.name)?' · 분해 순서 참고용, 이후 단계에서 장착':''):'부품을 누르면 이름을 볼 수 있습니다.';update();});
  let hadSize=false;new ResizeObserver(()=>{camera.aspect=host.clientWidth/host.clientHeight;camera.updateProjectionMatrix();renderer.setSize(host.clientWidth,host.clientHeight,false);if(!hadSize){hadSize=true;fit();}}).observe(host);camera.aspect=host.clientWidth/host.clientHeight;renderer.setSize(host.clientWidth,host.clientHeight,false);camera.updateProjectionMatrix();
  const q=new URLSearchParams(location.search).get('step'),start=D.steps.findIndex(s=>s.id===q);show(start<0?0:start);$('loading').hidden=true;
- function tick(){requestAnimationFrame(tick);if(document.hidden)return;orbit.update();for(const a of anchors){const p=a.pos.clone().project(camera);a.el.hidden=p.z>1||p.z< -1||Math.abs(p.x)>1||Math.abs(p.y)>1||Number($('separation').value)>5;a.el.style.left=(p.x+1)*host.clientWidth/2+'px';a.el.style.top=(1-p.y)*host.clientHeight/2+'px';}renderer.render(scene,camera);}tick();
+ function tick(){requestAnimationFrame(tick);if(document.hidden)return;orbit.update();annotations.update(Number($('separation').value)<=5);renderer.render(scene,camera);}tick();
 })();
 </script></body></html>
