@@ -1,0 +1,4 @@
+﻿module_id,module_name,revision,part_id,name,mpn,refdes,quantity_per_board,unit
+m12,M12 슬립링 암 어댑터,B-TE1,pcb_m12,M12 슬립링 암 어댑터 PCB,,PCB,1,장
+m12,M12 슬립링 암 어댑터,B-TE1,rj45,RJ45 jack · magnetics 없음,RJE591885401,J1,1,개
+m12,M12 슬립링 암 어댑터,B-TE1,m12_connector,M12 슬립링 암 커넥터,T4143012081-000,J2,1,개

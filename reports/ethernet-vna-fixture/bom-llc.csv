@@ -1,0 +1,4 @@
+﻿module_id,module_name,revision,part_id,name,mpn,refdes,quantity_per_board,unit
+llc,M12 LLC 수 어댑터,B-RF1,pcb_llc,M12 LLC 수 어댑터 PCB,,PCB,1,장
+llc,M12 LLC 수 어댑터,B-RF1,rj45,RJ45 jack · magnetics 없음,RJE591885401,J1,1,개
+llc,M12 LLC 수 어댑터,B-RF1,llc_connector,M12 LLC 수 커넥터,MB12MBAFF08ST-3,J2,1,개

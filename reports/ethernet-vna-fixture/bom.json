@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-23",
+  "quantity_basis": "one_assembled_pcb",
+  "scope": "보드 1장당 기본 실장 BOM. 제작 수량이며 구매 포장·예비·재고 차감·외부 기구 및 측정 준비물은 별도.",
+  "parts": {
+    "pcb_common": {"name": "공통 발룬 PCB", "mpn": null, "revision": "B-SMA1", "unit": "장"},
+    "pcb_llc": {"name": "M12 LLC 수 어댑터 PCB", "mpn": null, "revision": "B-RF1", "unit": "장"},
+    "pcb_m12": {"name": "M12 슬립링 암 어댑터 PCB", "mpn": null, "revision": "B-TE1", "unit": "장"},
+    "pcb_molex": {"name": "Molex 슬립링 어댑터 PCB", "mpn": null, "revision": "A-DRAFT · 현행 후속 배선본", "unit": "장"},
+    "transformer": {"name": "발룬 트랜스", "mpn": "ADT2-1T+", "manufacturer": "Mini-Circuits", "unit": "개"},
+    "sma": {"name": "직각 SMA 암", "mpn": "SMA-J-P-H-RA-TH1", "manufacturer": "Samtec", "unit": "개"},
+    "rj45": {"name": "RJ45 jack · magnetics 없음", "mpn": "RJE591885401", "manufacturer": "Amphenol", "unit": "개"},
+    "llc_connector": {"name": "M12 LLC 수 커넥터", "mpn": "MB12MBAFF08ST-3", "manufacturer": "Finecables", "unit": "개", "sourcing": "recovered_part_planned", "note": "보유 motor_board 회수품 계획. 가용 수량을 확인하고 필요한 실장량에서 임의 차감하지 않음."},
+    "m12_connector": {"name": "M12 슬립링 암 커넥터", "mpn": "T4143012081-000", "manufacturer": "TE Connectivity", "unit": "개"},
+    "molex_connector": {"name": "Molex 5핀 SMT 커넥터", "mpn": "5055680571", "manufacturer": "Molex", "unit": "개"}
+  },
+  "modules": [
+    {"id": "common", "name": "공통 발룬 보드", "revision": "B-SMA1", "role": "SMA ↔ 4-pair RJ45 발룬 변환", "source_paths": ["balun/balun_eth_rj45/balun_eth_rj45_bom.csv", "balun/balun_eth_rj45/README.md"],
+      "lines": [
+        {"part_id": "pcb_common", "refs": ["PCB"], "quantity_per_board": 1},
+        {"part_id": "transformer", "refs": ["T1", "T2", "T3", "T4"], "quantity_per_board": 4},
+        {"part_id": "sma", "refs": ["J2", "J3", "J4", "J5"], "quantity_per_board": 4},
+        {"part_id": "rj45", "refs": ["J1"], "quantity_per_board": 1}
+      ],
+      "assembly_conditions": [
+        {"refs": ["RCT1", "RCT2", "RCT3", "RCT4"], "discrete_components_per_board": 0, "rule": "기본 CT-FLOAT: 모두 DNP. CT-GND 비교 시에만 두 보드의 8곳을 함께 변경하고 다시 보정."},
+        {"refs": ["RSH1"], "discrete_components_per_board": 0, "rule": "기준 Port 1 쪽 보드에만 납땜 브리지, Port 2 쪽은 DNP. 보드별 역할을 표시하며 0 Ω 부품을 기본 구매량에 더하지 않음."},
+        {"refs": ["CSH1"], "discrete_components_per_board": 0, "rule": "기본 DNP. AC shield 실험은 별도 조건이며 기본 BOM에 커패시터를 더하지 않음."},
+        {"refs": ["TP1", "TP2"], "discrete_components_per_board": 0, "rule": "PCB 도금 홀을 사용. 별도 테스트포인트 부품 없음."}
+      ]
+    },
+    {"id": "llc", "name": "M12 LLC 수 어댑터", "revision": "B-RF1", "role": "RJ45 ↔ 사내 LLC M12 수 핀맵 · 발룬 트랜스 없음", "source_paths": ["balun/adapters/JLCPCB_BUILD.md", "balun/adapters/README.md"],
+      "lines": [
+        {"part_id": "pcb_llc", "refs": ["PCB"], "quantity_per_board": 1},
+        {"part_id": "rj45", "refs": ["J1"], "quantity_per_board": 1},
+        {"part_id": "llc_connector", "refs": ["J2"], "quantity_per_board": 1}
+      ],
+      "assembly_conditions": [{"refs": ["TP1"], "discrete_components_per_board": 0, "rule": "SHIELD 접속용 PCB 동박/홀. 별도 TP 부품 없음. M12 패널·브래킷·체결품은 별도 미확정."}]
+    },
+    {"id": "m12", "name": "M12 슬립링 암 어댑터", "revision": "B-TE1", "role": "RJ45 ↔ 사내 슬립링 M12 암 핀맵 · 발룬 트랜스 없음", "source_paths": ["balun/adapters/JLCPCB_BUILD.md", "balun/adapters/m12_slipring/README.md"],
+      "lines": [
+        {"part_id": "pcb_m12", "refs": ["PCB"], "quantity_per_board": 1},
+        {"part_id": "rj45", "refs": ["J1"], "quantity_per_board": 1},
+        {"part_id": "m12_connector", "refs": ["J2"], "quantity_per_board": 1}
+      ],
+      "assembly_conditions": [{"refs": ["TP1"], "discrete_components_per_board": 0, "rule": "SHIELD 접속용 PCB 동박/홀. 별도 TP 부품 없음. PG9 브래킷·PCB 지지·체결품은 별도 미확정."}]
+    },
+    {"id": "molex", "name": "Molex 슬립링 어댑터", "revision": "A-DRAFT · 현행 후속 배선본", "role": "RJ45 ↔ 5핀 Molex · 발룬 트랜스 없음", "source_paths": ["balun/adapters/JLCPCB_BUILD.md", "balun/adapters/README.md"],
+      "lines": [
+        {"part_id": "pcb_molex", "refs": ["PCB"], "quantity_per_board": 1},
+        {"part_id": "rj45", "refs": ["J1"], "quantity_per_board": 1},
+        {"part_id": "molex_connector", "refs": ["J2"], "quantity_per_board": 1}
+      ],
+      "assembly_conditions": [{"refs": [], "discrete_components_per_board": 0, "rule": "Molex 1.25 mm SMT. DUT-side shield bond/TP 없음. 커넥터 고정·케이블 지지는 별도 준비."}]
+    }
+  ],
+  "aggregation": {"formula": "part_quantity = sum(module_board_count * quantity_per_board)", "combine_by": "part_id", "quantity_type": "nonnegative_integer", "rounding": "none", "exclude": ["historical_purchase_quantity", "spares", "package_rounding", "stock_deduction", "assembly_conditions", "shared_measurement", "unresolved"]},
+  "shared_measurement": {
+    "basis": "one_active_two_port_setup_with_two_common_boards",
+    "multiply_by_board_count": false,
+    "items": [
+      {"id": "sma_load", "name": "미사용 SMA 50 Ω 로드", "mpn": "2467938-1", "quantity_per_setup": 6, "unit": "개", "historical_purchase": {"date": "2026-09-17", "quantity": 7, "scope": "RF/공유·예비 1개 포함 통합 전체 기록"}},
+      {"id": "coax", "name": "SMA 수–수 50 Ω 케이블", "quantity_per_setup": 2, "unit": "개"},
+      {"id": "patch", "name": "고정 shielded RJ45 patch", "quantity_per_setup": null, "quantity_rule": "one_per_adapter_in_active_setup", "unit": "개"},
+      {"id": "sma_cal", "name": "SMA full 2-port SOLT 표준", "quantity_per_setup": 1, "unit": "세트"}
+    ]
+  },
+  "unresolved": [
+    {"id": "mechanical", "name": "패널·브래킷·스페이서·나사·strain relief", "quantity": null, "status": "not_defined"},
+    {"id": "dut_standards", "name": "DUT 접속면 O/S/L/T 및 독립 검증 표준", "quantity": null, "status": "not_defined"}
+  ]
+}

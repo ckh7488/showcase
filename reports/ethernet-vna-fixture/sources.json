@@ -1,0 +1,60 @@
+{
+  "date": "2026-09-23",
+  "classification": "DOCUMENT_REVIEW_AND_NATIVE_CAD_IDENTITY_NOT_MEASUREMENT",
+  "files": [
+    {
+      "path": "balun/README.md",
+      "sha256": "17000c4037c920eeaa9d1e0805c0c4bde55d823e1ff0c9d4d05226625e1c0815"
+    },
+    {
+      "path": "balun/DESIGN_REVIEW_HANDOFF.md",
+      "sha256": "83b0dab71c4d8918e903e3f4b8a5a618e810bed749a765c7cd74b910acde87af"
+    },
+    {
+      "path": "balun/VNA_TEST_PLAN.md",
+      "sha256": "7d249a4ce5cd9543fc957aa95128e38ecdb7db2bee4e7359cc13eba75f7e8bfe"
+    },
+    {
+      "path": "balun/analysis/README.md",
+      "sha256": "a62420e2b827eb6392627adfdf4906556103c4df7653fb19c5485a9c714778f2"
+    },
+    {
+      "path": "balun/balun_eth_rj45/README.md",
+      "sha256": "69aba0b3dd0f730769e61c56262b344912b32e09053da51476c98d345a810dc7"
+    },
+    {
+      "path": "balun/balun_eth_rj45/balun_eth_rj45_bom.csv",
+      "sha256": "398ba666ce1cb380899cfac9fce8662597a22054f3638aa6985f41d81dfb6844"
+    },
+    {
+      "path": "balun/adapters/README.md",
+      "sha256": "d990752008682c4e51fb944873bca600250bd20e5fc7ae1fe0a236d56723f329"
+    },
+    {
+      "path": "balun/adapters/JLCPCB_BUILD.md",
+      "sha256": "1730b7561f77b16200b6794ee0bbd1abeb07c90fc85132f5f83fddbaedad5790"
+    },
+    {
+      "path": "balun/adapters/m12_slipring/README.md",
+      "sha256": "9dfa840560a21a09fdcd8e1282558db5a7826c516e808d5fa7cb37c40e23395b"
+    },
+    {
+      "path": "outputs/jlc-ready-20260911/README.md",
+      "sha256": "f13bab91d7322ff4134acb59ae65dd1b9a84cbca2bd68201ab5a8336530f2cb8"
+    },
+    {
+      "path": "outputs/jlc-ready-20260911/source-promotion-manifest.json",
+      "sha256": "b6cb316cdd66d089aca830ccc44772ad17d84225b05528ae4d86234ec7e6ad21"
+    },
+    {
+      "path": "outputs/m12-llc-B-RF1-20260910/README.md",
+      "sha256": "a6226a508a3c7f65218ebb0f946cdcfaa4ea52bb05f73d859374aed9f2acb782"
+    },
+    {
+      "path": "outputs/m12-llc-B-RF1-20260910/manifest.json",
+      "sha256": "64c8f14c91333bf57b16ee04e20da7c1954cdfa2177d4f25711e1c2fcf3ed4be"
+    }
+  ],
+  "procurement_basis": "2026-09-17 combined procurement record: quantities only; historical order/payment/price not asserted current",
+  "native_pcb_basis": "boards.json contains four reviewed native PCB hashes and extracted coordinates"
+}

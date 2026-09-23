@@ -1,0 +1,5 @@
+﻿module_id,module_name,revision,part_id,name,mpn,refdes,quantity_per_board,unit
+common,공통 발룬 보드,B-SMA1,pcb_common,공통 발룬 PCB,,PCB,1,장
+common,공통 발룬 보드,B-SMA1,transformer,발룬 트랜스,ADT2-1T+,"T1,T2,T3,T4",4,개
+common,공통 발룬 보드,B-SMA1,sma,직각 SMA 암,SMA-J-P-H-RA-TH1,"J2,J3,J4,J5",4,개
+common,공통 발룬 보드,B-SMA1,rj45,RJ45 jack · magnetics 없음,RJE591885401,J1,1,개

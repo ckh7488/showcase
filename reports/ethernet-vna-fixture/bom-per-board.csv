@@ -1,0 +1,14 @@
+﻿module_id,module_name,revision,part_id,name,mpn,refdes,quantity_per_board,unit
+common,공통 발룬 보드,B-SMA1,pcb_common,공통 발룬 PCB,,PCB,1,장
+common,공통 발룬 보드,B-SMA1,transformer,발룬 트랜스,ADT2-1T+,"T1,T2,T3,T4",4,개
+common,공통 발룬 보드,B-SMA1,sma,직각 SMA 암,SMA-J-P-H-RA-TH1,"J2,J3,J4,J5",4,개
+common,공통 발룬 보드,B-SMA1,rj45,RJ45 jack · magnetics 없음,RJE591885401,J1,1,개
+llc,M12 LLC 수 어댑터,B-RF1,pcb_llc,M12 LLC 수 어댑터 PCB,,PCB,1,장
+llc,M12 LLC 수 어댑터,B-RF1,rj45,RJ45 jack · magnetics 없음,RJE591885401,J1,1,개
+llc,M12 LLC 수 어댑터,B-RF1,llc_connector,M12 LLC 수 커넥터,MB12MBAFF08ST-3,J2,1,개
+m12,M12 슬립링 암 어댑터,B-TE1,pcb_m12,M12 슬립링 암 어댑터 PCB,,PCB,1,장
+m12,M12 슬립링 암 어댑터,B-TE1,rj45,RJ45 jack · magnetics 없음,RJE591885401,J1,1,개
+m12,M12 슬립링 암 어댑터,B-TE1,m12_connector,M12 슬립링 암 커넥터,T4143012081-000,J2,1,개
+molex,Molex 슬립링 어댑터,A-DRAFT · 현행 후속 배선본,pcb_molex,Molex 슬립링 어댑터 PCB,,PCB,1,장
+molex,Molex 슬립링 어댑터,A-DRAFT · 현행 후속 배선본,rj45,RJ45 jack · magnetics 없음,RJE591885401,J1,1,개
+molex,Molex 슬립링 어댑터,A-DRAFT · 현행 후속 배선본,molex_connector,Molex 5핀 SMT 커넥터,5055680571,J2,1,개

@@ -1,0 +1,4 @@
+﻿module_id,module_name,revision,part_id,name,mpn,refdes,quantity_per_board,unit
+molex,Molex 슬립링 어댑터,A-DRAFT · 현행 후속 배선본,pcb_molex,Molex 슬립링 어댑터 PCB,,PCB,1,장
+molex,Molex 슬립링 어댑터,A-DRAFT · 현행 후속 배선본,rj45,RJ45 jack · magnetics 없음,RJE591885401,J1,1,개
+molex,Molex 슬립링 어댑터,A-DRAFT · 현행 후속 배선본,molex_connector,Molex 5핀 SMT 커넥터,5055680571,J2,1,개

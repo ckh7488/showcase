@@ -37,6 +37,41 @@
       ]
     },
     {
+      "id": "ethernet-vna-fixture",
+      "title": "VNA 케이블 지그 · SMA↔Ethernet",
+      "summary": "SMA↔RJ45 공통 발룬과 LLC·M12 슬립링·Molex 어댑터 세트. 양끝 연결, PCB·핀맵, 보드별 BOM과 케이블 측정 절차를 살펴봅니다.",
+      "category": "하드웨어 · 측정 도구",
+      "date": "2026-09-23",
+      "path": "reports/ethernet-vna-fixture/",
+      "cover": "reports/ethernet-vna-fixture/cover.png",
+      "coverAlt": "지그 양끝의 커넥터를 선택하고 VNA–발룬–어댑터–DUT 연결과 핀맵을 확인하는 실제 화면",
+      "tags": [
+        "SMA↔RJ45",
+        "LLC",
+        "M12",
+        "Molex",
+        "슬립링",
+        "BOM"
+      ]
+    },
+    {
+      "id": "vna-calibration-fixture",
+      "title": "CM 프로브 교정지그 · A03",
+      "summary": "CM 전류 프로브의 기준 전류와 전달 임피던스를 구하는 지그. 실제 PCB의 전류 경로, 단계별 연결, 전용 BOM과 1–500 MHz 출력 기준 교정을 살펴봅니다.",
+      "category": "하드웨어 · 측정 도구",
+      "date": "2026-09-23",
+      "path": "reports/vna-calibration-fixture/",
+      "cover": "reports/vna-calibration-fixture/cover.png",
+      "coverAlt": "A03 실제 PCB의 중앙 SIG와 바깥 GND 귀환 동박을 탐색하는 화면",
+      "tags": [
+        "VNA",
+        "A03",
+        "PCB",
+        "교정",
+        "BOM"
+      ]
+    },
+    {
       "id": "embedding-first-steps",
       "title": "임베딩 첫걸음",
       "summary": "왜 여러 차원이 필요한지, 거리·코사인·내적은 무엇을 비교하는지 직접 조작하며 이해합니다. 마지막에는 작은 모델을 학습시키고 새 문장으로 검색합니다.",
