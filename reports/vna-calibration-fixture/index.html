@@ -38,7 +38,7 @@
   </section>
 
   <section id="connection" class="sheet">
-    <div class="section-heading"><div><p class="eyebrow">02 / 연결 따라가기</p><h2>단계를 선택하면 연결이 바뀝니다</h2></div><span class="tag">교정 기준면: 동축 케이블 끝</span></div>
+    <div class="section-heading"><div><p class="eyebrow">02 / 연결 따라가기</p><h2>단계를 선택하면 연결이 바뀝니다</h2></div><span class="tag">기준면: through·전달은 케이블 끝 / 로드는 별도 SOL 암 포트</span></div>
     <p>두 VNA 케이블을 교정한 뒤 같은 배치를 유지합니다. 연결을 바꿀 때는 RF 출력을 끄고, 지그·프로브·입력 케이블의 위치를 고정합니다.</p>
     <p class="caption">현행 벤치 절차 초안의 연결 개요입니다. 실물 도착 후 개체·장비 조건에 맞는 시험 기록을 작성합니다.</p>
     <div id="stage-buttons" class="stage-buttons" role="group" aria-label="교정 단계">
@@ -54,7 +54,7 @@
       <tr><td>빈 지그</td><td>P1 → IN / OUT → P2 · 헤드 없음</td><td><code>fixture_through_empty.s2p</code></td></tr>
       <tr><td>장착 through</td><td>P1 → IN / OUT → P2 / 헤드 → 외장 50 Ω</td><td><code>fixture_through_head_loaded.s2p</code></td></tr>
       <tr><td>프로브 전달</td><td>P1 → IN / OUT → 같은 외장 50 Ω / 헤드 → P2</td><td><code>probe_transfer_5t.s2p</code></td></tr>
-      <tr><td>로드 반사</td><td>교정된 P1 케이블 끝 → 같은 외장 50 Ω</td><td><code>primary_load_s11.s1p</code></td></tr>
+      <tr><td>로드 반사</td><td>별도 1포트 SOL 교정한 SMA 암 포트 → 같은 외장 수형 50 Ω</td><td><code>primary_load_s11.s1p</code></td></tr>
     </tbody></table></div><p>전체 sweep의 주파수 점과 기준 임피던스를 일치시키고 교정 ID, 레벨, IFBW, 평균, 개체 ID, 배치 사진을 함께 보존합니다.</p><p>역방향 확인에서는 <b>지그 J1/J2를 바꿔 입력·출구 방향을 뒤집고, 02 장착 through와 03 프로브 전달을 다시 측정</b>합니다. 정·역방향 측정은 파일명이나 폴더를 나누어 저장합니다.</p></details>
   </section>
 
@@ -63,7 +63,7 @@
     <div class="explain-grid"><article><span class="mini-number">1</span><h3>출구 전류 → 코어 전류</h3><p>헤드가 장착된 through 측정으로 지그의 전달을 반영하고, <b>K = I<sub>core</sub> / I<sub>out</sub></b>로 코어 위치의 전류를 구합니다. 로드의 반사도 함께 보정합니다.</p></article><article><span class="mini-number">2</span><h3>코어 전류 → 프로브 출력</h3><p>프로브 출력과 기준 전류의 비로 <b>Z<sub>T</sub>(f)</b>를 구합니다. 프로브 자체 공진의 감도 변화와 위상 변화도 이 응답에 포함됩니다.</p></article><article><span class="mini-number">3</span><h3>사용할 때: 전압 → 전류</h3><p>같은 출력 체인에서 측정한 전압을 주파수별 교정값으로 나눕니다. <b>I(f) = V(f) / Z<sub>T,chain</sub>(f)</b>. 케이블·감쇠기·종단 조건을 맞춥니다.</p></article></div>
     <div class="note"><b>−6 dB는 보정 불가를 뜻하지 않습니다.</b><p>동일한 50 Ω 기준에서 전력 약 ¼, 전류 진폭 약 ½입니다. 알려진 복소 전달 비율을 적용합니다. 안정적으로 반복되는 선형 공진도 보정 대상입니다.</p></div>
     <details class="detail"><summary>출력 포트 기준 식과 적용 조건</summary><p class="formula">Z<sub>T</sub> = 50 × S<sub>21,tr</sub> × (1 − S<sub>22,thr</sub> Γ<sub>L</sub>) / [S<sub>21,thr</sub> × (1 − Γ<sub>L</sub>) × K]</p><p>단위는 Ω입니다. S파라미터와 Γ<sub>L</sub>, K는 위상을 포함한 복소값입니다. thr는 헤드 장착 through, tr는 프로브 전달, Γ<sub>L</sub>은 외장 로드의 반사입니다.</p><p>K는 실제 헤드 장착·종단 조건에 맞아야 합니다. 빈 지그·정합 출력 모델을 시작값으로 쓰면 실제 로드 및 헤드 부하 차이를 불확도에 포함합니다. 외장 로드와 P2를 맞바꿀 때 두 종단의 차이도 평가합니다.</p><p><b>K의 크기는 보정량이며 보정 후 잔여 오차가 아닙니다.</b> 정·역방향 결과가 같아도 양방향에 공통으로 남는 모델 오차를 증명하지는 않습니다.</p></details>
-    <details class="detail"><summary>공진 보정과 파형 복원의 범위</summary><p>지그 없이 헤드 출력 S11로 자기공진을 기록하는 사전 측정안입니다. 이 초안은 코어 개폐, PCB·SMA 연결, 하우징 장착의 표준 측정 상태를 아직 지정하지 않았습니다. 실제 조립 상태·턴수·출력 기준면을 사진과 함께 기록하고, 상태가 다른 기록을 같은 조건의 결과로 합치지 않습니다. 이 측정은 전달 임피던스 교정과 별개이며, 공진 주변은 재장착에 따른 응답 변화도 확인합니다.</p><p>신호가 잡음에 묻히는 깊은 null, 포화·클리핑 구간은 단순 나눗셈으로 복원하지 않습니다. 배치나 종단이 바뀌어 공진 위치가 이동하면 그 조건을 다시 특성화합니다.</p><p>프로브 장착으로 실제 케이블 전류가 바뀌었다면 교정값은 <b>장착된 상태의 전류</b>를 나타냅니다. 프로브가 없을 때의 전류를 자동으로 복원하지는 않습니다.</p><p>링잉을 포함한 시간 파형 역보정에는 복소 응답·수신기 응답과 대역 제한이 필요합니다. 오실로스코프 내부 응답은 VNA 교정으로 자동 제거되지 않습니다. 이 프로젝트의 출력 포트 기준 자동 계산과 시간 파형 역보정은 아직 구현 전입니다.</p></details>
+    <details class="detail"><summary>공진 보정과 파형 복원의 범위</summary><p>지그 없이 헤드 출력 S11로 자기공진을 기록하는 사전 측정안입니다. 이 초안은 코어 개폐, PCB·SMA 연결, 하우징 장착의 표준 측정 상태를 아직 지정하지 않았습니다. 실제 조립 상태·턴수·출력 기준면을 사진과 함께 기록하고, 상태가 다른 기록을 같은 조건의 결과로 합치지 않습니다. 이 측정은 전달 임피던스 교정과 별개이며, 공진 주변은 재장착에 따른 응답 변화도 확인합니다.</p><p>신호가 잡음에 묻히는 깊은 null, 포화·클리핑 구간은 단순 나눗셈으로 복원하지 않습니다. 배치나 종단이 바뀌어 공진 위치가 이동하면 그 조건을 다시 특성화합니다.</p><p>프로브 장착으로 실제 케이블 전류가 바뀌었다면 교정값은 <b>장착된 상태의 전류</b>를 나타냅니다. 프로브가 없을 때의 전류를 자동으로 복원하지는 않습니다.</p><p>링잉을 포함한 시간 파형 역보정에는 복소 응답·수신기 응답과 대역 제한이 필요합니다. 오실로스코프 내부 응답은 VNA 교정으로 자동 제거되지 않습니다. 출력 포트 기준 오프라인 분석기는 구현·합성 시험을 마쳤습니다. 정/역방향 S2P, 별도 암 기준면 로드 S1P, 복소 K와 주파수별 검토·불확도 기록으로 유효 구간만 절대 ZT를 출력합니다. 시간 파형 역보정은 아직 구현 전입니다.</p></details>
   </section>
 
   <section id="bom" class="sheet">
@@ -75,7 +75,7 @@
       <tr><td>고정 나사</td><td>PA66 M3 × 12 mm</td><td>4개</td><td>F13</td></tr>
       <tr><td>고정 날개너트</td><td>PA66 M3</td><td>4개</td><td>F14</td></tr>
     </tbody></table></div>
-    <div class="two-col"><article><h3>공용 측정 준비물</h3><ul><li>1–500 MHz sweep에 사용할 2포트 VNA</li><li>50 Ω 동축 케이블 2개와 커넥터에 맞는 SOLT 표준</li><li>교환해 사용할 외장 50 Ω 로드 1개</li><li>교정할 프로브와 BaseCenter A14 받침(P05)</li><li>납땜·플럭스·세척 도구, DMM</li></ul><p class="caption">공용 장비·표준과 소모품은 보유분을 확인해 조달합니다. 프로브의 실제 출력 케이블·감쇠기를 사용하면 해당 체인도 특성화합니다.</p></article><article><h3>조립 순서</h3><ol><li>A03 리비전과 두 SMA의 방향·홀 맞춤을 확인합니다.</li><li>SMA 두 개를 평면에 안착시켜 납땜하고 중심 핀–SIG, 외피–GND 연결을 검사합니다.</li><li>지그를 지정 고정부에 PA66 나사·너트로 고정합니다.</li><li>코어가 중앙 브리지를 감싸고 귀환 동박은 바깥에 남는지 확인합니다.</li><li>빈 지그와 헤드 장착 상태를 각각 저장합니다.</li></ol></article></div>
+    <div class="two-col"><article><h3>공용 측정 준비물</h3><ul><li>1–500 MHz sweep에 사용할 2포트 VNA</li><li>50 Ω SMA M/M 동축 2개와 케이블 끝 교정용 SOLT 표준; 로드용 암 포트에서 별도 SOL을 수행할 모델이 확인된 수형 표준</li><li>교환해 사용할 외장 50 Ω 로드 1개</li><li>교정할 프로브와 BaseCenter A14 받침(P05)</li><li>납땜·플럭스·세척 도구, DMM</li></ul><p class="caption">공용 장비·표준과 소모품은 보유분을 확인해 조달합니다. 프로브의 실제 출력 케이블·감쇠기를 사용하면 해당 체인도 특성화합니다.</p></article><article><h3>조립 순서</h3><ol><li>A03 리비전과 두 SMA의 방향·홀 맞춤을 확인합니다.</li><li>SMA 두 개를 평면에 안착시켜 납땜하고 중심 핀–SIG, 외피–GND 연결을 검사합니다.</li><li>지그를 지정 고정부에 PA66 나사·너트로 고정합니다.</li><li>코어가 중앙 브리지를 감싸고 귀환 동박은 바깥에 남는지 확인합니다.</li><li>빈 지그와 헤드 장착 상태를 각각 저장합니다.</li></ol></article></div>
     <p><a href="bom.json" download>에이전트용 BOM JSON</a> · <a href="../rf-current-probe/bom.html">CM 프로브 전체 BOM</a> · <a href="../rf-current-probe/assembly-guide.html">장착 부품 조립절차</a></p>
   </section>
 
@@ -92,7 +92,7 @@
   <section id="records" class="sheet">
     <p class="eyebrow">06 / 결과 기록</p><h2>교정값과 오차를 주파수별로 남깁니다</h2>
     <p>1–100 MHz에서 시작해 100–300 MHz, 300–500 MHz까지 같은 A03로 진행합니다. 교정 수행 범위를 300 MHz에서 일괄 제한하지 않습니다. Z<sub>T</sub>, 불확도, 유효 여부와 제외 사유를 함께 기록합니다.</p><p>실제 진단에서의 판정용·참고용 구분은 CM 프로브 백서 14.5절의 대역별 목표를 따릅니다. 교정 데이터를 확보하는 범위와 진단에 사용하는 등급을 구분합니다.</p>
-    <div class="two-col"><article><h3>반복 확인</h3><ul><li>정방향·역방향 교정 결과의 일관성</li><li>재장착 5회, 출력 레벨 3개, 도체 위치 변화</li><li>직접 픽업, 왕복 전류 상쇄, 프로브 삽입 영향</li></ul></article><article><h3>현재 확보된 것</h3><p>A03 설계 원본, 저장 시뮬레이션, 연결·보정 방법이 있습니다. <b>실측 교정값과 정확도 표는 아직 없습니다.</b> 출력 기준 계산 모드가 구현·검증되기 전에는 원시 데이터를 <code>relative</code>로 보존합니다.</p></article></div>
+    <div class="two-col"><article><h3>반복 확인</h3><ul><li>정방향·역방향 교정 결과의 일관성</li><li>재장착 5회, 출력 레벨 3개, 도체 위치 변화</li><li>직접 픽업, 왕복 전류 상쇄, 프로브 삽입 영향</li></ul></article><article><h3>현재 확보된 것</h3><p>A03 설계 원본, 저장 시뮬레이션, 연결·보정 방법이 있습니다. <b>실측 교정값과 정확도 표는 아직 없습니다.</b> 출력 기준 계산 모드는 구현하고 합성 파일 시험을 마쳤습니다. 실제 기준면·K 적용성·직접 픽업·반복성·불확도 검토가 끝나기 전 원시 데이터는 <code>relative</code>로 보존합니다.</p></article></div>
     <details class="detail"><summary>근거와 리비전</summary><p>RF 전류 프로브 백서 Rev.A/0.7의 7.3–7.4, 11.6, 12.2–12.3, 14.5절과 DEC-053·055, A03 제작 README, 현행 설치 BOM, 저장 A03 시뮬레이션 재환산을 기준으로 작성했습니다.</p><p><a href="sources.json">문서·수치 원본 해시</a> · <a href="board-source.json">PCB 추출 근거</a></p><p>이 페이지의 구조 표시는 저장된 A03 설계의 설명입니다. 제조 파일과 구매·업체 상태는 별도 관리합니다.</p></details>
   </section>
 
@@ -101,6 +101,6 @@
 </main>
 <footer><a href="../../">← ATLAS</a><span>VNA 교정지그 · Fixture A03 · 2026.09.23</span></footer>
 <noscript><p class="noscript">연결 그림·PCB 강조·그래프 선택에는 JavaScript가 필요합니다. 연결 표, BOM, 수치 표와 절차는 본문에서 읽을 수 있습니다.</p></noscript>
-<script src="board-data.js?v=20260923-1"></script><script src="results.js?v=20260923-1"></script><script src="app.js?v=20260923-1"></script>
+<script src="board-data.js?v=20260923-1"></script><script src="results.js?v=20260923-1"></script><script src="app.js?v=20260928-output-reference-1"></script>
 </body>
 </html>

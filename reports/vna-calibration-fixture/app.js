@@ -55,7 +55,7 @@
     {title:'01 · 빈 지그 응답 저장',text:'프로브를 장착하지 않은 A03에 P1과 P2를 연결합니다. 지그의 반사·전달을 기록하고, 다음 단계의 헤드 장착 결과와 비교합니다.',save:'fixture_through_empty.s2p',note:'이 파일 하나를 빼는 것으로 교정이 끝나지 않습니다. 전류 기준에 사용하는 through는 다음의 헤드 장착 상태입니다.'},
     {title:'02 · 헤드 장착 through',text:'프로브를 중앙 브리지에 장착합니다. 지그 OUT은 P2에, 프로브 SMA 출력은 외장 50 Ω 로드에 연결합니다.',save:'fixture_through_head_loaded.s2p',note:'여기서 S21,thr와 S22,thr를 얻습니다. 지그·프로브·입력 동축의 위치를 고정한 채 다음 단계로 갑니다.'},
     {title:'03 · 프로브 전달 측정',text:'RF OFF 후 P2와 같은 외장 로드의 위치를 맞바꿉니다. 지그 OUT은 로드로, 프로브 SMA는 P2로 연결합니다.',save:'probe_transfer_5t.s2p',note:'여기서 S21,tr를 얻습니다. P2가 프로브의 50 Ω 종단을 맡으므로 프로브 출력에 외장 로드를 병렬로 더하지 않습니다.'},
-    {title:'04 · 같은 로드의 반사',text:'동일한 외장 로드를 교정된 P1 케이블 끝에 연결해 S11을 저장합니다. 출력 기준 식의 ΓL에 사용합니다.',save:'primary_load_s11.s1p',note:'작업용 로드의 반사 측정입니다. 이 로드를 정확한 이상적 Load로 가정해 교정 표준을 대체하는 절차는 아닙니다.'}
+    {title:'04 · 같은 로드의 반사',text:'RF OFF 후 2포트 교정과 배치를 저장하고 P2 케이블을 분리합니다. VNA의 SMA 암 포트에 모델이 확인된 수형 OPEN·SHORT·LOAD로 별도 1포트 SOL을 적용합니다. 같은 외장 수형 로드를 그 암 포트에 직접 연결해 복소 ΓL을 저장합니다.',save:'primary_load_s11.s1p',note:'물리 P2 반사 S22를 1포트 S1P로 내보내면 파일 안에서는 S11입니다. 로드·암 기준면·표준 모델·물리 포트·별도 교정 ID를 기록합니다. M/M 케이블 끝에는 직접 연결되지 않으며 F/F 어댑터만 추가해 기존 교정을 유지하지 않습니다. 작업용 로드를 SOL 표준으로 쓰지 않습니다. through/전달 재측정 전 2포트 배치를 복구하고 유효성을 재확인합니다.'}
   ];
   let activeStage = 0;
   function drawConnection() {
@@ -86,8 +86,8 @@
       return;
     }
     if (activeStage===4) {
-      if(mobile){wire('M 180 115 V 240','load');node(85,35,190,80,'VNA P1','SOLT 적용');node(85,240,190,80,'외장 50 Ω','같은 작업용 로드','load');note(180,180,'교정된 케이블 끝');note(180,375,'S11 → ΓL');}
-      else{wire('M 245 175 H 575','load');node(65,130,180,90,'VNA P1','SOLT 적용');node(575,130,200,90,'외장 50 Ω','같은 작업용 로드','load');note(410,140,'교정된 케이블 끝');note(420,320,'S11 → ΓL · 다른 단계와 동일한 로드를 사용합니다.');}
+      if(mobile){wire('M 180 115 V 240','load');node(85,35,190,80,'VNA P2 · SMA 암','별도 1포트 SOL');node(85,240,190,80,'외장 50 Ω · SMA 수','같은 작업용 로드','load');note(180,180,'암 기준면에 직접 연결');note(180,375,'P2 S22 → S1P의 S11 → ΓL');}
+      else{wire('M 245 175 H 575','load');node(65,130,180,90,'VNA P2 · SMA 암','별도 1포트 SOL');node(575,130,200,90,'외장 50 Ω · SMA 수','같은 작업용 로드','load');note(410,140,'암 기준면에 직접 연결');note(420,320,'P2 S22 → S1P의 S11 → ΓL · 같은 로드 사용');}
       return;
     }
     const loaded=activeStage>=2,transfer=activeStage===3;
