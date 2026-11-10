@@ -127,7 +127,7 @@
       "category": "펌웨어 · 통신 진단",
       "date": "2026-11-10",
       "path": "reports/fw-lan9354-diag/",
-      "cover": "reports/fw-lan9354-diag/cover.png",
+      "cover": "reports/fw-lan9354-diag/cover.png?v=20261110-20",
       "coverAlt": "라이다 입력 Port B, STM32 입력 Port 0, PC로 나가는 Port A를 펼쳐 보여주는 결과 도식",
       "tags": [
         "LAN9354",
