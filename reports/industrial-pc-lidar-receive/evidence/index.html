@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>라이다 수신 시험 근거 | ATLAS</title>
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../assets/theme.v1.css">
+  <link rel="stylesheet" href="../report.css">
+</head>
+<body>
+  <nav class="masthead" aria-label="보고서 이동">
+    <div class="wrap evidence masthead-inner">
+      <a class="atlas-link" href="../../../" aria-label="ATLAS 라이브러리로 돌아가기">← ATLAS</a>
+      <a href="../">라이다 수신 공백과 몰림</a>
+    </div>
+  </nav>
+
+  <main class="wrap evidence">
+    <header class="report-intro">
+      <h1>라이다 수신 시험 근거</h1>
+      <p class="story-copy">2026년 10월 20일 기존 랜카드 수신 시험의 기록이다. 공백 직전 패킷, 공백 뒤에 몰려 읽힌 37개, 그다음에 읽힌 패킷까지 프로그램이 읽은 순서대로 뽑았다.</p>
+      <p class="evidence-files">
+        <a href="timing.csv" download>상대 시각 CSV (39행)</a>
+        <a href="verify_timing.py" download>검산 스크립트 (Python)</a>
+      </p>
+    </header>
+
+    <section class="chapter" aria-labelledby="data-title">
+      <h2 id="data-title">패킷 하나에 두 시각</h2>
+      <p class="story-copy">CSV 한 행은 같은 패킷의 측정과 읽기 기록이다. 두 열 모두 공백 직전 패킷의 시각을 각자의 0으로 두었다. 간격은 같은 열 안에서 뺀다.</p>
+      <dl class="evidence-fields">
+        <dt><code>packet_order</code></dt>
+        <dd>이 표에서 매긴 읽기 순서</dd>
+        <dt><code>segment</code></dt>
+        <dd>공백 직전(<code>before</code>), 몰림(<code>burst</code>), 몰림 이후(<code>after</code>)</dd>
+        <dt><code>lidar_elapsed_ns</code></dt>
+        <dd>패킷에 담긴 첫 거리 측정의 라이다 상대 시각(ns)</dd>
+        <dt><code>pc_elapsed_ns</code></dt>
+        <dd>프로그램이 패킷을 읽은 직후 기록한 PC 상대 시각(ns)</dd>
+        <dt><code>missing_before</code></dt>
+        <dd>직전에 빠졌다고 프로그램이 순번으로 계산한 개수</dd>
+      </dl>
+    </section>
+
+    <section class="chapter" aria-labelledby="verify-title">
+      <h2 id="verify-title">같은 숫자 다시 계산하기</h2>
+      <p class="story-copy">두 파일을 같은 폴더에 두고 Python 3으로 실행한다.</p>
+      <pre><code>python verify_timing.py</code></pre>
+      <p class="story-copy">PC가 다음 패킷을 읽기까지 <strong>97.1586 ms</strong> 비었다. 이어 읽은 <strong>37개</strong>의 첫 기록과 마지막 기록 사이는 라이다에서 <strong>56.316229 ms</strong>, PC에서 <strong>0.7649 ms</strong>였다.</p>
+    </section>
+
+    <section class="chapter" aria-labelledby="scope-title">
+      <h2 id="scope-title">함께 본 진단 기록</h2>
+      <p class="story-copy">기존 랜카드 시험에서 프로그램은 37개를 읽은 뒤 다음 순번을 보고 21개 누락을 표시했다. 같은 시험에서 Windows 인터페이스의 누적 수신 폐기 수는 관측한 1,260개 표본 모두 2였다. 새로 기록된 폐기는 0건이었다.</p>
+      <p class="story-copy">별도 USB 랜카드 시험에서는 순번이 빠진 구간을 포함한 11초 동안 스위치의 라이다 쪽 입력과 PC 쪽 출력이 대형 조각 26,413개, 중형 조각 6,610개로 각각 일치했다. 이 집계로 개별 패킷이 PC에 도착한 시각이나 지연이 시작된 위치까지는 확인할 수 없다.</p>
+    </section>
+  </main>
+</body>
+</html>

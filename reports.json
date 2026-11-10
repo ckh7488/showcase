@@ -2,6 +2,21 @@
   "version": 1,
   "reports": [
     {
+      "id": "industrial-pc-lidar-receive",
+      "title": "라이다 수신 공백과 몰림",
+      "summary": "점군이 순간적으로 어긋난 현상부터, 같은 라이다 패킷의 측정 시각과 PC 읽기 시각을 대조하기까지의 조사 과정입니다.",
+      "category": "센서 · 실시간 시스템",
+      "date": "2026-11-10",
+      "path": "reports/industrial-pc-lidar-receive/",
+      "cover": "reports/industrial-pc-lidar-receive/cover.png",
+      "coverAlt": "평소 점군과 패킷이 한꺼번에 읽혀 시야 한 구간의 점이 어긋난 모습을 나란히 비교한 화면",
+      "tags": [
+        "라이다",
+        "고장 진단",
+        "시간 동기"
+      ]
+    },
+    {
       "id": "vna-tdr",
       "title": "VNA → TDR · 반사는 어떻게 위치가 되는가",
       "summary": "복소 S11의 위상에서 반사 위치를 복원하는 원리를 직접 조작합니다. 유한 대역·윈도우·분해능·거리 접힘·다중반사·시간 게이팅과 LibreVNA 설정까지 연결합니다.",
