@@ -4,46 +4,43 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="회전 라이다의 점이 튄 구간에서 측정 시각과 엔코더 시각을 대조하고, 어긋난 기록의 점 계산을 건너뛰는 5 ms 필터를 시험했다.">
-  <title>고정 구조물의 점이 잠깐 옆으로 튀었다 | ATLAS</title>
+  <title>라이다 수신 지터와 5 ms 필터 | ATLAS</title>
   <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../../assets/theme.v1.css">
-  <link rel="stylesheet" href="report.css">
+  <link rel="stylesheet" href="report.css?v=20261110-2">
 </head>
 <body>
-  <header class="hero">
-    <div class="wrap">
-      <nav class="mast" aria-label="ATLAS 보고서 이동">
-        <a href="../../" aria-label="ATLAS 라이브러리로 돌아가기">← ATLAS</a>
-        <a href="../jib1-lidar/replay.html">다른 날의 3D 재생 ↗</a>
-      </nav>
-      <div class="lead">
-        <div class="lead-copy">
-          <h1>고정 구조물의 점이 <span>잠깐 옆으로 튀었다</span></h1>
-          <p>회전 받침에 올린 라이다는 거리를 잰다. 소프트웨어는 회전각 센서(엔코더)의 값을 붙여 점을 그릴 방향을 정한다. 고정 구조물인데 점이 잠깐 옆으로 밀려 보였다.</p>
-        </div>
-        <aside class="finding" aria-label="시험한 대응">
-          <p class="eyebrow">시험한 대응</p>
-          <p><b>두 장치의 기록 시각이 갑자기 서로 다른 폭으로 뛰었을 때</b> 문제가 된 패킷의 점 계산을 건너뛰었다.</p>
-        </aside>
+  <a class="skip" href="#timing">본문으로 건너뛰기</a>
+  <nav class="masthead" aria-label="보고서 이동">
+    <div class="wrap masthead-inner">
+      <a class="atlas-link" href="../../" aria-label="ATLAS 라이브러리로 돌아가기">← ATLAS</a>
+      <div class="chapter-links">
+        <a href="#timing">각도 대조</a>
+        <a href="#replay">5 ms 필터</a>
+        <a href="#batch-result">재생 결과</a>
       </div>
-      <nav class="story-nav" aria-labelledby="story-nav-title">
-        <p class="eyebrow" id="story-nav-title">조사 순서</p>
-        <ol>
-          <li><a href="#timing"><b class="story-index" aria-hidden="true">01</b><b>각도만 바꿔 점을 다시 그렸다</b><span>같은 거리에 측정 순간의 각도를 붙이니 점이 제자리 가까이 돌아왔다.</span></a></li>
-          <li><a href="#replay"><b class="story-index" aria-hidden="true">02</b><b>시각 차이를 바꾸고 필터를 켜 본다</b><span>점이 얼마나 밀리고, 약 1초의 장면에 무엇이 남는지 비교한다.</span></a></li>
-        </ol>
-      </nav>
     </div>
+  </nav>
+
+  <header class="wrap report-intro">
+    <p class="report-meta">센서 · 실시간 시스템 <time datetime="2026-11-10">2026.11.10</time></p>
+    <h1><span>라이다 수신 지터와</span> <span>5 ms 필터</span></h1>
   </header>
 
   <main class="wrap">
     <section class="chapter" id="timing" aria-labelledby="timing-title">
-      <div class="mark"><b aria-hidden="true">01</b><span>점 위치</span></div>
+      <p class="chapter-kicker"><b>01</b> 각도 대조</p>
       <div class="body">
         <h2 id="timing-title">찍은 시각의 각도를 쓰자 튄 점이 돌아왔다</h2>
-        <p class="copy">점이 튄 순간 라이다 시각은 평소 간격으로 이어졌고, 함께 붙은 엔코더 시각만 크게 뛰었다. 그래서 거리 측정값은 그대로 두고, 평소 두 시각의 차이와 회전 속도로 <b>라이다가 찍은 순간의 회전각</b>을 추정해 다시 그렸다.</p>
+        <p class="copy">라이다가 잰 거리에 엔코더(회전각 센서)의 각도를 붙여 점을 그린다. 고정 구조물의 점이 튄 순간, 라이다 시각은 평소 간격을 유지했고 함께 저장된 엔코더 시각만 크게 뛰었다.</p>
         <figure class="angle-check" aria-labelledby="angle-check-title">
-          <div class="angle-key"><b id="angle-check-title">Ouster가 잰 같은 점을 두 각도로 그렸다</b><span>9월 3일 센서 2 · 실측</span></div>
+          <div class="angle-key"><b id="angle-check-title">같은 거리를 두 각도로 그렸다</b><span>Ouster OS1-32 · 9월 3일 실측</span></div>
+          <div class="cloud-key">
+            <span class="reference">회색 · 평소 관측 위치</span>
+            <span class="omitted">주황 · 기록된 각도</span>
+            <span class="retained">청록 · 측정 순간의 추정 각도</span>
+          </div>
+          <canvas class="scene-canvas" id="timing-recorded-scene" role="img" aria-label="Ouster 위치와 같은 패킷을 기록된 각도와 추정한 각도로 각각 그린 실제 점군"></canvas>
           <div class="sensor-context">
             <svg viewBox="0 0 90 80" role="img" aria-label="회전 받침 위에 장착된 Ouster 센서 개념도">
               <ellipse cx="44" cy="63" rx="31" ry="9" fill="#7e9793"/>
@@ -58,25 +55,18 @@
             </svg>
             <p><b>Ouster OS1-32와 회전 받침</b><span>엔코더는 라이다 전체를 돌리는 받침의 각도를 잰다.</span></p>
           </div>
-          <div class="cloud-key">
-            <span class="reference">회색 · 여러 번 관측한 평소 위치</span>
-            <span class="omitted">주황 · 기록에 붙은 각도로 그린 점</span>
-            <span class="retained">청록 · 측정 순간의 각도를 추정해 그린 점</span>
-          </div>
-          <canvas class="scene-canvas" id="timing-recorded-scene" role="img" aria-label="Ouster 위치와 같은 패킷을 기록된 각도와 추정한 각도로 각각 그린 실제 점군"></canvas>
-          <figcaption class="scene-figcaption">표시한 점을 추정 각도로 다시 그리자 평소 위치에 가까워졌다. 두 원은 같은 측정값을 두 각도로 그린 위치로, <b id="recorded-displacement">2.45 m</b> 떨어져 있다.</figcaption>
+          <figcaption class="scene-figcaption">같은 거리값에 평소 시각 차이와 회전 속도로 추정한 측정 순간의 각도를 적용했다. 표시한 점은 평소 위치 쪽으로 <b id="recorded-displacement">2.45 m</b> 이동했다.</figcaption>
         </figure>
       </div>
     </section>
 
     <section class="chapter" id="replay" aria-labelledby="replay-title">
-      <div class="mark"><b aria-hidden="true">02</b><span>시간 필터</span></div>
+      <p class="chapter-kicker"><b>02</b> 시간 필터</p>
       <div class="body">
         <h2 id="replay-title">시각이 어긋난 기록은 점 계산에서 뺐다</h2>
         <p class="copy">01에서 각도를 다시 계산한 건 원인을 좁히는 실험이었다. 여기서 시험한 필터는 <b>라이다 패킷과 엔코더 기록을 한 짝으로 보고, 그 짝을 점 계산에 쓸지</b> 정한다. 패킷 하나에는 여러 점의 측정값이 들어 있다.</p>
-        <h3 class="step-title">같은 장면에서 시각 차이를 바꿔 본다</h3>
         <figure class="angle-check" aria-labelledby="sim-title">
-          <div class="angle-key"><b id="sim-title">01에서 본 패킷으로 모의 비교</b><span>회전 받침 속도 35.37 RPM 고정</span></div>
+          <div class="angle-key"><h3 id="sim-title">같은 장면에서 시각 차이 조절</h3><span>01의 패킷 · 35.37 RPM 고정 · 모의 비교</span></div>
           <div class="demo-controls">
             <div>
               <div class="offset-head"><label for="timing-offset"><b>엔코더 시각 오차</b></label><output id="timing-offset-value" for="timing-offset">+25.4 ms</output></div>
@@ -156,7 +146,7 @@
           </details>
         </div>
 
-        <h3 class="step-title">약 1초를 모은 뒤 남은 장면</h3>
+        <h3 class="step-title" id="batch-result">약 1초를 모은 뒤 남은 장면</h3>
         <figure class="filter-result" aria-labelledby="frame-title">
           <div class="angle-key"><b id="frame-title">같은 두 센서의 약 1초를 재생했다</b><span>실측 로그 · 같은 배율로 비교</span></div>
           <div class="packet-key">
@@ -191,7 +181,10 @@
       </div>
     </section>
 
-    <p class="evidence-link"><a href="https://github.com/ckh7488/showcase/blob/main/reports/rotating-lidar-timing/EVIDENCE.md">재생 조건과 검증 근거 · Git 기록</a></p>
+    <footer class="report-links">
+      <a href="https://github.com/ckh7488/showcase/blob/main/reports/rotating-lidar-timing/EVIDENCE.md">재생 조건과 검증 근거 · Git</a>
+      <a href="../jib1-lidar/replay.html">다른 날의 3D 재생 ↗</a>
+    </footer>
     <noscript><p class="scope">시각 차이를 움직여 보려면 JavaScript를 켠다. 짧은 실측 비교 그림은 위에서 펼쳐 볼 수 있다.</p></noscript>
   </main>
   <script src="assets/lidar-timing-demo-data.js" defer></script>
