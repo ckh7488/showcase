@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="라이다 패킷이 한꺼번에 읽힐 때 점군이 어긋난 증상과, PC의 읽기 시각을 추적한 기록.">
+  <title>라이다 수신 공백과 몰림 | ATLAS</title>
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/theme.v1.css">
+  <link rel="stylesheet" href="report.css">
+  <script src="report.js" defer></script>
+</head>
+<body>
+  <nav class="masthead" aria-label="보고서 이동">
+    <div class="wrap chapter-body masthead-inner">
+      <a class="atlas-link" href="../../" aria-label="ATLAS 라이브러리로 돌아가기">← ATLAS</a>
+      <div class="chapter-links">
+        <a href="#problem">문제 파악</a>
+        <a href="#investigation">디버깅 과정</a>
+        <a href="#conclusion">결론</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="wrap chapter-body report-intro">
+    <p class="report-meta">센서 · 실시간 시스템 <time datetime="2026-11-10">2026.11.10</time></p>
+    <h1>라이다 수신 공백과 몰림</h1>
+  </header>
+
+  <main class="wrap">
+    <section class="chapter" id="problem" aria-labelledby="problem-title">
+      <div class="chapter-body">
+        <h2 id="problem-title">문제 파악</h2>
+        <p class="story-copy">현장 프로그램은 라이다가 잰 거리로 물체의 윤곽을 점으로 그린다. 가끔 <strong>시야 한쪽의 점이 통째로 어긋났다.</strong> 라이다 패킷을 잠시 읽지 않다가 한꺼번에 읽을 때 나타난 증상이다.</p>
+
+        <figure class="symptom-demo" id="symptom-demo" aria-labelledby="symptom-demo-title">
+          <h3 id="symptom-demo-title">현장 증상 재현</h3>
+          <div class="symptom-scenes">
+            <div class="symptom-scene">
+              <div class="symptom-scene-head"><h4>평소</h4></div>
+              <div class="symptom-signal">
+                <span>프로그램 읽기</span>
+                <svg viewBox="0 0 320 20" preserveAspectRatio="none" role="img" aria-label="프로그램이 패킷을 일정한 간격으로 읽는다">
+                  <path class="symptom-baseline" d="M3 10H317"/>
+                  <path class="symptom-ticks" d="M13 3v14 M44 3v14 M75 3v14 M106 3v14 M137 3v14 M168 3v14 M199 3v14 M230 3v14 M261 3v14 M292 3v14"/>
+                </svg>
+              </div>
+              <svg class="symptom-cloud" viewBox="0 0 420 208" role="img" aria-label="청록색 점이 벽과 물체의 윤곽을 따라 찍혀 있다">
+                <defs>
+                  <pattern id="symptom-grid" width="16" height="16" patternUnits="userSpaceOnUse">
+                    <path d="M16 0H0V16" fill="none" stroke="var(--sc-stage-ink)" stroke-opacity=".25" stroke-width=".65"/>
+                  </pattern>
+                  <g id="symptom-scene-points">
+                    <rect width="420" height="208" fill="var(--sc-stage)"/>
+                    <rect width="420" height="208" fill="url(#symptom-grid)" opacity=".55"/>
+                    <path d="M50 133L182 194 371 148 M97 155L288 122 M139 175L329 136 M96 127L229 183 M145 120L278 172 M194 113L326 160"
+                          fill="none" stroke="var(--sc-stage-ink)" stroke-width="1" opacity=".17"/>
+                    <g fill="none" stroke="var(--sc-tx)" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="0 7">
+                      <path d="M50 69L245 43 275.24 53.08 M347.06 77.02L371 85
+                               M50 69V133L245 106 275.24 116.08 M347.06 140.02L371 148V85 M245 43V106"/>
+                      <path d="M50 85L245 58 275.24 68.08 M347.06 92.02L371 100
+                               M50 101L245 74 275.24 84.08 M347.06 108.02L371 116
+                               M50 117L245 90 275.24 100.08 M347.06 124.02L371 132" opacity=".55"/>
+                      <path d="M132 122L181 113 214 127 164 138Z M132 122v22l32 16 50-11v-22 M164 138v22" stroke="var(--sc-stage-ink)"/>
+                      <path d="M135 134L164 149 211 139" stroke="var(--sc-stage-ink)" opacity=".55"/>
+                    </g>
+                  </g>
+                  <g id="symptom-regular-points" fill="none" stroke="var(--sc-tx)" stroke-width="2.8" stroke-linecap="round">
+                    <path d="M276.5 53.5h.1 M283.43 55.81h.1 M290.36 58.12h.1 M297.29 60.43h.1 M304.22 62.74h.1 M311.15 65.05h.1
+                             M318.08 67.36h.1 M325.01 69.67h.1 M331.94 71.98h.1 M338.87 74.29h.1 M345.8 76.6h.1"/>
+                    <path d="M276.5 68.5h.1 M283.43 70.81h.1 M290.36 73.12h.1 M297.29 75.43h.1 M304.22 77.74h.1 M311.15 80.05h.1
+                             M318.08 82.36h.1 M325.01 84.67h.1 M331.94 86.98h.1 M338.87 89.29h.1 M345.8 91.6h.1"/>
+                    <path d="M276.5 84.5h.1 M283.43 86.81h.1 M290.36 89.12h.1 M297.29 91.43h.1 M304.22 93.74h.1 M311.15 96.05h.1
+                             M318.08 98.36h.1 M325.01 100.67h.1 M331.94 102.98h.1 M338.87 105.29h.1 M345.8 107.6h.1"/>
+                    <path d="M276.5 100.5h.1 M283.43 102.81h.1 M290.36 105.12h.1 M297.29 107.43h.1 M304.22 109.74h.1 M311.15 112.05h.1
+                             M318.08 114.36h.1 M325.01 116.67h.1 M331.94 118.98h.1 M338.87 121.29h.1 M345.8 123.6h.1"/>
+                    <path d="M276.5 116.5h.1 M283.43 118.81h.1 M290.36 121.12h.1 M297.29 123.43h.1 M304.22 125.74h.1 M311.15 128.05h.1
+                             M318.08 130.36h.1 M325.01 132.67h.1 M331.94 134.98h.1 M338.87 137.29h.1 M345.8 139.6h.1"/>
+                    <path opacity=".55" d="M235.36 120.27h.1 M240.55 122h.1 M245.75 123.73h.1 M250.95 125.46h.1 M256.14 127.19h.1 M261.34 128.93h.1
+                             M266.54 130.66h.1 M271.74 132.39h.1 M276.94 134.13h.1 M282.13 135.86h.1 M287.33 137.59h.1"/>
+                  </g>
+                </defs>
+                <use href="#symptom-scene-points"/>
+                <use href="#symptom-regular-points"/>
+              </svg>
+            </div>
+
+            <div class="symptom-scene">
+              <div class="symptom-scene-head">
+                <h4>패킷이 몰린 순간</h4>
+                <button type="button" class="symptom-replay" id="symptom-replay" hidden>몰림 재생</button>
+              </div>
+              <div class="symptom-signal">
+                <span>프로그램 읽기</span>
+                <svg viewBox="0 0 320 20" preserveAspectRatio="none" role="img" aria-label="프로그램이 패킷을 읽지 않은 구간 뒤에 한꺼번에 읽는다">
+                  <path class="symptom-baseline" d="M3 10H317"/>
+                  <path class="symptom-ticks" d="M13 3v14 M44 3v14"/>
+                  <path class="symptom-arrival" d="M254 3v14 M259 3v14 M264 3v14 M269 3v14 M274 3v14 M279 3v14 M284 3v14"/>
+                </svg>
+              </div>
+              <svg class="symptom-cloud" viewBox="0 0 420 208" role="img" aria-label="시야 한 구간에 있는 벽과 바닥의 점 묶음이 함께 어긋나 있다">
+                <use href="#symptom-scene-points"/>
+                <use href="#symptom-regular-points" class="symptom-before-points"/>
+                <g class="symptom-burst-points" fill="none" stroke="var(--sc-rx)" stroke-width="3.2" stroke-linecap="round">
+                  <path d="M289.12 63.18h.1 M293.03 65.8h.1 M296.95 68.41h.1 M300.87 71.03h.1 M304.79 73.65h.1 M308.71 76.26h.1
+                           M312.62 78.88h.1 M316.54 81.49h.1 M320.46 84.11h.1 M324.38 86.72h.1 M328.3 89.34h.1"/>
+                  <path d="M289.12 78.18h.1 M293.03 80.8h.1 M296.95 83.41h.1 M300.87 86.03h.1 M304.79 88.65h.1 M308.71 91.26h.1
+                           M312.62 93.88h.1 M316.54 96.49h.1 M320.46 99.11h.1 M324.38 101.72h.1 M328.3 104.34h.1"/>
+                  <path d="M289.12 94.18h.1 M293.03 96.8h.1 M296.95 99.41h.1 M300.87 102.03h.1 M304.79 104.65h.1 M308.71 107.26h.1
+                           M312.62 109.88h.1 M316.54 112.49h.1 M320.46 115.11h.1 M324.38 117.72h.1 M328.3 120.34h.1"/>
+                  <path d="M289.12 110.18h.1 M293.03 112.8h.1 M296.95 115.41h.1 M300.87 118.03h.1 M304.79 120.65h.1 M308.71 123.26h.1
+                           M312.62 125.88h.1 M316.54 128.49h.1 M320.46 131.11h.1 M324.38 133.72h.1 M328.3 136.34h.1"/>
+                  <path d="M289.12 126.18h.1 M293.03 128.8h.1 M296.95 131.41h.1 M300.87 134.03h.1 M304.79 136.65h.1 M308.71 139.26h.1
+                           M312.62 141.88h.1 M316.54 144.49h.1 M320.46 147.11h.1 M324.38 149.72h.1 M328.3 152.34h.1"/>
+                  <path opacity=".55" d="M244.82 127.53h.1 M247.76 129.49h.1 M250.69 131.45h.1 M253.63 133.41h.1 M256.57 135.37h.1 M259.51 137.34h.1
+                           M262.45 139.3h.1 M265.39 141.26h.1 M268.32 143.22h.1 M271.26 145.18h.1 M274.2 147.14h.1"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <figcaption>현장 증상을 설명하기 위해 그린 그림이다. 시야의 한 구간에 들어온 점 묶음 전체가 어긋난 모습을 주황색으로 표시했다.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="chapter" id="investigation" aria-labelledby="debug-title">
+      <div class="chapter-body">
+        <h2 id="debug-title">디버깅 과정</h2>
+        <p class="story-copy">처음에는 화면에서 점이 튄다는 것만 알았다. 원인을 찾으려고 라이다에서 프로그램까지 패킷이 지나는 길을 나눠 살폈다.</p>
+
+        <figure class="receive-route" aria-labelledby="route-title">
+          <figcaption id="route-title">라이다 패킷이 프로그램까지 가는 길</figcaption>
+          <div class="route-flow">
+            <div class="route-origin">
+              <span class="route-boundary">라이다가 보낸 패킷</span>
+              <div class="route-node">
+                <b>센서 보드의 스위치</b>
+                <p>받은 패킷을 PC 쪽으로 보낸다.</p>
+              </div>
+            </div>
+            <span class="route-hop"><small>LAN 케이블</small><span aria-hidden="true">→</span></span>
+            <div class="route-pc">
+              <span class="route-boundary">PC 안</span>
+              <div class="route-node">
+                <b>PC 랜카드</b>
+                <p>케이블에서 패킷을 받는다.</p>
+              </div>
+              <span class="route-hop"><small>Windows</small><span aria-hidden="true">→</span></span>
+              <div class="route-node">
+                <b>수신 프로그램</b>
+                <p>Windows가 넘긴 패킷을 읽는다.</p>
+              </div>
+            </div>
+          </div>
+        </figure>
+
+        <div class="debug-tabs" role="tablist" aria-label="디버깅 단계" hidden>
+          <button type="button" role="tab" id="swap-tab" aria-controls="swap-step"><span aria-hidden="true">1</span>랜카드·PC 교체</button>
+          <button type="button" role="tab" id="sensor-tab" aria-controls="sensor-step"><span aria-hidden="true">2</span>센서 쪽 진단</button>
+          <button type="button" role="tab" id="timing-tab" aria-controls="timing-step"><span aria-hidden="true">3</span>읽기 시각 확인</button>
+        </div>
+
+        <div class="debug-panels">
+          <section class="debug-step" id="swap-step" role="tabpanel" aria-labelledby="swap-tab" tabindex="0">
+            <h3>랜카드를 바꿔도, PC를 바꿔도 반복됐다</h3>
+            <div class="swap-pair">
+              <div>
+                <small class="swap-source">10월 20일 시험 기록</small>
+                <h4>같은 PC에서 랜카드만 교체</h4>
+                <figure class="swap-visual">
+                  <svg class="device-art" viewBox="0 0 360 130" aria-hidden="true">
+                    <defs>
+                      <g id="pc-outline">
+                        <path class="device-surface" d="M24 48 45 26h110v61l-21 22H24Z"/>
+                        <path class="device-shell" d="M24 48h110l21-22M134 48v61M50 33h91m-97 6h91"/>
+                        <path class="device-detail" d="M35 57h88M35 63h88m-88 6h88"/>
+                        <circle class="device-detail" cx="42" cy="91" r="4"/>
+                        <rect class="device-detail" x="52" y="87" width="12" height="7" rx="1.5"/>
+                        <path class="device-port" d="M72 82h26v15H72v-5h-3v-5h3Zm7 0v5m5-5v5m5-5v5"/>
+                        <rect class="device-detail" x="107" y="86" width="16" height="9" rx="2"/>
+                      </g>
+                    </defs>
+                    <use href="#pc-outline"/>
+                    <rect class="device-emphasis" x="65" y="77" width="38" height="25" rx="5"/>
+                    <path class="device-cable" d="M160 66h39m-9-7 9 7-9 7"/>
+                    <rect class="device-surface" x="217" y="62" width="18" height="13" rx="2"/>
+                    <path class="device-cable" d="M235 68h4c6 0 6-8 12-8h3"/>
+                    <path class="device-surface" d="M254 41h66l13 11v29l-13 9h-66Z"/>
+                    <path class="device-detail" d="M320 41v49M262 48h50"/>
+                    <path class="device-port" d="M326 55h12v21h-12v-5h-3V60h3Zm4 4h8m-8 4h8m-8 4h8"/>
+                  </svg>
+                  <figcaption class="swap-labels">
+                    <span>내장 랜포트</span><span aria-hidden="true">→</span><span>USB 랜카드</span>
+                  </figcaption>
+                </figure>
+                <p>기존 랜카드에만 생기는지 보려고 USB 랜카드로 바꿨다.</p>
+                <p class="swap-result"><strong>두 카드 모두</strong> 수신 기록에 빠진 순번이 생겼다.</p>
+              </div>
+              <div>
+                <small class="swap-source">현장 관찰</small>
+                <h4>PC 전체 교체</h4>
+                <figure class="swap-visual">
+                  <svg class="device-art" viewBox="0 0 360 130" aria-hidden="true">
+                    <use href="#pc-outline"/>
+                    <use href="#pc-outline" x="181"/>
+                    <path class="device-cable" d="M156 67h43m-9-7 9 7-9 7"/>
+                    <path class="device-emphasis" d="M205 48 226 26h110v61l-21 22H205Z"/>
+                  </svg>
+                  <figcaption class="swap-labels">
+                    <span>기존 PC</span><span aria-hidden="true">→</span><span>다른 PC</span>
+                  </figcaption>
+                </figure>
+                <p>PC 한 대에만 생기는지 보려고 센서 쪽 장비를 다른 PC에 연결했다.</p>
+                <p class="swap-result"><strong>다른 PC에서도</strong> 패킷 읽기가 비었다가 몰리는 증상을 봤다.</p>
+              </div>
+            </div>
+            <p class="story-copy">바꿔도 증상이 남아, 두 비교에서 공통으로 연결된 라이다와 센서 보드를 의심했다.</p>
+          </section>
+
+          <section class="debug-step" id="sensor-step" role="tabpanel" aria-labelledby="sensor-tab" tabindex="0">
+            <h3>스위치 진단을 보고 센서 쪽 의심을 낮췄다</h3>
+            <p class="story-copy">센서 쪽 장비가 보낸 진단값을 PC에서 모았다. USB 랜카드 시험에서 순번이 빠진 구간을 골라, 스위치가 라이다에서 받은 조각과 PC로 보낸 조각을 셌다.</p>
+            <figure class="count-check">
+              <figcaption>USB 랜 시험 · 누락 구간을 포함한 11초</figcaption>
+              <div class="switch-graphic">
+                <div class="switch-reading">
+                  <b>스위치 입력</b>
+                  <span>라이다에서 들어온 조각</span>
+                  <strong class="number">33,023개</strong>
+                </div>
+                <svg class="device-art sensor-art" viewBox="0 0 306 232" role="img" aria-labelledby="sensor-art-title">
+                  <title id="sensor-art-title">센서의 원통형 라이다에서 보드의 스위치로, 스위치에서 PC 방향으로 이어지는 경로 개략도</title>
+                  <path class="device-surface" d="M113 14a31 31 0 0 0-31 32c0 15 5 24 12 36l-2 23 29 6-2-25c13-14 20-30 20-44 0-16-11-28-26-28Z"/>
+                  <path class="sensor-drum" d="M115 22h62c15 0 25 10 25 25s-10 26-25 26h-62c-14 0-24-11-24-26s10-25 24-25Z"/>
+                  <path class="device-detail" d="M120 23c-15 2-22 11-22 24s7 23 22 25m9-49c-15 2-21 11-21 24s6 23 21 25"/>
+                  <path class="device-surface" d="M179 13c19 0 33 14 33 34 0 13-7 25-11 35l5 24-42 7-4-28c-10-10-16-24-16-38 0-19 15-34 35-34Z"/>
+                  <circle class="device-detail" cx="179" cy="46" r="7"/>
+                  <path class="device-surface" d="M112 106h80v14c0 8-18 13-40 13s-40-5-40-13Z"/>
+                  <ellipse class="device-detail" cx="152" cy="108" rx="40" ry="10"/>
+                  <path class="device-surface" d="M108 123c11 7 28 10 44 10s34-3 45-10l21 56c0 17-29 27-66 27s-66-10-66-27Z"/>
+                  <path class="device-shell" d="m92 189-4 20 13 8 11-18m91 0 8 21 13-7-9-23"/>
+                  <ellipse class="sensor-board" cx="152" cy="177" rx="56" ry="19"/>
+                  <path class="device-detail" d="m116 182 9-9h16m22 7h13l11-9m-48 14-6 5h-12m53-23 6-5h8"/>
+                  <path class="device-cable" d="M121 50H61v114h74m-7-6 7 6-7 6m42-6h94m-8-6 8 6-8 6"/>
+                  <circle class="device-port" cx="121" cy="50" r="3"/>
+                  <rect class="device-port" x="137" y="153" width="32" height="22" rx="4"/>
+                  <path class="device-emphasis" d="M145 160h4m-4 8h4m6-4h7m-3-3 3 3-3 3"/>
+                  <path class="device-detail" d="M153 175v31"/>
+                  <text class="sensor-label" x="153" y="223" text-anchor="middle">보드 안 스위치</text>
+                </svg>
+                <div class="switch-reading">
+                  <b>스위치 출력</b>
+                  <span>PC로 보낸 조각</span>
+                  <strong class="number">33,023개</strong>
+                </div>
+              </div>
+              <p class="count-note">이 시험에서 패킷 하나는 여러 조각으로 전송됐다. 라이다가 쓰는 두 크기의 조각을 합해 비교했다.</p>
+            </figure>
+            <p class="story-copy">이 구간에서 <strong>스위치 입력의 오류와 내부 폐기 수는 늘지 않았다.</strong> 조회에 응답한 라이다도 시계 동기를 유지했다. 그래서 다음으로 <strong>PC 프로그램이 패킷을 읽은 시각</strong>을 살폈다.</p>
+          </section>
+
+          <section class="debug-step" id="timing-step" role="tabpanel" aria-labelledby="timing-tab" tabindex="0">
+            <p class="timing-context">10월 20일 별도 수신 시험 · 기존 랜카드</p>
+            <h3>97 ms 넘게 비었다가, 패킷 37개가 몰려 읽혔다</h3>
+            <p class="story-copy">프로그램 로그에서 패킷 순번이 건너뛰었다. 이 시험에서 Windows가 새로 기록한 수신 폐기는 <strong>0건</strong>이었다. 순번만으로는 무슨 일이 있었는지 알 수 없어 프로그램이 패킷을 읽은 시각을 되짚었다.</p>
+
+            <figure class="read-timeline" aria-labelledby="read-timeline-title">
+              <figcaption>
+                <h4 id="read-timeline-title">PC 프로그램이 읽은 시각</h4>
+              </figcaption>
+              <div class="read-key">
+                <p><strong class="duration">97.1586 ms</strong><span>읽힌 패킷 0개</span></p>
+                <p class="read-burst-key"><strong class="number">37개</strong><span>0.7649 ms 동안 읽음</span></p>
+              </div>
+              <svg class="read-rail" viewBox="0 0 97.9235 26" preserveAspectRatio="none" aria-hidden="true">
+                <line class="rail-gap" x1="0" x2="97.1586" y1="13" y2="13"/>
+                <line class="rail-start" x1="0" x2="0" y1="5" y2="21"/>
+                <rect class="rail-burst" x="97.1586" width="0.7649" y="3" height="20"/>
+              </svg>
+              <div class="read-axis">
+                <span>0 ms · 공백 직전 읽기</span>
+                <span>몰아 읽은 구간</span>
+              </div>
+            </figure>
+
+            <figure class="span-compare" aria-labelledby="batch-title">
+              <figcaption>
+                <h4 id="batch-title">37개에 담긴 거리는 시간차를 두고 측정됐다</h4>
+                <p>라이다의 측정 기록과 PC의 읽기 기록에서, 각각 첫 패킷부터 마지막까지 걸린 시간을 비교했다.</p>
+              </figcaption>
+              <div class="span-row">
+                <p class="span-label"><b>라이다에서 측정</b><strong class="duration">56.316229 ms</strong></p>
+                <div class="span-track" aria-hidden="true"><span style="width: 100%"></span></div>
+              </div>
+              <div class="span-row span-pc">
+                <p class="span-label"><b>PC 프로그램에서 읽음</b><strong class="duration">0.7649 ms</strong></p>
+                <div class="span-track" aria-hidden="true"><span style="width: 1.3582%"></span></div>
+              </div>
+            </figure>
+
+            <p class="story-copy">같은 PC의 엔코더와 관성 센서 읽기 기록도 같은 시간대에 비었다. 여러 입력이 거치는 PC 쪽을 의심했다. 지연이 시작된 지점은 확인하지 못했다.</p>
+            <details class="timing-notes">
+              <summary>누락 표시와 함께 확인한 기록</summary>
+              <p class="story-copy">37개를 읽은 뒤, 프로그램은 다음 패킷의 순번을 보고 <strong>21개 누락</strong>을 표시했다. USB 랜카드 시험에서는 Windows의 수신 폐기 수가 늘었다.</p>
+              <p class="story-copy">10월 20일 기존 랜카드 시험에서는 Windows 동작 기록에도 같은 시간대에 공백이 있었다.</p>
+            </details>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="conclusion" aria-labelledby="conclusion-title">
+      <div class="chapter-body">
+        <h2 id="conclusion-title">결론과 적용</h2>
+        <div class="verdicts">
+          <section class="verdict">
+            <h3>산업용 PC도 실제 부하에서 검증한다</h3>
+            <p>산업용으로 고른 PC에서도 프로그램이 제때 패킷을 읽지 못했다. 실제 운영체제·랜카드·드라이버 조합에 운용 부하를 걸고, 가장 긴 읽기 공백을 프로그램이 견딜 수 있는 시간과 비교한다.</p>
+          </section>
+          <section class="verdict">
+            <h3>거리와 각도는 측정 시각으로 맞춘다</h3>
+            <p>기존 수신 프로그램은 라이다 거리와 엔코더 각도를 합쳐 점의 위치를 계산했다. 패킷을 읽을 때마다 가장 최근에 받은 각도를 붙였다. 늦게 읽힌 거리값에 나중 각도가 붙으면 시야 한쪽의 점이 함께 어긋날 수 있다.</p>
+            <p>다음 설계에서는 공통 시각 정보를 곁들인 PPS(매초 기준 펄스)나 하드웨어 PTP(네트워크 시계 동기화)로 라이다와 엔코더의 시계를 맞춘다. 각 장치는 측정 시각을 남기고, PC는 저장해 둔 각도 기록에서 그때의 값을 찾는다. 시계가 얼마나 잘 맞는지와 데이터가 제때 읽히는지는 따로 검증한다.</p>
+          </section>
+        </div>
+
+        <p class="evidence-link"><a href="evidence/">시험 데이터와 검산 방법</a></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
