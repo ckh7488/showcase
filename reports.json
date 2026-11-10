@@ -137,6 +137,21 @@
       ]
     },
     {
+      "id": "rotating-lidar-timing",
+      "title": "고정 구조물의 점이 잠깐 옆으로 튀었다",
+      "summary": "회전 라이다의 점이 시각 차이로 얼마나 밀리는지 움직여 보고, 5 ms 필터를 켰을 때 약 1초 장면에 무엇이 남는지 비교합니다.",
+      "category": "센서 · 실시간 시스템",
+      "date": "2026-11-10",
+      "path": "reports/rotating-lidar-timing/",
+      "cover": "reports/rotating-lidar-timing/cover.png",
+      "coverAlt": "회전 라이다가 잰 같은 점을 기록 각도와 추정 각도로 그려 위치가 갈라진 모습",
+      "tags": [
+        "Ouster",
+        "실측 점군",
+        "시간 필터"
+      ]
+    },
+    {
       "id": "jib1-lidar",
       "title": "JIB1 · 라이다 오탐 분석과 필터 비교",
       "summary": "실측 로그 재생, 몸체·지브 위치 추적, 캘리브레이션 전후, 점 삭제 A/B/C를 네 개의 3D 화면에서 비교합니다.",
