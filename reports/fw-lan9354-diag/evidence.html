@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="라이다 입력 오류의 측정 조건과 별도 USB 랜 시험 기록.">
+  <title>LAN9354 포트별 측정 근거 | ATLAS</title>
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/theme.v1.css">
+  <link rel="stylesheet" href="report.css?v=20261110-19">
+</head>
+<body>
+  <a class="skip" href="#input-test">본문으로 건너뛰기</a>
+  <header class="hero" aria-labelledby="evidence-title">
+    <div class="wrap mast">
+      <a href="./#results">← 사례 본문</a>
+      <span>PALA720 · 크레인 센서</span>
+    </div>
+
+    <div class="wrap lead">
+      <p class="eyebrow">현장 디버깅 사례 · 측정 근거</p>
+      <h1 id="evidence-title">LAN9354 <span>포트별 측정 근거</span></h1>
+      <p>라이다 입력부로 고장을 좁힌 시험과, 이후 USB 랜 시험을 따로 정리했다. 각 시험의 수치와 원본 기록 위치를 함께 남겼다.</p>
+      <nav class="lead-nav" aria-label="근거 구성">
+        <a href="#input-test">센서 고장</a>
+        <a href="#usb-test">별도 USB 랜 시험</a>
+        <a href="#wiring">배선과 진단 형식</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section class="chapter-section" id="input-test" aria-labelledby="input-test-title">
+      <div class="chapter" aria-hidden="true"><b>01</b><small>센서 고장</small></div>
+      <div class="section-body">
+        <h2 id="input-test-title">Port B 오류와 재납땜 전후</h2>
+        <p class="story-prose">같은 장비에서 이더넷 보드만 교체하자 수신이 회복됐다. 문제 보드에서는 임시 펌웨어 <code>Pala720_debug</code>의 <code>LDG1</code> 진단을 30초간 받아 두 입력 포트를 비교했다.</p>
+        <p class="story-prose">스위치에 들어오는 <strong>회전각 쪽 Port 0은 정상 프레임 약 1,000개/초, CRC·정렬·심벌 오류 0</strong>이었다. 라이다 쪽 Port B는 링크가 유지됐지만 오류가 쌓였다.</p>
+        <figure class="counter-comparison evidence-measurement">
+          <figcaption>Port B 수신 카운터 · 1초마다 센 값의 최솟값과 최댓값</figcaption>
+          <table>
+            <thead>
+              <tr><th scope="col">항목</th><th scope="col">재납땜 전</th><th scope="col">재납땜 후</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">정상 프레임</th><td>1,917~2,062</td><td>3,297~3,306</td></tr>
+              <tr><th scope="row">CRC 오류</th><td>1,213~1,332</td><td>0</td></tr>
+              <tr><th scope="row">정렬 오류</th><td>0~2</td><td>0</td></tr>
+              <tr><th scope="row">심벌 오류</th><td>527~609</td><td>0</td></tr>
+            </tbody>
+          </table>
+        </figure>
+        <p class="story-prose">커넥터, 트랜스, 이더넷 신호선 주변을 다시 납땜하자 오류가 0이 됐다. PC 콘솔의 라이다 수신은 <strong>116.2 FPS에서 639.2~640.6 FPS</strong>로 회복됐고 점 수도 돌아왔다. 여러 접합부를 함께 손봐, 원인은 Port B 주변의 납땜이나 접촉 불량까지 좁혔다.</p>
+        <p class="evidence-link"><a href="records/port-b-counter-samples.csv">Port 0·Port B 카운터 표본 CSV (62행)</a> · <a href="./#problem">장애 당시 콘솔</a></p>
+        <details class="detail-block">
+          <summary>CSV 읽는 법과 원본 위치</summary>
+          <p>CSV는 <code>before_reflow</code>, <code>after_reflow</code> 각각 31표본이다. 수신한 LDG1 중 읽기에 성공한 행(<code>lan_rc=0</code>)에서 <code>lan_sample_tick</code>이 0이 아닌 표본을 보드 시각(ms)별로 한 번씩 골랐다. <code>p0_rx_*</code>는 STM32 입력, <code>p2_rx_*</code>는 라이다 입력, <code>port_b_link=1</code>은 링크 연결을 뜻한다.</p>
+          <p>임시 펌웨어는 회전각 대신 진단 패킷을 보냈다. 회복 화면의 RPM 표시는 판정에 쓰지 않았다. 재납땜 후 <code>seq_gap=0</code>은 PC가 받은 LDG1의 순번 기준이다. 라이다의 회복은 콘솔 FPS와 점 수로 봤다.</p>
+          <ul>
+            <li><strong>로컬 사례 기록</strong> <code>pala720_2_renew/debug_logs/port_b_cold_solder_case_2026-06-19_ko.md</code>에 시험 설정, 수집 명령, 회복 콘솔과 재납땜 위치 사진이 연결돼 있다.</li>
+            <li><strong>로컬 원본 CSV</strong> <code>pala720_2_renew/FW/Pala720_debug/</code>의 <code>capture_unit2_review_30s.csv</code>와 <code>capture_after_reflow_30s.csv</code>가 각각 작업 전과 후다.</li>
+            <li><strong>수집 도구</strong> 같은 펌웨어 폴더의 <code>tools/lan9354_debug_capture.py</code>로 LDG1을 받았다. 스위치 카운터는 약 1초마다 읽으며, 진단 패킷 여러 개가 같은 표본을 전달한다.</li>
+          </ul>
+        </details>
+      </div>
+    </section>
+
+    <section class="chapter-section" id="usb-test" aria-labelledby="usb-evidence-title">
+      <div class="chapter" aria-hidden="true"><b>02</b><small>별도 시험</small></div>
+      <div class="section-body">
+        <h2 id="usb-evidence-title">USB 랜 시험의 스위치 입·출구 비교</h2>
+        <p class="story-prose">후속 USB 랜 어댑터 시험에서 누락이 생겼다. 같은 부팅의 <code>LDG4.2</code> 기록으로, 누락을 감싼 11초 동안 스위치가 라이다 쪽에서 받은 수(Port B RX)와 PC 쪽으로 보낸 수(Port A TX)를 비교했다.</p>
+        <div class="delivery-evidence">
+          <figure class="counter-comparison">
+            <figcaption>스위치 카운터 증가량 · 11초</figcaption>
+            <table>
+              <thead>
+                <tr><th scope="col">프레임 크기</th><th scope="col">Port B RX</th><th scope="col">Port A TX</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">대형</th><td>26,413</td><td>26,413</td></tr>
+                <tr><th scope="row">중형</th><td>6,610</td><td>6,610</td></tr>
+              </tbody>
+            </table>
+          </figure>
+          <div class="discard-reading">
+            <span>같은 사건의 PC 랜카드 집계</span>
+            <strong>0 → 3,097</strong>
+            <span>Windows <code>InDiscards</code> · 해당 인터페이스 전체</span>
+          </div>
+        </div>
+        <p class="story-prose">두 크기 모두 스위치 입·출구의 증가량이 같았고, 같은 사건에서 PC 랜카드의 폐기가 늘었다. <strong>PC 수신 경로부터 조사할 근거</strong>가 생겼다. 개별 패킷이 어디서 사라졌는지는 패킷 번호를 양쪽에서 대조해야 확인할 수 있다.</p>
+        <p class="evidence-link"><a href="records/usb-counter-endpoints.json">11초·31초 스위치와 PC 카운터의 시작·끝 값 (JSON)</a></p>
+        <details class="detail-block">
+          <summary>집계 조건과 원본 위치</summary>
+          <ul>
+            <li><strong>스위치 집계</strong> 대형은 1,024바이트 이상, 중형은 512~1,023바이트다. 31초 창의 새 부족분은 대형 3개(74,433 수신, 74,430 송신), 중형 0개(18,630 수신과 송신)였다. 카운터 4개의 순차 읽기에는 사건 부근 약 3.8 ms가 걸렸다.</li>
+            <li><strong>카운터 확인</strong> 펌웨어는 읽으면 초기화되는 하드웨어 값을 1초마다 읽어 누적한다. JSON에서 각 창의 <code>last.counters</code>에서 <code>first.counters</code>를 빼면 증가량을 얻는다. 비교 창에서 Port B의 CRC·정렬·심벌 오류와 필터·버퍼·속도 제한 폐기의 증가량은 0이었다.</li>
+            <li><strong>PC 집계</strong> 스위치의 11초 표본과 별개로, 같은 사건에서 해당 랜카드 전체의 폐기 증가량을 읽었다. <code>InErrors</code>는 0이었다.</li>
+            <li><strong>스위치 집계 파일</strong> <code>pala720_2_renew/FW/Pala720v2/work/network_isolation_20261020/</code> 아래 <code>cpu_cause_01/usb_mib_forwarding_review_01/</code>에 있다. <code>RESULT_KO.txt</code>는 해석 기록, <code>report.json</code>의 <code>windows</code>는 표본 창, <code>inputs</code>는 원시 로그 위치와 해시다.</li>
+            <li><strong>PC 집계 파일</strong> 같은 <code>network_isolation_20261020/</code> 폴더의 <code>USB-result.json</code>에서 <code>host_start.interface</code>와 <code>host_end.interface</code>를 비교한다.</li>
+          </ul>
+        </details>
+      </div>
+    </section>
+
+    <section class="chapter-section" id="wiring" aria-labelledby="wiring-title">
+      <div class="chapter" aria-hidden="true"><b>03</b><small>진단 구현</small></div>
+      <div class="section-body technical-notes">
+        <h2 id="wiring-title">배선과 진단 패킷</h2>
+        <p class="story-prose">스위치 기준으로 RX는 포트에 들어오는 프레임, TX는 포트에서 나가는 프레임이다. 라이다 데이터는 <strong>Port B(P2) RX에서 Port A(P1) TX</strong> 방향으로 흐른다.</p>
+        <p class="evidence-link"><a href="https://ww1.microchip.com/downloads/en/DeviceDoc/00001926B.pdf">LAN9354 데이터시트</a> · 크기별 RX·TX와 읽을 때 초기화되는 카운터는 §10.7.2.9, §10.7.2.36~37</p>
+        <h3>커넥터와 슬립링 경로</h3>
+        <div class="sensor-route-map" role="img" aria-label="LLC12_18M, M12, Motor board, Control board, LAN9354와 LiDAR 슬립링, STM32 RMII 경로">
+          <div class="hub-card">
+            <b>LAN9354</b>
+            <span>Port1/A · Port2/B · Port0</span>
+          </div>
+          <div class="atlas-track pc-track">
+            <strong>외부 PC 경로</strong>
+            <div class="track-nodes">
+              <span>LLC12_18M</span>
+              <i></i>
+              <span>M12 커넥터</span>
+              <i></i>
+              <span>Motor board</span>
+              <i></i>
+              <span>제어보드</span>
+              <i></i>
+              <span>LAN9354<br>Port1/A</span>
+            </div>
+          </div>
+          <div class="atlas-track lidar-track">
+            <strong>LiDAR 입력 경로</strong>
+            <div class="track-nodes">
+              <span>LiDAR</span>
+              <i></i>
+              <span>라이다 쪽 배선</span>
+              <i></i>
+              <span>슬립링 케이블</span>
+              <i></i>
+              <span>제어보드 커넥터</span>
+              <i></i>
+              <span>LAN9354<br>Port2/B</span>
+            </div>
+          </div>
+          <div class="atlas-track stm-track">
+            <strong>MCU 내부 경로</strong>
+            <div class="track-nodes">
+              <span>STM32</span>
+              <i></i>
+              <span>RMII</span>
+              <i></i>
+              <span>LAN9354<br>Port0</span>
+            </div>
+          </div>
+        </div>
+        <h3>UDP 6002 진단 패킷 · LDG4.2</h3>
+        <p>후속 펌웨어의 진단 형식이다. UDP 6002로 약 1초마다 포트 상태, 누적 카운터, 읽기 성공 여부를 보낸다.</p>
+        <div class="ldg-layout">
+          <div class="packet-map" aria-label="LDG4.2 464바이트 진단 패킷 구성">
+            <div class="seg header" style="--w:14"><b>Header</b><span>magic/version/len/CRC 대상</span></div>
+            <div class="seg phy" style="--w:21"><b>PHY A/B</b><span>carrier · operational 100M · MDIO fail</span></div>
+            <div class="seg counters" style="--w:31"><b>P2 RX → P1 TX counters</b><span>size bin · ok · crc/align/symbol · BM drop</span></div>
+            <div class="seg reserved" style="--w:23"><b>reserved</b><span>호환 슬롯은 0</span></div>
+            <div class="seg diag" style="--w:11"><b>reset / ETH / CRC32C</b><span>sample rc · age · gap</span></div>
+          </div>
+
+          <div class="field-cards">
+            <div><b>패킷 형식 확인</b><span><code>LDG4</code>, 버전 4.2, 길이 464바이트, CRC32C를 확인한다.</span></div>
+            <div><b>PHY 상태의 유효 시간</b><span>같은 하드웨어 초기화 구간에서 읽은 2.5초 이내의 표본을 사용한다.</span></div>
+            <div><b>100M 운용 상태 확인</b><span>상태의 유효 여부와 실제 100M 운용 비트를 함께 본다.</span></div>
+            <div><b>표본 유효 여부</b><span>유효 비트, 읽기 결과, 표본 경과 시간으로 진단값을 사용할지 판단한다.</span></div>
+          </div>
+        </div>
+        <details class="detail-block">
+          <summary>펌웨어 Git에서 찾을 파일</summary>
+          <ul>
+            <li><strong>형식과 유효 조건</strong> <code>Pala720v2</code> Git의 <code>docs/pala720v2_interface_protocol_ko.md</code>에서 UDP 6002 절을 본다.</li>
+            <li><strong>포트에서 읽기</strong> <code>LWIP/Target/ethernetif.c</code>에서 <code>LAN9354_DBG_SWITCH_CSR_P2_RX_1024_MAX</code>를 찾는다.</li>
+            <li><strong>누적과 송신</strong> <code>Core/Src/freertos.c</code>의 <code>StartDiagTask</code>를 본다. 위 파일은 펌웨어 커밋 <code>c428fbc</code>에서 확인했다.</li>
+          </ul>
+        </details>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

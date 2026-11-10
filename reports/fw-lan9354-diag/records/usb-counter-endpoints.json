@@ -1,0 +1,101 @@
+{
+  "switch": {
+    "source_file": "pala720_2_renew/FW/Pala720v2/work/network_isolation_20261020/cpu_cause_01/usb_mib_forwarding_review_01/report.json",
+    "source_key": "windows",
+    "windows": [
+      {
+        "duration_seconds": 11,
+        "endpoint_method": "outer_bracketing",
+        "same_boot_valid_reads": true,
+        "first": {
+          "sample_seq": 10858,
+          "sample_start_tick_ms": 10857036,
+          "pair_gap_us": 3804,
+          "counters": {
+            "p2_rx_1024_to_max": 24960023,
+            "p1_tx_1024_to_max": 24957287,
+            "p2_rx_512_to_1023": 6242563,
+            "p1_tx_512_to_1023": 6241870,
+            "p2_rx_crc": 0,
+            "p2_rx_align": 0,
+            "p2_rx_symbol": 0,
+            "swe_filtered_p2": 0,
+            "bm_drp_src_p2": 3549,
+            "bm_rate_drp_src_p2": 0
+          }
+        },
+        "last": {
+          "sample_seq": 10869,
+          "sample_start_tick_ms": 10868036,
+          "pair_gap_us": 3812,
+          "counters": {
+            "p2_rx_1024_to_max": 24986436,
+            "p1_tx_1024_to_max": 24983700,
+            "p2_rx_512_to_1023": 6249173,
+            "p1_tx_512_to_1023": 6248480,
+            "p2_rx_crc": 0,
+            "p2_rx_align": 0,
+            "p2_rx_symbol": 0,
+            "swe_filtered_p2": 0,
+            "bm_drp_src_p2": 3549,
+            "bm_rate_drp_src_p2": 0
+          }
+        }
+      },
+      {
+        "duration_seconds": 31,
+        "endpoint_method": "outer_bracketing",
+        "same_boot_valid_reads": true,
+        "first": {
+          "sample_seq": 10848,
+          "sample_start_tick_ms": 10847036,
+          "pair_gap_us": 3812,
+          "counters": {
+            "p2_rx_1024_to_max": 24936013,
+            "p1_tx_1024_to_max": 24933277,
+            "p2_rx_512_to_1023": 6236553,
+            "p1_tx_512_to_1023": 6235860,
+            "p2_rx_crc": 0,
+            "p2_rx_align": 0,
+            "p2_rx_symbol": 0,
+            "swe_filtered_p2": 0,
+            "bm_drp_src_p2": 3549,
+            "bm_rate_drp_src_p2": 0
+          }
+        },
+        "last": {
+          "sample_seq": 10879,
+          "sample_start_tick_ms": 10878036,
+          "pair_gap_us": 3859,
+          "counters": {
+            "p2_rx_1024_to_max": 25010446,
+            "p1_tx_1024_to_max": 25007707,
+            "p2_rx_512_to_1023": 6255183,
+            "p1_tx_512_to_1023": 6254490,
+            "p2_rx_crc": 0,
+            "p2_rx_align": 0,
+            "p2_rx_symbol": 0,
+            "swe_filtered_p2": 0,
+            "bm_drp_src_p2": 3549,
+            "bm_rate_drp_src_p2": 0
+          }
+        }
+      }
+    ]
+  },
+  "pc_interface": {
+    "source_file": "pala720_2_renew/FW/Pala720v2/work/network_isolation_20261020/USB-result.json",
+    "source_keys": [
+      "host_start.interface",
+      "host_end.interface"
+    ],
+    "host_start": {
+      "InDiscards": 0,
+      "InErrors": 0
+    },
+    "host_end": {
+      "InDiscards": 3097,
+      "InErrors": 0
+    }
+  }
+}

@@ -1,97 +1,103 @@
 const routes = {
   lidar: {
-    title: 'LiDAR 외부선 / PortB',
-    copy: 'LiDAR 케이블, 트랜스, PortB PHY가 marginal 상태인지 본다. 링크가 완전히 down이면 조용하지만, 애매하게 살아 있는 링크는 에러 프레임을 만들 수 있다.',
+    title: 'LiDAR 입력 · Port B',
+    copy: '케이블이나 포트 상태가 나쁘면 연결은 유지돼도 수신 오류가 늘 수 있다.',
     physicalTitle: 'LiDAR에서 LAN9354로 들어오는 길',
-    physical: ['LiDAR', 'LiDAR to 슬립링 케이블', '슬립링 케이블', 'Control board 커넥터', 'LAN9354 Port2/B'],
+    physical: ['LiDAR', 'LiDAR 쪽 케이블', '슬립링 케이블', '제어보드 커넥터', 'LAN9354 Port B'],
     metrics: [
-      ['PHY B operational 100M', 'PortB가 실제 운용 가능한 상태인지'],
-      ['P2 RX CRC / ALIGN / SYMBOL', 'LiDAR 방향 물리 오류 burst'],
-      ['P2 BM_DRP / BM_RATE_DRP', 'PortB 입력의 switch buffer 압박']
+      ['PHY B operational 100M', 'Port B가 100 Mbps로 동작하는지'],
+      ['P2 RX CRC / ALIGN / SYMBOL', 'LiDAR 입력의 프레임 오류'],
+      ['P2 BM_DRP / BM_RATE_DRP', 'Port B 입력이 버려진 수']
     ],
-    decision: 'PHY B operational bit가 떨어지거나 P2 RX error/BM drop 증가가 같은 시간대에 나타난다.'
+    decision: 'Port B가 100 Mbps로 동작하지 않거나 수신 오류가 늘면 LiDAR 쪽 케이블과 포트부터 본다.'
   },
   fabric: {
-    title: 'LAN9354 shared fabric / buffer',
-    copy: 'PortB에서 들어온 garbage frame이 switch 내부 shared resource를 잡아먹어 Port0→Port1 정상 패킷까지 버리는지를 본다.',
-    physicalTitle: 'PortB 입력이 스위치 내부를 압박하는 길',
-    physical: ['LAN9354 Port2/B', 'shared packet buffer', 'buffer manager drop 판정', 'Port0 to Port1 정상 패킷 영향', 'PC 수신률 저하'],
+    title: '스위치 내부 · 전달과 폐기',
+    copy: 'Port B 입력이 공용 버퍼를 압박하면 STM32에서 PC로 가는 패킷도 영향을 받을 수 있다.',
+    physicalTitle: 'Port B 입력이 다른 경로에 영향을 주는 과정',
+    physical: ['LAN9354 Port B', '공용 버퍼', '스위치 내부 폐기', 'Port 0에서 Port A로 가는 패킷에 영향'],
     metrics: [
-      ['P2 RX → P1 TX counters', '입력 오류와 PC 방향 송신의 동시 변화'],
-      ['P2 BM_DRP / SWE_FILTERED', '스위치 내부 drop 발생 여부'],
-      ['read_valid_mask / sample_rc', '해당 sample 신뢰 가능 여부']
+      ['P2 RX → P1 TX counters', '프레임 크기별 받은 수와 보낸 수'],
+      ['P2 BM_DRP / SWE_FILTERED', '버퍼 또는 필터에서 버려진 수'],
+      ['read_valid_mask / sample_rc', '카운터를 정상적으로 읽었는지']
     ],
-    decision: 'FW tx는 정상인데 PC 수신만 낮고, P2 error/drop과 switch drop 징후가 같은 구간에 붙는다.'
+    decision: '프레임 크기별 입·출구 증가량이 벌어지고 폐기 카운터도 늘면 스위치 내부부터 본다.'
   },
   stm: {
-    title: 'STM32 / RMII / FW 송신',
-    copy: 'DSP 데이터가 애초에 MCU에서 1000 Hz로 나가지 못했는지 분리한다. 이 경우 LiDAR 외부선보다 FW 송신 루프와 ETH TX 경로가 먼저다.',
+    title: 'STM32 송신 · Port 0',
+    copy: 'STM32가 DSP 데이터를 기준 송신률인 1,000 Hz로 내보내는지 확인한다.',
     physicalTitle: 'LAN9354와 STM32 사이의 내부 길',
-    physical: ['STM32 ETH MAC', 'RMII 신호선 / 직렬 저항', 'LAN9354 Port0', 'FW UDP 6001 송신', '6002 FW TX counter'],
+    physical: ['STM32 ETH MAC', 'RMII 신호선 / 직렬 저항', 'LAN9354 Port 0'],
     metrics: [
-      ['6001 FW tx counter delta', 'FW 송신 시도 Hz'],
-      ['ETH DMA / TX fail', 'HAL TX 실패와 DMA 오류'],
-      ['Port0 방향 징후', 'STM32/RMII 쪽 이상 여부']
+      ['g_legacy_send_count', '펌웨어의 UDP 6001 송신 성공 횟수'],
+      ['ETH DMA / TX fail', '송신 실패와 DMA 오류'],
+      ['Port 0 상태', 'STM32와 스위치 사이의 이상 징후']
     ],
-    decision: 'FW tx delta 자체가 낮거나 ETH TX/DMA fail이 증가하면 MCU 송신 경로 문제로 본다.'
+    decision: '펌웨어의 송신 빈도가 낮아지거나 ETH TX·DMA 오류가 늘면 STM32 송신 경로부터 본다.'
   },
   pc: {
-    title: 'PortA / PC 수신 경로',
-    copy: '스위치가 PC 쪽으로는 정상 송신했는데 앱이나 OS/NIC에서 놓친 것인지 분리한다.',
+    title: 'PC 수신 · Port A',
+    copy: '스위치가 PC 방향으로 내보낸 프레임을 PC 캡처와 앱에서 각각 확인한다.',
     physicalTitle: 'LAN9354에서 외부 케이블로 나가는 길',
-    physical: ['LAN9354 Port1/A', 'Control board PCB 경로', 'Molex board-to-board', 'Motor board / M12 쪽', 'LLC12_18M / 외부 PC 케이블'],
+    physical: ['LAN9354 Port A', '제어보드 PCB 경로', 'Molex 보드 간 커넥터', '모터보드 / M12 쪽', 'LLC12_18M / 외부 PC 케이블'],
     metrics: [
-      ['PHY A operational 100M', 'PC uplink 운용 상태'],
-      ['P1 TX OK / error', 'PC 방향 송신과 오류'],
-      ['Wireshark / socket errors', 'NIC 도착과 앱 수신 누락 분리']
+      ['PHY A operational 100M', 'Port A가 100 Mbps로 동작하는지'],
+      ['P1 TX OK', 'PC 방향으로 송신한 프레임 수'],
+      ['PC 캡처 / 소켓 오류', 'PC에 들어온 것과 앱이 받은 것 비교']
     ],
-    decision: 'LAN9354 P1 TX까지 정상이고 Wireshark에는 보이는데 앱 Hz만 낮으면 PC 수신/표시 문제다.'
-  },
-  ptp: {
-    title: 'PTP Delay_Req / Delay_Resp 경로',
-    copy: 'DSP Hz 문제와 별개로 시간동기 응답 경로가 막히는지 확인한다. PTP는 multicast/socket/L2 timestamp queue가 엮이므로 별도 카운터가 필요하다.',
-    physicalTitle: 'PTP 응답이 만들어지는 논리 경로',
-    physical: ['PC Delay_Req', 'LAN9354 Port1/A', 'STM32 Ethernet RX', 'timestamp queue pop', 'Delay_Resp 송신'],
-    metrics: [
-      ['Delay_Req L2 seen', 'PTP 요청 수신 여부'],
-      ['TSQ count / overwrite', 'timestamp queue 밀림'],
-      ['pop_ok / pop_miss / resp_fail', '응답 매칭과 송신 실패']
-    ],
-    decision: 'L2 seen은 증가하는데 pop_miss나 resp_fail이 붙으면 PTP 응답 경로를 DSP packet loss와 분리해서 본다.'
+    decision: 'Port A 송신이 유지되면 PC 캡처와 수신 카운터를 대조해 패킷이 어디까지 왔는지 본다.'
   }
 };
 
 const stage = document.querySelector('.stage');
+const overview = document.querySelector('#route-overview');
+const inspector = document.querySelector('.route-inspector');
 const title = document.querySelector('#route-title');
 const copy = document.querySelector('#route-copy');
 const decision = document.querySelector('#route-decision');
 const metrics = document.querySelector('#route-metrics');
 const physicalTitle = document.querySelector('#physical-title');
 const physicalPath = document.querySelector('#route-path');
+const routePanel = document.querySelector('#route-panel');
 const tabs = Array.from(document.querySelectorAll('.route-tabs button'));
 
 function renderRoute(key) {
   const route = routes[key];
-  if (!route) return;
+  if (!route && key !== 'overview') return;
 
   stage.dataset.activeRoute = key;
-  title.textContent = route.title;
-  copy.textContent = route.copy;
-  decision.textContent = route.decision;
-  physicalTitle.textContent = route.physicalTitle;
-  physicalPath.innerHTML = route.physical.map((item) => `<li>${item}</li>`).join('');
-  metrics.innerHTML = route.metrics.map(([name, text]) => (
-    `<div class="metric"><b>${name}</b><span>${text}</span></div>`
-  )).join('');
+  overview.hidden = Boolean(route);
+  inspector.hidden = !route;
+
+  if (route) {
+    title.textContent = route.title;
+    copy.textContent = route.copy;
+    decision.textContent = route.decision;
+    physicalTitle.textContent = route.physicalTitle;
+    physicalPath.innerHTML = route.physical.map((item) => `<li>${item}</li>`).join('');
+    metrics.innerHTML = route.metrics.map(([name, text]) => (
+      `<div class="metric"><b>${name}</b><span>${text}</span></div>`
+    )).join('');
+  }
 
   tabs.forEach((button) => {
     const active = button.dataset.route === key;
-    button.setAttribute('aria-selected', active ? 'true' : 'false');
+    button.setAttribute('aria-selected', String(active));
+    button.tabIndex = active ? 0 : -1;
+    if (active) routePanel.setAttribute('aria-labelledby', button.id);
   });
 }
 
-tabs.forEach((button) => {
+tabs.forEach((button, index) => {
   button.addEventListener('click', () => renderRoute(button.dataset.route));
+  button.addEventListener('keydown', (event) => {
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    event.preventDefault();
+    const offset = event.key === 'ArrowRight' ? 1 : -1;
+    const next = tabs[(index + offset + tabs.length) % tabs.length];
+    renderRoute(next.dataset.route);
+    next.focus();
+  });
 });
 
-renderRoute('lidar');
+renderRoute('overview');
