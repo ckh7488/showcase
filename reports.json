@@ -2,6 +2,21 @@
   "version": 1,
   "reports": [
     {
+      "id": "ptp-clock-recovery",
+      "title": "PTP 시간 동기와 재부팅 복구",
+      "summary": "라이다의 측정 시각으로 회전각을 구하는 방법과, 재부팅 뒤 PTP 기준 시각을 이어 가는 기판·펌웨어 설계입니다.",
+      "category": "센서 · 실시간 시스템",
+      "date": "2026-11-10",
+      "path": "reports/ptp-clock-recovery/",
+      "cover": "reports/ptp-clock-recovery/cover.png",
+      "coverAlt": "고정된 벽과 엔코더 시각 차이로 돌아간 점을 비교하는 슬라이더 화면",
+      "tags": [
+        "PTP",
+        "라이다",
+        "PCB"
+      ]
+    },
+    {
       "id": "industrial-pc-lidar-receive",
       "title": "라이다 수신 공백과 몰림",
       "summary": "점군이 순간적으로 어긋난 현상부터, 같은 라이다 패킷의 측정 시각과 PC 읽기 시각을 대조하기까지의 조사 과정입니다.",
