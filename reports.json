@@ -68,20 +68,18 @@
     },
     {
       "id": "ethernet-vna-fixture",
-      "title": "VNA 케이블 지그 · SMA↔Ethernet",
-      "summary": "SMA↔RJ45 공통 발룬과 LLC·M12 슬립링·Molex 어댑터 세트. 양끝 연결, PCB·핀맵, 보드별 BOM과 케이블 측정 절차를 살펴봅니다.",
-      "category": "하드웨어 · 측정 도구",
-      "date": "2026-09-23",
+      "title": "발룬 Ethernet 보드 · 제작 전 검증",
+      "summary": "50 Ω VNA와 100 Ω Ethernet 페어를 잇는 보드. 실제 동박의 3D 형상과 openEMS 계산값을 비교하고, 실장면 선택부터 제조 CAM 검토까지 살펴봅니다.",
+      "category": "하드웨어 · RF 측정",
+      "date": "2026-11-13",
       "path": "reports/ethernet-vna-fixture/",
-      "cover": "reports/ethernet-vna-fixture/cover.png",
-      "coverAlt": "지그 양끝의 커넥터를 선택하고 VNA–발룬–어댑터–DUT 연결과 핀맵을 확인하는 실제 화면",
+      "cover": "reports/ethernet-vna-fixture/cover.png?v=20261113-1",
+      "coverAlt": "발룬 Ethernet 보드의 네 층 동박을 펼친 3D 형상과 100 MHz의 반사·공통모드 변환·누화 계산값",
       "tags": [
-        "SMA↔RJ45",
-        "LLC",
-        "M12",
-        "Molex",
-        "슬립링",
-        "BOM"
+        "3D",
+        "openEMS",
+        "PCB 설계",
+        "제작 전 검증"
       ]
     },
     {

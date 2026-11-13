@@ -1,41 +1,103 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VNA 케이블 지그 · SMA↔Ethernet | ATLAS</title><link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../assets/theme.v1.css"><link rel="stylesheet" href="report.css?v=20260923-entry3"></head>
-<body><header class="top"><a href="../../" aria-label="ATLAS 라이브러리로 돌아가기">← ATLAS</a><span>VNA 케이블 지그 · SMA↔Ethernet</span><nav aria-label="문서 목차"><a href="#setup">연결</a><a href="#boards">PCB·핀맵</a><a href="#bom">BOM</a><a href="#assembly">조립</a><a href="#measurement">측정</a></nav></header>
-<main><section class="intro"><p class="eyebrow">LIBREVNA · 2 PORT · 수동 케이블 평가</p><h1>SMA에서 이더넷으로,<br>커넥터별 VNA 측정 지그.</h1><p class="lead">VNA의 SMA 포트를 공통 발룬에서 RJ45로 변환하고, LLC·M12 슬립링·Molex 어댑터로 대상 케이블에 연결합니다. 양끝의 커넥터와 페어를 고르면 결선·핀맵·필요 부품을 함께 확인할 수 있습니다.</p><div class="badges"><span>공통 B-SMA1</span><span>M12 LLC B-RF1</span><span>M12 슬립링 암 B-TE1</span><span>Molex 5핀</span><span>2026-09-23 문서화</span></div><p class="state"><b>현재: CAD·절차와 합성 보정 검증 단계.</b> 실측 유효 대역·판정 한계·DUT 접속면 표준과 고정 기구는 추가 확인이 필요합니다.</p></section>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="50 Ω VNA와 100 Ω Ethernet 페어를 잇는 발룬 보드. 실제 동박의 3D 형상과 openEMS 계산값, 실장면 선택과 제조파일 검토를 살펴봅니다.">
+  <title>발룬 Ethernet 보드 · 제작 전 검증 | ATLAS</title>
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/theme.v1.css">
+  <link rel="stylesheet" href="prebuild.css?v=20261113-1">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="../../" aria-label="ATLAS 라이브러리로 돌아가기">← ATLAS</a>
+  <span>발룬 Ethernet 보드</span>
+  <nav aria-label="문서 목차"><a href="#simulation">3D와 계산값</a><a href="#design">설계 선택</a><a href="#manufacturing">제작 검수</a></nav>
+</header>
+<main>
+  <section class="intro">
+    <p class="eyebrow">제작 전 검증 · 2026.09–10</p>
+    <h1>발룬 Ethernet 보드,<br>제작 전에 어디까지 확인했나.</h1>
+    <p class="lead">50 Ω VNA와 100 Ω 이더넷 페어를 잇는 4채널 보드를 만들었다.<br class="desktop-break"> 연결과 실장 방향을 맞추고, 실제 동박의 RF 응답과 제조파일을 확인했다.</p>
+    <div class="intro-facts"><span><b>4채널</b> 페어별 발룬 1개</span><span><b>1–150 MHz</b> PCB 배선 해석</span><span><b>B-RJ2</b> 최종 제작안</span></div>
+  </section>
 
-<section class="module-overview" aria-label="지그를 구성하는 PCB 4종"><p class="eyebrow">공통 발룬 + 커넥터별 어댑터</p><div class="module-map">
-<a href="#boards" data-show-board="common"><span>01 · 공통 B-SMA1</span><h2>SMA ↔ RJ45</h2><p>SMA 4포트와 발룬 4개.<br>DUT 양끝에 같은 보드 2장.</p><b>공통 발룬 보기 →</b></a>
-<a href="#boards" data-show-board="llc"><span>02 · LLC B-RF1</span><h2>LLC · M12 수</h2><p>RJ45에서 사내 LLC 접속면으로.<br>M12 수 커넥터 어댑터.</p><b>LLC 핀맵 보기 →</b></a>
-<a href="#boards" data-show-board="m12"><span>03 · 슬립링 B-TE1</span><h2>슬립링 · M12 암</h2><p>슬립링용 사내 결선.<br>LLC와 핀맵이 다릅니다.</p><b>M12 암 핀맵 보기 →</b></a>
-<a href="#boards" data-show-board="molex"><span>04 · 슬립링 A-DRAFT</span><h2>슬립링 · Molex</h2><p>RJ45에서 5핀 Molex로.<br>현행 후속 배선본.</p><b>Molex 핀맵 보기 →</b></a>
-</div><p class="caption">이 항목은 케이블을 연결해 측정하는 VNA 지그 세트입니다. <a href="../vna-calibration-fixture/">CM 프로브 교정지그 A03</a>는 별도 항목에서 봅니다.</p></section>
+  <section id="simulation" class="sheet simulation-sheet">
+    <div class="section-head"><div><p class="eyebrow">01 / openEMS로 본 PCB 배선</p><h2>두 배선안의 반사와 누화를 비교했다.</h2></div><span class="section-meta">B페어 구동 · 1 MHz 간격, 150개 지점</span></div>
+    <p class="section-lead">RJ45 핀부터 발룬 직전 패드까지의 PCB 동박·도금홀·내층 기준면을 모델로 만들었다. 두 배선안의 반사, 공통모드 변환, 다른 페어로 전달된 성분을 같은 조건에서 비교했다.</p>
+    <div class="scope-strip" aria-label="PCB 해석 구간"><span>해석 구간</span><b>RJ45 핀</b><i>→</i><b>PCB 배선</b><i>→</i><b>발룬 직전 패드</b></div>
 
-<section id="setup" class="sheet"><div class="section-heading"><div><p class="eyebrow">01 · 접속 구성</p><h2>어떤 커넥터를 연결하나요?</h2></div><button id="resetSetup" type="button">기본 구성</button></div><p>여기서 선택하는 암·수는 <b>지그에 실장하는 커넥터</b>입니다. DUT 쪽은 맞물리는 반대 성별이어야 합니다. 현재 어댑터는 사내 전용 핀맵이며 범용 M12 Ethernet 결선이 아닙니다.</p>
-<div class="controls"><label>왼쪽 · Port 1<select id="left"><option value="llc">M12 LLC · 지그 수</option><option value="m12">M12 슬립링 · 지그 암</option><option value="molex">Molex 슬립링 · 5핀</option><option value="rj45">RJ45 · 직접 연결</option></select></label><label>오른쪽 · Port 2<select id="right"><option value="llc">M12 LLC · 지그 수</option><option value="m12">M12 슬립링 · 지그 암</option><option value="molex" selected>Molex 슬립링 · 5핀</option><option value="rj45">RJ45 · 직접 연결</option></select></label><label>측정할 페어<select id="pair"><option value="A">A · RJ45 1–2</option><option value="B">B · RJ45 3–6</option></select></label></div>
-<div id="connection" class="connection" aria-live="polite"></div><div class="facts"><p><strong>2</strong>공통 발룬 PCB</p><p><strong>6</strong>미사용 SMA의 50 Ω 로드</p><p><strong id="adapterCount">2</strong>선택 구성의 어댑터 PCB</p></div>
-<div id="pinSummary" class="pin-summary" aria-live="polite"></div><p class="note">무전압 수동 DUT용입니다. 24 V 전원과 활성 Ethernet 장비를 분리하고 잔류 전압을 확인한 다음 연결합니다. 전원 핀이 NC인 것만으로 통전 중 사용이 허용되지는 않습니다.</p>
-<details><summary>두 기준면과 고정해야 할 부분</summary><p>LibreVNA의 첫 full 2-port SOLT는 두 SMA 케이블 끝의 50 Ω 기준면을 만듭니다. 그 상태에서 DUT 접속면의 표준을 취득하고 Python UnknownThru 보정을 적용하면, 모델 조건 아래 두 DUT 접속면 사이의 100 Ω 유효 차동 2포트 결과를 얻습니다.</p><p>공통 PCB·패치 케이블·어댑터·미사용 로드·CT/shield 상태는 표준과 DUT 측정 사이에 고정합니다. 커넥터 자체를 평가하려면 그 체결부가 DUT 기준면 안에 포함되도록 시험편을 구성해야 합니다.</p></details></section>
+    <div class="case-tabs" role="group" aria-label="3D에서 볼 배선안">
+      <button type="button" data-case="com_old" aria-pressed="true"><span class="case-dot retained"></span><span><b>배선 유지안</b><small>최종 제작본의 차동 경로 · 신호 비아 2개</small></span><em>채택</em></button>
+      <button type="button" data-case="com_front" aria-pressed="false"><span class="case-dot rerouted"></span><span><b>전면 재배선안</b><small>커넥터 앞면 배치 · 신호 비아 10개</small></span></button>
+    </div>
 
-<section id="boards" class="sheet"><p class="eyebrow">02 · 저장된 PCB와 핀맵</p><h2>보드와 신호를 골라 확인하세요</h2><div class="board-buttons" aria-label="PCB 선택"><button data-board="common" aria-pressed="false">공통 발룬</button><button data-board="llc" aria-pressed="true">M12 LLC 수</button><button data-board="m12" aria-pressed="false">M12 슬립링 암</button><button data-board="molex" aria-pressed="false">Molex 슬립링</button></div><div class="board-grid"><div><div class="controls compact"><label>강조<select id="highlight"><option value="all">전체 신호</option><option value="A">페어 A</option><option value="B">페어 B</option></select></label><label>신호층<select id="layer"><option value="all">F.Cu + B.Cu</option><option value="F.Cu">F.Cu</option><option value="B.Cu">B.Cu</option></select></label><label class="check"><input id="pinLabels" type="checkbox" checked>단자 번호</label></div><div class="board-stage"><svg id="pcb" role="img" aria-label="선택한 PCB의 저장 선로와 패드 중심"></svg></div><p class="caption">저장된 KiCad 좌표에서 읽은 선로와 패드 중심입니다. 청록 F.Cu · 주황 B.Cu. 원은 패드 위치 표시이며 실제 패드 외형이 아닙니다. 내부 면·커넥터 몸체·3D 간섭·RF 응답은 이 그림에 포함하지 않습니다.</p></div><div id="boardInfo" aria-live="polite"></div></div><details><summary>원본과 검증 범위</summary><p>현행 PCB 4개의 SHA-256을 기존 검토 기록과 대조하고 패드의 실제 net에서 어댑터 핀맵을 다시 확인했습니다. 이번 문서화에서 CAD를 저장하거나 DRC·ERC·RF 측정을 새로 실행하지 않았습니다.</p><p><a href="boards.json" download>표시 좌표와 PCB 해시 JSON</a> · <a href="sources.json" download>읽은 근거 문서와 해시</a> · <a href="../balun-routing/">Molex 배선·EM 비교 보고서</a></p></details></section>
+    <div class="em-grid">
+      <div class="model-column">
+        <div id="model-stage" class="model-stage" aria-label="openEMS 해석에 사용한 실제 PCB 동박의 3D 보기">
+          <div class="stage-top"><span id="model-case">배선 유지안</span><span id="layer-state">층 펼침 · 두께 확대</span></div>
+          <div id="model" class="model-host" tabindex="0" aria-label="3D 동박. 드래그로 회전하고 스크롤로 확대. 방향키로 회전, 플러스와 마이너스로 확대, Home으로 초기화."></div>
+          <span id="input-tag" class="model-tag">RJ45 · B 입력</span><span id="output-tag" class="model-tag output-tag">T2 · 발룬 패드</span><span id="via-p-tag" class="model-tag via-tag" hidden>P 비아</span><span id="via-n-tag" class="model-tag via-tag" hidden>N 비아</span>
+          <div class="stage-legend"><span><i class="swatch plus"></i>P</span><span><i class="swatch minus"></i>N</span><span><i class="swatch ground"></i>GND 기준면</span></div>
+          <p class="model-fallback" id="model-fallback" hidden>3D 보기를 준비하지 못했습니다. 아래 그래프와 수치에서 두 배선안을 비교할 수 있습니다.</p>
+        </div>
+        <div class="model-tools"><span>드래그로 회전 · 스크롤로 확대</span><div><button id="spread-layers" type="button" aria-pressed="true">층 모으기</button><button id="top-view" type="button" aria-pressed="false">B페어 확대</button><button id="reset-view" type="button">초기화</button></div></div>
+        <p class="model-caption" id="model-caption">기존 네 페어의 배선을 살린 안이다. B페어만 뒷면을 거치며 P와 N에 신호 비아가 하나씩 있다.</p>
+      </div>
+      <aside class="results" aria-label="선택한 배선안의 시뮬레이션 결과">
+        <div class="results-heading"><span>시뮬레이션 계산값</span><strong><span id="result-frequency">100</span> MHz</strong></div>
+        <p id="result-case">배선 유지안 · B페어</p>
+        <button type="button" class="metric-card" data-metric="sdd11" aria-pressed="true"><span class="metric-label">되돌아온 차동 성분<small>Sdd11 · RJ45 입력</small></span><strong><span id="value-sdd11">−36.7</span><small>dB</small></strong><span class="metric-note" id="reflection-power">입사 전력의 0.0215%</span></button>
+        <button type="button" class="metric-card" data-metric="scd21" aria-pressed="false"><span class="metric-label">차동 → 공통모드 변환<small>Scd21 · 발룬 패드 출력</small></span><strong><span id="value-scd21">−54.4</span><small>dB</small></strong><span class="metric-note">P/N 두 선에 같은 방향으로 나타난 성분</span></button>
+        <button type="button" class="metric-card" data-metric="coupling" aria-pressed="false"><span class="metric-label">다른 페어로 전달된 성분<small>차동 누화 · A/C/D 중 최댓값</small></span><strong><span id="value-coupling">−69.4</span><small>dB</small></strong><span class="metric-note" id="coupling-path">B → C · 발룬 쪽</span></button>
+        <p class="reading-hint">수치를 누르면 해당 위치와 그래프가 바뀐다.<br>세 지표 모두 값이 낮을수록 그 성분이 작다.</p>
+      </aside>
+    </div>
 
-<section id="bom" class="sheet"><p class="eyebrow">03 · 보드별 BOM</p><h2>보드 1장에 무엇이 들어가나요?</h2><p>공통 발룬과 커넥터 어댑터를 각각 한 장 기준으로 정리했습니다. 각 보드의 부품 번호·실장 위치·수량을 확인한 뒤 필요한 장수를 합산할 수 있습니다.</p>
-<nav class="bom-jump" aria-label="보드별 BOM 바로가기"><a href="#bom-common">공통 발룬</a><a href="#bom-llc">M12 LLC 수</a><a href="#bom-m12">M12 슬립링 암</a><a href="#bom-molex">Molex</a></nav>
-<p class="downloads"><a href="bom.json" download>전체 BOM JSON</a> · <a href="bom-per-board.csv" download>보드별 BOM 통합 CSV</a></p>
-<!--PER_BOARD_BOM_START-->
-<div class="bom-cards"><article class="bom-card" id="bom-common" data-module="common"><div class="section-heading"><h3>공통 발룬 보드</h3><a href="bom-common.csv" download>1장 BOM CSV</a></div><p class="caption">B-SMA1 · SMA ↔ 4-pair RJ45 발룬 변환</p><div class="table-wrap"><table><thead><tr><th>Ref</th><th>부품 / 규격</th><th>1장당</th></tr></thead><tbody><tr><td>PCB</td><td>공통 발룬 PCB<small>B-SMA1</small></td><td>1 장</td></tr><tr><td>T1 / T2 / T3 / T4</td><td>발룬 트랜스<small>ADT2-1T+</small></td><td>4 개</td></tr><tr><td>J2 / J3 / J4 / J5</td><td>직각 SMA 암<small>SMA-J-P-H-RA-TH1</small></td><td>4 개</td></tr><tr><td>J1</td><td>RJ45 jack · magnetics 없음<small>RJE591885401</small></td><td>1 개</td></tr></tbody></table></div><details><summary>기본 조립 조건</summary><ul><li>RCT1 / RCT2 / RCT3 / RCT4: 기본 CT-FLOAT: 모두 DNP. CT-GND 비교 시에만 두 보드의 8곳을 함께 변경하고 다시 보정.</li><li>RSH1: 기준 Port 1 쪽 보드에만 납땜 브리지, Port 2 쪽은 DNP. 보드별 역할을 표시하며 0 Ω 부품을 기본 구매량에 더하지 않음.</li><li>CSH1: 기본 DNP. AC shield 실험은 별도 조건이며 기본 BOM에 커패시터를 더하지 않음.</li><li>TP1 / TP2: PCB 도금 홀을 사용. 별도 테스트포인트 부품 없음.</li></ul></details></article><article class="bom-card" id="bom-llc" data-module="llc"><div class="section-heading"><h3>M12 LLC 수 어댑터</h3><a href="bom-llc.csv" download>1장 BOM CSV</a></div><p class="caption">B-RF1 · RJ45 ↔ 사내 LLC M12 수 핀맵 · 발룬 트랜스 없음</p><div class="table-wrap"><table><thead><tr><th>Ref</th><th>부품 / 규격</th><th>1장당</th></tr></thead><tbody><tr><td>PCB</td><td>M12 LLC 수 어댑터 PCB<small>B-RF1</small></td><td>1 장</td></tr><tr><td>J1</td><td>RJ45 jack · magnetics 없음<small>RJE591885401</small></td><td>1 개</td></tr><tr><td>J2</td><td>M12 LLC 수 커넥터<small>MB12MBAFF08ST-3</small></td><td>1 개</td></tr></tbody></table></div><p class="caption">LLC 커넥터는 회수품 사용 계획입니다. 실장 필요량은 1개이며 실제 보유량은 별도 확인합니다.</p><details><summary>기본 조립 조건</summary><ul><li>TP1: SHIELD 접속용 PCB 동박/홀. 별도 TP 부품 없음. M12 패널·브래킷·체결품은 별도 미확정.</li></ul></details></article><article class="bom-card" id="bom-m12" data-module="m12"><div class="section-heading"><h3>M12 슬립링 암 어댑터</h3><a href="bom-m12.csv" download>1장 BOM CSV</a></div><p class="caption">B-TE1 · RJ45 ↔ 사내 슬립링 M12 암 핀맵 · 발룬 트랜스 없음</p><div class="table-wrap"><table><thead><tr><th>Ref</th><th>부품 / 규격</th><th>1장당</th></tr></thead><tbody><tr><td>PCB</td><td>M12 슬립링 암 어댑터 PCB<small>B-TE1</small></td><td>1 장</td></tr><tr><td>J1</td><td>RJ45 jack · magnetics 없음<small>RJE591885401</small></td><td>1 개</td></tr><tr><td>J2</td><td>M12 슬립링 암 커넥터<small>T4143012081-000</small></td><td>1 개</td></tr></tbody></table></div><details><summary>기본 조립 조건</summary><ul><li>TP1: SHIELD 접속용 PCB 동박/홀. 별도 TP 부품 없음. PG9 브래킷·PCB 지지·체결품은 별도 미확정.</li></ul></details></article><article class="bom-card" id="bom-molex" data-module="molex"><div class="section-heading"><h3>Molex 슬립링 어댑터</h3><a href="bom-molex.csv" download>1장 BOM CSV</a></div><p class="caption">A-DRAFT · 현행 후속 배선본 · RJ45 ↔ 5핀 Molex · 발룬 트랜스 없음</p><div class="table-wrap"><table><thead><tr><th>Ref</th><th>부품 / 규격</th><th>1장당</th></tr></thead><tbody><tr><td>PCB</td><td>Molex 슬립링 어댑터 PCB<small>A-DRAFT · 현행 후속 배선본</small></td><td>1 장</td></tr><tr><td>J1</td><td>RJ45 jack · magnetics 없음<small>RJE591885401</small></td><td>1 개</td></tr><tr><td>J2</td><td>Molex 5핀 SMT 커넥터<small>5055680571</small></td><td>1 개</td></tr></tbody></table></div><details><summary>기본 조립 조건</summary><ul><li>Molex 1.25 mm SMT. DUT-side shield bond/TP 없음. 커넥터 고정·케이블 지지는 별도 준비.</li></ul></details></article></div>
-<!--PER_BOARD_BOM_END-->
-<details class="bom-planner" open><summary>만들 보드 수량으로 합산</summary><p>아래는 보드 실장 부품의 필요량입니다. 구매 포장·예비·재고 차감과 측정용 로드·케이블·고정 기구는 별도입니다. 위의 양끝 측정 구성과 독립적으로 제작 장수를 정할 수 있습니다.</p><div class="module-counts"><label>공통 발룬 · 장<input id="count-common" type="number" min="0" max="9999" step="1" value="2"></label><label>M12 LLC 수 · 장<input id="count-llc" type="number" min="0" max="9999" step="1" value="1"></label><label>M12 슬립링 암 · 장<input id="count-m12" type="number" min="0" max="9999" step="1" value="0"></label><label>Molex · 장<input id="count-molex" type="number" min="0" max="9999" step="1" value="1"></label></div><div class="planner-actions"><button id="useSetupCounts" type="button">위 측정 구성의 장수 가져오기</button><button id="downloadBuildBom" type="button">제작 합계 CSV</button><button id="downloadBuildJson" type="button">제작 구성 JSON</button></div><p id="buildBomStatus" role="status"></p><div class="table-wrap"><table><thead><tr><th>부품</th><th>규격</th><th>필요량</th><th>보드별 내역</th></tr></thead><tbody id="buildBomRows"></tbody></table></div></details>
-<details class="measurement-bom"><summary>측정 구성 전체 · 공용 준비물과 구매 기록</summary><div class="section-heading"><div><p class="eyebrow">03 · 부품과 공유 범위</p><h2>설치 수량과 구매 수량을 구분합니다</h2></div><button id="downloadBom" type="button">선택 구성 CSV</button></div><p>아래 설치량은 위에서 고른 한 측정 구성 기준입니다. 구매 기록은 2026-09-17 통합 목록의 수량이며 재고·구매 완료·현재 추가 주문량을 뜻하지 않습니다.</p><div class="table-wrap"><table><thead><tr><th>품목 / 역할</th><th>규격</th><th>선택 구성 설치량</th><th>통합 구매 기록</th><th>RF 프로브와 관계</th></tr></thead><tbody id="bomRows"></tbody></table></div><p class="note"><b>50 Ω 로드 7개를 두 번 더하지 않습니다.</b> 발룬 측정의 미사용 SMA에 6개, 나머지 1개는 RF/공유·예비 용도로 잡힌 기록입니다. DUT 접속면 OSL에 쓰는 100 Ω Load 표준은 별도입니다.</p><details><summary>RF 화면의 BOM과 무엇이 다른가요?</summary><p>RF 프로브의 공개 58행은 프로브 설치·사용 BOM입니다. 발룬 트랜스, Samtec 직각 SMA, M12·Molex 어댑터 부품 전체는 그 표에 포함되어 있지 않습니다. 내부 구매 자료에서 두 프로젝트를 합치고 공용 로드·케이블·공구의 중복을 줄였습니다.</p><p>이 문서에서는 발룬 지그의 설치량을 따로 보여 줍니다. RF의 GCT 수직 SMA와 발룬의 Samtec 직각 SMA는 서로 다른 부품입니다. <a href="../rf-current-probe/bom.html">RF 프로브 설치 BOM →</a></p></details><details><summary>표에 없는 추가 준비물</summary><p>두 접속면에 맞는 O/S/L/T 표준, 독립 검증 표준, 고정판·M12 브래킷·스페이서·체결품, DMM과 납땜 공구가 필요합니다. 표준의 실제 R/L/C·offset 모델과 기구 치수는 확정 전이며 완성 세트 가격을 계산하지 않았습니다. CSH1과 RCT1–RCT4는 기본 DNP, TP 부품은 별도 구매하지 않습니다.</p></details></details></section>
+    <div class="chart-section">
+      <div class="chart-heading"><div><h3 id="chart-title">되돌아온 차동 성분 · Sdd11</h3><p id="chart-subtitle">RJ45 B페어로 들어간 차동 신호 중 입력으로 돌아온 성분</p></div><div class="chart-legend"><span><i class="retained"></i>배선 유지안</span><span><i class="rerouted"></i>전면 재배선안</span></div></div>
+      <svg id="rf-chart" role="img" aria-label="두 배선안의 1에서 150 MHz 시뮬레이션 결과 비교"></svg>
+      <div class="frequency-control"><label for="frequency">주파수 <output id="frequency-label" for="frequency">100 MHz</output></label><input id="frequency" type="range" min="1" max="150" step="1" value="100" aria-label="계산 결과를 볼 주파수, MHz"><div class="frequency-ticks"><span>1 MHz</span><span>50</span><span>100</span><span>150 MHz</span></div></div>
+      <p class="comparison-note" id="comparison-note">100 MHz에서 배선 유지안의 반사는 −36.7 dB, 전면 재배선안은 −33.2 dB였다.</p>
+    </div>
 
-<section id="assembly" class="sheet"><p class="eyebrow">04 · 조립과 첫 확인</p><h2>공통 보드 두 장을 한 쌍으로 관리합니다</h2><ol class="steps"><li><h3>PCB·부품 리비전 확인</h3><p>공통 B-SMA1, LLC B-RF1, 암 B-TE1과 해당 Molex 보드를 구분합니다. 핀 번호·부품 성별·DUT mating을 확인합니다. 4종 PCB를 각각 5장 준비하는 구매 기록과 이번 구성에서 실제 조립할 장수는 다릅니다.</p></li><li><h3>공통 보드에 발룬과 커넥터 실장</h3><p>한 장마다 ADT2-1T+ 4개, Samtec SMA 4개, RJ45 1개를 사용합니다. SMA는 F면, 입구는 보드 바깥쪽입니다. 트랜스의 dot/핀 방향을 확인하고 각 SMA 중심–트랜스–RJ45 연결을 검사합니다.</p></li><li><h3>CT·shield 상태를 표시</h3><p>기본은 CT-FLOAT: 두 보드의 RCT1–RCT4를 모두 DNP로 둡니다. RSH1은 기준 Port 1 쪽 보드만 납땜 브리지, 반대쪽은 DNP로 관리합니다. CSH1은 기본 DNP입니다. 패치 실드·패널이 만드는 추가 접지 경로도 기록합니다.</p></li><li><h3>어댑터를 조립하고 체결 하중 지지</h3><p>M12는 실제 key·pin 1과 패널/브래킷을 확인합니다. 나사 체결 토크를 신호 핀 납땜부에 맡기지 않습니다. TE 암의 PCB 간격 약 3 mm는 외부 기구로 정하며 핀 어깨를 자동 스토퍼로 보지 않습니다. Molex는 1.25 mm SMT의 브리지·방향을 확대 확인합니다.</p></li><li><h3>DUT 연결 전에 도통·절연 확인</h3><p>각 신호선과 NC, shield 경계를 검사합니다. LLC 핀 1/5/6/7을 GND로 묶지 않습니다. 전원을 분리한 DUT의 핀맵·각 선 저항도 확인합니다. 발룬 권선의 DC 경로와 실제 오접속을 회로 기준으로 구별합니다.</p></li><li><h3>배치 고정 후 낮은 레벨부터 확인</h3><p>VNA 케이블 2개, 공통 보드 2장, 패치/어댑터와 미사용 SMA 로드 6개를 고정합니다. 사진과 개체 ID를 남긴 뒤 아래 측정 절차를 진행합니다. CT·shield·페어·배치를 바꾸면 해당 보정의 재사용 조건을 다시 확인합니다.</p></li></ol><p class="caption">현행 문서의 조립 확인 순서를 정리한 것입니다. 실물 작업 성공·고정 기구 완성·제조 승인을 뜻하지 않습니다.</p></section>
+    <details class="technical-details"><summary>계산 조건과 격자 점검</summary><div class="details-body"><div class="condition-grid"><div><b>해석 구간</b><p>RJ45 ↔ 발룬 차동 패드<br>B페어 구동, A/C/D 동시 종단</p></div><div><b>재료와 단자</b><p>명목 FR-4 · PEC 동박<br>50 Ω 단자 16개</p></div><div><b>응답 추출</b><p>odd/even 두 입력의 입사파를 결합<br>차동 100 Ω / 공통 25 Ω 정규화</p></div></div><h3>얇은 사선 배선은 격자의 연결부터 확인했다.</h3><p>첫 격자에서 B페어 경로의 끊김과 신호 간 접속을 발견했다. 배선 영역의 XY 격자를 촘촘하게 바꾼 뒤 두 안 각각 <b>신호 경로 8/8 연결</b>, <b>신호 간·기준면 단락 0건</b>을 확인했다. 이 화면은 수정한 격자의 원시 응답을 사용한다.</p><p class="source-dates">원시 파형: 2026.09.29 · 기록 시간 약 2.5 ns · 주파수별 수치 정리: 2026.11.13</p></div></details>
+  </section>
 
-<section id="measurement" class="sheet"><p class="eyebrow">05 · 측정과 데이터</p><h2>양쪽 O/S/L과 Thru를 측정합니다</h2><p>자작 thru의 전체 S-parameter를 다른 지그로 미리 측정해 오라는 절차가 아닙니다. 7회는 Port 1의 O/S/L 3회 + Port 2의 O/S/L 3회 + Thru 1회를 뜻합니다. 표준 키트 7세트가 아닙니다. UnknownThru는 상호성, 충분한 전달, 실제 극성과 대략적인 편도 지연을 사용합니다. O/S/L의 모델과 재체결 변화는 독립 확인이 필요합니다.</p><div class="stage-buttons" role="group" aria-label="측정 절차 선택"><button data-stage="0" aria-pressed="true">1 · SMA SOLT</button><button data-stage="1" aria-pressed="false">2 · 표준 측정 7회</button><button data-stage="2" aria-pressed="false">3 · DUT 취득</button><button data-stage="3" aria-pressed="false">4 · 보정·확인</button></div><article id="stageDetail" class="stage-detail" aria-live="polite"></article>
-<div class="two-col"><div><h3>초기 sweep 안</h3><dl><dt>주 평가 대역</dt><dd>1–100 MHz</dd><dt>확장 관찰</dt><dd>100–200 MHz · 별도 유효성 확인</dd><dt>Points</dt><dd>1001 또는 1601 · 전체 파일 동일</dd><dt>Source</dt><dd>−20 dBm과 −10 dBm 비교</dd><dt>IFBW / 평균</dt><dd>100 Hz / 8 · IL/RL 시작 조건</dd></dl><p class="caption">기존 시험 계획의 시작 설정입니다. 측정 완료 사양이나 통신 합격선이 아닙니다.</p></div><div><h3>보존할 것</h3><p>SMA 교정 ID, 주파수 grid, 지그·표준·로드 개체 ID, 선택 페어와 접속면, CT/shield, 연결 사진, 원본 Touchstone, 보정 모델, 계수와 DUT 결과를 함께 보관합니다.</p><p>Port 2 O/S/L은 S22입니다. 착오를 줄이려면 O/S/L도 <code>.s2p</code>로 저장하고 설정에서 해당 파일을 지정합니다. <code>.s1p</code>만으로 실제 취득 포트를 알아낼 수는 없습니다.</p></div></div>
-<details><summary>CLI 예시와 출력</summary><p>balun 프로젝트 루트의 Python 환경에서 실행합니다. 세션 설정과 실제 표준 파일을 먼저 준비합니다.</p><pre>python -m analysis.m12_cal init measurements/run01/session.json
-python -m analysis.m12_cal calibrate measurements/run01/session.json --out measurements/run01/cal.npz
-python -m analysis.m12_cal apply measurements/run01/cal.npz measurements/run01/dut_001.s2p --out results/run01</pre><p>출력은 100 Ω 유효 차동 2포트 <code>.s2p</code>, IL/RL·위상·지연 CSV, 그래프 PNG와 출처 JSON입니다. 첫 SMA 보정은 계속 켜 둡니다. LibreVNA 화면에 두 번째 보정을 자동 업로드하는 기능은 아닙니다.</p></details></section>
+  <section id="design" class="sheet design-sheet">
+    <div class="section-head"><div><p class="eyebrow">02 / 무엇을 만들고, 무엇을 바꿨나</p><h2>한 페어를 재는 경로를 네 번 반복했다.</h2></div><span class="section-meta">80 × 74 mm · 4층 · 공칭 1.6 mm</span></div>
+    <div class="signal-chain" aria-label="VNA의 50옴 SMA에서 발룬을 거쳐 이더넷의 100옴 차동 페어로 연결">
+      <div class="chain-node"><span>반사·전달을 재는 VNA</span><strong>50 Ω</strong><small>SMA 동축</small></div><span class="chain-link" aria-hidden="true">→</span>
+      <div class="chain-node balun-node"><span>동축 신호를 차동으로</span><strong>발룬</strong><small>ADT2-1T+ · 임피던스비 1 : 2</small></div><span class="chain-link" aria-hidden="true">→</span>
+      <div class="chain-node"><span>RJ45</span><strong>100 Ω</strong><small>차동 페어</small></div>
+      <div class="pair-map"><span><b>A</b> 1 · 2</span><span><b>B</b> 3 · 6</span><span><b>C</b> 4 · 5</span><span><b>D</b> 7 · 8</span><small>RJ45 핀 번호</small></div>
+    </div>
+    <div class="design-story">
+      <div><h3>커넥터 방향을 원도면과 다시 맞췄다.</h3><p>RJ45 제조사 도면의 부품면 기준으로 신호핀 8개를 대조했다. 모든 커넥터를 앞면에 두는 재배선안과, 기존 경로를 살리는 실장면 변경안을 비교했다.</p></div>
+      <div class="choice-result"><p class="eyebrow">최종 선택</p><h3>RJ45·SMA는 뒷면,<br>발룬은 앞면.</h3><p>올바른 커넥터 방향과 간결한 신호 경로를 기준으로 골랐다. 커넥터 입구를 같은 면에 모으고 기존 차동 배선을 유지해, 재배선 후보의 <b>10개</b> 대신 신호 비아 <b>2개</b>로 구성했다.</p><div class="mounting-map" aria-label="최종 제작본의 부품 배치 단면"><span>앞면 F</span><b>발룬 × 4</b><i>4층 PCB</i><span>뒷면 B</span><b>RJ45 + SMA × 4</b></div></div>
+    </div>
+    <p class="design-foot">차동선의 일정 구간은 선폭 <b>0.234 mm</b> / 간격 <b>0.216 mm</b>, SMA의 50 Ω 구간은 선폭 <b>0.357 mm</b>로 정했다. 네 페어 모두 P/N 중심선 길이 차이는 <b>0.001 mm 미만</b>이었다.</p>
+  </section>
 
-<section class="sheet" id="limits"><p class="eyebrow">06 · 판정과 진단 범위</p><h2>지금 얻는 결과와 아직 필요한 기능</h2><div class="table-wrap"><table><thead><tr><th>목표</th><th>현재 자료·도구</th><th>다음 조건</th></tr></thead><tbody><tr><td>정적 전송 품질 비교</td><td>페어별 반사·전달·위상·지연의 보정 처리 구현</td><td>실물 표준, 독립 check, 정상 REF, 반복성·불확도 확인</td></tr><tr><td>정상 / 불량 자동 판정</td><td>자동 합격 판정 미구현</td><td>용도·길이별 limit와 판정 여유 정의, 실측 데이터로 검증</td></tr><tr><td>케이블 중 대략적 문제 위치</td><td>이 분석기의 TDR 위치 진단 미구현</td><td>유효 대역·속도계수·기준면을 반영한 거리 분석과 알려진 결함 시험편 확인</td></tr><tr><td>통전 중 간헐 장애 원인</td><td>현재 지그는 무전압 정적 측정용</td><td>부하 시 전압강하·링크 오류·시간 파형과 RF 전류 관측의 상관 확인</td></tr></tbody></table></div><p>NEXT/FEXT는 연결별 보정과 지그 누설 바닥값 확인이 추가로 필요합니다. 이 2포트 발룬 방식은 full mixed-mode나 모든 공통모드 변환을 독립 측정하지 않습니다.</p><p><a href="../vna-tdr/">VNA → TDR 원리와 한계</a> · <a href="../rf-current-probe/">RF 전류 프로브 · 구조와 사용</a></p></section>
+  <section id="manufacturing" class="sheet manufacturing-sheet">
+    <div class="section-head"><div><p class="eyebrow">03 / 설계를 제작파일로 이어가기</p><h2>PCB와 제조 CAM을 끝까지 대조했다.</h2></div><span class="section-meta">B-RJ2 · 공통 발룬 보드</span></div>
+    <div class="verification-grid">
+      <article><span class="check-step">설계 검사</span><strong>0<span>건</span></strong><h3>DRC · 미연결 · 회로도 정합</h3><p>최종 보드에서 세 검사를 각각 실행했다. 커넥터 실장면과 핀의 네트도 함께 확인했다.</p></article>
+      <article><span class="check-step">제조 CAM 대조</span><strong>99<span>개 홀</span></strong><h3>위치 · 완성 직경 · 종류 일치</h3><p>비아 61개를 포함한 드릴과 외곽을 대조했다. 층별 연결 그룹과 지정 구간 아래 기준면도 유지됐다.</p></article>
+      <article><span class="check-step">업체 임피던스 계산</span><strong>100.04<span>Ω</span></strong><h3>차동 구간 · SMA 구간 49.97 Ω</h3><p>NP-155F / JLC04161H-7628 적층으로 확인했다. 100 Ω와 50 Ω 구간을 지정해 ±10% 임피던스 제어로 제작했다.</p></article>
+    </div>
+    <div class="handoff"><div><b>9/29 · B-RJ2 제작파일 확정</b><span>동박·드릴·적층·임피던스 위치도를 한 묶음으로 정리했다.</span></div><div><b>10/2 · 업체 CAM 확인</b><span>공정 선폭의 에칭 보정을 확인하고 제조파일을 승인했다.</span></div></div>
+    <p class="closing">제작 전에 확보한 것은 <b>맞는 핀 연결과 실장 방향</b>, <b>배선의 계산 응답</b>, <b>제조파일과 설계의 일치</b>였다.</p>
+  </section>
 
-<section class="sheet" id="sources"><p class="eyebrow">07 · 근거</p><h2>원본 문서에서 범위를 확인합니다</h2><p>발룬 프로젝트의 현행 README, 설계 인계, 측정 계획, 분석 사용법, 공통/어댑터 제작·조립 문서와 9월 11일 제조 검토 기록을 대조했습니다. 구매 수량은 9월 17일 통합 기록이며 당시의 가격·주문 상태를 현재 상태로 옮기지 않았습니다.</p><ul class="source-links"><li><a href="https://github.com/ckh7488/balun_test">설계·분석 원본 저장소</a></li><li><a href="https://github.com/ckh7488/balun_test/blob/main/VNA_TEST_PLAN.md">측정 계획</a></li><li><a href="https://github.com/ckh7488/balun_test/blob/main/analysis/README.md">UnknownThru 분석 사용법</a></li><li><a href="sources.json">이번 문서의 원본 해시 목록</a></li></ul><p class="caption">이 문서는 실측 성능 보증이나 추가 발주 지시가 아닙니다. 수정·조립·교정 이력을 개체별로 관리합니다.</p></section>
-</main><footer><a href="../../">← ATLAS</a><span>VNA 케이블 지그 · SMA↔Ethernet</span></footer><noscript><p>구성별 연결·핀맵·BOM 탐색에는 JavaScript가 필요합니다. 조립·측정 개요는 본문에서 읽을 수 있습니다.</p></noscript><script src="boards.js"></script><script src="bom-data.js?v=20260923-entry3"></script><script src="bom-view.js?v=20260923-entry3"></script><script src="app.js?v=20260923-entry3"></script></body></html>
+  <div class="report-end"><a class="evidence-link" href="https://github.com/ckh7488/showcase/blob/main/reports/ethernet-vna-fixture/EVIDENCE.md">근거와 주파수별 데이터 ↗</a></div>
+</main>
+<footer><a href="../../">← ATLAS</a><span>Ethernet balun PCB / Pre-fabrication review</span></footer>
+<noscript><p class="noscript">위 수치는 배선 유지안의 B페어, 100 MHz 계산값이다. 3D·배선안 전환·주파수 선택은 JavaScript로 동작한다.</p></noscript>
+<script src="vendor/three.min.js"></script>
+<script src="vendor/OrbitControls.js"></script>
+<script src="prebuild-data.js?v=20261113-1"></script>
+<script src="prebuild.js?v=20261113-1"></script>
+</body>
+</html>

@@ -1,0 +1,5169 @@
+{
+  "classification": "NATIVE_CAD_AND_CAM_COMPARISON",
+  "revision": "B-RJ2",
+  "pcb_sha256": "975e27c6593b1bdd81aed159409a7450afdd58b910fae45834afb5ff24f37933",
+  "native_checks": {
+    "violations": 0,
+    "unconnected_items": 0,
+    "schematic_parity": 0
+  },
+  "cam_analysis": {
+    "kind": "CALCULATED",
+    "board": "common",
+    "code": "Y34",
+    "source_identity": "PASS",
+    "source_members": 16,
+    "source_pcb_sha256": "975e27c6593b1bdd81aed159409a7450afdd58b910fae45834afb5ff24f37933",
+    "vendor_zip_sha256": "7674cd18cc613608310b6ddf6bba12f0ebdb1ba6f9530d9da243a43285b0c62a",
+    "translation_mm": [
+      -20,
+      94
+    ],
+    "layers": {
+      "tl": {
+        "source_area_mm2": 403.9555252335062,
+        "vendor_area_mm2": 431.08395487625364,
+        "source_components": 84,
+        "vendor_components": 84,
+        "removed_mm2": 0.0,
+        "added_mm2": 27.12842964274817,
+        "removed_beyond_0_01mm": 0.0,
+        "added_beyond_0_01mm": 13.683547944790273,
+        "removed_beyond_0_025mm": 0.0,
+        "added_beyond_0_025mm": 0.03702426718815491,
+        "large_removals": [],
+        "source_widths_mm": {
+          "0.8": 27,
+          "0.5": 1,
+          "0.357": 12,
+          "0.234": 38,
+          "0.3": 4,
+          "0.15": 6
+        },
+        "vendor_widths_mm": {
+          "0.850011": 26,
+          "0.550012": 1,
+          "0.394691": 12,
+          "0.283997": 2,
+          "0.350012": 4,
+          "0.271704": 36,
+          "0.2": 6,
+          "0.399999": 8
+        },
+        "signal_centerline_hausdorff_mm": 3.4280023340134815e-05
+      },
+      "l2": {
+        "source_area_mm2": 5728.337912242559,
+        "vendor_area_mm2": 5690.620378543177,
+        "source_components": 21,
+        "vendor_components": 1,
+        "removed_mm2": 42.68811223219804,
+        "added_mm2": 4.970578532819329,
+        "removed_beyond_0_01mm": 42.68811223219804,
+        "added_beyond_0_01mm": 0.011718545830553349,
+        "removed_beyond_0_025mm": 42.68811223219804,
+        "added_beyond_0_025mm": 0.0,
+        "large_removals": [
+          [
+            3.141180702897327,
+            [
+              4.0,
+              21.0,
+              6.0,
+              23.0
+            ]
+          ],
+          [
+            6.156940309128938,
+            [
+              5.57,
+              27.659999999999997,
+              8.369999999999997,
+              30.46
+            ]
+          ],
+          [
+            1.327053362112599,
+            [
+              16.810000000000002,
+              32.82,
+              18.11,
+              34.12
+            ]
+          ],
+          [
+            1.3270533621126006,
+            [
+              14.780000000000001,
+              33.84,
+              16.08,
+              35.14
+            ]
+          ],
+          [
+            1.3270533621126006,
+            [
+              16.810000000000002,
+              34.86,
+              18.11,
+              36.16
+            ]
+          ],
+          [
+            1.327053362112599,
+            [
+              14.780000000000001,
+              35.88,
+              16.08,
+              37.18
+            ]
+          ],
+          [
+            1.3270533621126004,
+            [
+              16.810000000000002,
+              36.9,
+              18.11,
+              38.199999999999996
+            ]
+          ],
+          [
+            1.3270533621125993,
+            [
+              14.780000000000001,
+              37.92,
+              16.08,
+              39.22
+            ]
+          ],
+          [
+            1.3270533621126004,
+            [
+              16.810000000000002,
+              38.940000000000005,
+              18.11,
+              40.24
+            ]
+          ],
+          [
+            1.3270533621126004,
+            [
+              14.780000000000001,
+              39.96,
+              16.08,
+              41.26
+            ]
+          ],
+          [
+            6.156940309128935,
+            [
+              5.57,
+              43.54,
+              8.369999999999997,
+              46.339999999999996
+            ]
+          ],
+          [
+            0.2826223621200177,
+            [
+              40.7,
+              9.400000000000006,
+              41.3,
+              10.0
+            ]
+          ],
+          [
+            0.2826223621200177,
+            [
+              40.7,
+              27.400000000000006,
+              41.3,
+              28.0
+            ]
+          ],
+          [
+            0.28262236212001624,
+            [
+              40.2,
+              44.160000000000004,
+              40.8,
+              44.76
+            ]
+          ],
+          [
+            0.28262236212001624,
+            [
+              40.2,
+              49.24,
+              40.8,
+              49.839999999999996
+            ]
+          ],
+          [
+            0.2826223621200166,
+            [
+              40.7,
+              63.4,
+              41.3,
+              64.0
+            ]
+          ],
+          [
+            3.8008780508854887,
+            [
+              73.4,
+              9.900000000000006,
+              75.6,
+              12.099999999999994
+            ]
+          ],
+          [
+            3.8008780508854887,
+            [
+              73.4,
+              27.900000000000006,
+              75.6,
+              30.1
+            ]
+          ],
+          [
+            3.8008780508854842,
+            [
+              73.4,
+              45.9,
+              75.6,
+              48.1
+            ]
+          ],
+          [
+            3.800878050885488,
+            [
+              73.4,
+              63.9,
+              75.6,
+              66.1
+            ]
+          ]
+        ],
+        "source_widths_mm": {},
+        "vendor_widths_mm": {
+          "0.024892": 45,
+          "0.399999": 8
+        }
+      },
+      "l3": {
+        "source_area_mm2": 5728.337912242559,
+        "vendor_area_mm2": 5690.620399227382,
+        "source_components": 21,
+        "vendor_components": 1,
+        "removed_mm2": 42.68811223219804,
+        "added_mm2": 4.970599217020386,
+        "removed_beyond_0_01mm": 42.68811223219804,
+        "added_beyond_0_01mm": 0.011709988953886544,
+        "removed_beyond_0_025mm": 42.68811223219804,
+        "added_beyond_0_025mm": 0.0,
+        "large_removals": [
+          [
+            3.141180702897327,
+            [
+              4.0,
+              21.0,
+              6.0,
+              23.0
+            ]
+          ],
+          [
+            6.156940309128938,
+            [
+              5.57,
+              27.659999999999997,
+              8.369999999999997,
+              30.46
+            ]
+          ],
+          [
+            1.327053362112599,
+            [
+              16.810000000000002,
+              32.82,
+              18.11,
+              34.12
+            ]
+          ],
+          [
+            1.3270533621126006,
+            [
+              14.780000000000001,
+              33.84,
+              16.08,
+              35.14
+            ]
+          ],
+          [
+            1.3270533621126006,
+            [
+              16.810000000000002,
+              34.86,
+              18.11,
+              36.16
+            ]
+          ],
+          [
+            1.327053362112599,
+            [
+              14.780000000000001,
+              35.88,
+              16.08,
+              37.18
+            ]
+          ],
+          [
+            1.3270533621126004,
+            [
+              16.810000000000002,
+              36.9,
+              18.11,
+              38.199999999999996
+            ]
+          ],
+          [
+            1.3270533621125993,
+            [
+              14.780000000000001,
+              37.92,
+              16.08,
+              39.22
+            ]
+          ],
+          [
+            1.3270533621126004,
+            [
+              16.810000000000002,
+              38.940000000000005,
+              18.11,
+              40.24
+            ]
+          ],
+          [
+            1.3270533621126004,
+            [
+              14.780000000000001,
+              39.96,
+              16.08,
+              41.26
+            ]
+          ],
+          [
+            6.156940309128935,
+            [
+              5.57,
+              43.54,
+              8.369999999999997,
+              46.339999999999996
+            ]
+          ],
+          [
+            0.2826223621200177,
+            [
+              40.7,
+              9.400000000000006,
+              41.3,
+              10.0
+            ]
+          ],
+          [
+            0.2826223621200177,
+            [
+              40.7,
+              27.400000000000006,
+              41.3,
+              28.0
+            ]
+          ],
+          [
+            0.28262236212001624,
+            [
+              40.2,
+              44.160000000000004,
+              40.8,
+              44.76
+            ]
+          ],
+          [
+            0.28262236212001624,
+            [
+              40.2,
+              49.24,
+              40.8,
+              49.839999999999996
+            ]
+          ],
+          [
+            0.2826223621200166,
+            [
+              40.7,
+              63.4,
+              41.3,
+              64.0
+            ]
+          ],
+          [
+            3.8008780508854887,
+            [
+              73.4,
+              9.900000000000006,
+              75.6,
+              12.099999999999994
+            ]
+          ],
+          [
+            3.8008780508854887,
+            [
+              73.4,
+              27.900000000000006,
+              75.6,
+              30.1
+            ]
+          ],
+          [
+            3.8008780508854842,
+            [
+              73.4,
+              45.9,
+              75.6,
+              48.1
+            ]
+          ],
+          [
+            3.800878050885488,
+            [
+              73.4,
+              63.9,
+              75.6,
+              66.1
+            ]
+          ]
+        ],
+        "source_widths_mm": {},
+        "vendor_widths_mm": {
+          "0.024892": 45,
+          "0.399999": 8
+        }
+      },
+      "bl": {
+        "source_area_mm2": 197.49810273797894,
+        "vendor_area_mm2": 210.1222791691789,
+        "source_components": 79,
+        "vendor_components": 79,
+        "removed_mm2": 0.0,
+        "added_mm2": 12.6241764312,
+        "removed_beyond_0_01mm": 0.0,
+        "added_beyond_0_01mm": 7.229902691661647,
+        "removed_beyond_0_025mm": 0.0,
+        "added_beyond_0_025mm": 0.03696412788223905,
+        "large_removals": [],
+        "source_widths_mm": {
+          "0.8": 12,
+          "0.5": 3,
+          "0.15": 2,
+          "0.234": 10,
+          "0.3": 3
+        },
+        "vendor_widths_mm": {
+          "0.850011": 12,
+          "0.550012": 3,
+          "0.2": 2,
+          "0.271704": 10,
+          "0.350012": 3,
+          "0.399999": 8
+        },
+        "signal_centerline_hausdorff_mm": 3.2596932369342164e-05
+      },
+      "ts": {
+        "source_area_mm2": 289.8652646038477,
+        "vendor_area_mm2": 329.83038919966174,
+        "source_components": 68,
+        "vendor_components": 69,
+        "removed_mm2": 0.0,
+        "added_mm2": 39.9651245958148,
+        "removed_beyond_0_01mm": 0.0,
+        "added_beyond_0_01mm": 34.80741045388056,
+        "removed_beyond_0_025mm": 0.0,
+        "added_beyond_0_025mm": 29.937818083479314,
+        "large_removals": [],
+        "source_widths_mm": {},
+        "vendor_widths_mm": {
+          "0.150012": 8
+        }
+      },
+      "bs": {
+        "source_area_mm2": 187.87126460384752,
+        "vendor_area_mm2": 225.28119278621492,
+        "source_components": 44,
+        "vendor_components": 45,
+        "removed_mm2": 0.0,
+        "added_mm2": 37.40992818236811,
+        "removed_beyond_0_01mm": 0.0,
+        "added_beyond_0_01mm": 34.29194175681104,
+        "removed_beyond_0_025mm": 0.0,
+        "added_beyond_0_025mm": 29.937818083479304,
+        "large_removals": [],
+        "source_widths_mm": {},
+        "vendor_widths_mm": {
+          "0.150012": 8
+        }
+      },
+      "to": {
+        "source_area_mm2": 45.829251011900915,
+        "vendor_area_mm2": 46.65826514232487,
+        "source_components": 108,
+        "vendor_components": 109,
+        "removed_mm2": 0.0027791558614852665,
+        "added_mm2": 0.8317932862854505,
+        "removed_beyond_0_01mm": 0.0,
+        "added_beyond_0_01mm": 0.0,
+        "removed_beyond_0_025mm": 0.0,
+        "added_beyond_0_025mm": 0.0,
+        "large_removals": [],
+        "source_widths_mm": {
+          "0.15": 249,
+          "0.16": 152,
+          "0.17": 155,
+          "0.2": 145,
+          "0.12": 46
+        },
+        "vendor_widths_mm": {
+          "0.150012": 249,
+          "0.159995": 152,
+          "0.170002": 155,
+          "0.2": 145,
+          "0.129997": 46,
+          "0.399999": 8
+        }
+      },
+      "bo": {
+        "source_area_mm2": 26.122308349247568,
+        "vendor_area_mm2": 26.275834138760285,
+        "source_components": 61,
+        "vendor_components": 61,
+        "removed_mm2": 0.48420793575612053,
+        "added_mm2": 0.6377337252690294,
+        "removed_beyond_0_01mm": 0.32183246903982177,
+        "added_beyond_0_01mm": 0.0,
+        "removed_beyond_0_025mm": 0.08030477430655292,
+        "added_beyond_0_025mm": 0.0,
+        "large_removals": [
+          [
+            0.4831045173490509,
+            [
+              0.1700000000000017,
+              28.93303986356009,
+              0.1999996,
+              45.06696013643991
+            ]
+          ]
+        ],
+        "source_widths_mm": {
+          "0.15": 355,
+          "0.12": 12
+        },
+        "vendor_widths_mm": {
+          "0.150012": 355,
+          "0.129997": 12,
+          "0.399999": 8
+        }
+      }
+    },
+    "checks": {
+      "outline": true,
+      "connectivity_tl": true,
+      "signal_routes_tl": true,
+      "connectivity_l2": false,
+      "functional_inner_l2": true,
+      "connectivity_l3": false,
+      "functional_inner_l3": true,
+      "connectivity_bl": true,
+      "signal_routes_bl": true,
+      "controlled_reference_planes": true,
+      "finished_holes": true,
+      "sk_only_existing_vias": true,
+      "covered_vias_ts": true,
+      "covered_vias_bs": true,
+      "order_settings": true
+    },
+    "connectivity": {
+      "tl": {
+        "groups": {
+          "submitted": [
+            [
+              "CSH1:1:25:/GND",
+              "VIA50:/GND"
+            ],
+            [
+              "CSH1:2:26:/SHIELD",
+              "J1:SH:72:/SHIELD",
+              "J1:SH:73:/SHIELD",
+              "RSH1:2:1:/SHIELD",
+              "TP2:1:23:/SHIELD"
+            ],
+            [
+              "J1:1:64:/DA_P",
+              "T1:4:32:/DA_P"
+            ],
+            [
+              "J1:2:65:/DA_N",
+              "T1:6:34:/DA_N"
+            ],
+            [
+              "J1:3:66:/DB_P"
+            ],
+            [
+              "J1:4:67:/DC_P",
+              "T3:4:20:/DC_P"
+            ],
+            [
+              "J1:5:68:/DC_N",
+              "T3:6:22:/DC_N"
+            ],
+            [
+              "J1:6:69:/DB_N"
+            ],
+            [
+              "J1:7:70:/DD_P",
+              "T4:4:12:/DD_P"
+            ],
+            [
+              "J1:8:71:/DD_N",
+              "T4:6:14:/DD_N"
+            ],
+            [
+              "J2:1:36:Net-(J2-In)",
+              "T1:3:31:Net-(J2-In)"
+            ],
+            [
+              "J2:2:37:/GND",
+              "J2:2:38:/GND",
+              "J2:2:39:/GND",
+              "J2:2:40:/GND"
+            ],
+            [
+              "J3:1:43:Net-(J3-In)",
+              "T2:3:4:Net-(J3-In)"
+            ],
+            [
+              "J3:2:44:/GND",
+              "J3:2:45:/GND",
+              "J3:2:46:/GND",
+              "J3:2:47:/GND"
+            ],
+            [
+              "J4:1:53:Net-(J4-In)",
+              "T3:3:19:Net-(J4-In)"
+            ],
+            [
+              "J4:2:54:/GND",
+              "J4:2:55:/GND",
+              "J4:2:56:/GND",
+              "J4:2:57:/GND"
+            ],
+            [
+              "J5:1:48:Net-(J5-In)",
+              "T4:3:11:Net-(J5-In)"
+            ],
+            [
+              "J5:2:49:/GND",
+              "J5:2:50:/GND",
+              "J5:2:51:/GND",
+              "J5:2:52:/GND"
+            ],
+            [
+              "RCT2:1:15:/GND",
+              "VIA49:/GND"
+            ],
+            [
+              "RCT2:2:16:Net-(RCT2-Pad2)",
+              "T2:5:6:Net-(RCT2-Pad2)"
+            ],
+            [
+              "RSH1:1:0:/GND",
+              "VIA11:/GND"
+            ],
+            [
+              "T1:1:29:/GND",
+              "VIA52:/GND"
+            ],
+            [
+              "T1:2:30:unconnected-(T1-Pad2)"
+            ],
+            [
+              "T1:5:33:Net-(RCT1-Pad2)",
+              "VIA60:Net-(RCT1-Pad2)"
+            ],
+            [
+              "T2:1:2:/GND",
+              "VIA7:/GND"
+            ],
+            [
+              "T2:2:3:unconnected-(T2-Pad2)"
+            ],
+            [
+              "T2:4:5:/DB_P",
+              "VIA56:/DB_P"
+            ],
+            [
+              "T2:6:7:/DB_N",
+              "VIA57:/DB_N"
+            ],
+            [
+              "T3:1:17:/GND",
+              "VIA24:/GND"
+            ],
+            [
+              "T3:2:18:unconnected-(T3-Pad2)"
+            ],
+            [
+              "T3:5:21:Net-(RCT3-Pad2)",
+              "VIA59:Net-(RCT3-Pad2)"
+            ],
+            [
+              "T4:1:9:/GND",
+              "VIA23:/GND"
+            ],
+            [
+              "T4:2:10:unconnected-(T4-Pad2)"
+            ],
+            [
+              "T4:5:13:Net-(RCT4-Pad2)",
+              "VIA58:Net-(RCT4-Pad2)"
+            ],
+            [
+              "TP1:1:27:/GND"
+            ],
+            [
+              "VIA0:/GND"
+            ],
+            [
+              "VIA10:/GND"
+            ],
+            [
+              "VIA12:/GND"
+            ],
+            [
+              "VIA13:/GND"
+            ],
+            [
+              "VIA14:/GND"
+            ],
+            [
+              "VIA15:/GND"
+            ],
+            [
+              "VIA16:/GND"
+            ],
+            [
+              "VIA17:/GND"
+            ],
+            [
+              "VIA18:/GND"
+            ],
+            [
+              "VIA19:/GND"
+            ],
+            [
+              "VIA1:/GND"
+            ],
+            [
+              "VIA20:/GND"
+            ],
+            [
+              "VIA21:/GND"
+            ],
+            [
+              "VIA22:/GND"
+            ],
+            [
+              "VIA25:/GND"
+            ],
+            [
+              "VIA26:/GND"
+            ],
+            [
+              "VIA27:/GND"
+            ],
+            [
+              "VIA28:/GND"
+            ],
+            [
+              "VIA29:/GND"
+            ],
+            [
+              "VIA2:/GND"
+            ],
+            [
+              "VIA30:/GND"
+            ],
+            [
+              "VIA31:/GND"
+            ],
+            [
+              "VIA32:/GND"
+            ],
+            [
+              "VIA33:/GND"
+            ],
+            [
+              "VIA34:/GND"
+            ],
+            [
+              "VIA35:/GND"
+            ],
+            [
+              "VIA36:/GND"
+            ],
+            [
+              "VIA37:/GND"
+            ],
+            [
+              "VIA38:/GND"
+            ],
+            [
+              "VIA39:/GND"
+            ],
+            [
+              "VIA3:/GND"
+            ],
+            [
+              "VIA40:/GND"
+            ],
+            [
+              "VIA41:/GND"
+            ],
+            [
+              "VIA42:/GND"
+            ],
+            [
+              "VIA43:/GND"
+            ],
+            [
+              "VIA44:/GND"
+            ],
+            [
+              "VIA45:/GND"
+            ],
+            [
+              "VIA46:/GND"
+            ],
+            [
+              "VIA47:/GND"
+            ],
+            [
+              "VIA48:/GND"
+            ],
+            [
+              "VIA4:/GND"
+            ],
+            [
+              "VIA51:/GND"
+            ],
+            [
+              "VIA53:/GND"
+            ],
+            [
+              "VIA54:/GND"
+            ],
+            [
+              "VIA55:/GND"
+            ],
+            [
+              "VIA5:/GND"
+            ],
+            [
+              "VIA6:/GND"
+            ],
+            [
+              "VIA8:/GND"
+            ],
+            [
+              "VIA9:/GND"
+            ]
+          ],
+          "vendor": [
+            [
+              "CSH1:1:25:/GND",
+              "VIA50:/GND"
+            ],
+            [
+              "CSH1:2:26:/SHIELD",
+              "J1:SH:72:/SHIELD",
+              "J1:SH:73:/SHIELD",
+              "RSH1:2:1:/SHIELD",
+              "TP2:1:23:/SHIELD"
+            ],
+            [
+              "J1:1:64:/DA_P",
+              "T1:4:32:/DA_P"
+            ],
+            [
+              "J1:2:65:/DA_N",
+              "T1:6:34:/DA_N"
+            ],
+            [
+              "J1:3:66:/DB_P"
+            ],
+            [
+              "J1:4:67:/DC_P",
+              "T3:4:20:/DC_P"
+            ],
+            [
+              "J1:5:68:/DC_N",
+              "T3:6:22:/DC_N"
+            ],
+            [
+              "J1:6:69:/DB_N"
+            ],
+            [
+              "J1:7:70:/DD_P",
+              "T4:4:12:/DD_P"
+            ],
+            [
+              "J1:8:71:/DD_N",
+              "T4:6:14:/DD_N"
+            ],
+            [
+              "J2:1:36:Net-(J2-In)",
+              "T1:3:31:Net-(J2-In)"
+            ],
+            [
+              "J2:2:37:/GND",
+              "J2:2:38:/GND",
+              "J2:2:39:/GND",
+              "J2:2:40:/GND"
+            ],
+            [
+              "J3:1:43:Net-(J3-In)",
+              "T2:3:4:Net-(J3-In)"
+            ],
+            [
+              "J3:2:44:/GND",
+              "J3:2:45:/GND",
+              "J3:2:46:/GND",
+              "J3:2:47:/GND"
+            ],
+            [
+              "J4:1:53:Net-(J4-In)",
+              "T3:3:19:Net-(J4-In)"
+            ],
+            [
+              "J4:2:54:/GND",
+              "J4:2:55:/GND",
+              "J4:2:56:/GND",
+              "J4:2:57:/GND"
+            ],
+            [
+              "J5:1:48:Net-(J5-In)",
+              "T4:3:11:Net-(J5-In)"
+            ],
+            [
+              "J5:2:49:/GND",
+              "J5:2:50:/GND",
+              "J5:2:51:/GND",
+              "J5:2:52:/GND"
+            ],
+            [
+              "RCT2:1:15:/GND",
+              "VIA49:/GND"
+            ],
+            [
+              "RCT2:2:16:Net-(RCT2-Pad2)",
+              "T2:5:6:Net-(RCT2-Pad2)"
+            ],
+            [
+              "RSH1:1:0:/GND",
+              "VIA11:/GND"
+            ],
+            [
+              "T1:1:29:/GND",
+              "VIA52:/GND"
+            ],
+            [
+              "T1:2:30:unconnected-(T1-Pad2)"
+            ],
+            [
+              "T1:5:33:Net-(RCT1-Pad2)",
+              "VIA60:Net-(RCT1-Pad2)"
+            ],
+            [
+              "T2:1:2:/GND",
+              "VIA7:/GND"
+            ],
+            [
+              "T2:2:3:unconnected-(T2-Pad2)"
+            ],
+            [
+              "T2:4:5:/DB_P",
+              "VIA56:/DB_P"
+            ],
+            [
+              "T2:6:7:/DB_N",
+              "VIA57:/DB_N"
+            ],
+            [
+              "T3:1:17:/GND",
+              "VIA24:/GND"
+            ],
+            [
+              "T3:2:18:unconnected-(T3-Pad2)"
+            ],
+            [
+              "T3:5:21:Net-(RCT3-Pad2)",
+              "VIA59:Net-(RCT3-Pad2)"
+            ],
+            [
+              "T4:1:9:/GND",
+              "VIA23:/GND"
+            ],
+            [
+              "T4:2:10:unconnected-(T4-Pad2)"
+            ],
+            [
+              "T4:5:13:Net-(RCT4-Pad2)",
+              "VIA58:Net-(RCT4-Pad2)"
+            ],
+            [
+              "TP1:1:27:/GND"
+            ],
+            [
+              "VIA0:/GND"
+            ],
+            [
+              "VIA10:/GND"
+            ],
+            [
+              "VIA12:/GND"
+            ],
+            [
+              "VIA13:/GND"
+            ],
+            [
+              "VIA14:/GND"
+            ],
+            [
+              "VIA15:/GND"
+            ],
+            [
+              "VIA16:/GND"
+            ],
+            [
+              "VIA17:/GND"
+            ],
+            [
+              "VIA18:/GND"
+            ],
+            [
+              "VIA19:/GND"
+            ],
+            [
+              "VIA1:/GND"
+            ],
+            [
+              "VIA20:/GND"
+            ],
+            [
+              "VIA21:/GND"
+            ],
+            [
+              "VIA22:/GND"
+            ],
+            [
+              "VIA25:/GND"
+            ],
+            [
+              "VIA26:/GND"
+            ],
+            [
+              "VIA27:/GND"
+            ],
+            [
+              "VIA28:/GND"
+            ],
+            [
+              "VIA29:/GND"
+            ],
+            [
+              "VIA2:/GND"
+            ],
+            [
+              "VIA30:/GND"
+            ],
+            [
+              "VIA31:/GND"
+            ],
+            [
+              "VIA32:/GND"
+            ],
+            [
+              "VIA33:/GND"
+            ],
+            [
+              "VIA34:/GND"
+            ],
+            [
+              "VIA35:/GND"
+            ],
+            [
+              "VIA36:/GND"
+            ],
+            [
+              "VIA37:/GND"
+            ],
+            [
+              "VIA38:/GND"
+            ],
+            [
+              "VIA39:/GND"
+            ],
+            [
+              "VIA3:/GND"
+            ],
+            [
+              "VIA40:/GND"
+            ],
+            [
+              "VIA41:/GND"
+            ],
+            [
+              "VIA42:/GND"
+            ],
+            [
+              "VIA43:/GND"
+            ],
+            [
+              "VIA44:/GND"
+            ],
+            [
+              "VIA45:/GND"
+            ],
+            [
+              "VIA46:/GND"
+            ],
+            [
+              "VIA47:/GND"
+            ],
+            [
+              "VIA48:/GND"
+            ],
+            [
+              "VIA4:/GND"
+            ],
+            [
+              "VIA51:/GND"
+            ],
+            [
+              "VIA53:/GND"
+            ],
+            [
+              "VIA54:/GND"
+            ],
+            [
+              "VIA55:/GND"
+            ],
+            [
+              "VIA5:/GND"
+            ],
+            [
+              "VIA6:/GND"
+            ],
+            [
+              "VIA8:/GND"
+            ],
+            [
+              "VIA9:/GND"
+            ]
+          ]
+        },
+        "uncovered_probes": {
+          "submitted": [],
+          "vendor": []
+        },
+        "equal": true
+      },
+      "l2": {
+        "groups": {
+          "submitted": [
+            [
+              "J1:1:64:/DA_P"
+            ],
+            [
+              "J1:2:65:/DA_N"
+            ],
+            [
+              "J1:3:66:/DB_P"
+            ],
+            [
+              "J1:4:67:/DC_P"
+            ],
+            [
+              "J1:5:68:/DC_N"
+            ],
+            [
+              "J1:6:69:/DB_N"
+            ],
+            [
+              "J1:7:70:/DD_P"
+            ],
+            [
+              "J1:8:71:/DD_N"
+            ],
+            [
+              "J1:SH:72:/SHIELD"
+            ],
+            [
+              "J1:SH:73:/SHIELD"
+            ],
+            [
+              "J2:1:36:Net-(J2-In)"
+            ],
+            [
+              "J2:2:37:/GND",
+              "J2:2:38:/GND",
+              "J2:2:39:/GND",
+              "J2:2:40:/GND",
+              "J3:2:44:/GND",
+              "J3:2:45:/GND",
+              "J3:2:46:/GND",
+              "J3:2:47:/GND",
+              "J4:2:54:/GND",
+              "J4:2:55:/GND",
+              "J4:2:56:/GND",
+              "J4:2:57:/GND",
+              "J5:2:49:/GND",
+              "J5:2:50:/GND",
+              "J5:2:51:/GND",
+              "J5:2:52:/GND",
+              "TP1:1:27:/GND",
+              "VIA0:/GND",
+              "VIA10:/GND",
+              "VIA11:/GND",
+              "VIA12:/GND",
+              "VIA13:/GND",
+              "VIA14:/GND",
+              "VIA15:/GND",
+              "VIA16:/GND",
+              "VIA17:/GND",
+              "VIA18:/GND",
+              "VIA19:/GND",
+              "VIA1:/GND",
+              "VIA20:/GND",
+              "VIA21:/GND",
+              "VIA22:/GND",
+              "VIA23:/GND",
+              "VIA24:/GND",
+              "VIA25:/GND",
+              "VIA26:/GND",
+              "VIA27:/GND",
+              "VIA28:/GND",
+              "VIA29:/GND",
+              "VIA2:/GND",
+              "VIA30:/GND",
+              "VIA31:/GND",
+              "VIA32:/GND",
+              "VIA33:/GND",
+              "VIA34:/GND",
+              "VIA35:/GND",
+              "VIA36:/GND",
+              "VIA37:/GND",
+              "VIA38:/GND",
+              "VIA39:/GND",
+              "VIA3:/GND",
+              "VIA40:/GND",
+              "VIA41:/GND",
+              "VIA42:/GND",
+              "VIA43:/GND",
+              "VIA44:/GND",
+              "VIA45:/GND",
+              "VIA46:/GND",
+              "VIA47:/GND",
+              "VIA48:/GND",
+              "VIA49:/GND",
+              "VIA4:/GND",
+              "VIA50:/GND",
+              "VIA51:/GND",
+              "VIA52:/GND",
+              "VIA53:/GND",
+              "VIA54:/GND",
+              "VIA55:/GND",
+              "VIA5:/GND",
+              "VIA6:/GND",
+              "VIA7:/GND",
+              "VIA8:/GND",
+              "VIA9:/GND"
+            ],
+            [
+              "J3:1:43:Net-(J3-In)"
+            ],
+            [
+              "J4:1:53:Net-(J4-In)"
+            ],
+            [
+              "J5:1:48:Net-(J5-In)"
+            ],
+            [
+              "TP2:1:23:/SHIELD"
+            ],
+            [
+              "VIA56:/DB_P"
+            ],
+            [
+              "VIA57:/DB_N"
+            ],
+            [
+              "VIA58:Net-(RCT4-Pad2)"
+            ],
+            [
+              "VIA59:Net-(RCT3-Pad2)"
+            ],
+            [
+              "VIA60:Net-(RCT1-Pad2)"
+            ]
+          ],
+          "vendor": [
+            [
+              "J2:2:37:/GND",
+              "J2:2:38:/GND",
+              "J2:2:39:/GND",
+              "J2:2:40:/GND",
+              "J3:2:44:/GND",
+              "J3:2:45:/GND",
+              "J3:2:46:/GND",
+              "J3:2:47:/GND",
+              "J4:2:54:/GND",
+              "J4:2:55:/GND",
+              "J4:2:56:/GND",
+              "J4:2:57:/GND",
+              "J5:2:49:/GND",
+              "J5:2:50:/GND",
+              "J5:2:51:/GND",
+              "J5:2:52:/GND",
+              "TP1:1:27:/GND",
+              "VIA0:/GND",
+              "VIA10:/GND",
+              "VIA11:/GND",
+              "VIA12:/GND",
+              "VIA13:/GND",
+              "VIA14:/GND",
+              "VIA15:/GND",
+              "VIA16:/GND",
+              "VIA17:/GND",
+              "VIA18:/GND",
+              "VIA19:/GND",
+              "VIA1:/GND",
+              "VIA20:/GND",
+              "VIA21:/GND",
+              "VIA22:/GND",
+              "VIA23:/GND",
+              "VIA24:/GND",
+              "VIA25:/GND",
+              "VIA26:/GND",
+              "VIA27:/GND",
+              "VIA28:/GND",
+              "VIA29:/GND",
+              "VIA2:/GND",
+              "VIA30:/GND",
+              "VIA31:/GND",
+              "VIA32:/GND",
+              "VIA33:/GND",
+              "VIA34:/GND",
+              "VIA35:/GND",
+              "VIA36:/GND",
+              "VIA37:/GND",
+              "VIA38:/GND",
+              "VIA39:/GND",
+              "VIA3:/GND",
+              "VIA40:/GND",
+              "VIA41:/GND",
+              "VIA42:/GND",
+              "VIA43:/GND",
+              "VIA44:/GND",
+              "VIA45:/GND",
+              "VIA46:/GND",
+              "VIA47:/GND",
+              "VIA48:/GND",
+              "VIA49:/GND",
+              "VIA4:/GND",
+              "VIA50:/GND",
+              "VIA51:/GND",
+              "VIA52:/GND",
+              "VIA53:/GND",
+              "VIA54:/GND",
+              "VIA55:/GND",
+              "VIA5:/GND",
+              "VIA6:/GND",
+              "VIA7:/GND",
+              "VIA8:/GND",
+              "VIA9:/GND"
+            ]
+          ]
+        },
+        "uncovered_probes": {
+          "submitted": [],
+          "vendor": [
+            "J1:1:64:/DA_P",
+            "J1:2:65:/DA_N",
+            "J1:3:66:/DB_P",
+            "J1:4:67:/DC_P",
+            "J1:5:68:/DC_N",
+            "J1:6:69:/DB_N",
+            "J1:7:70:/DD_P",
+            "J1:8:71:/DD_N",
+            "J1:SH:72:/SHIELD",
+            "J1:SH:73:/SHIELD",
+            "J2:1:36:Net-(J2-In)",
+            "J3:1:43:Net-(J3-In)",
+            "J4:1:53:Net-(J4-In)",
+            "J5:1:48:Net-(J5-In)",
+            "TP2:1:23:/SHIELD",
+            "VIA56:/DB_P",
+            "VIA57:/DB_N",
+            "VIA58:Net-(RCT4-Pad2)",
+            "VIA59:Net-(RCT3-Pad2)",
+            "VIA60:Net-(RCT1-Pad2)"
+          ]
+        },
+        "equal": false,
+        "functional_reference_equal": true,
+        "nonfunctional_single_pad_islands_removed": 20,
+        "unexplained_copper_removal_mm2": 0.0
+      },
+      "l3": {
+        "groups": {
+          "submitted": [
+            [
+              "J1:1:64:/DA_P"
+            ],
+            [
+              "J1:2:65:/DA_N"
+            ],
+            [
+              "J1:3:66:/DB_P"
+            ],
+            [
+              "J1:4:67:/DC_P"
+            ],
+            [
+              "J1:5:68:/DC_N"
+            ],
+            [
+              "J1:6:69:/DB_N"
+            ],
+            [
+              "J1:7:70:/DD_P"
+            ],
+            [
+              "J1:8:71:/DD_N"
+            ],
+            [
+              "J1:SH:72:/SHIELD"
+            ],
+            [
+              "J1:SH:73:/SHIELD"
+            ],
+            [
+              "J2:1:36:Net-(J2-In)"
+            ],
+            [
+              "J2:2:37:/GND",
+              "J2:2:38:/GND",
+              "J2:2:39:/GND",
+              "J2:2:40:/GND",
+              "J3:2:44:/GND",
+              "J3:2:45:/GND",
+              "J3:2:46:/GND",
+              "J3:2:47:/GND",
+              "J4:2:54:/GND",
+              "J4:2:55:/GND",
+              "J4:2:56:/GND",
+              "J4:2:57:/GND",
+              "J5:2:49:/GND",
+              "J5:2:50:/GND",
+              "J5:2:51:/GND",
+              "J5:2:52:/GND",
+              "TP1:1:27:/GND",
+              "VIA0:/GND",
+              "VIA10:/GND",
+              "VIA11:/GND",
+              "VIA12:/GND",
+              "VIA13:/GND",
+              "VIA14:/GND",
+              "VIA15:/GND",
+              "VIA16:/GND",
+              "VIA17:/GND",
+              "VIA18:/GND",
+              "VIA19:/GND",
+              "VIA1:/GND",
+              "VIA20:/GND",
+              "VIA21:/GND",
+              "VIA22:/GND",
+              "VIA23:/GND",
+              "VIA24:/GND",
+              "VIA25:/GND",
+              "VIA26:/GND",
+              "VIA27:/GND",
+              "VIA28:/GND",
+              "VIA29:/GND",
+              "VIA2:/GND",
+              "VIA30:/GND",
+              "VIA31:/GND",
+              "VIA32:/GND",
+              "VIA33:/GND",
+              "VIA34:/GND",
+              "VIA35:/GND",
+              "VIA36:/GND",
+              "VIA37:/GND",
+              "VIA38:/GND",
+              "VIA39:/GND",
+              "VIA3:/GND",
+              "VIA40:/GND",
+              "VIA41:/GND",
+              "VIA42:/GND",
+              "VIA43:/GND",
+              "VIA44:/GND",
+              "VIA45:/GND",
+              "VIA46:/GND",
+              "VIA47:/GND",
+              "VIA48:/GND",
+              "VIA49:/GND",
+              "VIA4:/GND",
+              "VIA50:/GND",
+              "VIA51:/GND",
+              "VIA52:/GND",
+              "VIA53:/GND",
+              "VIA54:/GND",
+              "VIA55:/GND",
+              "VIA5:/GND",
+              "VIA6:/GND",
+              "VIA7:/GND",
+              "VIA8:/GND",
+              "VIA9:/GND"
+            ],
+            [
+              "J3:1:43:Net-(J3-In)"
+            ],
+            [
+              "J4:1:53:Net-(J4-In)"
+            ],
+            [
+              "J5:1:48:Net-(J5-In)"
+            ],
+            [
+              "TP2:1:23:/SHIELD"
+            ],
+            [
+              "VIA56:/DB_P"
+            ],
+            [
+              "VIA57:/DB_N"
+            ],
+            [
+              "VIA58:Net-(RCT4-Pad2)"
+            ],
+            [
+              "VIA59:Net-(RCT3-Pad2)"
+            ],
+            [
+              "VIA60:Net-(RCT1-Pad2)"
+            ]
+          ],
+          "vendor": [
+            [
+              "J2:2:37:/GND",
+              "J2:2:38:/GND",
+              "J2:2:39:/GND",
+              "J2:2:40:/GND",
+              "J3:2:44:/GND",
+              "J3:2:45:/GND",
+              "J3:2:46:/GND",
+              "J3:2:47:/GND",
+              "J4:2:54:/GND",
+              "J4:2:55:/GND",
+              "J4:2:56:/GND",
+              "J4:2:57:/GND",
+              "J5:2:49:/GND",
+              "J5:2:50:/GND",
+              "J5:2:51:/GND",
+              "J5:2:52:/GND",
+              "TP1:1:27:/GND",
+              "VIA0:/GND",
+              "VIA10:/GND",
+              "VIA11:/GND",
+              "VIA12:/GND",
+              "VIA13:/GND",
+              "VIA14:/GND",
+              "VIA15:/GND",
+              "VIA16:/GND",
+              "VIA17:/GND",
+              "VIA18:/GND",
+              "VIA19:/GND",
+              "VIA1:/GND",
+              "VIA20:/GND",
+              "VIA21:/GND",
+              "VIA22:/GND",
+              "VIA23:/GND",
+              "VIA24:/GND",
+              "VIA25:/GND",
+              "VIA26:/GND",
+              "VIA27:/GND",
+              "VIA28:/GND",
+              "VIA29:/GND",
+              "VIA2:/GND",
+              "VIA30:/GND",
+              "VIA31:/GND",
+              "VIA32:/GND",
+              "VIA33:/GND",
+              "VIA34:/GND",
+              "VIA35:/GND",
+              "VIA36:/GND",
+              "VIA37:/GND",
+              "VIA38:/GND",
+              "VIA39:/GND",
+              "VIA3:/GND",
+              "VIA40:/GND",
+              "VIA41:/GND",
+              "VIA42:/GND",
+              "VIA43:/GND",
+              "VIA44:/GND",
+              "VIA45:/GND",
+              "VIA46:/GND",
+              "VIA47:/GND",
+              "VIA48:/GND",
+              "VIA49:/GND",
+              "VIA4:/GND",
+              "VIA50:/GND",
+              "VIA51:/GND",
+              "VIA52:/GND",
+              "VIA53:/GND",
+              "VIA54:/GND",
+              "VIA55:/GND",
+              "VIA5:/GND",
+              "VIA6:/GND",
+              "VIA7:/GND",
+              "VIA8:/GND",
+              "VIA9:/GND"
+            ]
+          ]
+        },
+        "uncovered_probes": {
+          "submitted": [],
+          "vendor": [
+            "J1:1:64:/DA_P",
+            "J1:2:65:/DA_N",
+            "J1:3:66:/DB_P",
+            "J1:4:67:/DC_P",
+            "J1:5:68:/DC_N",
+            "J1:6:69:/DB_N",
+            "J1:7:70:/DD_P",
+            "J1:8:71:/DD_N",
+            "J1:SH:72:/SHIELD",
+            "J1:SH:73:/SHIELD",
+            "J2:1:36:Net-(J2-In)",
+            "J3:1:43:Net-(J3-In)",
+            "J4:1:53:Net-(J4-In)",
+            "J5:1:48:Net-(J5-In)",
+            "TP2:1:23:/SHIELD",
+            "VIA56:/DB_P",
+            "VIA57:/DB_N",
+            "VIA58:Net-(RCT4-Pad2)",
+            "VIA59:Net-(RCT3-Pad2)",
+            "VIA60:Net-(RCT1-Pad2)"
+          ]
+        },
+        "equal": false,
+        "functional_reference_equal": true,
+        "nonfunctional_single_pad_islands_removed": 20,
+        "unexplained_copper_removal_mm2": 0.0
+      },
+      "bl": {
+        "groups": {
+          "submitted": [
+            [
+              "J1:1:64:/DA_P"
+            ],
+            [
+              "J1:2:65:/DA_N"
+            ],
+            [
+              "J1:3:66:/DB_P",
+              "VIA56:/DB_P"
+            ],
+            [
+              "J1:4:67:/DC_P"
+            ],
+            [
+              "J1:5:68:/DC_N"
+            ],
+            [
+              "J1:6:69:/DB_N",
+              "VIA57:/DB_N"
+            ],
+            [
+              "J1:7:70:/DD_P"
+            ],
+            [
+              "J1:8:71:/DD_N"
+            ],
+            [
+              "J1:SH:72:/SHIELD"
+            ],
+            [
+              "J1:SH:73:/SHIELD"
+            ],
+            [
+              "J2:1:36:Net-(J2-In)"
+            ],
+            [
+              "J2:2:37:/GND",
+              "J2:2:38:/GND",
+              "J2:2:39:/GND",
+              "J2:2:40:/GND"
+            ],
+            [
+              "J3:1:43:Net-(J3-In)"
+            ],
+            [
+              "J3:2:44:/GND",
+              "J3:2:45:/GND",
+              "J3:2:46:/GND",
+              "J3:2:47:/GND"
+            ],
+            [
+              "J4:1:53:Net-(J4-In)"
+            ],
+            [
+              "J4:2:54:/GND",
+              "J4:2:55:/GND",
+              "J4:2:56:/GND",
+              "J4:2:57:/GND"
+            ],
+            [
+              "J5:1:48:Net-(J5-In)"
+            ],
+            [
+              "J5:2:49:/GND",
+              "J5:2:50:/GND",
+              "J5:2:51:/GND",
+              "J5:2:52:/GND"
+            ],
+            [
+              "RCT1:1:58:/GND",
+              "VIA18:/GND"
+            ],
+            [
+              "RCT1:2:59:Net-(RCT1-Pad2)",
+              "VIA60:Net-(RCT1-Pad2)"
+            ],
+            [
+              "RCT3:1:60:/GND",
+              "VIA26:/GND"
+            ],
+            [
+              "RCT3:2:61:Net-(RCT3-Pad2)",
+              "VIA59:Net-(RCT3-Pad2)"
+            ],
+            [
+              "RCT4:1:41:/GND",
+              "VIA41:/GND"
+            ],
+            [
+              "RCT4:2:42:Net-(RCT4-Pad2)",
+              "VIA58:Net-(RCT4-Pad2)"
+            ],
+            [
+              "TP1:1:27:/GND"
+            ],
+            [
+              "TP2:1:23:/SHIELD"
+            ],
+            [
+              "VIA0:/GND"
+            ],
+            [
+              "VIA10:/GND"
+            ],
+            [
+              "VIA11:/GND"
+            ],
+            [
+              "VIA12:/GND"
+            ],
+            [
+              "VIA13:/GND"
+            ],
+            [
+              "VIA14:/GND"
+            ],
+            [
+              "VIA15:/GND"
+            ],
+            [
+              "VIA16:/GND"
+            ],
+            [
+              "VIA17:/GND"
+            ],
+            [
+              "VIA19:/GND"
+            ],
+            [
+              "VIA1:/GND"
+            ],
+            [
+              "VIA20:/GND"
+            ],
+            [
+              "VIA21:/GND"
+            ],
+            [
+              "VIA22:/GND"
+            ],
+            [
+              "VIA23:/GND"
+            ],
+            [
+              "VIA24:/GND"
+            ],
+            [
+              "VIA25:/GND"
+            ],
+            [
+              "VIA27:/GND"
+            ],
+            [
+              "VIA28:/GND"
+            ],
+            [
+              "VIA29:/GND"
+            ],
+            [
+              "VIA2:/GND"
+            ],
+            [
+              "VIA30:/GND"
+            ],
+            [
+              "VIA31:/GND"
+            ],
+            [
+              "VIA32:/GND"
+            ],
+            [
+              "VIA33:/GND"
+            ],
+            [
+              "VIA34:/GND"
+            ],
+            [
+              "VIA35:/GND"
+            ],
+            [
+              "VIA36:/GND"
+            ],
+            [
+              "VIA37:/GND"
+            ],
+            [
+              "VIA38:/GND"
+            ],
+            [
+              "VIA39:/GND"
+            ],
+            [
+              "VIA3:/GND"
+            ],
+            [
+              "VIA40:/GND"
+            ],
+            [
+              "VIA42:/GND"
+            ],
+            [
+              "VIA43:/GND"
+            ],
+            [
+              "VIA44:/GND"
+            ],
+            [
+              "VIA45:/GND"
+            ],
+            [
+              "VIA46:/GND"
+            ],
+            [
+              "VIA47:/GND"
+            ],
+            [
+              "VIA48:/GND"
+            ],
+            [
+              "VIA49:/GND"
+            ],
+            [
+              "VIA4:/GND"
+            ],
+            [
+              "VIA50:/GND"
+            ],
+            [
+              "VIA51:/GND"
+            ],
+            [
+              "VIA52:/GND"
+            ],
+            [
+              "VIA53:/GND"
+            ],
+            [
+              "VIA54:/GND"
+            ],
+            [
+              "VIA55:/GND"
+            ],
+            [
+              "VIA5:/GND"
+            ],
+            [
+              "VIA6:/GND"
+            ],
+            [
+              "VIA7:/GND"
+            ],
+            [
+              "VIA8:/GND"
+            ],
+            [
+              "VIA9:/GND"
+            ]
+          ],
+          "vendor": [
+            [
+              "J1:1:64:/DA_P"
+            ],
+            [
+              "J1:2:65:/DA_N"
+            ],
+            [
+              "J1:3:66:/DB_P",
+              "VIA56:/DB_P"
+            ],
+            [
+              "J1:4:67:/DC_P"
+            ],
+            [
+              "J1:5:68:/DC_N"
+            ],
+            [
+              "J1:6:69:/DB_N",
+              "VIA57:/DB_N"
+            ],
+            [
+              "J1:7:70:/DD_P"
+            ],
+            [
+              "J1:8:71:/DD_N"
+            ],
+            [
+              "J1:SH:72:/SHIELD"
+            ],
+            [
+              "J1:SH:73:/SHIELD"
+            ],
+            [
+              "J2:1:36:Net-(J2-In)"
+            ],
+            [
+              "J2:2:37:/GND",
+              "J2:2:38:/GND",
+              "J2:2:39:/GND",
+              "J2:2:40:/GND"
+            ],
+            [
+              "J3:1:43:Net-(J3-In)"
+            ],
+            [
+              "J3:2:44:/GND",
+              "J3:2:45:/GND",
+              "J3:2:46:/GND",
+              "J3:2:47:/GND"
+            ],
+            [
+              "J4:1:53:Net-(J4-In)"
+            ],
+            [
+              "J4:2:54:/GND",
+              "J4:2:55:/GND",
+              "J4:2:56:/GND",
+              "J4:2:57:/GND"
+            ],
+            [
+              "J5:1:48:Net-(J5-In)"
+            ],
+            [
+              "J5:2:49:/GND",
+              "J5:2:50:/GND",
+              "J5:2:51:/GND",
+              "J5:2:52:/GND"
+            ],
+            [
+              "RCT1:1:58:/GND",
+              "VIA18:/GND"
+            ],
+            [
+              "RCT1:2:59:Net-(RCT1-Pad2)",
+              "VIA60:Net-(RCT1-Pad2)"
+            ],
+            [
+              "RCT3:1:60:/GND",
+              "VIA26:/GND"
+            ],
+            [
+              "RCT3:2:61:Net-(RCT3-Pad2)",
+              "VIA59:Net-(RCT3-Pad2)"
+            ],
+            [
+              "RCT4:1:41:/GND",
+              "VIA41:/GND"
+            ],
+            [
+              "RCT4:2:42:Net-(RCT4-Pad2)",
+              "VIA58:Net-(RCT4-Pad2)"
+            ],
+            [
+              "TP1:1:27:/GND"
+            ],
+            [
+              "TP2:1:23:/SHIELD"
+            ],
+            [
+              "VIA0:/GND"
+            ],
+            [
+              "VIA10:/GND"
+            ],
+            [
+              "VIA11:/GND"
+            ],
+            [
+              "VIA12:/GND"
+            ],
+            [
+              "VIA13:/GND"
+            ],
+            [
+              "VIA14:/GND"
+            ],
+            [
+              "VIA15:/GND"
+            ],
+            [
+              "VIA16:/GND"
+            ],
+            [
+              "VIA17:/GND"
+            ],
+            [
+              "VIA19:/GND"
+            ],
+            [
+              "VIA1:/GND"
+            ],
+            [
+              "VIA20:/GND"
+            ],
+            [
+              "VIA21:/GND"
+            ],
+            [
+              "VIA22:/GND"
+            ],
+            [
+              "VIA23:/GND"
+            ],
+            [
+              "VIA24:/GND"
+            ],
+            [
+              "VIA25:/GND"
+            ],
+            [
+              "VIA27:/GND"
+            ],
+            [
+              "VIA28:/GND"
+            ],
+            [
+              "VIA29:/GND"
+            ],
+            [
+              "VIA2:/GND"
+            ],
+            [
+              "VIA30:/GND"
+            ],
+            [
+              "VIA31:/GND"
+            ],
+            [
+              "VIA32:/GND"
+            ],
+            [
+              "VIA33:/GND"
+            ],
+            [
+              "VIA34:/GND"
+            ],
+            [
+              "VIA35:/GND"
+            ],
+            [
+              "VIA36:/GND"
+            ],
+            [
+              "VIA37:/GND"
+            ],
+            [
+              "VIA38:/GND"
+            ],
+            [
+              "VIA39:/GND"
+            ],
+            [
+              "VIA3:/GND"
+            ],
+            [
+              "VIA40:/GND"
+            ],
+            [
+              "VIA42:/GND"
+            ],
+            [
+              "VIA43:/GND"
+            ],
+            [
+              "VIA44:/GND"
+            ],
+            [
+              "VIA45:/GND"
+            ],
+            [
+              "VIA46:/GND"
+            ],
+            [
+              "VIA47:/GND"
+            ],
+            [
+              "VIA48:/GND"
+            ],
+            [
+              "VIA49:/GND"
+            ],
+            [
+              "VIA4:/GND"
+            ],
+            [
+              "VIA50:/GND"
+            ],
+            [
+              "VIA51:/GND"
+            ],
+            [
+              "VIA52:/GND"
+            ],
+            [
+              "VIA53:/GND"
+            ],
+            [
+              "VIA54:/GND"
+            ],
+            [
+              "VIA55:/GND"
+            ],
+            [
+              "VIA5:/GND"
+            ],
+            [
+              "VIA6:/GND"
+            ],
+            [
+              "VIA7:/GND"
+            ],
+            [
+              "VIA8:/GND"
+            ],
+            [
+              "VIA9:/GND"
+            ]
+          ]
+        },
+        "uncovered_probes": {
+          "submitted": [],
+          "vendor": []
+        },
+        "equal": true
+      }
+    },
+    "outline": {
+      "source_bounds": [
+        0.0,
+        0.0,
+        80.0,
+        74.0
+      ],
+      "vendor_bounds": [
+        0.0,
+        -2.5399999999999997e-05,
+        79.9999924,
+        73.999979
+      ],
+      "hausdorff_mm": 2.571303171543845e-05
+    },
+    "controlled_reference_checks": [
+      {
+        "id": "DIFF_L1",
+        "net": "/DA_P",
+        "missing_reference_mm2": 0.0
+      },
+      {
+        "id": "DIFF_L1",
+        "net": "/DA_N",
+        "missing_reference_mm2": 0.0
+      },
+      {
+        "id": "DIFF_L1",
+        "net": "/DC_P",
+        "missing_reference_mm2": 0.0
+      },
+      {
+        "id": "DIFF_L1",
+        "net": "/DC_N",
+        "missing_reference_mm2": 0.0
+      },
+      {
+        "id": "DIFF_L1",
+        "net": "/DD_P",
+        "missing_reference_mm2": 0.0
+      },
+      {
+        "id": "DIFF_L1",
+        "net": "/DD_N",
+        "missing_reference_mm2": 0.0
+      },
+      {
+        "id": "DIFF_L4",
+        "net": "/DB_P",
+        "missing_reference_mm2": 0.0
+      },
+      {
+        "id": "DIFF_L4",
+        "net": "/DB_N",
+        "missing_reference_mm2": 0.0
+      },
+      {
+        "id": "SINGLE_L1",
+        "net": "Net-(J2-In)",
+        "missing_reference_mm2": 0.0
+      },
+      {
+        "id": "SINGLE_L1",
+        "net": "Net-(J3-In)",
+        "missing_reference_mm2": 0.0
+      },
+      {
+        "id": "SINGLE_L1",
+        "net": "Net-(J4-In)",
+        "missing_reference_mm2": 0.0
+      },
+      {
+        "id": "SINGLE_L1",
+        "net": "Net-(J5-In)",
+        "missing_reference_mm2": 0.0
+      }
+    ],
+    "holes": [
+      {
+        "xy": [
+          5.0,
+          69.0
+        ],
+        "finished_mm": 3.2,
+        "plated": false,
+        "vendor": {
+          "xy": [
+            4.9999899999999995,
+            68.999989
+          ],
+          "drill_mm": 3.2500062
+        },
+        "tool": {
+          "type": "NON_PLATED",
+          "finish": 3.199999999999999,
+          "drill": 3.2499999999999996
+        },
+        "center_error_mm": 1.4866068748141802e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          5.0,
+          5.0
+        ],
+        "finished_mm": 3.2,
+        "plated": false,
+        "vendor": {
+          "xy": [
+            4.9999899999999995,
+            4.999964599999999
+          ],
+          "drill_mm": 3.2500062
+        },
+        "tool": {
+          "type": "NON_PLATED",
+          "finish": 3.199999999999999,
+          "drill": 3.2499999999999996
+        },
+        "center_error_mm": 3.6785323160992914e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          66.0,
+          70.5
+        ],
+        "finished_mm": 3.2,
+        "plated": false,
+        "vendor": {
+          "xy": [
+            65.999995,
+            70.49998599999999
+          ],
+          "drill_mm": 3.2500062
+        },
+        "tool": {
+          "type": "NON_PLATED",
+          "finish": 3.199999999999999,
+          "drill": 3.2499999999999996
+        },
+        "center_error_mm": 1.486606875471379e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          66.0,
+          3.5
+        ],
+        "finished_mm": 3.2,
+        "plated": false,
+        "vendor": {
+          "xy": [
+            65.999995,
+            3.4999675999999997
+          ],
+          "drill_mm": 3.2500062
+        },
+        "tool": {
+          "type": "NON_PLATED",
+          "finish": 3.199999999999999,
+          "drill": 3.2499999999999996
+        },
+        "center_error_mm": 3.2783532452026555e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          10.43,
+          42.715
+        ],
+        "finished_mm": 3.25,
+        "plated": false,
+        "vendor": {
+          "xy": [
+            10.430002,
+            42.714976799999995
+          ],
+          "drill_mm": 3.2999934
+        },
+        "tool": {
+          "type": "NON_PLATED",
+          "finish": 3.2499999999999996,
+          "drill": 3.3000000000000003
+        },
+        "center_error_mm": 2.328604733273491e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          10.43,
+          31.284999999999997
+        ],
+        "finished_mm": 3.25,
+        "plated": false,
+        "vendor": {
+          "xy": [
+            10.430002,
+            31.2849768
+          ],
+          "drill_mm": 3.2999934
+        },
+        "tool": {
+          "type": "NON_PLATED",
+          "finish": 3.2499999999999996,
+          "drill": 3.3000000000000003
+        },
+        "center_error_mm": 2.3286047322116156e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          2.5,
+          65.0
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            2.4999949999999997,
+            64.9999716
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 2.8836782072356216e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          2.5,
+          56.0
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            2.4999949999999997,
+            55.9999896
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 1.1539497390181492e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          2.5,
+          47.0
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            2.4999949999999997,
+            46.9999822
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 1.84889156002225e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          2.5,
+          38.0
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            2.4999949999999997,
+            37.9999748
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 2.5691243647635503e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          2.5,
+          29.0
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            2.4999949999999997,
+            28.9999674
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 3.2981206770772204e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          2.5,
+          20.0
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            2.4999949999999997,
+            19.9999854
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 1.543243337925298e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          2.5,
+          11.0
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            2.4999949999999997,
+            10.999978
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 2.2561028344947703e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          10.0,
+          71.5
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            10.0000054,
+            71.499984
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 1.6886681144098506e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          10.0,
+          2.5
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            10.0000054,
+            2.4999696
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 3.087588055408354e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          11.0,
+          50.5
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            11.000003399999999,
+            50.4999752
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 2.50319795445266e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          11.0,
+          22.0
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            11.000003399999999,
+            21.9999814
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 1.8908199280110916e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          18.0,
+          71.5
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            17.999989399999997,
+            71.499984
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 1.9192706951779108e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          18.0,
+          2.5
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            17.999989399999997,
+            2.4999696
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 3.219503067345102e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          26.0,
+          71.5
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            25.9999988,
+            71.499984
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 1.604493689832142e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          26.0,
+          2.5
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            25.9999988,
+            2.4999696
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 3.042367499166888e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          34.0,
+          71.5
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            34.0000082,
+            71.499984
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 1.7978876497941565e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          34.0,
+          2.5
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            34.0000082,
+            2.4999696
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 3.1486505046699255e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          37.0,
+          50.0
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            37.0000022,
+            49.99997619999999
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 2.390146439812245e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          37.5,
+          9.799999999999997
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            37.5000012,
+            9.799980399999999
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 1.9636700331926894e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          38.0,
+          70.0
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            38.000000199999995,
+            69.99998699999999
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 1.3001538380252216e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          38.0,
+          26.0
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            38.000000199999995,
+            25.999973399999995
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 2.660075187435399e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          40.0,
+          50.8
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            39.9999962,
+            50.7999746
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 2.5682678986666332e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          40.0,
+          43.2
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            39.9999962,
+            43.19996439999999
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 3.580223457827466e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          40.5,
+          49.54
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            40.499995199999994,
+            49.5399822
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 1.8435834674096362e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          40.5,
+          44.46
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            40.499995199999994,
+            44.4599822
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 1.8435834674096362e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          41.0,
+          63.7
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            40.9999942,
+            63.6999742
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 2.644390289122611e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          41.0,
+          50.8
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            40.9999942,
+            50.7999746
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 2.605379050888136e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          41.0,
+          43.2
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            40.9999942,
+            43.19996439999999
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 3.606937760408862e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          41.0,
+          27.700000000000003
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            40.9999942,
+            27.699969999999997
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 3.055552323754566e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          41.0,
+          9.700000000000003
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            40.9999942,
+            9.699980599999998
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 2.02484567348487e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          42.0,
+          71.5
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            41.999992199999994,
+            71.499984
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 1.780000000458974e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          42.0,
+          2.5
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            41.999992199999994,
+            2.4999696
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 3.138470965439981e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          48.040000000000006,
+          60.6
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            48.0400106,
+            60.59998039999999
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 2.2282728743554184e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          48.040000000000006,
+          42.6
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            48.0400106,
+            42.5999656
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 3.599611090377124e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          48.040000000000006,
+          24.599999999999994
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            48.0400106,
+            24.5999762
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 2.6053790503972376e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          48.040000000000006,
+          6.599999999999994
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            48.0400106,
+            6.5999868
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 1.6929264596148767e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          50.2,
+          62.46
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            50.200001199999996,
+            62.459971599999996
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 2.842534081182693e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          50.2,
+          44.46
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            50.200001199999996,
+            44.4599822
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 1.7840403584339114e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          50.2,
+          26.459999999999994
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            50.200001199999996,
+            26.459967399999996
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 3.262207841025372e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          50.2,
+          8.459999999999994
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            50.200001199999996,
+            8.459978
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 2.20327029600774e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          52.0,
+          71.5
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            51.9999976,
+            71.499984
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 1.6178998735081412e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          52.0,
+          2.5
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            51.9999976,
+            2.4999696
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 3.0494589684029985e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          53.0,
+          56.0
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            52.9999956,
+            55.9999896
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 1.129247537213382e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          53.0,
+          38.0
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            52.9999956,
+            37.9999748
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 2.558124313192021e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          53.0,
+          20.0
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            52.9999956,
+            19.9999854
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 1.5248606494277597e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          57.0,
+          56.0
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            57.000013,
+            55.9999896
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 1.6648123019902127e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          57.0,
+          38.0
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            57.000013,
+            37.9999748
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 2.8355599098413723e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          57.0,
+          20.0
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            57.000013,
+            19.9999854
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 1.954891301512366e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          60.0,
+          71.5
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            60.000007,
+            71.499984
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 1.7464249197234104e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          60.0,
+          2.5
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            60.000007,
+            2.4999696
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 3.119551249700306e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          61.0,
+          56.0
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            61.000004999999994,
+            55.9999896
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 1.1539497387680014e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          61.0,
+          38.0
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            61.000004999999994,
+            37.9999748
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 2.5691243646511937e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          61.0,
+          20.0
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            61.000004999999994,
+            19.9999854
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 1.5432433377382518e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          65.0,
+          56.0
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            64.999997,
+            55.9999896
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 1.082404730474128e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          65.0,
+          38.0
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            64.999997,
+            37.9999748
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 2.5377943182997376e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          65.0,
+          20.0
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            64.999997,
+            19.9999854
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 1.4905032708530131e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          69.0,
+          56.0
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            69.0000144,
+            55.9999896
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 1.7762882647550325e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          69.0,
+          38.0
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            69.0000144,
+            37.9999748
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 2.9024127895508083e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          69.0,
+          20.0
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            69.0000144,
+            19.9999854
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 2.0506584306942013e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          70.0,
+          71.5
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            70.00001239999999,
+            71.499984
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 2.0242529480985173e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          70.0,
+          2.5
+        ],
+        "finished_mm": 0.3,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            70.00001239999999,
+            2.4999696
+          ],
+          "drill_mm": 0.29999939999999997
+        },
+        "tool": {
+          "type": "VIA",
+          "finish": 0.30000000000000016,
+          "drill": 0.30000000000000016
+        },
+        "center_error_mm": 3.2831692002029624e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          15.43,
+          40.61
+        ],
+        "finished_mm": 0.9,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            15.429992,
+            40.6099772
+          ],
+          "drill_mm": 1.0500106
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 0.9000000000000001,
+          "drill": 1.0500000000000003
+        },
+        "center_error_mm": 2.4162781293282176e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          15.43,
+          38.57
+        ],
+        "finished_mm": 0.9,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            15.429992,
+            38.5699762
+          ],
+          "drill_mm": 1.0500106
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 0.9000000000000001,
+          "drill": 1.0500000000000003
+        },
+        "center_error_mm": 2.510856427671444e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          15.43,
+          36.53
+        ],
+        "finished_mm": 0.9,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            15.429992,
+            36.529975199999996
+          ],
+          "drill_mm": 1.0500106
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 0.9000000000000001,
+          "drill": 1.0500000000000003
+        },
+        "center_error_mm": 2.6058395964969462e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          15.43,
+          34.49
+        ],
+        "finished_mm": 0.9,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            15.429992,
+            34.4899742
+          ],
+          "drill_mm": 1.0500106
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 0.9000000000000001,
+          "drill": 1.0500000000000003
+        },
+        "center_error_mm": 2.7011849254504132e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          17.46,
+          39.59
+        ],
+        "finished_mm": 0.9,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            17.4600108,
+            39.5899894
+          ],
+          "drill_mm": 1.0500106
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 0.9000000000000001,
+          "drill": 1.0500000000000003
+        },
+        "center_error_mm": 1.5132745951374668e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          17.46,
+          37.55
+        ],
+        "finished_mm": 0.9,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            17.4600108,
+            37.5499884
+          ],
+          "drill_mm": 1.0500106
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 0.9000000000000001,
+          "drill": 1.0500000000000003
+        },
+        "center_error_mm": 1.5849290204183682e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          17.46,
+          35.51
+        ],
+        "finished_mm": 0.9,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            17.4600108,
+            35.5099874
+          ],
+          "drill_mm": 1.0500106
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 0.9000000000000001,
+          "drill": 1.0500000000000003
+        },
+        "center_error_mm": 1.6595180020533676e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          17.46,
+          33.47
+        ],
+        "finished_mm": 0.9,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            17.4600108,
+            33.4699864
+          ],
+          "drill_mm": 1.0500106
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 0.9000000000000001,
+          "drill": 1.0500000000000003
+        },
+        "center_error_mm": 1.7366634672305063e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          5.0,
+          22.0
+        ],
+        "finished_mm": 1.0,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            4.9999899999999995,
+            21.9999814
+          ],
+          "drill_mm": 1.1500103999999998
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 1.0000000000000002,
+          "drill": 1.1500000000000001
+        },
+        "center_error_mm": 2.111776503407069e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          23.0,
+          70.5
+        ],
+        "finished_mm": 1.0,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            23.0000048,
+            70.49998599999999
+          ],
+          "drill_mm": 1.1500103999999998
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 1.0000000000000002,
+          "drill": 1.1500000000000001
+        },
+        "center_error_mm": 1.4800000006648833e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          6.969999999999999,
+          44.94
+        ],
+        "finished_mm": 1.6,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            6.970013999999999,
+            44.939966
+          ],
+          "drill_mm": 1.7500091999999998
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 1.6,
+          "drill": 1.7500000000000002
+        },
+        "center_error_mm": 3.6769552621236023e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          6.969999999999999,
+          29.060000000000002
+        ],
+        "finished_mm": 1.6,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            6.970013999999999,
+            29.059987599999996
+          ],
+          "drill_mm": 1.7500091999999998
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 1.6,
+          "drill": 1.7500000000000002
+        },
+        "center_error_mm": 1.870187156844413e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          74.5,
+          65.0
+        ],
+        "finished_mm": 1.6,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            74.5000034,
+            64.9999716
+          ],
+          "drill_mm": 1.7500091999999998
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 1.6,
+          "drill": 1.7500000000000002
+        },
+        "center_error_mm": 2.860279707067646e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          74.5,
+          47.0
+        ],
+        "finished_mm": 1.6,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            74.5000034,
+            46.9999822
+          ],
+          "drill_mm": 1.7500091999999998
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 1.6,
+          "drill": 1.7500000000000002
+        },
+        "center_error_mm": 1.8121810065495227e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          74.5,
+          29.0
+        ],
+        "finished_mm": 1.6,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            74.5000034,
+            28.9999674
+          ],
+          "drill_mm": 1.7500091999999998
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 1.6,
+          "drill": 1.7500000000000002
+        },
+        "center_error_mm": 3.2776821078838064e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          74.5,
+          11.0
+        ],
+        "finished_mm": 1.6,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            74.5000034,
+            10.999978
+          ],
+          "drill_mm": 1.7500091999999998
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 1.6,
+          "drill": 1.7500000000000002
+        },
+        "center_error_mm": 2.2261176967071323e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          71.96,
+          67.53999999999999
+        ],
+        "finished_mm": 1.7,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            71.96000339999999,
+            67.53997159999999
+          ],
+          "drill_mm": 1.8500089999999998
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 1.7000000000000004,
+          "drill": 1.85
+        },
+        "center_error_mm": 2.860279707067646e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          71.96,
+          62.46
+        ],
+        "finished_mm": 1.7,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            71.96000339999999,
+            62.459971599999996
+          ],
+          "drill_mm": 1.8500089999999998
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 1.7000000000000004,
+          "drill": 1.85
+        },
+        "center_error_mm": 2.860279707067646e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          71.96,
+          49.54
+        ],
+        "finished_mm": 1.7,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            71.96000339999999,
+            49.5399822
+          ],
+          "drill_mm": 1.8500089999999998
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 1.7000000000000004,
+          "drill": 1.85
+        },
+        "center_error_mm": 1.8121810065495227e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          71.96,
+          44.46
+        ],
+        "finished_mm": 1.7,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            71.96000339999999,
+            44.4599822
+          ],
+          "drill_mm": 1.8500089999999998
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 1.7000000000000004,
+          "drill": 1.85
+        },
+        "center_error_mm": 1.8121810065495227e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          71.96,
+          31.54
+        ],
+        "finished_mm": 1.7,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            71.96000339999999,
+            31.539967399999995
+          ],
+          "drill_mm": 1.8500089999999998
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 1.7000000000000004,
+          "drill": 1.85
+        },
+        "center_error_mm": 3.2776821082371615e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          71.96,
+          26.459999999999994
+        ],
+        "finished_mm": 1.7,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            71.96000339999999,
+            26.459967399999996
+          ],
+          "drill_mm": 1.8500089999999998
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 1.7000000000000004,
+          "drill": 1.85
+        },
+        "center_error_mm": 3.2776821075304514e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          71.96,
+          13.540000000000006
+        ],
+        "finished_mm": 1.7,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            71.96000339999999,
+            13.539978
+          ],
+          "drill_mm": 1.8500089999999998
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 1.7000000000000004,
+          "drill": 1.85
+        },
+        "center_error_mm": 2.2261176974093385e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          71.96,
+          8.459999999999994
+        ],
+        "finished_mm": 1.7,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            71.96000339999999,
+            8.459978
+          ],
+          "drill_mm": 1.8500089999999998
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 1.7000000000000004,
+          "drill": 1.85
+        },
+        "center_error_mm": 2.2261176961804777e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          77.04,
+          67.53999999999999
+        ],
+        "finished_mm": 1.7,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            77.0400034,
+            67.53997159999999
+          ],
+          "drill_mm": 1.8500089999999998
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 1.7000000000000004,
+          "drill": 1.85
+        },
+        "center_error_mm": 2.860279707067646e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          77.04,
+          62.46
+        ],
+        "finished_mm": 1.7,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            77.0400034,
+            62.459971599999996
+          ],
+          "drill_mm": 1.8500089999999998
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 1.7000000000000004,
+          "drill": 1.85
+        },
+        "center_error_mm": 2.860279707067646e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          77.04,
+          49.54
+        ],
+        "finished_mm": 1.7,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            77.0400034,
+            49.5399822
+          ],
+          "drill_mm": 1.8500089999999998
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 1.7000000000000004,
+          "drill": 1.85
+        },
+        "center_error_mm": 1.8121810065495227e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          77.04,
+          44.46
+        ],
+        "finished_mm": 1.7,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            77.0400034,
+            44.4599822
+          ],
+          "drill_mm": 1.8500089999999998
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 1.7000000000000004,
+          "drill": 1.85
+        },
+        "center_error_mm": 1.8121810065495227e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          77.04,
+          31.54
+        ],
+        "finished_mm": 1.7,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            77.0400034,
+            31.539967399999995
+          ],
+          "drill_mm": 1.8500089999999998
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 1.7000000000000004,
+          "drill": 1.85
+        },
+        "center_error_mm": 3.2776821082371615e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          77.04,
+          26.459999999999994
+        ],
+        "finished_mm": 1.7,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            77.0400034,
+            26.459967399999996
+          ],
+          "drill_mm": 1.8500089999999998
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 1.7000000000000004,
+          "drill": 1.85
+        },
+        "center_error_mm": 3.2776821075304514e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          77.04,
+          13.540000000000006
+        ],
+        "finished_mm": 1.7,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            77.0400034,
+            13.539978
+          ],
+          "drill_mm": 1.8500089999999998
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 1.7000000000000004,
+          "drill": 1.85
+        },
+        "center_error_mm": 2.2261176974093385e-05,
+        "match": true
+      },
+      {
+        "xy": [
+          77.04,
+          8.459999999999994
+        ],
+        "finished_mm": 1.7,
+        "plated": true,
+        "vendor": {
+          "xy": [
+            77.0400034,
+            8.459978
+          ],
+          "drill_mm": 1.8500089999999998
+        },
+        "tool": {
+          "type": "PLATED",
+          "finish": 1.7000000000000004,
+          "drill": 1.85
+        },
+        "center_error_mm": 2.2261176961804777e-05,
+        "match": true
+      }
+    ],
+    "via_count": 61,
+    "sk": [
+      {
+        "xy": [
+          2.4999949999999997,
+          64.9999716
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          2.4999949999999997,
+          55.9999896
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          2.4999949999999997,
+          46.9999822
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          2.4999949999999997,
+          37.9999748
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          2.4999949999999997,
+          28.9999674
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          2.4999949999999997,
+          19.9999854
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          2.4999949999999997,
+          10.999978
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          10.0000054,
+          71.499984
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          10.0000054,
+          2.4999696
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          11.000003399999999,
+          50.4999752
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          11.000003399999999,
+          21.9999814
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          17.999989399999997,
+          71.499984
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          17.999989399999997,
+          2.4999696
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          25.9999988,
+          71.499984
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          25.9999988,
+          2.4999696
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          34.0000082,
+          71.499984
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          34.0000082,
+          2.4999696
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          37.0000022,
+          49.99997619999999
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          37.5000012,
+          9.799980399999999
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          38.000000199999995,
+          69.99998699999999
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          38.000000199999995,
+          25.999973399999995
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          39.9999962,
+          50.7999746
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          39.9999962,
+          43.19996439999999
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          40.499995199999994,
+          49.5399822
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          40.499995199999994,
+          44.4599822
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          40.9999942,
+          63.6999742
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          40.9999942,
+          50.7999746
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          40.9999942,
+          43.19996439999999
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          40.9999942,
+          27.699969999999997
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          40.9999942,
+          9.699980599999998
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          41.999992199999994,
+          71.499984
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          41.999992199999994,
+          2.4999696
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          48.0400106,
+          60.59998039999999
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          48.0400106,
+          42.5999656
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          48.0400106,
+          24.5999762
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          48.0400106,
+          6.5999868
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          50.200001199999996,
+          62.459971599999996
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          50.200001199999996,
+          44.4599822
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          50.200001199999996,
+          26.459967399999996
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          50.200001199999996,
+          8.459978
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          51.9999976,
+          71.499984
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          51.9999976,
+          2.4999696
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          52.9999956,
+          55.9999896
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          52.9999956,
+          37.9999748
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          52.9999956,
+          19.9999854
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          57.000013,
+          55.9999896
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          57.000013,
+          37.9999748
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          57.000013,
+          19.9999854
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          60.000007,
+          71.499984
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          60.000007,
+          2.4999696
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          61.000004999999994,
+          55.9999896
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          61.000004999999994,
+          37.9999748
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          61.000004999999994,
+          19.9999854
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          64.999997,
+          55.9999896
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          64.999997,
+          37.9999748
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          64.999997,
+          19.9999854
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          69.0000144,
+          55.9999896
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          69.0000144,
+          37.9999748
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          69.0000144,
+          19.9999854
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          70.00001239999999,
+          71.499984
+        ],
+        "diameter_mm": 0.45001179999999996
+      },
+      {
+        "xy": [
+          70.00001239999999,
+          2.4999696
+        ],
+        "diameter_mm": 0.45001179999999996
+      }
+    ],
+    "mask": {
+      "ts": {
+        "open_via_centers": 0,
+        "new_copper_exposure_beyond_0_01mm": 3.9818254727414497,
+        "lost_original_pad_exposure_beyond_0_01mm": 0.0,
+        "silk_on_open_copper_mm2": 0.0
+      },
+      "bs": {
+        "open_via_centers": 0,
+        "new_copper_exposure_beyond_0_01mm": 3.466323557395008,
+        "lost_original_pad_exposure_beyond_0_01mm": 0.0,
+        "silk_on_open_copper_mm2": 0.0
+      }
+    },
+    "order_metadata": {
+      "layers": 4,
+      "thickness": 1.6,
+      "cu_outer": 1.0,
+      "cu_inner": 0.5,
+      "via": "过孔塞油",
+      "finished": "无铅喷锡",
+      "orderRemark": "[不加客编]阻抗信息在附件【需客户确认叠构信息】;【需要阻抗】",
+      "tgBoardLevel": "TG155",
+      "camImpedanceList": [
+        {
+          "customerFinishedCopperThickness": 1.0,
+          "customerFinishedImpedanceValue": 50.0,
+          "customerLineDistance": 0.0,
+          "customerLineToCopperSpacing": 0.0,
+          "customerLineWidth": 14.05,
+          "customerLowerReference": "L2",
+          "customerUpperReference": "/",
+          "impedanceCalcResult": 49.97,
+          "impedanceLayer": "L1",
+          "impedancePattern": 0,
+          "impedanceToleranceRange": "10",
+          "impedanceToleranceRangeUnit": "%",
+          "impedanceType": "CoatedMicrostrip1B",
+          "pictureName": "单端阻抗 (外层)",
+          "recommendFinishedCopperThickness": 1.0,
+          "recommendFinishedImpedanceValue": 50.0,
+          "recommendLineDistance": 0.0,
+          "recommendLineToCopperSpacing": 0.0,
+          "recommendLineWidth": 14.05,
+          "recommendLowerReference": "L2",
+          "recommendUpperReference": "/",
+          "remark": ""
+        },
+        {
+          "customerFinishedCopperThickness": 1.0,
+          "customerFinishedImpedanceValue": 100.0,
+          "customerLineDistance": 8.5,
+          "customerLineToCopperSpacing": 0.0,
+          "customerLineWidth": 9.21,
+          "customerLowerReference": "L2",
+          "customerUpperReference": "/",
+          "impedanceCalcResult": 100.04,
+          "impedanceLayer": "L1",
+          "impedancePattern": 1,
+          "impedanceToleranceRange": "10",
+          "impedanceToleranceRangeUnit": "%",
+          "impedanceType": "DiffEdgeCoupledCoatedMicrostrip1B",
+          "pictureName": "差分阻抗 (外层)",
+          "recommendFinishedCopperThickness": 1.0,
+          "recommendFinishedImpedanceValue": 100.0,
+          "recommendLineDistance": 8.5,
+          "recommendLineToCopperSpacing": 0.0,
+          "recommendLineWidth": 9.21,
+          "recommendLowerReference": "L2",
+          "recommendUpperReference": "/",
+          "remark": ""
+        },
+        {
+          "customerFinishedCopperThickness": 1.0,
+          "customerFinishedImpedanceValue": 100.0,
+          "customerLineDistance": 8.5,
+          "customerLineToCopperSpacing": 0.0,
+          "customerLineWidth": 9.21,
+          "customerLowerReference": "/",
+          "customerUpperReference": "L3",
+          "impedanceCalcResult": 100.04,
+          "impedanceLayer": "L4",
+          "impedancePattern": 1,
+          "impedanceToleranceRange": "10",
+          "impedanceToleranceRangeUnit": "%",
+          "impedanceType": "DiffEdgeCoupledCoatedMicrostrip1B",
+          "pictureName": "差分阻抗 (外层)",
+          "recommendFinishedCopperThickness": 1.0,
+          "recommendFinishedImpedanceValue": 100.0,
+          "recommendLineDistance": 8.5,
+          "recommendLineToCopperSpacing": 0.0,
+          "recommendLineWidth": 9.21,
+          "recommendLowerReference": "/",
+          "recommendUpperReference": "L3",
+          "remark": ""
+        }
+      ],
+      "camLaminatedConstructionDetailsList": [
+        {
+          "adGlueThickness": 0.0,
+          "botConductorThick": 0.0,
+          "brandType": "",
+          "conductorPosition": 0,
+          "copperThickness": "",
+          "createTime": 1790833503000,
+          "dielectricConstant": 4.2,
+          "dielectricThick": 0.0,
+          "glueContent": "",
+          "innerCopperThickness": 0.0,
+          "layerName": "L1",
+          "material": "铜箔",
+          "materialName": "1oz",
+          "materialProperties": "1",
+          "materialReadme": "",
+          "materialType": 1,
+          "plateThickness": 0.0,
+          "residualCopperRate": 0.0,
+          "residualCopperRateDown": 0.0,
+          "specificationsModel": "",
+          "topConductorThick": 0.035,
+          "topConductorThickShow": 0.0
+        },
+        {
+          "adGlueThickness": 0.0,
+          "botConductorThick": 0.0,
+          "brandType": "NP-155F",
+          "conductorPosition": 0,
+          "copperThickness": "",
+          "createTime": 1790833503000,
+          "dielectricConstant": 4.4,
+          "dielectricThick": 0.2104,
+          "glueContent": "RC49%",
+          "innerCopperThickness": 0.0,
+          "layerName": "",
+          "material": "pp",
+          "materialName": "7628 RC49% 8.6mil",
+          "materialProperties": "PP",
+          "materialReadme": "",
+          "materialType": 0,
+          "plateThickness": 0.0,
+          "residualCopperRate": 0.0,
+          "residualCopperRateDown": 0.0,
+          "specificationsModel": "7628",
+          "topConductorThick": 0.0,
+          "topConductorThickShow": 0.0
+        },
+        {
+          "adGlueThickness": 0.0,
+          "botConductorThick": 0.0152,
+          "brandType": "NP-155F",
+          "conductorPosition": 0,
+          "copperThickness": "H/H",
+          "createTime": 1790833503000,
+          "dielectricConstant": 4.38,
+          "dielectricThick": 1.065,
+          "glueContent": "",
+          "innerCopperThickness": 0.0,
+          "layerName": "L2",
+          "material": "芯板",
+          "materialName": "1.1mm H/HOZ 含铜",
+          "materialProperties": "芯板",
+          "materialReadme": "",
+          "materialType": 2,
+          "plateThickness": 0.0,
+          "residualCopperRate": 0.0,
+          "residualCopperRateDown": 0.0,
+          "specificationsModel": "",
+          "topConductorThick": 0.0152,
+          "topConductorThickShow": 0.0
+        },
+        {
+          "adGlueThickness": 0.0,
+          "botConductorThick": 0.0152,
+          "brandType": "NP-155F",
+          "conductorPosition": 0,
+          "copperThickness": "H/H",
+          "createTime": 1790833503000,
+          "dielectricConstant": 4.38,
+          "dielectricThick": 1.065,
+          "glueContent": "",
+          "innerCopperThickness": 0.0,
+          "layerName": "L3",
+          "material": "芯板",
+          "materialName": "1.1mm H/HOZ 含铜",
+          "materialProperties": "芯板",
+          "materialReadme": "",
+          "materialType": 2,
+          "plateThickness": 0.0,
+          "residualCopperRate": 0.0,
+          "residualCopperRateDown": 0.0,
+          "specificationsModel": "",
+          "topConductorThick": 0.0152,
+          "topConductorThickShow": 0.0
+        },
+        {
+          "adGlueThickness": 0.0,
+          "botConductorThick": 0.0,
+          "brandType": "NP-155F",
+          "conductorPosition": 0,
+          "copperThickness": "",
+          "createTime": 1790833503000,
+          "dielectricConstant": 4.4,
+          "dielectricThick": 0.2104,
+          "glueContent": "RC49%",
+          "innerCopperThickness": 0.0,
+          "layerName": "",
+          "material": "pp",
+          "materialName": "7628 RC49% 8.6mil",
+          "materialProperties": "PP",
+          "materialReadme": "",
+          "materialType": 0,
+          "plateThickness": 0.0,
+          "residualCopperRate": 0.0,
+          "residualCopperRateDown": 0.0,
+          "specificationsModel": "7628",
+          "topConductorThick": 0.0,
+          "topConductorThickShow": 0.0
+        },
+        {
+          "adGlueThickness": 0.0,
+          "botConductorThick": 0.0,
+          "brandType": "",
+          "conductorPosition": 0,
+          "copperThickness": "",
+          "createTime": 1790833503000,
+          "dielectricConstant": 4.2,
+          "dielectricThick": 0.0,
+          "glueContent": "",
+          "innerCopperThickness": 0.0,
+          "layerName": "L4",
+          "material": "铜箔",
+          "materialName": "1oz",
+          "materialProperties": "1",
+          "materialReadme": "",
+          "materialType": 1,
+          "plateThickness": 0.0,
+          "residualCopperRate": 0.0,
+          "residualCopperRateDown": 0.0,
+          "specificationsModel": "",
+          "topConductorThick": 0.035,
+          "topConductorThickShow": 0.0
+        }
+      ]
+    },
+    "geometry_pass": true
+  },
+  "final_differential_tracks_equal_to_em_com_old": true,
+  "final_differential_vias_equal_to_em_com_old": true,
+  "lengths": {
+    "A": {
+      "p_mm": 44.96493275482622,
+      "n_mm": 44.96493978372216,
+      "delta_mm": 7.028895936400659e-06
+    },
+    "B": {
+      "p_mm": 32.930086254774714,
+      "n_mm": 32.93008509330951,
+      "delta_mm": 1.1614652066782583e-06
+    },
+    "C": {
+      "p_mm": 32.83568330227737,
+      "n_mm": 32.8356842302402,
+      "delta_mm": 9.279628301328557e-07
+    },
+    "D": {
+      "p_mm": 43.66767850275671,
+      "n_mm": 43.66767359447968,
+      "delta_mm": 4.9082770274822e-06
+    }
+  }
+}
