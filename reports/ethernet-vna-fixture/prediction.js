@@ -1,25 +1,23 @@
 (() => {
   const data=window.ETHERNET_SMA_PREDICTION;if(!data)return;
-  const modes={reflection:{label:'개방 입력 반사',symbol:'S11',connection:'SMA J3 / B · RJ45 외부 개방'},coupling:{label:'D→C 채널 간 결합',symbol:'S21',connection:'SMA J5 / D → J4 / C · RJ45 외부 개방'},matched:{label:'100 Ω 부하 입력 정합',symbol:'S11',connection:'SMA J2 / A · RJ45 1–2번에 99.9 Ω 부하'},loopback:{label:'두 채널 루프백 전달',symbol:'S21',connection:'SMA J5 / D → J4 / C · RJ45 7↔4 · 8↔5'}};
+  const modes={reflection:{label:'개방 입력 반사',symbol:'S11',connection:'SMA J3 / B · RJ45 외부 개방'},coupling:{label:'D→C 결합 (개방)',symbol:'S21',connection:'SMA J5 / D → J4 / C · RJ45 외부 개방'},matched:{label:'100 Ω 부하 정합',symbol:'S11',connection:'SMA J2 / A · RJ45 1–2번에 99.9 Ω 부하'},loopback:{label:'D→C 루프백 전달',symbol:'S21',connection:'SMA J5 / D → J4 / C · RJ45 7↔4 · 8↔5'}};
   let selected='reflection';
   let index=data.frequency_mhz.reduce((best,f,i)=>Math.abs(f-100)<Math.abs(data.frequency_mhz[best]-100)?i:best,0);
   modes.reflection.loads='나머지 SMA J2·J4·J5에 각각 50 Ω';
   modes.coupling.loads='나머지 SMA J2·J3에 각각 50 Ω';
   modes.matched.loads='나머지 SMA J3·J4·J5에 각각 50 Ω';
-  modes.loopback.loads='나머지 SMA J2·J3에 각각 50 Ω · 루프백에 별도 100 Ω 저항 없음';
+  modes.loopback.loads='나머지 SMA J2·J3에 각각 50 Ω · 루프백 선에 100 Ω 저항 없음';
   const fmt=(v,n=1)=>v.toFixed(n).replace('-','−');
   const frequencyText=()=>Number(data.frequency_mhz[index].toFixed(6))+' MHz';
   function sample(test){const curve=data.curves[test],re=curve.real[index],im=curve.imag[index];return {db:20*Math.log10(Math.hypot(re,im)),phase:Math.atan2(im,re)*180/Math.PI,resolved:curve.resolved[index]};}
   function draw(panel,test){
     const curve=data.curves[test],mode=modes[test],current=sample(test),frequency=data.frequency_mhz[index],$=selector=>panel.querySelector(selector);
     $('[data-prediction-title]').textContent=mode.label+' · '+mode.symbol;
-    $('[data-prediction-connection]').textContent=mode.connection+(test==='coupling'?' · PCB 결합 모델':'');
-    $('[data-prediction-scope]').textContent=test==='coupling'?'서로 다른 SMA·RJ45 페어·발룬 패키지 사이 결합은 0으로 두었습니다.':'';
-    $('[data-prediction-scope]').hidden=test!=='coupling';
+    $('[data-prediction-connection]').textContent=mode.connection;
     $('[data-prediction-loads]').textContent=mode.loads;
     $('[data-prediction-value]').textContent=fmt(current.db);$('[data-prediction-phase]').textContent='위상 '+fmt(current.phase)+'°';
     $('[data-prediction-frequency]').textContent=frequencyText();$('[data-prediction-output]').textContent=frequencyText();$('[data-prediction-slider]').value=index;$('[data-prediction-slider]').setAttribute('aria-valuetext',frequencyText());
-    $('[data-prediction-window]').textContent=current.resolved?'':'이 주파수에서는 기록길이를 바꿨을 때의 변화가 예측값의 10%보다 큽니다.';
+    $('[data-prediction-window]').textContent=current.resolved?'':'전체 기록 대비 3 ns·4 ns 절단 결과의 복소 차이가 명목 진폭의 10%를 넘습니다.';
     $('[data-prediction-window]').hidden=current.resolved;
     const svg=$('.prediction-chart'),width=svg.clientWidth||800,height=svg.clientHeight||245,pad={left:48,right:16,top:20,bottom:35};svg.setAttribute('viewBox',`0 0 ${width} ${height}`);svg.replaceChildren();
     const values=[...curve.low,...curve.high],minimum=Math.min(...values),maximum=Math.max(...values);

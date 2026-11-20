@@ -4,9 +4,9 @@ const data=window.ETHERNET_SMA_PREDICTION.geometry;
 const $=id=>document.getElementById('latest-'+id);
   const modes = [
     {name:'개방 입력 반사', channel:'B', sma:'J3', metric:'S11', key:'open_b_s11', route:'SMA J3 → 발룬 T2 → B페어 → 개방 RJ45 3·6번'},
-    {name:'개방 채널 간 결합', channel:'CD', sma:'J5 → J4', metric:'S21', key:'open_d_to_c_s21', route:'SMA J5 / D 구동 → SMA J4 / C 응답 · RJ45 외부 개방'},
-    {name:'100 Ω 부하 입력 정합', channel:'A', sma:'J2', metric:'S11', key:'matched_a_s11', route:'SMA J2 → 발룬 T1 → A페어 → RJ45 1·2번의 99.9 Ω 부하'},
-    {name:'두 채널 루프백 전달', channel:'CD', sma:'J5 → J4', metric:'S21', key:'loopback_d_to_c_s21', route:'SMA J5 / D → RJ45 7↔4 · 8↔5 → C / SMA J4'}
+    {name:'D→C 결합 (개방)', channel:'CD', sma:'J5 → J4', metric:'S21', key:'open_d_to_c_s21', route:'SMA J5 / D 구동 → SMA J4 / C 응답 · RJ45 외부 개방'},
+    {name:'100 Ω 부하 정합', channel:'A', sma:'J2', metric:'S11', key:'matched_a_s11', route:'SMA J2 → 발룬 T1 → A페어 → RJ45 1·2번의 99.9 Ω 부하'},
+    {name:'D→C 루프백 전달', channel:'CD', sma:'J5 → J4', metric:'S21', key:'loopback_d_to_c_s21', route:'SMA J5 / D → RJ45 7↔4 · 8↔5 → C / SMA J4'}
   ];
   const colors = {A:0xc87238, B:0x157d71, C:0x3575ba, D:0x905f9e};
   let mode = 0, spread = true, model, renderer, camera, scene, controls;

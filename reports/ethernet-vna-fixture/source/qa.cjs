@@ -36,7 +36,7 @@ const close=(a,b)=>Math.abs(a-b)<.051;
     const expectedWarning=test==='coupling'&&index===0;
     if((await page.locator('[data-prediction-window]').isVisible())!==expectedWarning)throw Error('Time-window flag '+test);
    }
-   if((await page.locator('[data-prediction-scope]').isVisible())!==(test==='coupling'))throw Error('Coupling scope');
+   if(!await page.locator('[data-coupling-scope]').isVisible())throw Error('Coupling scope');
    tested.push(test);
   }
   for(const pair of ['B','C','D','A']){await page.locator(`[data-pair="${pair}"]`).click();if(!(await page.locator('#pairSummary').textContent()).includes('페어 '+pair))throw Error('Pair explorer '+pair);}

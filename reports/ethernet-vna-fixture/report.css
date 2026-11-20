@@ -217,3 +217,4 @@ html{scroll-padding-top:22px}h1,h2,h3{word-break:keep-all}.review-tag{font-size:
 
 .metric-definition{margin:0 0 14px}.prediction-tile .case-condition{font-size:11px;line-height:1.5;margin:0 0 11px}.prediction-tile .prediction-tile-route{margin-bottom:5px}.prediction-readout>span:first-child{display:flex;align-items:baseline;justify-content:flex-end;gap:5px}.prediction-readout>span>small{display:inline;margin-left:0}
 @media(max-width:380px){.prediction-readout>span:first-child{justify-content:flex-start}}
+.prediction-tile>span{word-break:keep-all}
