@@ -68,18 +68,18 @@
     },
     {
       "id": "ethernet-vna-fixture",
-      "title": "발룬 Ethernet 보드 · 제작 전 검증",
-      "summary": "50 Ω VNA와 100 Ω Ethernet 페어를 잇는 보드. 실제 동박의 3D 형상과 openEMS 계산값을 비교하고, 실장면 선택부터 제조 CAM 검토까지 살펴봅니다.",
+      "title": "VNA 케이블 지그 · SMA↔Ethernet",
+      "summary": "50 Ω VNA와 100 Ω Ethernet 페어를 잇는 발룬 보드. 제작 PCB와 실제 3D 해석 형상, 네 구성의 1–200 MHz 예측값을 살펴봅니다.",
       "category": "하드웨어 · RF 측정",
-      "date": "2026-11-13",
+      "date": "2026-11-20",
       "path": "reports/ethernet-vna-fixture/",
-      "cover": "reports/ethernet-vna-fixture/cover.png?v=20261113-1",
-      "coverAlt": "발룬 Ethernet 보드의 네 층 동박을 펼친 3D 형상과 100 MHz의 반사·공통모드 변환·누화 계산값",
+      "cover": "reports/ethernet-vna-fixture/cover.png?v=20261120-1",
+      "coverAlt": "최종 PCB의 네 층 동박 3D와 개방 반사·PCB 결합·100 Ω 정합·루프백 전달의 100 MHz 예측값",
       "tags": [
         "3D",
         "openEMS",
         "PCB 설계",
-        "제작 전 검증"
+        "실측 전 예측"
       ]
     },
     {
