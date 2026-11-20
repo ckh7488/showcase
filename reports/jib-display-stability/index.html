@@ -1,0 +1,1591 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="정지 중 흔들리던 관제 화면을 실제 각도 로그로 재생하고, 출발 반응과 정지 안정성을 비교한 검수 기록">
+  <title>지브 각도 표시 안정화 | ATLAS</title>
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/theme.v1.css">
+  <style>
+:root { --gutter: clamp(16px, 4vw, 40px); }
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font: 1rem/1.65 var(--sc-font); color: var(--sc-ink); background: var(--sc-page); word-break: keep-all; overflow-wrap: anywhere; }
+button, input, select { font: inherit; color: inherit; }
+button, select, input[type=checkbox], input[type=range] { cursor: pointer; }
+:where(a, button, input, select):focus-visible { outline: 3px solid var(--sc-focus); outline-offset: 4px; }
+h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
+h1, h2, h3 { line-height: 1.3; letter-spacing: -.035em; }
+a { color: var(--sc-accent); text-underline-offset: .22em; }
+.wrap { width: min(1016px, calc(100% - 2 * var(--gutter))); margin-inline: auto; }
+.skip { position: absolute; top: -80px; inset-inline-start: 16px; z-index: 2; padding: 8px 12px; background: var(--sc-surface); }
+.skip:focus { top: 16px; }
+.masthead { border-bottom: 1px solid var(--sc-line); }
+.masthead-inner { display: flex; align-items: center; justify-content: space-between; gap: 10px 20px; min-height: 58px; padding-block: 10px; font-size: .85rem; }
+.masthead a { text-decoration: none; }
+.masthead a:hover { text-decoration: underline; }
+.atlas-link { white-space: nowrap; font-weight: 750; }
+.chapter-links { display: flex; flex-wrap: wrap; gap: 4px clamp(9px, 2vw, 22px); }
+.chapter-links a { color: var(--sc-muted); white-space: nowrap; }
+.report-intro { padding-top: clamp(28px, 5vw, 52px); }
+.intro-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .94fr); align-items: center; gap: 22px 34px; }
+.report-meta { display: flex; flex-wrap: wrap; gap: 0 16px; margin-bottom: 8px; color: var(--sc-muted); font-size: .83rem; }
+.report-intro h1 { font-size: clamp(2rem, 4vw, 2.75rem); }
+.intro-copy { margin-top: 10px; color: var(--sc-muted); max-width: 42em; }
+.lead-figure { min-width: 0; overflow: hidden; border: 1px solid #324c53; border-radius: var(--sc-radius); background: var(--sc-stage); color: var(--sc-stage-ink); }
+#lead-crane { height: 186px; }
+.lead-figure figcaption { display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 7px 12px; border-top: 1px solid #395059; color: #d0e0df; font-size: .78rem; }
+.lead-figure figcaption span { display: inline-flex; align-items: center; gap: 6px; }
+main { padding-bottom: 48px; }
+.chapter { padding-block: clamp(30px, 4vw, 45px); border-bottom: 1px solid var(--sc-line); scroll-margin-top: 1.1rem; }
+.chapter h2 { margin-bottom: 12px; font-size: clamp(1.35rem, 2.6vw, 1.85rem); }
+.copy { max-width: 52em; color: #445c64; }
+.copy + .copy { margin-top: 9px; }
+.copy strong { color: var(--sc-ink); }
+
+.replay { margin-top: 18px; overflow: hidden; background: var(--sc-surface); border: 1px solid var(--sc-line); border-radius: var(--sc-radius); }
+.figure-head { display: flex; gap: 10px 16px; flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 13px 15px; }
+.figure-head h3 { font-size: 1.06rem; }
+.segments { display: flex; flex-wrap: wrap; gap: 5px; }
+.segments button, #play { padding: 5px 10px; border: 1px solid var(--sc-line); border-radius: 6px; background: var(--sc-surface); font-size: .83rem; }
+.segments button[aria-pressed=true] { color: #115c52; background: var(--sc-accent-soft); border-color: #8ab8ad; font-weight: 650; }
+.stage { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); background: var(--sc-stage); color: var(--sc-stage-ink); }
+.curves, .crane-panel { min-width: 0; padding: 13px 14px; }
+.crane-panel { border-left: 1px solid #395059; }
+.legend { display: flex; flex-wrap: wrap; gap: 5px 13px; margin-bottom: 4px; font-size: .8rem; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.legend span[hidden] { display: none; }
+.key { width: 16px; border-top: 2px solid; }
+.input-key { color: var(--sc-rx); border-top-style: dashed; }
+.shown-key { color: var(--sc-tx); }
+.truth-key { color: var(--sc-ground); border-top-style: dotted; }
+.crane-heading { display: flex; align-items: center; flex-wrap: wrap; justify-content: space-between; gap: 5px; font-size: .8rem; }
+.crane-heading label { display: inline-flex; align-items: center; gap: 4px; }
+canvas { display: block; width: 100%; }
+#angle-chart { height: 209px; }
+#crane-model { height: 184px; }
+#model-delta { font-size: .78rem; color: #c1d2d3; }
+.replay-controls { display: flex; align-items: center; gap: 8px 12px; padding: 10px 15px; font-size: .84rem; }
+#play { min-width: 53px; border-color: #8ab8ad; }
+#position { flex: 1; min-width: 70px; accent-color: var(--sc-accent); }
+#play-time { min-width: 58px; text-align: right; font-variant-numeric: tabular-nums; }
+.readouts { display: grid; grid-template-columns: repeat(3, 1fr); background: #eef4f4; }
+.readouts div { padding: 7px 15px; }
+.readouts dt { font-size: .77rem; color: var(--sc-muted); }
+.readouts dd { font-size: .95rem; font-weight: 650; font-variant-numeric: tabular-nums; }
+figcaption { padding: 11px 15px; font-size: .85rem; color: var(--sc-muted); }
+
+.table-panel { overflow-x: auto; margin-block: 15px; border: 1px solid var(--sc-line); border-radius: 9px; background: var(--sc-surface); }
+table { width: 100%; border-collapse: collapse; text-align: left; font-size: .88rem; font-variant-numeric: tabular-nums; }
+caption { padding: 9px 13px; text-align: left; font-weight: 690; }
+th, td { padding: 8px 13px; border-top: 1px solid var(--sc-line); }
+thead th { color: #466169; background: #edf3f4; font-weight: 650; }
+tbody th { font-weight: 650; }
+.explain-figure { margin-block: 15px; overflow: hidden; border: 1px solid var(--sc-line); border-radius: var(--sc-radius); background: var(--sc-surface); }
+.explain-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 5px 17px; padding: 12px 15px; border-bottom: 1px solid var(--sc-line); }
+.explain-head h3 { font-size: 1rem; }
+.explain-head > span { color: var(--sc-muted); font-size: .8rem; }
+.explain-figure figcaption { border-top: 1px solid var(--sc-line); background: #f7f9fa; }
+.observations td, .observations th:not(:first-child) { text-align: center; }
+.observations .common-input { background: var(--sc-accent-soft); color: #12645b; }
+.observations .common-input > * { border-top: 2px solid #a2c8bf; }
+.flow-card h4 { font-size: .9rem; }
+.input-flow { display: grid; grid-template-columns: minmax(0,1fr) 22px minmax(0,1fr) 22px minmax(0,1fr); align-items: center; padding: 12px; }
+.flow-card { min-width: 0; padding: 9px 10px 4px; border: 1px solid var(--sc-line); border-radius: 7px; }
+.flow-card canvas { height: 92px; }
+.flow-sign { color: var(--sc-accent); font-size: 1.1rem; font-weight: 700; text-align: center; }
+.comparison { margin-bottom: 16px; }
+.scene-select { display: flex; align-items: center; flex-wrap: wrap; gap: 5px 8px; font-size: .82rem; color: var(--sc-muted); }
+.scene-select select { max-width: 100%; padding: 4px 7px; color: var(--sc-ink); border: 1px solid #b9cbd1; border-radius: 6px; background: #fff; }
+.comparison-layout { display: grid; grid-template-columns: minmax(0, 3.3fr) minmax(174px, 1fr); gap: 14px; align-items: start; padding: 14px 14px 12px; }
+.comparison-plot, .comparison-side { min-width: 0; }
+#compare-chart { height: 258px; }
+.comparison-legend { display: flex; align-items: center; flex-wrap: wrap; gap: 5px 12px; margin: 8px 0 11px; }
+.comparison-legend label { display: inline-flex; align-items: center; gap: 5px; font-size: .79rem; white-space: nowrap; cursor: pointer; }
+.comparison-legend input, #compare-zoom, #compare-time { accent-color: var(--sc-accent); }
+.comparison-key { display: inline-block; width: 14px; border-top: 2px solid var(--series); }
+.comparison-key.dashed { border-top-style: dashed; }
+.comparison-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 5px 8px; color: var(--sc-muted); font-size: .83rem; }
+#compare-play { padding: 4px 11px; border: 1px solid #8ab8ad; border-radius: 6px; background: #eaf4f1; color: #155d53; font-weight: 650; }
+#compare-time { flex: 1; min-width: 70px; }
+#compare-clock { min-width: 55px; text-align: right; font-variant-numeric: tabular-nums; }
+.comparison-side { padding: 10px 10px 9px; border-radius: 8px; background: #edf3f3; }
+#compare-crane { height: 140px; }
+.comparison-metric-title { border-top: 1px solid #cddbdd; padding-top: 7px; font-size: .77rem; font-weight: 650; }
+#compare-errors > div { display: flex; justify-content: space-between; align-items: baseline; gap: 7px; font-size: .77rem; }
+#compare-errors > [hidden] { display: none; }
+#compare-errors dt { display: flex; align-items: center; gap: 5px; }
+#compare-errors dd { white-space: nowrap; font-variant-numeric: tabular-nums; font-weight: 700; }
+.comparison-summary { margin-inline: 14px; overflow-x: auto; }
+.comparison-summary table { font-size: .79rem; }
+.comparison-summary caption { padding: 5px 0; }
+.comparison-summary th, .comparison-summary td { padding: 6px 9px; }
+.decision-plot, .wake-bars { padding: 12px 15px 14px; font-variant-numeric: tabular-nums; }
+.decision-axis, .ratio-axis { display: flex; justify-content: space-between; gap: 4px; color: var(--sc-muted); font-size: .75rem; }
+.decision-axis b { color: var(--sc-accent); }
+.decision-row { margin-top: 12px; }
+.decision-row > div:first-child, .bar-row { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 3px 10px; font-size: .85rem; }
+.decision-label { font-weight: 700; }
+.decision-track, .ratio-track { position: relative; height: 9px; margin-top: 6px; border-radius: 6px; background-color: #e4edef; }
+.decision-track::before { content: ""; position: absolute; top: -5px; bottom: -5px; left: 50%; border-left: 1px dashed #547978; }
+.decision-dot { position: absolute; top: 50%; left: var(--at); width: 10px; height: 10px; transform: translate(-50%, -50%); border-radius: 50%; box-shadow: 0 0 0 2px white; }
+.near { color: #9c4e21; }
+.passed { color: #176b5e; }
+.decision-dot.near { background: #b3632c; }
+.decision-dot.passed { background: #197d71; }
+.bar-row { margin-bottom: 8px; }
+.bar-row small { display: inline-block; color: var(--sc-muted); }
+.bar-row b { color: #146257; }
+.bar-row .ratio-track { flex: 0 0 100%; margin-top: 0; overflow: hidden; background-image: repeating-linear-gradient(to right, transparent 0, transparent calc(25% - 1px), #cbd8d9 calc(25% - 1px), #cbd8d9 25%); }
+.ratio-track i { display: block; width: var(--rate); height: 100%; background: #197d71; }
+.ratio-track.single i { background: #ba6e35; }
+.rules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 0; margin-block: 15px; list-style: none; }
+.rules li { padding: 13px 14px; border: 1px solid var(--sc-line); border-radius: 9px; background: var(--sc-surface); }
+.rules h3 { margin-bottom: 4px; font-size: .98rem; color: #12645b; }
+.rules p { color: #445c64; font-size: .87rem; }
+.results-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin-block: 14px; overflow: hidden; border: 1px solid var(--sc-line); border-radius: 9px; background: var(--sc-surface); }
+.results-grid div { padding: 10px 14px; }
+.results-grid div + div { border-left: 1px solid var(--sc-line); }
+.results-grid dt { color: var(--sc-muted); font-size: .82rem; }
+.results-grid dd { font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 750; color: #12645b; font-variant-numeric: tabular-nums; }
+.evidence-link { margin-top: 15px; font-size: .88rem; }
+.note-list { margin: 9px 0 0; padding-inline-start: 20px; color: #445c64; }
+.note-list li + li { margin-top: 4px; }
+pre { overflow: auto; padding: 12px; border: 1px solid var(--sc-line); border-radius: 9px; background: var(--sc-surface); font-size: .87rem; }
+
+@media (max-width: 670px) {
+  .intro-grid { grid-template-columns: 1fr; }
+  .stage { grid-template-columns: 1fr; }
+  .crane-panel { border-top: 1px solid #395059; border-left: 0; }
+  #angle-chart { height: 180px; }
+  #crane-model { height: 152px; }
+  .rules { grid-template-columns: 1fr; }
+  .results-grid { grid-template-columns: 1fr 1fr; }
+  .results-grid div:nth-child(3) { border-left: 0; }
+  .results-grid div:nth-child(n+3) { border-top: 1px solid var(--sc-line); }
+  th, td { padding-inline: 9px; }
+  .input-flow { grid-template-columns: minmax(0, 1fr); gap: 3px; }
+  .flow-card { display: grid; grid-template-columns: minmax(68px, .44fr) minmax(0, 1fr); gap: 3px 10px; align-items: center; }
+  .flow-card canvas { height: 80px; }
+  .comparison-layout { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  #compare-chart { height: 218px; }
+}
+@media (max-width: 430px) {
+  .masthead-inner { align-items: flex-start; flex-direction: column; gap: 4px; }
+  .chapter-links { justify-content: space-between; width: 100%; }
+  .figure-head, .curves, .crane-panel { padding-inline: 10px; }
+  .replay-controls { padding-inline: 9px; gap: 7px; }
+  .readouts div { padding-inline: 10px; }
+  #play-time { min-width: 49px; }
+  .comparison-layout { padding-inline: 8px; }
+  .comparison-summary { margin-inline: 8px; }
+  .comparison-summary th, .comparison-summary td { padding-inline: 5px; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; } }
+
+.standalone-evidence { margin-top: 20px; padding: 0 15px; border: 1px solid var(--sc-line); border-radius: var(--sc-radius); background: var(--sc-surface); scroll-margin-top: 1rem; }
+.standalone-evidence > summary { padding: 12px 0; cursor: pointer; color: var(--sc-accent); font-weight: 700; }
+.standalone-evidence > summary:focus-visible { outline: 3px solid var(--sc-focus); outline-offset: 3px; }
+.standalone-evidence[open] > summary { border-bottom: 1px solid var(--sc-line); }
+.standalone-evidence .evidence-back { margin: 13px 0; }
+</style>
+</head>
+<body>
+  <a class="skip" href="#situation">본문으로 건너뛰기</a>
+  <nav class="masthead" aria-label="보고서 목차">
+    <div class="wrap masthead-inner">
+      <a class="atlas-link" href="../../" aria-label="ATLAS 라이브러리로 돌아가기">← ATLAS</a>
+      <div class="chapter-links">
+        <a href="#situation">상황</a><a href="#visualization">가시화</a><a href="#priorities">우선순위</a>
+        <a href="#testing">검증</a><a href="#tuning">최적화</a><a href="#results">결과</a>
+      </div>
+    </div>
+  </nav>
+  <header class="wrap report-intro intro-grid">
+    <div>
+      <p class="report-meta">센서 · 관제 화면 <time datetime="2026-11-20">2026.11.20</time></p>
+      <h1>지브 각도 표시 안정화</h1>
+      <p class="intro-copy">지브가 멈춰 있을 때는 화면의 까딱임을 줄이고, 움직이기 시작하면 두 번째 관측 안에 화면이 따라가도록 표시 방식을 바꾸고 시험했다.</p>
+    </div>
+    <figure class="lead-figure">
+      <canvas id="lead-crane" role="img" aria-label="지브 측면 모형과 정지 로그의 추정각 및 표시각. 확대 창에서 추정각의 양 끝과 그사이의 고정 표시각을 비교한다."></canvas>
+      <figcaption>
+        <span><i class="key input-key"></i>추정각 범위 <b>0.93°</b></span>
+        <span><i class="key shown-key"></i>고정 표시각</span>
+      </figcaption>
+    </figure>
+  </header>
+
+  <main class="wrap">
+    <section class="chapter" id="situation" aria-labelledby="situation-title">
+      <h2 id="situation-title">1. 상황 설명</h2>
+      <p class="copy">현장에서 받은 문제는 지브가 멈춰 있는데도 관제 화면 속 지브가 계속 까딱인다는 것이었다. 지브는 크레인의 길게 뻗은 팔이다. 시스템은 라이다가 지브에서 측정한 점들에 지브 모형을 맞춰 약 1초마다 기울기 각도(이하 추정각)를 구하고, 이 각도로 화면의 지브를 그린다.</p>
+      <p class="copy">그런데 정지로 본 구간에서도 추정각은 측정할 때마다 조금씩 달랐다. 화면이 매번 최신 추정각을 그대로 그리면 지브가 실제로 움직이는 것처럼 보인다. 그렇다고 작은 변화를 모두 무시하면 실제 출발까지 늦게 보인다. 그래서 먼저 이 흔들림이 화면에서 어느 정도로 보이는지부터 확인했다.</p>
+    </section>
+
+    <section class="chapter" id="visualization" aria-labelledby="visualization-title">
+      <h2 id="visualization-title">2. 문제 가시화</h2>
+      <p class="copy">같은 관측값을 두 가지 방식으로 그려 나란히 비교했다. 하나는 추정각을 들어오는 대로 바로 그린 것이고, 다른 하나는 정지 판정을 거친 표시각이다. 오른쪽 크레인 모형에는 그래프의 세로선 시점의 두 각도를 같은 회전축에 겹쳐 그렸다.</p>
+      <figure class="replay" aria-labelledby="replay-title">
+        <div class="figure-head">
+          <h3 id="replay-title">같은 관측, 두 가지 표시</h3>
+          <div class="segments" role="group" aria-label="재생 자료">
+            <button type="button" data-clip="field" aria-pressed="true">정지 로그</button>
+            <button type="button" data-clip="motion" aria-pressed="false">1°/초 모의 이동</button>
+          </div>
+        </div>
+        <div class="stage">
+          <div class="curves">
+            <div class="legend" aria-label="그래프 범례">
+              <span><i class="key input-key"></i>추정각</span>
+              <span><i class="key shown-key"></i>고정 규칙 적용</span>
+              <span id="truth-key" hidden><i class="key truth-key"></i>모의 정답각</span>
+            </div>
+            <canvas id="angle-chart" role="img" aria-label="추정각과 표시각을 같은 시간축에 그린 그래프"></canvas>
+          </div>
+          <div class="crane-panel">
+            <div class="crane-heading"><b>크레인 모형</b><label><input id="tip-zoom" type="checkbox"> 끝단 확대</label></div>
+            <canvas id="crane-model" role="img" aria-label="한 회전축에서 추정각과 표시각만큼 움직이는 지브"></canvas>
+            <output id="model-delta">두 지브의 각도 차이 0.00°</output>
+          </div>
+        </div>
+        <div class="replay-controls">
+          <button type="button" id="play">재생</button>
+          <label for="position">관측 시점</label>
+          <input type="range" id="position" min="0" max="14" step="1" value="0">
+          <output for="position" id="play-time">0.00초</output>
+        </div>
+        <dl class="readouts" aria-label="선택한 관측의 수치">
+          <div><dt>추정각</dt><dd id="raw-value">–</dd></div>
+          <div><dt>표시각</dt><dd id="screen-value">–</dd></div>
+          <div><dt>표시 상태</dt><dd id="replay-state">–</dd></div>
+        </dl>
+        <figcaption id="clip-caption">정지로 본 구간을 지브 관절 위치 보정 후 다시 계산했다. 가장 높은 값과 가장 낮은 값의 차이는 추정각 0.93°, 표시각 0.00°였다. 비교하기 쉽도록 첫 표시각을 0°로 맞췄다.</figcaption>
+      </figure>
+    </section>
+
+    <section class="chapter" id="priorities" aria-labelledby="priorities-title">
+      <h2 id="priorities-title">3. 문제 파악 및 우선순위 정의</h2>
+      <p class="copy">어려운 점은 멈춰 있을 때의 작은 흔들림과 막 출발했을 때의 작은 움직임이 같은 값으로 보일 수 있다는 것이다. 아래 표의 두 상황은 실제 움직임이 다르지만, 처음 두 관측의 추정각은 똑같다. 출발한 경우는 첫 관측 0.2초 전에 1°/초로 움직이기 시작했다고 가정했고, 두 경우 모두 추정 오차는 1° 미만이다.</p>
+      <figure class="explain-figure observations">
+        <div class="explain-head"><h3 id="observation-title">두 상황이 같은 관측값을 만드는 경우</h3></div>
+        <table aria-labelledby="observation-title">
+          <thead><tr><th scope="col">상황</th><th scope="col">첫 관측</th><th scope="col">둘째 관측</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">계속 정지</th><td>0.0°</td><td>0.0°</td></tr>
+            <tr><th scope="row">1°/초 출발</th><td>0.2°</td><td>1.2°</td></tr>
+            <tr class="common-input"><th scope="row">두 경우의 추정각</th><td><b>0.4°</b></td><td><b>0.8°</b></td></tr>
+          </tbody>
+        </table>
+        <figcaption>위 두 줄은 실제 각도이고, 맨 아래 줄은 여기에 추정 오차가 더해져 표시기에 실제로 들어오는 값이다. 두 상황 모두 같은 값이 들어온다.</figcaption>
+      </figure>
+      <p class="copy">이 두 값만 보는 표시기는 두 상황을 구분할 수 없으므로 똑같이 판단할 수밖에 없다. 관측을 더 기다리면 흔들림을 거를 수 있지만, 그만큼 실제 출발도 늦게 보인다. 관제 화면은 충돌 위험을 살피는 용도이므로 움직임을 빨리 보여주는 쪽을 우선했다. 그래서 실제 출발 후 두 번째 관측 안에 표시각이 출발 전보다 이동 방향으로 0.10° 이상 움직이면 출발을 제때 잡은 것으로 판정했다.</p>
+    </section>
+
+    <section class="chapter" id="testing" aria-labelledby="testing-title">
+      <h2 id="testing-title">4. 실 데이터 기반 검증 및 시뮬레이터 시험</h2>
+      <p class="copy">지브 관절 위치를 보정한 설정으로 실측 로그 14개 구간을 다시 처리해 추정각 422개를 얻었다. 정지로 본 구간마다 중앙값을 빼 추정각의 흔들림을 뽑았다. 중앙값에서 가장 멀어진 관측은 약 <strong>0.76°</strong> 차이였다. 이 흔들림을 정답 각도를 아는 1°/초 모의 이동에 더한 뒤, 화면이 몇 번째 관측에서 출발을 따라가고 몇 번째 관측에서 고정되는지 셌다.</p>
+      <figure class="explain-figure">
+        <div class="explain-head"><h3>모의 입력 하나를 만드는 과정</h3></div>
+        <div class="input-flow">
+          <div class="flow-card">
+            <h4>로그에서 뽑은 흔들림</h4>
+            <canvas id="flow-noise" role="img" aria-label="한 시험에 사용한 실측 변동, 세로축 영점 중심"></canvas>
+          </div>
+          <span class="flow-sign" aria-hidden="true">+</span>
+          <div class="flow-card">
+            <h4>모의 정답각</h4>
+            <canvas id="flow-truth" role="img" aria-label="정지해 있다가 1도 매초로 이동하고 다시 멈추는 모의 정답각"></canvas>
+          </div>
+          <span class="flow-sign" aria-hidden="true">=</span>
+          <div class="flow-card">
+            <h4>표시기에 들어가는 추정각</h4>
+            <canvas id="flow-input" role="img" aria-label="실측 변동을 모의 정답각에 더한 입력"></canvas>
+          </div>
+        </div>
+        <figcaption>2장의 모의 이동 사례에 쓴 입력이다. 가운데와 오른쪽 그래프는 세로 눈금이 같다.</figcaption>
+      </figure>
+      <ol class="rules" aria-label="표시 상태가 바뀌는 조건">
+        <li><h3>추적</h3><p>유효한 새 추정각이 들어오면 바로 그린다.</p></li>
+        <li><h3>고정</h3><p>최근 세 추정각이 좁은 범위 안에 모이면, 세 값의 중앙값으로 화면을 고정한다. 단, 값이 같은 방향으로 뚜렷하게 계속 변하고 있으면 아직 움직이는 중으로 보고 고정하지 않는다.</p></li>
+        <li><h3>해제</h3><p>고정 중에는 화면은 그대로 두고, 해제를 판단할 기준각만 새 추정각으로 조금씩 다듬는다. 새 추정각이 이 기준각에서 문턱 이상 벗어나면 고정을 풀고 바로 그 각도를 그린다.</p></li>
+      </ol>
+      <figure class="explain-figure comparison" aria-labelledby="comparison-title">
+        <div class="explain-head">
+          <h3 id="comparison-title">같은 입력으로 표시 방식 비교</h3>
+          <label class="scene-select" for="compare-scene">장면
+            <select id="compare-scene">
+              <option value="departure">멈춰 있다가 출발 · 1°/초</option>
+              <option value="motion">정지 후 고정이 늦은 사례 · 1°/초</option>
+            </select>
+          </label>
+        </div>
+        <div class="comparison-layout">
+          <div class="comparison-plot">
+            <canvas id="compare-chart" role="img" aria-label="모의 정답과 네 표시 방식을 출발 기준 시간에 맞춰 비교한 각도 그래프"></canvas>
+            <div class="comparison-legend" id="compare-series" role="group" aria-label="그래프에 보일 선"></div>
+            <div class="comparison-controls">
+              <button type="button" id="compare-play">재생</button>
+              <label for="compare-time">시간</label>
+              <input type="range" id="compare-time" min="0" max="23" step="0.01" value="0">
+              <output id="compare-clock" for="compare-time">0.00초</output>
+            </div>
+          </div>
+          <div class="comparison-side">
+            <div class="crane-heading"><b>지브 측면</b><label><input id="compare-zoom" type="checkbox" checked> 차이 4배</label></div>
+            <canvas id="compare-crane" role="img" aria-label="모의 정답 자세와 각 표시 방식의 지브 위치"></canvas>
+            <p class="comparison-metric-title">이 시점의 모의 정답각과 차이</p>
+            <dl id="compare-errors"></dl>
+          </div>
+        </div>
+        <div class="comparison-summary">
+          <table>
+            <caption>선택한 장면에서의 비교</caption>
+            <thead><tr><th scope="col">표시 방식</th><th scope="col">출발 후 첫 반응</th><th scope="col">정지 후 표시각 범위</th><th scope="col">마지막 각도 오차</th></tr></thead>
+            <tbody id="compare-outcomes"></tbody>
+          </table>
+        </div>
+        <figcaption>검은 실선은 모의 정답각이고, 점은 약 1초마다 들어오는 추정각이다. 데드밴드 방식은 추정각이 표시각과 0.8° 이상 다를 때만 표시각을 바꾸고, 중앙값 방식은 최근 세 관측의 중앙값을 그린다. 최종 알고리즘은 위의 추적·고정·해제 규칙에 5장에서 고른 설정값을 넣은 것이다.</figcaption>
+      </figure>
+      <p class="copy">규칙을 반복 검증할 때는 정지 구간의 흔들림을 연속 27관측씩 잘라 쓰고, 여기에 출발 시점 99가지와 상승·하강 두 방향을 조합했다. 이렇게 만든 <strong>11,484건</strong>에서 세 가지를 확인했다. 출발 후 두 칸 안에 따라갔는지, 정지 후 고정이 계속 유지되기까지 몇 칸이 걸렸는지, 정지 후 고정이 한 번이라도 풀린 시험이 얼마나 되는지다. 여기서 한 칸은 새 각도가 한 번 들어오는 것, 즉 약 1초다.</p>
+      <p class="copy">정지 후 고정 시점은 정지부터 세어, 그 뒤로 시험이 끝날 때까지 고정이 계속 이어진 첫 관측으로 정했다. 예를 들어 두 번째 관측에서 고정됐다가 네 번째에 풀리고 다섯 번째부터 다시 고정이 유지된 시험은 <strong>정지 5칸</strong>으로 세고, 동시에 <strong>고정 풀림</strong>에도 포함한다.</p>
+    </section>
+
+    <section class="chapter" id="tuning" aria-labelledby="tuning-title">
+      <h2 id="tuning-title">5. 파라미터 최적화</h2>
+      <p class="copy">고정 폭, 해제 문턱 같은 값을 바꿔 가며 <strong>25,963개 설정</strong>을 비교했다. 점수를 매길 때는 '출발 2칸 안에 따라간 비율'에 <strong>85%</strong>의 가중치를 주고, '정지 3칸 안 고정', '정지 6칸 안 고정', '정지 후 고정이 풀리지 않은 비율'에 각각 <strong>5%</strong>를 줬다.</p>
+      <p class="copy">정지 동작은 점수와 별개로 세 가지 합격선을 모두 만족해야 했다. 고정 풀림 <strong>10% 미만</strong>, 3칸 이내 고정 <strong>80% 이상</strong>, 6칸 이내 고정 <strong>99% 이상</strong>이다.</p>
+      <figure class="explain-figure decision">
+        <div class="explain-head"><h3>정지 6칸 기준선에서 선택이 갈렸다</h3><span>출발 2칸은 두 후보 모두 <b>99.30%</b></span></div>
+        <div class="decision-plot">
+          <div class="decision-axis"><span>98.80%</span><b>99.00% 기준</b><span>99.20%</span></div>
+          <div class="decision-row">
+            <div><b>가중 점수 1위</b><span class="decision-label near">98.96% · 미달</span></div>
+            <div class="decision-track"><span class="decision-dot near" style="--at:40%" aria-hidden="true"></span></div>
+          </div>
+          <div class="decision-row">
+            <div><b>정지 합격선 통과 설정 중 출발 1위</b><span class="decision-label passed">99.07% · 통과</span></div>
+            <div class="decision-track"><span class="decision-dot passed" style="--at:67.5%" aria-hidden="true"></span></div>
+          </div>
+        </div>
+        <figcaption>정지 6칸 성공률 98.80~99.20% 구간만 확대해, 99% 합격선과 두 후보의 위치를 비교했다.</figcaption>
+      </figure>
+      <p class="copy">두 설정은 출발 성적이 같았으므로 정지 합격선을 통과한 쪽을 골랐다. 채택한 값은 고정 폭 <strong>1.04°</strong>, 해제 문턱 <strong>0.66°</strong>, 기준각 보정 범위 <strong>±0.13°</strong>, 같은 방향으로 계속 변할 때 고정을 미루는 문턱 <strong>0.46°</strong>다.</p>
+    </section>
+
+    <section class="chapter" id="results" aria-labelledby="results-title">
+      <h2 id="results-title">6. 결과</h2>
+      <p class="copy">채택한 설정을 검수용 C++ 표시 모듈에 넣었다. 아래는 보정한 로그의 흔들림을 더한 모의시험 결과다. 모의 지브는 <strong>가속 구간 없이 출발 즉시 1°/초</strong>로 움직였다.</p>
+      <dl class="results-grid">
+        <div><dt>출발 2칸 이내</dt><dd>99.30%</dd></div>
+        <div><dt>정지 3칸 이내</dt><dd>92.64%</dd></div>
+        <div><dt>정지 6칸 이내</dt><dd>99.07%</dd></div>
+        <div><dt>정지 후 고정 풀림</dt><dd>6.43%</dd></div>
+      </dl>
+      <figure class="explain-figure wake-comparison">
+        <div class="explain-head"><h3>고정 풀림은 흔들림이 큰 로그 한 건에 몰렸다</h3><span>정지 후 한 번이라도 다시 풀린 시험</span></div>
+        <div class="wake-bars">
+          <div class="bar-row">
+            <span>전체 <small>11,484건</small></span><b>6.43%</b>
+            <div class="ratio-track" aria-hidden="true"><i style="--rate:6.43%"></i></div>
+          </div>
+          <div class="bar-row">
+            <span>흔들림이 큰 로그 한 건 <small>1,188건</small></span><b>44.11%</b>
+            <div class="ratio-track single" aria-hidden="true"><i style="--rate:44.11%"></i></div>
+          </div>
+          <div class="ratio-axis" aria-hidden="true"><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div>
+        </div>
+      </figure>
+      <p class="copy">전체 고정 풀림 738건 중 524건이 이 로그로 만든 모의시험에서 나왔다. 이 로그는 센서 전용 관절 보정을 적용한 기록이다. 이 로그를 제외한 10,296건에서는 214건(<strong>2.08%</strong>)에서 고정이 풀렸다.</p>
+      <p class="copy">실측 흔들림 대신 합성 잡음으로 따로 시험했을 때는 정지 6칸 성공률이 <strong>88.33~91.25%</strong>였다. 현장의 실제 출발·정지 시각에 맞춰 검증하려면, 같은 시계로 기록한 독립 기준각이 필요하다.</p>
+      <p class="evidence-link"><a href="#evidence">시험 및 재현 근거</a></p>
+    </section>
+    <details class="standalone-evidence" id="evidence">
+      <summary>시험 및 재현 근거</summary>
+    <section class="chapter">
+      <h2>실측 구간과 모의 입력</h2>
+      <ul class="note-list">
+        <li>보정한 14개 로그 구간의 추정각 422개를 사용했다. 각 로그에 적용한 보정 설정의 해시를 대조했다. 흔들림이 큰 로그 한 건은 센서 전용 관절 보정으로 처리했고, 추정각 32개가 모두 유효했다.</li>
+        <li>각 로그에서 중앙값을 빼고 연속 27관측씩 잘라, 서로 겹치는 흔들림 구간 58개를 만들었다. 중앙값에서 가장 크게 벗어난 값은 0.763°였다.</li>
+        <li>각 구간의 흔들림을 출발 즉시 1°/초로 7초간 움직이는 모의 정답에 더했다. 출발 시점은 정수 초에서 0.01~0.99초씩 어긋나게 한 99가지를 쓰고, 상승·하강 두 방향과 조합했다.</li>
+        <li>본문의 재생 예시는 보기 쉽도록 재생 결과의 시각과 각도 원점만 옮겼다. 흔들림, 관측 간격, 추정각과 표시각의 차이는 그대로다. 전체 원본 로그와 설정 탐색 집계는 내부 검수 자료에 보관한다.</li>
+      </ul>
+    </section>
+    <section class="chapter">
+      <h2>표시 판정과 적용값</h2>
+      <p class="copy">추적 중에는 최근 유효각 세 개의 최대·최소 차이가 1.04° 이내이면 세 값의 중앙값으로 고정한다. 단, 연속된 두 변화가 같은 방향이고 각각 0.08° 이상이며 합이 0.46°를 넘으면 아직 움직이는 중으로 보고 계속 추적한다.</p>
+      <p class="copy">고정 중에는 새 추정각이 내부 기준각에서 0.66° 이상 벗어나면 고정을 푼다. 풀리지 않은 관측 가운데 표시각에서 0.45° 미만 떨어진 값은 최근 9개까지 모아 두고, 그 중앙값을 표시각 ±0.13° 범위로 제한해 내부 기준각으로 쓴다. 이때 화면의 표시각은 바뀌지 않는다.</p>
+      <p class="copy">0.763°는 로그의 중앙값에서 잰 최대 편차다. 0.66°는 고정 중 갱신되는 내부 기준각에서 새 추정각이 얼마나 떨어졌는지 판단하는 문턱이다. 관측을 순서대로 재생하면서 기준각의 변화까지 반영해 풀림률을 셌다.</p>
+      <ul class="note-list">
+        <li>출발 반응은 표시각이 출발 직전 값에서 이동 방향으로 처음 0.10° 이상 움직인 관측으로 셌다.</li>
+        <li>지속 고정 시점은 그 뒤로 시험 끝까지 고정 상태가 이어지고, 표시각이 마지막 표시각과 계속 0.02° 이내인 첫 관측이다. 정지 후 풀림률은 정지 뒤 고정 상태가 한 번이라도 추적으로 바뀐 시험의 비율이다.</li>
+        <li>가중치는 출발 2칸 85%, 정지 3칸·정지 6칸·고정 유지 비율 각 5%다. 정지 합격선을 통과한 설정끼리는 출발 2칸 성적을 먼저 비교했다.</li>
+      </ul>
+    </section>
+    <section class="chapter">
+      <h2>상세 성적</h2>
+      <div class="table-panel">
+        <table>
+          <caption>같은 설정에서 흔들림이 큰 로그 한 건이 미치는 영향</caption>
+          <thead><tr><th scope="col">모의 입력</th><th scope="col">출발 2칸</th><th scope="col">정지 3칸</th><th scope="col">정지 6칸</th><th scope="col">정지 후 풀림</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">전체 11,484건</th><td>11,404</td><td>10,639</td><td>11,377</td><td>738</td></tr>
+            <tr><th scope="row">그 로그 제외 10,296건</th><td>10,234</td><td>10,002</td><td>10,238</td><td>214</td></tr>
+            <tr><th scope="row">그 로그만 1,188건</th><td>1,170</td><td>637</td><td>1,139</td><td>524</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="copy">표준편차 0.24°의 정규분포에서 절댓값 1° 미만인 값을 뽑아 합성 잡음으로 따로 시험했다. 480건씩 일곱 번 반복했을 때 정지 6칸 성공은 424~438건이었다.</p>
+      <p class="copy">이전 설정 <code>0.56 0.70 0.07 0.50 1</code>으로 가속과 감속 시간을 각각 0~3초 범위에서 바꾼 별도 모의시험도 했다. 원래 잡음 크기에서 실제 출발 후 두 번째 관측까지 반응한 시험은 11,123/20,000건(<strong>55.6%</strong>)이었다.</p>
+    </section>
+    <section class="chapter">
+      <h2>코드 재현</h2>
+      <p class="copy">로컬 검수 커밋 <code>fd0f7c78</code>의 <code>tools/jib_display_review</code>에서 아래 명령으로 미리 정해 둔 입력 세 개를 재생할 수 있다. 출력 JSON에는 관측 시각, 표시각, 표시 상태가 들어 있다.</p>
+      <pre><code>cl /nologo /std:c++17 /EHsc /O2 /W4 /WX Bench-JibDisplay.cpp /Fe:bench-jib-display.exe
+.\bench-jib-display.exe review-inputs.txt render review-settings.txt</code></pre>
+      <p class="copy">설정값은 <code>1.04 0.66 0.13 0.46 1</code>이다. 마지막 1은 고정 중 기준각을 보정할 때 표시각을 중심으로 삼는다는 뜻이다. 위 시험은 모두 모의 이동이므로, 현장의 실제 출발·정지 시각은 별도 기준 기록으로 확인해야 한다.</p>
+    </section>
+      <p class="evidence-back"><a href="#results">결과로 돌아가기</a></p>
+    </details>
+  </main>
+<script>
+const REPLAY = {
+  "field": {
+    "rows": [
+      [
+        0.0,
+        0.226246,
+        0.0,
+        2
+      ],
+      [
+        1.001636,
+        0.402035,
+        0.0,
+        2
+      ],
+      [
+        2.003131,
+        0.046944,
+        0.0,
+        2
+      ],
+      [
+        3.004609,
+        0.431446,
+        0.0,
+        2
+      ],
+      [
+        4.006238,
+        0.120716,
+        0.0,
+        2
+      ],
+      [
+        4.992141,
+        0.180626,
+        0.0,
+        2
+      ],
+      [
+        5.992171,
+        0.011482,
+        0.0,
+        2
+      ],
+      [
+        6.992169,
+        -0.396068,
+        0.0,
+        2
+      ],
+      [
+        7.992124,
+        0.531449,
+        0.0,
+        2
+      ],
+      [
+        8.992029,
+        -0.270256,
+        0.0,
+        2
+      ],
+      [
+        10.006206,
+        0.414604,
+        0.0,
+        2
+      ],
+      [
+        10.992178,
+        0.254643,
+        0.0,
+        2
+      ],
+      [
+        11.993703,
+        -0.356033,
+        0.0,
+        2
+      ],
+      [
+        12.993618,
+        0.508297,
+        0.0,
+        2
+      ],
+      [
+        13.992084,
+        -0.11066,
+        0.0,
+        2
+      ]
+    ],
+    "focus": 8,
+    "caption": "정지로 본 구간을 지브 관절 위치 보정 후 다시 계산했다. 가장 높은 값과 가장 낮은 값의 차이는 추정각 0.93°, 표시각 0.00°였다. 비교하기 쉽도록 첫 표시각을 0°로 맞췄다."
+  },
+  "motion": {
+    "rows": [
+      [
+        0,
+        -0.0,
+        0.0,
+        1,
+        -0.178505
+      ],
+      [
+        1,
+        -0.617451,
+        -0.617451,
+        1,
+        -0.178505
+      ],
+      [
+        2,
+        0.063473,
+        0.0,
+        2,
+        -0.178505
+      ],
+      [
+        3,
+        -0.491306,
+        0.0,
+        2,
+        -0.178505
+      ],
+      [
+        4,
+        0.213497,
+        0.0,
+        2,
+        -0.178505
+      ],
+      [
+        5,
+        -0.223846,
+        0.0,
+        2,
+        -0.178505
+      ],
+      [
+        6,
+        -0.688374,
+        -0.688374,
+        1,
+        -0.178505
+      ],
+      [
+        7,
+        0.401909,
+        0.401909,
+        1,
+        -0.178505
+      ],
+      [
+        8,
+        -0.54656,
+        -0.54656,
+        1,
+        -0.028505
+      ],
+      [
+        9,
+        1.272887,
+        1.272887,
+        1,
+        0.971495
+      ],
+      [
+        10,
+        1.786948,
+        1.786948,
+        1,
+        1.971495
+      ],
+      [
+        11,
+        3.016836,
+        3.016836,
+        1,
+        2.971495
+      ],
+      [
+        12,
+        4.206515,
+        4.206515,
+        1,
+        3.971495
+      ],
+      [
+        13,
+        4.525305,
+        4.525305,
+        1,
+        4.971495
+      ],
+      [
+        14,
+        6.398428,
+        6.398428,
+        1,
+        5.971495
+      ],
+      [
+        15,
+        6.19474,
+        6.19474,
+        1,
+        6.821495
+      ],
+      [
+        16,
+        6.774876,
+        6.398428,
+        2,
+        6.821495
+      ],
+      [
+        17,
+        6.982418,
+        6.398428,
+        2,
+        6.821495
+      ],
+      [
+        18,
+        6.058552,
+        6.398428,
+        2,
+        6.821495
+      ],
+      [
+        19,
+        6.959812,
+        6.959812,
+        1,
+        6.821495
+      ],
+      [
+        20,
+        6.367359,
+        6.367359,
+        2,
+        6.821495
+      ],
+      [
+        21,
+        7.13385,
+        7.13385,
+        1,
+        6.821495
+      ],
+      [
+        22,
+        6.932671,
+        6.932671,
+        2,
+        6.821495
+      ],
+      [
+        23,
+        6.589958,
+        6.932671,
+        2,
+        6.821495
+      ],
+      [
+        24,
+        7.16124,
+        6.932671,
+        2,
+        6.821495
+      ],
+      [
+        25,
+        6.44931,
+        6.932671,
+        2,
+        6.821495
+      ],
+      [
+        26,
+        6.977829,
+        6.932671,
+        2,
+        6.821495
+      ]
+    ],
+    "focus": 20,
+    "start": 7.85,
+    "stop": 14.85,
+    "caption": "실측 로그의 흔들림을 더한 1°/초 모의 이동이다. 이 사례에서는 정지 후 여덟 번째 관측부터 고정이 계속 유지됐다. 비교하기 쉽도록 첫 표시각을 0°로 맞췄다."
+  },
+  "departure": {
+    "rows": [
+      [
+        0,
+        0.0,
+        0.0,
+        1,
+        -0.01024
+      ],
+      [
+        1,
+        0.00874,
+        0.00874,
+        1,
+        -0.01024
+      ],
+      [
+        2,
+        0.23532,
+        0.00874,
+        2,
+        -0.01024
+      ],
+      [
+        3,
+        -0.20001,
+        0.00874,
+        2,
+        -0.01024
+      ],
+      [
+        4,
+        -0.19327,
+        0.00874,
+        2,
+        -0.01024
+      ],
+      [
+        5,
+        -0.10715,
+        0.00874,
+        2,
+        -0.01024
+      ],
+      [
+        6,
+        0.05134,
+        0.00874,
+        2,
+        -0.01024
+      ],
+      [
+        7,
+        -0.18203,
+        0.00874,
+        2,
+        -0.01024
+      ],
+      [
+        8,
+        -0.04398,
+        0.00874,
+        2,
+        0.03976
+      ],
+      [
+        9,
+        1.30923,
+        1.30923,
+        1,
+        1.03976
+      ],
+      [
+        10,
+        2.09808,
+        2.09808,
+        1,
+        2.03976
+      ],
+      [
+        11,
+        3.18978,
+        3.18978,
+        1,
+        3.03976
+      ],
+      [
+        12,
+        3.85381,
+        3.85381,
+        1,
+        4.03976
+      ],
+      [
+        13,
+        5.02085,
+        5.02085,
+        1,
+        5.03976
+      ],
+      [
+        14,
+        6.09922,
+        6.09922,
+        1,
+        6.03976
+      ],
+      [
+        15,
+        7.01321,
+        7.01321,
+        1,
+        6.98976
+      ],
+      [
+        16,
+        6.97952,
+        6.97952,
+        2,
+        6.98976
+      ],
+      [
+        17,
+        7.16209,
+        6.97952,
+        2,
+        6.98976
+      ],
+      [
+        18,
+        7.00489,
+        6.97952,
+        2,
+        6.98976
+      ],
+      [
+        19,
+        6.79086,
+        6.97952,
+        2,
+        6.98976
+      ],
+      [
+        20,
+        6.90116,
+        6.97952,
+        2,
+        6.98976
+      ],
+      [
+        21,
+        6.89277,
+        6.97952,
+        2,
+        6.98976
+      ],
+      [
+        22,
+        6.86512,
+        6.97952,
+        2,
+        6.98976
+      ],
+      [
+        23,
+        7.00489,
+        6.97952,
+        2,
+        6.98976
+      ]
+    ],
+    "start": 7.95,
+    "stop": 14.95,
+    "focus": 8.7
+  }
+};
+</script>
+<script>
+"use strict";
+
+const get = id => document.getElementById(id);
+const chart = get("angle-chart");
+const model = get("crane-model");
+const position = get("position");
+const play = get("play");
+const zoom = get("tip-zoom");
+const modes = ["표시 대기", "추적", "고정"];
+const ink = {grid:"#39515a", text:"#b9cdd0", input:"#edaa65", shown:"#66d9c0", truth:"#bba7ff"};
+let current = REPLAY.field;
+let sample = 0;
+let playing = false;
+let timer;
+let plot;
+
+function surface(canvas) {
+  const w = canvas.clientWidth, h = canvas.clientHeight;
+  if (!w || !h) return null;
+  const ratio = Math.min(window.devicePixelRatio || 1, 2);
+  const pixels = [Math.round(w*ratio), Math.round(h*ratio)];
+  if (canvas.width !== pixels[0] || canvas.height !== pixels[1]) {
+    canvas.width = pixels[0];
+    canvas.height = pixels[1];
+  }
+  const ctx = canvas.getContext("2d");
+  ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+  ctx.clearRect(0, 0, w, h);
+  return {ctx,w,h};
+}
+
+function line(ctx, x1, y1, x2, y2, color, width = 1) {
+  ctx.beginPath();
+  ctx.moveTo(x1, y1);
+  ctx.lineTo(x2, y2);
+  ctx.strokeStyle = color;
+  ctx.lineWidth = width;
+  ctx.stroke();
+}
+
+function dot(ctx, x, y, radius, color) {
+  ctx.beginPath();
+  ctx.arc(x, y, radius, 0, 2*Math.PI);
+  ctx.fillStyle = color;
+  ctx.fill();
+}
+
+function drawGraph() {
+  const canvas = surface(chart);
+  if (!canvas) return;
+  const {ctx,w,h} = canvas;
+  const left = 41, right = w-10, top = 16, base = h-31;
+  const rows = current.rows;
+  const duration = rows.at(-1)[0];
+  const drawTruth = current.start !== undefined;
+  const values = rows.flatMap(row => drawTruth ? [row[1],row[2],row[4]] : [row[1],row[2]]);
+  const min = Math.min(...values), max = Math.max(...values);
+  const unit = [.2,.25,.5,1,2,3,5].find(n => (max-min)/n < 5) || 5;
+  const floor = (Math.floor(min/unit)-1)*unit, ceil = (Math.ceil(max/unit)+1)*unit;
+  const x = t => left + t/duration*(right-left);
+  const y = a => base - (a-floor)/(ceil-floor)*(base-top);
+  plot = {left,right,duration};
+  if (drawTruth) {
+    ctx.fillStyle = "#203940";
+    ctx.fillRect(x(current.stop),top,right-x(current.stop),base-top);
+  }
+
+  ctx.font = "11px system-ui, Malgun Gothic, sans-serif";
+  ctx.textAlign = "right";
+  ctx.textBaseline = "middle";
+  for (let a=floor; a<=ceil+1e-7; a+=unit) {
+    line(ctx, left, y(a), right, y(a), ink.grid);
+    ctx.fillStyle = ink.text;
+    ctx.fillText((Math.abs(a)<1e-7 ? 0 : a).toFixed(unit<1 ? 1 : 0), left-5, y(a));
+  }
+  ctx.textAlign = "center";
+  const ticks = duration>19 ? 5 : 3;
+  for (let t=0; t<=duration+1e-7; t+=ticks) {
+    line(ctx, x(t), top, x(t), base, ink.grid);
+    ctx.fillStyle = ink.text;
+    ctx.fillText(t, x(t), base+12);
+  }
+  ctx.fillStyle = ink.text;
+  ctx.fillText("시간 (초)", (left+right)/2, h-7);
+  ctx.textAlign = "left";
+  ctx.fillText("°", 2, 6);
+
+  if (drawTruth) {
+    for (const [t,n] of [[current.start,"출발"],[current.stop,"정지"]]) {
+      ctx.setLineDash([3,4]);
+      line(ctx, x(t), top, x(t), base, "#85989a");
+      ctx.setLineDash([]);
+      ctx.fillStyle = ink.text;
+      ctx.fillText(n,x(t)+4,top+8);
+    }
+  }
+
+  function steps(column,color,dashes,weight) {
+    ctx.beginPath();
+    ctx.setLineDash(dashes);
+    ctx.moveTo(x(0),y(rows[0][column]));
+    for (let i=1; i<rows.length; i++) {
+      ctx.lineTo(x(rows[i][0]),y(rows[i-1][column]));
+      ctx.lineTo(x(rows[i][0]),y(rows[i][column]));
+    }
+    ctx.strokeStyle = color;
+    ctx.lineWidth = weight;
+    ctx.stroke();
+    ctx.setLineDash([]);
+  }
+  if (drawTruth) steps(4,ink.truth,[2,5],1.5);
+  steps(1,ink.input,[6,3],2);
+  steps(2,ink.shown,[],2.5);
+  const row = rows[sample];
+  line(ctx,x(row[0]),top,x(row[0]),base,"#8ca1a6",1.2);
+  dot(ctx,x(row[0]),y(row[1]),3.5,ink.input);
+  dot(ctx,x(row[0]),y(row[2]),3.5,ink.shown);
+}
+
+function armTip(x,y,length,angle) {
+  const r = (34+angle)*Math.PI/180;
+  return [x+length*Math.cos(r),y-length*Math.sin(r)];
+}
+
+function paintTower(ctx,x,y,ground) {
+  ctx.fillStyle = "#48616b";
+  ctx.fillRect(x-21,ground-4,53,7);
+  ctx.fillStyle = "#70898d";
+  ctx.fillRect(x-27,ground+3,65,4);
+  const base = ground-4;
+  for (let i=0;i<4;i++) {
+    const top = y+i*(base-y)/4;
+    const bottom = y+(i+1)*(base-y)/4;
+    const a = 7+i*1.2, b = a+1.2;
+    line(ctx,x-a,top,x-b,bottom,"#72919a",1.4);
+    line(ctx,x+a,top,x+b,bottom,"#72919a",1.4);
+    line(ctx,x-a,top,x+b,bottom,"#46626b",1);
+    line(ctx,x+a,top,x-b,bottom,"#46626b",1);
+    line(ctx,x-b,bottom,x+b,bottom,"#72919a",1);
+  }
+  ctx.fillStyle = "#39555f";
+  ctx.fillRect(x-27,y-11,31,14);
+  ctx.fillStyle = "#526d76";
+  ctx.fillRect(x-17,y-18,25,17);
+  ctx.fillStyle = "#a1babb";
+  ctx.fillRect(x-12,y-14,14,7);
+  ctx.fillStyle = "#4d6a72";
+  ctx.fillRect(x-6,y-14,2,7);
+  line(ctx,x-18,y-20,x+9,y-20,"#82999d",2);
+  dot(ctx,x,y,4.2,"#9cb6b6");
+}
+
+function paintBoom(ctx,x,y,length,angle) {
+  const tip = armTip(x,y,length,angle);
+  ctx.save();
+  ctx.translate(x,y);
+  ctx.rotate(Math.atan2(tip[1]-y,tip[0]-x));
+  ctx.beginPath();
+  ctx.moveTo(1,-7);
+  ctx.lineTo(length,-2);
+  ctx.lineTo(length,2);
+  ctx.lineTo(1,7);
+  ctx.closePath();
+  ctx.fillStyle = "#1d4746";
+  ctx.fill();
+  ctx.strokeStyle = ink.shown;
+  ctx.lineWidth = 1.35;
+  ctx.stroke();
+  for (let i=0;i<8;i++) {
+    const a = i*length/8, b = (i+1)*length/8;
+    const sign = i%2===0 ? -1 : 1;
+    line(ctx,a,sign*(7-i*.625),b,-sign*(7-(i+1)*.625),"#4d9e92");
+  }
+  ctx.restore();
+  line(ctx,tip[0],tip[1],tip[0],tip[1]+19,"#8aa8aa");
+  line(ctx,tip[0]-3,tip[1]+19,tip[0]+3,tip[1]+19,"#8aa8aa",2);
+  return tip;
+}
+
+function drawCrane() {
+  const canvas = surface(model);
+  if (!canvas) return;
+  const {ctx,w,h} = canvas;
+  const [,input,shown] = current.rows[sample];
+  const px = w*.26, py = h*.61;
+  const length = Math.min(w*.66,h*.86);
+  const inputTip = armTip(px,py,length,input);
+  const shownTip = armTip(px,py,length,shown);
+  if (zoom.checked) {
+    const sx = w*.53, sy = h*.51;
+    const rx = sx + 10*(inputTip[0]-shownTip[0]);
+    const ry = sy + 10*(inputTip[1]-shownTip[1]);
+    const shapeX = (shownTip[0]-px)*.48, shapeY = (shownTip[1]-py)*.48;
+    line(ctx,sx-shapeX,sy-shapeY,sx,sy,ink.shown,3);
+    ctx.setLineDash([5,4]);
+    line(ctx,rx-shapeX,ry-shapeY,rx,ry,ink.input,2);
+    ctx.setLineDash([]);
+    dot(ctx,rx,ry,4,ink.input);
+    dot(ctx,sx,sy,3,ink.shown);
+    ctx.font = "11px system-ui, Malgun Gothic, sans-serif";
+    ctx.fillStyle = ink.input;
+    ctx.fillText("추정각",rx+8,ry-10);
+    ctx.fillStyle = ink.shown;
+    ctx.fillText("표시각",sx+8,sy+18);
+    return;
+  }
+  const ground = h*.88;
+  line(ctx,w*.09,ground,w*.91,ground,ink.grid,1.5);
+  paintTower(ctx,px,py,ground);
+  paintBoom(ctx,px,py,length,shown);
+  ctx.setLineDash([5,4]);
+  line(ctx,px,py,...inputTip,ink.input,1.6);
+  ctx.setLineDash([]);
+  dot(ctx,...inputTip,3.7,ink.input);
+  dot(ctx,...shownTip,2.65,ink.shown);
+}
+
+function update(index) {
+  sample = Math.max(0,Math.min(index,current.rows.length-1));
+  const [t,raw,shown,mode] = current.rows[sample];
+  position.value = sample;
+  const time = t.toFixed(2)+"초";
+  get("play-time").textContent = time;
+  position.setAttribute("aria-valuetext",time+", "+modes[mode]);
+  get("raw-value").textContent = raw.toFixed(2)+"°";
+  get("screen-value").textContent = shown.toFixed(2)+"°";
+  get("replay-state").textContent = modes[mode];
+  get("model-delta").textContent = "두 지브의 각도 차이 "+Math.abs(raw-shown).toFixed(2)+"°";
+  drawGraph();
+  drawCrane();
+}
+
+function pause() {
+  clearTimeout(timer);
+  playing = false;
+  play.textContent = "재생";
+}
+
+function nextFrame() {
+  if (sample >= current.rows.length-1) {
+    pause();
+    return;
+  }
+  const dt = current.rows[sample+1][0]-current.rows[sample][0];
+  timer = setTimeout(() => {
+    update(sample+1);
+    nextFrame();
+  },1000*dt);
+}
+
+function chooseClip(id) {
+  pause();
+  current = REPLAY[id];
+  position.max = current.rows.length-1;
+  for (const button of document.querySelectorAll("[data-clip]")) {
+    button.setAttribute("aria-pressed",String(button.dataset.clip===id));
+  }
+  get("truth-key").hidden = id==="field";
+  get("clip-caption").textContent = current.caption;
+  update(current.focus);
+}
+
+for (const button of document.querySelectorAll("[data-clip]")) {
+  button.addEventListener("click",() => chooseClip(button.dataset.clip));
+}
+position.addEventListener("input",() => {
+  pause();
+  update(Number(position.value));
+});
+zoom.addEventListener("change",drawCrane);
+play.addEventListener("click",() => {
+  if (playing) {
+    pause();
+    return;
+  }
+  if (sample===current.rows.length-1) update(0);
+  playing = true;
+  play.textContent = "일시정지";
+  nextFrame();
+});
+chart.addEventListener("pointerdown",event => {
+  if (!plot) return;
+  const offset = event.clientX-chart.getBoundingClientRect().left-plot.left;
+  const t = plot.duration*offset/(plot.right-plot.left);
+  const nearest = current.rows.reduce((best,row,i,rows) =>
+    Math.abs(row[0]-t)<Math.abs(rows[best][0]-t) ? i : best,0);
+  pause();
+  update(nearest);
+});
+const observer = new ResizeObserver(() => { drawGraph(); drawCrane(); });
+observer.observe(chart);
+observer.observe(model);
+document.addEventListener("visibilitychange",() => { if (document.hidden) pause(); });
+chooseClip("field");
+</script>
+<script>
+"use strict";
+
+const lightInk = {grid:"#dce5e7", text:"#5b7278", input:"#ad561b", truth:"#62519c"};
+
+function drawLead(canvas) {
+  const s = surface(canvas);
+  if (!s) return;
+  const {ctx,w,h} = s;
+  const px = Math.max(37,w*.16), py = h*.62, ground = h*.87;
+  const length = Math.min(w*.38,h*.87);
+  for (let i=15;i<w;i+=24) line(ctx,i,0,i,h,"#223b42");
+  for (let j=13;j<h;j+=24) line(ctx,0,j,w,j,"#223b42");
+  line(ctx,16,ground,w-16,ground,"#455f68");
+  paintTower(ctx,px,py,ground);
+  const steady = REPLAY.field.rows;
+  const shown = steady[0][2];
+  const tip = paintBoom(ctx,px,py,length,shown);
+  dot(ctx,...tip,3,ink.shown);
+
+  const box = {x:w*.56,y:31,w:w*.40,h:h-63};
+  line(ctx,tip[0]+3,tip[1]+1,box.x,box.y+box.h/2,"#5c7980");
+  ctx.fillStyle = "#213d46";
+  ctx.fillRect(box.x,box.y,box.w,box.h);
+  ctx.strokeStyle = "#527178";
+  ctx.lineWidth = 1;
+  ctx.strokeRect(box.x,box.y,box.w,box.h);
+  ctx.font = "11px system-ui, Malgun Gothic, sans-serif";
+  ctx.fillStyle = "#d3e3e2";
+  ctx.fillText("끝단 확대",box.x+9,box.y+18);
+
+  const midpoint = [box.x+box.w*.62,box.y+box.h*.64];
+  const estimates = [Math.min(...steady.map(p=>p[1])),Math.max(...steady.map(p=>p[1]))];
+  for (const a of estimates) {
+    const end = armTip(px,py,length,a);
+    const x = midpoint[0]+12*(end[0]-tip[0]);
+    const y = midpoint[1]+12*(end[1]-tip[1]);
+    ctx.setLineDash([4,3]);
+    line(ctx,box.x+12,y+10,x,y,ink.input,1.35);
+    ctx.setLineDash([]);
+    dot(ctx,x,y,3.1,ink.input);
+  }
+  line(ctx,box.x+12,midpoint[1]+10,...midpoint,ink.shown,1.4);
+  dot(ctx,...midpoint,3.5,ink.shown);
+}
+
+const motion = REPLAY.motion.rows;
+const initialAngle = motion[0][4];
+const flowNoise = motion.map(r => [r[0],r[1]-r[4]]);
+const flowTruth = motion.map(r => [r[0],r[4]-initialAngle]);
+const flowInput = motion.map(r => [r[0],r[1]-initialAngle]);
+const flowDomain = [Math.floor(Math.min(...flowInput.map(r=>r[1]),0)),Math.ceil(Math.max(...flowInput.map(r=>r[1]),7))];
+
+function drawInput(canvas,rows,domain,color) {
+  const s = surface(canvas);
+  if (!s) return;
+  const {ctx,w,h} = s;
+  const [lo,hi] = domain;
+  const left = 23, right = w-8, top = 10, bottom = h-18;
+  const end = rows.at(-1)[0];
+  const x = t => left+t/end*(right-left);
+  const y = a => bottom-(a-lo)/(hi-lo)*(bottom-top);
+  ctx.font = "10px system-ui, Malgun Gothic, sans-serif";
+  ctx.textAlign = "right";
+  ctx.textBaseline = "middle";
+  const ticks = hi-lo<=2 ? [lo,0,hi] : [0,hi];
+  for (const a of ticks) {
+    line(ctx,left,y(a),right,y(a),lightInk.grid);
+    ctx.fillStyle = lightInk.text;
+    ctx.fillText(a+"°",left-3,y(a));
+  }
+  ctx.beginPath();
+  ctx.moveTo(x(0),y(rows[0][1]));
+  for (let i=1;i<rows.length;i++) {
+    ctx.lineTo(x(rows[i][0]),y(rows[i-1][1]));
+    ctx.lineTo(x(rows[i][0]),y(rows[i][1]));
+  }
+  ctx.strokeStyle = color;
+  ctx.lineWidth = 1.7;
+  ctx.stroke();
+  ctx.fillStyle = lightInk.text;
+  ctx.fillText(end.toFixed(0)+"초",right,h-7);
+  ctx.textAlign = "left";
+  ctx.fillText("0",left,h-7);
+}
+
+const staticPlots = new Map([
+  [get("lead-crane"), drawLead],
+  [get("flow-noise"), canvas => drawInput(canvas,flowNoise,[-1,1],"#396f68")],
+  [get("flow-truth"), canvas => drawInput(canvas,flowTruth,flowDomain,lightInk.truth)],
+  [get("flow-input"), canvas => drawInput(canvas,flowInput,flowDomain,lightInk.input)],
+]);
+const plotObserver = new ResizeObserver(entries => {
+  for (const {target} of entries) staticPlots.get(target)(target);
+});
+for (const [canvas,draw] of staticPlots) {
+  draw(canvas);
+  plotObserver.observe(canvas);
+}
+</script>
+<script>
+"use strict";
+
+(() => {
+  const comparisonChart = get("compare-chart");
+  const comparisonModel = get("compare-crane");
+  const clock = get("compare-time");
+  const sceneSelect = get("compare-scene");
+  const playButton = get("compare-play");
+  const compareZoom = get("compare-zoom");
+  const methods = [
+    {key:"truth", label:"모의 정답각", color:"#263536", dash:[], visible:true},
+    {key:"raw", label:"1 Hz 추정각 즉시 표시", color:"#a36732", dash:[5,4], visible:true},
+    {key:"deadband", label:"0.8° 데드밴드", color:"#3169b7", dash:[], visible:true},
+    {key:"median", label:"3관측 중앙값", color:"#76549b", dash:[4,3], visible:false},
+    {key:"applied", label:"최종 알고리즘", color:"#147b69", dash:[], visible:true},
+  ];
+  const active = new Set(methods.filter(m => m.visible).map(m => m.key));
+  const readings = new Map();
+  let scenario, tracks, duration, low, high, gridStep, plotBounds;
+  let time = 0, animation = 0, lastFrame = null;
+
+  function makeLegend() {
+    for (const method of methods) {
+      const label = document.createElement("label");
+      const box = document.createElement("input");
+      const key = document.createElement("i");
+      box.type = "checkbox";
+      box.checked = method.visible;
+      key.className = method.dash.length ? "comparison-key dashed" : "comparison-key";
+      key.style.setProperty("--series",method.color);
+      label.append(box,key,document.createTextNode(method.label));
+      box.addEventListener("change",() => {
+        if (box.checked) active.add(method.key);
+        else active.delete(method.key);
+        seek(time);
+      });
+      get("compare-series").append(label);
+      if (method.key === "truth") continue;
+
+      const pair = document.createElement("div");
+      const term = document.createElement("dt");
+      const reading = document.createElement("dd");
+      term.append(key.cloneNode(),document.createTextNode(method.label));
+      pair.append(term,reading);
+      readings.set(method.key,{pair,reading});
+      get("compare-errors").append(pair);
+    }
+  }
+
+  function anglePaths(rows) {
+    const raw = rows.map(row => row[1]);
+    const deadband = [raw[0]];
+    for (const angle of raw.slice(1)) {
+      const previous = deadband.at(-1);
+      deadband.push(Math.abs(angle-previous) >= .8 ? angle : previous);
+    }
+    const median = raw.map((_,i) => {
+      const window = raw.slice(Math.max(0,i-2),i+1).sort((a,b) => a-b);
+      const middle = Math.floor(window.length/2);
+      return window.length%2 ? window[middle] : (window[middle-1]+window[middle])/2;
+    });
+    return {truth:rows.map(row => row[4]), raw, deadband, median, applied:rows.map(row => row[2])};
+  }
+
+  function truthAt(t) {
+    const progress = Math.max(0,Math.min(1,(t-scenario.start)/(scenario.stop-scenario.start)));
+    return tracks.truth[0]+progress*(tracks.truth.at(-1)-tracks.truth[0]);
+  }
+
+  function drawComparison() {
+    const surfaceInfo = surface(comparisonChart);
+    if (!surfaceInfo) return;
+    const {ctx,w,h} = surfaceInfo;
+    const left = 38, right = w-12, top = 20, bottom = h-35;
+    const x = t => left+t/duration*(right-left);
+    const y = angle => bottom-(angle-low)/(high-low)*(bottom-top);
+    plotBounds = {left,right};
+    ctx.fillStyle = "#f4f8f7";
+    ctx.fillRect(x(scenario.stop),top,right-x(scenario.stop),bottom-top);
+    ctx.font = "11px system-ui, Malgun Gothic, sans-serif";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "right";
+    for (let angle=low; angle<=high+1e-7; angle+=gridStep) {
+      line(ctx,left,y(angle),right,y(angle),"#dfe8ea");
+      ctx.fillStyle = "#536d75";
+      ctx.fillText(angle.toFixed(gridStep<1 ? 1 : 0),left-5,y(angle));
+    }
+    line(ctx,left,top,left,bottom,"#91a6a9");
+    line(ctx,left,bottom,right,bottom,"#91a6a9");
+    ctx.textAlign = "center";
+    const gap = w<400 ? 5 : 3;
+    for (let dt=Math.ceil(-scenario.start/gap)*gap; dt<=duration-scenario.start; dt+=gap) {
+      ctx.fillText(dt,x(scenario.start+dt),bottom+12);
+    }
+    ctx.fillText("출발 기준 시간 (초)",(left+right)/2,h-8);
+    ctx.textAlign = "left";
+    ctx.fillText("각도 (°)",2,7);
+    for (const [t,name] of [[scenario.start,"출발"],[scenario.stop,"정지"]]) {
+      ctx.setLineDash([3,4]);
+      line(ctx,x(t),top,x(t),bottom,"#789094");
+      ctx.setLineDash([]);
+      ctx.fillStyle = "#536d75";
+      ctx.fillText(name,x(t)+5,top+6);
+    }
+
+    for (const method of methods) {
+      if (!active.has(method.key)) continue;
+      ctx.beginPath();
+      ctx.setLineDash(method.dash);
+      const values = tracks[method.key];
+      ctx.moveTo(x(0),y(values[0]));
+      if (method.key === "truth") {
+        for (const t of [scenario.start,scenario.stop,duration]) ctx.lineTo(x(t),y(truthAt(t)));
+      } else {
+        for (let i=1;i<scenario.rows.length;i++) {
+          const t = scenario.rows[i][0];
+          ctx.lineTo(x(t),y(values[i-1]));
+          ctx.lineTo(x(t),y(values[i]));
+        }
+      }
+      ctx.strokeStyle = method.color;
+      ctx.lineWidth = method.key==="applied" ? 2.25 : 1.65;
+      ctx.stroke();
+      ctx.setLineDash([]);
+    }
+    if (active.has("raw")) {
+      for (const row of scenario.rows) dot(ctx,x(row[0]),y(row[1]),2.4,methods[1].color);
+    }
+    line(ctx,x(time),top,x(time),bottom,"#6b8c8a",1.15);
+  }
+
+  function angleAtPlayhead() {
+    const index = scenario.rows.findLastIndex(row => row[0] <= time+1e-7);
+    const current = Object.fromEntries(methods.map(m => [m.key,tracks[m.key][index]]));
+    current.truth = truthAt(time);
+    return current;
+  }
+
+  function drawComparisonModel(values) {
+    const surfaceInfo = surface(comparisonModel);
+    if (!surfaceInfo) return;
+    const {ctx,w,h} = surfaceInfo;
+    const px = Math.max(23,w*.2), py = h*.71, ground = h*.87;
+    const length = Math.min(w*.72,h*.96);
+    const reference = values.truth;
+    const magnification = compareZoom.checked ? 4 : 1;
+    line(ctx,4,ground,w-4,ground,"#c2d2d5");
+    ctx.fillStyle = "#c0ced0";
+    ctx.fillRect(px-14,py-1,31,ground-py+1);
+    for (const method of methods) {
+      if (!active.has(method.key)) continue;
+      const visualAngle = reference + magnification*(values[method.key]-reference);
+      const tip = armTip(px,py,length,visualAngle);
+      ctx.setLineDash(method.dash);
+      line(ctx,px,py,...tip,method.color,method.key==="applied" ? 2.65 : 1.8);
+      ctx.setLineDash([]);
+      dot(ctx,...tip,2.2,method.color);
+    }
+    dot(ctx,px,py,3.1,"#32464b");
+  }
+
+  function showOutcomes() {
+    const rows = scenario.rows;
+    const first = rows.findIndex(row => row[0]>=scenario.start);
+    const stop = rows.findIndex(row => row[0]>=scenario.stop);
+    const direction = Math.sign(tracks.truth.at(-1)-tracks.truth[0]);
+    const table = get("compare-outcomes");
+    table.replaceChildren();
+    for (const method of methods.slice(1)) {
+      const values = tracks[method.key];
+      const reference = values[first-1];
+      const departure = values.slice(first,stop).findIndex(value => (value-reference)*direction>=.10);
+      const settled = values.slice(stop);
+      const span = Math.max(...settled)-Math.min(...settled);
+      const row = table.insertRow();
+      const label = document.createElement("th");
+      label.scope = "row";
+      label.textContent = method.label;
+      row.append(label);
+      row.insertCell().textContent = departure>=0 ? (departure+1)+"번째 관측" : "미감지";
+      row.insertCell().textContent = span.toFixed(2)+"°";
+      row.insertCell().textContent = Math.abs(values.at(-1)-tracks.truth.at(-1)).toFixed(2)+"°";
+    }
+  }
+
+  function seek(next) {
+    time = Math.max(0,Math.min(duration,next));
+    const relative = time-scenario.start;
+    const label = (Math.abs(relative)<.005 ? 0 : relative).toFixed(2)+"초";
+    clock.value = time;
+    clock.setAttribute("aria-valuetext","출발 기준 "+label);
+    get("compare-clock").textContent = label;
+    const values = angleAtPlayhead();
+    for (const [key,{pair,reading}] of readings) {
+      pair.hidden = !active.has(key);
+      reading.textContent = Math.abs(values[key]-values.truth).toFixed(2)+"°";
+    }
+    drawComparison();
+    drawComparisonModel(values);
+  }
+
+  function pausePlayback() {
+    cancelAnimationFrame(animation);
+    animation = 0;
+    lastFrame = null;
+    playButton.textContent = "재생";
+  }
+
+  function animate(now) {
+    if (lastFrame !== null) seek(time+(now-lastFrame)/1000);
+    lastFrame = now;
+    if (time < duration) animation = requestAnimationFrame(animate);
+    else pausePlayback();
+  }
+
+  function chooseScenario() {
+    pausePlayback();
+    scenario = REPLAY[sceneSelect.value];
+    tracks = anglePaths(scenario.rows);
+    duration = scenario.rows.at(-1)[0];
+    const values = Object.values(tracks).flat();
+    const min = Math.min(...values), max = Math.max(...values);
+    gridStep = max-min>5 ? 2 : 1;
+    low = Math.floor(min/gridStep)*gridStep;
+    high = Math.ceil(max/gridStep)*gridStep;
+    clock.max = duration;
+    showOutcomes();
+    const focus = sceneSelect.value==="departure" ? scenario.focus : scenario.rows[scenario.focus][0];
+    seek(focus);
+  }
+
+  makeLegend();
+  sceneSelect.addEventListener("change",chooseScenario);
+  clock.addEventListener("input",() => {
+    pausePlayback();
+    seek(Number(clock.value));
+  });
+  compareZoom.addEventListener("change",() => drawComparisonModel(angleAtPlayhead()));
+  playButton.addEventListener("click",() => {
+    if (animation) {
+      pausePlayback();
+      return;
+    }
+    if (time >= duration) seek(0);
+    playButton.textContent = "일시정지";
+    animation = requestAnimationFrame(animate);
+  });
+  comparisonChart.addEventListener("pointerdown",event => {
+    if (!plotBounds) return;
+    pausePlayback();
+    const x = event.clientX-comparisonChart.getBoundingClientRect().left;
+    seek(duration*(x-plotBounds.left)/(plotBounds.right-plotBounds.left));
+  });
+  document.addEventListener("visibilitychange",() => { if (document.hidden) pausePlayback(); });
+  const compareObserver = new ResizeObserver(() => seek(time));
+  compareObserver.observe(comparisonChart);
+  compareObserver.observe(comparisonModel);
+  chooseScenario();
+})();
+</script>
+<script>
+(() => {
+  const evidence = document.getElementById("evidence");
+  const openEvidence = () => { if (location.hash === "#evidence") evidence.open = true; };
+  document.querySelector('a[href="#evidence"]').addEventListener("click", () => { evidence.open = true; });
+  addEventListener("hashchange",openEvidence);
+  openEvidence();
+})();
+</script>
+</body>
+</html>

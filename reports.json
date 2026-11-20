@@ -2,6 +2,21 @@
   "version": 1,
   "reports": [
     {
+      "id": "jib-display-stability",
+      "title": "지브 각도 표시 안정화",
+      "summary": "정지 중 흔들리던 지브 각도를 재생하고, 1 Hz 관제 화면의 출발 반응과 정지 후 고정을 비교합니다.",
+      "category": "센서 · 실시간 시스템",
+      "date": "2026-11-20",
+      "path": "reports/jib-display-stability/",
+      "cover": "reports/jib-display-stability/cover.png",
+      "coverAlt": "정지 로그의 추정각과 표시각 그래프, 같은 시각의 지브 끝 모형을 나란히 비교한 화면",
+      "tags": [
+        "라이다",
+        "관제 화면",
+        "시뮬레이션"
+      ]
+    },
+    {
       "id": "ptp-clock-recovery",
       "title": "PTP 시간 동기와 재부팅 복구",
       "summary": "라이다의 측정 시각으로 회전각을 구하는 방법과, 재부팅 뒤 PTP 기준 시각을 이어 가는 기판·펌웨어 설계입니다.",
