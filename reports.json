@@ -2,6 +2,22 @@
   "version": 1,
   "reports": [
     {
+      "id": "r5-head",
+      "title": "R5 · 얼굴을 따라보는 로봇 헤드",
+      "summary": "B25 해골의 6축 구동과 171단계 조립, 핀별 배선도와 A5 회로를 직접 살펴봅니다.",
+      "category": "로봇 · 기구와 전장",
+      "date": "2026-11-26",
+      "path": "reports/r5-head/",
+      "cover": "reports/r5-head/cover.webp",
+      "coverAlt": "3D 구동 화면에서 본 R5 해골 헤드와 받침",
+      "tags": [
+        "3D",
+        "조립",
+        "배선",
+        "PCB"
+      ]
+    },
+    {
       "id": "jib-display-stability",
       "title": "지브 각도 표시 안정화",
       "summary": "정지 중 흔들리던 지브 각도를 재생하고, 1 Hz 관제 화면의 출발 반응과 정지 후 고정을 비교합니다.",

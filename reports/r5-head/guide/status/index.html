@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>검사 결과와 범위 · R5 B25</title>
+<link rel="stylesheet" href="../../review.css">
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="../../">R5 <span>B25</span></a>
+  <nav aria-label="보기 선택">
+    <a href="../../demo/">구동</a><a href="../../assembly/">조립</a>
+    <a href="../../wiring/diagram/">배선도</a><a href="../../guide/" aria-current="page">문서</a>
+  </nav>
+</header>
+<main class="container guide">
+  <div class="guide-header"><nav class="guide-nav" aria-label="제작"><a href="../../guide/start/">제작 순서</a><a href="../../guide/print/">출력과 후가공</a><a href="../../guide/before/">먼저 살 부품</a><a href="../../guide/gauge/">맞춤 게이지</a><a href="../../guide/after/">시험 뒤 살 부품</a><a href="../../guide/assembly/">조립 절차</a></nav><nav class="guide-nav" aria-label="통전·구동"><a href="../../guide/electronics/">A5 발주·첫 통전</a><a href="../../guide/service/">J2 잠금·정비</a><a href="../../guide/control/">구동과 보정</a><a href="../../guide/bench/">실물 시험</a><a href="../../guide/records/">검수 기록</a></nav><nav class="guide-nav" aria-label="판정과 기준"><a href="../../guide/status/" aria-current="page">검사 결과와 범위</a><a href="../../guide/intent/">사람 요구사항</a><a href="../../guide/conditions/">검사 조건</a><a href="../../guide/requirements/">동작 인수 기준</a></nav></div>
+  <article><h1 id="b25-검사-결과와-범위">B25 검사 결과와 범위</h1>
+<p><strong>B25·A5는 시험 출력을 시작할 수 있습니다.</strong> 15번 링크와 13번 턱의 출력 상태부터 확인합니다. P01·P08의 예비 건식 맞춤을 통과하면 모터와 A5를 발주합니다. <a href="../../guide/print/">출력과 후가공</a> · <a href="../../guide/after/">시험 뒤 발주</a></p>
+<p>완성품 인수에는 P01–P08 실물 기록이 필요합니다. 인수 검사에서 C01–C04와 M01–M09는 현재 CAD에 연결된 증거 범위가 부족해 미확인으로 표시됩니다. <a href="../../guide/conditions/">검사 조건</a> · <a href="../../guide/bench/#b25-실물-시험">실물 시험</a></p>
+<div class="guide-table" tabindex="0"><table>
+<thead>
+<tr class="header">
+<th>항목</th>
+<th>디지털에서 확인한 범위</th>
+<th>실물 확인</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>P2S 출력</td>
+<td>Bambu Studio 2.09.01.70으로 <strong>PETG HF 18판·57개</strong> 전 판을 슬라이스했습니다. 판별 경고는 <strong>0건</strong>, 합계 약 <strong>68시간 20분·1.278 kg</strong>입니다. 모델 최저점에서 0.10 mm 위의 단면으로 접지를 가늠했습니다. 이 면적이 10 mm² 미만인 6개는 모두 단독 판입니다. 턱과 눈꺼풀은 2층 래프트를 사용합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/print-hf.json">HF 판별 결과</a></td>
+<td>15번 링크와 13번 턱의 접지 상태, 정밀 보어 서포트 제거와 실물 끼움을 확인합니다. <a href="../../guide/print/">출력과 후가공</a></td>
+</tr>
+<tr class="even">
+<td>앞 외장 28</td>
+<td>FreeCAD Part073과 4번 판의 앞 외장·코 트레이를 하나의 형상으로 맞췄습니다. 출력 배치 변환을 되돌려 대조한 결과 정점과 삼각형이 일치했습니다. 단일 닫힌 메쉬의 자체 교차는 <strong>0건</strong>입니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/front-shell-sync.json">형상 대조</a></td>
+<td>코 카메라 볼트와 앞 외장 맞춤, 턱 개폐를 확인합니다.</td>
+</tr>
+<tr class="odd">
+<td>오른쪽 턱 받침 37</td>
+<td>얇게 보인 끝부분은 요크가 지나가는 립입니다. 공차를 빼고도 고정홀 주변 <strong>1.240 mm</strong>, 인서트 외경 주변 <strong>1.548 mm</strong>를 확보했습니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/right-jaw-lip.json">턱 받침 살 두께</a></td>
+<td>P08에서 립, 요크와의 간극, 전체 조립을 확인합니다.</td>
+</tr>
+<tr class="even">
+<td>눈 좌우</td>
+<td>15번 타이바의 양끝 핀 구멍을 유지했습니다. 혼 쪽 장공은 <strong>2.09 × 2.69 mm</strong>, 출력 모델의 둘레 벽은 최소 <strong>2.05 mm</strong>입니다. ±20°의 801개 자세에서 타이바와 주변 15쌍을 검사했습니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/alignment-checks.json">현재 구동 검사</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/eye-yaw-clearance.json">타이바 삽입 근거</a></td>
+<td>핀과 크래들을 맞추고 조립한 눈의 움직임과 반전 유격을 확인합니다.</td>
+</tr>
+<tr class="odd">
+<td>목</td>
+<td>ID4 좌우 640틱, ID5 뒤 149틱·앞 30틱을 사용합니다. 피드백 허용치를 포함한 스토퍼 여유 하한은 좌우 2.14°, 상하 뒤 2.15°·앞 2.10°입니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/neck-yaw-travel.md">보정과 스토퍼</a></td>
+<td>양방향 끝점과 첫 접촉각을 측정하고, 시선과 반전 유격을 확인합니다.</td>
+</tr>
+<tr class="even">
+<td>턱</td>
+<td><strong>62틱에서 5.176 mm 하강</strong>. 같은 영점의 스토퍼 여유는 피드백 5틱을 포함해 닫힘 <strong>2.000°</strong>, 열림 <strong>1.004° 이상</strong>입니다. 받침과 피벗 암의 가동 틈 하한은 <strong>0.307 mm</strong>입니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/control/jaw-opening-check.json">공통 보정 영점</a></td>
+<td>양방향 마지막 비접촉 위치, 하강량, 받침–요크 틈과 5 N 외장 강건성을 확인합니다.</td>
+</tr>
+<tr class="odd">
+<td>카메라 선</td>
+<td>최소 R18.20, 길이 여유 11.12%. 턱·목 연속 검사 18구간을 모두 확인했습니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/alignment-checks.json">구동과 배선</a></td>
+<td>접합 뒤 High-Speed 영상, 케이블 고정과 100회 왕복 중 USB 연결을 확인합니다.</td>
+</tr>
+<tr class="even">
+<td>A5 정비·전장</td>
+<td>J2 잠금쇠를 내리는 경로와 공구 진입, 뒤 XT60을 분리한 뒤 덮개를 30 mm 내리는 경로에서 겹침이 없었습니다. A5의 TP2 옆 <code>12V</code> 표기는 J2·TP2 패드와 약 0.61 mm씩 떨어져 있습니다. KiCad ERC·DRC·회로도 대조 오류는 0건입니다. <a href="../../guide/service/">잠금쇠와 정비</a> · <a href="../../guide/electronics/">A5 발주와 통전</a></td>
+<td>잠금쇠 물림과 10 N 인장, 전체 배선과 공구, 부하 전압, USB 및 재시작 후 토크 해제를 확인합니다.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="구동-모형과-조립-화면">구동 모형과 조립 화면</h2>
+<p>강체 구동에서 <strong>26,196개 자세 조합</strong>을 검사했습니다. 눈 상하 모터와 모터 받침의 두 안착면은 닿으며 원본 솔리드 공통 부피는 0 mm³입니다. S01 속도 제한 모형에서는 양방향 포착 0.81초, 수평 시선 기준 충족 97.8%, 목 최고 39.85°/s였습니다. S02는 카메라와 두 동공의 목표 광선이 통과했습니다. 실제 얼굴 검출, 렌즈와 설정은 완성 상태에서 확인합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/alignment-checks.json">강체 구동과 카메라선</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/sightlines.json">시선 광선</a> · <a href="../../guide/requirements/">인수 기준</a></p>
+<p><strong>조립 미리보기는 171단계</strong>입니다. 이전 통합본 <code>14014ec</code>에서 검사한 146단계에는 이전 카메라 플러그 삽입 모형이 사용됐습니다. 현재 XT60 체결·분리, Eaton 접합, 턱 세 점 고정은 각 검증 기록의 범위를 확인합니다. 전체 조립 경로·공구·최악 공차의 C01–C04와 P01–P08 상태는 인수 검사로 확인합니다. <a href="../../guide/assembly/">조립서</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/web/README.md#b25-웹-화면">3D 화면</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/spec/review.md">인수 검사</a></p>
+</article>
+  <footer class="guide-footer"><a href="https://github.com/ckh7488/head/tree/670bf00821622ae8154d403bdf18999c5263ffa5">이 안내의 저장소 버전</a></footer>
+</main>
+</body>
+</html>

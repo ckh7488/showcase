@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>제작 순서 · R5 B25</title>
+<link rel="stylesheet" href="../../review.css">
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="../../">R5 <span>B25</span></a>
+  <nav aria-label="보기 선택">
+    <a href="../../demo/">구동</a><a href="../../assembly/">조립</a>
+    <a href="../../wiring/diagram/">배선도</a><a href="../../guide/" aria-current="page">문서</a>
+  </nav>
+</header>
+<main class="container guide">
+  <div class="guide-header"><nav class="guide-nav" aria-label="제작"><a href="../../guide/start/" aria-current="page">제작 순서</a><a href="../../guide/print/">출력과 후가공</a><a href="../../guide/before/">먼저 살 부품</a><a href="../../guide/gauge/">맞춤 게이지</a><a href="../../guide/after/">시험 뒤 살 부품</a><a href="../../guide/assembly/">조립 절차</a></nav><nav class="guide-nav" aria-label="통전·구동"><a href="../../guide/electronics/">A5 발주·첫 통전</a><a href="../../guide/service/">J2 잠금·정비</a><a href="../../guide/control/">구동과 보정</a><a href="../../guide/bench/">실물 시험</a><a href="../../guide/records/">검수 기록</a></nav><nav class="guide-nav" aria-label="판정과 기준"><a href="../../guide/status/">검사 결과와 범위</a><a href="../../guide/intent/">사람 요구사항</a><a href="../../guide/conditions/">검사 조건</a><a href="../../guide/requirements/">동작 인수 기준</a></nav></div>
+  <article><h1 id="r5-b25-제작-자료">R5 B25 제작 자료</h1>
+<p>B25 기구는 A5 서보 허브와 OpenRB-150을 사용합니다. P2S에서 Bambu PETG HF로 <strong>18판·57개</strong>를 출력합니다. <strong>15번 링크</strong>, <strong>13번 턱</strong> 순으로 첫 출력 상태를 봅니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/print-hf.json">판별 출력 기록</a></p>
+<h2 id="출력에서-첫-구동까지">출력에서 첫 구동까지</h2>
+<div class="guide-table" tabindex="0"><table>
+<thead>
+<tr class="header">
+<th>할 일</th>
+<th>파일과 절차</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>출력</td>
+<td><a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/R5-B25-P2S.3mf">P2S PETG HF 3MF</a> · <a href="../../guide/print/">01 출력과 후가공</a> · <a href="../../guide/before/">02 먼저 살 부품</a></td>
+</tr>
+<tr class="even">
+<td>건식 맞춤</td>
+<td><a href="../../guide/print/#출력물-후가공과-건식-맞춤">무전원·무접착 예비 맞춤</a>에서 끼움, 공구 접근과 오른쪽 턱 받침–요크 0.30 mm 간극을 확인합니다. 선택 출력에 쓸 치수는 <a href="../../guide/gauge/">맞춤 게이지</a>로 고릅니다.</td>
+</tr>
+<tr class="odd">
+<td>모터·전장 구매</td>
+<td>건식 맞춤 후 <a href="../../guide/after/">03 시험 뒤 살 부품</a> · <a href="../../guide/electronics/#jlcpcb-밑면-실장">A5 PCBA 발주</a></td>
+</tr>
+<tr class="even">
+<td>허브 첫 통전</td>
+<td>작업대에서 모터와 OpenRB를 분리합니다. 무전원에서 결선을 확인하고 J2를 잠근 뒤 <a href="../../guide/electronics/#전원-실물-검수">퓨즈를 뺀 첫 통전</a>부터 진행합니다.</td>
+</tr>
+<tr class="odd">
+<td>조립과 보정</td>
+<td>두 어댑터와 뒤 XT60을 분리한 뒤 <a href="../../guide/assembly/">조립과 배선</a> · <a href="../../guide/control/">OpenRB와 축별 보정</a>을 진행합니다.</td>
+</tr>
+<tr class="even">
+<td>움직임과 인수</td>
+<td><a href="../../guide/bench/#b25-실물-시험">실물 시험 P01–P08</a> · <a href="../../guide/status/">디지털 검사 결과와 범위</a></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="조립에-필요한-상세-자료">조립에 필요한 상세 자료</h2>
+<ul>
+<li><a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/R5-B25-Assembly.FCStd">FreeCAD 조립본</a> · <a href="../">웹 제작 안내</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/web/README.md#b25-웹-화면">3D 조립·구동·배선 화면</a></li>
+<li><a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/BOM.csv">B25 변경 부품 기록</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/WIRING-CUT-LIST.csv">전선 재단표</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/xl330-case-screws.md">XL330 케이스 나사 배정</a></li>
+<li><a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/pitch-drive-shaft.md">오른쪽 목 상하축 도면·STEP</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/neck-yaw-travel.md">목 스토퍼와 보정</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/camera-cable-options.md">카메라 USB 선재</a> · <a href="../../guide/service/">J2 잠금·정비</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/j2-supply-delta.md">12 V 고정선 조립</a></li>
+</ul>
+<h2 id="판정과-기록">판정과 기록</h2>
+<p>완성품 조립, 유격, 5 N 강건성, 실제 전원·USB와 구동은 P01–P08에 기록합니다. <a href="../../guide/records/">실물 기록 양식</a> · <a href="../../a5/">A5 회로도·PCB·3D HTML</a> 설계 배경과 이전 시안은 검증 기록에서 볼 수 있습니다. <a href="../../guide/intent/">1층 사람 요구사항</a> · <a href="../../guide/conditions/">2층 검사 조건</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/spec/fdm-pitfalls.md">FDM 실수 모음집</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/audit-loop.md">초기 1회 출력 감사</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/review-disposition.md">항목별 이전 판정</a> · <a href="https://github.com/ckh7488/head/tree/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions">이전 리비전</a></p>
+<details>
+<summary>형상과 검사 기록</summary>
+
+<ul>
+<li><a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/alignment-checks.json">조립과 구동</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/eye-yaw-clearance.json">타이바 삽입</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/yoke-jaw-cut.json">턱 받침–요크</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/pitch-pin-ligament.json">목 핀 자리</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/sightlines.json">시선 광선</a></li>
+<li><a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/xt60-collar-clearance.json">XT60 체결·삽입</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/cover-service.json">정비 덮개</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/a4-supply-recheck.json">A4에서 확보한 공통 정비 경로 근거</a></li>
+<li><a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/design.json">형상 파일과 해시</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/front-shell-sync.json">앞 외장 형상 대조</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/print-hf.json">PETG HF 전 판 기록</a> · <a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/R5-B25-P2S-CF.3mf">이전 CF 프로젝트</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/print-cf.json">이전 CF 검사</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/bearing-fit.json">베어링 시편</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/fit-large-bearings.json">대형 베어링 자리</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/shaft-fit.json">Ø8 축 맞춤</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/pin-fit-options-check.json">핀 치수별 검사</a></li>
+<li><a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/eye-yaw-slot.json">초기 장공</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/rear-left-screw-fit.json">뒤 외장 왼쪽 나사</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/print-precision-check.json">초기 정밀 슬라이스</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/blink-fit.json">눈꺼풀 형상</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/frozen-fixes-check.md">초기 판정</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/camera-r18-recheck.json">이전 Eaton 경로</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/neck-load-study.md">이전 목 스토퍼</a></li>
+</ul>
+</details>
+</article>
+  <footer class="guide-footer"><a href="https://github.com/ckh7488/head/tree/670bf00821622ae8154d403bdf18999c5263ffa5">이 안내의 저장소 버전</a></footer>
+</main>
+</body>
+</html>

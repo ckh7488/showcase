@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>시험 뒤 살 부품 · R5 B25</title>
+<link rel="stylesheet" href="../../review.css">
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="../../">R5 <span>B25</span></a>
+  <nav aria-label="보기 선택">
+    <a href="../../demo/">구동</a><a href="../../assembly/">조립</a>
+    <a href="../../wiring/diagram/">배선도</a><a href="../../guide/" aria-current="page">문서</a>
+  </nav>
+</header>
+<main class="container guide">
+  <div class="guide-header"><nav class="guide-nav" aria-label="제작"><a href="../../guide/start/">제작 순서</a><a href="../../guide/print/">출력과 후가공</a><a href="../../guide/before/">먼저 살 부품</a><a href="../../guide/gauge/">맞춤 게이지</a><a href="../../guide/after/" aria-current="page">시험 뒤 살 부품</a><a href="../../guide/assembly/">조립 절차</a></nav><nav class="guide-nav" aria-label="통전·구동"><a href="../../guide/electronics/">A5 발주·첫 통전</a><a href="../../guide/service/">J2 잠금·정비</a><a href="../../guide/control/">구동과 보정</a><a href="../../guide/bench/">실물 시험</a><a href="../../guide/records/">검수 기록</a></nav><nav class="guide-nav" aria-label="판정과 기준"><a href="../../guide/status/">검사 결과와 범위</a><a href="../../guide/intent/">사람 요구사항</a><a href="../../guide/conditions/">검사 조건</a><a href="../../guide/requirements/">동작 인수 기준</a></nav></div>
+  <article><h1 id="3-시험-맞춤-뒤-발주할-전장과-배선">3. 시험 맞춤 뒤 발주할 전장과 배선</h1>
+<p>기본 출력물로 <strong>P01·P08의 무전원·무접착 예비 맞춤</strong>을 진행합니다. 실제 핀·축·베어링을 대봅니다. 턱을 연 채 목 상하를 −13.799°~+3.340°에서 손으로 움직여 오른쪽 턱 받침과 요크 사이에 0.30 mm 틈새 게이지가 통과하는지 확인한 뒤 전장을 발주합니다. 표는 R5 한 대 기준입니다. 입고 후 조립과 접착제 경화를 마치고 P01의 반전 유격과 P08의 전체 조립을 검수합니다. 전원 검수, 구동과 카메라 USB 100회 왕복도 기록합니다. <a href="../../guide/print/">출력과 후가공</a> · <a href="../../guide/bench/#b25-실물-시험">B25 실물 시험</a></p>
+<h2 id="모터제어기카메라전원">모터·제어기·카메라·전원</h2>
+<div class="guide-table" tabindex="0"><table>
+<thead>
+<tr class="header">
+<th>품목</th>
+<th style="text-align: right;">수량</th>
+<th>구매 규격과 용도</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DYNAMIXEL XL330-M077-T</td>
+<td style="text-align: right;">3</td>
+<td>902-0162-000, 5 V TTL. ID1 눈 좌우, ID2 눈 상하, ID3 눈꺼풀. <a href="https://www.robotis.com/shop/item.php?it_id=902-0162-000">M077</a></td>
+</tr>
+<tr class="even">
+<td>DYNAMIXEL XL330-M288-T</td>
+<td style="text-align: right;">1</td>
+<td>902-0163-000, 5 V TTL. ID6 턱. <a href="https://www.robotis.com/shop/item.php?it_id=902-0163-000">M288</a></td>
+</tr>
+<tr class="odd">
+<td>DYNAMIXEL XL430-W250-T</td>
+<td style="text-align: right;">2</td>
+<td>902-0135-000, 12 V 계통 TTL. ID4 목 좌우, ID5 목 상하. <a href="https://www.robotis.com/shop/item.php?it_id=902-0135-000">XL430</a></td>
+</tr>
+<tr class="even">
+<td>OpenRB-150</td>
+<td style="text-align: right;">1</td>
+<td>USB 전원, DYNAMIXEL TTL. <a href="https://www.robotis.com/shop/item.php?it_id=902-0183-000">OpenRB-150</a></td>
+</tr>
+<tr class="odd">
+<td>U20CAM-1080P-S1</td>
+<td style="text-align: right;">1</td>
+<td>32 × 32 mm USB UVC. 동봉 1 m 케이블의 카메라 키 플러그와 USB-A 꼬리를 재사용합니다. <a href="https://github.com/INNO-MAKER/U20CAM-1080P-S1">U20CAM</a> · <a href="../../guide/assembly/#카메라-usb-선재">카메라 접합</a></td>
+</tr>
+<tr class="even">
+<td>정전압 DC 5.0 V / 8 A 어댑터</td>
+<td style="text-align: right;">1</td>
+<td>국내 AC 220 V 입력, 절연형 DC 출력. 눈·눈꺼풀·턱을 공급하는 외부 XT30. 부하 변동 사양이 있는 제품을 고릅니다.</td>
+</tr>
+<tr class="odd">
+<td>정전압 DC 12 V / 5 A 어댑터</td>
+<td style="text-align: right;">1</td>
+<td>국내 AC 220 V 입력, 절연형 DC 출력. 두 XL430을 공급하는 외부 XT60. 모터 단자에서 무부하·가감속 전압을 확인합니다.</td>
+</tr>
+</tbody>
+</table></div>
+<p>정격 전류는 구매 조건입니다. 실제 전압은 어댑터 리드, 하네스와 퓨즈의 강하에 따라 달라집니다. 조립 후 P07에서 어댑터 출력과 모터 단자를 함께 측정합니다. <a href="../../guide/electronics/#구동-중-전원-확인">공칭 전원 계산과 실물 검수</a></p>
+<p>XL330 네 상자의 PHS M2×8 TAP 11개와 M2×6 TAP 5개를 케이스에 사용합니다. 전원·전선·수동소자는 표의 규격과 치수에 맞는 국내 유통 동급품을 쓸 수 있습니다. 커넥터는 키 방향, 핀 배치, 고정턱과 풋프린트를 대조합니다. ESP32-C3 A1은 별도 RF 실험에 사용합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/xl330-case-screws.md">XL330 나사 배정</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/BOM.csv">B25 변경 부품 기록</a> · <a href="../../guide/before/">시험 전 구매 목록</a></p>
+<h2 id="a5-허브-실장-부품">A5 허브 실장 부품</h2>
+<p>B25 한 대에는 A5 한 장을 사용합니다. JLCPCB 견적은 <strong>실장 2장</strong>으로 시작해 한 장을 예비로 둡니다. <strong>70 × 35 mm, 4층 FR-4 1.6 mm, 외층 1 oz·내층 0.5 oz, 녹색, 무연 HASL, Economic Bottom</strong>입니다. 공장에는 <strong>밑면 SMD 12개</strong>를 맡기고, 1번 핀 방향과 TPS2557 바닥 패드의 X-ray 항목을 확인합니다. <a href="../../guide/electronics/#jlcpcb-밑면-실장">A5 발주 안내</a> · <a href="../../a5/">A5 HTML</a></p>
+<div class="guide-table" tabindex="0"><table>
+<thead>
+<tr class="header">
+<th>위치</th>
+<th>실장</th>
+<th style="text-align: right;">필요</th>
+<th>품번 또는 구매 규격</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>C3–C5</td>
+<td>밑면 SMD</td>
+<td style="text-align: right;">3</td>
+<td>Yageo CC0603KRX7R9BB104, C14663 (Basic), 100 nF, 50 V, X7R, ±10%, 0603.</td>
+</tr>
+<tr class="even">
+<td>R1–R3</td>
+<td>밑면 SMD</td>
+<td style="text-align: right;">각 1</td>
+<td>0 Ω 1206, 1 kΩ 1206, 3.3 kΩ 0805.</td>
+</tr>
+<tr class="odd">
+<td>R4–R6</td>
+<td>밑면 SMD</td>
+<td style="text-align: right;">3</td>
+<td>RT0603BRD0761K9L, 61.9 kΩ, 0603, 0.1%, 25 ppm/°C 이하.</td>
+</tr>
+<tr class="even">
+<td>U1–U3</td>
+<td>밑면 SMD</td>
+<td style="text-align: right;">3</td>
+<td>TPS2557DRBR, VSON-8 3 × 3 mm, 피치 0.65 mm. 호환품은 핀 배열과 전류 제한 특성이 같아야 합니다.</td>
+</tr>
+<tr class="odd">
+<td>C1 · C2</td>
+<td>윗면 직접 납땜</td>
+<td style="text-align: right;">각 1</td>
+<td>저ESR 방사형 전해 470 µF/10 V 및 220 µF/25 V, 각 Ø8 × 11.5 mm 이하, 피치 3.5 mm.</td>
+</tr>
+<tr class="even">
+<td>D1 · D2</td>
+<td>윗면 직접 납땜</td>
+<td style="text-align: right;">각 1</td>
+<td>3 mm 확산형 LED 녹색·황색, 피치 2.54 mm.</td>
+</tr>
+<tr class="odd">
+<td>F1 · F2 홀더</td>
+<td>윗면 직접 납땜</td>
+<td style="text-align: right;">2</td>
+<td>Keystone 3568 또는 A5 핀 간격·외형과 맞는 MINI 블레이드 PCB 홀더.</td>
+</tr>
+<tr class="even">
+<td>F1 · F2 퓨즈</td>
+<td>홀더에 삽입</td>
+<td style="text-align: right;">각 1</td>
+<td>MINI 블레이드 <strong>F1 7.5 A · F2 4 A</strong>, 32 V DC 이상.</td>
+</tr>
+<tr class="odd">
+<td>J1 · J2</td>
+<td>윗면 직접 납땜</td>
+<td style="text-align: right;">2</td>
+<td>XT30PW-M 수평 PCB 수커넥터, 피치 5.00 mm.</td>
+</tr>
+<tr class="even">
+<td>J3</td>
+<td>윗면 직접 납땜</td>
+<td style="text-align: right;">1</td>
+<td>JST B2B-PH-K-S 또는 PH 호환 수직 2핀, 피치 2.00 mm.</td>
+</tr>
+<tr class="odd">
+<td>J4–J6</td>
+<td>윗면 직접 납땜</td>
+<td style="text-align: right;">3</td>
+<td>JST B3B-PH-K-S 또는 PH 호환 수직 3핀, 피치 2.00 mm.</td>
+</tr>
+<tr class="even">
+<td>J7 · J8</td>
+<td>윗면 직접 납땜</td>
+<td style="text-align: right;">2</td>
+<td>JST B3B-EH-A 또는 EH 호환 수직 3핀, 피치 2.50 mm.</td>
+</tr>
+</tbody>
+</table></div>
+<p><a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/electronics/servo-hub-a5/BOM.csv">전체 허브 BOM</a> · <a href="../../guide/electronics/#전원-실물-검수">조립 후 첫 전원 검수</a></p>
+<h2 id="하네스와-전선">하네스와 전선</h2>
+<div class="guide-table" tabindex="0"><table>
+<thead>
+<tr class="header">
+<th>품목</th>
+<th style="text-align: right;">필요</th>
+<th style="text-align: right;">구매 준비</th>
+<th>규격과 용도</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>XT30U-F / XT30U-M</td>
+<td style="text-align: right;">3 / 1</td>
+<td style="text-align: right;">3 / 1</td>
+<td>전선 납땜형. F 3개는 외부 5 V 꼬리, J1 W3·W4, J2 W8·W9에 한 개씩.</td>
+</tr>
+<tr class="even">
+<td>XT60U-F / XT60U-M</td>
+<td style="text-align: right;">1 / 2</td>
+<td style="text-align: right;">1 / 2</td>
+<td>전선 납땜형. 외부 12 V 어댑터와 받침 입력, 허브 정비 리드.</td>
+</tr>
+<tr class="odd">
+<td>XT60E-F</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td>뒤 고정 12 V 정비 소켓, 패널 고정형.</td>
+</tr>
+<tr class="even">
+<td>WAGO 221-412 / 221-413</td>
+<td style="text-align: right;">2 / 3</td>
+<td style="text-align: right;">2 / 4</td>
+<td>2구는 12 V, 3구는 5 V·GND·DATA 분기. 2구는 12 AWG 연선을 받는 몸체를 쓰고 피복은 11 mm 벗깁니다.</td>
+</tr>
+<tr class="odd">
+<td>JST PH 하우징 2핀 / 3핀 / 단자</td>
+<td style="text-align: right;">1 / 3 / 11</td>
+<td style="text-align: right;">2 / 5 / 30</td>
+<td>PHR-2 / PHR-3 / SPH-002T-P0.5S 또는 호환품, 피치 2.00 mm, 24 AWG 연선 압착.</td>
+</tr>
+<tr class="even">
+<td>JST EH 하우징 3핀 / 단자</td>
+<td style="text-align: right;">9 / 26</td>
+<td style="text-align: right;">12 / 50</td>
+<td>EHR-3 / SEH-001T-P0.6 또는 호환품, 피치 2.50 mm, 24 AWG 연선 압착.</td>
+</tr>
+<tr class="odd">
+<td>턱 인라인 퓨즈</td>
+<td style="text-align: right;">1세트</td>
+<td style="text-align: right;">1세트</td>
+<td>MINI 인라인 홀더, 18 AWG 리드, <strong>2 A</strong> 퓨즈.</td>
+</tr>
+<tr class="even">
+<td>PC 연결 USB 데이터선</td>
+<td style="text-align: right;">1 / 2</td>
+<td style="text-align: right;">1 / 2</td>
+<td>OpenRB용 USB-C 수–USB-A 수 약 30 cm 1개 및 OpenRB·카메라의 PC 연장용 USB-A 수–USB-A 암 2개.</td>
+</tr>
+<tr class="odd">
+<td>고정 12 V 전선 W6·W7·W35·W36</td>
+<td style="text-align: right;">가조립 재단</td>
+<td style="text-align: right;">적·흑 각 0.30 m</td>
+<td>12 AWG 동 연선 Alpha Wire EcoWire 6718 또는 동급, 피복 외경 ≤3.03 mm, 허용 굽힘 반경 ≤15.6 mm. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/j2-supply-delta.md">고정선 실측과 재단</a></td>
+</tr>
+<tr class="even">
+<td>가동 12 V 정비 전선 W8·W9</td>
+<td style="text-align: right;">적·흑 각 1가닥</td>
+<td style="text-align: right;">적·흑 각 0.25 m</td>
+<td>18 AWG 고유연 주석도금 동 연선 Alpha Wire EcoWire 6715 또는 동급, 피복 외경 1.65–1.75 mm, 허용 굽힘 반경 ≤8.8 mm. 노출 경로 각 <strong>170.578 mm</strong>에 양단 삽입 길이를 더해 재단합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/WIRING-CUT-LIST.csv">하네스 재단표</a></td>
+</tr>
+<tr class="odd">
+<td>5 V 배선</td>
+<td style="text-align: right;">가조립 재단</td>
+<td style="text-align: right;">적·흑 각 1 m</td>
+<td>18 AWG 동 연선, 피복 외경 약 2.0 mm.</td>
+</tr>
+<tr class="even">
+<td>5 V 외부 꼬리</td>
+<td style="text-align: right;">가조립 재단</td>
+<td style="text-align: right;">적·흑 각 0.30 m</td>
+<td>16 AWG 동 연선.</td>
+</tr>
+<tr class="odd">
+<td>모터·데이터 배선</td>
+<td style="text-align: right;">가조립 재단</td>
+<td style="text-align: right;">적·흑·백 각 3 m</td>
+<td>24 AWG 동 연선, 피복 외경 1.04–1.14 mm.</td>
+</tr>
+<tr class="even">
+<td>폭 2.5 mm 나일론 타이</td>
+<td style="text-align: right;">12개</td>
+<td style="text-align: right;">20개</td>
+<td>하네스 고정과 뒤 선반 지지.</td>
+</tr>
+<tr class="odd">
+<td>절연 시임 / 열수축 튜브</td>
+<td style="text-align: right;">각 1세트</td>
+<td style="text-align: right;">각 1세트</td>
+<td>XT60U-M 몸체용 0.05·0.10·0.20 mm 시임, 공급선과 분기 접합에 맞는 열수축 튜브. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/j2-supply-delta.md">XT60U-M 맞춤</a></td>
+</tr>
+<tr class="even">
+<td>접착식 타이 마운트 / 재사용 타이</td>
+<td style="text-align: right;">각 1개</td>
+<td style="text-align: right;">각 1개</td>
+<td>마운트 ≤14 × 14 mm, 타이 폭 2.5–5 mm.</td>
+</tr>
+</tbody>
+</table></div>
+<p>W6·W7·W35·W36은 CAD 노출 길이, WAGO 탈피 11 mm, XT60 컵 매입 등 실측치를 합산합니다. W8·W9도 CAD 노출 경로에서 계산합니다. 압착기와 인두, 히트건, 멀티미터를 작업대에 준비합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/j2-supply-delta.md">12 V 공급선 길이</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/WIRING-CUT-LIST.csv">하네스 재단표</a> · <a href="../../guide/assembly/#전원-커넥터와-배선">전원 커넥터 조립</a></p>
+<h2 id="1대-전체-조립-부품-대조표">1대 전체 조립 부품 대조표</h2>
+<div class="guide-table" tabindex="0"><table>
+<thead>
+<tr class="header">
+<th>범위</th>
+<th>확인할 한 대분</th>
+<th>목록</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>출력</td>
+<td>18판 57개, 15번 링크와 13번 턱 먼저</td>
+<td><a href="../../guide/print/">출력과 후가공</a></td>
+</tr>
+<tr class="even">
+<td>기구·체결</td>
+<td>베어링 8개, 가공품 G1·C1·C2·C3 각 1개, 평행핀 24개와 외장 맞춤 핀 1세트, 인서트 37개와 체결품</td>
+<td><a href="../../guide/before/">시험 전 준비품</a></td>
+</tr>
+<tr class="odd">
+<td>카메라 선재</td>
+<td>고유연 USB 선재 1팩과 작은 타이 2개, 접합 소모품. 카메라 동봉 플러그 재사용</td>
+<td><a href="../../guide/before/#카메라-선재와-소모품">선재와 소모품</a> · <a href="../../guide/assembly/#카메라-usb-선재">USB 접합</a></td>
+</tr>
+<tr class="even">
+<td>전장</td>
+<td>모터 6개, OpenRB와 카메라 각 1개, 어댑터 2개, A5 실장 1대분</td>
+<td><a href="#모터제어기카메라전원">모터·제어기·카메라·전원</a> · <a href="#a5-허브-실장-부품">A5 허브</a></td>
+</tr>
+<tr class="odd">
+<td>하네스</td>
+<td>전원 커넥터, PH·EH 하우징과 단자, 퓨즈, USB 연장, 전선과 고정 소모품</td>
+<td><a href="#하네스와-전선">하네스와 전선</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/BOM.csv">B25 변경 BOM</a></td>
+</tr>
+</tbody>
+</table></div>
+</article>
+  <footer class="guide-footer"><a href="https://github.com/ckh7488/head/tree/670bf00821622ae8154d403bdf18999c5263ffa5">이 안내의 저장소 버전</a></footer>
+</main>
+</body>
+</html>

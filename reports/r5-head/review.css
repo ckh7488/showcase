@@ -1,0 +1,108 @@
+:root {
+  color-scheme: dark;
+  font-family: system-ui, -apple-system, "Noto Sans KR", sans-serif;
+  background: #101819;
+  color: #edf3ed;
+  --text: #bdccc7;
+  --surface: #182424;
+  --line: #334543;
+  --accent: #d0f28d;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 1rem; line-height: 1.65; }
+a { color: var(--accent); text-underline-offset: .2em; }
+a:hover { color: #f0ffcd; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
+.bar {
+  width: min(74rem, calc(100% - 3rem));
+  min-height: 4rem;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+.brand { font-size: 1.2rem; font-weight: 800; color: #edf3ed; text-decoration: none; }
+.brand span { color: var(--accent); margin-left: .2rem; }
+.bar nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .4rem clamp(.65rem, 3vw, 2rem); }
+.bar nav a { font-weight: 650; color: var(--text); text-decoration: none; white-space: nowrap; }
+.bar a:hover, .bar a[aria-current] { color: var(--accent); }
+.container { width: min(68rem, calc(100% - 3rem)); margin: auto; padding-bottom: 3.5rem; }
+.intro {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 1.05fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  padding: 2.25rem 0 2.75rem;
+}
+.intro h1 {
+  margin: 0;
+  font-size: clamp(2.45rem, 6vw, 4.5rem);
+  line-height: 1.13;
+  letter-spacing: -.06em;
+  font-weight: 800;
+}
+.intro p { color: var(--text); max-width: 35rem; margin: 1.2rem 0 1.4rem; }
+.hero { display: block; width: 100%; height: auto; border-radius: .65rem; border: 1px solid var(--line); }
+.actions, .document-links { display: flex; flex-wrap: wrap; gap: .6rem; }
+.button, .document-links a {
+  border: 1px solid var(--line);
+  border-radius: .45rem;
+  padding: .65rem .95rem;
+  color: #edf3ed;
+  text-decoration: none;
+  font-weight: 700;
+}
+.button:hover, .document-links a:hover, .card:hover { border-color: var(--accent); }
+.primary { background: var(--accent); border-color: var(--accent); color: #182312; }
+.primary:hover { background: #e8ffba; color: #182312; }
+h2 { margin: 0 0 .85rem; font-size: 1.45rem; line-height: 1.35; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; }
+.card {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+  padding: 1.15rem 1.2rem;
+  color: #edf3ed;
+  text-decoration: none;
+}
+.card h3 { font-size: 1.1rem; margin: 0 0 .4rem; }
+.card p { color: var(--text); margin: 0; }
+.next { margin: 2rem 0 0; }
+.note { color: var(--text); }
+.guide { padding-top: 2rem; }
+.guide-header { display: grid; gap: .5rem; margin-bottom: 1.25rem; }
+.guide-nav { display: flex; flex-wrap: wrap; gap: .45rem; }
+.guide-nav a {
+  text-decoration: none;
+  padding: .25rem .65rem;
+  border: 1px solid var(--line);
+  border-radius: .3rem;
+  color: var(--text);
+  font-weight: 650;
+  font-size: .925rem;
+}
+.guide-nav a:hover, .guide-nav a[aria-current] { color: var(--accent); border-color: var(--accent); }
+article { margin: 1.5rem 0 0; overflow-wrap: anywhere; }
+article h1 { font-size: clamp(1.65rem, 4vw, 2.45rem); line-height: 1.25; }
+article h2 { margin-top: 2rem; }
+article h3 { margin-top: 1.55rem; }
+article p, article li { max-width: 54rem; }
+article li + li { margin-top: .5em; }
+article code { color: #d7e8db; font-size: .9em; }
+article pre, .guide-table { overflow-x: auto; }
+article pre { padding: 1rem; background: var(--surface); border: 1px solid var(--line); border-radius: .4rem; }
+article table { border-collapse: collapse; width: 100%; text-align: left; }
+article th, article td { padding: .6rem .75rem; border: 1px solid var(--line); vertical-align: top; }
+article th { background: var(--surface); }
+article img { max-width: 100%; height: auto; }
+.guide-footer { border-top: 1px solid var(--line); margin-top: 2.5rem; padding-top: .9rem; font-size: .875rem; }
+@media (max-width: 720px) {
+  .bar, .container { width: calc(100% - 2rem); }
+  .intro { grid-template-columns: 1fr; padding: 1.75rem 0 2rem; }
+  .hero { max-height: 21rem; object-fit: cover; }
+  .cards { grid-template-columns: 1fr; }
+  .guide-table table { min-width: 34rem; }
+}

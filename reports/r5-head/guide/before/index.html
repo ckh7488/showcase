@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>먼저 살 부품 · R5 B25</title>
+<link rel="stylesheet" href="../../review.css">
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="../../">R5 <span>B25</span></a>
+  <nav aria-label="보기 선택">
+    <a href="../../demo/">구동</a><a href="../../assembly/">조립</a>
+    <a href="../../wiring/diagram/">배선도</a><a href="../../guide/" aria-current="page">문서</a>
+  </nav>
+</header>
+<main class="container guide">
+  <div class="guide-header"><nav class="guide-nav" aria-label="제작"><a href="../../guide/start/">제작 순서</a><a href="../../guide/print/">출력과 후가공</a><a href="../../guide/before/" aria-current="page">먼저 살 부품</a><a href="../../guide/gauge/">맞춤 게이지</a><a href="../../guide/after/">시험 뒤 살 부품</a><a href="../../guide/assembly/">조립 절차</a></nav><nav class="guide-nav" aria-label="통전·구동"><a href="../../guide/electronics/">A5 발주·첫 통전</a><a href="../../guide/service/">J2 잠금·정비</a><a href="../../guide/control/">구동과 보정</a><a href="../../guide/bench/">실물 시험</a><a href="../../guide/records/">검수 기록</a></nav><nav class="guide-nav" aria-label="판정과 기준"><a href="../../guide/status/">검사 결과와 범위</a><a href="../../guide/intent/">사람 요구사항</a><a href="../../guide/conditions/">검사 조건</a><a href="../../guide/requirements/">동작 인수 기준</a></nav></div>
+  <article><h1 id="2-시험-전에-준비할-저가-부품">2. 시험 전에 준비할 저가 부품</h1>
+<p>출력물과 함께 맞춰 볼 <strong>베어링·핀·축, 체결품, 카메라 선재</strong>를 준비합니다. 표의 <strong>필요</strong>는 R5 B25 한 대에 들어가는 양이고 <strong>권장 구매</strong>는 시험·예비분을 포함한 양입니다. 보유품은 권장 구매에서 차감합니다. <a href="../../guide/print/">출력과 후가공</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/BOM.csv">B25 변경 부품 기록</a></p>
+<p>발주 수량은 이 목록과 <a href="../../guide/after/">시험 뒤 발주 목록</a>을 사용합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/BOM.csv">공통 기구 BOM</a>은 이전 규격을 확인할 때 쓰는 참고 자료입니다.</p>
+<h2 id="베어링핀축">베어링·핀·축</h2>
+<div class="guide-table" tabindex="0"><table>
+<thead>
+<tr class="header">
+<th>품목</th>
+<th>규격</th>
+<th style="text-align: right;">필요</th>
+<th style="text-align: right;">권장 구매</th>
+<th>쓰는 곳</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>베어링</td>
+<td>6816-2RS, 80 × 100 × 10 mm</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td>B100 목 좌우</td>
+</tr>
+<tr class="even">
+<td>베어링</td>
+<td>688-2RS, 8 × 16 × 5 mm</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td>B16 목 상하 요크</td>
+</tr>
+<tr class="odd">
+<td>베어링</td>
+<td>MR104ZZ, 4 × 10 × 4 mm</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td>B10 오른쪽 턱 1개, 레일 24에 2개</td>
+</tr>
+<tr class="even">
+<td>베어링</td>
+<td>MR63ZZ, 3 × 6 × 2.5 mm, 양면 금속 실드</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td>B6 눈 상하 좌우 받침</td>
+</tr>
+<tr class="odd">
+<td>금속 위치 맞춤 띠</td>
+<td>폭 1.20 mm, 실측한 자리와 외륜으로 두께 결정</td>
+<td style="text-align: right;">2개분</td>
+<td style="text-align: right;">2개분</td>
+<td>레일 24의 MR104 외륜에 지름 차 약 0.03 mm를 남기고 건식 맞춤. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/bearing-fit.json">레일 보어</a></td>
+</tr>
+<tr class="even">
+<td>눈 상하 핀</td>
+<td>시판 Ø3 h6 연마봉 또는 ISO 8734 Ø3 평행핀, 완성 길이 13 mm</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td>MR63ZZ 내륜과 크래들 12를 건식 맞춤. 긴 규격은 13 mm로 재단 가능. <a href="../../guide/assembly/#눈-상하-핀">눈 상하 핀</a></td>
+</tr>
+<tr class="odd">
+<td>평행핀</td>
+<td>Ø2 × 8 mm</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">5</td>
+<td>L2·O2 눈꺼풀 힌지</td>
+</tr>
+<tr class="even">
+<td>평행핀</td>
+<td>Ø4 × 10 mm, ISO 8734</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td>H4 턱 오른쪽 힌지</td>
+</tr>
+<tr class="odd">
+<td>평행핀</td>
+<td>Ø2 × 24 mm / Ø2 × 6 mm / Ø2 × 5 mm</td>
+<td style="text-align: right;">2 / 10 / 1</td>
+<td style="text-align: right;">3 / 12 / 2</td>
+<td>눈 좌우 축, 눈·눈꺼풀 링크 및 혼</td>
+</tr>
+<tr class="even">
+<td>평행핀</td>
+<td>Ø3 × 12 mm / Ø4 × 20 mm, ISO 8734</td>
+<td style="text-align: right;">2 / 2</td>
+<td style="text-align: right;">3 / 3</td>
+<td>목 상하축 고정·제한판</td>
+</tr>
+<tr class="odd">
+<td>맞춤 핀</td>
+<td>Ø3 mm, 길이 실물 맞춤</td>
+<td style="text-align: right;">1세트</td>
+<td style="text-align: right;">1세트</td>
+<td>뒤 외장 뒷캡</td>
+</tr>
+</tbody>
+</table></div>
+<p>다회 출력 게이지에는 Ø4 h7·Ø8 h7 연마봉을 각각 1개 준비합니다. 가공 축이 준비되면 해당 축을 사용합니다. 눈 베어링 정렬봉을 쓸 경우에는 양쪽 내륜에 손으로 들어가는 Ø3 계열 약 150 mm 봉을 고릅니다. <a href="../../guide/gauge/">맞춤 게이지</a> · <a href="../../guide/assembly/#눈-상하-핀">눈 상하 핀</a></p>
+<h2 id="가공-금속-부품">가공 금속 부품</h2>
+<div class="warning">
+<div class="title">
+<p>Warning</p>
+</div>
+<p><strong>오른쪽 목 축 C2 발주에는 아래 B25 SVG와 STEP을 함께 전달합니다.</strong> B25의 D면은 9.95 mm이고 모터 쪽에 M3×0.5 관통 탭이 있습니다.</p>
+</div>
+<p>다음 네 품목은 <strong>한 대 조립에 각 1개</strong> 필요합니다. 외주 가공과 직접 가공 모두 아래 도면을 사용합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/pitch-drive-shaft.md">B25 오른쪽 축 가공</a></p>
+<div class="guide-table" tabindex="0"><table>
+<thead>
+<tr class="header">
+<th>번호</th>
+<th>품목</th>
+<th>발주 규격</th>
+<th>도면·상세 치수</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>G1</td>
+<td>목 상하 제한판</td>
+<td>S235급 연강 평철 12 × 3 mm, Ø4.1 축 구멍과 폭 4.2 mm 장공</td>
+<td><a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b22/pitch-strap.step">제한판 STEP</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/neck-yaw-travel.md#목-상하-제한판-작업대-맞춤">슬롯 맞춤</a></td>
+</tr>
+<tr class="even">
+<td>C1</td>
+<td>왼쪽 목 상하축</td>
+<td>S45C 등 강철 Ø8 h7 × 21.5 mm, 바깥쪽 끝에서 5.5 mm에 Ø3.00 직교 관통</td>
+<td><a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/BOM.csv">공통 BOM C1</a> · <a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/R5-B25-Assembly.FCStd">B25 조립본 <code>Part013</code></a></td>
+</tr>
+<tr class="odd">
+<td>C2</td>
+<td>오른쪽 목 상하축</td>
+<td>S45C 등 강철 Ø8 h7 × 27.30 mm. 모터 쪽 D면 길이 9.95 mm·깊이 1.00 mm. D면에 수직으로 모터 쪽 끝에서 7.20 mm에 Ø2.50 관통 드릴 후 M3×0.5 관통 탭, 바깥쪽 끝에서 5.50 mm에 Ø3.00 관통홀</td>
+<td><a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/pitch-drive-shaft-B25.svg">B25 도면 SVG</a> · <a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/pitch-drive-shaft-B25.step">B25 가공 STEP</a></td>
+</tr>
+<tr class="even">
+<td>C3</td>
+<td>눈꺼풀 공용축</td>
+<td>스테인리스 연마봉 Ø4 h7 × 112 mm. 축 가운데 기준 −53.90, +10.20, +54.15 mm에 길이 3.6 mm·깊이 0.30 mm(0.25–0.35 mm)의 평면을 같은 방향으로 가공</td>
+<td><a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/BOM.csv">공통 BOM C3</a> · <a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/R5-B25-Assembly.FCStd">B25 조립본 <code>Part048</code></a></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="나사와-인서트">나사와 인서트</h2>
+<div class="guide-table" tabindex="0"><table>
+<thead>
+<tr class="header">
+<th>품목</th>
+<th style="text-align: right;">필요</th>
+<th style="text-align: right;">권장 구매</th>
+<th>규격과 용도</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>M3 열압입 황동 인서트</td>
+<td style="text-align: right;"><strong>37</strong></td>
+<td style="text-align: right;">100개입 1팩</td>
+<td>TC-M3×3.0 또는 동급, M3×0.5, 외경 4.6 × 길이 3.0 mm. 기본 27 + 외부 XT60 덮개 2 + 턱 3 + 뒤 배선 덮개 5. <a href="../../guide/gauge/#m3-열압입-인서트">인서트 게이지</a></td>
+</tr>
+<tr class="even">
+<td>ISO 4762 M2×5 / M2×6 / M2×8</td>
+<td style="text-align: right;">5 / 4 / 14</td>
+<td style="text-align: right;">10 / 8 / 17</td>
+<td>눈 혼 5, 깜빡임 혼·턱 구동팔 4, XL430 혼·OpenRB·카메라 PCB 14.</td>
+</tr>
+<tr class="odd">
+<td>ISO 4762 M2.5×8 / M2.5×10</td>
+<td style="text-align: right;">6 / 2</td>
+<td style="text-align: right;">8 / 4</td>
+<td>XL430 케이스 6, ID5 가드 관통 2.</td>
+</tr>
+<tr class="even">
+<td>ISO 4762 M3×6</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">6</td>
+<td>하부 덮개 너트 고정판 2, 눈 좌우 모터판 2.</td>
+</tr>
+<tr class="odd">
+<td>ISO 4762 M3×8</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">35</td>
+<td>인서트 자리 12, 캐리어·눌림판·허브·상판·크랭크·축 클램프 16.</td>
+</tr>
+<tr class="even">
+<td>ISO 4762 M3×10</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">8</td>
+<td>눈 받침 13–프레임 09에 2, 하부 보드 덮개에 4.</td>
+</tr>
+<tr class="odd">
+<td>ISO 4762 M3×12</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">8</td>
+<td>허브 J2 잠금쇠 2, 외부 XT60U-M 덮개 2, 턱 양쪽 고정점 2는 <strong>전나사</strong>.</td>
+</tr>
+<tr class="even">
+<td>ISO 4762 M3×16</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">30</td>
+<td>뒤 외장 오른쪽 1, 뒤 배선 덮개 5, 뒤 가이드 2, 받침·요크·회전판·레일·모터판 등 16.</td>
+</tr>
+<tr class="odd">
+<td>ISO 4762 M3×18 전나사</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td>뒤 외장 왼쪽. Bossard BN 3 1301683 또는 동급 전나사.</td>
+</tr>
+<tr class="even">
+<td>M3×30 / M3×40 원통머리</td>
+<td style="text-align: right;">2 / 1</td>
+<td style="text-align: right;">3 / 2</td>
+<td>ISO 4762 M3×30은 XT60E-F 고정. 턱 세 번째 고정점은 <strong>M3×0.5 전나사 M3×40</strong>.</td>
+</tr>
+<tr class="odd">
+<td>ISO 4026 평끝 무두나사 M3×3 / M3×5</td>
+<td style="text-align: right;">7 / 2</td>
+<td style="text-align: right;">10 / 4</td>
+<td>눈·눈꺼풀 링크 핀 7, 목 상하 제한판 핀 2.</td>
+</tr>
+<tr class="even">
+<td>M2 육각너트 / M3 육각너트 / M3 평와셔</td>
+<td style="text-align: right;">6 / 47 / 8</td>
+<td style="text-align: right;">8 / 55 / 10</td>
+<td>M3 너트에 하부 보드 덮개 포획 너트 4개 포함. 평와셔는 XT60E-F 4, 가이드 2, 카메라 2.</td>
+</tr>
+<tr class="odd">
+<td>XL330 동봉 PHS M2×8 TAP / M2×6 TAP</td>
+<td style="text-align: right;">11 / 5</td>
+<td style="text-align: right;">0</td>
+<td>XL330 네 상자에서 확보합니다. 케이스 맞춤 시험에는 이 나사를 사용합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/xl330-case-screws.md">모터별 나사 배정</a></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="카메라-선재와-소모품">카메라 선재와 소모품</h2>
+<div class="guide-table" tabindex="0"><table>
+<thead>
+<tr class="header">
+<th>품목</th>
+<th style="text-align: right;">준비 수량</th>
+<th>규격</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>카메라 USB 선재</td>
+<td style="text-align: right;">1팩, 1 m × 2개입</td>
+<td><strong>Eaton Tripp Lite U040-B03-C-2</strong>. 공칭 외경 2.8 mm, 실측 3.00 mm 이하, USB 2.0 High-Speed 480 Mb/s, 실리콘/TPE. 가동 구간은 550 mm와 R18 이상을 적용합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/camera-cable-options.md">선재와 경로</a></td>
+</tr>
+<tr class="even">
+<td>작은 나일론 타이</td>
+<td style="text-align: right;">2</td>
+<td>띠 폭 ≤2.10 mm, 두께 ≤0.47 mm, 코 쪽 잠금 머리 ≤2.65 × 3.4 × 2.65 mm.</td>
+</tr>
+<tr class="odd">
+<td>도체별·외피용 열수축 튜브와 전자용 납</td>
+<td style="text-align: right;">1세트</td>
+<td>접합 2곳. 완성 외경은 머리 Ø4.6 mm, 뒤 Ø7 mm 이내이며 길이는 각각 13 mm 이내입니다. <a href="../../guide/assembly/#카메라-usb-선재">카메라 USB 접합</a></td>
+</tr>
+<tr class="even">
+<td>금속 끼움용 고정제</td>
+<td style="text-align: right;">1개</td>
+<td>록타이트 638급 또는 동급. 눈 상하 핀과 내륜이 건식에서 헐거울 때 그 접촉부에 소량 사용합니다. <a href="../../guide/assembly/#눈-상하-핀">눈 상하 핀</a></td>
+</tr>
+<tr class="odd">
+<td>2액형 에폭시와 PET 시임</td>
+<td style="text-align: right;">각 1세트</td>
+<td>PETG·강철 겸용 접착제, PET 시임 0.1 mm. 지정된 고정면을 손질할 때 사용합니다. <a href="../../guide/conditions/#2-틈과-끼움">끼움 조건</a></td>
+</tr>
+<tr class="even">
+<td>Bambu PETG HF</td>
+<td style="text-align: right;">같은 색 1 kg × 2롤</td>
+<td>출력 전 65 °C 4–6시간 건조. 본체와 맞춤 게이지에 같은 재료를 사용합니다. <a href="../../guide/print/">18판 출력 안내</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>XL330 케이스 나사와 U20CAM 순정 양쪽 플러그는 각 제품이 들어오면 해당 실물로 확인합니다. 입고 전에는 게이지 치수와 선재 경로를 건식으로 확인할 수 있습니다. <a href="../../guide/after/">시험 뒤 발주</a> · <a href="../../guide/bench/#b25-실물-시험">B25 실물 시험</a></p>
+<h2 id="작업대-공구">작업대 공구</h2>
+<ul>
+<li>홀 마감에는 <strong>Ø2.10 mm 손 리머, 긴 Ø2.20 mm 드릴</strong>, Ø2.0·2.5·3.0·3.1·4.0·4.1·4.5·8.0 mm 드릴 또는 리머, 둥근 줄과 400방 사포를 준비합니다. <a href="../../guide/print/#출력물-후가공과-건식-맞춤">지정 마감 치수</a></li>
+<li>조립에는 1.5·2.0·2.5 mm L자 렌치, 5.5 mm 얇은 오픈 스패너 2개, 4·5.5 mm 복스 드라이버, 인두를 준비합니다. 스패너는 머리 폭 16 mm·두께 4.2 mm 이하, 복스는 4 mm용 외경 Ø7.4 mm·5.5 mm용 외경 Ø9.3 mm 이하입니다. XL330 케이스에는 끝에서 30 mm까지 축 지름이 Ø3.00 mm 이하인 십자 드라이버를 씁니다. C2를 직접 가공할 때는 M3×0.5 관통 탭도 준비합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/xl330-case-screws.md">XL330 공구</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/pitch-drive-shaft.md">C2 가공</a></li>
+<li>실측에는 캘리퍼스, <strong>0.30 mm 틈새 게이지</strong>와 <strong>5 N과 10 N을 읽을 수 있는 힘 게이지</strong>를 준비합니다. 5 N은 외장, 10 N은 케이블과 J2 잠금쇠 시험에 씁니다. <a href="../../guide/bench/#b25-실물-시험">검사 기록</a></li>
+</ul>
+</article>
+  <footer class="guide-footer"><a href="https://github.com/ckh7488/head/tree/670bf00821622ae8154d403bdf18999c5263ffa5">이 안내의 저장소 버전</a></footer>
+</main>
+</body>
+</html>

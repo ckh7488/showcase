@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>맞춤 게이지 · R5 B25</title>
+<link rel="stylesheet" href="../../review.css">
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="../../">R5 <span>B25</span></a>
+  <nav aria-label="보기 선택">
+    <a href="../../demo/">구동</a><a href="../../assembly/">조립</a>
+    <a href="../../wiring/diagram/">배선도</a><a href="../../guide/" aria-current="page">문서</a>
+  </nav>
+</header>
+<main class="container guide">
+  <div class="guide-header"><nav class="guide-nav" aria-label="제작"><a href="../../guide/start/">제작 순서</a><a href="../../guide/print/">출력과 후가공</a><a href="../../guide/before/">먼저 살 부품</a><a href="../../guide/gauge/" aria-current="page">맞춤 게이지</a><a href="../../guide/after/">시험 뒤 살 부품</a><a href="../../guide/assembly/">조립 절차</a></nav><nav class="guide-nav" aria-label="통전·구동"><a href="../../guide/electronics/">A5 발주·첫 통전</a><a href="../../guide/service/">J2 잠금·정비</a><a href="../../guide/control/">구동과 보정</a><a href="../../guide/bench/">실물 시험</a><a href="../../guide/records/">검수 기록</a></nav><nav class="guide-nav" aria-label="판정과 기준"><a href="../../guide/status/">검사 결과와 범위</a><a href="../../guide/intent/">사람 요구사항</a><a href="../../guide/conditions/">검사 조건</a><a href="../../guide/requirements/">동작 인수 기준</a></nav></div>
+  <article><h1 id="b25-맞춤-게이지">B25 맞춤 게이지</h1>
+<p>게이지는 먼저 출력한 뒤 실물 핀·축·베어링을 맞춰 교체 치수를 고르는 데 씁니다. 기본 18판과 같은 PETG HF를 사용합니다. <a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/R5-B25-Fit-Gauge.3mf">PETG HF 게이지</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/fit-gauge-slice.json">게이지 슬라이스</a> · <a href="../../guide/print/">출력과 후가공</a></p>
+<ol type="1">
+<li>게이지와 본 부품은 <strong>같은 P2S, 필라멘트, 0.4 mm 노즐, 0.20 mm 층, Textured PEI</strong>로 출력합니다. 선택한 재료의 게이지 3MF를 열고 필라멘트를 확인합니다. <a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/R5-B25-Fit-Gauge.3mf">PETG HF 게이지</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/fit-gauge-slice.json">HF 게이지 기록</a> · <a href="../../guide/conditions/#1-제조-오차와-표준-재료">표준 출력 조건</a></li>
+<li>게이지가 식으면 긴 연결대를 왼쪽, 큰 곡선 시편을 위에 둡니다. 아래 표가 아래에서 위로 가는 줄 순서입니다. 한 줄 안에서 작은 모델 지름은 왼쪽에 있습니다.</li>
+<li>실제 조립할 핀·축·베어링·나사를 손으로 맞춰 봅니다. <strong>선택한 모델 지름, 실물 외경, 출력 홀 치수와 최종 조립 유격</strong>을 기록합니다. 출력 그대로 쓰는 회전·미끄럼 홀은 실측 지름 차 0.30–0.50 mm와 조립 유격을 확인합니다. <a href="../../guide/conditions/">끼움과 유격 조건</a> · <a href="../../guide/bench/#b25-실물-시험">P01 실물 기록</a></li>
+</ol>
+<h2 id="게이지-줄과-교체-파일">게이지 줄과 교체 파일</h2>
+<p>지름은 모두 **모델 치수(mm)**입니다. 기본값은 1회 출력 3MF에 들어 있는 치수입니다. 좌우 쌍은 각각 실물에 대보고 같은 쪽의 파일을 고릅니다.</p>
+<div class="guide-table" tabindex="0"><table>
+<thead>
+<tr class="header">
+<th>줄</th>
+<th>적용 부품</th>
+<th>시편 지름과 간격</th>
+<th>기본값</th>
+<th>교체 ZIP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>L2</td>
+<td>32 눈꺼풀 좌우 각 1개, Ø2 회전 핀, 수평</td>
+<td>2.45–2.65, 0.05 간격</td>
+<td>2.55</td>
+<td><a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/fit-c-variants.zip">눈꺼풀·눈틀·턱</a></td>
+</tr>
+<tr class="even">
+<td>M2</td>
+<td>ID1·ID2·ID3 모터판 및 ID6 왼쪽 턱 받침 36 각 1개, XL330 TAP 나사, 수직</td>
+<td>2.15–2.35, 0.05 간격</td>
+<td>ID1–3 2.24, ID6 2.20</td>
+<td><a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/fit-m2-mounts.zip">XL330 장착 부품</a></td>
+</tr>
+<tr class="odd">
+<td>M3</td>
+<td>M3 공통 통과홀, 수직</td>
+<td>3.20–3.60, 0.10 간격</td>
+<td>공통 홀 확인</td>
+<td>기존 부품을 쓴 뒤 필요 시 후가공</td>
+</tr>
+<tr class="even">
+<td>H3</td>
+<td>M3 공통 통과홀, 수평</td>
+<td>3.20–3.60, 0.10 간격</td>
+<td>공통 홀 확인</td>
+<td>기존 부품을 쓴 뒤 필요 시 후가공</td>
+</tr>
+<tr class="odd">
+<td>P3</td>
+<td>12 크래들 1개, Ø3 고정 핀, 수평</td>
+<td>3.14–3.34, 0.05 간격</td>
+<td>3.24</td>
+<td><a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/R5-B25-Pin-Fit-Parts.zip">크래들·크랭크·간격통</a></td>
+</tr>
+<tr class="even">
+<td>P4</td>
+<td>21 크랭크 1·2·3 각 1개, Ø4 공용축, 수직</td>
+<td>4.16–4.36, 0.05 간격</td>
+<td>4.26</td>
+<td><a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/R5-B25-Pin-Fit-Parts.zip">크래들·크랭크·간격통</a></td>
+</tr>
+<tr class="odd">
+<td>H4</td>
+<td>30/38/39 일체형 턱 1개, Ø4 고정 핀, 수평</td>
+<td>4.05–4.25, 0.05 간격</td>
+<td>4.15</td>
+<td><a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/fit-c-variants.zip">PETG HF 턱 3MF</a></td>
+</tr>
+<tr class="even">
+<td>B6</td>
+<td>13 눈 상하 받침 좌우 각 1개, MR63ZZ, 수직</td>
+<td>6.05–6.25, 0.05 간격</td>
+<td>6.24</td>
+<td><a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/R5-B25-Bearing-Fit-STLs.zip">소형 베어링 지지대</a></td>
+</tr>
+<tr class="odd">
+<td>B10</td>
+<td>37 오른쪽 턱 받침 1개, MR104ZZ, 수직</td>
+<td>10.05–10.25, 0.05 간격</td>
+<td>10.15</td>
+<td><a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/R5-B25-Bearing-Fit-STLs.zip">소형 베어링 지지대</a></td>
+</tr>
+<tr class="even">
+<td>O2</td>
+<td>31 눈틀 좌우 각 1개, Ø2 고정 핀, 수평</td>
+<td>2.30–2.50, 0.05 간격</td>
+<td>2.36</td>
+<td><a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/fit-c-variants.zip">눈꺼풀·눈틀·턱</a></td>
+</tr>
+<tr class="odd">
+<td>P8</td>
+<td>09 목 프레임 1개, Ø8 축, 수평</td>
+<td>8.10–8.30, 0.05 간격</td>
+<td>8.24</td>
+<td><a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/R5-B25-Shaft-Fit-Parts.zip">Ø8 축 맞춤 부품</a></td>
+</tr>
+<tr class="even">
+<td>B16</td>
+<td>07 목 상하 요크 1개, 688-2RS, 수평</td>
+<td>16.10–16.50, 0.10 간격</td>
+<td>16.26</td>
+<td><a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/fit-large-bearings.zip">목 베어링 부품</a></td>
+</tr>
+<tr class="odd">
+<td>S4</td>
+<td>45 움직이는 간격통 좌우 각 1개, Ø4 공용축, 수직</td>
+<td>4.45–4.65, 0.05 간격</td>
+<td>4.55</td>
+<td><a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/R5-B25-Pin-Fit-Parts.zip">크래들·크랭크·간격통</a></td>
+</tr>
+<tr class="even">
+<td>V8</td>
+<td>08 목 D축 클램프 1개, Ø8 축, 수직</td>
+<td>8.10–8.30, 0.05 간격</td>
+<td>8.24</td>
+<td><a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/R5-B25-Shaft-Fit-Parts.zip">Ø8 축 맞춤 부품</a></td>
+</tr>
+<tr class="odd">
+<td>B100</td>
+<td>02 목 좌우 베어링 자리 1개, 6816-2RS, 수직</td>
+<td>100.10–100.50, 0.10 간격</td>
+<td>100.32</td>
+<td><a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/fit-large-bearings.zip">목 베어링 부품</a>, 교체 파일은 100.10·100.20·100.30</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="교체-출력과-확인">교체 출력과 확인</h3>
+<p>아래 ZIP 안의 STL에는 필라멘트 설정이 없습니다. 게이지와 같은 재료를 선택한 본 출력 프로젝트 안에서 STL을 교체합니다. ZIP 안의 이전 HF 슬라이스 기록은 당시 설정의 기록입니다.</p>
+<ul>
+<li>Bambu Studio의 오브젝트 목록에서 기존 부품을 우클릭하고 <strong>Replace with STL</strong>로 교체합니다. 프로젝트의 회전과 설정이 유지됩니다. P3 크래들은 <strong>14번 단독 판, 넓은 면 아래, 브림 6 mm</strong>를 확인합니다. S4 오른쪽 간격통은 <strong>큰 플랜지 아래, 서포트 꺼짐</strong>이 맞습니다. H4 턱은 재질에 맞는 ZIP의 개별 3MF를 열어 <strong>외곽 브림 8 mm와 2층 래프트</strong>를 확인합니다. <a href="../../guide/print/">기본 판 설정</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/pin-fit-options-check.json">치수별 핀 기록</a></li>
+<li>M2에는 <strong>XL330 동봉 TAP 나사</strong>를 대봅니다. 7번 판의 <code>xl330_m288_blink_front_plate</code>와 교체 ZIP의 <code>ID3-xl330_m288_blink_front_plate</code>는 파일명에 이전 모터명이 남은 <strong>ID3 XL330-M077-T용 모터판 46</strong>입니다. P3는 Ø3 핀을 크래들과 MR63ZZ 내륜에도 각각 건식으로 확인합니다. M3·H3는 해당 방향에서 공통 통과홀의 출력 편차를 확인하는 줄입니다. 드릴·리머 가공이 지정된 홀은 제작서의 마감 치수를 따릅니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/xl330-case-screws.md">동봉 나사</a> · <a href="../../guide/after/#모터제어기카메라전원">ID3 모터</a> · <a href="../../guide/assembly/#눈-상하-핀">눈 상하 핀</a> · <a href="../../guide/print/#출력물-후가공과-건식-맞춤">후가공 치수</a></li>
+<li>B100의 <strong>Ø100.40·Ø100.50 mm</strong>는 비교 시편입니다. 24번 레일은 기본 출력물의 <strong>Ø10.24 mm 자리와 Ø9.36 mm 멈춤턱</strong>을 마감하고 MR104ZZ 두 개를 금속 위치 맞춤 띠와 함께 건식으로 끼웁니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/fit-large-bearings.json">목 베어링 치수</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/bearing-fit.json">레일 보어</a></li>
+<li>P8과 B10의 다섯 지름에 오른쪽 턱 고정홀 보강을 적용했습니다. B10에는 현재 열림 스토퍼 릴리프가 반영됐으며 Ø10.05와 Ø10.25를 9번 판에서 다시 슬라이스했습니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/shaft-fit.json">Ø8 축 치수</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/print-build.json">고정홀 보강</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/bearing-fit.json">B10 슬라이스</a></li>
+</ul>
+<h2 id="m3-열압입-인서트">M3 열압입 인서트</h2>
+<p>게이지 오른쪽 아래 두 줄은 <strong>CNC Kitchen TC-M3×3.0</strong> 시험편입니다. L2 오른쪽은 수직 홀, M2 오른쪽은 수평 홀입니다. 모델 지름은 왼쪽부터 <strong>3.95, 4.05, 4.15, 4.25, 4.35 mm</strong>, 막힌 홀 깊이는 <strong>4.50 mm</strong>입니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/fit-gauge-slice.json">HF 시험편 슬라이스</a></p>
+<p>모델 Ø4.15 mm는 출력 홀 보정 0.15 mm를 반영한 시작점입니다. 열압입 온도는 사용할 인서트와 재료로 같은 게이지의 시편에서 맞춥니다. 수평과 수직의 실제 홀을 각각 잰 후 인두로 인서트 윗면을 출력물 표면과 평평하게 넣습니다. 식은 뒤 나사가 잘 들어가는지 확인합니다. 이전 B15 시험판은 두 버전에서 치수가 같은 자리의 예비 확인에 쓸 수 있습니다. <a href="https://cnckitchen.com/s/CNCKitchen_Heat-Set-Insert-Dimensions-and-Design-Guidelines.pdf">인서트 제조사 가이드</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/heat-set-checks.json">B25 인서트 위치</a> · <a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/R5-B15-Fit-P2S.3mf">이전 B15 시험판</a></p>
+</article>
+  <footer class="guide-footer"><a href="https://github.com/ckh7488/head/tree/670bf00821622ae8154d403bdf18999c5263ffa5">이 안내의 저장소 버전</a></footer>
+</main>
+</body>
+</html>

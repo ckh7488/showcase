@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>검수 기록 · R5 B25</title>
+<link rel="stylesheet" href="../../review.css">
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="../../">R5 <span>B25</span></a>
+  <nav aria-label="보기 선택">
+    <a href="../../demo/">구동</a><a href="../../assembly/">조립</a>
+    <a href="../../wiring/diagram/">배선도</a><a href="../../guide/" aria-current="page">문서</a>
+  </nav>
+</header>
+<main class="container guide">
+  <div class="guide-header"><nav class="guide-nav" aria-label="제작"><a href="../../guide/start/">제작 순서</a><a href="../../guide/print/">출력과 후가공</a><a href="../../guide/before/">먼저 살 부품</a><a href="../../guide/gauge/">맞춤 게이지</a><a href="../../guide/after/">시험 뒤 살 부품</a><a href="../../guide/assembly/">조립 절차</a></nav><nav class="guide-nav" aria-label="통전·구동"><a href="../../guide/electronics/">A5 발주·첫 통전</a><a href="../../guide/service/">J2 잠금·정비</a><a href="../../guide/control/">구동과 보정</a><a href="../../guide/bench/">실물 시험</a><a href="../../guide/records/" aria-current="page">검수 기록</a></nav><nav class="guide-nav" aria-label="판정과 기준"><a href="../../guide/status/">검사 결과와 범위</a><a href="../../guide/intent/">사람 요구사항</a><a href="../../guide/conditions/">검사 조건</a><a href="../../guide/requirements/">동작 인수 기준</a></nav></div>
+  <article><h1 id="검수-기록">검수 기록</h1>
+<p>B25의 기구 기록은 <code>spec/records/M01.json</code>–<code>M09.json</code>, 실물 기록은 <code>P01.json</code>–<code>P08.json</code>에 남깁니다. 공통 필드는 <code>revision</code>(<code>B25</code>), 시험에 사용한 CAD의 <code>cad_sha256</code>과 <code>status</code>입니다. B25 CAD 파일의 SHA-256을 구한 뒤 실제 근거를 연결합니다. 보관 중인 M02·M07·M09 JSON은 B22 기록입니다. <a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/R5-B25-Assembly.FCStd">B25 조립 CAD</a></p>
+<p>시험자가 결과에 따라 <code>PASS</code> 또는 <code>FAIL</code>을 적습니다. M07은 근거가 남았을 때 <code>UNVERIFIED</code>도 사용할 수 있습니다. 기록이 없거나 리비전·해시·필드가 맞지 않으면 검사 결과는 <code>UNVERIFIED</code>입니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/spec/review.md">판정 절차</a></p>
+<h2 id="m01m09-기구-검수">M01–M09 기구 검수</h2>
+<p><code>cases</code> 객체에는 아래 키로 기구를 기록합니다.</p>
+<div class="guide-table" tabindex="0"><table>
+<thead>
+<tr class="header">
+<th>키</th>
+<th>기구</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>neck_yaw</code></td>
+<td>목 좌우</td>
+</tr>
+<tr class="even">
+<td><code>neck_pitch</code></td>
+<td>목 상하</td>
+</tr>
+<tr class="odd">
+<td><code>jaw</code></td>
+<td>턱</td>
+</tr>
+<tr class="even">
+<td><code>blink</code></td>
+<td>눈꺼풀</td>
+</tr>
+<tr class="odd">
+<td><code>eye_yaw</code></td>
+<td>눈 좌우</td>
+</tr>
+<tr class="even">
+<td><code>eye_pitch</code></td>
+<td>눈 상하</td>
+</tr>
+<tr class="odd">
+<td><code>cable_retention</code></td>
+<td>케이블 고정부</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>적용하는 기구는 <code>status</code>와 <code>measurements</code> 배열을 적습니다. 각 측정에는 <code>name</code>, 유한한 수치 <code>value</code>, <code>unit</code>, 저장소 안의 기존 근거 파일 상대경로 <code>source</code>, 부품 ID나 측정 위치 <code>location</code>이 필요합니다.</li>
+<li>적용하지 않는 기구는 <code>status</code>를 <code>N/A</code>로 적고 <code>reason</code>에 해당 설계에서 적용하지 않는 이유를 씁니다.</li>
+<li>M02는 목 상하·턱·눈꺼풀·눈 좌우·눈 상하, M05는 눈꺼풀·턱·눈 좌우·눈 상하, M07은 눈꺼풀, M09는 일곱 기구 모두가 검사기의 필수 측정 대상입니다. 적용되는 다른 기구의 결과도 적습니다. 전체 <code>PASS</code>에는 일곱 기구의 판정과 한 건 이상의 측정이 필요합니다. 실패가 확인되면 전체 <code>FAIL</code>로 적고 아직 남은 기구는 생략할 수 있습니다.</li>
+<li>M02는 지지점 간 거리 ÷ 축 지름을 <code>support_span_to_shaft_diameter</code>, 단위 <code>ratio</code>로 적습니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/spec/measure_m02.py">보관된 B22 측정 스크립트</a></li>
+<li>M07은 보정 범위에서 가장 작은 힘 전달각을 <code>minimum_transmission_angle</code>, 단위 <code>deg</code>로 적습니다. 40° 미만인 눈꺼풀은 <code>exception</code>에 <code>required_torque_Nm</code>, <code>stall_torque_Nm</code>와 근거 파일 <code>source</code>를 적습니다. 검사기는 토크 비율과 해당 리비전·해시의 P03을 읽습니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/spec/records/M07.md#b25-눈꺼풀">B25 M07 근거</a></li>
+<li>M09는 하중을 받는 부위의 가장 얇은 벽을 <code>minimum_wall_thickness</code>, 단위 <code>mm</code>로 적습니다. 검사기의 최소값 비교는 <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/spec/criteria.toml">criteria.toml</a>을 따릅니다. 고정 조건에 명시된 예외의 위치와 근거도 현장 판정에 남깁니다. <a href="../../guide/conditions/#9-강도">벽과 적층 조건</a></li>
+</ul>
+<h2 id="p01p08-실물-시험">P01–P08 실물 시험</h2>
+<p>시험자 이름 <code>tester</code>, 실제 시험일 <code>date</code>(<code>YYYY-MM-DD</code>), 시험 방법과 조건 <code>measurement</code>, 직접 확인한 결과 <code>result</code>를 적습니다. 출력·가공·배선 조건, 펌웨어·보정값과 계측 증거를 해당 항목에 연결합니다. <a href="../../guide/bench/#b25-실물-시험">B25 실물 시험</a></p>
+<div class="guide-table" tabindex="0"><table>
+<thead>
+<tr class="header">
+<th>기록</th>
+<th>B25 추가 필드와 확인 범위</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>P01·P02·P05</td>
+<td>시험자가 끼움·유격, 케이블과 J2 잠금쇠 당김, 시선의 실측을 각각 적습니다. 검사기는 공통 필드와 판정만 확인합니다. <a href="../../guide/bench/#p02-내부-j2-잠금쇠">P02 내부 J2 잠금쇠</a></td>
+</tr>
+<tr class="even">
+<td>P03</td>
+<td>연속 완료 <code>cycles</code>와 <code>binding_events</code>를 정수로 적습니다. 검사기는 50회 이상과 걸림 0회를 확인합니다. 시험자는 깜빡임 <strong>0.8~1.5초</strong>, 시작 간격 <strong>4~10초</strong>도 확인한 뒤 <code>PASS</code>를 기록합니다. 깜빡임 시간·간격과 ID3 부하 전압은 실측 근거에 적습니다.</td>
+</tr>
+<tr class="odd">
+<td>P04</td>
+<td><code>neck_stop_angles_deg</code> 객체 안에 <code>yaw</code>와 <code>pitch</code>를 둡니다. 두 축 모두 <code>endpoints</code>(설정 끝점)와 <code>first_contacts</code>(첫 접촉각)를 같은 중립에서 <code>[음수 쪽 각도, 양수 쪽 각도]</code>로 적습니다. <code>PASS</code>에는 방향마다 첫 접촉과 설정 끝점의 각도 차에서 8틱(0.703125°)을 빼고 2° 이상이 필요합니다.</td>
+</tr>
+<tr class="even">
+<td>P06</td>
+<td><code>jaw_command_ticks</code>(합격 시험은 62), 실측 <code>jaw_tip_drop_mm</code>, <code>jaw_visible_drop</code>과 <code>jaw_goal_pwm_verified</code>(<code>true</code>/<code>false</code>), 피드백 5틱을 뺀 열림 여유 <code>jaw_stop_reserve_deg</code>를 적습니다. <code>jaw_last_clear_ticks</code>는 같은 턱 닫힘 영점에서 <code>[닫힘 쪽 음수, 열림 쪽 양수]</code>로 적습니다. 검증된 PWM 제한에서 필요한 최소 무접촉 값은 <code>[-28, 79]</code>틱이고, 제한 확인 근거가 없으면 <code>[-28, 90]</code>틱입니다. 시험에 사용한 ID6 보정과 PWM 제한 확인 근거를 연결합니다.</td>
+</tr>
+<tr class="odd">
+<td>P07</td>
+<td>정수 <code>camera_yaw_cycles</code>, <code>camera_usb_disconnects</code>, <code>camera_usb_reenumerations</code>와 불리언 <code>camera_recognized_after</code>를 적습니다. <code>PASS</code>에는 각각 100 이상, 0, 0, <code>true</code>가 필요합니다. <code>camera_yaw_endpoints_deg</code>는 실제 도달한 <code>[왼쪽 음수, 오른쪽 양수]</code> 각도이며, <code>camera_yaw_calibration_ticks</code>는 시험 펌웨어의 ID4 <code>[왼쪽, 중립, 오른쪽]</code> 틱입니다. 시험 끝점과 보정 끝점은 각각 8틱(0.703125°) 이내로 일치해야 합니다. 지연·부하 전압과 토크 해제는 실측 근거에 적습니다.</td>
+</tr>
+<tr class="even">
+<td>P08</td>
+<td><code>PASS</code>에는 전체 조립 완료 <code>full_assembly</code>가 <code>true</code>, 절차에 없던 가공 횟수 <code>unplanned_rework_count</code>가 0이어야 합니다. <code>retained_nut_covers</code>에는 <code>rear-cable</code>과 <code>bottom-board</code>를 적습니다. 앞 단계 재분해 여부, 표준 공구 접근과 턱 간극·5 N 결과는 실측 근거에 적습니다.</td>
+</tr>
+</tbody>
+</table></div>
+<p>저장소 루트에서 <code>python spec/verify.py --revision B25</code>로 전체 판정표를 봅니다. <code>python spec/verify.py --b25-physical</code>은 P06과 P07만 표시합니다. 수치 필드 자동 검사는 기록된 값을 읽으므로 증거 파일과 현장 결과는 시험자가 대조합니다. <a href="../../guide/requirements/#b25-인수-검사">인수 검사 범위</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/spec/records_check.py">검사 구현</a></p>
+</article>
+  <footer class="guide-footer"><a href="https://github.com/ckh7488/head/tree/670bf00821622ae8154d403bdf18999c5263ffa5">이 안내의 저장소 버전</a></footer>
+</main>
+</body>
+</html>

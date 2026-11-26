@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>조립 절차 · R5 B25</title>
+<link rel="stylesheet" href="../../review.css">
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="../../">R5 <span>B25</span></a>
+  <nav aria-label="보기 선택">
+    <a href="../../demo/">구동</a><a href="../../assembly/">조립</a>
+    <a href="../../wiring/diagram/">배선도</a><a href="../../guide/" aria-current="page">문서</a>
+  </nav>
+</header>
+<main class="container guide">
+  <div class="guide-header"><nav class="guide-nav" aria-label="제작"><a href="../../guide/start/">제작 순서</a><a href="../../guide/print/">출력과 후가공</a><a href="../../guide/before/">먼저 살 부품</a><a href="../../guide/gauge/">맞춤 게이지</a><a href="../../guide/after/">시험 뒤 살 부품</a><a href="../../guide/assembly/" aria-current="page">조립 절차</a></nav><nav class="guide-nav" aria-label="통전·구동"><a href="../../guide/electronics/">A5 발주·첫 통전</a><a href="../../guide/service/">J2 잠금·정비</a><a href="../../guide/control/">구동과 보정</a><a href="../../guide/bench/">실물 시험</a><a href="../../guide/records/">검수 기록</a></nav><nav class="guide-nav" aria-label="판정과 기준"><a href="../../guide/status/">검사 결과와 범위</a><a href="../../guide/intent/">사람 요구사항</a><a href="../../guide/conditions/">검사 조건</a><a href="../../guide/requirements/">동작 인수 기준</a></nav></div>
+  <article><h1 id="r5-b25-조립-절차">R5 B25 조립 절차</h1>
+<p>출력 부품 57개를 18판에 배치한 B25 P2S PETG HF 프로젝트와 A5 허브를 사용합니다. <a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/R5-B25-P2S.3mf">P2S 프로젝트</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/print-hf.json">출력판 대조</a> · <a href="../../guide/print/">출력과 후가공</a> · <a href="../../guide/before/">시험 전 준비품</a> · <a href="../../guide/after/">시험 뒤 발주</a></p>
+<p>현재 3D 조립 미리보기는 171단계의 부품·공구 위치 예시입니다. 이전 통합본 <code>14014ec</code>의 146단계 강체 검사에서는 이전 카메라 플러그 삽입 모델을 사용했고 막힘은 0건이었습니다. 현재 Eaton 접합, A5와 J2 체결, 턱 세 점 고정은 항목별 CAD 기록과 P01–P08 실물 시험을 확인합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/web/README.md#오프라인-조립-html-만들기">3D 미리보기 생성</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/alignment-checks.json">조립 검사 범위</a> · <a href="../../guide/bench/#b25-실물-시험">실물 시험</a></p>
+<h2 id="조립-순서">조립 순서</h2>
+<ol type="1">
+<li>18판의 기본 출력 부품에서 브림·래프트·서포트를 제거하고, 출력 목록의 지정 홀을 마감합니다. 좌우 핀·베어링과 축의 건식 맞춤은 P01에 기록합니다. P08의 준비로 턱 받침·요크, 덮개와 공구를 무전원·무접착 상태에서 미리 맞춥니다. 여러 번 출력할 수 있으면 게이지에서 치수를 고릅니다. 턱의 건식 맞춤 뒤 전장을 발주합니다. <a href="../../guide/print/">출력 후 가공</a> · <a href="../../guide/gauge/">맞춤 게이지</a> · <a href="../../guide/after/">전장 발주</a></li>
+<li>맨 출력물에 인서트를 넣고 식힙니다. 받침 위에서 하부 덮개용 M3 너트 네 개를 육각 홈에 넣고 좌우 고정판을 <strong>M3×6 한 개씩</strong>으로 고정합니다. 작업대에서 모터판과 모터, 눈꺼풀 레일, 목 상하축을 맞춥니다. <a href="#m3-인서트">인서트</a> · <a href="#모터와-케이스">모터</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/pitch-drive-shaft.md">목 구동축 가공</a></li>
+<li>빈 받침의 오른쪽 통로에 Eaton 선재의 맨 끝을 먼저 넣습니다. OpenRB USB와 5 V 꼬리선을 뒤로 빼고 40번 가이드를 뒤에서 밀어 넣습니다. 뒤에서 <strong>M3×16 두 개</strong>를 넣고 받침 안쪽에서 평와셔와 너트를 잡아 고정합니다. 뒤쪽 12 V 고정선을 조립합니다. <a href="#카메라-usb-선재">카메라 USB 선재</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/j2-supply-delta.md">12 V 공급선 조립</a></li>
+<li>작업대에서 A5 첫 통전과 OpenRB USB 응답 검사를 마칩니다. 하부 덮개를 시험 장착해 정비 플러그와 배선의 30 mm 하강 경로를 확인합니다. 모터 커넥터를 꽂기 전에 어댑터 두 개와 USB를 모두 뽑습니다. <a href="#전원-커넥터와-배선">전원 커넥터와 배선</a> · <a href="../../guide/service/#형상과-정비-순서">정비 순서</a></li>
+<li>목 좌우축의 브래킷과 ID4, 6816 베어링, 정지 블록, 회전판을 조립합니다. 회전판을 내리기 전에 Eaton 선재의 맨 끝을 회전판 앞 구멍 아래에서 위로 통과시킵니다. 회전판이 가볍게 도는지 확인하고 받침 상판을 닫습니다. <a href="#받침과-목-좌우축">받침과 목 좌우축</a></li>
+<li>작업대에서 목 기둥에 요크를 달고 양 끝 바깥에서 688 베어링을 넣습니다. 프레임을 내린 뒤 두 Ø8 축과 Ø3×12 핀을 넣고 오른쪽 축을 위에서 M3×8로 조입니다. 제한판은 둥근 구멍을 아래, 긴 슬롯을 위에 둡니다. 레일 24에는 금속 위치 맞춤 띠와 MR104ZZ 두 개를 안쪽에서 넣습니다. 링크를 달기 전에 공용 Ø4 축을 손으로 돌려 걸림을 확인합니다. 13번 받침의 두 베어링을 정렬한 뒤 눈 모듈을 넣습니다. 두 눈과 타이바는 건식으로 맞춘 뒤 핀을 고정합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/pitch-drive-shaft.md">목 상하축 가공과 작업대 체결</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/neck-yaw-travel.md#목-상하-제한판-작업대-맞춤">목 제한판</a> · <a href="../../guide/print/#출력물-후가공과-건식-맞춤">레일 가공</a> · <a href="#눈-상하-핀">눈 상하 베어링과 핀</a> · <a href="#눈-좌우-타이바-15">눈 좌우 타이바</a></li>
+<li>카메라를 브래킷에 <strong>M2×8 두 개</strong>와 너트로 고정하고, 브래킷 앞면의 두 자리에는 M3 평와셔를 한 개씩 댑니다. 카메라를 단 브래킷을 코 트레이에 <strong>M3×8 두 개</strong>로 조입니다. Eaton 선재를 코 트레이에 통과시켜 고정하고 머리 쪽 순정 꼬리선을 접합합니다. 눈꺼풀을 닫고 앞 외장을 정면에서 끼운 뒤 아래 링크 핀을 고정하고 양쪽이 함께 움직이는지 손으로 확인합니다. 턱 모듈을 아래에서 맞춰 프레임에 세 점으로 고정합니다. <a href="#카메라-usb-선재">카메라 선재와 접합</a> · <a href="#턱-모듈-세-점-고정">턱 모듈</a></li>
+<li>조립한 머리를 기둥째 회전판의 네 볼트 위에 내립니다. 기둥 옆 통로에서 5.5 mm 스패너 두 개로 각 아래 너트를 잡고 위 너트를 조입니다. 무전원에서 남은 모터선을 연결하고 카메라 선의 뒤 고정점과 접합을 마칩니다. 전원 극성, 선 눌림, 공구 접근과 너트 포획을 확인합니다. 덮개를 닫기 전에 접합한 카메라의 USB High-Speed와 영상을 확인하고, 어댑터와 USB를 다시 뺀 뒤 뒤 외장과 덮개를 닫습니다. <a href="#뒤-외장-나사">뒤 외장 나사</a> · <a href="#카메라-usb-선재">카메라 접합 검사</a></li>
+<li>머리와 턱을 받치고 토크를 끈 상태에서 목의 첫 접촉각과 보정 끝점을 같은 중립 기준에서 측정합니다. 스토퍼 여유를 확인한 뒤 한 축씩 보정과 구동을 확인합니다. 완성 조립품의 P01–P08 결과를 기록합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/neck-yaw-travel.md">목 스토퍼와 보정</a> · <a href="../../guide/control/#보정과-한-축-구동">제어와 보정</a> · <a href="../../guide/bench/#b25-실물-시험">실물 시험</a></li>
+</ol>
+<h2 id="받침과-목-좌우축">받침과 목 좌우축</h2>
+<ol type="1">
+<li>ID4 모터를 넣기 전에 두 브래킷의 다리를 <strong>M3×8 네 개</strong>로 받침 인서트에 고정합니다. ID4를 위에서 넣고 무전원에서 받침 왼쪽 창으로 JST를 꽂습니다. 모터 높이를 맞출 수 있게 케이스의 M2.5×8 네 개는 손으로만 걸어 둡니다.</li>
+<li>6816 베어링을 받침 02에 앉히고 외륜 눌림판 세 개를 <strong>M3×8 세 개</strong>와 너트로 고정합니다. 좌우 정지 블록을 받침 본체의 키 홈에 내려 넣습니다. 회전판 돌기와 닿는 면을 눌러 왼쪽 블록은 앞 왼쪽, 오른쪽 블록은 앞 오른쪽 벽에 붙인 채 베어링 받침의 <strong>M3×16 세 개</strong>와 너트로 함께 고정합니다. 베어링 내륜 위에 <strong>두께 0.10 mm, 안지름 80.1 mm, 바깥지름 84.5 mm</strong> PET 링을 평평하게 놓습니다.</li>
+<li>04번 회전판에 아래에서 <strong>M3×16 네 개</strong>를 올리고 위에서 너트로 고정합니다. Eaton 선재를 회전판 앞으로 올리고, 회전판을 내륜에 앉혀 모터 혼에 <strong>M2×8 네 개</strong>로 고정합니다. 회전판을 가볍게 누른 채 받침 옆에서 <strong>긴 쪽 91 mm의 2 mm 볼포인트 육각렌치</strong>로 ID4 케이스 나사 네 개를 조입니다. 앞쪽은 곧게, 뒤쪽은 앞을 향해 약 10° 기울여 넣습니다. 전원을 넣기 전에 회전판을 정면에서 양쪽으로 천천히 돌려 정지 블록의 첫 접촉과 걸림을 확인합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/neck-yaw-travel.md">목 좌우 스토퍼 범위</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/web/README.md#오프라인-조립-html-만들기">3D 조립 32–50단계</a></li>
+</ol>
+<h2 id="모터와-케이스">모터와 케이스</h2>
+<ol type="1">
+<li>ID1·ID2·ID3에는 XL330-M077-T, ID6에는 XL330-M288-T를 사용합니다. 모터판과 턱 받침을 관통해 ROBOTIS 케이스에 물리는 자리에 동봉 <strong>PHS M2×8 TAP 11개</strong>와 <strong>PHS M2×6 TAP 5개</strong>를 씁니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/xl330-case-screws.md">케이스 나사 자리와 실물 확인</a></li>
+<li>ISO 4762 M2×6 원통머리는 깜빡임 혼 19에 2개와 턱 구동팔 38에 2개를 사용합니다. 목의 ID4·ID5는 XL430-W250-T입니다. ID4 케이스 4곳과 ID5 바깥 2곳에 M2.5×8, ID5 가드를 관통하는 두 곳에 M2.5×10을 씁니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/BOM.csv">공통 부품표</a> · <a href="../../guide/before/">B25 체결품</a></li>
+</ol>
+<h2 id="전원-커넥터와-배선">전원 커넥터와 배선</h2>
+<ol type="1">
+<li>외부 <strong>5 V는 XT30</strong>, <strong>12 V는 XT60</strong>입니다. 양쪽 끝에 W3·W4는 <code>J1 · 5 V</code>, W8·W9는 <code>J2 · 12 V</code>로 표시합니다. 받침 뒤 두 XT60에는 <code>12 V IN</code>과 <code>12 V SERVICE</code>를 표시합니다. 내부 J1·J2는 동일한 XT30PW-M이며 양쪽 모두 <strong>패드 2가 +, 패드 1이 GND</strong>입니다. 12 V 정비 리드의 W8 적색과 W9 흑색의 노출 경로는 각각 <strong>170.578 mm</strong>입니다. 재단에는 양쪽 단자 삽입분을 더합니다. <a href="../../guide/electronics/#허브-단자와-배선">핀 배치와 극성</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/WIRING-CUT-LIST.csv">하네스 재단표</a></li>
+<li>작업대에서 40번 뒤 가이드에 인서트 7개를 위에서 넣고 식힙니다. 받침 뒤 XT60E-F를 <strong>M3×30 두 개, 평와셔 네 개, 일반 M3 너트 두 개</strong>로 고정합니다. 12 V 입력 XT60U-M은 40번 가이드에 위에서 내려 앞뒤 턱을 걸고, 두 WAGO 221-412는 입구가 Y=230 mm에 오도록 둡니다. 공급선을 위쪽 선반에 지지하고 같은 극의 WAGO에 연결합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/j2-supply-delta.md">고정선과 외부 입력 조립</a></li>
+<li>작업대에서 두 어댑터와 USB를 빼고 모터·OpenRB·F1·F2 퓨즈를 분리합니다. 뒤 <code>12 V SERVICE</code> XT60을 빼 둔 채 하네스와 허브의 도통을 확인합니다. 가동 XT60의 +는 <strong>F2 입력 접점에만</strong>, 5 V 입력의 +는 <strong>F1 입력 접점에만</strong> 연결합니다. 두 GND는 TP3에 연결됩니다.</li>
+<li>첫 통전 전에 허브를 하부 덮개에 고정합니다. <strong>J1 쪽 H1·H3는 M3×8</strong>, <strong>J2 쪽 H2·H4는 잠금쇠를 관통하는 M3×12</strong>로 조이며 아래에는 일반 M3 너트를 씁니다. 잠금쇠가 플러그 뒤턱을 잡으면 뒤 서비스 XT60을 결합합니다. <strong>퓨즈를 뺀 상태의 입력 검사</strong>를 마친 뒤 무전원에서 F1 7.5 A와 F2 4 A를 넣고 무부하 출력을 확인합니다. 조립을 계속하기 전에 두 어댑터와 뒤 서비스 XT60을 다시 분리합니다. <a href="../../guide/electronics/#전원-실물-검수">A5 입력과 출력 검사</a> · <a href="../../guide/service/#형상과-정비-순서">정비 플러그 경로</a></li>
+<li>무전원에서 OpenRB 점퍼를 USB(VIN)에 놓고 나사식 VIN과 EH 2를 비웁니다. EH 1의 W10과 EH 3의 W11을 J3 PH 1과 PH 2에 각각 잇습니다. 도통과 선 사이 단락 여부를 확인한 뒤 J3를 연결합니다. USB-C를 먼저 꽂은 OpenRB를 27번 캐리어에 <strong>M2×8 네 개</strong>와 M2 너트로 고정한 뒤 캐리어를 받침에 <strong>M3×8 네 개</strong>와 M3 너트로 고정합니다. 어댑터와 모터를 분리한 채 USB로 펌웨어를 올려 <code>PING</code>에 <code>R5B1 1</code>이 오는지 확인합니다. 검사가 끝나면 USB를 뺍니다. ID5의 JST는 가드를 달기 전에 무전원에서 꽂습니다. USB 연장부를 분리할 때는 고정·가동 커넥터 몸체의 좌우 면을 잡습니다. <a href="../../guide/electronics/#허브-단자와-배선">A5 허브 단자</a> · <a href="../../guide/control/#모터를-뺀-첫-통전">OpenRB 첫 응답 확인</a></li>
+<li>뒤쪽 42번 덮개를 마저 닫을 때 위에서 <strong>M3×16 다섯 개</strong>를 2.5 mm 육각렌치로 조이고, 외부 입력 XT60U-M 자리의 <strong>M3×12 두 개</strong>를 조입니다. 하부 보드 덮개에는 <strong>M3×10 네 개와 포획 너트</strong>를 씁니다. 하부가 닫힌 뒤 XT60 정비 플러그를 연결합니다. P08에서는 J3와 J7을 포함한 최종 배선에서 정비 순서대로 하부 덮개를 <strong>30 mm</strong> 내려 봅니다. W4 흑색 가동선의 기준점 <strong>(−8.50, 113.26, −78.93) mm</strong>와 나머지 전체 경로에서 피복 눌림과 장력을 확인합니다. <a href="../../guide/service/#형상과-정비-순서">정비 순서와 두 덮개</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/a4-supply-recheck.json">배선 경로 CAD</a></li>
+</ol>
+<p>ESP32-C3 안테나 보드와 전용 왼쪽 캐리어·클램프는 별도 RF 실험 자료에 보관합니다. <a href="https://github.com/ckh7488/head/tree/670bf00821622ae8154d403bdf18999c5263ffa5/electronics/c3-rf">RF 실험 원본</a></p>
+<h2 id="눈-상하-핀">눈 상하 핀</h2>
+<p>눈 모듈을 넣기 전에 각 13번 받침의 베어링 포켓 벽에 천천히 굳는 고정제를 얇게 바릅니다. MR63ZZ 외륜을 눌러 단턱에 앉힙니다. 받침 두 개를 프레임 09에 앞에서 넣고 각각 <strong>M3×10 한 개</strong>로 고정합니다. 양쪽 내륜에 손으로 미끄러져 들어가는 <strong>Ø3 계열 × 150 mm 연마봉</strong>으로 두 베어링을 정렬하고 고정제가 굳은 뒤 뺍니다. 3D 조립 116단계의 봉은 Ø2.98 mm입니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/BOM.csv">베어링 체결품</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/web/README.md#오프라인-조립-html-만들기">3D 조립</a></p>
+<ol type="1">
+<li>Ø3 h6 연마봉 또는 ISO 8734 Ø3 평행핀을 길이 <strong>13 mm</strong>로 좌우 한 개씩 맞춥니다. P3 게이지와 각 크래들 홀, MR63ZZ 내륜에 손으로 넣어 봅니다. 꽉 끼면 맞는 시판 핀을 고릅니다. <a href="../../guide/gauge/">맞춤 게이지</a> · <a href="../../guide/before/">준비품</a></li>
+<li>눈 모듈을 정면에서 두 받침 사이에 넣고 핀을 바깥에서 끼웁니다. 크래들 쪽은 핀 고정제로 고정합니다. 헐거운 금속 쌍에는 핀과 내륜이 만나는 곳에만 원통 끼움용 고정제를 소량 바릅니다. 경화한 뒤 토크를 끄고 상하 움직임과 반전 유격을 확인합니다.</li>
+</ol>
+<h2 id="눈-좌우-타이바-15">눈 좌우 타이바 15</h2>
+<ol type="1">
+<li>두 눈을 정면에 두고 핀을 빼 둔 15번 타이바를 안착 위치보다 <strong>3.15 mm 앞, 0.69 mm 위</strong>에서 왼쪽부터 수평으로 넣습니다. 두 눈 크랭크와 맞으면 뒤로 밀면서 내려놓습니다. 가운데 장공의 긴 방향은 머리 앞뒤입니다.</li>
+<li>무전원·무접착 상태에서 맞춘 뒤 양쪽 핀과 서보 혼 핀을 끼웁니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/eye-yaw-clearance.json">좌우 구동과 삽입 검사</a></li>
+</ol>
+<h2 id="턱-모듈-세-점-고정">턱 모듈 세 점 고정</h2>
+<ol type="1">
+<li>프레임 09의 턱 고정점에 CNC Kitchen TC-M3×3.0 인서트 세 개를 열압입합니다. 받침 36·37, 턱, 프레임, 요크 07과 앞·뒤 외장 28·29를 건식으로 맞춥니다. Ø3.04 mm 모델 홀은 실제 나사 바깥지름보다 최대 <strong>0.06 mm</strong> 크게 동축으로 마감합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/BOM.csv">체결품</a> · <a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/R5-B25-Assembly.FCStd">FreeCAD 조립본</a></li>
+<li>양쪽은 <strong>M3×12 전나사</strong>, 뒤쪽은 <strong>M3×40 전나사</strong>를 손으로 넣어 맞춥니다. 양쪽은 바깥에서, 뒤쪽은 뒤 외장 29를 달기 전에 뒤에서 2.5 mm L자 육각렌치로 조입니다.</li>
+<li>P08에서 턱을 연 채 목을 **−13.799°~+3.340°**에서 손으로 움직여 오른쪽 받침 37과 요크 사이에 <strong>0.30 mm</strong> 틈새 게이지가 통과하는지 확인합니다. 조립 후 <strong>5 N</strong> 시험에서 턱 모듈과 외장의 이탈, 파손 및 영구 변형을 확인합니다. <a href="../../guide/bench/#b25-실물-시험">P08 건식 맞춤과 5 N 시험</a></li>
+<li>P06에서 토크를 끄고 보정 영점을 기준으로 양방향 첫 접촉 직전의 마지막 틱을 읽습니다. 닫힘 쪽은 최소 <strong>28틱</strong>, 열림 쪽은 Goal PWM을 확인했으면 최소 <strong>79틱</strong>, 확인 전에는 <strong>90틱</strong>을 확보합니다. 목을 중립에 두고 턱에 <strong>62틱(5.449°)</strong> 열림을 명령합니다. CAD의 턱 끝 하강량은 <strong>5.176 mm</strong>입니다. 실제로 턱 끝이 내려가는지 보고 닫힘 기준의 수직 하강량, 치아 간극과 반전 유격을 측정합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/control/jaw-opening-check.json">턱 CAD 근거</a> · <a href="../../guide/bench/#b25-실물-시험">P06 실물 시험</a></li>
+</ol>
+<h2 id="뒤-외장-나사">뒤 외장 나사</h2>
+<ol type="1">
+<li>프레임의 열린 슬롯에 일반 M3 육각너트 두 개를 넣습니다. 뒤 외장 29를 끼우고 <strong>왼쪽 M3×18, 오른쪽 M3×16</strong> 원통머리를 바깥에서 2.5 mm L자 육각렌치로 조입니다. 왼쪽 프레임의 Ø3.52 mm 홀은 같은 축으로 2.50 mm 연장돼 있고, 외장의 Ø3.90 × 0.75 mm 단차에는 나사 머리 밑 목 부분이 들어갑니다.</li>
+<li>공차 계산에서 왼쪽 너트 밖 완전한 나사산은 <strong>0.81 mm</strong>, 최장 나사 끝의 바닥 여유는 <strong>0.10 mm</strong>입니다. 실제 머리가 바깥 평면에 밀착하고 끝에 여유가 있는지 확인합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/rear-left-screw-fit.json">나사와 공차 검사</a> · <a href="https://standards.theiteh.com/catalog/standards/iso/491e2f65-2018-40a8-b442-a6b8d113334d/iso-4762-2004">ISO 4762</a> · <a href="https://www.bossard.com/kr-ko/eshop/screws-and-bolts-with-internal-drive/hex-socket-head-cap-screws-fully-threaded/p/3/">Bossard 나사</a></li>
+</ol>
+<h2 id="m3-인서트">M3 인서트</h2>
+<ol type="1">
+<li>원통머리 나사 18곳과 핀 이탈 방지 무두나사 9곳에는 CNC Kitchen TC-M3×3.0을 사용합니다. 작업대의 맨 출력물에 모터와 핀보다 먼저 넣습니다. 모델 Ø4.15 mm에는 0.15 mm 출력 홀 보정이 포함됩니다. 게이지의 수평·수직 보어를 따로 맞춥니다. <a href="../../guide/gauge/">맞춤 게이지</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/heat-set-checks.json">인서트 위치와 길이</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/fastener-5n-review.md">체결 판정</a></li>
+<li>식힌 뒤 눈과 눈꺼풀의 일곱 핀을 손으로 끝까지 넣어 통로를 확인합니다. <strong>M3×3 평끝 무두나사</strong>로 핀의 이탈 경로를 막습니다. 목 상하 제한판 두 곳에는 <strong>M3×5 평끝 무두나사</strong>를 사용합니다. ID5 가드의 M3×8 두 개는 실측 길이 <strong>7.79 mm 이상</strong>으로 골라 인서트 3 mm 전 길이에 닿는지 봅니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/BOM.csv">B25 체결품</a></li>
+</ol>
+<h2 id="카메라-usb-선재">카메라 USB 선재</h2>
+<p>두 접합부의 식별 표식은 <strong>VBUS 빨강, D− 흰색, D+ 초록, GND 검정</strong>으로 맞춥니다. 색 표식은 도통 검사 후 붙이고, 움직이는 구간에는 추가 피복을 두지 않습니다. <a href="../../wiring/diagram/#W31">카메라 결선도</a></p>
+<ol type="1">
+<li>순정 케이블로 U20CAM 영상과 USB High-Speed를 확인합니다. PC와 카메라에서 모두 빼고, 순정 USB-A에서 카메라 키 플러그까지의 대응 핀을 도통으로 기록합니다. Eaton USB-C 선재의 데이터 접점도 절단 전에 확인합니다. 두 순정 플러그에는 가조립에서 정한 꼬리선을 남깁니다. <a href="https://github.com/INNO-MAKER/U20CAM-1080P-S1/blob/main/U20CAM-1080P-S1%20UserManual-v1.1.pdf">U20CAM 설명서</a> · <a href="https://www.usb.org/sites/default/files/USB%20Type-C%20Spec%20R2.0%20-%20August%202019.pdf">USB-C 접점</a></li>
+<li>Eaton 외경을 여러 곳에서 잽니다. <strong>Ø3.00 mm 이하</strong>인 맨 선재를 뒤 가이드와 받침 오른쪽 통로에 넣습니다. 회전판을 내리기 전에 앞 구멍 아래에서 위로 올려 열린 곡면에 얹습니다. 앞 외장을 머리에 끼우기 전에 머리 쪽 끝을 코 트레이에 통과시켜 타이로 고정합니다. 머리를 받침에 단 뒤 뒤 가이드의 슬롯에 타이를 걸어 <strong>고정점 사이 550 mm</strong>, <strong>R18 이상</strong>을 맞춥니다. 목 위 선은 턱 뒤·아래에 놓고 열린 턱에서 목을 끝까지 숙여 간극을 확인합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/camera-cable-options.md">선재와 경로</a></li>
+<li>고정점 바깥에서 접합합니다. 코 트레이 쪽은 앞 외장을 끼우기 전에, 뒤 가이드 쪽은 최종 경로와 고정점 사이 길이를 맞춘 뒤 접합합니다. 각 선을 접점까지 도통으로 확인하고 USB-A 기준 <strong>1 VBUS(+5 V), 2 D−, 3 D+, 4 GND</strong>를 양쪽에 맞춥니다. D+/D− 꼬임을 납땜점 가까이까지 유지하고 납땜점은 서로 엇갈리게 둡니다. 각 도체와 남는 선을 따로 절연하고 셸·GND 연결은 순정 케이블 실측을 따릅니다. 완성 접합부는 머리 <strong>Ø4.6 × 13 mm</strong>, 뒤 <strong>Ø7 × 13 mm</strong> 안에 넣습니다. 두 타이가 케이블 당김을 받게 합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/BOM.csv">선재와 타이 규격</a></li>
+<li>PC에 연결하기 전에 네 선의 도통, 핀 사이와 VBUS–셸의 단락 여부를 확인합니다. 순정 실드의 연결 상태도 기록합니다. 덮개를 닫기 전 전시에 쓸 해상도·프레임률의 UVC 영상과 High-Speed를 확인합니다. Windows USBView에서 High-Speed, Linux <code>lsusb -t</code>에서 카메라의 <code>480M</code>을 확인합니다. 조립 후 P02 인장과 P07 목 좌우 <strong>100회</strong> 왕복 중·종료 후 USB 인식을 기록합니다. <a href="https://assets.tripplite.com/product-pdfs/en/u040b03c2.pdf">Eaton 사양</a> · <a href="https://www.digikey.kr/ko/products/detail/eaton-tripp-lite/U040-B03-C-2/29534619">판매처 규격</a> · <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/usbview">USBView</a> · <a href="../../guide/bench/#b25-실물-시험">실물 시험</a></li>
+</ol>
+</article>
+  <footer class="guide-footer"><a href="https://github.com/ckh7488/head/tree/670bf00821622ae8154d403bdf18999c5263ffa5">이 안내의 저장소 버전</a></footer>
+</main>
+</body>
+</html>

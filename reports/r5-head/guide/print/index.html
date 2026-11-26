@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>출력과 후가공 · R5 B25</title>
+<link rel="stylesheet" href="../../review.css">
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="../../">R5 <span>B25</span></a>
+  <nav aria-label="보기 선택">
+    <a href="../../demo/">구동</a><a href="../../assembly/">조립</a>
+    <a href="../../wiring/diagram/">배선도</a><a href="../../guide/" aria-current="page">문서</a>
+  </nav>
+</header>
+<main class="container guide">
+  <div class="guide-header"><nav class="guide-nav" aria-label="제작"><a href="../../guide/start/">제작 순서</a><a href="../../guide/print/" aria-current="page">출력과 후가공</a><a href="../../guide/before/">먼저 살 부품</a><a href="../../guide/gauge/">맞춤 게이지</a><a href="../../guide/after/">시험 뒤 살 부품</a><a href="../../guide/assembly/">조립 절차</a></nav><nav class="guide-nav" aria-label="통전·구동"><a href="../../guide/electronics/">A5 발주·첫 통전</a><a href="../../guide/service/">J2 잠금·정비</a><a href="../../guide/control/">구동과 보정</a><a href="../../guide/bench/">실물 시험</a><a href="../../guide/records/">검수 기록</a></nav><nav class="guide-nav" aria-label="판정과 기준"><a href="../../guide/status/">검사 결과와 범위</a><a href="../../guide/intent/">사람 요구사항</a><a href="../../guide/conditions/">검사 조건</a><a href="../../guide/requirements/">동작 인수 기준</a></nav></div>
+  <article><h1 id="1-출력과-후가공-1회-일괄-출력-기준">1. 출력과 후가공 (1회 일괄 출력 기준)</h1>
+<p><strong>R5-B25-P2S.3mf</strong>를 Bambu Studio에서 프로젝트로 열어 <strong>18판·57개</strong>를 출력합니다. 예상 합계는 <strong>약 68시간 20분, 1.278 kg</strong>입니다. Bambu PETG HF 1 kg 두 롤을 준비합니다. 바닥 접지가 좁은 링크·눈꺼풀·안구를 단독 판으로 배치했습니다. <a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/R5-B25-P2S.3mf">PETG HF 3MF</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/print-hf.json">판별 슬라이스 기록</a></p>
+<h2 id="1회-일괄-출력">1회 일괄 출력</h2>
+<p>P2S, 0.4 mm 노즐, 0.20 mm 층, Textured PEI와 **<code>R5 B15 Bambu PETG HF 14 mm3/s @ P2S</code>**를 확인합니다. PETG HF는 <strong>65 °C에서 4–6시간</strong> 건조합니다. 재출력과 맞춤 게이지에도 같은 재료를 씁니다. <a href="../../guide/conditions/#1-제조-오차와-표준-재료">표준 출력 조건</a></p>
+<div class="guide-table" tabindex="0"><table>
+<thead>
+<tr class="header">
+<th>판</th>
+<th>찾아볼 부품</th>
+<th style="text-align: right;">개수</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>받침 본체 01</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>받침 상판 03</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>OpenRB 캐리어 27, 목 좌우 모터 고정부 05 두 개</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>앞 외장 28과 코 트레이 한 몸</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>뒤 외장 29</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>베어링 자리 02, 목기둥 06, 축 클램프 08, 머리 프레임 09, 눌림판 41 세 개, 좌우 정지 블록</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>요크 07, 눈 받침 13 두 개, 눈꺼풀 레일 24, 모터 지지대 34, 눈·눈꺼풀 모터판 세 개</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>회전판 04, 타이바 15, 혼 16·17·19, 링크 18·23 좌우, 크랭크 21 세 개, 간격통 45 두 개, ID5 가드</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>턱 받침 36·37, 눈틀 31 두 개, 코 테두리 33</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>왼쪽 안구 14</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>하부 보드 덮개 35, 뒤 배선 덮개 42, J2 잠금쇠</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>카메라 브래킷 26, 하부 덮개 너트 고정판 두 개, 뒤 케이블 가이드 40</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td><strong>13</strong></td>
+<td>30/38/39 일체형 턱. 링크 다음에 출력</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>눈 크래들 12</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td><strong>15</strong></td>
+<td>깜빡임 구동 링크 22. 가장 먼저 출력</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td>왼쪽 눈꺼풀 32</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td>17</td>
+<td>오른쪽 눈꺼풀 32</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td>오른쪽 안구 14</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="출력-당일-슬라이서-확인">출력 당일 슬라이서 확인</h3>
+<ol type="1">
+<li><strong>15번 링크</strong>의 브림을 확인해 먼저 출력합니다. <strong>13번 턱</strong>의 8 mm 외곽 브림과 2층 래프트, <strong>14번 크래들</strong>의 6 mm 외곽 브림을 확인합니다. <strong>16·17번 눈꺼풀</strong>은 각각 2층 래프트와 첫 층 6 mm 확장을 확인합니다. 눈꺼풀과 안구의 단독 판도 초기 출력에 배정합니다. 래프트를 떼고 눈꺼풀 핀과 외곽의 잔사를 제거한 뒤 맞춰 봅니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/print-hf.json">판별 설정</a></li>
+<li><strong>4번 앞 외장 28</strong>과 코 트레이는 한 몸으로 출력합니다. 코 트레이와 턱 받침 릴리프의 외곽선, 비하중 모서리의 Arachne 압출 경로를 확인합니다. <strong>3번 OpenRB 캐리어 27</strong>, <strong>11번 하부 덮개 35</strong>에는 빌드플레이트에서 시작하는 서포트가 있습니다.</li>
+<li><strong>7번 레일 24, 8번 오른쪽 링크 23·간격통 45·ID5 가드, 14번 크래들 12</strong>의 넓은 면이 바닥에 닿는지 확인합니다.</li>
+<li><strong>프레임 09의 Ø8 보어</strong>, <strong>7번 요크 07과 레일 24의 베어링 자리</strong>, <strong>9번 오른쪽 턱 받침 37의 MR104ZZ 자리</strong>는 서포트를 제거한 뒤 아래 표대로 마감합니다. <a href="../../guide/conditions/#16-메쉬-건전성과-fdm-출력-가능-형상">정밀 보어 가공</a></li>
+</ol>
+<h2 id="출력물-후가공과-건식-맞춤">출력물 후가공과 건식 맞춤</h2>
+<p>래프트와 브림, 서포트를 제거한 뒤 실제 핀·축·베어링·나사를 대봅니다. 다음 자리는 지정 치수로 손질하고 가공 후 다시 건식으로 맞춥니다. <a href="../../guide/before/">공구와 준비품</a> · <a href="../../guide/bench/#b25-실물-시험">실물 P01·P08</a></p>
+<div class="guide-table" tabindex="0"><table>
+<thead>
+<tr class="header">
+<th>대상</th>
+<th>마감 치수와 확인</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>눈·눈꺼풀 링크 Ø2 핀 약 18곳</td>
+<td><strong>Ø2.08–2.10 mm</strong>. 19 혼, 22 링크, 21 크랭크 3개, 23 짧은 링크 좌우, 32 눈꺼풀의 아래 핀, 16·17 혼, 15 타이바, 18 링크. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b24/assembly.md">링크 후가공</a></td>
+</tr>
+<tr class="even">
+<td>프레임 09 목 상하 Ø8 보어 두 곳</td>
+<td>양쪽 축 입구로 서포트를 꺼냅니다. Ø8 손 리머로 거친 돌기를 정리하고 가공 축을 접착제 없이 맞춥니다.</td>
+</tr>
+<tr class="odd">
+<td>요크 07의 688 베어링 자리 두 곳</td>
+<td>바깥쪽 베어링 입구로 서포트를 꺼내고 고운 사포로 돌기만 다듬습니다. 실제 베어링을 손으로 대서 기울거나 흔들리지 않는지 확인합니다.</td>
+</tr>
+<tr class="even">
+<td>오른쪽 턱 받침 37의 MR104ZZ 자리</td>
+<td>베어링 입구와 반대쪽 작은 관통 구멍에서 서포트 잔사를 제거합니다. 외륜이 안쪽 단턱까지 평평하게 닿는지 건식으로 확인합니다. <a href="../../guide/assembly/#턱-모듈-세-점-고정">턱 조립</a></td>
+</tr>
+<tr class="odd">
+<td>07 요크와 09 프레임의 목 상하 제한판 핀 자리 2곳</td>
+<td><strong>Ø4.10 mm</strong>. 제한판을 대고 양쪽 핀의 건식 맞춤을 확인합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/neck-yaw-travel.md#목-상하-제한판-작업대-맞춤">제한판 작업대 맞춤</a></td>
+</tr>
+<tr class="even">
+<td>10·18번 판 안구 14 좌우와 14번 판 크래들 12</td>
+<td>안구를 끼우기 전에 <strong>긴 Ø2.20 mm 드릴</strong>을 손으로 돌려 크래들 좌우의 위·아래 홀을 한 쌍씩 같은 축으로 맞춥니다. 각 안구의 세로축 홀은 따로 <strong>Ø2.20 mm</strong>, 작은 링크 홀은 <strong>Ø2.08–2.10 mm</strong>로 마감합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b24/assembly.md#조립-준비">안구 홀과 핀</a></td>
+</tr>
+<tr class="odd">
+<td>턱 받침의 3점 고정홀</td>
+<td><strong>실측 나사 외경보다 최대 0.06 mm 크게</strong> 동축으로 마감합니다. <a href="../../guide/assembly/#턱-모듈-세-점-고정">B25 턱 고정</a></td>
+</tr>
+<tr class="even">
+<td>레일 24의 MR104ZZ 두 자리</td>
+<td>트리 서포트가 남아 있으면 바깥에서 Ø4 둥근 막대로 밀어냅니다. 안쪽 입구에서 깊이 약 5 mm까지 원통에 고운 사포를 감아 <strong>Ø10.24 mm</strong>로 마감하고 바깥쪽 <strong>Ø9.36 mm 멈춤턱</strong>을 남깁니다. 폭 1.20 mm 금속 위치 맞춤 띠와 외륜을 건식으로 끼웁니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/bearing-fit.json">레일 보어와 띠</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b24/assembly.md#조립-준비">레일 가공</a></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>일반 통과홀과 축 자리가 빡빡하면 해당 규격의 드릴·리머 또는 둥근 줄로 조금씩 손질합니다. 열압입 인서트를 식힌 뒤 16·23 등의 핀 통로에 PETG가 밀렸으면 Ø2.0 mm 드릴로 손질합니다. <a href="../../guide/before/#작업대-공구">공구 목록</a></li>
+<li>베어링 자리가 빡빡하면 400방 사포로 안쪽 돌기나 시임을 다듬습니다. 고정 쪽 금속끼리 헐거우면 원통 끼움용 고정제 638급을, 고정 쪽 출력물과 금속 사이가 헐거우면 0.1 mm PET 시임과 2액형 에폭시를 씁니다. P01에서 실제 치수와 움직임을 기록합니다. <a href="../../guide/conditions/#2-틈과-끼움">끼움 조건</a> · <a href="../../guide/assembly/#눈-상하-핀">눈 상하 핀</a></li>
+<li>전원과 접착제 없이 턱, 받침 36·37, 프레임 09, 요크 07, 앞·뒤 외장 28·29를 먼저 맞춥니다. 턱을 연 상태로 P08 범위에서 목 상하를 움직여 오른쪽 받침과 요크 사이에 <strong>0.30 mm 틈새 게이지</strong>가 통과하는지 확인합니다. <a href="../../guide/bench/#b25-실물-시험">B25 실물 P08</a> · <a href="../../guide/after/">다음 발주</a></li>
+</ul>
+<h2 id="다회-출력용-맞춤-게이지">다회 출력용 맞춤 게이지</h2>
+<p>두 번 이상 출력할 수 있으면 <strong>R5-B25-Fit-Gauge.3mf</strong>를 먼저 출력해 교체 치수를 고릅니다. 게이지와 본품은 같은 PETG HF로 출력합니다. <a href="https://raw.githubusercontent.com/ckh7488/head/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/R5-B25-Fit-Gauge.3mf">PETG HF 게이지 3MF</a> · <a href="../../guide/gauge/">교체 파일</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/fit-gauge-slice.json">게이지 기록</a></p>
+</article>
+  <footer class="guide-footer"><a href="https://github.com/ckh7488/head/tree/670bf00821622ae8154d403bdf18999c5263ffa5">이 안내의 저장소 버전</a></footer>
+</main>
+</body>
+</html>

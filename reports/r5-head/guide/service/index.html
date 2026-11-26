@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>J2 잠금·정비 · R5 B25</title>
+<link rel="stylesheet" href="../../review.css">
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="../../">R5 <span>B25</span></a>
+  <nav aria-label="보기 선택">
+    <a href="../../demo/">구동</a><a href="../../assembly/">조립</a>
+    <a href="../../wiring/diagram/">배선도</a><a href="../../guide/" aria-current="page">문서</a>
+  </nav>
+</header>
+<main class="container guide">
+  <div class="guide-header"><nav class="guide-nav" aria-label="제작"><a href="../../guide/start/">제작 순서</a><a href="../../guide/print/">출력과 후가공</a><a href="../../guide/before/">먼저 살 부품</a><a href="../../guide/gauge/">맞춤 게이지</a><a href="../../guide/after/">시험 뒤 살 부품</a><a href="../../guide/assembly/">조립 절차</a></nav><nav class="guide-nav" aria-label="통전·구동"><a href="../../guide/electronics/">A5 발주·첫 통전</a><a href="../../guide/service/" aria-current="page">J2 잠금·정비</a><a href="../../guide/control/">구동과 보정</a><a href="../../guide/bench/">실물 시험</a><a href="../../guide/records/">검수 기록</a></nav><nav class="guide-nav" aria-label="판정과 기준"><a href="../../guide/status/">검사 결과와 범위</a><a href="../../guide/intent/">사람 요구사항</a><a href="../../guide/conditions/">검사 조건</a><a href="../../guide/requirements/">동작 인수 기준</a></nav></div>
+  <article><h1 id="b25-j2-정비-분리">B25 J2 정비 분리</h1>
+<p>12 V는 외부 XT60 <code>12 V IN</code>에서 WAGO 두 개와 뒤 고정 XT60E-F·가동 XT60U-M의 <code>12 V SERVICE</code>를 거쳐 내부 J2로 들어옵니다. 작업대에서 A5 허브와 하부 덮개를 받치고, 첫 통전 전에 내부 J2를 잠급니다. 하부 덮개를 닫고 열 때는 받침 뒤 <code>12 V SERVICE</code>에서 두 극을 함께 분리합니다. <a href="../../guide/assembly/#전원-커넥터와-배선">B25 조립과 첫 통전</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/j2-supply-delta.md">고정 공급선</a></p>
+<h2 id="첫-통전-전-잠금">첫 통전 전 잠금</h2>
+<ol type="1">
+<li>두 어댑터와 USB를 뽑고 모터, OpenRB, F1·F2를 분리합니다. 가동 <code>12 V SERVICE</code> XT60을 분리한 채 내부 J1·J2를 끝까지 꽂습니다. 외부 5 V XT30의 +는 <strong>F1 입력(패드 1)에만</strong>, 가동 XT60의 +는 <strong>F2 입력(패드 1)에만</strong> 도통되는지 확인합니다. 각각의 −는 **TP3(GND)**에 도통되어야 하고 양극과 GND 사이에 단락이 없어야 합니다. <a href="../../guide/electronics/#전원-실물-검수">무전원 검수와 첫 통전</a></li>
+<li>J2 쪽 <strong>KiCad H2·H4</strong>에 <strong>M3×12 두 개</strong>로 잠금쇠를 고정합니다. 립이 실물 플러그의 뒤턱을 덮는지 봅니다. P02에서 하부 덮개를 받치고 플러그 몸체를 뽑히는 축 방향으로 <strong>10 N, 30초</strong> 당겨 몸체와 소켓 사이의 최대 이동량을 기록합니다. 끝까지 안착한 상태에서 플러그 이탈, 뒤턱 빠짐, 잠금쇠 풀림, 손상이 없어야 하며 위 도통을 다시 확인합니다. 이 확인 뒤 <code>12 V SERVICE</code>를 결합하고 F1·F2를 뺀 상태에서 한 전원씩 통전합니다. <a href="../../guide/bench/#b25-실물-시험">P02 실물 시험</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/BOM.csv">체결품</a></li>
+</ol>
+<p><strong>B25는 내부 XT30과 J2 잠금쇠를 사용합니다.</strong> 평소 정비는 받침 뒤 <code>12 V SERVICE</code> XT60에서 분리합니다. 작업대에서 잠금쇠를 풀면 12 V 플러그가 J1에도 들어갑니다. 내부 결합을 풀었다면 위 무전원 검사부터 반복합니다.</p>
+<h2 id="형상과-정비-순서">형상과 정비 순서</h2>
+<ol type="1">
+<li>받침을 지지하고 두 어댑터와 USB를 모두 뺍니다. 받침 뒤 아래쪽을 비워 플러그와 선재가 내려갈 공간을 확보합니다. CAD에서 선재의 최저점은 받침 밑면 아래 약 <strong>82.4 mm</strong>입니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/web/README.md#b25-웹-화면">3D 정비 경로</a></li>
+<li>하부 보드 덮개를 열기 전에 <code>12 V SERVICE</code> XT60U-M 몸체 양옆을 잡습니다. 결합축을 따라 <strong>앞쪽(−Y)으로 20 mm</strong> 빼고 <strong>아래로 18 mm</strong> 내려 받칩니다. 정비 리드의 루프도 받칩니다. <a href="https://pliki.aksotronik.pl/pdf/012682.pdf">XT60E-F 치수도</a> · <a href="https://images.100y.com.tw/pdf_file/AMASS-XT60U.pdf">XT60U 치수도</a></li>
+<li>하부 덮개를 받친 상태에서 <strong>M3×10 네 개</strong>를 풀고 허브와 덮개를 함께 <strong>30 mm</strong> 내립니다. 포획 너트가 남는지 봅니다. 정비 플러그와 루프도 함께 받쳐 실제 선의 장력과 눌림을 확인합니다. 뒤 XT60에서 분리하는 동안 내부 J2 잠금쇠는 고정합니다. 내부 J2를 교체할 때는 허브를 작업대에서 받친 뒤 J2 쪽(KiCad H2·H4)의 <strong>M3×12 두 개</strong>를 풀고 잠금쇠를 들어 올립니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/a4-supply-recheck.json">정비 배선 확인</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/BOM.csv">B25 체결품</a></li>
+<li>위쪽 케이블 공간을 열려면 42번 덮개의 <strong>M3×16 다섯 개</strong>와 외부 입력부의 <strong>M3×12 두 개</strong>를 모두 뺍니다. XT60 입력 몸체를 40번 가이드에 받치고 덮개를 위로 들어 올립니다. 인서트 일곱 개는 40번 가이드에 남습니다. OpenRB USB 연장부는 고정·가동 커넥터 몸체의 좌우 면을 잡아 분리합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/j2-supply-delta.md#출력과-조립">출력과 조립</a></li>
+<li>조립은 역순으로 진행합니다. 하부 덮개를 닫은 뒤 정비 XT60을 결합합니다. 전원을 넣기 전에 선 눌림, 체결, 5 V XT30과 12 V XT60의 형상 구분 및 극성을 확인합니다. <a href="../../guide/assembly/#전원-커넥터와-배선">조립과 배선</a></li>
+</ol>
+<h2 id="결선과-남은-검증">결선과 남은 검증</h2>
+<ol type="1">
+<li>정비 플러그와 내부 J2 사이의 W8 적색은 <strong>패드 2(+)</strong>, W9 흑색은 **패드 1(GND)**에 연결합니다. EcoWire 6715의 두 가동선은 노출 경로가 각각 <strong>170.578 mm</strong>이며 재단 길이는 양쪽 단자 삽입분을 더해 정합니다. XT60 컵의 실제 납땜, 개별 절연과 장력 완화를 확인합니다. <a href="../../guide/after/#하네스와-전선">정비 리드 발주</a> · <a href="https://www.alphawire.com/products/wire/ecogen/ecowire/6715">Alpha Wire 6715</a></li>
+<li>J1의 W4 흑색 가동선은 정비 기준점 <strong>(−8.50, 113.26, −78.93) mm</strong>에 배치합니다. J3의 W10·W11과 J7의 W22–W24도 장착한 상태에서 하부 덮개의 30 mm 하강과 닫힘을 확인합니다. 힘을 받는 커넥터와 타이, 그립, 눌림 및 개별 피복은 P02·P08에서 확인합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/a4-supply-recheck.json">A4 경로와 검사 범위</a> · <a href="../../guide/bench/#b25-실물-시험">P02·P08 실물 시험</a></li>
+</ol>
+<h2 id="freecad-재현">FreeCAD 재현</h2>
+<p>잠금쇠가 안착한 위치, 작업대에서 위쪽 <strong>12 mm</strong>부터 내리는 경로, 양쪽 나사 위 <strong>Ø5.6 × 35 mm</strong> 공구 영역, 하부 덮개와 함께 <strong>0–30 mm</strong> 내리는 경로에서 모델 간섭이 0건입니다. 12 V 플러그의 확대 외형을 결합축을 따라 <strong>0.25 mm</strong> 뽑은 모델에서는 잠금쇠와 겹침이 0 mm³이고, <strong>0.30 mm</strong>에서는 <strong>0.399 mm³</strong>입니다. 기존 평면부 검사에서는 <strong>1.50 mm</strong>를 뽑았을 때 <strong>0.720 mm³</strong>가 겹칩니다. 실제 뒤턱의 물림, 당겼을 때의 이동량과 배선 장력은 P02·P08에서 확인합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/a4-assembly.json">기존 플러그 외형과 평면부 검사</a></p>
+<p>FreeCAD Python 모듈을 사용할 수 있는 환경에서 저장소 루트에서 실행합니다.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">PYTHONPATH</span><span class="op">=</span>/usr/lib/freecad-python3/lib <span class="ex">/usr/bin/python3</span> <span class="dt">\</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  mechanical/physics/check_b25_j2_keeper.py <span class="dt">\</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  mechanical/revisions/b25/R5-B25-Assembly.FCStd</span></code></pre></div>
+<p>초기 A3 정비 시안의 FreeCAD 실행법, 기존 Phoenix J2 접점 배치 및 후속 리드 검토는 개정 이력에 있습니다. A4 정비 리드의 39개 자세와 0–30 mm 연속 하강은 A4 검사 기록을 확인합니다. <a href="https://github.com/ckh7488/head/blob/2409cd6e3ec71df7926d2c4aa69efd1665a79e83/mechanical/revisions/b25/j2-disconnect.md#freecad-재현">초기 시안과 재현 명령</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/j2-disconnect.json">초기 실행 결과</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/j2-pigtail.md">후속 A3 시안</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/a4-supply-recheck.json">A4 배선 검사</a></p>
+</article>
+  <footer class="guide-footer"><a href="https://github.com/ckh7488/head/tree/670bf00821622ae8154d403bdf18999c5263ffa5">이 안내의 저장소 버전</a></footer>
+</main>
+</body>
+</html>

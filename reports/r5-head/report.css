@@ -1,0 +1,31 @@
+body { margin: 0; background: var(--sc-page); color: var(--sc-ink); }
+.page-frame { width: min(100% - 5rem, var(--sc-width)); margin-inline: auto; }
+.report-head { min-height: 4rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; border-bottom: 1px solid var(--sc-line); }
+.report-head nav, .actions, .sources { display: flex; flex-wrap: wrap; align-items: center; gap: .7rem 1.25rem; }
+.report-head a, .sources a { color: var(--sc-accent); font-weight: 650; }
+.report-head .back { text-decoration: none; }
+.intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .82fr); gap: clamp(1.25rem, 5vw, 4rem); align-items: center; padding: 2.6rem 0 2.2rem; }
+.intro h1 { margin: 0; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; letter-spacing: -.04em; }
+.intro p, .build p { max-width: 53ch; line-height: 1.65; color: var(--sc-muted); }
+.actions { margin-top: 1.35rem; gap: .75rem; }
+.action { display: inline-block; border-radius: var(--sc-radius, 10px); padding: .65rem 1rem; background: var(--sc-surface); border: 1px solid var(--sc-line); color: var(--sc-ink); text-decoration: none; font-weight: 650; }
+.action.primary { background: var(--sc-accent); color: white; border-color: transparent; }
+.hero { margin: 0; overflow: hidden; border-radius: var(--sc-radius, 10px); }
+.hero img { display: block; width: 100%; height: auto; }
+h2 { margin: 0 0 .8rem; font-size: clamp(1.35rem, 3vw, 1.65rem); }
+.viewer-list, .sources { padding: 0; margin: 0; list-style: none; }
+.viewer-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; }
+.viewer-list a { display: grid; gap: .35rem; height: 100%; box-sizing: border-box; padding: 1rem; border-radius: var(--sc-radius, 10px); background: var(--sc-surface); border: 1px solid var(--sc-line); color: var(--sc-ink); text-decoration: none; }
+.viewer-list a:hover, .action:not(.primary):hover { border-color: var(--sc-accent); }
+.viewer-list a span { color: var(--sc-muted); font-size: .94rem; line-height: 1.45; }
+.build { padding-block: 1.8rem 2.5rem; }
+a:focus-visible { outline: 2px solid var(--sc-accent); outline-offset: 3px; }
+@media (max-width: 780px) {
+  .page-frame { width: calc(100% - 2.75rem); }
+  .viewer-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 540px) {
+  .intro { grid-template-columns: 1fr; padding-top: 1.5rem; }
+  .hero img { max-height: 215px; object-fit: cover; object-position: center 39%; }
+  .viewer-list { grid-template-columns: 1fr; }
+}

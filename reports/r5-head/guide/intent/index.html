@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>사람 요구사항 · R5 B25</title>
+<link rel="stylesheet" href="../../review.css">
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="../../">R5 <span>B25</span></a>
+  <nav aria-label="보기 선택">
+    <a href="../../demo/">구동</a><a href="../../assembly/">조립</a>
+    <a href="../../wiring/diagram/">배선도</a><a href="../../guide/" aria-current="page">문서</a>
+  </nav>
+</header>
+<main class="container guide">
+  <div class="guide-header"><nav class="guide-nav" aria-label="제작"><a href="../../guide/start/">제작 순서</a><a href="../../guide/print/">출력과 후가공</a><a href="../../guide/before/">먼저 살 부품</a><a href="../../guide/gauge/">맞춤 게이지</a><a href="../../guide/after/">시험 뒤 살 부품</a><a href="../../guide/assembly/">조립 절차</a></nav><nav class="guide-nav" aria-label="통전·구동"><a href="../../guide/electronics/">A5 발주·첫 통전</a><a href="../../guide/service/">J2 잠금·정비</a><a href="../../guide/control/">구동과 보정</a><a href="../../guide/bench/">실물 시험</a><a href="../../guide/records/">검수 기록</a></nav><nav class="guide-nav" aria-label="판정과 기준"><a href="../../guide/status/">검사 결과와 범위</a><a href="../../guide/intent/" aria-current="page">사람 요구사항</a><a href="../../guide/conditions/">검사 조건</a><a href="../../guide/requirements/">동작 인수 기준</a></nav></div>
+  <article><h1 id="1층-스펙-사람-요구사항-user-spec">1층 스펙: 사람 요구사항 (User Spec)</h1>
+<blockquote>
+<p><strong>문서 역할 (2층 구조의 1층)</strong></p>
+<ul>
+<li><strong>1층 (<code>user-spec.md</code>, 이 문서)</strong>: 제작자(사람)가 원하는 <strong>동작·환경·예산·제작 방식</strong>을 일상 언어로 적습니다. <strong>사람만 결정·수정합니다.</strong></li>
+<li><strong>2층 (<a href="../../guide/conditions/">conditions.md</a> · <a href="../../guide/requirements/">requirements.md</a> · <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/spec/criteria.toml">criteria.toml</a>)</strong>: AI가 1층을 만족시키기 위해 번역한 <strong>CAD·기구·전장·3D 프린트 수치 기준</strong>입니다.</li>
+</ul>
+</blockquote>
+<hr />
+<h2 id="1-무엇을-하는-로봇인가-원하는-동작">1. 무엇을 하는 로봇인가 (원하는 동작)</h2>
+<ul>
+<li><strong>시선 추적</strong>: 탁자 위(눈 높이 약 1.4 m)에 놓인 해골 로봇이 앞을 <strong>천천히 걸어 지나가는 사람</strong>을 코에 숨긴 카메라로 찾아, <strong>눈이 먼저 움직이고 목이 자연스럽게 따라가며</strong> 쳐다본다.</li>
+<li><strong>눈 깜빡임</strong>: 가만히 있거나 쳐다보는 동안 몇 초마다 한 번씩 자연스럽게 눈꺼풀을 깜빡인다.</li>
+<li><strong>턱 움직임</strong>: 입을 벌릴 때 턱 끝이 눈으로 확실히 내려가는 게 보인다(소리는 선택).</li>
+<li><strong>겉모습과 크기</strong>: 사람 해골처럼 그럴싸해 보이면 된다. <strong>내부 부품이 빡빡하면 머리 크기를 적당히 키워도 된다</strong>(정확한 실물 인체 비율을 고집하지 않는다).</li>
+</ul>
+<h2 id="2-어디서-어떻게-쓰나-사용-환경내구성">2. 어디서 어떻게 쓰나 (사용 환경·내구성)</h2>
+<ul>
+<li><strong>장소·온도</strong>: 한국 일반 실내(<strong>−5~35 °C</strong>, 겨울 비난방 실내 결빙 가능 및 여름 실내·모터 발열 포함), 평평한 바닥, 비·직사광선·심한 진동 없음.</li>
+<li><strong>사람 접촉</strong>: 평소엔 손대지 않고 전시·동작하지만, 사람이 머리나 겉면을 <strong>손으로 가볍게 툭 건드리거나 약하게 누르는 정도</strong>에는 부러지거나 부품이 빠지지 않아야 한다.</li>
+<li><strong>전원·제어</strong>: 일반 가정용 콘센트 어댑터 + PC 연결(USB 카메라 + OpenRB-150)로 동작한다.</li>
+</ul>
+<h2 id="3-예산제작조립-제약-사람의-현실-조건">3. 예산·제작·조립 제약 (사람의 현실 조건)</h2>
+<ul>
+<li><strong>예산 절감 중요</strong>: 불필요한 고가 부품·다회 재출력을 피한다.</li>
+<li><strong>3D 프린팅 1회 출력 우선</strong>: 프린트샵(또는 대행)에 여러 번 왔다갔다하기 어렵다. <strong>한 번에 일괄 출력</strong>해서 집에서 간단한 수공구(드릴·사포·접착제·시임)로 맞춰 조립할 수 있어야 한다.</li>
+<li><strong>조립·정비 난이도</strong>: 특수 공구 없이 일반 육각렌치·스패너·인두기 수준으로 조립 가능해야 한다. 고난이도 SMD 손리플로우(0.65 mm 피치 등)는 피하고 공장 실장(PCBA)이나 기성 모듈을 우선한다.</li>
+</ul>
+<h2 id="4-절대-넘기면-안-되는-완성선-ai가-임의로-완화생략-금지">4. 절대 넘기면 안 되는 완성선 (AI가 임의로 완화·생략 금지)</h2>
+<p>세부 검사 수치는 2층(<a href="../../guide/conditions/#16-메쉬-건전성과-fdm-출력-가능-형상">conditions.md 16·17절</a>)과 **<a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/spec/fdm-pitfalls.md">실수 모음집(fdm-pitfalls.md)</a>**에 두지만, 아래 4가지는 <strong>사람이 절대 양보하지 않는 기본선</strong>이므로 AI가 멋대로 생략하거나 슬라이서 꼼수로 덮고 넘기지 않는다.</p>
+<ul>
+<li><strong>터진 3D 파일 금지</strong>: 메쉬가 깨졌거나 구멍이 뚫리거나 0두께 이중면·부유 조각이 남아 있는 파일을 그대로 출력본에 넣지 않는다(불가피한 스캔 외피는 사전 검증된 복구·단면 확인 절차를 반드시 적는다).</li>
+<li><strong>프린터로 못 뽑는 모양·배치 금지</strong>: 공중에 뜨는 구멍·부품, 노즐로 안 나오는 힘 받는 얇은 벽, 점 하나로 서서 넘어지기 쉬운 부품을 장시간 대형 부품 옆에 끼워 넣는 배치를 금지한다.</li>
+<li><strong>미검증 출력 파일 전달 금지</strong>: 출력 파일을 바꿨으면 실제 슬라이서로 전 판을 돌려 경고가 없는지 확인하기 전에는 "출력 가능"이라고 넘기지 않는다(슬라이서가 없는 환경이면 미슬라이스 상태임을 명시하고 검증 단계를 남긴다).</li>
+<li><strong>실물에서 고착되는 엉터리 기구 금지</strong>: 한쪽 끝만 밀다 끼여서 안 움직이는 슬라이더, 나사산이 플라스틱 홈을 긁는 구조, 나사를 "적당히 덜 조여야" 겨우 움직이는 샌드위치 체결을 만들지 않는다.</li>
+</ul>
+<h2 id="5-애매한-경계-합의표-사람--ai-상의해서-닫은-기준">5. 애매한 경계 합의표 (사람 ↔︎ AI 상의해서 닫은 기준)</h2>
+<p>사람은 모터 속도나 CAD 치수를 모르므로, 넓게 말한 요구사항을 AI가 현실적인 숫자로 닫을 때 <strong>아래처럼 사람과 상의해 확정</strong>합니다.</p>
+<div class="guide-table" tabindex="0"><table>
+<thead>
+<tr class="header">
+<th>사람이 말한 요구</th>
+<th>애매한 지점 (그대로 두면 박살 나는 이유)</th>
+<th>상의해서 닫은 현실 기준 (2층으로 전달)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>지나가는 사람을 따라본다</td>
+<td>뛰는 사람(5 m/s)까지 쫓으려면 대형 산업용 모터가 필요</td>
+<td><strong>1.5 m 앞을 천천히 걷는 사람(0.8 m/s)</strong>, 1초 내 포착, 시선 오차 10° 이내</td>
+</tr>
+<tr class="even">
+<td>사람이 약하게 치는 건 버틴다</td>
+<td>"약하게"가 500 g인지 주먹질(50 N)인지에 따라 구조가 완전히 달라짐</td>
+<td>**5 N (약 500 g 무게로 누르는 힘)**에 파손·이탈 없음 (강한 충격은 아크릴 커버 등으로 대응)</td>
+</tr>
+<tr class="odd">
+<td>크기는 적당히 그럴싸하면 된다</td>
+<td>크기를 고정 상수로 착각하면 0.3 mm 공차 싸움·무한 수정에 빠짐</td>
+<td><strong>B25는 현재 크기 유지, 신규 설계(V2)는 내부가 좁으면 15~25% 확대 허용</strong></td>
+</tr>
+<tr class="even">
+<td>프린팅 여러 번 안 가고 한 번에 뽑기</td>
+<td>0.05 mm 끼워맞춤을 출력만으로 맞추려 하면 2~3회 방문 필수</td>
+<td><strong>중간 보정 치수 1회 일괄 출력 + 집에서 드릴·사포·시임·에폭시 마감</strong></td>
+</tr>
+<tr class="odd">
+<td>물도 가끔 어는 실내에서 쓴다</td>
+<td>영하(−5 °C)에서는 일반 PLA가 유리처럼 깨지고 모터 열에 늘어짐</td>
+<td><strong>−5~35 °C 기준, Bambu PETG HF로 출력하고 실물 맞춤·구동 확인</strong></td>
+</tr>
+<tr class="even">
+<td>오래 돌려도 선이 안 끊긴다</td>
+<td>10만 회 내구 시험은 개인이 불가</td>
+<td><strong>100회 연속 왕복 확인</strong>(장기 전시 투입 전 1,000회 권장)</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="6-ai와의-협업-규칙-무한-수정-방지-프로토콜">6. AI와의 협업 규칙 (무한 수정 방지 프로토콜)</h2>
+<p>AI는 2층 스펙(<a href="../../guide/conditions/">conditions.md</a>)과 <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/spec/fdm-pitfalls.md">실수 모음집(fdm-pitfalls.md)</a>을 설계·검토할 때 아래 규칙을 반드시 지킵니다.</p>
+<ol type="1">
+<li><strong>임의 상향·추측 금지</strong>: 1층에 없는 가혹한 조건을 AI가 혼자 추가하지 않는다.</li>
+<li><strong>애매하면 숫자를 만들어 묻기</strong>: 1층 표현이 애매해 설계가 갈릴 때는 혼자 추측하지 말고, <strong>"옵션 A(기본·저비용) vs 옵션 B(고성능·비용 증가)"</strong> 2~3개 선택지와 트레이드오프를 쉬운 말로 제시해 사람에게 결정받고 <strong>5절 표에 기록</strong>한다.</li>
+<li><strong>3회 실패 시 1층으로 올라오기</strong>: 같은 부위·같은 검사에서 <strong>3회 연속 실패</strong>하거나 2층 제약이 충돌하면 혼자 0.1 mm씩 깎지 말고 **"크기를 키울까요 / 기성품으로 바꿀까요 / 예외로 둘까요?"**를 사람에게 먼저 묻는다.</li>
+<li><strong>가상 검토 종료선</strong>: 1층 요구사항, 2층 기준, <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/spec/fdm-pitfalls.md">실수 모음집</a> 10항목을 모두 통과하면 가상 검토를 멈추고 실물 출력·조립으로 넘어간다.</li>
+</ol>
+</article>
+  <footer class="guide-footer"><a href="https://github.com/ckh7488/head/tree/670bf00821622ae8154d403bdf18999c5263ffa5">이 안내의 저장소 버전</a></footer>
+</main>
+</body>
+</html>

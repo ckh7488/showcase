@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>구동과 보정 · R5 B25</title>
+<link rel="stylesheet" href="../../review.css">
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="../../">R5 <span>B25</span></a>
+  <nav aria-label="보기 선택">
+    <a href="../../demo/">구동</a><a href="../../assembly/">조립</a>
+    <a href="../../wiring/diagram/">배선도</a><a href="../../guide/" aria-current="page">문서</a>
+  </nav>
+</header>
+<main class="container guide">
+  <div class="guide-header"><nav class="guide-nav" aria-label="제작"><a href="../../guide/start/">제작 순서</a><a href="../../guide/print/">출력과 후가공</a><a href="../../guide/before/">먼저 살 부품</a><a href="../../guide/gauge/">맞춤 게이지</a><a href="../../guide/after/">시험 뒤 살 부품</a><a href="../../guide/assembly/">조립 절차</a></nav><nav class="guide-nav" aria-label="통전·구동"><a href="../../guide/electronics/">A5 발주·첫 통전</a><a href="../../guide/service/">J2 잠금·정비</a><a href="../../guide/control/" aria-current="page">구동과 보정</a><a href="../../guide/bench/">실물 시험</a><a href="../../guide/records/">검수 기록</a></nav><nav class="guide-nav" aria-label="판정과 기준"><a href="../../guide/status/">검사 결과와 범위</a><a href="../../guide/intent/">사람 요구사항</a><a href="../../guide/conditions/">검사 조건</a><a href="../../guide/requirements/">동작 인수 기준</a></nav></div>
+  <article><h1 id="제어와-보정">제어와 보정</h1>
+<p>B25 기구와 A5 허브는 카메라 미리보기, 모터를 뺀 첫 통전, 보정과 한 축 구동, 실물 인수 시험 순서로 확인합니다. 웹 데모에서는 B25의 눈·목·눈꺼풀·턱을 조작할 수 있습니다. <a href="../../demo/">구동 데모</a> · <a href="../../guide/bench/#b25-실물-시험">B25 실물 시험</a></p>
+<h2 id="하드웨어-없이-실행">하드웨어 없이 실행</h2>
+<p>저장소 루트에서 Python과 C++ 컴파일러로 모형과 가상 USB 연동을 검사합니다. 가상 USB 연동은 Linux·macOS·WSL에서 실행됩니다. B25 인수 검사에서 실물 기록이 없으면 해당 항목은 <code>UNVERIFIED</code>입니다. <a href="../../guide/requirements/">판정 범위</a></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="at">-r</span> tests/requirements.txt</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pytest</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> spec/verify.py <span class="at">--revision</span> B25</span></code></pre></div>
+<h2 id="카메라-미리보기">카메라 미리보기</h2>
+<p>Python 3.12에서 PC 제어 환경을 준비합니다. <code>--drive</code> 플래그 없이 실행하면 미리보기 모드로 동작합니다. 첫 실행에 MediaPipe 모델을 내려받고 해시를 확인합니다.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3.12</span> <span class="at">-m</span> venv build/control-venv</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span> build/control-venv/bin/activate</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="at">-r</span> control/pc/requirements.txt</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> control/pc/track.py <span class="at">--source</span> path/to/video.mp4 <span class="at">--headless</span></span></code></pre></div>
+<p>실제 카메라 미리보기에는 <code>--source 0</code>을 사용합니다. 미리보기는 U20CAM-1080P-S1 사양표의 수평 화각 106°를 기본값으로 씁니다. 설치한 카메라는 체커보드 사진을 <code>calibrate_camera.py</code>에 넘겨 보정하고, 결과 JSON을 <code>track.py --calibration</code>에 넣습니다. <a href="https://github.com/INNO-MAKER/U20CAM-1080P-S1">카메라 매뉴얼</a></p>
+<h2 id="openrb와-모터">OpenRB와 모터</h2>
+<h3 id="모터를-뺀-첫-통전">모터를 뺀 첫 통전</h3>
+<ol type="1">
+<li>작업대에서 모터·OpenRB·USB와 두 어댑터를 분리하고, 두 퓨즈를 뺍니다. J1 5 V와 J2 12 V 배선의 극성과 도통을 잰 뒤 <strong>첫 통전 전에 J2 잠금쇠를 고정</strong>합니다. 잠금쇠를 확인한 뒤 퓨즈를 뺀 첫 통전과 퓨즈를 넣은 무부하 출력을 순서대로 잽니다. <a href="../../guide/electronics/#전원-실물-검수">A5 전원 실물 검수</a> · <a href="../../guide/assembly/#전원-커넥터와-배선">B25 조립과 배선</a></li>
+<li>어댑터를 뺀 채 OpenRB 점퍼를 <strong>USB(VIN)</strong> 쪽에 두고 나사식 VIN 단자를 비워 둡니다. 허브 J3와 연결할 W10·W11은 GND·DATA만 이어지며 OpenRB EH 2(VDD)는 비워 둡니다. 도통과 단락 여부를 확인한 뒤 J3를 연결합니다. <a href="../../guide/electronics/#허브-단자와-배선">허브 단자와 배선</a></li>
+<li>Arduino IDE에 ROBOTIS 보드 인덱스를 추가합니다. OpenRB-150 코어 <strong>0.2.1</strong>, Dynamixel2Arduino <strong>0.8.2</strong>로 <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/control/openrb/R5B1/R5B1.ino">R5B1.ino</a>를 빌드하고 USB로 올립니다. 모터를 연결하기 전에 시리얼 모니터를 <strong>115200 bps</strong>, 줄바꿈 사용으로 열어 <code>PING</code>에 <code>R5B1 1</code>이 오는지 확인합니다. 여기까지는 A5 출력 전압과 OpenRB USB 응답을 확인합니다. <a href="https://raw.githubusercontent.com/ROBOTIS-GIT/OpenRB-150/master/package_openrb_index.json">보드 인덱스</a> · <a href="https://github.com/ROBOTIS-GIT/Dynamixel2Arduino">라이브러리</a></li>
+</ol>
+<h3 id="보정과-한-축-구동">보정과 한 축 구동</h3>
+<ol type="1">
+<li>OpenRB로 Wizard를 사용할 때는 보드 매니저 예제 <code>usb_to_dynamixel</code>을 먼저 올립니다. 어댑터와 USB를 뺀 상태에서 해당 전압의 A5 출력에 모터를 한 개씩 연결합니다. OpenRB는 위와 같이 USB(VIN)으로 공급하고, A5와는 GND·DATA만 잇습니다. 전원을 넣고 Wizard에서 ID, Protocol 2.0, <strong>57,600 bps</strong>, 위치 모드 3, 속도 기반 프로파일, Status Return Level 2를 설정합니다. Drive Mode의 Goal Update 자동 토크 활성화는 끄고 Startup Configuration은 0으로 둡니다. 모터를 바꿀 때마다 어댑터와 USB를 뺍니다. 설정이 끝나면 Wizard를 닫고 모터 전원을 분리한 뒤 <code>R5B1.ino</code>를 다시 올립니다. 시리얼 모니터에서 <code>PING</code> → <code>R5B1 1</code>을 확인한 뒤 포트를 닫습니다. <a href="https://emanual.robotis.com/docs/en/parts/controller/openrb-150/#dynamixel-wizard-20">Wizard 연결</a> · <a href="https://emanual.robotis.com/docs/en/dxl/x/xl330-m288/#drive-mode10">Drive Mode</a> · <a href="https://emanual.robotis.com/docs/en/dxl/x/xl330-m288/#startup-configuration60">Startup Configuration</a></li>
+<li>무전원에서 모터를 연결한 뒤 목과 턱을 받치고 전원을 넣습니다. <code>--release</code>로 <code>RELEASED</code>를 받고 <code>--check</code>의 전 축 <code>torque=0</code>을 확인한 뒤 손으로 움직입니다. 초기 보정표가 비어 있으면 <code>--check</code>가 <code>CHECK</code>와 함께 종료값 1을 낼 수 있으므로 각 행의 <code>torque=</code>를 직접 확인합니다. 토크 해제를 확인할 수 없으면 서보 전원을 분리합니다. 중립과 접촉 없이 쓸 수 있는 위치를 잽니다. 목·턱의 첫 접촉과 보정 끝점은 같은 중립을 기준으로 기록하고, 모터 전원은 켜고 토크는 끈 상태에서 <code>commission.py --read ID</code>로 각 위치의 엔코더를 읽습니다. <a href="../../guide/bench/#b25-실물-시험">P04·P06 측정</a></li>
+<li>실측한 <code>low, zero, high</code>를 <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/control/openrb/R5B1/Calibration.h">Calibration.h</a>에 넣고 파일 검사 후 펌웨어를 다시 올립니다. 저장소에 포함된 기본 보정표의 여섯 행은 모두 <code>-1</code>입니다. 파일 검사가 통과해도 비어 있는 행은 잠겨 있습니다. 여섯 모터를 연결한 상태에서 <code>--check</code>를 실행해 각 ID의 <code>OK</code>, <code>torque=0</code>, <code>calibrated=1</code>을 확인합니다. <code>--check</code>는 연결된 상태만 읽으며, 보정·시작 설정·현재 위치를 포함한 구동 준비 상태를 확인합니다.</li>
+<li>목을 받치고 <code>--axes eye-yaw</code>부터 한 축씩 보정 방향과 간섭을 확인합니다. 나머지 추적 축은 <code>eye-pitch</code>, <code>blink</code>, <code>neck-yaw</code>, <code>neck-pitch</code>입니다. 추적 프로그램을 닫으면 <code>HOLD</code>가 전송됩니다. 축을 바꾸기 전에는 목을 다시 받치고 <code>--release</code>의 <code>RELEASED</code>를 확인합니다. ID6은 목 양축을 중립에 두는 턱 시험 모드에서 확인합니다.</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> control/pc/commission.py <span class="at">--serial</span> /dev/ttyACM0 <span class="at">--release</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> control/pc/commission.py <span class="at">--serial</span> /dev/ttyACM0 <span class="at">--check</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> control/pc/commission.py <span class="at">--serial</span> /dev/ttyACM0 <span class="at">--read</span> 1</span></code></pre></div>
+<p>실측 보정표를 작성한 뒤 파일을 검사합니다.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> control/pc/check_calibration.py</span></code></pre></div>
+<p>보정표를 포함한 펌웨어를 다시 올리고 전 축 준비를 확인한 뒤 한 축 구동을 시작합니다.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> control/pc/commission.py <span class="at">--serial</span> /dev/ttyACM0 <span class="at">--check</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> control/pc/track.py <span class="at">--source</span> 0 <span class="at">--serial</span> /dev/ttyACM0 <span class="at">--drive</span> <span class="at">--axes</span> eye-yaw <span class="at">--immediate-hold</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> control/pc/commission.py <span class="at">--serial</span> /dev/ttyACM0 <span class="at">--release</span></span></code></pre></div>
+<p><code>/dev/ttyACM0</code>과 카메라 번호는 실제 장치에 맞춥니다. <code>--check</code>와 <code>--release</code>는 ID 1–6을 모두 확인합니다. 일부만 조립한 경우에는 필요한 ID를 <code>--read</code>로 읽고, 정비 전에 목을 받친 뒤 서보 전원을 차단합니다.</p>
+<h3 id="보정-범위">보정 범위</h3>
+<div class="guide-table" tabindex="0"><table>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>축</th>
+<th><code>low, zero, high</code> 위치</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>눈 좌우</td>
+<td>영상 왼쪽, 중립, 오른쪽 (양쪽 162틱 이내)</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>눈 상하</td>
+<td>위, 중립, 아래 (양쪽 83틱 이내)</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>눈꺼풀</td>
+<td>열림, 열림, 닫힘 (최대 1,024틱)</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>목 좌우</td>
+<td>영상 왼쪽, 중립, 오른쪽 (양쪽 640틱, 56.25° 이내)</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>목 상하</td>
+<td>들기 최대 13.10°(149틱 이내), 중립, 숙이기 최대 2.64°(30틱 이내)</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>턱</td>
+<td>치아 여유를 둔 닫힘, 같은 닫힘, 닫힘에서 최대 62틱 열림(엔코더 환산 각도 5.449°)</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="축별-한계와-잠금-조건">축별 한계와 잠금 조건</h4>
+<ul>
+<li><strong>공통</strong>: 실물 간섭이 없는 범위로 줄여 보정할 수 있습니다. 목 엔코더는 4,096틱/회전 기준이며, <code>check_calibration.py --nominal-neck</code>은 목을 보정표 끝까지 쓰도록 잡았을 때만 사용합니다.</li>
+<li><strong>눈 좌우·상하 (ID1·ID2)</strong>: 중립에서 양 끝을 각각 <strong>162틱(약 14.24°)</strong>, <strong>83틱(약 7.29°)</strong> 안에 보정합니다(위치 허용 8틱 포함 피드백 범위 약 ±14.94° / ±8.00°). PC 명령 ±15°·±8°가 보정 양 끝에 대응합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/eye-yaw-clearance.json">B25 눈 좌우 검사</a></li>
+<li><strong>목 좌우 (ID4)</strong>: 중립 양쪽 <strong>640틱(56.25°)</strong> 초과 시 <code>YAW_CALIBRATION_RANGE</code>로 잠깁니다(위치 오차 8틱 포함 ±56.95°, PC 명령 ±60° 대응). <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/mechanical/revisions/b25/neck-yaw-travel.md">스토퍼와 추적 검사</a></li>
+<li><strong>목 상하 (ID5)</strong>: 들기 <strong>149틱</strong>·숙이기 <strong>30틱</strong> 초과 시 <code>PITCH_CALIBRATION_RANGE</code>로 잠깁니다(위치 오차 8틱 포함 −13.799°~+3.340°, PC 명령 −15°/+4.5° 대응).</li>
+<li><strong>턱 (ID6)</strong>: <strong>62틱(5.449°)</strong> 초과 보정은 <code>JAW_CALIBRATION_RANGE</code>, 0~5.5° 외 명령은 <code>JAW_GOAL_RANGE</code>로 거부합니다(피드백 5틱 포함 67틱 = 5.889°, B25 CAD 하강량 <strong>5.18 mm</strong>). 토크를 끈 실물에서 닫힘 영점 기준 <strong>닫힘 쪽 최소 28틱</strong>, <strong>열림 쪽 최소 79틱</strong>(Goal PWM 미확인 시 <strong>90틱</strong>) 무접촉 범위를 확보합니다. <a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/control/jaw-opening-check.json">B25 스토퍼 검사</a> · <a href="../../guide/conditions/#6-동작-범위">고정 검사 조건</a></li>
+</ul>
+<h2 id="전시-추적과-턱-시험">전시 추적과 턱 시험</h2>
+<p>한 축씩 방향과 간극을 확인한 뒤 전시 추적과 턱 시험을 실행합니다. 턱을 구동하기 전에 P08 건식 간극과 P06 토크 OFF 스토퍼 확인을 먼저 마칩니다. 구동을 시작하거나 모드를 바꿀 때 목과 턱을 받칩니다. 프로그램을 닫으면 <code>HOLD</code>를 보내며 위치 유지에 토크를 계속 사용합니다. 다음 프로그램은 <code>--release</code>에서 <code>RELEASED</code>를 확인하고 실행합니다. <a href="../../guide/bench/#b25-실물-시험">P03–P08 실물 시험</a></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> control/pc/track.py <span class="at">--source</span> 0 <span class="at">--serial</span> /dev/ttyACM0 <span class="at">--drive</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> control/pc/commission.py <span class="at">--serial</span> /dev/ttyACM0 <span class="at">--release</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> control/pc/jaw_clack.py <span class="at">--serial</span> /dev/ttyACM0 <span class="at">--drive</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> control/pc/commission.py <span class="at">--serial</span> /dev/ttyACM0 <span class="at">--release</span></span></code></pre></div>
+<h4 id="동작-요약">동작 요약</h4>
+<ul>
+<li><strong>추적과 복귀</strong>: 얼굴 포착 시 눈이 먼저 두 눈 사이를 보고 약 <strong>120 ms</strong> 뒤 목이 따라갑니다. 얼굴을 놓치면 약 <strong>2.5초</strong> 유지 후 목이 초당 <strong>10°</strong> 목표로 정면 복귀합니다. 목 양축이 연속 2회 중립 ±0.5° 이내이면 위치를 유지합니다. 영점 목표에 도달한 뒤 5초 동안 실측 위치가 허용 범위에 들어오지 않으면 오류가 표시됩니다. <code>--immediate-hold</code>를 사용하면 얼굴을 놓칠 때 <code>HOLD</code>를 보내고 턱 토크는 켜지지 않습니다. <a href="../../guide/requirements/#동작-장면">S01 합격 기준</a></li>
+<li><strong>전시 모드 턱 유지·복구</strong>: 시작 시 <code>R5B1_EXHIBIT_HOLD 1</code>을 확인합니다. 턱 보정이 있으면 ID6의 위치 P 게인 <strong>1000</strong>(일반/턱 시험은 400), Goal PWM 상한 <strong>100</strong>으로 닫힘을 유지합니다. 턱이 8틱을 넘게 열려 있으면 미리 확인한 무접촉 구간에서 목을 중립 ±11틱(약 1°)에 받친 채 시작합니다. 복구 입력은 최대 110틱(9.67°)이며 실제 시작 위치는 실측한 무접촉 구간 안에서 정합니다. 복구 중에는 PWM 상한 <strong>120</strong>과 <strong>8.2°/s</strong> 프로파일로 닫고 열림 12틱(1.05°) 이내에서 추적을 시작합니다. 2.4초에 도달하거나 목이 허용 범위 약 ±2°를 벗어나면 턱 토크를 끄고 구동을 잠급니다. 복구 결과가 나오기까지 USB 상태 출력은 멈추며 <code>HOLD</code>와 <code>RELEASE</code>는 계속 처리합니다.</li>
+<li><strong>턱 시험 모드 (<code>jaw_clack.py</code>)</strong>: 목 두 축과 턱에 토크를 켜고 목 중립을 명령합니다. 240 ms 대기 후 턱 열림 2.75°와 5.5°를 각각 명령하고 닫습니다. 이 값은 제어 명령의 각도이며 5.5°는 ID6의 보정 끝점 <code>high</code>에 대응합니다. P06 인수 시험에는 <code>abs(high - zero) = 62</code>인 실측 보정이 필요합니다. 이때 두 목표는 31틱과 62틱(2.725°와 5.449°)입니다. 각 위치 보고와 새 턱 목표 직전에 목 양축의 중립 약 ±2°와 토크 ON을 확인합니다. 실패 시 턱 토크를 끄고 응답하는 목 축의 위치를 유지합니다. <a href="../../guide/bench/#p06-턱-구동과-복구">P06 실물 시험</a></li>
+</ul>
+<h2 id="구동-중-오류">구동 중 오류</h2>
+<p>OpenRB는 목표를 <strong>60 ms</strong>마다 보낼 수 있고 위치를 <strong>120 ms</strong>마다 보고합니다(57,600 bps, 여섯 축 동시 갱신 시 버스 점유 약 84%, 한 바퀴 토크 점검 주기 720 ms). CRC·응답 지연은 1회 재시도합니다. 구동 중 유효한 명령이 <strong>400 ms</strong> 동안 끊기면 현재 위치를 읽어 보정 범위 안에서 유지하고 토크를 계속 사용합니다. 읽은 위치가 보정 범위를 일반 8틱, 턱 5틱보다 더 벗어나거나 통신 오류가 이어지면 새 움직임을 잠급니다. 응답하는 축은 위치를 유지하고, 응답하지 않는 축에는 직전 목표가 남을 수 있습니다. <a href="https://emanual.robotis.com/docs/en/dxl/protocol2/">DYNAMIXEL Protocol 2.0</a></p>
+<h4 id="주요-오류와-대처">주요 오류와 대처</h4>
+<div class="guide-table" tabindex="0"><table>
+<thead>
+<tr class="header">
+<th>오류 · 증상</th>
+<th>원인</th>
+<th>대처 순서</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>*_CALIBRATION_RANGE</code></td>
+<td>보정표가 축별 허용 틱(ID4 640 / ID5 149·30 / ID6 62)을 초과</td>
+<td><a href="https://github.com/ckh7488/head/blob/670bf00821622ae8154d403bdf18999c5263ffa5/control/openrb/R5B1/Calibration.h">Calibration.h</a> 범위를 줄이고 <code>check_calibration.py</code> 후 재업로드</td>
+</tr>
+<tr class="even">
+<td><code>JAW_FOLLOW_TIMEOUT</code></td>
+<td>턱 목표 유지 600 ms 후 연속 2회 오차 초과(일반 8틱 / 전시 18틱)</td>
+<td>턱 간섭 확인. 턱 토크만 꺼지므로 <code>JAW_RELEASE_UNCONFIRMED</code> 시 토크 상태 재확인</td>
+</tr>
+<tr class="odd">
+<td><code>RELEASE_UNCONFIRMED</code></td>
+<td><code>--release</code> 중 모터 미응답·모델 불일치·알림 비트 잔존</td>
+<td><strong>목과 턱을 받친 채</strong> 서보 전원을 분리합니다. 모터 알림의 원인을 제거한 뒤 아래 절차로 확인합니다.</td>
+</tr>
+<tr class="even">
+<td>OpenRB 재시작 후 뻣뻣함</td>
+<td>모터 전원이 켜져 있으면 직전 목표를 계속 유지함</td>
+<td>목을 받치고 <code>--check</code>의 <code>torque=</code> 확인 후 <code>--release</code> 실행 (<a href="../../guide/bench/#b25-실물-시험">P07</a>)</td>
+</tr>
+<tr class="odd">
+<td>과부하·전압·과열 알림 비트</td>
+<td>모터 하드웨어 오류 비트로 일반 읽기·해제 실패</td>
+<td>원인 제거 → 목 받침 → <code>--release</code> → <code>--reboot ID</code> → 잠시 대기 → <code>--release</code>·<code>--check</code></td>
+</tr>
+</tbody>
+</table></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> control/pc/commission.py <span class="at">--serial</span> /dev/ttyACM0 <span class="at">--reboot</span> 6</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> control/pc/commission.py <span class="at">--serial</span> /dev/ttyACM0 <span class="at">--release</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> control/pc/commission.py <span class="at">--serial</span> /dev/ttyACM0 <span class="at">--check</span></span></code></pre></div>
+<div class="note">
+<div class="title">
+<p>Note</p>
+</div>
+<p>Goal PWM은 XL330·XL430 위치 모드의 출력 상한이며, 펌웨어는 설정값을 다시 읽은 뒤 토크를 켭니다. 통신·설정이 계속 실패하면 Wizard에서 해당 모터를 단독 점검하세요. <a href="https://emanual.robotis.com/docs/en/dxl/x/xl330-m288/#goal-pwm100">XL330 제어표</a> · <a href="https://emanual.robotis.com/docs/en/dxl/x/xl430-w250/#goal-pwm100">XL430 제어표</a></p>
+</div>
+</article>
+  <footer class="guide-footer"><a href="https://github.com/ckh7488/head/tree/670bf00821622ae8154d403bdf18999c5263ffa5">이 안내의 저장소 버전</a></footer>
+</main>
+</body>
+</html>

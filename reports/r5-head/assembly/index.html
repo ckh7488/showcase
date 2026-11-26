@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko" data-hosted="b25">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>R5 조립 순서</title>
+  <link rel="stylesheet" href="viewer.css">
+</head>
+<body>
+  <header>
+    <strong>R5 <span id="revision"></span> 조립 순서</strong>
+    <span class="sub" id="step-count"></span>
+    <a id="overview-link" href="../" hidden>B25 개요</a>
+  </header>
+  <main>
+    <nav id="list" aria-label="조립 단계"></nav>
+    <section id="stage">
+      <canvas id="view"></canvas>
+      <div id="loading" role="status">모델을 불러오는 중…</div>
+      <div id="legend"><i class="b19"></i>추가 체결품·핀 <i class="moving"></i>이번 단계에 넣는 부품 <span id="tool-legend" hidden><i class="tool"></i><span id="tool-legend-label">검사한 공구 경로</span></span><span id="stop-legend" hidden><i class="stop"></i>접촉점</span></div>
+    </section>
+    <aside id="card">
+      <div id="meta"></div>
+      <h2 id="title"></h2>
+      <p id="text"></p>
+      <ul id="notes"></ul>
+      <div id="issues" hidden><strong>CAD 검사에서 막힌 경로</strong><ul></ul></div>
+      <div id="controls">
+        <button id="prev" title="이전 단계 (←)">◀</button>
+        <button id="play" title="재생/멈춤 (Space)">❚❚</button>
+        <button id="next" title="다음 단계 (→)">▶</button>
+        <input id="scrub" type="range" min="0" max="1000" value="0" aria-label="부품 위치">
+      </div>
+      <label id="tool-view" hidden>공구 보기 <select id="tool-select"></select></label>
+      <label id="stop-view" hidden><span id="inspection-label">스토퍼 위치</span> <select id="stop-select"><option value="">조립 화면</option></select></label>
+      <label id="wire-view" hidden>배선 자세 비교 <select id="wire-select"><option value="">조립 상태</option></select></label>
+      <label id="part-view" hidden>부품·체결 위치 <select id="part-select"></select></label>
+      <label id="display"><input id="hide-exterior" type="checkbox"> 외장 숨기기</label>
+      <p class="hint">드래그로 돌리고, 휠로 확대합니다. 오른쪽 버튼 드래그로 옮깁니다.</p>
+    </aside>
+  </main>
+  <script type="module">
+    import("./viewer.js").catch(error => {
+      console.error(error);
+      document.getElementById("loading").textContent =
+        location.protocol === "file:" ? "로컬 웹 서버에서 이 조립 화면을 여세요." : "3D 모델을 열지 못했습니다. 다시 불러오세요.";
+    });
+  </script>
+</body>
+</html>
+
+<!--
+The MIT License
+
+Copyright © 2010-2025 three.js authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+Skull geometry adapted from BoneHub Visible Human Full-Skeleton 3D Bone Models.
+https://doi.org/10.57967/hf/10464 (CC BY 4.0)
+-->
