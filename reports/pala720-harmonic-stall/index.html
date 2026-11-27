@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PALA720 회전 정지 · 하모닉 드라이브 | ATLAS</title>
+  <meta name="description" content="돌다가 멈추는 PALA720 회전구동장치를 모터 드라이버 전류로 재현하고, 전기 경로를 배제한 뒤 분해로 하모닉 드라이브를 특정한 AS 진단 기록입니다.">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/theme.v1.css">
+  <link rel="stylesheet" href="report.css">
+
+</head>
+<body>
+  <a class="skip-link" href="#escon">핵심 시각화로 건너뛰기</a>
+  <header class="site-header">
+    <a class="brand" href="../../" aria-label="ATLAS 라이브러리로 돌아가기">← ATLAS</a>
+    <span class="crumb">PALA720 / AS 진단</span>
+    <nav aria-label="보고서 목차"><a href="#intake">입고</a><a href="#repro">재현</a><a href="#escon">모터 전류</a><a href="#narrow">원인 좁히기</a><a href="#teardown">분해</a><a href="#result">결론</a></nav>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <p class="kicker">AS 진단 기록 · 2026.11.26</p>
+      <h1 id="page-title">PALA720 회전 정지 진단</h1>
+      <p class="lede">돌다가 갑자기 멈추는 회전구동장치. 모터 드라이버 전류로 현상을 확인하고, 전기 경로를 하나씩 지운 뒤 분해해 원인 부품을 찾은 기록.</p>
+      <dl class="intro-facts">
+        <div><dt>대상</dt><dd>PALA720 회전구동장치<br>(Ouster 라이다 탑재)</dd></div>
+        <div><dt>구동부</dt><dd>maxon EC 모터 + 홀센서<br>→ 하모닉 드라이브 감속</dd></div>
+        <div><dt>드라이버 · 제어</dt><dd>ESCON Module 50/5<br>STM32 제어보드</dd></div>
+      </dl>
+    </section>
+
+    <!-- 01 -->
+    <section id="intake" class="case-section" aria-labelledby="intake-title">
+      <div class="section-heading">
+        <div><p class="kicker">01 / 입고 경위</p><h2 id="intake-title">현장에서 원인을 못 찾아<br>장비가 통째로 입고됨.</h2></div>
+      </div>
+      <div class="intake-grid">
+        <article class="panel note-card"><span class="tag">현장 증상</span><p>장비가 회전하다가 멈춤. 현장에서는 원인을 특정하지 못함.</p></article>
+        <article class="panel note-card"><span class="tag">조치 요청</span><p>회전구동장치와 라이다를 통째로 송부받아 실험실에서 분석.</p></article>
+        <article class="panel note-card"><span class="tag">분석 목표</span><p>전기(제어·드라이버·센서) 문제인지 기계 문제인지 가르고, 교체할 부품을 특정.</p></article>
+      </div>
+    </section>
+
+    <!-- 02 -->
+    <section id="repro" class="case-section" aria-labelledby="repro-title">
+      <div class="section-heading">
+        <div><p class="kicker">02 / 실험실 재현 · 시험 구성</p><h2 id="repro-title">실험실에서도 돌다가<br>예고 없이 멈춤.</h2></div>
+        <p>24 V를 넣고 돌린 재현 영상. 영상의 움직임 크기를 계산하면 정지 시점이 선명하게 보임.</p>
+      </div>
+      <div class="repro-grid">
+        <figure class="panel video-panel">
+          <div class="panel-topline"><span>REPRODUCTION</span><span>2026.11.26 18:06 · 22 s</span></div>
+          <div class="video-wrap"><video id="fault-video" src="assets/fault.mp4" playsinline muted controls preload="metadata"></video></div>
+          <div class="video-bar" aria-hidden="true"><div class="track"></div><div class="fill" id="vfill"></div><div class="stop" id="vstop"><span>19.5 s 정지</span></div></div>
+          <div class="btn-row"><button type="button" class="btn primary" id="vjump">정지 직전부터 보기 (16 s)</button><button type="button" class="btn" id="vstart">처음부터</button></div>
+        </figure>
+        <figure class="panel">
+          <div class="panel-topline"><span>MOTION IN VIDEO</span><span>프레임 간 변화량</span></div>
+          <div class="chart-pad"><svg id="motion-chart" viewBox="0 0 520 200" role="img" aria-label="영상 시간에 따른 움직임 크기. 19.5초에서 0 근처로 떨어짐"></svg></div>
+          <figcaption>헤드 부분 픽셀이 프레임마다 얼마나 바뀌는지 계산한 값. 일정하게 돌다가 19.5 s에 0 근처로 떨어짐. 21 s 이후 상승은 카메라를 움직인 것.</figcaption>
+        </figure>
+      </div>
+
+      <div class="panel setup-panel">
+        <div class="panel-topline"><span>TEST SETUP</span><span>PC 한 대 · USB 두 개</span></div>
+        <div class="setup-scroll">
+          <svg class="setup-svg" viewBox="0 0 900 240" role="img" aria-label="PC 한 대가 USB로 ST-Link와 ESCON 모터 드라이버에 각각 연결. ST-Link는 SWD로 STM32 제어보드에 연결. 제어보드가 PWM과 Enable을 드라이버로 보내고, 드라이버가 모터를 돌리며, 모터는 하모닉 드라이브를 거쳐 팬 헤드를 돌림">
+            <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0,0 L10,5 L0,10 z"/></marker></defs>
+            <g class="node strong"><rect x="10" y="84" width="130" height="72" rx="8"/><text x="75" y="112" class="t1">PC</text><text x="75" y="131" class="t2">ESCON Studio</text><text x="75" y="147" class="t2">ST-Link 툴</text></g>
+            <g class="node"><rect x="190" y="160" width="110" height="56" rx="8"/><text x="245" y="184" class="t1">ST-Link</text><text x="245" y="204" class="t2">디버거</text></g>
+            <g class="node strong"><rect x="340" y="20" width="170" height="56" rx="8"/><text x="425" y="44" class="t1">ESCON 50/5</text><text x="425" y="64" class="t2">모터 드라이버 (속도 제어)</text></g>
+            <g class="node strong"><rect x="340" y="160" width="170" height="56" rx="8"/><text x="425" y="184" class="t1">STM32 제어보드</text><text x="425" y="204" class="t2">속도 명령 생성</text></g>
+            <g class="node strong"><rect x="560" y="20" width="120" height="56" rx="8"/><text x="620" y="44" class="t1">EC 모터</text><text x="620" y="64" class="t2">홀센서 3개</text></g>
+            <g class="node fault"><rect x="705" y="20" width="95" height="56" rx="8"/><text x="752" y="44" class="t1">하모닉</text><text x="752" y="64" class="t2">감속기</text></g>
+            <g class="node"><rect x="820" y="20" width="72" height="56" rx="8"/><text x="856" y="44" class="t1">팬 헤드</text><text x="856" y="64" class="t2">+ 라이다</text></g>
+            <g class="node"><rect x="560" y="160" width="120" height="56" rx="8"/><text x="620" y="184" class="t1">전원공급기</text><text x="620" y="204" class="t2 mono">24.0 V</text></g>
+            <g class="wires">
+              <path d="M140,104 C220,104 260,48 336,48" marker-end="url(#ar)"/>
+              <path d="M140,136 C170,136 170,188 186,188" marker-end="url(#ar)"/>
+              <path d="M300,188 H336" marker-end="url(#ar)"/>
+              <path d="M425,160 V80" marker-end="url(#ar)"/>
+              <path d="M510,40 H556" marker-end="url(#ar)"/>
+              <path d="M556,58 H514" marker-end="url(#ar)"/>
+              <path d="M680,48 H701" marker-end="url(#ar)"/>
+              <path d="M800,48 H816" marker-end="url(#ar)"/>
+              <path d="M560,188 H514" marker-end="url(#ar)"/>
+            </g>
+            <g class="wire-labels">
+              <text x="238" y="64" class="em">USB ①</text>
+              <text x="100" y="182" class="em start">USB ②</text>
+              <text x="318" y="180">SWD</text>
+              <text x="440" y="112" class="start">DI1 PWM (속도 명령)</text>
+              <text x="440" y="128" class="start">DI2 Enable</text>
+              <text x="533" y="34">3상</text>
+              <text x="533" y="74">홀</text>
+            </g>
+          </svg>
+        </div>
+        <div class="photo-row">
+          <figure><button type="button" class="zoom" data-full="assets/photo-overview.jpg"><img src="assets/photo-overview.jpg" alt="시험대에 세운 회전구동장치, 뒤 모니터에 ESCON Studio" loading="lazy"></button><figcaption><b>시험 셋업</b> · 뒤 모니터가 ESCON Studio 컨트롤러 모니터</figcaption></figure>
+          <figure><button type="button" class="zoom" data-full="assets/photo-stlink.jpg"><img src="assets/photo-stlink.jpg" alt="보드 한쪽에 ST-Link 배선과 모터 드라이버 USB가 함께 연결된 모습" loading="lazy"></button><figcaption><b>PC 연결부</b> · 빨간 LED 옆 검은 케이블이 모터 드라이버 USB, 노란/흰 선이 ST-Link(SWDIO/GND)</figcaption></figure>
+          <figure><button type="button" class="zoom" data-full="assets/photo-motorwire.jpg"><img src="assets/photo-motorwire.jpg" alt="모터 보드에 연결된 모터 전원선과 홀센서 배선" loading="lazy"></button><figcaption><b>모터 배선</b> · 3상 전원선(굵은 선)과 홀센서 선</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 -->
+    <section id="escon" class="case-section" aria-labelledby="escon-title">
+      <div class="section-heading">
+        <div><p class="kicker">03 / 모터부터 확인</p><h2 id="escon-title">평소 가지도 않는 최고 전류에<br>붙은 채 속도를 못 냄.</h2></div>
+        <p>모터가 안 도니까 모터부터 봄. ESCON Studio로 드라이버가 모터에 실제로 흘리는 전류를 확인함.</p>
+      </div>
+
+      <div class="kpi-row">
+        <article class="kpi normal"><span>평소 (정상 동작)</span><strong>&lt; 2.5<em>A</em></strong><p>이 센서는 평소 2.5 A까지도 안 감 (운용 경험)</p></article>
+        <article class="kpi limit"><span>이번 측정</span><strong>4.0<em>A 고정</em></strong><p>드라이버 최고치에 계속 붙음. 그래도 속도는 명령 1,800 rpm의 절반 남짓(≈1,000 rpm)에서 막힘</p></article>
+        <article class="kpi stall"><span>약 21 s 뒤</span><strong>2.5<em>A</em> → 0<em>rpm</em></strong><p>과열 보호(I2t)가 전류를 2.5 A로 낮추자 거의 안 움직이고 정지</p></article>
+      </div>
+
+      <div class="escon-grid">
+        <div class="panel chart-panel">
+          <div class="panel-topline"><span>ESCON RECORDING</span><span>31 s · 화면 표시값</span></div>
+          <div class="chart-block" id="c1">
+            <p class="chart-title">모터 속도 <span class="legend"><i class="ref"></i>명령 <i class="act"></i>실제 (홀센서)</span></p>
+            <svg id="speed-chart" viewBox="0 0 640 230" role="img" aria-label="명령 속도는 1800 rpm까지 오르지만 실제 속도는 약 1000 rpm에서 막혔다가 25.8초에 0으로 떨어짐"></svg>
+            <div class="tip" id="tip1"></div>
+          </div>
+          <div class="chart-block" id="c2">
+            <p class="chart-title">모터 전류</p>
+            <svg id="current-chart" viewBox="0 0 640 190" role="img" aria-label="전류는 4.0 A까지 올라 붙어 있다가 25.8초에 2.5 A로 내려감"></svg>
+            <div class="tip" id="tip2"></div>
+          </div>
+          <div class="scrub">
+            <button type="button" class="btn" id="play">▶ 재생</button>
+            <input type="range" id="t" min="0" max="31" step="0.1" value="20" aria-label="녹화 시각(초)">
+            <output id="tval" class="mono" for="t">20.0 s</output>
+          </div>
+        </div>
+        <div class="panel screen-panel">
+          <div class="panel-topline"><span>ESCON STUDIO SCREEN</span><span id="frame-label">20 s</span></div>
+          <button type="button" class="screen" id="screen" aria-label="이 시각의 ESCON 화면 크게 보기"><img id="frame" src="assets/escon-frames.jpg" alt="선택한 시각의 ESCON Studio 컨트롤러 모니터 화면"></button>
+          <div class="now" id="now" aria-live="polite"></div>
+          <p class="aside">녹화의 숫자를 프레임마다 읽어 그린 그래프. 슬라이더를 움직이거나 그래프 위를 훑으면 그 순간의 실제 화면이 나옴.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 -->
+    <section id="narrow" class="case-section" aria-labelledby="narrow-title">
+      <div class="section-heading">
+        <div><p class="kicker">04 / 원인 범위 좁히기</p><h2 id="narrow-title">전기 쪽을 지우면<br>기계 부하만 남음.</h2></div>
+        <p>같은 설정으로 전에는 정상 동작했고, 명령(PWM)도 제대로 들어왔음. 모터까지 이어지는 경로를 앞에서부터 하나씩 확인함.</p>
+      </div>
+      <div class="chain-head" aria-hidden="true"><span>전기 쪽 · 모두 정상</span><span class="fault">기계 쪽</span></div>
+      <div class="chain">
+        <article class="link"><span class="ic">✓</span><h3>제어보드 명령</h3><small>STM32 → 드라이버</small><p>PWM 57 % = 1,800 rpm, Enable High가 정상 입력됨. ST-Link로 펌웨어 동작 확인.</p><b>정상</b></article>
+        <article class="link"><span class="ic">✓</span><h3>드라이버 설정</h3><small>ESCON 파라미터</small><p>같은 설정으로 이전에 정상 동작. 설정값 변화 없음.</p><b>정상</b></article>
+        <article class="link"><span class="ic">✓</span><h3>위치센서</h3><small>홀센서 3개</small><p>900 rpm까지 실제 속도가 명령을 몇 rpm 차이로 따라감. 센서가 틀리면 이렇게 못 따라감.</p><b>정상</b></article>
+        <article class="link"><span class="ic">✓</span><h3>전원</h3><small>24 V 공급</small><p>구동 중 오류 0건, 출력전압 포화 없음. 전압은 남는데 전류가 한계.</p><b>정상</b></article>
+        <article class="link hit"><span class="ic">!</span><h3>기계 부하</h3><small>모터 · 감속기 · 회전부</small><p>최고 전류로 밀어도 1,000 rpm에서 막힘. 무언가가 회전을 크게 막고 있음.</p><b>의심 → 분해 확인</b></article>
+      </div>
+    </section>
+
+    <!-- 05 -->
+    <section id="teardown" class="case-section" aria-labelledby="teardown-title">
+      <div class="section-heading">
+        <div><p class="kicker">05 / 분해 확인</p><h2 id="teardown-title">다 빼도 하모닉 드라이브만<br>매우 뻑뻑함.</h2></div>
+        <p>구동부를 하모닉 드라이브까지 전부 열고, 부품을 하나씩 빼면서 손으로 돌려 봄.</p>
+      </div>
+      <div class="teardown-grid">
+        <div class="parts" role="group" aria-label="분해 부품 선택">
+          <button type="button" class="part" data-photo="parts" aria-pressed="false"><span>모터 · 베어링 · 엔코더 · 플레이트</span><b class="ok">부드러움</b></button>
+          <button type="button" class="part" data-photo="bottom" aria-pressed="false"><span>하부 · 배선 · 중공축 케이블</span><b class="ok">이상 없음</b></button>
+          <button type="button" class="part hit" data-photo="hd1" aria-pressed="true"><span><strong>하모닉 드라이브</strong> (감속기)</span><b class="bad">매우 뻑뻑</b></button>
+          <p class="aside">03에서 본 "회전을 막는 부하"가 여기임. 항목을 누르면 해당 사진으로 바뀜.</p>
+        </div>
+        <figure class="panel photo-viewer">
+          <div class="panel-topline"><span id="pv-label">HARMONIC DRIVE</span><span id="pv-meta">각인 "…580977-1 JAPAN"</span></div>
+          <button type="button" class="zoom viewer-img" id="pv-zoom" data-full="assets/photo-hd1.jpg"><img id="pv-img" src="assets/photo-hd1.jpg" alt="하우징 안쪽에 드러난 하모닉 드라이브"></button>
+          <div class="thumbs" role="group" aria-label="사진 선택">
+            <button type="button" data-photo="hd1" aria-pressed="true"><img src="assets/photo-hd1.jpg" alt="하모닉 드라이브"></button>
+            <button type="button" data-photo="hd2" aria-pressed="false"><img src="assets/photo-hd2.jpg" alt="하모닉 드라이브 다른 각도"></button>
+            <button type="button" data-photo="parts" aria-pressed="false"><img src="assets/photo-parts.jpg" alt="분해한 부품"></button>
+            <button type="button" data-photo="bottom" aria-pressed="false"><img src="assets/photo-bottom.jpg" alt="하부 개방"></button>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 06 -->
+    <section id="result" class="case-section result" aria-labelledby="result-title">
+      <div class="section-heading">
+        <div><p class="kicker">06 / 결론</p><h2 id="result-title">하모닉 드라이브 교체로<br>마무리함.</h2></div>
+      </div>
+      <div class="verdict panel">
+        <span class="tag">조치</span>
+        <strong>하모닉 드라이브 교체</strong>
+        <p>전기 계통(제어보드 명령, 드라이버, 홀센서, 전원)은 정상. 하모닉 드라이브가 뻑뻑해 모터가 최고 전류로도 속도를 못 내고, 과열 보호가 걸리면 멈춤.</p>
+      </div>
+      <h3 class="sub-title">남은 확인</h3>
+      <div class="todo-grid">
+        <article class="panel todo"><span>01</span><div><strong>교체 후 전류 재기록</strong><p>같은 조건(1,800 rpm)에서 ESCON 전류를 교체 전후로 비교. 손 감각을 숫자로 바꾸는 근거.</p></div></article>
+        <article class="panel todo"><span>02</span><div><strong>정상 장비 기준 전류</strong><p>"평소 2.5 A도 안 감"은 운용 경험. 한 번 기록해 두면 다음 AS는 화면만 보고 판정.</p></div></article>
+        <article class="panel todo"><span>03</span><div><strong>하모닉 내부 원인</strong><p>그리스·이물·베어링·치형·조립 편심 중 무엇인지 미확인. 단품으로도 뻑뻑하면 부품 불량, 아니면 체결 문제.</p></div></article>
+        <article class="panel todo"><span>04</span><div><strong>그래프 정밀도</strong><p>화면 표시값(약 1초 갱신)을 녹화에서 읽은 값. 정밀 파형이 필요하면 Data Recorder로 기록.</p></div></article>
+      </div>
+      <details class="sources">
+        <summary>근거 자료</summary>
+        <ul>
+          <li>ESCON Studio 2.2 컨트롤러 모니터 화면 녹화 · 2026.11.26 18:01 · 31 s (그래프 값은 녹화 프레임의 화면 숫자를 읽은 측정값)</li>
+          <li>실험실 재현 영상 · 2026.11.26 18:06 · 22 s (움직임 그래프는 영상에서 계산한 값)</li>
+          <li>현물 사진 8장 · 2026.11.26 17:55 – 18:35 (분해 시 뻑뻑함은 손으로 돌려 본 정성 판단)</li>
+        </ul>
+      </details>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="사진 크게 보기" hidden>
+    <button type="button" class="lb-close" id="lb-close">닫기 ✕</button>
+    <div class="lb-body" id="lb-body"></div>
+  </div>
+<script src="report.js"></script>
+</body>
+</html>

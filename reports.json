@@ -2,6 +2,38 @@
   "version": 1,
   "reports": [
     {
+      "id": "pala720-harmonic-stall",
+      "title": "PALA720 회전 정지 진단",
+      "summary": "돌다가 멈추는 회전구동장치에서 전류와 속도를 비교하고, 분해로 하모닉 드라이브의 뻑뻑함을 확인한 AS 진단입니다.",
+      "category": "하드웨어 · 고장 진단",
+      "date": "2026-11-26",
+      "path": "reports/pala720-harmonic-stall/",
+      "cover": "reports/pala720-harmonic-stall/cover.png",
+      "coverAlt": "명령 1,800 rpm 대비 실제 속도가 약 1,000 rpm에서 막히고 전류가 4.0 A에 붙었다가 2.5 A로 떨어지는 그래프와 같은 시각의 ESCON 화면",
+      "tags": [
+        "PALA720",
+        "모터 전류",
+        "고장 진단",
+        "분해 확인"
+      ]
+    },
+    {
+      "id": "pala720-socket-pin-damage",
+      "title": "PALA720 모터 드라이버 소켓 파손",
+      "summary": "모터 드라이버 소켓의 앞줄 금속 핀이 케이스 밖으로 빠져 모터가 돌 수 없는 상태를 3D와 단면으로 보여주는 AS 진단입니다.",
+      "category": "하드웨어 · 고장 진단",
+      "date": "2026-11-26",
+      "path": "reports/pala720-socket-pin-damage/",
+      "cover": "reports/pala720-socket-pin-damage/cover.png",
+      "coverAlt": "모터 보드 3D에서 소켓의 앞줄 금속 핀이 꺾여 케이스 밖에 서 있고 오른쪽 끝 배선이 뜯겨 올라온 화면",
+      "tags": [
+        "PALA720",
+        "PCB",
+        "3D",
+        "고장 진단"
+      ]
+    },
+    {
       "id": "r5-head",
       "title": "R5 · 얼굴을 따라보는 로봇 헤드",
       "summary": "B25 해골의 6축 구동과 171단계 조립, 핀별 배선도와 A5 회로를 직접 살펴봅니다.",
